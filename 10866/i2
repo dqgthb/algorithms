@@ -1,0 +1,62 @@
+61
+push_front 10
+push_front 10
+push_front 10
+push_front 10
+push_front 10
+push_front 10
+push_back 20
+push_back 20
+push_back 20
+push_back 20
+push_back 20
+push_back 20
+pop_front
+pop_front
+pop_front
+pop_front
+pop_front
+pop_front
+pop_front
+pop_front
+pop_front
+pop_front
+pop_front
+pop_front
+pop_front
+pop_front
+pop_front
+pop_front
+pop_front
+pop_front
+size
+size
+size
+size
+size
+size
+size
+size
+empty
+empty
+empty
+empty
+empty
+empty
+empty
+empty
+front
+front
+front
+front
+front
+front
+front
+back
+back
+back
+back
+back
+back
+back
+back
