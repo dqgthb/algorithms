@@ -25,6 +25,7 @@ def dprint(*args):
 
 
 def pfast(*args, end = "\n", sep=' '):
+
     sys.stdout.write(sep.join(map(str, args)) + end)
 
 
