@@ -47,7 +47,7 @@ def main(f = None):
     exp = input().strip()
     res = []
     stack = []
-    op = {'+':2, '-': 2, '*': 3, '/': 3}
+    op = {'+':2, '-': 2, '*': 3, '/': 3, '(':0}
 
     for c in exp:
         if c == '(':
