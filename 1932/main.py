@@ -70,6 +70,7 @@ def buildDP(mat):
                 pass
             if j == l-1:
                 pass
+            dp[i][j] = mat[i][j] + max(dp[i-1][i-1], 
     
 
 def solve(mat):
