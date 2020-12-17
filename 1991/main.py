@@ -50,7 +50,9 @@ def main(f = None):
     init(f)
     pass
     N = int(input().strip())
-    loc = dict()
+    import string
+    abc = string.ascii_uppercase
+
     for _ in range(N):
         p, l, r = input().split()
 
