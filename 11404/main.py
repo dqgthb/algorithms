@@ -51,6 +51,8 @@ def solve(mat):
         for i in range(n):
             for j in range(n):
                 mat[i][j] = min(mat[i][k] + mat[k][j], mat[i][j])
+            
+def prmat(mat)
 
 def main(f = None):
     init(f)
