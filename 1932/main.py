@@ -47,9 +47,12 @@ def main(f = None):
     n = int(input().strip())
     mat = [[None for _ in range(n)] for _ in range(n)]
     for i in range(n):
-        l = (int(i) for i in input().split())
+        l = [int(i) for i in input().split()]
         for j in range(len(l)):
+            mat[i][j] = l[j]
     
+    for i in mat:
+        print(i)
 
 
 if __name__ == "__main__":
