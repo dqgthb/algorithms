@@ -48,6 +48,7 @@ def main(f = None):
     m = int(input().strip())
 
     mat = [[float("inf") for _ in range(m)] for _ in range(n)]
+    for i in range(n):
 
 
 if __name__ == "__main__":
