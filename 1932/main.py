@@ -50,9 +50,6 @@ def main(f = None):
         l = [int(i) for i in input().split()]
         mat[i] = l
     
-    for i in mat:
-        print(i)
-    
     global dp
     dp = [[None for _ in range(n)] for _ in range(n)]
     buildDP(mat)
@@ -66,7 +63,6 @@ def buildDP(mat):
     for i in range(1, len(mat)):
         l = len(mat[i])
         for j in range(l):
-            print(i, j)
             if j == 0:
                 dp[i][j] = mat[i][j] + dp[i-1][j]
                 continue
@@ -78,7 +74,7 @@ def buildDP(mat):
 def solve(mat):
     global dp
     buildDP(mat)
-    return max(mat[])
+    return max(dp[-1])
 
 
 
