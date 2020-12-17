@@ -53,9 +53,12 @@ def main(f = None):
         i -= 1
         j -= 1
         mat[i][j] = True
-    
     for i in mat:
         print(i)
+
+    paren = {}
+
+
 
 if __name__ == "__main__":
     main()
