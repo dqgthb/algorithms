@@ -45,16 +45,19 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 class Node:
     def __init__(self, val):
         self.val = val
+        self.left = None
+        self.right = None
 
 def main(f = None):
     init(f)
     pass
     N = int(input().strip())
     import string
-    abc = string.ascii_uppercase
-    loc = {c:None for c in abc[:N]}
-    for _ in range(N):
-        loc[]
+    abc = string.ascii_uppercase[:N]
+    loc = {c:None for c in abc}
+    for c in abc:
+        loc[c] = Node(c)
+
     for _ in range(N):
         p, l, r = input().split()
 
