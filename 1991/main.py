@@ -55,12 +55,13 @@ def main(f = None):
     import string
     abc = string.ascii_uppercase[:N]
     loc = {c:None for c in abc}
+    loc['.'] = None
     for c in abc:
         loc[c] = Node(c)
 
     for _ in range(N):
         p, l, r = input().split()
-        
+        loc[c] 
     
     root = loc['A']
 
