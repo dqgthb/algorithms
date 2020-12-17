@@ -46,6 +46,8 @@ def main(f = None):
     init(f)
     exp = input().strip()
 
+    stack = []
+
 
 
 if __name__ == "__main__":
