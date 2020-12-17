@@ -61,8 +61,9 @@ def main(f = None):
 
     for _ in range(N):
         p, l, r = input().split()
-        loc[c] 
-    
+        loc[p].left = loc[l]
+        loc[p].right = loc[r]
+
     root = loc['A']
 
 
