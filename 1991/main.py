@@ -52,7 +52,7 @@ def main(f = None):
     N = int(input().strip())
     import string
     abc = string.ascii_uppercase
-
+    loc = {c:None for c in abc[:N]}
     for _ in range(N):
         p, l, r = input().split()
 
