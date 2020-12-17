@@ -47,7 +47,7 @@ def main(f = None):
     exp = input().strip()
     res = []
     stack = []
-    op = {'+':2, '-': 2, '*': 1, '/': 1, '(':0, ')':0}
+    op = {'+':2, '-': 2, '*': 3, '/': 3}
 
     for c in exp:
         if c == '(':
@@ -56,6 +56,7 @@ def main(f = None):
             while (d := stack.pop()) != '(':
                 res.append(d)
         elif c in op:
+
         else:
             res.append(c)
     res.extend(stack)
