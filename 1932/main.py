@@ -45,6 +45,11 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 def main(f = None):
     init(f)
     n = int(input().strip())
+    mat = [[None for _ in range(n)] for _ in range(n)]
+    for i in range(n):
+        l = (int(i) for i in input().split())
+        for j in range(len(l)):
+    
 
 
 if __name__ == "__main__":
