@@ -65,6 +65,13 @@ def main(f = None):
         loc[p].right = loc[r]
 
     root = loc['A']
+    printTree(root)
+
+def printTree(node):
+    if node is None: return
+    print(node.val, end='')
+    printTree(node.left)
+    printTree(node.right)
 
 
 if __name__ == "__main__":
