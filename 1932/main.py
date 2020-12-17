@@ -69,15 +69,16 @@ def buildDP(mat):
             print(i, j)
             if j == 0:
                 dp[i][j] = mat[i][j] + dp[i-1][j]
+                continue
             if j == l-1:
                 dp[i][j] = mat[i][j] + dp[i-1][j-1]
+                continue
             dp[i][j] = mat[i][j] + max(dp[i-1][j], dp[i-1][j-1])
 
 def solve(mat):
     global dp
-    n = len(mat)
-    for i in dp:
-        print(dp)
+    buildDP(mat)
+    return max(mat[])
 
 
 
