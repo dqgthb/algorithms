@@ -63,9 +63,13 @@ def main(f = None):
 def buildDP(mat):
     global dp
     dp[0][0] = mat[0][0]
-    for i, e in enumerate(mat):
-        for j, f in enumerate(e):
-            dp[i][j] = mat[i][j] + 
+    for i in range(len(mat)):
+        l = len(mat[i])
+        for j in range(l):
+            if j == 0:
+                pass
+            if j == l-1:
+                pass
     
 
 def solve(mat):
