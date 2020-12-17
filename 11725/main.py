@@ -46,11 +46,10 @@ def main(f = None):
     init(f)
     N = int(input().strip())
 
-    paren = {}
+    mat = [[False for _ in range(N)] for _ in range(N)]
     for _ in range(N):
-
-        
-    
+        i, j = (int(i) for i in input().split())
+        mat[i]
 
 if __name__ == "__main__":
     main()
