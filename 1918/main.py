@@ -45,8 +45,11 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 def main(f = None):
     init(f)
     exp = input().strip()
-
+    res = []
     stack = []
+
+    for c in exp:
+
 
 
 
