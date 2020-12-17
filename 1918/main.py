@@ -57,6 +57,8 @@ def main(f = None):
                 res.append(d)
         elif c in op:
             res.append(c)
+        else:
+            res.append(c)
 
 
 
