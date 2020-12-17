@@ -44,6 +44,8 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
 def solve(mat):
     n = len(mat)
+    for i in range(n):
+        mat[i][i] = 0
 
     for k in range(n):
         for i in range(n):
@@ -56,14 +58,15 @@ def main(f = None):
     m = int(input().strip())
 
     mat = [[float("inf") for _ in range(n)] for _ in range(n)]
-    for i in range(n):
-        mat[i][i] = 0
     for _ in range(m):
         a, b, c = (int(i) for i in input().split())
         a = a-1
         b = b-1
         mat[a][b] = c
     
+    for i in mat:
+        print(i)
+
     solve(mat)
 
     for i in mat:
