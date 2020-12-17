@@ -45,6 +45,11 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 def solve(mat):
     n = len(mat)
 
+    for i in range(n):
+        for j in range(n):
+            for k in range(n):
+                mat[i][j] = min(mat[i][k] + mat[k][j], mat[i][j])
+
 def main(f = None):
     init(f)
     n = int(input().strip())
