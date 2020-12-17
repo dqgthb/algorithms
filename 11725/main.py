@@ -49,7 +49,12 @@ def main(f = None):
     mat = [[False for _ in range(N)] for _ in range(N)]
     for _ in range(N):
         i, j = (int(i) for i in input().split())
-        mat[i]
+        i -= 1
+        j -= 1
+        mat[i][j] = True
+    
+    for i in mat:
+        print(i)
 
 if __name__ == "__main__":
     main()
