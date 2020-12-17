@@ -44,7 +44,9 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
 def main(f = None):
     init(f)
-    pass
+    n, m = (int(i) for i in input().split())
+    arr = (int(i) for i in input().split())
+    for i in itertools.
 
 if __name__ == "__main__":
     main()
