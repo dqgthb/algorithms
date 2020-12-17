@@ -65,13 +65,26 @@ def main(f = None):
         loc[p].right = loc[r]
 
     root = loc['A']
-    printTree(root)
+    printTreePre(root)
+    printTreeMid(root)
 
-def printTree(node):
+def printTreePost(node):
+    if node is None: return
+    printTreePost(node.left)
+    printTreePost(node.right)
+    print(node.val, end='')
+
+def printTreeMid(node):
+    if node is None: return
+    printTreeMid(node.left)
+    print(node.val, end='')
+    printTreeMid(node.right)
+
+def printTreePre(node):
     if node is None: return
     print(node.val, end='')
-    printTree(node.left)
-    printTree(node.right)
+    printTreePre(node.left)
+    printTreePre(node.right)
 
 
 if __name__ == "__main__":
