@@ -62,9 +62,10 @@ def main(f = None):
 
 def buildDP(mat):
     global dp
+    dp[0][0] = mat[0][0]
     for i, e in enumerate(mat):
         for j, f in enumerate(e):
-            dp[i][j] = 
+            dp[i][j] = mat[i][j] + 
     
 
 def solve(mat):
