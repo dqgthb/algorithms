@@ -63,7 +63,8 @@ def main(f = None):
             stack.append(c)
         else:
             res.append(c)
-    res.extend(stack)
+    while stack:
+        res.append(stack.pop())
     
     print(''.join(res))
 
