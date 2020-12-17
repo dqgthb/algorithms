@@ -42,6 +42,9 @@ def pfast(*args, end = "\n", sep=' '):
 
 def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
+def solve(mat):
+    n = len(mat)
+
 def main(f = None):
     init(f)
     n = int(input().strip())
@@ -53,6 +56,8 @@ def main(f = None):
         a = a-1
         b = b-1
         mat[a][b] = c
+    
+    solve(mat)
 
     for i in mat:
         print(i)
