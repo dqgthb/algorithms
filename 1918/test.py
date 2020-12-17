@@ -10,6 +10,7 @@ def testMain():
     RANDTEST = True
     FILETEST = True
 
+
     if RANDTEST:
         random.seed(1)
         for t in range(10):
