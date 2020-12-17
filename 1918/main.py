@@ -56,8 +56,9 @@ def main(f = None):
             while (d := stack.pop()) != '(':
                 res.append(d)
         elif c in op:
-            while op[stack[-1]] > op[c]
-
+            while op[stack[-1]] > op[c]:
+                res.append(stack.pop())
+            stack.append(c)
         else:
             res.append(c)
     res.extend(stack)
