@@ -56,7 +56,16 @@ def main(f = None):
     global dp
     dp = [[None for _ in range(n)] for _ in range(n)]
 
-    solve(5)
+    ans = solve(mat)
+    print(ans)
+
+def buildDP(mat):
+    global dp
+    for i, e in 
+    
+
+def solve(mat):
+    n = len(mat)
 
 
 
