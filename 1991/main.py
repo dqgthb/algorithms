@@ -54,6 +54,8 @@ def main(f = None):
     abc = string.ascii_uppercase
     loc = {c:None for c in abc[:N]}
     for _ in range(N):
+        loc[]
+    for _ in range(N):
         p, l, r = input().split()
 
 
