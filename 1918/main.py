@@ -52,7 +52,7 @@ def main(f = None):
         if c == '(':
             stack.append(c)
         elif c == ')'
-            d = stack.pop()
+            while (d := stack.pop()
 
 
 
