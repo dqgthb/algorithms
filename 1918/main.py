@@ -48,6 +48,7 @@ def main(f = None):
     res = []
     stack = []
     op = set(('+', '-', '*', '/'))
+    op = {'+':1, '-': 1, '*': 0, '/': 0}
 
     for c in exp:
         if c == '(':
