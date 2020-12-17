@@ -53,7 +53,7 @@ def main(f = None):
         if c == '(':
             stack.append(c)
         elif c == ')':
-            while (d := stack.pop()) == '(':
+            while (d := stack.pop()) != '(':
                 res.append(d)
         elif c in op:
             res.append(c)
