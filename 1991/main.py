@@ -60,6 +60,9 @@ def main(f = None):
 
     for _ in range(N):
         p, l, r = input().split()
+        
+    
+    root = loc['A']
 
 
 
