@@ -57,6 +57,7 @@ def main(f = None):
                 res.append(d)
         elif c in op:
             if op[c] == 1:
+                while (d:= stack.pop())
             stack.append(c)
         else:
             res.append(c)
