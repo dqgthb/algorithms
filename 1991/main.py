@@ -49,7 +49,11 @@ class Node:
 def main(f = None):
     init(f)
     pass
-    p, l, r = input().split()
+    N = int(input().strip())
+    loc = dict()
+    for _ in range(N):
+        p, l, r = input().split()
+
 
 
 if __name__ == "__main__":
