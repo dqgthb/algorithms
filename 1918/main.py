@@ -47,12 +47,17 @@ def main(f = None):
     exp = input().strip()
     res = []
     stack = []
+    op = set(('+', '-', '*', '/'))
 
     for c in exp:
         if c == '(':
             stack.append(c)
-        elif c == ')'
-            while (d := stack.pop()
+        elif c == ')':
+            while (d := stack.pop()) == '(':
+                res.append(d)
+        elif c in op:
+            res.append(c)
+
 
 
 
