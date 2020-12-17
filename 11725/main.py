@@ -44,10 +44,11 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
 def main(f = None):
     init(f)
-    N = int(input().strip())
 
+    N = int(input().strip())
     mat = [[False for _ in range(N)] for _ in range(N)]
-    for _ in range(N):
+
+    for _ in range(N-1):
         i, j = (int(i) for i in input().split())
         i -= 1
         j -= 1
