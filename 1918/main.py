@@ -53,8 +53,9 @@ def main(f = None):
         if c == '(':
             stack.append(c)
         elif c == ')':
-            while stack and stack.pop() != '('
-            while (d := stack.pop()) != '(':
+            while stack:
+                d = stack.pop()
+                if d == '(': break
                 res.append(d)
         elif c in op:
             while stack and (op[stack[-1]] >= op[c]):
