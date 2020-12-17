@@ -45,14 +45,19 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 def main(f = None):
     init(f)
     n = int(input().strip())
-    mat = [[None for _ in range(n)] for _ in range(n)]
+    mat = [None for _ in range(n)]
     for i in range(n):
         l = [int(i) for i in input().split()]
-        for j in range(len(l)):
-            mat[i][j] = l[j]
+        mat[i] = l
     
     for i in mat:
         print(i)
+    
+    global dp
+    dp = [[None for _ in range(n)] for _ in range(n)]
+
+    solve(5)
+
 
 
 if __name__ == "__main__":
