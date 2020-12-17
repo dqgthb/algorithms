@@ -66,6 +66,7 @@ def buildDP(mat):
     for i in range(1, len(mat)):
         l = len(mat[i])
         for j in range(l):
+            print(i, j)
             if j == 0:
                 dp[i][j] = mat[i][j] + dp[i-1][j]
             if j == l-1:
