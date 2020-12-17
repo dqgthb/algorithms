@@ -64,10 +64,6 @@ def main(f = None):
     res.extend(stack)
     
     print(''.join(res))
-    print("hello")
-
-
-
 
 
 if __name__ == "__main__":
