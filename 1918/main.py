@@ -56,9 +56,12 @@ def main(f = None):
             while (d := stack.pop()) != '(':
                 res.append(d)
         elif c in op:
-            res.append(c)
+            stack.append(c)
         else:
             res.append(c)
+    
+    print(''.join(res))
+    print("hello")
 
 
 
