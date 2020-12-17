@@ -47,7 +47,7 @@ def main(f = None):
     n, m = (int(i) for i in input().split())
     arr = [int(i) for i in input().split()]
     arr.sort()
-    for i in itertools.permutations(arr, r=2):
+    for i in itertools.permutations(arr, r=m):
         for j in i:
             print(j, end=' ')
         print()
