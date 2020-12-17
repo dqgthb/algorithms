@@ -31,13 +31,37 @@ def pfast(*args, end = "\n", sep=' '):
 
 def ints(): return map(int, sys.stdin.readline().strip().split())
 
+def compare(x, y):
+    weight = 0
+    height = 1
+
+    if (x[weight] > y[weight]
+            and x[height] > y[height]):
+        return 1
+    elif (
+            y[weight] > x[weight]
+            and y[height] > x[height]):
+        return -1
+    else:
+        return 0
 
 def main():
     N = int(input().strip())
-    arr = [tuple(int(i) for i in input().split()) for _ in range(N)]
-    arr.sort()
-    print(arr)
+    arr = [list(int(i) for i in input().split()) for _ in range(N)]
 
+    for i in arr:
+        i.append(1)
+
+    rank = len(arr[0]) - 1
+    for i, j in itertools.combinations(arr, 2):
+        c = compare(i,j)
+        if c == 1:
+            j[rank] += 1
+        elif c == -1:
+            i[rank] += 1
+    
+    for i in arr:
+        print(i[rank])
 
 if __name__ == "__main__":
     main()
