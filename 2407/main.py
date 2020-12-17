@@ -3,8 +3,6 @@ import sys
 import itertools
 import collections
 
-sys.setrecursionlimit(1500)
-
 DEBUG = False
 
 def setStdin(f):
@@ -42,53 +40,24 @@ def dprint(*args):
 def pfast(*args, end = "\n", sep=' '):
     sys.stdout.write(sep.join(map(str, args)) + end)
 
-
 def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
-
-def LCS(S1, S2, i, j):
+def co(n, r):
     global dp
-    def LCS_(i, j):
-        return LCS(S1, S2, i, j)
-    if dp[i][j] is not None: return dp[i][j]
+    if dp[n][r] is not None: return dp[n][r]
+    if r == n: return 1
+    if r == 0: return 1
 
-    if i == 0:
-        val = 1 if S1[i] == S2[j] else LCS_(i, j-1)
-        dp[i][j] = val
-        return val
-    if j == 0:
-        val = 1 if S1[i] == S2[j] else LCS_(i-1, j)
-        dp[i][j] = val
-        return val
-
-    if S1[i] == S2[j]:
-        dp[i][j] = LCS_(i-1, j-1) + 1
-    else:
-        left = LCS_(i-1, j)
-        right = LCS_(i, j-1)
-        dp[i][j] = max(left, right)
-    return dp[i][j]
-
-def solve(S1, S2):
-    global dp
-    l1 = len(S1)
-    l2 = len(S2)
-    dp[0][0] = 1 if S1[0] == S2[0] else 0
-    for i in range(l1-1):
-        for j in range(l2-1):
-            LCS(S1, S2, i, j)
-
-    ans = LCS(S1, S2, l1-1, l2-1)
-    return ans
+    dp[n][r] = co(n-1, r-1) + co(n-1, r)
+    return dp[n][r]
 
 def main(f = None):
     init(f)
     global dp
-    dp = [[None for _ in range(1001)] for _ in range(1001)]
-    S1 = input().strip()
-    S2 = input().strip()
-    ans = solve(S1, S2)
-    print(ans)
+    dp = [[None for _ in range(101)] for _ in range(101)]
+    n, m = (int(i) for i in input().split())
+    print(co(n, m))
+
 
 if __name__ == "__main__":
     main()
