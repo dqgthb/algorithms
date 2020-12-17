@@ -42,9 +42,14 @@ def pfast(*args, end = "\n", sep=' '):
 
 def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
+class Node:
+    def __init__(self, val):
+        self.val = val
+
 def main(f = None):
     init(f)
     pass
+    p, l, r = input().split()
 
 
 if __name__ == "__main__":
