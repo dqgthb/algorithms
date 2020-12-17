@@ -50,8 +50,10 @@ def main(f = None):
     mat = [[float("inf") for _ in range(n)] for _ in range(n)]
     for _ in range(m):
         a, b, c = (int(i) for i in input().split())
+        a = a-1
+        b = b-1
         mat[a][b] = c
-    
+
     for i in mat:
         print(i)
 
