@@ -67,6 +67,5 @@ def main(f = None):
     root = loc['A']
 
 
-
 if __name__ == "__main__":
     main()
