@@ -49,6 +49,10 @@ def main(f = None):
     stack = []
 
     for c in exp:
+        if c == '(':
+            stack.append(c)
+        elif c == ')'
+            d = stack.pop()
 
 
 
