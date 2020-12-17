@@ -66,7 +66,11 @@ def main(f = None):
 
     root = loc['A']
     printTreePre(root)
+    print()
     printTreeMid(root)
+    print()
+    printTreePost(root)
+    print()
 
 def printTreePost(node):
     if node is None: return
