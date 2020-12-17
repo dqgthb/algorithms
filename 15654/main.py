@@ -48,7 +48,9 @@ def main(f = None):
     arr = [int(i) for i in input().split()]
     arr.sort()
     for i in itertools.permutations(arr, r=2):
-        print(i)
+        for j in i:
+            print(j, end=' ')
+        print()
 
 if __name__ == "__main__":
     main()
