@@ -61,8 +61,7 @@ def main(f = None):
 
 def dfs(mat, start):
     root = 0
-    for i in mat[root]
-
+    for i in mat[root]:
 
 if __name__ == "__main__":
     main()
