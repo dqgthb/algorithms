@@ -55,8 +55,10 @@ def buildGraph(n):
 def dfs(nodeNum:int):
     global G, visited, paren
     neighbors = G[nodeNum]
+    print(neighbors)
     for node_ in neighbors:
         if not visited[node_]:
+            visited[node_] = True
             paren[node_] = nodeNum
             dfs(nodeNum)
 
@@ -76,7 +78,7 @@ def main(f = None):
     dfs(0)
 
     for i in paren[1:]:
-        print(i+1)
+        print(i)
 
 
 if __name__ == "__main__":
