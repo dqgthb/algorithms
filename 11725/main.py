@@ -53,8 +53,14 @@ def buildGraph():
         G[j].append(i)
     return G
 
-def dfs(start):
+def dfs(nodeNum:int):
     global G, visited, paren
+
+    neighbors = G[nodeNum]
+    for node_ in neighbors:
+        if not visited[node_]:
+
+            dfs()
 
 def main(f = None):
     init(f)
