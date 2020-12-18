@@ -42,8 +42,7 @@ def pfast(*args, end = "\n", sep=' '):
 
 def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
-def buildGraph():
-    n = int(input().strip())
+def buildGraph(n):
     G = [[] for i in range(n)]
     for _ in range(n-1):
         i, j = (int(i) for i in input().split())
@@ -59,16 +58,19 @@ def dfs(nodeNum:int):
     neighbors = G[nodeNum]
     for node_ in neighbors:
         if not visited[node_]:
-
-            dfs()
+            paren[node_] = nodeNum
+            dfs(nodeNum)
 
 def main(f = None):
     init(f)
 
+    n = int(input().strip())
     global G, visited, paren
-    G = buildGraph()
+    G = buildGraph(n)
     for i in G:
         print(i)
+    
+    visited = [False for _ in range(n)]
     
     dfs()
 
