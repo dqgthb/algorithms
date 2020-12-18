@@ -47,6 +47,7 @@ def main(f = None):
 
     N = int(input().strip())
     mat = [[False for _ in range(N)] for _ in range(N)]
+    visited = [False for _ in range(N)]
 
     for _ in range(N-1):
         i, j = (int(i) for i in input().split())
@@ -56,7 +57,7 @@ def main(f = None):
     for i in mat:
         print(i)
 
-    paren = {}
+    paren = [None for _ in range(N)]
 
 def dfs(mat, start):
     root = 0
