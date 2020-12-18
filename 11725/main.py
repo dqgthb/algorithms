@@ -42,6 +42,13 @@ def pfast(*args, end = "\n", sep=' '):
 
 def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
+def buildGraph():
+    n = int(input().strip())
+    G = [[] for i in range(n)]
+    for i in range(n-1):
+        i, j = (int(i) for i in input().split())
+
+
 def main(f = None):
     init(f)
 
