@@ -62,9 +62,14 @@ def main(f = None):
     visited[root] = True
     dfs(mat, paren, root)
 
-    for i in paren[1:] :
+    for i in paren[1:]:
         print(i+1)
 
+def dfsGeneral(node):
+    global visited
+    if visited[node]:
+        return
+    
 
 
 def dfs(mat, paren, start):
