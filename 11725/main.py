@@ -53,12 +53,13 @@ def buildGraph():
         G[j].append(i)
     return G
 
-def dfs(start)
-
+def dfs(start):
+    global G, visited, paren
 
 def main(f = None):
     init(f)
 
+    global G, visited, paren
     G = buildGraph()
     for i in G:
         print(i)
