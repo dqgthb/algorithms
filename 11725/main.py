@@ -47,6 +47,8 @@ def buildGraph():
     G = [[] for i in range(n)]
     for i in range(n-1):
         i, j = (int(i) for i in input().split())
+        i -= 1
+        j -= 1
 
 
 def main(f = None):
