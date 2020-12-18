@@ -56,13 +56,15 @@ def main(f = None):
         j -= 1
         mat[i][j] = True
         mat[j][i] = True
-    for i in mat:
-        print(i)
 
     paren = [None for _ in range(N)]
     root = 0
     visited[root] = True
     dfs(mat, paren, root)
+
+    for i in paren[1:] :
+        print(i+1)
+
 
 
 def dfs(mat, paren, start):
@@ -72,7 +74,6 @@ def dfs(mat, paren, start):
         if isNeighbor and not visited[i]:
             visited[i] = True
             paren[i] = start
-            print(f"call {i} from {start}")
             dfs(mat, paren, i)
 
 
