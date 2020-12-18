@@ -60,8 +60,9 @@ def main(f = None):
 
 def dfs(mat, start):
     root = 0
-    nodes = mat[root]
-    for i in mat[root]:
+    neighbors = mat[root]
+    for i, node in enumerate(neighbors):
+        if node:
 
 
 if __name__ == "__main__":
