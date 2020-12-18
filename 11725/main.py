@@ -45,16 +45,20 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 def buildGraph():
     n = int(input().strip())
     G = [[] for i in range(n)]
-    for i in range(n-1):
+    for _ in range(n-1):
         i, j = (int(i) for i in input().split())
         i -= 1
         j -= 1
-
+        G[i].append(j)
+        G[j].append(i)
+    return G
 
 def main(f = None):
     init(f)
 
     G = buildGraph()
+    for i in G:
+        print(i)
 
 
 if __name__ == "__main__":
