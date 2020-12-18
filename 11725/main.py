@@ -60,6 +60,7 @@ def main(f = None):
 
     paren = [None for _ in range(N)]
     root = 0
+    visited[root] = True
     dfs(mat, paren, root)
     print(paren)
 
@@ -71,6 +72,7 @@ def dfs(mat, paren, start):
         if node and not visited[node]:
             visited[i] = True
             paren[i] = start
+            print(f"call {i} from {start}")
             dfs(mat, paren, i)
 
 
