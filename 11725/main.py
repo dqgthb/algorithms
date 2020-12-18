@@ -61,17 +61,17 @@ def main(f = None):
     paren = [None for _ in range(N)]
     root = 0
     dfs(mat, paren, root)
+    print(paren)
+
 
 def dfs(mat, paren, start):
     global visited
-    if visited[mat]: return
-    visited[mat] = True
     neighbors = mat[start]
     for i, node in enumerate(neighbors):
         if node and not visited[node]:
             visited[i] = True
-            paren[node] = 
-            dfs(mat, paren, node)
+            paren[i] = start
+            dfs(mat, paren, i)
 
 
 if __name__ == "__main__":
