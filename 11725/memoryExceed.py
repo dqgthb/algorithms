@@ -45,7 +45,34 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 def main(f = None):
     init(f)
 
-    G = buildGraph()
+    N = int(input().strip())
+    mat = [[False for _ in range(N)] for _ in range(N)]
+    global visited
+    visited = [False for _ in range(N)]
+
+    for _ in range(N-1):
+        i, j = (int(i) for i in input().split())
+        i -= 1
+        j -= 1
+        mat[i][j] = True
+        mat[j][i] = True
+
+    paren = [None for _ in range(N)]
+    root = 0
+    visited[root] = True
+    dfs(mat, paren, root)
+
+    for i in paren[1:]:
+        print(i+1)
+
+def dfs(mat, paren, start):
+    global visited
+    neighbors = mat[start]
+    for i, isNeighbor in enumerate(neighbors):
+        if isNeighbor and not visited[i]:
+            visited[i] = True
+            paren[i] = start
+            dfs(mat, paren, i)
 
 
 if __name__ == "__main__":
