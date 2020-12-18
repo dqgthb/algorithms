@@ -68,7 +68,9 @@ def dfs(mat, paren, start):
     visited[mat] = True
     neighbors = mat[start]
     for i, node in enumerate(neighbors):
-        if node:
+        if node and not visited[node]:
+            visited[i] = True
+            paren[node] = 
             dfs(mat, paren, node)
 
 
