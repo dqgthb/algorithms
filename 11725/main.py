@@ -58,10 +58,9 @@ def main(f = None):
 
     paren = {}
 
-
-
 def dfs(mat, start):
     root = 0
+    nodes = mat[root]
     for i in mat[root]:
 
 
