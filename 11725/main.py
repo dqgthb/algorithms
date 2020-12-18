@@ -65,15 +65,16 @@ def main(f = None):
     for i in paren[1:]:
         print(i+1)
 
-def dfsGeneral(node, action):
-    global visited,
+def dfsGeneral(mat, visited, node, action):
     if visited[node]:
         return
+    visited[node] = True
     action()
 
-    global mat
     nodes = mat[node]
     for i, isNeighbor in enumerate(nodes):
+        if isNeighbor and not visited[i]:
+
 
 
 def dfs(mat, paren, start):
