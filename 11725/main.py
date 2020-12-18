@@ -57,11 +57,13 @@ def main(f = None):
         print(i)
 
     paren = {}
-    dfs(mat, start)
+
+
 
 def dfs(mat, start):
     root = 0
     for i in mat[root]:
+
 
 if __name__ == "__main__":
     main()
