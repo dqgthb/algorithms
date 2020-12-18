@@ -53,12 +53,17 @@ def buildGraph():
         G[j].append(i)
     return G
 
+def dfs(start)
+
+
 def main(f = None):
     init(f)
 
     G = buildGraph()
     for i in G:
         print(i)
+    
+    dfs()
 
 
 if __name__ == "__main__":
