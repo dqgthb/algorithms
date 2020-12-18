@@ -59,16 +59,17 @@ for _ in range(N-1):
 
     paren = [None for _ in range(N)]
     root = 0
-    dfs(root)
+    dfs(mat, paren, root)
 
-def dfs(mat, start):
+def dfs(mat, paren, start):
     global visited
     if visited[mat]: return
     visited[mat] = True
+
     neighbors = mat[start]
     for i, node in enumerate(neighbors):
         if node:
-            dfs(mat, neighbors[i])
+            dfs(mat, paren, neighbors[i])
 
 
 if __name__ == "__main__":
