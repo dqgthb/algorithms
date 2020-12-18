@@ -49,8 +49,7 @@ def main(f = None):
     mat = [[False for _ in range(N)] for _ in range(N)]
     global visited
     visited = [False for _ in range(N)]
-
-    for _ in range(N-1):
+for _ in range(N-1):
         i, j = (int(i) for i in input().split())
         i -= 1
         j -= 1
@@ -59,11 +58,14 @@ def main(f = None):
         print(i)
 
     paren = [None for _ in range(N)]
+    root = 0
+    dfs(root)
 
 def dfs(mat, start):
     global visited
     if visited[mat]: return
-    neighbors = mat[root]
+    visited[mat] = True
+    neighbors = mat[start]
     for i, node in enumerate(neighbors):
         if node:
             dfs(mat, neighbors[i])
