@@ -5,6 +5,8 @@ import collections
 
 DEBUG = False
 
+sys.setrecursionlimit(10**9)
+
 def setStdin(f):
     global DEBUG
     global input
