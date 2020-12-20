@@ -45,14 +45,34 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 def main(f = None):
     init(f)
     n = int(input().strip())
-    count = 0
-    num = 1
-    while n >= 0:
-        n -= num
-        num += 1
-        count += 1
-    print(count-1)
+    b = [int(input()) for _ in range(n)]
+    h = [None for _ in range(n)]
+    dp = [0 for _ in range(n)]
 
-    
+    for i in range(len(b)-2, -1, -1):
+        e = b[i]
+        prevIdx = i+1
+        prevVal = b[prevIdx]
+        if e <= prevVal:
+            dp[i] = 0
+            h[i] = i+1 # higher is i+1
+        else:
+            while prevIdx < len(b):
+                higherThanPrevIdx = h[prevIdx]
+                if higherThanPrevIdx is None:
+                    dp[i] = len(b) - i - 1
+                    h[i] = None
+                    break
+                if b[higherThanPrevIdx] >= e:
+                    dp[i] = higherThanPrevIdx - i - 1
+                    h[i] = higherThanPrevIdx
+                    break
+                else:
+                    prevIdx = higherThanPrevIdx
+    print(sum(dp))
+
+
+
+
 if __name__ == "__main__":
     main()

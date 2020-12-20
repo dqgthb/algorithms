@@ -42,17 +42,36 @@ def pfast(*args, end = "\n", sep=' '):
 
 def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
+def solve(n):
+    global dp
+    if dp[n] is not None:
+        return dp[n]
+    
+    if n == 0:
+        return s[0]
+    if n == 1:
+        return s[0] + s[1]
+    if n == 2:
+        return s[2] + max(s[0], s[1])
+    
+    c1 = solve(n-2)
+    c2 = solve(n-3) + s[n-1]
+    dp[n] = s[n] + max(c1, c2)
+    return dp[n]
+
 def main(f = None):
     init(f)
-    n = int(input().strip())
-    count = 0
-    num = 1
-    while n >= 0:
-        n -= num
-        num += 1
-        count += 1
-    print(count-1)
+    N = int(input().strip())
 
-    
+    global s
+    s = [int(input()) for _ in range(N)]
+    global dp
+    dp = [None for _ in range(N)]
+
+    for i in range(N-1):
+        solve(i)
+    ans = solve(N-1)
+    print(ans)
+
 if __name__ == "__main__":
     main()

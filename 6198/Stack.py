@@ -44,15 +44,20 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
 def main(f = None):
     init(f)
-    n = int(input().strip())
-    count = 0
-    num = 1
-    while n >= 0:
-        n -= num
-        num += 1
-        count += 1
-    print(count-1)
+    stack = []
 
-    
+    n = int(input().strip())
+
+    count = 0
+    for _ in range(n):
+        i = int(input().strip())
+
+        while stack and stack[-1] <= i:
+            stack.pop()
+        count += len(stack)
+        stack.append(i)
+    print(count)
+
+
 if __name__ == "__main__":
     main()
