@@ -74,7 +74,7 @@ class Sieve:
 def main(f = None):
     init(f)
     mi, ma = (int(i) for i in input().split())
-    sieve = Sieve()
+    sieve = Sieve(mi, ma)
     ans = sieve.count()
     print(ans)
 
