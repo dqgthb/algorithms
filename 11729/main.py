@@ -44,10 +44,11 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
 count = 0
 def solve(n, from_, to, rest):
-    count += 1
+    global count
     if n == 0:
         return
     solve(n-1, from_, rest, to)
+    count += 1
     print(f"{from_} to {to}")
     solve(n-1, rest, to, from_)
 
@@ -55,6 +56,7 @@ def main(f = None):
     init(f)
     n = int(input().strip())
     solve(n, 1, 3, 2)
+    print(count)
 
 if __name__ == "__main__":
     main()
