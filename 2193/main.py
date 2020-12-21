@@ -54,6 +54,8 @@ def main(f = None):
     dp = [None for _ in range(91)]
     dp[1] = 1
     dp[2] = 1
+    dp[3] = dp[1] + 1
+    dp[4] = dp[2]
     ans = numOfPinaryNum(N)
     print(ans)
 
