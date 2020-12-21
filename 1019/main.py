@@ -45,10 +45,10 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 def main(f = None):
     init(f)
 
+    N = int(input().strip())
     cnt = collections.Counter()
-    for i in range(1, 1002):
+    for i in range(1, N+1):
         cnt.update(str(i))
-        print(i, cnt.values())
 
 
 if __name__ == "__main__":
