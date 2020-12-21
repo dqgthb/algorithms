@@ -50,7 +50,7 @@ class eratosthenessSieve:
         s.arr[0] = False
         s.arr[1] = False
         for num in range(2, n):
-            for i in range(num*2, n, num):
+            for i in range(num*2, n+1, num):
                 s.arr[i] = False
 
 def main(f = None):
