@@ -59,7 +59,6 @@ def main(f = None):
             if parSum == S:
                 count += 1
     print(count)
-    print(cum)
 
 if __name__ == "__main__":
     main()
