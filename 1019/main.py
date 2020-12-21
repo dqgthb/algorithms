@@ -50,9 +50,9 @@ def main(f = None):
     cnt = collections.Counter()
     for i in range(1, N+1):
         cnt.update(str(i))
-        OUT: list[str] = ["" for i in range(10)]
-        for i in range(10):
-            OUT[i] = str(cnt[str(i)])
+        OUT: list[str] = ["" for _ in range(10)]
+        for j in range(10):
+            OUT[j] = str(cnt[str(j)])
         print(i, " ".join(OUT))
 
 
