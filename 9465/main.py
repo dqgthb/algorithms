@@ -62,9 +62,8 @@ class DP():
         val = s.dp[i][j]
 
         if i == 0:
-            cand1 =
-
-
+            cand1 = val + s.solve(1, j-1)
+            cand2 = val + s.solve(1, j-2)
 
 
 def main(f = None):
