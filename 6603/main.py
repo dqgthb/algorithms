@@ -50,8 +50,8 @@ def main(f = None):
             return
         
         arr = arr[1:]
-        for i in itertools.combinations(arr, r = len(arr)):
-            print(i)
+        for i in itertools.combinations(arr, r = 6):
+            print(' '.join(i))
 
 if __name__ == "__main__":
     main()
