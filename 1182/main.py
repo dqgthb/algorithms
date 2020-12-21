@@ -51,6 +51,8 @@ def main(f = None):
         cum[i] += cum[i-1]
     
     count = 0
+    if arr[0] == S:
+        count += 1
     for i in range(N):
         for j in range(i+1, N):
             parSum = cum[j] - cum[i]
