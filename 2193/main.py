@@ -43,6 +43,7 @@ def pfast(*args, end = "\n", sep=' '):
 def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
 def numOfPinaryNum(n):
+    global dp
     if n == 1: return 1
     if n == 2: return 1
     if n == 3: return 2
@@ -57,7 +58,7 @@ def main(f = None):
     N = int(input().strip())
     global dp
     dp = [None for _ in range(91)]
-    for i in range(N):
+    for i in range(91):
         numOfPinaryNum(i)
     ans = numOfPinaryNum(N)
     print(ans)
