@@ -51,7 +51,8 @@ def main(f = None):
         
         arr = arr[1:]
         for i in itertools.combinations(arr, r = 6):
-            print(' '.join(i))
+            print(' '.join(map(str, i)))
+        print()
 
 if __name__ == "__main__":
     main()
