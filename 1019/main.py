@@ -52,8 +52,7 @@ def main(f = None):
         cnt.update(str(i))
     OUT: list[str] = ["" for i in range(10)]
     for i in range(10):
-        OUT[i] = str(cnt[i])
-    
+        OUT[i] = str(cnt[str(i)])
     print(" ".join(OUT))
 
 
