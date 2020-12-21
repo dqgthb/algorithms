@@ -48,11 +48,10 @@ def main(f = None):
     A = (int(i) for i in input().split())
     last = [None for _ in range(N)]
     dp = [None for _ in range(N)]
-    l
     dp[0] = 1
+    last[0] = A[0]
 
     for i in range(1, N):
-        dp[i] = 
 
 
 
