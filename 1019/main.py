@@ -45,9 +45,9 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 def main(f = None):
     init(f)
     cnt = collections.Counter()
-    for i in range(10):
+    for i in range(1, 100):
         cnt.update(str(i))
-    print(cnt)
+    print(cnt.values())
 
 
 if __name__ == "__main__":
