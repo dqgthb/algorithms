@@ -46,10 +46,13 @@ def main(f = None):
     init(f)
     N = int(input().strip())
     A = (int(i) for i in input().split())
+    last = [None for _ in range(N)]
     dp = [None for _ in range(N)]
+    l
     dp[0] = 1
 
     for i in range(1, N):
+        dp[i] = 
 
 
 
