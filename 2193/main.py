@@ -42,7 +42,10 @@ def pfast(*args, end = "\n", sep=' '):
 
 def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
-def numOfPinaryNum()
+def numOfPinaryNum(n):
+    if n == 1: return 1
+    if n == 2: return 1
+    return 1 + numOfPinaryNum(n-2)
 
 def main(f = None):
     init(f)
