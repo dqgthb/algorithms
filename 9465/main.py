@@ -47,11 +47,16 @@ def solve():
 
 class DP():
     def __init__(s, l, mat):
+        s.l = l
         s.dp = [[None for _ in range(l)] for _ in range(2)]
         s.mat = mat
     
     def solve(s, i, j):
+        assert 0 <= i < 2
+        assert 0 <= j < s.l
         if s.dp[i][j] is not None: return s.dp[i][j]
+
+
 
 
 def main(f = None):
