@@ -52,15 +52,19 @@ class eratosthenessSieve:
 
 def main(f = None):
     init(f)
-    et = eratosthenessSieve(123456)
+    et = eratosthenessSieve(123456 * 2)
 
     while True:
         n = int(input().strip())
         if n == 0: return
 
         arr = et.arr
+        count = 0
         for i in range(n+1, 2*n+1):
-
+            if arr[i]:
+                count += 1
+        
+        print(count)
 
 if __name__ == "__main__":
     main()
