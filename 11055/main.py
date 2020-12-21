@@ -43,7 +43,6 @@ def pfast(*args, end = "\n", sep=' '):
 def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
 
-
 def main(f = None):
     init(f)
     N = int(input().strip())
@@ -56,6 +55,7 @@ def main(f = None):
             if A[i] > A[j]:
                 if dp[j] >= dp[i]:
                     dp[i] = dp[j] + A[i]
+    print(dp)
     print(max(dp))
 
 
