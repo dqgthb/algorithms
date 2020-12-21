@@ -50,8 +50,8 @@ class DP():
         s.mat = mat
     
     def solve(s, i, j):
-        if 0 <= i < 2: return 0
-        if 0 <= j < s.l: return 0
+        if not 0 <= i < 2: return 0
+        if not 0 <= j < s.l: return 0
         if s.dp[i][j] is not None: return s.dp[i][j]
 
         if j == 0: return s.mat[i][j]
@@ -74,6 +74,9 @@ def main(f = None):
         l = int(input().strip())
         mat = [list(map(int, input().split())) for _ in range(2)]
         s = DP(l, mat)
+        for j in range(l):
+            s.solve(0, j)
+            s.solve(1, j)
         c1 = s.solve(0, l-1)
         c2 = s.solve(1, l-1)
         print(c1, c2)
