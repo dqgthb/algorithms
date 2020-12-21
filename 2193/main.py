@@ -45,7 +45,7 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 def numOfPinaryNum(n):
     if n == 1: return 1
     if n == 2: return 1
-    return 1 + numOfPinaryNum(n-2)
+    return numOfPinaryNum(n-1) + numOfPinaryNum(n-2)
 
 def main(f = None):
     init(f)
@@ -55,6 +55,7 @@ def main(f = None):
     dp[1] = 1
     dp[2] = 1
     dp[3] = 2
+    dp[4] = 
     dp[4] = dp[2]
     ans = numOfPinaryNum(N)
     print(ans)
