@@ -59,6 +59,10 @@ class DP():
         if j == 0: pass
         if j == s.l - 1: pass
 
+        val = s.dp[i][j]
+
+        if i == 0:
+            cand1 =
 
 
 
