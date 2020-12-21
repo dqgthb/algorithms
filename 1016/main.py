@@ -53,7 +53,10 @@ class Sieve:
             q, r = divmod(mi, sqr)
             if r == 0:
                 start = mi
-            for j in range(mi, ma + 1, sqR)
+            else:
+                start = sqr * (q+1)
+            for j in range(start, ma + 1, sqr):
+                s.set(j, False)
     
     def get(s, n):
         return s.arr[n - s.mi]
