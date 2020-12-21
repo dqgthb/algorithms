@@ -56,7 +56,6 @@ class eratosthenessSieve:
 def main(f = None):
     init(f)
     et = eratosthenessSieve(123456 * 2)
-
     print(et.arr[0:100])
     while False:
         n = int(input().strip())
