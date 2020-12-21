@@ -50,8 +50,13 @@ def main(f = None):
     for i in range(1, len(cum)):
         cum[i] += cum[i-1]
     
+    count = 0
     for i in range(N):
-        for j in range(N):
+        for j in range(i+1, N):
+            parSum = cum[j] - cum[i]
+            if parSum == S:
+                count += 1
+    print(count)
 
 if __name__ == "__main__":
     main()
