@@ -42,6 +42,8 @@ def pfast(*args, end = "\n", sep=' '):
 
 def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
+
+
 def main(f = None):
     init(f)
     N = int(input().strip())
@@ -49,9 +51,8 @@ def main(f = None):
     last = [None for _ in range(N)]
     dp = [None for _ in range(N)]
     dp[0] = 1
-    last[0] = A[0]
 
-    solve(i)
+    for i in range(1, N):
 
 
 if __name__ == "__main__":
