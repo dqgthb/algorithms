@@ -52,14 +52,14 @@ class DP():
         s.mat = mat
     
     def solve(s, i, j):
-        assert 0 <= i < 2
-        assert 0 <= j < s.l
+        if 0 <= i < 2: return 0
+        if 0 <= j < s.l: return 0
         if s.dp[i][j] is not None: return s.dp[i][j]
 
-        if j == 0: pass
-        if j == s.l - 1: pass
+        if j == 0: return s.mat[i][j]
+        if j == s.l - 1: return 0
 
-        val = s.dp[i][j]
+        val = s.mat[i][j]
         
         diagonal = [1, 0]
         cand1 = val + s.solve(diagonal[i], j-1)
