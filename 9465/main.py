@@ -45,6 +45,10 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 def solve():
     
 
+class DP():
+    def __init__(s, l):
+        dp = [[None for _ in range(l)] for _ in range(2)]
+
 def main(f = None):
     global mat
     init(f)
@@ -52,6 +56,7 @@ def main(f = None):
     for _ in range(t):
         l = int(input().strip())
         mat = [list(map(int, input().split())) for _ in range(2)]
+        s = Solution(l)
         ans = solve()
 
 if __name__ == "__main__":
