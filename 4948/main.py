@@ -47,19 +47,15 @@ class eratosthenessSieve:
         s.n = n
         s.arr = [True for _ in range(n+1)]
         assert n > 0
-        s.arr[0] == False
-        s.arr[1] == False
+        s.arr[0] = False
+        s.arr[1] = False
         for num in range(2, n):
             for i in range(num*2, n, num):
                 s.arr[i] = False
-        s.arr[0] == False
-        s.arr[1] == False
 
 def main(f = None):
     init(f)
-    et = eratosthenessSieve(123456 * 2)
-    for i in range(10):
-        print(et.arr[i])
+    et = eratosthenessSieve(10 * 2)
     while False:
         n = int(input().strip())
         if n == 0: return
