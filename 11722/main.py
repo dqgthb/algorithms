@@ -52,6 +52,11 @@ def main(f = None):
     last[0] = A[0]
 
     for i in range(1, N):
+        cand1 = 0
+        cand2 = dp[i-1]
+
+        if cand1 > cand2:
+            dp[i] = cand1
 
 
 
