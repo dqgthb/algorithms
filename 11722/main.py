@@ -44,7 +44,15 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
 def main(f = None):
     init(f)
-    pass
+    N = int(input().strip())
+    A = (int(i) for i in input().split())
+    dp = [None for _ in range(N)]
+    dp[0] = 1
+
+    for i in range(1, N):
+
+
+
 
 if __name__ == "__main__":
     main()
