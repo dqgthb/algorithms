@@ -47,14 +47,16 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 def main(f = None):
     init(f)
     N = int(input().strip())
-    A = (int(i) for i in input().split())
+    A = [int(i) for i in input().split()]
     last = [None for _ in range(N)]
     dp = [1 for _ in range(N)]
     dp[0] = 1
     for i in range(1, N):
         for j in range(i - 1, -1, -1):
-            if arr[i] < arr[j]:
-                if
+            if A[i] < A[j]:
+                if dp[j] >= dp[i]:
+                    dp[i] = dp[j] + 1
+    print(dp)
 
 
 if __name__ == "__main__":
