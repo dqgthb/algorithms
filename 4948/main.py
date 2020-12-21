@@ -55,10 +55,8 @@ class eratosthenessSieve:
 
 def main(f = None):
     init(f)
-    et = eratosthenessSieve(10 * 2)
-    for i in range(len(et.arr)):
-        print(f"{i} {et.arr[i]}")
-    while False:
+    et = eratosthenessSieve(123456*2)
+    while True:
         n = int(input().strip())
         if n == 0: return
 
