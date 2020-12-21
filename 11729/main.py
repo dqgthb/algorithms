@@ -43,13 +43,15 @@ def pfast(*args, end = "\n", sep=' '):
 def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
 count = 0
+out = []
 def solve(n, from_, to, rest):
     global count
+    global out
     if n == 0:
         return
     solve(n-1, from_, rest, to)
     count += 1
-    print(f"{from_} to {to}")
+    out.append(f"{from_} {to}")
     solve(n-1, rest, to, from_)
 
 def main(f = None):
@@ -57,6 +59,8 @@ def main(f = None):
     n = int(input().strip())
     solve(n, 1, 3, 2)
     print(count)
+    for i in out:
+        print(i)
 
 if __name__ == "__main__":
     main()
