@@ -46,6 +46,9 @@ class eratosthenessSieve:
     def __init__(s, n):
         s.n = n
         s.arr = [True for _ in range(n+1)]
+        assert n > 0
+        s.arr[0] == False
+        s.arr[1] == False
         for num in range(2, n):
             for i in range(num*2, n, num):
                 s.arr[i] = False
