@@ -42,7 +42,9 @@ def pfast(*args, end = "\n", sep=' '):
 
 def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
-def solve(arr, from_, to)
+def solve(arr, from_, to):
+    solve(from_ to)
+    print("1 to 3")
 
 def main(f = None):
     init(f)
