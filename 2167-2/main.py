@@ -50,6 +50,11 @@ def main(f = None):
 
     K = int(input())
 
+    for _ in range(K):
+        i, j, x, y = map(int, input().split())
+        print(i, j, x, y)
+
+    input()
 
 
 if __name__ == "__main__":
