@@ -52,9 +52,8 @@ def main(f = None):
     for i in range(1, N):
         for j in range(i - 1, -1, -1):
             if A[i] > A[j]:
-                if dp[j] >= dp[i]:
-                    dp[i] = dp[j] +
-    print(dp)
+                if dp[j] + A[i] >= dp[i]:
+                    dp[i] = dp[j] + A[i]
     print(max(dp))
 
 
