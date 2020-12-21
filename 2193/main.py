@@ -45,6 +45,9 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 def numOfPinaryNum(n):
     if n == 1: return 1
     if n == 2: return 1
+    if n == 3: return 2
+    if dp[n] is not None:
+        return dp[n]
     return numOfPinaryNum(n-1) + numOfPinaryNum(n-2)
 
 def main(f = None):
@@ -52,11 +55,6 @@ def main(f = None):
     N = int(input().strip())
     global dp
     dp = [None for _ in range(91)]
-    dp[1] = 1
-    dp[2] = 1
-    dp[3] = 2
-    dp[4] = 
-    dp[4] = dp[2]
     ans = numOfPinaryNum(N)
     print(ans)
 
