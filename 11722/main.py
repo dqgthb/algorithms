@@ -56,7 +56,7 @@ def main(f = None):
             if A[i] < A[j]:
                 if dp[j] >= dp[i]:
                     dp[i] = dp[j] + 1
-    print(dp)
+    print(dp[-1])
 
 
 if __name__ == "__main__":
