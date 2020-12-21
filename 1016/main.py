@@ -47,6 +47,9 @@ class Sieve:
         s.mi = mi
         s.ma = ma
         s.arr = [True for _ in range(ma-mi+1)]
+
+        for i in range(2, 1000001):
+            sqr = i*i
     
     def get(s, n):
         return s.arr[n - s.mi]
