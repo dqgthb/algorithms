@@ -2,6 +2,7 @@ import os
 import sys
 import itertools
 import collections
+import typing
 
 DEBUG = False
 
@@ -49,9 +50,11 @@ def main(f = None):
     cnt = collections.Counter()
     for i in range(1, N+1):
         cnt.update(str(i))
-    OUT = [0 for i in range(10)]
+    OUT: List(str) = ["" for i in range(10)]
     for i in range(10):
-        OUT[i] = cnt[i]
+        OUT[i] = str(cnt[i])
+    
+    print(" ".join(OUT))
 
 
 if __name__ == "__main__":
