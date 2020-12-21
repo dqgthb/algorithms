@@ -47,7 +47,7 @@ def main(f = None):
     cnt = collections.Counter()
     for i in range(1, 100):
         cnt.update(str(i))
-    print(cnt.values())
+    print(cnt.items())
 
 
 if __name__ == "__main__":
