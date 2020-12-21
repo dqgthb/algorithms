@@ -60,10 +60,13 @@ class DP():
         if j == s.l - 1: pass
 
         val = s.dp[i][j]
-
-        if i == 0:
-            cand1 = val + s.solve(1, j-1)
-            cand2 = val + s.solve(1, j-2)
+        
+        diagonal = [1, 0]
+        cand1 = val + s.solve(diagonal[i], j-1)
+        cand2 = val + s.solve(diagonal[i], j-2)
+        ret = max(cand1, cand2)
+        dp[i][j] = ret
+        return ret
 
 
 def main(f = None):
