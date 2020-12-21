@@ -44,10 +44,11 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
 def main(f = None):
     init(f)
+
     cnt = collections.Counter()
-    for i in range(1, 100):
+    for i in range(1, 102):
         cnt.update(str(i))
-    print(cnt.items())
+        print(cnt.values())
 
 
 if __name__ == "__main__":
