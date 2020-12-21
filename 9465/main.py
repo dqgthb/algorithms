@@ -56,6 +56,10 @@ class DP():
         assert 0 <= j < s.l
         if s.dp[i][j] is not None: return s.dp[i][j]
 
+        if j == 0: pass
+        if j == s.l - 1: pass
+
+
 
 
 
