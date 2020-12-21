@@ -44,8 +44,9 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
 def main(f = None):
     init(f)
-    n = 11
-    cnt = collections.Counter(str(n))
+    cnt = collections.Counter()
+    for i in range(10):
+        cnt.update(str(i))
     print(cnt)
 
 
