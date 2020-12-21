@@ -42,11 +42,14 @@ def pfast(*args, end = "\n", sep=' '):
 
 def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
+count = 0
 def solve(n, from_, to, rest):
+    count += 1
     if n == 0:
         return
     solve(n-1, from_, rest, to)
     print(f"{from_} to {to}")
+    solve(n-1, rest, to, from_)
 
 def main(f = None):
     init(f)
