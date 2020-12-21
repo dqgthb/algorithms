@@ -59,6 +59,7 @@ def main(f = None):
         if n == 0: return
 
         arr = et.arr
+        for i in range(n+1, 2*n+1):
 
 
 if __name__ == "__main__":
