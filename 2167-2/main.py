@@ -46,5 +46,13 @@ def main(f = None):
     init(f)
     N, M = map(int, input().split())
 
+    mat = [[0 for _ in range(M)] for _ in range(N)]
+
+    for i in mat:
+        print(i)
+
+
+
+
 if __name__ == "__main__":
     main()
