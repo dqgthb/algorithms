@@ -46,11 +46,9 @@ def main(f = None):
     init(f)
     N, M = map(int, input().split())
 
-    mat = [[0 for _ in range(M)] for _ in range(N)]
+    mat = [list(map(int, input().split())) for _ in range(N)]
 
-    for i in mat:
-        print(i)
-
+    K = int(input())
 
 
 
