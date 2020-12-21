@@ -42,6 +42,10 @@ def pfast(*args, end = "\n", sep=' '):
 
 def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
+class eratosthenessSieve:
+    def __init__(s, n):
+        s.arr = 
+
 def main(f = None):
     init(f)
 
