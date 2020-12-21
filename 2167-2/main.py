@@ -53,6 +53,12 @@ def main(f = None):
     for _ in range(K):
         i, j, x, y = map(int, input().split())
 
+        for r in range(i, x):
+            for c in range(j, y):
+
+
+
+
 
 if __name__ == "__main__":
     main()
