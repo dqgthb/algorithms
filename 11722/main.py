@@ -53,12 +53,12 @@ def main(f = None):
 
     for i in range(1, N):
         cand1 = 0
+        if last[i-1] > A[i]:
+            cand1 = dp[i-1] + 1
         cand2 = dp[i-1]
-
         if cand1 > cand2:
             dp[i] = cand1
-
-
+            last[i] = A[i]
 
 
 if __name__ == "__main__":
