@@ -47,11 +47,17 @@ class eratosthenessSieve:
         s.n = n
         s.arr = [True for _ in range(n+1)]
         for num in range(2, n):
-            for i in range(2, n, num):
+            for i in range(num*2, n, num):
                 s.arr[i] = False
 
 def main(f = None):
     init(f)
+    et = eratosthenessSieve(123456)
+
+    while True:
+        n = int(input().strip())
+        if n == 0: return
+
 
 
 if __name__ == "__main__":
