@@ -46,7 +46,12 @@ def main(f = None):
     init(f)
     N, S = (int(i) for i in input().split())
     arr = [int(i) for i in input().split()]
-
+    cum = [i for i in arr]
+    for i in range(1, len(cum)):
+        cum[i] += cum[i-1]
+    
+    for i in range(N):
+        for j in range(N):
 
 if __name__ == "__main__":
     main()
