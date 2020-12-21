@@ -52,11 +52,14 @@ class eratosthenessSieve:
         for num in range(2, n):
             for i in range(num*2, n, num):
                 s.arr[i] = False
+        s.arr[0] == False
+        s.arr[1] == False
 
 def main(f = None):
     init(f)
     et = eratosthenessSieve(123456 * 2)
-    print(et.arr[0:100])
+    for i in range(10):
+        print(et.arr[i])
     while False:
         n = int(input().strip())
         if n == 0: return
