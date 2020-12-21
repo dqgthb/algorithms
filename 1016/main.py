@@ -63,11 +63,20 @@ class Sieve:
     
     def set(s, n, v):
         s.arr[n - s.mi] = v
+    
+    def count(s):
+        count = 0
+        for i in s.arr:
+            if i:
+                count += 1
+        return count
 
 def main(f = None):
     init(f)
     mi, ma = (int(i) for i in input().split())
     sieve = Sieve()
+    ans = sieve.count()
+    print(ans)
 
 
 
