@@ -50,6 +50,10 @@ def numOfPinaryNum(n):
 def main(f = None):
     init(f)
     N = int(input().strip())
+    global dp
+    dp = [None for _ in range(91)]
+    dp[1] = 1
+    dp[2] = 1
     ans = numOfPinaryNum(N)
     print(ans)
 
