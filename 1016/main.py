@@ -50,7 +50,10 @@ class Sieve:
 
         for i in range(2, 1000001):
             sqr = i*i
-            for j in range(mi, ma + 1, sqr)
+            q, r = divmod(mi, sqr)
+            if r == 0:
+                start = mi
+            for j in range(mi, ma + 1, sqR)
     
     def get(s, n):
         return s.arr[n - s.mi]
