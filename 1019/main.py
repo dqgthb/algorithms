@@ -46,7 +46,7 @@ def main(f = None):
     init(f)
 
     cnt = collections.Counter()
-    for i in range(1, 102):
+    for i in range(1, 1002):
         cnt.update(str(i))
         print(i, cnt.values())
 
