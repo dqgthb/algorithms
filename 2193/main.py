@@ -48,13 +48,17 @@ def numOfPinaryNum(n):
     if n == 3: return 2
     if dp[n] is not None:
         return dp[n]
-    return numOfPinaryNum(n-1) + numOfPinaryNum(n-2)
+    ret = numOfPinaryNum(n-1) + numOfPinaryNum(n-2)
+    dp[n] = ret
+    return ret
 
 def main(f = None):
     init(f)
     N = int(input().strip())
     global dp
     dp = [None for _ in range(91)]
+    for i in range(N):
+        numOfPinaryNum(i)
     ans = numOfPinaryNum(N)
     print(ans)
 
