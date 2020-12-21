@@ -74,8 +74,9 @@ def main(f = None):
         l = int(input().strip())
         mat = [list(map(int, input().split())) for _ in range(2)]
         s = DP(l, mat)
-        a1 = s.solve(, j)
-        c2 = s.solve(, j)
+        c1 = s.solve(0, l-1)
+        c2 = s.solve(1, l-1)
+        print(c1, c2)
 
 if __name__ == "__main__":
     main()
