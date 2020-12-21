@@ -44,15 +44,24 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
 def main(f = None):
     init(f)
-    N, M = map(int, input().split())
-
-    mat = [list(map(int, input().split())) for _ in range(N)]
-
-    K = int(input())
-
-    for _ in range(K):
-        i, j, x, y = map(int, input().split())
-
+    N, M = (int(i) for i in input().split())
+    arr = [int(i) for i in input().split()]
+    l = h = sum_ = count = 0
+    sum_ += arr[h]
+    h += 1
+    while True:
+        if sum_ == M:
+            count += 1
+            sum_ -= arr[l]
+            l += 1
+        elif sum_ < M:
+            if h == N: break
+            sum_ += arr[h]
+            h += 1
+        else:
+            sum_ -= arr[l]
+            l += 1
+    print(count)
 
 if __name__ == "__main__":
     main()
