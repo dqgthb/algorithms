@@ -58,6 +58,7 @@ def main(f = None):
         n = int(input().strip())
         if n == 0: return
 
+        arr = et.arr
 
 
 if __name__ == "__main__":
