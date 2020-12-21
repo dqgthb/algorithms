@@ -54,7 +54,8 @@ def main(f = None):
     init(f)
     et = eratosthenessSieve(123456 * 2)
 
-    while True:
+    print(et.arr[0:100])
+    while False:
         n = int(input().strip())
         if n == 0: return
 
