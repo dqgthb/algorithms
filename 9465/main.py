@@ -79,7 +79,7 @@ def main(f = None):
             s.solve(1, j)
         c1 = s.solve(0, l-1)
         c2 = s.solve(1, l-1)
-        print(c1, c2)
+        print(max(c1, c2))
 
 if __name__ == "__main__":
     main()
