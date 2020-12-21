@@ -49,12 +49,11 @@ def main(f = None):
     N = int(input().strip())
     A = [int(i) for i in input().split()]
     last = [None for _ in range(N)]
-    dp = [1 for _ in range(N)]
-    dp[0] = 1
+    dp = [float("inf") for _ in range(N)]
     for i in range(1, N):
         for j in range(i - 1, -1, -1):
-            if A[i] < A[j]:
-                if dp[j] >= dp[i]:
+            if A[i] > A[j]:
+                if dp[j] <= dp[i]:
                     dp[i] = dp[j] + 1
     print(max(dp))
 
