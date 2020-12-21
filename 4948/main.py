@@ -44,7 +44,7 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
 class eratosthenessSieve:
     def __init__(s, n):
-        s.arr = 
+        s.arr = [False for _ in range(n+1)]
 
 def main(f = None):
     init(f)
