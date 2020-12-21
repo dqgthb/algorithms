@@ -50,6 +50,7 @@ class Sieve:
 
         for i in range(2, 1000001):
             sqr = i*i
+            if sqr > s.ma: break
             q, r = divmod(mi, sqr)
             if r == 0:
                 start = mi
