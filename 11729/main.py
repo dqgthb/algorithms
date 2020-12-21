@@ -46,11 +46,12 @@ def solve(n, from_, to, rest):
     if n == 0:
         return
     solve(n-1, from_, rest, to)
-    print(f"solve")
+    print(f"{from_} to {to}")
 
 def main(f = None):
     init(f)
-    solve(from_, to)
+    n = int(input().strip())
+    solve(n, 1, 3, 2)
 
 if __name__ == "__main__":
     main()
