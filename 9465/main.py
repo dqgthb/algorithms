@@ -42,8 +42,6 @@ def pfast(*args, end = "\n", sep=' '):
 
 def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
-def solve():
-    
 
 class DP():
     def __init__(s, l, mat):
@@ -57,7 +55,6 @@ class DP():
         if s.dp[i][j] is not None: return s.dp[i][j]
 
         if j == 0: return s.mat[i][j]
-        if j == s.l - 1: return 0
 
         val = s.mat[i][j]
         
@@ -65,7 +62,7 @@ class DP():
         cand1 = val + s.solve(diagonal[i], j-1)
         cand2 = val + s.solve(diagonal[i], j-2)
         ret = max(cand1, cand2)
-        dp[i][j] = ret
+        s.dp[i][j] = ret
         return ret
 
 
@@ -77,7 +74,8 @@ def main(f = None):
         l = int(input().strip())
         mat = [list(map(int, input().split())) for _ in range(2)]
         s = DP(l, mat)
-        ans = solve()
+        a1 = s.solve(, j)
+        c2 = s.solve(, j)
 
 if __name__ == "__main__":
     main()
