@@ -43,14 +43,16 @@ def pfast(*args, end = "\n", sep=' '):
 def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
 def solve():
+    
 
 def main(f = None):
+    global mat
     init(f)
     t = int(input().strip())
     for _ in range(t):
         l = int(input().strip())
         mat = [list(map(int, input().split())) for _ in range(2)]
-        solve(mat)
+        ans = solve()
 
 if __name__ == "__main__":
     main()
