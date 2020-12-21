@@ -42,7 +42,7 @@ def pfast(*args, end = "\n", sep=' '):
 
 def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
-dp = [None for _ in range(81)]
+dp = [None for _ in range(82)]
 dp[0] = 1
 dp[1] = 1
 def fib(dp, n):
@@ -52,11 +52,14 @@ def fib(dp, n):
         return 1
     if dp[n] is not None:
         return dp[n]
-    return fib(dp, n-1) + fib(dp, n-2)
+    dp[n] = fib(dp, n-1) + fib(dp, n-2)
+    return dp[n]
 
 def main(f = None):
     init(f)
     n = int(input().strip())
+    for i in range(n):
+        fib(dp, n)
     ans = fib(dp, n + 1)
     print(ans * 2)
 

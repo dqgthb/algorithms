@@ -44,34 +44,31 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
 def main(f = None):
     init(f)
-    str_ = input().strip()
-    l = len(str_)
-    import math
-    R = 0
-    for i in range(int(math.sqrt(l)), 0, -1):
-        if l % i == 0:
-            R = i
-            break
-    assert R != 0
-    C = l // R
+    while True:
+        w, h = (int(i) for i in input().split())
+        if w == h == 0:
+            return
+        mat = [list(map(int, input().split())) for _ in range(h)]
 
-    arr = [[None for _ in range(C)] for _ in range(R)]
-    idx = 0
-    for j in range(C):
-        for i in range(R):
-            arr[i][j] = str_[idx]
-            idx += 1
+        count = 0
+        for i in range(h):
+            for j in range(w):
+                if mat[i][j] == 1:
+                    count += 1
+                    dfs(mat, w, h, i, j)
+        print(count)
 
-    res = [None for _ in range(len(str_))]
-    idx = 0
-    for i in range(R):
-        for j in range(C):
-            res[idx] = arr[i][j]
-            idx += 1
-    print(''.join(res))
+def dfs(mat, w, h, i, j):
+    if not 0 <= i < h:
+        return
+    if not 0 <= j < w:
+        return
+    if mat[i][j] == 0:
+        return
+    mat[i][j] = 0
 
-
-
+    for x, y in itertools.product([-1, 0, 1], repeat = 2):
+        dfs(mat, w, h, i+x, j+y)
 
 
 if __name__ == "__main__":

@@ -44,33 +44,19 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
 def main(f = None):
     init(f)
-    str_ = input().strip()
-    l = len(str_)
-    import math
-    R = 0
-    for i in range(int(math.sqrt(l)), 0, -1):
-        if l % i == 0:
-            R = i
-            break
-    assert R != 0
-    C = l // R
+    N = int(input().strip())
+    S = input().strip()
 
-    arr = [[None for _ in range(C)] for _ in range(R)]
-    idx = 0
-    for j in range(C):
-        for i in range(R):
-            arr[i][j] = str_[idx]
-            idx += 1
-
-    res = [None for _ in range(len(str_))]
-    idx = 0
-    for i in range(R):
-        for j in range(C):
-            res[idx] = arr[i][j]
-            idx += 1
-    print(''.join(res))
-
-
+    score = 0
+    bonus = 0
+    for i, e in enumerate(S):
+        if e == 'O':
+            score += i + 1
+            score += bonus
+            bonus += 1
+        else:
+            bonus = 0
+    print(score)
 
 
 
