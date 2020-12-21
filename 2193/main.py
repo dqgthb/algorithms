@@ -50,6 +50,8 @@ def numOfPinaryNum(n):
 def main(f = None):
     init(f)
     N = int(input().strip())
+    ans = numOfPinaryNum(N)
+    print(ans)
 
 
 if __name__ == "__main__":
