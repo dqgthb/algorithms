@@ -48,7 +48,7 @@ def main(f = None):
     N = int(input().strip())
     A = [int(i) for i in input().split()]
     last = [None for _ in range(N)]
-    dp = [0 for _ in range(N)]
+    dp = [i for i in A]
     dp[0] = A[0]
     for i in range(1, N):
         for j in range(i - 1, -1, -1):
