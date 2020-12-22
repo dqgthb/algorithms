@@ -55,6 +55,10 @@ def DP():
             arr[0] = 0
             arr[1] = 1
         
+        for i in range(1, n):
+            for j in range(1, k):
+                s.get(n, k)
+
     def get(s, n, k):
         dp = s.dp
         if k == 0: return 0
@@ -66,14 +70,13 @@ def DP():
         ret = 0
         for i in range(1, n):
             ret += s.get(i, k-1)
-        
-
+        dp[n][k] = ret
+        return ret
 
 
 
 def main(f = None):
     init(f)
-    pass
 
 if __name__ == "__main__":
     main()
