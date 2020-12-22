@@ -42,7 +42,7 @@ def pfast(*args, end = "\n", sep=' '):
 
 def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
-def DP():
+class DP():
     def __init__(s, n, k):
         s.n = n
         s.k = k
