@@ -49,6 +49,7 @@ class HideAndCatch():
         s.maxStage = 100000
         s.visited = [False for _ in range(s.maxStage+1)]
         s.parents = [None for _ in range(s.maxStage+1)]
+        s.path = []
 
 
     def bfs(s):
@@ -69,7 +70,10 @@ class HideAndCatch():
                     dq.append((i, time+1, curr))
         else:
             print("answer not found!")
-    def getParents(s):
+    def getParents(s, k):
+        parent = s.parents[k]
+        if parent is None: return
+        append}
 
 
 
