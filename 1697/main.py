@@ -40,12 +40,11 @@ def bfs(k):
             return
 
         
-        def addCand(x):
-            def withinRange(x):
-                return 0 <= x <= 100000
-            if withinRange(x) and not visited[x]:
+        for x in [curr-1, curr+1]:
+            if 0 <= x <= 100000 and not visited[x]:
                 visited[x] = True
                 dq.append((x, curStep + 1))
+            
 
         addCand(curr-1)
         addCand(curr+1)
