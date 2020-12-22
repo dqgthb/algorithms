@@ -67,26 +67,14 @@ class DP():
 
 
     def get(s, n, k):
-        dp = s.dp
-        if k == 0: return 0
-        if k == 1: return 1
-        val = dp[n][k]
-        if val is not None:
-            return val
-        
-        ret = 0
-        for i in range(1, n):
-            ret += s.get(i, k-1)
-        dp[n][k] = ret
-        return ret
-
+        if dp[n][k]
 
 
 def main(f = None):
     init(f)
     N, K = map(int, input().split())
     dp = DP(N, K)
-    dp.dp
+    ans = dp.dp[N][K]
     print(ans)
 
 if __name__ == "__main__":
