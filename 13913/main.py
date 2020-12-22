@@ -90,7 +90,9 @@ def main(f = None):
     hac = HideAndCatch(N, K)
     ans = hac.bfs()
     path = hac.getPath(K)
+    path.reverse()
     print(ans)
+    print(' '.join(path.)
 
 
 if __name__ == "__main__":
