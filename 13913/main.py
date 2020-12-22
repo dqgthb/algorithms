@@ -74,11 +74,11 @@ class HideAndCatch():
     def _getParents(s, k):
         parent = s.parents[k]
         if parent is None: return
-        s.path.append[parent]
-        s.getParents(parent)
+        s.path.append(parent)
+        s._getParents(parent)
 
     def getPath(s, k):
-        s.path = []
+        s.path = [k]
         s._getParents(k)
         return s.path
 
@@ -91,6 +91,7 @@ def main(f = None):
     ans = hac.bfs()
     path = hac.getPath(K)
     print(ans)
+    print(path)
 
 
 if __name__ == "__main__":
