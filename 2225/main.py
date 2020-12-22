@@ -61,13 +61,16 @@ class DP():
                 if dp[i][j] is not None:
                     continue
                 ret = dp[i-1][j-1] + dp[i-1][j]
-                dp[i][j] = ret
-                e
+               dp[i][j] = ret
 
 
 
     def get(s, n, k):
-        if dp[n][k]
+        if dp[n][k] is not None:
+            return dp[n][k]
+        ret = s.get(n-1, j-1) + s.get(n-1, j)
+        dp[n][k] = ret
+        return ret
 
 
 def main(f = None):
