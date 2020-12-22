@@ -48,15 +48,15 @@ class HideAndCatch():
         s.k = k
         s.maxStage = 100000
         s.visited = [False for _ in range(s.maxStage+1)]
-        
-        dq = collections.dq()
-        dq.append((n, 0))
+
+    def bfs(s):
+        dq = collections.deque()
+        dq.append((s.n, 0))
         while dq:
             curr, time = dq.popleft()
             s.visited[curr] = True
             if curr == s.k:
-                return ans
-
+                return time
 
             nextStep = [curr+1, curr-1, curr*2]
             for i in nextStep:
@@ -72,6 +72,8 @@ def main(f = None):
     pass
     N, K = (int(i) for i in input().split())
     hac = HideAndCatch(N, K)
+    ans = hac.bfs()
+    print(ans)
 
 
 if __name__ == "__main__":
