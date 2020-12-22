@@ -70,11 +70,17 @@ class HideAndCatch():
                     dq.append((i, time+1, curr))
         else:
             print("answer not found!")
+
     def getParents(s, k):
         parent = s.parents[k]
         if parent is None: return
-        append}
+        s.path.append[parent]
+        s.getParents(parent)
 
+    def getPath(s, k):
+        path = []
+        s.getParents(s, k)
+        return s.path
 
 
 def main(f = None):
