@@ -62,8 +62,12 @@ def DP():
         val = dp[n][k]
         if val is not None:
             return val
+        
+        ret = 0
+        for i in range(1, n):
+            ret += s.get(i, k-1)
+        
 
-        ret = 2 * dp[n-1][k-1]
 
 
 
