@@ -55,7 +55,11 @@ def DP():
             arr[0] = 0
             arr[1] = 1
         
-    def get(n):
+    def get(n, k):
+        if 
+        val = dp[n][k]
+        if val is not None:
+            return val
 
 
 
