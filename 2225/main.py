@@ -46,7 +46,7 @@ class DP():
     def __init__(s, n, k):
         s.n = n
         s.k = k
-        s.max_ = 21
+        s.max_ = n + 1
         
         dp = [[None for _ in range(s.max_)] for _ in range(s.max_)]
         s.dp =dp
