@@ -75,6 +75,7 @@ def main(f = None):
     init(f)
     N, K = map(int, input().split())
     dp = DP(N, K)
+    ans = dp.get(N, K)
     for i in dp.dp:
         print(i)
     print(ans)
