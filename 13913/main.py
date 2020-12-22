@@ -54,10 +54,16 @@ class HideAndCatch():
         while dq:
             curr, time = dq.popleft()
             s.visited[curr] = True
-            
+            if curr == s.k:
+                return ans
+
+
             nextStep = [curr+1, curr-1, curr*2]
             for i in nextStep:
-                if 0 <= i <= s.maxStage and not s.visited[curr]
+                if 0 <= i <= s.maxStage and not s.visited[curr]:
+                    dq.append(i, time+1)
+        else:
+            print("answer not found!")
 
 
 
