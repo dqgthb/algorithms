@@ -47,13 +47,15 @@ class HideAndCatch():
         s.n = n
         s.k = k
         s.visited = [False for _ in range(100001)]
+        
+        dq = collections.dq()
+        while dq:
 
 
 def main(f = None):
     init(f)
     pass
     N, K = (int(i) for i in input().split())
-    global visited
     hac = HideAndCatch(N, K)
 
 
