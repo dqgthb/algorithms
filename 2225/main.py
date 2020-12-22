@@ -52,7 +52,7 @@ class DP():
         s.dp =dp
         dp[1][1] = 1
         for i, arr in enumerate(dp):
-            arr[0] = 0
+            arr[0] = None
             arr[1] = 1
             arr[i] = 1
         
