@@ -61,7 +61,8 @@ class DP():
                 if dp[i][j] is not None:
                     continue
                 ret = dp[i-1][j-1] + dp[i-1][j]
-                dp[i]
+                dp[i][j] = ret
+                e
 
 
 
@@ -85,7 +86,7 @@ def main(f = None):
     init(f)
     N, K = map(int, input().split())
     dp = DP(N, K)
-    ans = dp.get(N, K)
+    dp.dp
     print(ans)
 
 if __name__ == "__main__":
