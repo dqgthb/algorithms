@@ -56,12 +56,10 @@ class HideAndCatch():
         dq.append((s.n, 0, None))
         while dq:
             curr, time, parent = dq.popleft()
-            print(curr, time)
             if s.visited[curr]:
                 continue
             s.visited[curr] = True
-            if 
-
+            s.parents[curr] = parent
             if curr == s.k:
                 return time
 
@@ -71,6 +69,7 @@ class HideAndCatch():
                     dq.append((i, time+1, curr))
         else:
             print("answer not found!")
+    def getParents(s):
 
 
 
