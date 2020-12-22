@@ -49,6 +49,7 @@ class HideAndCatch():
         s.visited = [False for _ in range(100001)]
         
         dq = collections.dq()
+        dq.append((n, 0))
         while dq:
 
 
