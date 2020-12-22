@@ -51,9 +51,10 @@ class DP():
         dp = [[None for _ in range(s.max_)] for _ in range(s.max_)]
         s.dp =dp
         dp[1][1] = 1
-        for arr in dp:
+        for i, arr in enumerate(dp):
             arr[0] = 0
             arr[1] = 1
+            arr[i] = 1
         
         for i in range(1, n):
             for j in range(1, k):
