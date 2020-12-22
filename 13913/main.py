@@ -49,11 +49,12 @@ class HideAndCatch():
         s.maxStage = 100000
         s.visited = [False for _ in range(s.maxStage+1)]
 
+
     def bfs(s):
         dq = collections.deque()
-        dq.append((s.n, 0))
+        dq.append((s.n, 0, None))
         while dq:
-            curr, time = dq.popleft()
+            curr, time, paren = dq.popleft()
             print(curr, time)
             if s.visited[curr]:
                 continue
@@ -63,8 +64,8 @@ class HideAndCatch():
 
             nextStep = [curr+1, curr-1, curr*2]
             for i in nextStep:
-                if 0 <= i <= s.maxStage and not s.visited[curr]:
-                    dq.append(i, time+1)
+                if 0 <= i <= s.maxStage and not s.visited[i]:
+                    dq.append((i, time+1))
         else:
             print("answer not found!")
 
