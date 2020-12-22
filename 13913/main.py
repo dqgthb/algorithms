@@ -51,6 +51,8 @@ class HideAndCatch():
         dq = collections.dq()
         dq.append((n, 0))
         while dq:
+            curr, time = dq.popleft()
+
 
 
 def main(f = None):
