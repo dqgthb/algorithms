@@ -42,13 +42,19 @@ def pfast(*args, end = "\n", sep=' '):
 
 def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
+class HideAndCatch():
+    def __init__(s, n, k):
+        s.n = n
+        s.k = k
+        s.visited = [False for _ in range(100001)]
+
 
 def main(f = None):
     init(f)
     pass
     N, K = (int(i) for i in input().split())
     global visited
-    solve(N, K)
+    hac = HideAndCatch(N, K)
 
 
 if __name__ == "__main__":
