@@ -20,11 +20,6 @@ def pfast(*args, end = "\n", sep=' '):
 
 def get_ints(): return map(int, sys.stdin.readline().strip().split())
 
-visited = [False for _ in range(100001)]
-dq = collections.deque()
-K = 0
-N = 0
-ans = 0
 def bfs(k):
     global visited, dq, ans, K, N
     if not 0 <= k <= 100000:
@@ -39,7 +34,6 @@ def bfs(k):
             ans = curStep
             return
 
-        
         arr = [curr-1, curr+1]
         if curr % 2 == 0:
             arr.append(curr//2)
@@ -47,14 +41,16 @@ def bfs(k):
             if 0 <= x <= 100000 and not visited[x]:
                 visited[x] = True
                 dq.append((x, curStep + 1))
-        addCand(curr-1)
-        addCand(curr+1)
-        if curr % 2 == 0: addCand(curr//2)
 
 def main():
     global visited, dq, ans, K, N
+    dq = collections.deque()
+    K = 0
+    N = 0
+    visited = [False for _ in range(100001)]
     N, K = (int(i) for i in input().split())
     bfs(K)
+    ans = 0
     print(ans)
 
 
