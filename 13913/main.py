@@ -54,6 +54,7 @@ class HideAndCatch():
         dq.append((s.n, 0))
         while dq:
             curr, time = dq.popleft()
+            print(curr, time)
             if s.visited[curr]:
                 continue
             s.visited[curr] = True
