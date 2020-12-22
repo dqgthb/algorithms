@@ -54,7 +54,9 @@ def DP():
         for arr in dp:
             arr[0] = 0
             arr[1] = 1
-
+        
+    def get():
+        retuns,dd
 
 
 
