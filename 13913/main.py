@@ -47,9 +47,9 @@ class HideAndCatch():
         s.n = n
         s.k = k
         s.maxStage = 100000
+        s.path = []
         s.visited = [False for _ in range(s.maxStage+1)]
         s.parents = [None for _ in range(s.maxStage+1)]
-        s.path = []
 
 
     def bfs(s):
@@ -71,15 +71,15 @@ class HideAndCatch():
         else:
             print("answer not found!")
 
-    def getParents(s, k):
+    def _getParents(s, k):
         parent = s.parents[k]
         if parent is None: return
         s.path.append[parent]
         s.getParents(parent)
 
     def getPath(s, k):
-        path = []
-        s.getParents(s, k)
+        s.path = []
+        s._getParents(k)
         return s.path
 
 
@@ -89,6 +89,7 @@ def main(f = None):
     N, K = (int(i) for i in input().split())
     hac = HideAndCatch(N, K)
     ans = hac.bfs()
+    path = hac.getPath(K)
     print(ans)
 
 
