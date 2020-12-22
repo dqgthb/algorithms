@@ -47,10 +47,10 @@ def main():
     dq = collections.deque()
     K = 0
     N = 0
+    ans = 0
     visited = [False for _ in range(100001)]
     N, K = (int(i) for i in input().split())
     bfs(K)
-    ans = 0
     print(ans)
 
 
