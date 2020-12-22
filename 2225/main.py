@@ -63,7 +63,7 @@ def DP():
         if val is not None:
             return val
 
-        dp[n][k] 
+        ret = 2 * dp[n-1][k-1]
 
 
 
