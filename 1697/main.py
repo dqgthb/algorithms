@@ -40,12 +40,13 @@ def bfs(k):
             return
 
         
-        for x in [curr-1, curr+1]:
+        arr = [curr-1, curr+1]
+        if curr % 2 == 0:
+            arr.append(curr//2)
+        for x in arr:
             if 0 <= x <= 100000 and not visited[x]:
                 visited[x] = True
                 dq.append((x, curStep + 1))
-            
-
         addCand(curr-1)
         addCand(curr+1)
         if curr % 2 == 0: addCand(curr//2)
