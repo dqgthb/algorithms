@@ -57,11 +57,8 @@ class DP():
             arr[i] = 1
         
         for i in range(3, n):
-            for j in range(2, k):
-                if dp[i][j] is not None:
-                    continue
-                ret = dp[i-1][j-1] + dp[i-1][j]
-               dp[i][j] = ret
+            for j in range(2, i+1):
+                s.get(i, j)
 
 
 
