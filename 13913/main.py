@@ -92,7 +92,7 @@ def main(f = None):
     path = hac.getPath(K)
     path.reverse()
     print(ans)
-    print(' '.join(path.)
+    print(' '.join(map(str, path)))
 
 
 if __name__ == "__main__":
