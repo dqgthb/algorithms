@@ -60,6 +60,8 @@ class DP():
             for j in range(2, k):
                 if dp[i][j] is not None:
                     continue
+                ret = dp[i-1][j-1] + dp[i-1][j]
+                dp[i]
 
 
 
