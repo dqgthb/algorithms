@@ -46,12 +46,17 @@ class HideAndCatch():
     def __init__(s, n, k):
         s.n = n
         s.k = k
-        s.visited = [False for _ in range(100001)]
+        s.maxStage = 100000
+        s.visited = [False for _ in range(s.maxStage+1)]
         
         dq = collections.dq()
         dq.append((n, 0))
         while dq:
             curr, time = dq.popleft()
+            
+            nextStep = [curr+1, curr-1, curr*2]
+            for i in nextStep:
+                if 0 <= i <= 
 
 
 
