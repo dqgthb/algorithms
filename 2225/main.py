@@ -77,6 +77,10 @@ def DP():
 
 def main(f = None):
     init(f)
+    N, K = map(int, input().split())
+    dp = DP(N, K)
+    ans = dp.get(N, K)
+    print(ans)
 
 if __name__ == "__main__":
     main()
