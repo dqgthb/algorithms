@@ -56,9 +56,12 @@ class DP():
             arr[1] = 1
             arr[i] = 1
         
-        for i in range(1, n):
-            for j in range(1, k):
-                s.get(n, k)
+        for i in range(3, n):
+            for j in range(2, k):
+                if dp[i][j] is not None:
+                    continue
+
+
 
     def get(s, n, k):
         dp = s.dp
