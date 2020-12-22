@@ -53,10 +53,11 @@ class HideAndCatch():
         dq.append((n, 0))
         while dq:
             curr, time = dq.popleft()
+            s.visited[curr] = True
             
             nextStep = [curr+1, curr-1, curr*2]
             for i in nextStep:
-                if 0 <= i <= 
+                if 0 <= i <= s.maxStage and not s.visited[curr]
 
 
 
