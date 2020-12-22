@@ -4,6 +4,7 @@ import itertools
 import collections
 
 DEBUG = False
+MOD = 1000000000
 
 def setStdin(f):
     global DEBUG
@@ -67,6 +68,7 @@ class DP():
         if dp[n][k] is not None:
             return dp[n][k]
         ret = s.get(n-1, k-1) + s.get(n-1, k)
+        ret %= MOD
         dp[n][k] = ret
         return ret
 
