@@ -42,10 +42,13 @@ def pfast(*args, end = "\n", sep=' '):
 
 def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
+
 def main(f = None):
     init(f)
     pass
     N, K = (int(i) for i in input().split())
+    global visited
+    solve(N, K)
 
 
 if __name__ == "__main__":
