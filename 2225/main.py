@@ -75,7 +75,6 @@ def main(f = None):
     init(f)
     N, K = map(int, input().split())
     dp = DP(N, K)
-    ans = dp.dp[N][K]
     for i in dp.dp:
         print(i)
     print(ans)
