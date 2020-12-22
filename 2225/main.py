@@ -46,7 +46,7 @@ class DP():
     def __init__(s, n, k):
         s.n = n
         s.k = k
-        s.max_ = 201
+        s.max_ = 21
         
         dp = [[None for _ in range(s.max_)] for _ in range(s.max_)]
         s.dp =dp
@@ -57,15 +57,16 @@ class DP():
             arr[i] = 1
         
         for i in range(3, n):
-            for j in range(2, i+1):
+            for j in range(2, i):
                 s.get(i, j)
 
 
 
     def get(s, n, k):
+        dp = s.dp
         if dp[n][k] is not None:
             return dp[n][k]
-        ret = s.get(n-1, j-1) + s.get(n-1, j)
+        ret = s.get(n-1, k-1) + s.get(n-1, k)
         dp[n][k] = ret
         return ret
 
@@ -75,6 +76,8 @@ def main(f = None):
     N, K = map(int, input().split())
     dp = DP(N, K)
     ans = dp.dp[N][K]
+    for i in dp.dp:
+        print(i)
     print(ans)
 
 if __name__ == "__main__":
