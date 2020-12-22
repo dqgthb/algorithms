@@ -42,6 +42,7 @@ def bfs(k):
                 visited[x] = True
                 dq.append((x, curStep + 1))
 
+
 def main():
     global visited, dq, ans, K, N
     dq = collections.deque()

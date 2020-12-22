@@ -91,7 +91,6 @@ def main(f = None):
     ans = hac.bfs()
     path = hac.getPath(K)
     print(ans)
-    print(path)
 
 
 if __name__ == "__main__":
