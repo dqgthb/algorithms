@@ -55,11 +55,15 @@ def DP():
             arr[0] = 0
             arr[1] = 1
         
-    def get(n, k):
-        if 
+    def get(s, n, k):
+        dp = s.dp
+        if k == 0: return 0
+        if k == 1: return 1
         val = dp[n][k]
         if val is not None:
             return val
+
+        dp[n][k] 
 
 
 
