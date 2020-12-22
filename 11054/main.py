@@ -42,44 +42,43 @@ def pfast(*args, end = "\n", sep=' '):
 
 def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
-class Sieve:
-    def __init__(s, mi, ma):
-        s.mi = mi
-        s.ma = ma
-        s.arr = [True for _ in range(ma-mi+1)]
+class DP:
+    def __init__(s, A):
+        s.N = len(A)
+        s.A = A
+        s.dp()
 
-        for i in range(2, 1000001):
-            sqr = i*i
-            if sqr > s.ma: break
-            q, r = divmod(mi, sqr)
-            if r == 0:
-                start = mi
-            else:
-                start = sqr * (q+1)
-            for j in range(start, ma + 1, sqr):
-                s.set(j, False)
     
-    def get(s, n):
-        return s.arr[n - s.mi]
-    
-    def set(s, n, v):
-        s.arr[n - s.mi] = v
-    
-    def count(s):
-        count = 0
-        for i in s.arr:
-            if i:
-                count += 1
-        return count
+    def dp(s):
+        A = s.A
+        dpi = [0 for _ in range(s.N)]
+        dpd = [0 for _ in range(s.N)]
+
+        for i in range(1, s.N):
+            for j in range(i-1, -1, -1):
+                if A[i] > A[j]:
+                    if dpi[i] <= dpi[j]:
+                        dpi[i] = dpi[j] + 1
+        
+        for i in range(s.N-1, -1, -1):
+            for j in range(i+1, s.N):
+                if A[i] > A[j]:
+                    if dpd[i] <= dpd[j]:
+                        dpd[i] = dpd[j] + 1
+        s.dpi = dpi
+        s.dpd = dpd
+        s.sum_ = [i+j for i, j in zip(dpi, dpd)]
+
+
+
 
 def main(f = None):
     init(f)
-    mi, ma = (int(i) for i in input().split())
-    sieve = Sieve(mi, ma)
-    ans = sieve.count()
-    print(ans)
+    N = int(input().strip())
+    A = [int(i) for i in input().split()]
 
-
+    dp = DP(A)
+    print(max(dp.sum_) + 1)
 
 if __name__ == "__main__":
     main()

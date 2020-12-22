@@ -42,42 +42,21 @@ def pfast(*args, end = "\n", sep=' '):
 
 def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
-class Sieve:
-    def __init__(s, mi, ma):
-        s.mi = mi
-        s.ma = ma
-        s.arr = [True for _ in range(ma-mi+1)]
-
-        for i in range(2, 1000001):
-            sqr = i*i
-            if sqr > s.ma: break
-            q, r = divmod(mi, sqr)
-            if r == 0:
-                start = mi
-            else:
-                start = sqr * (q+1)
-            for j in range(start, ma + 1, sqr):
-                s.set(j, False)
-    
-    def get(s, n):
-        return s.arr[n - s.mi]
-    
-    def set(s, n, v):
-        s.arr[n - s.mi] = v
-    
-    def count(s):
-        count = 0
-        for i in s.arr:
-            if i:
-                count += 1
-        return count
-
 def main(f = None):
     init(f)
-    mi, ma = (int(i) for i in input().split())
-    sieve = Sieve(mi, ma)
-    ans = sieve.count()
-    print(ans)
+    N = int(input().strip())
+    S = input().strip()
+
+    score = 0
+    bonus = 0
+    for i, e in enumerate(S):
+        if e == 'O':
+            score += i + 1
+            score += bonus
+            bonus += 1
+        else:
+            bonus = 0
+    print(score)
 
 
 

@@ -44,34 +44,48 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
 def main(f = None):
     init(f)
-    str_ = input().strip()
-    l = len(str_)
-    import math
-    R = 0
-    for i in range(int(math.sqrt(l)), 0, -1):
-        if l % i == 0:
-            R = i
-            break
-    assert R != 0
-    C = l // R
+    N, K = (int(i) for i in input().split())
 
-    arr = [[None for _ in range(C)] for _ in range(R)]
-    idx = 0
-    for j in range(C):
-        for i in range(R):
-            arr[i][j] = str_[idx]
-            idx += 1
-
-    res = [None for _ in range(len(str_))]
-    idx = 0
-    for i in range(R):
-        for j in range(C):
-            res[idx] = arr[i][j]
-            idx += 1
-    print(''.join(res))
+    global dp
+    dp = [[None for _ in range(K+1)] for _ in range(N)]
+    items = [Item(*map(int, input().split())) for _ in range(N)]
+    for i in range(N):
+        for j in range(K):
+            knapsack(items, i, j)
+    ans = knapsack(items, N-1, K)
+    print(ans)
 
 
+class Item:
+    def __init__(s, w, v):
+        s.w = w
+        s.v = v
+    
+    def __repr__(s):
+        return "Item:" + str((s.w, s.v))
 
+def knapsack(items, i, K):
+    item = items[i]
+
+    if i == 0:
+        if item.w <= K:
+            return item.v
+        else:
+            return 0
+    
+    if dp[i][K] is not None:
+        return dp[i][K]
+
+    if item.w > K:
+        ret = knapsack(items, i-1, K)
+        dp[i][K] = ret
+        return ret
+
+    cand1 = knapsack(items, i-1, K - item.w) + item.v
+    cand2 = knapsack(items, i-1, K)
+    ret = max(cand1, cand2)
+    dp[i][K] = ret
+    return ret
 
 
 if __name__ == "__main__":

@@ -42,44 +42,33 @@ def pfast(*args, end = "\n", sep=' '):
 
 def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
-class Sieve:
-    def __init__(s, mi, ma):
-        s.mi = mi
-        s.ma = ma
-        s.arr = [True for _ in range(ma-mi+1)]
+class eratosthenesSieve:
+    def __init__(s, N):
+        s.N = N
+        s.primes = None
+        s.arr = [True for _ in range(N+1)]
+        s.arr[0] = False
+        s.arr[1] = False
+        for i in range(2, N-1):
+            for j in range(2 * i, N+1, i):
+                s.arr[j] = False
+    
+    def isPrime(s, n):
+        return s.arr[n]
+    
+    def getPrimes(s):
+        if s.primes is not None:
+            return s.primes
 
-        for i in range(2, 1000001):
-            sqr = i*i
-            if sqr > s.ma: break
-            q, r = divmod(mi, sqr)
-            if r == 0:
-                start = mi
-            else:
-                start = sqr * (q+1)
-            for j in range(start, ma + 1, sqr):
-                s.set(j, False)
-    
-    def get(s, n):
-        return s.arr[n - s.mi]
-    
-    def set(s, n, v):
-        s.arr[n - s.mi] = v
-    
-    def count(s):
-        count = 0
-        for i in s.arr:
-            if i:
-                count += 1
-        return count
+        s.primes = [i for i, e in enumerate(s.arr) if e]
+        return s.primes
+
 
 def main(f = None):
     init(f)
-    mi, ma = (int(i) for i in input().split())
-    sieve = Sieve(mi, ma)
-    ans = sieve.count()
-    print(ans)
-
-
+    N = int(input().strip())
+    es = eratosthenesSieve(N)
+    print(es.getPrimes())
 
 if __name__ == "__main__":
     main()
