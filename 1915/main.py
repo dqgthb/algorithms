@@ -52,5 +52,9 @@ def main(f = None):
 
     dp = [[0 for _ in range(m)] for _ in range(n)]
 
+    for i in range(n):
+        if mat[i][0] == 1:
+            dp[i][0] = 1
+
 if __name__ == "__main__":
     main()
