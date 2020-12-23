@@ -50,5 +50,7 @@ def main(f = None):
     for i in mat:
         print(i)
 
+    dp = [[0 for _ in range(m)] for _ in range(n)]
+
 if __name__ == "__main__":
     main()
