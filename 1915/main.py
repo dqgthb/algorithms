@@ -62,7 +62,10 @@ def main(f = None):
         
     for i in range(1, n):
         for j in range(1, m):
-            if mat[i][j]
+            dia = dp[i-1][j-1]
+            up = dp[i-1][j]
+            left = dp[i][j-1]
+            dp[i
 
     for i in dp:
         print(i)
