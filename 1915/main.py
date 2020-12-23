@@ -47,8 +47,8 @@ def main(f = None):
     n, m = map(int, input().split())
     
     mat = [list(map(int, (i for i in input().strip()))) for _ in range(n)]
-    for i in mat:
-        print(i)
+
+    dp = [[0 for _ in range(m)] for _ in range(n)]
 
 
 if __name__ == "__main__":
