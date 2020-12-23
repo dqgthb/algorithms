@@ -66,10 +66,12 @@ def main(f = None):
                 ret = min((dia, up, down))+1
                 dp[i][j] = ret
 
-    mat_ = 0
+    max_ = 0
     for i in range(n):
         for j in range(m):
             val = dp[i][j]
+            if val > max_:
+                max_ = val
     
     print(max_**2)
 
