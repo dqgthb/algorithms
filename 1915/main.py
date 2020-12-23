@@ -50,7 +50,6 @@ def main(f = None):
 
     dp = [[0 for _ in range(m)] for _ in range(n)]
 
-    prin
 
 
 if __name__ == "__main__":
