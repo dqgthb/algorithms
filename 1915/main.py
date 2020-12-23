@@ -49,6 +49,8 @@ def main(f = None):
     mat = [list(map(int, (i for i in input().strip()))) for _ in range(n)]
 
     dp = [[0 for _ in range(m)] for _ in range(n)]
+    for i in range(n):
+        if mat[i]
 
 
 
