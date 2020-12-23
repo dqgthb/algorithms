@@ -57,15 +57,19 @@ def main(f = None):
         if mat[0][i] == 1:
             dp[0][i] = 1
 
+    max_ = 0
     for i in range(1, n):
         for j in range(1, m):
             if mat[i][j] == 1:
                 dia = dp[i-1][j-1]
                 up = dp[i-1][j]
                 down = dp[i][j-1]
-                dp[i][j] = min((dia, up, down))+1
-    for i in dp:
-        print(i)
+                ret = min((dia, up, down))+1
+                dp[i][j] = ret
+                if ret > max_:
+                    max_ = ret
+    
+    print(max_**2)
 
 
 
