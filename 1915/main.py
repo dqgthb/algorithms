@@ -59,6 +59,9 @@ def main(f = None):
 
     for i in range(1, n):
         for j in range(1, m):
+            dia = dp[i-1][j-1]
+            up = dp[i-1][j]
+            down = dp[i][j-1]
 
 
 
