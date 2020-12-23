@@ -63,6 +63,9 @@ def main(f = None):
                 dia = dp[i-1][j-1]
                 up = dp[i-1][j]
                 down = dp[i][j-1]
+                dp[i][j] = min((dia, up, down))+1
+    for i in dp:
+        print(i)
 
 
 
