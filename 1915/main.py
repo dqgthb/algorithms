@@ -45,12 +45,36 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 def main(f = None):
     init(f)
     n, m = map(int, input().split())
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> a3990db11e4cd5f0fbca4b284db3c35d71770137
     mat = [list(map(int, (i for i in input().strip()))) for _ in range(n)]
     for i in mat:
         print(i)
 
+<<<<<<< HEAD
 
+=======
+    dp = [[0 for _ in range(m)] for _ in range(n)]
+
+    for i in range(n):
+        if mat[i][0] == 1:
+            dp[i][0] = 1
+    
+    for j in range(m):
+        if mat[0][j] == 1:
+            dp[0][j] = 1
+        
+    for i in range(1, n):
+        for j in range(1, m):
+            if mat[i][j]
+
+    for i in dp:
+        print(i)
+    
+>>>>>>> a3990db11e4cd5f0fbca4b284db3c35d71770137
 
 if __name__ == "__main__":
     main()
