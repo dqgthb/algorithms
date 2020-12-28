@@ -92,9 +92,10 @@ class Graph():
 
     
     def solve(s, a, b):
-        dA = depth[a]
-        dB = depth[b]
-
+        dA = s.depth[a]
+        dB = s.depth[b]
+        if dB > dA:
+            a, b = b, a
         return 0
 
 if __name__ == "__main__":
