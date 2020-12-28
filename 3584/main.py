@@ -48,13 +48,13 @@ def main(f = None):
 
     for _ in range(T):
         N = int(input())
-        G = [[False for _ in range(N)] for _ in range(N)]
+        G = [[] for _ in range(N)]
         parents = [None for _ in range(N)]
         for _ in range(N-1):
             a, b = map(int, input().split())
             a -= 1
             b -= 1
-            G[a][b] = True
+            G[a].append(b)
             parents[b] = a
         A, B = map(int, input().split())
         g = Graph(G, parents)
