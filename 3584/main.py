@@ -64,6 +64,9 @@ class Graph():
         s.g = graph
         s.n = len(g)
     
+    def root(s):
+        curr = 0
+    
     def depth(s):
         s.d = [None for _ in range(s.n)]
     
