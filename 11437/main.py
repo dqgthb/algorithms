@@ -54,9 +54,9 @@ def Graph():
         q = collections.deque()
         root = 0
         d = 0
-        q.append((root, d))
+        q.append((root, d, None))
         while q:
-            node, d = q.popleft()
+            node, d, parent = q.popleft()
             depth[node] = d
             for i in s.g:
                 if not added[i]:
@@ -66,7 +66,6 @@ def Graph():
 
     def lca(s, a, b):
         d = s.depth
-        p = s.parent
         if d[a] < d[b]:
             a, b = b, a
 
@@ -82,8 +81,6 @@ def main(f = None):
         a, b = map(lambda x: int(x) - 1, input().split())
         g[a].append(b)
         g[b].append(a)
-    
-    g = Graph()
 
     M = int(input())
     for _ in range(N-1):
