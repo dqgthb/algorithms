@@ -66,16 +66,20 @@ class Graph():
         s.g = graph
         s.n = len(graph)
         s.parents = parents
+        s.root = s.updateRoot()
     
-    def getRoot(s):
+    def updateRoot(s):
         curr = 0
-        while s.parents[curr]
+        while s.parents[curr] is not None:
+            curr = s.parents[curr]
+        return curr
 
     
     def depth(s):
         s.d = [None for _ in range(s.n)]
     
     def _bfs(s):
+        pass
 
     
     def solve(s, A, B):
