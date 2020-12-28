@@ -63,10 +63,10 @@ class Graph():
     def __init__(s, graph):
         s.g = graph
         s.n = len(g)
-        s.parent = [None for _ in range(s.n)]
+        s.parents = s.getParents()
     
-    def parents(s):
-        
+    def getParents(s):
+        curr = 0
 
     
     def depth(s):
