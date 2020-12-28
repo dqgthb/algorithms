@@ -49,23 +49,25 @@ def main(f = None):
     for _ in range(T):
         N = int(input())
         G = [[False for _ in range(N)] for _ in range(N)]
+        parents = [None for _ in range(N)]
         for _ in range(N-1):
             a, b = map(int, input().split())
             a -= 1
             b -= 1
             G[a][b] = True
+            parents[b] = a
         A, B = map(int, input().split())
-        g = Graph(G)
+        g = Graph(G, parents)
         ans = g.solve(A, B)
         print(ans)
 
 class Graph():
-    def __init__(s, graph):
+    def __init__(s, graph, parents):
         s.g = graph
-        s.n = len(g)
-        s.parents = s.getParents()
+        s.n = len(graph)
+        s.parents = parents
     
-    def getParents(s):
+    def getRoot(s):
         curr = 0
 
     
@@ -73,7 +75,7 @@ class Graph():
         s.d = [None for _ in range(s.n)]
     
     def _bfs(s):
-        for 
+
     
     def solve(s, A, B):
         return 0
