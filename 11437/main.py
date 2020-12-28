@@ -80,7 +80,7 @@ class Graph:
 
         while a != b:
             a = p[a]
-            b = p[a]
+            b = p[b]
         return a
 
 def main(f = None):
@@ -96,7 +96,7 @@ def main(f = None):
     graph = Graph(g)
 
     M = int(input())
-    for _ in range(N-1):
+    for _ in range(M):
         a, b = map(lambda x: int(x) - 1, input().split())
         ans = graph.lca(a, b)
         print(ans + 1)
