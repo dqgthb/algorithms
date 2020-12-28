@@ -49,6 +49,13 @@ def Graph():
     
     def updateDepth(s):
         depth = [None for _ in range(N)]
+
+        q = collections.deque()
+        root = 0
+        d = 0
+        q.append((root, d))
+        while q:
+            node, d = q.pop()
     
     def lca(s, a, b):
         s.append
