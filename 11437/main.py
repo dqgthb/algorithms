@@ -45,6 +45,10 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 def Graph():
     def __init__(s, g):
         s.g = g
+        s.n = len(g)
+    
+    def updateDepth(s):
+        depth = [None for _ in range(N)]
     
     def lca(s, a, b):
         s.append
