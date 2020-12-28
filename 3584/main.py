@@ -69,7 +69,7 @@ class Graph():
     
     def getRoot(s):
         curr = 0
-        while s.parents[]
+        while s.parents[curr]
 
     
     def depth(s):
