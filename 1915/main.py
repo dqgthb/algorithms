@@ -45,23 +45,21 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 def main(f = None):
     init(f)
     n, m = map(int, input().split())
-
+    
     mat = [list(map(int, (i for i in input().strip()))) for _ in range(n)]
-    for i in mat:
-        print(i)
 
     dp = [[0 for _ in range(m)] for _ in range(n)]
-
     for i in range(n):
         if mat[i][0] == 1:
             dp[i][0] = 1
-    
-    for j in range(m):
-        if mat[0][j] == 1:
-            dp[0][j] = 1
-        
+
+    for i in range(m):
+        if mat[0][i] == 1:
+            dp[0][i] = 1
+
     for i in range(1, n):
         for j in range(1, m):
+<<<<<<< HEAD
             dia = dp[i-1][j-1]
             up = dp[i-1][j]
             left = dp[i][j-1]
@@ -69,7 +67,25 @@ def main(f = None):
 
     for i in dp:
         print(i)
+=======
+            if mat[i][j] == 1:
+                dia = dp[i-1][j-1]
+                up = dp[i-1][j]
+                down = dp[i][j-1]
+                ret = min((dia, up, down))+1
+                dp[i][j] = ret
+
+    max_ = 0
+    for i in range(n):
+        for j in range(m):
+            val = dp[i][j]
+            if val > max_:
+                max_ = val
+>>>>>>> ebfca36da7033275e0d8954b2edbd6416be23637
     
+    print(max_**2)
+
+
 
 if __name__ == "__main__":
     main()
