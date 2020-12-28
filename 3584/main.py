@@ -48,7 +48,8 @@ def main(f = None):
 
     for _ in range(T):
         N = int(input())
-        mat = [[]]
+        mat = [[0 for _ in range(N)] for _ in range(N)]]
+        for _ in range(N):
 
 
 if __name__ == "__main__":
