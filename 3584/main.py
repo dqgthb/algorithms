@@ -57,6 +57,8 @@ def main(f = None):
             G[a].append(b)
             parents[b] = a
         A, B = map(int, input().split())
+        A -= 1
+        B -= 1
         g = Graph(G, parents)
         ans = g.solve(A, B)
         print(ans)
