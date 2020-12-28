@@ -102,9 +102,6 @@ class Graph():
         while a is not None and s.depth[a] > db:
             a = s.parents[a]
         
-        if a is None:
-            dprint("something wrong")
-        
         while a != b:
             a = s.parents[a]
             b = s.parents[b]
