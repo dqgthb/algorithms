@@ -47,10 +47,11 @@ def Graph():
         s.g = g
         s.n = len(g)
     
-    def updateDepth(s):
+    def update(s):
         N = s.n
         depth = [None for _ in range(N)]
         added = [None for _ in range(N)]
+        parents = [None for _ in range(N)]
         q = collections.deque()
         root = 0
         d = 0
@@ -58,14 +59,17 @@ def Graph():
         while q:
             node, d, parent = q.popleft()
             depth[node] = d
+            parents[node] = parent
             for i in s.g:
                 if not added[i]:
                     added[i] = True
-                    q.append((i, d+1))
+                    q.append((i, d+1, node))
         s.depth = depth
+        s.parents = parents
 
     def lca(s, a, b):
         d = s.depth
+        p = s.parents
         if d[a] < d[b]:
             a, b = b, a
 
