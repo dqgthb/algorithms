@@ -86,14 +86,15 @@ class Graph():
     def _bfs(s, depthArr, vis, node, d = 0):
         q = collections.deque()
         q.append((node, d))
-
-        if vis[node]: return
-        vis[node] = True
-        depthArr[node] = d
-
-        for i in s.g[node]:
-            if not vis[i]:
-                s._bfs(depthArr, vis, i, d+1)
+        
+        while q:
+            node, d = q.popleft()
+            if vis[node]: return
+            vis[node] = True
+            depthArr[node] = d
+            for i in s.g[node]:
+                if not vis[i]:
+                    s._bfs(depthArr, vis, i, d+1)
 
     def solve(s, a, b):
         da = s.depth[a]
