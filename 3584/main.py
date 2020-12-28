@@ -53,11 +53,11 @@ def main(f = None):
             a, b = map(int, input().split())
             a -= 1
             b -= 1
-            mat[a][b] = True
+            G[a][b] = True
         A, B = map(int, input().split())
         g = Graph(G)
         ans = g.solve(A, B)
-    print(ans)
+        print(ans)
 
 class Graph():
     def __init__(s, graph):
