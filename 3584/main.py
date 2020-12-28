@@ -101,10 +101,13 @@ class Graph():
             a = s.parents[a]
         
         if a is None:
-            print("something wrong")
+            dprint("something wrong")
         
-
-
+        while a != b:
+            a = s.parents[a]
+            b = s.parents[b]
+        
+        return a
 
         return 0
 
