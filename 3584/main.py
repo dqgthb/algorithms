@@ -90,7 +90,7 @@ class Graph():
         
         while q:
             node, d = q.popleft()
-            if vis[node]: return
+            # if vis[node]: return
             vis[node] = True
             depthArr[node] = d
             for i in s.g[node]:

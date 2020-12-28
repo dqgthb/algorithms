@@ -48,6 +48,7 @@ def Graph():
         s.n = len(g)
     
     def updateDepth(s):
+        N = s.n
         depth = [None for _ in range(N)]
         vis = [None for _ in range(N)]
         added = [None for _ in range(N)]
@@ -56,8 +57,10 @@ def Graph():
         d = 0
         q.append((root, d))
         while q:
-            if 
             node, d = q.pop()
+            if vis[node]:
+                continue
+
             
     
     def lca(s, a, b):
