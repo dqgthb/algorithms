@@ -96,7 +96,7 @@ class Graph():
             for i in s.g[node]:
                 if not vis[i] and not added[i]:
                     q.append((i, d+1))
-                    s._bfs(depthArr, vis, i, d+1)
+                    added[i] = True
 
     def solve(s, a, b):
         da = s.depth[a]
