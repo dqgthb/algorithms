@@ -59,7 +59,8 @@ def Graph():
             node, d = q.pop()
             depth[node] = d
             for i in s.g:
-    
+                if not added[i]:
+
     def lca(s, a, b):
         s.append
 
