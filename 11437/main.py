@@ -49,6 +49,11 @@ def main(f = None):
     for _ in range(N-1):
         a, b = map(lambda x: int(x) - 1, input().split())
         g[a].append(b)
+        g[b].append(a)
+    
+    M = int(input())
+    for _ in range(N-1):
+        a, b = map(lambda x: int(x) - 1, input().split())
 
 if __name__ == "__main__":
     main()
