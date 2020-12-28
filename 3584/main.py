@@ -62,9 +62,13 @@ def main(f = None):
 class Graph():
     def __init__(s, graph):
         s.g = graph
+        s.n = len(g)
     
     def depth(s):
-        s.
+        s.d = [None for _ in range(s.n)]
+    
+    def _bfs(s):
+        for 
     
     def solve(s, A, B):
         return 0
