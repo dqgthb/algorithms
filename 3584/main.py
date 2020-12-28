@@ -63,6 +63,9 @@ class Graph():
     def __init__(s, graph):
         s.g = graph
     
+    def depth(s):
+        s.
+    
     def solve(s, A, B):
         return 0
 
