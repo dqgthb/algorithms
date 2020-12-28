@@ -84,6 +84,9 @@ class Graph():
         s.depth = depthArr
 
     def _bfs(s, depthArr, vis, node, d = 0):
+        q = collections.deque()
+        q.append((node, d))
+
         if vis[node]: return
         vis[node] = True
         depthArr[node] = d
