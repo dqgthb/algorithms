@@ -48,11 +48,14 @@ def main(f = None):
 
     for _ in range(T):
         N = int(input())
-        mat = [[0 for _ in range(N)] for _ in range(N)]]
+        mat = [[False for _ in range(N)] for _ in range(N)]]
         for _ in range(N-1):
             a, b = map(int, input().split())
+            mat[a][b] = True
         
+        A, B = map(int, input().split())
 
+        depth = [0 for _ in range(N)]
 
 
 if __name__ == "__main__":
