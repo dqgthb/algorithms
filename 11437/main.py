@@ -42,6 +42,13 @@ def pfast(*args, end = "\n", sep=' '):
 
 def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
+def Graph():
+    def __init__(s, g):
+        s.g = g
+    
+    def lca(s, a, b):
+        s.append
+
 def main(f = None):
     init(f)
     N = int(input())
