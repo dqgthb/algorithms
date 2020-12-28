@@ -48,17 +48,18 @@ def main(f = None):
 
     for _ in range(T):
         N = int(input())
-        mat = [[False for _ in range(N)] for _ in range(N)]
+        G = [[False for _ in range(N)] for _ in range(N)]
         for _ in range(N-1):
             a, b = map(int, input().split())
             a -= 1
             b -= 1
             mat[a][b] = True
-        
         A, B = map(int, input().split())
+        ans = solve(G, A, B)
 
-        depth = [None for _ in range(N+1)]
-
+class Graph():
+    def __init__(s, graph):
+        s.g = graph
 
 if __name__ == "__main__":
     main()
