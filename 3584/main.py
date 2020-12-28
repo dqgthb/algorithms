@@ -66,14 +66,14 @@ class Graph():
         s.g = graph
         s.n = len(graph)
         s.parents = parents
-        s.root = s.updateRoot()
-        s.depth = [None for _ in range(s.n)]
+        s.updateRoot()
+        s.updateDepth()
     
     def updateRoot(s):
         curr = 0
         while s.parents[curr] is not None:
             curr = s.parents[curr]
-        return curr
+        s.root = curr
 
     def _bfs(s, depthArr, vis, node, d = 0):
         if vis[node]: return
@@ -88,9 +88,7 @@ class Graph():
         depthArr = [0 for _ in range(s.n)]
         vis = [False for _ in range(s.n)]
         s._bfs(depthArr, vis, s.root, 0)
-    
-
-        pass
+        s.depth = depthArr
 
     
     def solve(s, A, B):
