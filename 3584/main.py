@@ -91,7 +91,10 @@ class Graph():
         s.depth = depthArr
 
     
-    def solve(s, A, B):
+    def solve(s, a, b):
+        dA = depth[a]
+        dB = depth[b]
+
         return 0
 
 if __name__ == "__main__":
