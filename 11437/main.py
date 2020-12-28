@@ -47,7 +47,7 @@ def Graph():
         s.g = g
         s.n = len(g)
     
-    def update(s):
+    def update(s): # depth and parents info
         N = s.n
         depth = [None for _ in range(N)]
         added = [None for _ in range(N)]
@@ -74,7 +74,12 @@ def Graph():
             a, b = b, a
 
         while d[a] > d[b]:
-            a = 
+            a = p[a]
+
+        while a != b:
+            a = p[a]
+            b = p[a]
+        return a
 
 def main(f = None):
     init(f)
@@ -85,10 +90,13 @@ def main(f = None):
         a, b = map(lambda x: int(x) - 1, input().split())
         g[a].append(b)
         g[b].append(a)
+    
+    graph = Graph(g)
 
     M = int(input())
     for _ in range(N-1):
         a, b = map(lambda x: int(x) - 1, input().split())
+        ans = graph.lca(a, b)
 
 if __name__ == "__main__":
     main()
