@@ -92,10 +92,20 @@ class Graph():
 
     
     def solve(s, a, b):
-        dA = s.depth[a]
-        dB = s.depth[b]
-        if dB > dA:
+        da = s.depth[a]
+        db = s.depth[b]
+        if db > da:
             a, b = b, a
+        
+        while a is not None and s.depth[a] > db:
+            a = s.parents[a]
+        
+        if a is None:
+            print("something wrong")
+        
+
+
+
         return 0
 
 if __name__ == "__main__":
