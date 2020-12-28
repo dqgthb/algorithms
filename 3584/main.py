@@ -61,7 +61,7 @@ def main(f = None):
         B -= 1
         g = Graph(G, parents)
         ans = g.solve(A, B)
-        print(ans)
+        print(ans+1)
 
 class Graph():
     def __init__(s, graph, parents):
@@ -98,6 +98,7 @@ class Graph():
         db = s.depth[b]
         if db > da:
             a, b = b, a
+            db, da = da, db
         
         while a is not None and s.depth[a] > db:
             a = s.parents[a]
@@ -108,7 +109,6 @@ class Graph():
         
         return a
 
-        return 0
 
 if __name__ == "__main__":
     main()
