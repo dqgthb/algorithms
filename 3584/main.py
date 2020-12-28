@@ -55,11 +55,16 @@ def main(f = None):
             b -= 1
             mat[a][b] = True
         A, B = map(int, input().split())
-        ans = solve(G, A, B)
+        g = Graph(G)
+        ans = g.solve(A, B)
+    print(ans)
 
 class Graph():
     def __init__(s, graph):
         s.g = graph
+    
+    def solve(s, A, B):
+        return 0
 
 if __name__ == "__main__":
     main()
