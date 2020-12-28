@@ -63,9 +63,11 @@ class Graph():
     def __init__(s, graph):
         s.g = graph
         s.n = len(g)
+        s.parent = [None for _ in range(s.n)]
     
-    def root(s):
-        curr = 0
+    def parents(s):
+        
+
     
     def depth(s):
         s.d = [None for _ in range(s.n)]
