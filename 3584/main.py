@@ -49,7 +49,10 @@ def main(f = None):
     for _ in range(T):
         N = int(input())
         mat = [[0 for _ in range(N)] for _ in range(N)]]
-        for _ in range(N):
+        for _ in range(N-1):
+            a, b = map(int, input().split())
+        
+
 
 
 if __name__ == "__main__":
