@@ -77,8 +77,11 @@ class Graph():
 
     
     def updateDepth(s):
+        depthArr = [0 for _ in range(s.n)]
+        s._bfs(depthArr, s.root, 0)
     
-    def _bfs(s, node, depth):
+    def _bfs(s, arr, node, depth):
+        depth
 
         pass
 
