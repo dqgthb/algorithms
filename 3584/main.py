@@ -67,6 +67,7 @@ class Graph():
         s.n = len(graph)
         s.parents = parents
         s.root = s.updateRoot()
+        s.depth = [None for _ in range(s.n)]
     
     def updateRoot(s):
         curr = 0
@@ -76,9 +77,9 @@ class Graph():
 
     
     def updateDepth(s):
-        s.d = [None for _ in range(s.n)]
     
-    def _bfs(s):
+    def _bfs(s, node, depth):
+
         pass
 
     
