@@ -56,13 +56,16 @@ def Graph():
         d = 0
         q.append((root, d))
         while q:
-            node, d = q.pop()
+            node, d = q.popleft()
             depth[node] = d
             for i in s.g:
                 if not added[i]:
+                    added[i] = True
+                    q.append((i, d+1))
+        s.depth = depth
 
     def lca(s, a, b):
-        s.append
+        if 
 
 def main(f = None):
     init(f)
