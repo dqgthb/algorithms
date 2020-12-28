@@ -76,10 +76,14 @@ class Graph():
         return curr
 
     def _bfs(s, depthArr, node, d = 0):
+        if vis[node]: return
+        if vis[node]
         depthArr[node] = d
+        for i in s.g[node]:
     
     def updateDepth(s):
         depthArr = [0 for _ in range(s.n)]
+        vis = [False for _ in range(s.n)]
         s._bfs(depthArr, s.root, 0)
     
 
