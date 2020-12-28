@@ -79,11 +79,10 @@ class Graph():
 
     def updateDepth(s):
         depthArr = [0 for _ in range(s.n)]
-        vis = [False for _ in range(s.n)]
-        s._bfs(depthArr, vis, s.root, 0)
+        s._bfs(depthArr, s.root, 0)
         s.depth = depthArr
 
-    def _bfs(s, depthArr, vis, node, d = 0):
+    def _bfs(s, depthArr, node, d = 0):
         q = collections.deque()
         q.append((node, d))
         added = [False for _ in range(s.n)]
@@ -92,7 +91,7 @@ class Graph():
             node, d = q.popleft()
             depthArr[node] = d
             for i in s.g[node]:
-                if not vis[i] and not added[i]:
+                if not added[i]:
                     q.append((i, d+1))
                     added[i] = True
 
