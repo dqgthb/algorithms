@@ -53,11 +53,12 @@ def main(f = None):
     init(f)
     N = int(input())
     g = [[] for _ in range(N)]
+    parents = [None for _ in range(N)]
     for _ in range(N-1):
         a, b = map(lambda x: int(x) - 1, input().split())
         g[a].append(b)
         g[b].append(a)
-    
+
     M = int(input())
     for _ in range(N-1):
         a, b = map(lambda x: int(x) - 1, input().split())
