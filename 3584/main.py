@@ -75,13 +75,13 @@ class Graph():
             curr = s.parents[curr]
         return curr
 
+    def _bfs(s, arr, node, depth):
+        arr
     
     def updateDepth(s):
         depthArr = [0 for _ in range(s.n)]
-        s._bfs(depthArr, s.root, 0)
+        _bfs(depthArr, s.root, 0)
     
-    def _bfs(s, arr, node, depth):
-        depth
 
         pass
 
