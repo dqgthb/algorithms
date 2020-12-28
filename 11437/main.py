@@ -42,10 +42,11 @@ def pfast(*args, end = "\n", sep=' '):
 
 def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
-def Graph():
+class Graph:
     def __init__(s, g):
         s.g = g
         s.n = len(g)
+        s.update()
     
     def update(s): # depth and parents info
         N = s.n
@@ -97,6 +98,7 @@ def main(f = None):
     for _ in range(N-1):
         a, b = map(lambda x: int(x) - 1, input().split())
         ans = graph.lca(a, b)
+        print(ans + 1)
 
 if __name__ == "__main__":
     main()
