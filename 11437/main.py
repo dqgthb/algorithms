@@ -51,20 +51,21 @@ class Graph:
     def update(s): # depth and parents info
         N = s.n
         depth = [None for _ in range(N)]
-        added = [None for _ in range(N)]
+        added = [False for _ in range(N)]
         parents = [None for _ in range(N)]
         q = collections.deque()
         root = 0
         d = 0
         q.append((root, d, None))
+        added[root] = True
         while q:
             node, d, parent = q.popleft()
             depth[node] = d
             parents[node] = parent
-            for i in s.g:
+            for i in s.g[node]:
                 if not added[i]:
-                    added[i] = True
                     q.append((i, d+1, node))
+                    added[i] = True
         s.depth = depth
         s.parents = parents
 
