@@ -44,6 +44,7 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
 def main(f = None):
     init(f)
+    T = int(input())
 
 
 if __name__ == "__main__":
