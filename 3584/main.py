@@ -75,7 +75,7 @@ class Graph():
         return curr
 
     
-    def depth(s):
+    def updateDepth(s):
         s.d = [None for _ in range(s.n)]
     
     def _bfs(s):
