@@ -77,6 +77,12 @@ class Graph():
             curr = s.parents[curr]
         s.root = curr
 
+    def updateDepth(s):
+        depthArr = [0 for _ in range(s.n)]
+        vis = [False for _ in range(s.n)]
+        s._bfs(depthArr, vis, s.root, 0)
+        s.depth = depthArr
+
     def _bfs(s, depthArr, vis, node, d = 0):
         if vis[node]: return
         vis[node] = True
@@ -85,14 +91,7 @@ class Graph():
         for i in s.g[node]:
             if not vis[i]:
                 s._bfs(depthArr, vis, i, d+1)
-    
-    def updateDepth(s):
-        depthArr = [0 for _ in range(s.n)]
-        vis = [False for _ in range(s.n)]
-        s._bfs(depthArr, vis, s.root, 0)
-        s.depth = depthArr
 
-    
     def solve(s, a, b):
         da = s.depth[a]
         db = s.depth[b]
