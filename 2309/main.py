@@ -49,11 +49,15 @@ def main(f = None):
 
     total = sum(heights)
     twosum = total-100
-    dic = {}
+    partners = set()
     for i in heights:
         partner = twosum - i
-        if partner in dic:
-            
+        if partner in partners:
+            print(i, partner)
+            return
+        else:
+            partners.add(i)
+
 
 
 if __name__ == "__main__":
