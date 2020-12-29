@@ -44,7 +44,7 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
 def main(f = None):
     init(f)
-    heights = [int(input()) for _ in range(9)]
+    heights = set(int(input()) for _ in range(9))
     print(heights)
 
     total = sum(heights)
@@ -53,7 +53,7 @@ def main(f = None):
     for i in heights:
         partner = twosum - i
         if partner in partners:
-            print(i, partner)
+            heights.pop()
             return
         else:
             partners.add(i)
