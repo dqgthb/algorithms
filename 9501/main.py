@@ -44,7 +44,12 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
 def main(f = None):
     init(f)
-    pass
+    T = int(input())
+    for _ in range(T):
+        N, D = map(int, input().split())
+        for _ in range(N):
+            v, f, c = map(int, input().split())
+            time = f / c
 
 if __name__ == "__main__":
     main()
