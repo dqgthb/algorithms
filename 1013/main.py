@@ -45,9 +45,11 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 def main(f = None):
     init(f)
     import re
+    pattern = re.compile("(100+1+|01)+")
     T = int(input())
     for _ in range(T):
         signal = input().strip()
+        print(re.match(pattern))
 
 
 if __name__ == "__main__":
