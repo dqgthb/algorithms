@@ -49,7 +49,7 @@ def main(f = None):
     T = int(input())
     for _ in range(T):
         signal = input().strip()
-        print(re.match(pattern))
+        print(pattern.match(signal))
 
 
 if __name__ == "__main__":
