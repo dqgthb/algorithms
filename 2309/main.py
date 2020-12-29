@@ -53,10 +53,16 @@ def main(f = None):
     for i in heights:
         partner = twosum - i
         if partner in partners:
-            heights.pop()
-            return
+            heights.remove(i)
+            heights.remove(partner)
+            break
         else:
             partners.add(i)
+    
+    lst = [i for i in heights]
+    lst.sort()
+    for i in lst:
+        print(i)
 
 
 
