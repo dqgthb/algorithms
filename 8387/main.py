@@ -44,17 +44,18 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
 def main(f = None):
     init(f)
-    f = input().strip()
-    s = input().strip()
+    n = int(input())
+    first = input().strip()
+    second = input().strip()
 
     count = 0
-    print(zip(f, s))
-    for i, j in zip(f, s):
+    for i, j in zip(first, second):
+        print(i, j)
         if i == j:
             count += 1
     print(count)
-    print(len(f))
-    print(len(f)-count)
+    print(len(first))
+    print(len(second)-count)
 
 if __name__ == "__main__":
     main()
