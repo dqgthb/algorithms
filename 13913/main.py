@@ -68,18 +68,14 @@ class HideAndCatch():
             for i in nextStep:
                 if 0 <= i <= s.maxStage and not s.visited[i]:
                     dq.append((i, time+1, curr))
-        else:
-            print("answer not found!")
-
-    def _getParents(s, k):
-        parent = s.parents[k]
-        if parent is None: return
-        s.path.append(parent)
-        s._getParents(parent)
 
     def getPath(s, k):
         s.path = [k]
-        s._getParents(k)
+        parent = s.parents[k]
+        while parent is not None:
+            s.path.append(parent)
+            k = parent
+            parent = s.parents[k]
         return s.path
 
 
