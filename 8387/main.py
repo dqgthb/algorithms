@@ -50,12 +50,10 @@ def main(f = None):
 
     count = 0
     for i, j in zip(first, second):
-        print(i, j)
         if i == j:
             count += 1
     print(count)
-    print(len(first))
-    print(len(second)-count)
+    #print(len(second)-count)
 
 if __name__ == "__main__":
     main()
