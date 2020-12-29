@@ -47,9 +47,13 @@ def main(f = None):
     T = int(input())
     for _ in range(T):
         N, D = map(int, input().split())
+        count = 0
         for _ in range(N):
             v, f, c = map(int, input().split())
             time = f / c
+            if D <= time * v:
+                count += 1
+        print(count)
 
 if __name__ == "__main__":
     main()
