@@ -44,7 +44,11 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
 def main(f = None):
     init(f)
-    pass
+    heights = [int(input()) for _ in range(9)]
+    print(heights)
+
+    total = sum(heights)
+    twosum = total-100
 
 if __name__ == "__main__":
     main()
