@@ -49,6 +49,12 @@ def main(f = None):
 
     total = sum(heights)
     twosum = total-100
+    dic = {}
+    for i in heights:
+        partner = twosum - i
+        if partner in dic:
+            
+
 
 if __name__ == "__main__":
     main()
