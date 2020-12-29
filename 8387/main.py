@@ -44,10 +44,11 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
 def main(f = None):
     init(f)
-    f = int(input()).strip()
-    s = int(input()).strip()
+    f = input().strip()
+    s = input().strip()
 
     count = 0
+    print(zip(f, s))
     for i, j in zip(f, s):
         if i == j:
             count += 1
