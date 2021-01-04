@@ -70,17 +70,19 @@ class SegTree:
             tree[i] = min(tree[i*2], tree[i*2+1])
 
     def query(s, l, r):
+        l += s.n
+        r += s.n
         tree = s.tree
         min_ = (2 << 30) - 1
+
         while l < r:
             if l & 1:
-                l += 1
                 min_ = min(min_, tree[l])
+                l += 1
             
             if r & 1:
-                min_ = min(min_, tree[r])
                 r -= 1
-            
+                min_ = min(min_, tree[r])
             l >>= 1
             r >>= 1
         return min_
