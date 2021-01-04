@@ -48,8 +48,9 @@ def main(f = None):
     arr = list(map(int, input().split()))
     st = SegTree(arr)
     for _ in range(Q):
-        x, y, a, b = map(int, input().split())
+        x, y, a, b = map(lambda x:int(x)-1, input().split())
         ans = st.query(x, y)
+        print(ans)
 
 
 class SegTree:
@@ -63,7 +64,8 @@ class SegTree:
             tree[i] = tree[2*i] + tree[2*i + 1]
         s.n = n
         s.tree = tree
-    
+
+    def update(s, idx, val):
     def query(s, l, r):
         n = s.n
         t = s.tree
