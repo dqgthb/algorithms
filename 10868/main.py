@@ -69,6 +69,7 @@ class SegTree:
             tree[i] = min(tree[i*2], tree[i*2+1])
 
     def query(l, r):
+        min_ = 2 << 30 - 1
         if (l & 1):
               l -= 1
 
