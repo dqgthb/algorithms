@@ -66,6 +66,13 @@ class SegTree:
         s.tree = tree
 
     def update(s, idx, val):
+        t = s.tree
+        n = s.n
+        idx += n
+        tree[idx] = val
+
+        while idx > 1:
+
     def query(s, l, r):
         n = s.n
         t = s.tree
