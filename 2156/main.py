@@ -63,9 +63,10 @@ class DP:
         if x < 2:
             return a[:x]
         
-        c1 = solve(s, lastIndex - 2) + a[x]
-        c2 = solve(s, lastIndex - 1)
-        c3 = solve(s, lastIndex - 3)
+        c2 = solve(s, x - 1) # not choose x
+        c1 = solve(s, x - 2) + a[x] # not choose x-1
+        c3 = solve(s, x - 3) + a[x] + a[x-1] # not choose x-2
+        return max(c1, c2 ,c3)
 
 def main(f = None):
     init(f)
