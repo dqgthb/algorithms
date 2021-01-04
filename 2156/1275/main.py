@@ -107,7 +107,7 @@ class SegTree:
             if l & 1:
                 i += t[l]
                 l += 1
-            
+
             if (x+1) & 1:
                 i += t[x]
                 l >>= 1
@@ -115,8 +115,10 @@ class SegTree:
                 continue
 
             l >>= 1
-            x+= 1
+            x += 1
             x >>= 1
+            x -= 1
+
         return i
 
 if __name__ == "__main__":
