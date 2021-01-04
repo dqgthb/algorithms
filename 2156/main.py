@@ -50,10 +50,9 @@ class DP:
         s.n = len(arr)
         dp = [None] * s.n
         s.dp = dp
-        
         for i in range(s.n):
             s.solve(i)
-    
+
     def solve(s, lastIndex):
         x = lastIndex
         dp = s.dp
@@ -67,7 +66,6 @@ class DP:
 
         if val is not None:
             return val
-        
 
         c2 = s.solve(x - 1) # not choose x
         c1 = s.solve(x - 2) + a[x] # not choose x-1
