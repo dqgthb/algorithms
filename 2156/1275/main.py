@@ -55,7 +55,9 @@ class SegTree:
         s.a = arr
         n = len(arr)
         tree = [None] * (2 * n)
-        tree[n:] = a[:]
+        tree[n:] = arr
+        tree[n] = 65
+        print(tree)
         
         for i in range(n-1, 0, -1):
             tree[i] = tree[2*i] + tree[2*i + 1]
