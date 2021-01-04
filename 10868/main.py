@@ -49,9 +49,17 @@ def main(f = None):
 
     queries = [list(map(int, i.split())) for i in sys.stdin.readlines()]
 
-    st = SegTree():
+    st = SegTree(arr)
 
     for q in queries:
+        pass
+
+class SegTree:
+    def __init__(s, arr):
+        s.arr = arr
+        s.tree = [0] * len(arr) * 2
+
+
 
 
 
