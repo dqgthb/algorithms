@@ -108,10 +108,13 @@ class SegTree:
                 i += t[l]
                 l += 1
 
-            if (x+1) & 1:
-                i += t[x]
+            r = x + 1
+            if r & 1:
+                r -= 1
+                i += t[r]
                 l >>= 1
-                x >>= 1
+                r >>= 1
+                x = r - 1
                 continue
 
             l >>= 1
