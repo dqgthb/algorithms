@@ -63,6 +63,10 @@ class DP:
         if x < 2:
             return a[:x]
         if x == 2:
+            c2 = solve(s, x - 1) # not choose x
+            c1 = solve(s, x - 2) + a[x] # not choose x-1
+            return max(c1, c2)
+
         
         c2 = solve(s, x - 1) # not choose x
         c1 = solve(s, x - 2) + a[x] # not choose x-1
