@@ -108,7 +108,7 @@ class SegTree:
                 i += t[l]
                 l += 1
 
-            if (x+1) & 1:
+            if not (x & 1):
                 i += t[x]
                 l >>= 1
                 x >>= 1
