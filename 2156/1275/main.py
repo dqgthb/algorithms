@@ -49,6 +49,7 @@ def main(f = None):
     st = SegTree(arr)
     for _ in range(Q):
         x, y, a, b = map(lambda x:int(x)-1, input().split())
+        if x > y: x,y = y,x
         ans = st.query(x, y)
         print(ans)
         st.update(a, b+1)
