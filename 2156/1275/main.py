@@ -89,8 +89,9 @@ class SegTree:
                 l += 1
             
             if not r & 1:
-                r -= 1
                 i += t[r]
+            else:
+                r -= 1
             l >>= 1
             r += 1
             r >>= 1
