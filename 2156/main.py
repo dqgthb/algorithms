@@ -42,10 +42,17 @@ def pfast(*args, end = "\n", sep=' '):
 
 def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
+
+def solve(arr, lastIndex):
+    x = lastIndex
+
+
+
 def main(f = None):
     init(f)
     n = int(input())
     arr = [int(input()) for _ in range(n)]
+
 
 if __name__ == "__main__":
     main()
