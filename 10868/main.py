@@ -44,6 +44,12 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
 def main(f = None):
     init(f)
+    N, M = map(int, input().split())
+    arr = [int(input()) for _ in range(N)]
+
+    for _ in range(M):
+
+
 
 if __name__ == "__main__":
     main()
