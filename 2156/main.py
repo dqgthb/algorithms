@@ -43,8 +43,6 @@ def pfast(*args, end = "\n", sep=' '):
 def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
 
-def solve(arr, lastIndex):
-    x = lastIndex
 
 class DP:
     def __init__(s, arr):
@@ -71,9 +69,9 @@ class DP:
             return val
         
 
-        c2 = solve(s, x - 1) # not choose x
-        c1 = solve(s, x - 2) + a[x] # not choose x-1
-        c3 = solve(s, x - 3) + a[x] + a[x-1] # not choose x-2
+        c2 = s.solve(x - 1) # not choose x
+        c1 = s.solve(x - 2) + a[x] # not choose x-1
+        c3 = s.solve(x - 3) + a[x] + a[x-1] # not choose x-2
         val = max(c1, c2 ,c3)
         dp[x] = val
         return val
