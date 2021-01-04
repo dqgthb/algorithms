@@ -54,8 +54,13 @@ class DP:
     
     def solve(s, lastIndex):
         x = lastIndex
-        if dp[x] is not None:
-            return dp[x]
+        dp = s.dp
+        val = dp[x]
+        if val is not None:
+            return val
+        
+        if x < 2:
+            return arr[:x]
 
 
 def main(f = None):
