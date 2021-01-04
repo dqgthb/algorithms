@@ -110,11 +110,12 @@ class SegTree:
             
             if (x+1) & 1:
                 i += t[x]
+                l >>= 1
                 x >>= 1
-                break
+                continue
 
             l >>= 1
-            x += 1
+            x+= 1
             x >>= 1
         return i
 
