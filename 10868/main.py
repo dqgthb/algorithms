@@ -57,8 +57,10 @@ def main(f = None):
 class SegTree:
     def __init__(s, arr):
         s.arr = arr
+        n = len(arr)
+        s.n = n
         s.tree = [0] * len(arr) * 2
-
+        s.tree[n:] = arr[:]
 
 
 
