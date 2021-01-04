@@ -51,6 +51,7 @@ def main(f = None):
         x, y, a, b = map(lambda x:int(x)-1, input().split())
         ans = st.query(x, y)
         print(ans)
+        st.update(a, b+1)
 
 
 class SegTree:
