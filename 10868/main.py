@@ -47,7 +47,8 @@ def main(f = None):
     N, M = map(int, input().split())
     arr = [int(input()) for _ in range(N)]
 
-    for _ in range(M):
+    queries = sys.stdin.readlines
+
 
 
 
