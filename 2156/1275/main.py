@@ -81,17 +81,18 @@ class SegTree:
         n = s.n
         t = s.tree
         l += n
-        r += n + 1
+        r += n
         i = 0
-        while l < r:
+        while l <= r:
             if l & 1:
                 i += t[l]
                 l += 1
             
-            if r & 1:
+            if not r & 1:
                 r -= 1
                 i += t[r]
             l >>= 1
+            r += 1
             r >>= 1
         return i
 
