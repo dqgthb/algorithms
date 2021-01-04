@@ -64,12 +64,18 @@ class SegTree:
     
     def query(s, l, r):
         n = s.n
+        t = s.tree
         l += n
         r += n + 1
-
+        i = 0
         while l < r:
             if l & 1:
-                
+                i += t[l]
+                l += 1
+            
+            if r & 1:
+                r -= 1
+                i += t[r]
 
 if __name__ == "__main__":
     main()
