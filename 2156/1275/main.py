@@ -103,7 +103,7 @@ class SegTree:
         l += n
         x += n # x = r - 1, r = x + 1
         i = 0
-        while l <= x+1:
+        while l <= x:
             if l & 1:
                 i += t[l]
                 l += 1
