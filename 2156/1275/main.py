@@ -52,7 +52,7 @@ def main(f = None):
         if x > y: x,y = y,x
         ans = st.query(x, y)
         print(ans)
-        st.update(a, b+1)
+        st.update(a, b)
 
 
 class SegTree:
