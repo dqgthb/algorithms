@@ -52,7 +52,8 @@ def main(f = None):
     st = SegTree(arr)
 
     for q in queries:
-        ans = st.query(*q)
+        a, b = q
+        ans = st.query(a-1, b)
         print(ans)
 
 class SegTree:
@@ -69,7 +70,7 @@ class SegTree:
         for i in range(n-1, 0, -1):
             tree[i] = min(tree[i*2], tree[i*2+1])
 
-    def query(s, l, r):
+    def query(s, l, r): # interval [l, r)
         l += s.n
         r += s.n
         tree = s.tree
