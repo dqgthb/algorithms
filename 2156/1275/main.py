@@ -97,22 +97,22 @@ class SegTree:
             r >>= 1
         return i
 
-    def query(s, l, r):
+    def query(s, l, x):
         n = s.n
         t = s.tree
         l += n
-        r += n
+        x += n # x = r - 1, r = x + 1
         i = 0
-        while l <= r:
+        while l <= x+1:
             if l & 1:
                 i += t[l]
                 l += 1
             
-            if not r & 1:
-                i += t[r]
+            if (x+1) & 1:
+                i += t[x]
 
             l >>= 1
-            r >>= 1
+            x >>= 1
         return i
 
 if __name__ == "__main__":
