@@ -53,6 +53,7 @@ def main(f = None):
 
     for q in queries:
         ans = st.query(*q)
+        print(ans)
 
 class SegTree:
     def __init__(s, arr):
@@ -73,15 +74,16 @@ class SegTree:
         min_ = (2 << 30) - 1
         while l < r:
             if l & 1:
-                l -= 1
+                l += 1
                 min_ = min(min_, tree[l])
             
             if r & 1:
                 min_ = min(min_, tree[r])
-                r += 1
+                r -= 1
             
-            l <<= 1
-            r <<= 1
+            l >>= 1
+            r >>= 1
+        return min_
 
 
 
