@@ -69,9 +69,11 @@ class SegTree:
         t = s.tree
         n = s.n
         idx += n
-        tree[idx] = val
+        t[idx] = val
 
         while idx > 1:
+            idx >>= 1
+            t[idx] = t[2*idx] + t[2*idx + 1]
 
     def query(s, l, r):
         n = s.n
