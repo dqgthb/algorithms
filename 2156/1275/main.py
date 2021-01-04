@@ -52,6 +52,9 @@ def main(f = None):
         if x > y: x,y = y,x
         ans = st.query(x, y)
         print(ans)
+        ans = st.query2(x, y)
+        print(ans)
+
         st.update(a, b+1)
 
 
@@ -76,6 +79,7 @@ class SegTree:
         while idx > 1:
             idx >>= 1
             t[idx] = t[2*idx] + t[2*idx + 1]
+
     def query2(s, l, r):
         n = s.n
         t = s.tree
@@ -86,6 +90,12 @@ class SegTree:
             if l & 1:
                 i += t[l]
                 l += 1
+            if r & 1:
+                r -= 1
+                i += t[r]
+            l >>= 1
+            r >>= 1
+        return i
 
     def query(s, l, r):
         n = s.n
