@@ -51,8 +51,7 @@ def main(f = None):
         x, y, a, b = map(lambda x:int(x)-1, input().split())
         if x > y: x,y = y,x
         ans = st.query(x, y)
-        print(ans)
-        ans = st.query2(x, y)
+        #ans = st.query2(x, y)
         print(ans)
 
         st.update(a, b+1)
@@ -80,7 +79,7 @@ class SegTree:
             idx >>= 1
             t[idx] = t[2*idx] + t[2*idx + 1]
 
-    def query2(s, l, r):
+    def query(s, l, r):
         n = s.n
         t = s.tree
         l += n
@@ -97,7 +96,7 @@ class SegTree:
             r >>= 1
         return i
 
-    def query(s, l, x):
+    def query2(s, l, x):
         n = s.n
         t = s.tree
         l += n
@@ -113,7 +112,6 @@ class SegTree:
             l >>= 1
             x -= 1
             x >>= 1
-
         return i
 
 if __name__ == "__main__":
