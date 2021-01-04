@@ -62,6 +62,10 @@ class DP:
         
         if x < 2:
             return a[:x]
+        
+        c1 = solve(s, lastIndex - 2) + a[x]
+        c2 = solve(s, lastIndex - 1)
+        c3 = solve(s, lastIndex - 3)
 
 def main(f = None):
     init(f)
