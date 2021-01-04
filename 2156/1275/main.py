@@ -51,7 +51,7 @@ def main(f = None):
         x, y, a, b = map(lambda x:int(x)-1, input().split())
         if x > y: x,y = y,x
         ans = st.query(x, y)
-        #ans = st.query2(x, y)
+        # ans = st.query2(x, y) # seems query is one-line shorter than query2
         print(ans)
 
         st.update(a, b+1)
@@ -96,22 +96,22 @@ class SegTree:
             r >>= 1
         return i
 
-    def query2(s, l, x):
+    def query2(s, l, r):
         n = s.n
         t = s.tree
         l += n
-        x += n # x = r - 1, r = x + 1
+        r += n # r = r - 1, r = r + 1
         i = 0
-        while l <= x:
+        while l <= r:
             if l & 1:
                 i += t[l]
                 l += 1
-            if not (x & 1):
-                i += t[x]
-                x -= 1
+            if not (r & 1):
+                i += t[r]
+                r -= 1
             l >>= 1
-            x -= 1
-            x >>= 1
+            r -= 1
+            r >>= 1
         return i
 
 if __name__ == "__main__":
