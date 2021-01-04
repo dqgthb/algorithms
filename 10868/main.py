@@ -51,8 +51,7 @@ def main(f = None):
 
     st = SegTree(arr)
 
-    for q in queries:
-        a, b = q
+    for a, b in queries:
         ans = st.query(a-1, b)
         print(ans)
 
@@ -87,12 +86,6 @@ class SegTree:
             l >>= 1
             r >>= 1
         return min_
-
-
-
-
-
-
 
 
 if __name__ == "__main__":
