@@ -49,6 +49,8 @@ def main(f = None):
     st = SegTree(arr)
     for _ in range(Q):
         x, y, a, b = map(int, input().split())
+        ans = st.query(x, y)
+
 
 class SegTree:
     def __init__(s, arr):
@@ -76,6 +78,9 @@ class SegTree:
             if r & 1:
                 r -= 1
                 i += t[r]
+            l >>= 1
+            r >>= 1
+        return i
 
 if __name__ == "__main__":
     main()
