@@ -55,13 +55,13 @@ class DP:
     def solve(s, lastIndex):
         x = lastIndex
         dp = s.dp
+        a = s.arr
         val = dp[x]
         if val is not None:
             return val
         
         if x < 2:
-            return arr[:x]
-
+            return a[:x]
 
 def main(f = None):
     init(f)
