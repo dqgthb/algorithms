@@ -51,6 +51,8 @@ class DP:
         s.arr =arr
         s.n = len(arr)
         s.dp = [None] * s.n
+        for i in range(len(s.n)):
+            s.solve(i)
     
     def solve(s, lastIndex):
         x = lastIndex
@@ -60,14 +62,11 @@ class DP:
         if val is not None:
             return val
         
+        if x < 0:
+            return 0
         if x < 2:
             return a[:x]
-        if x == 2:
-            c2 = solve(s, x - 1) # not choose x
-            c1 = solve(s, x - 2) + a[x] # not choose x-1
-            return max(c1, c2)
 
-        
         c2 = solve(s, x - 1) # not choose x
         c1 = solve(s, x - 2) + a[x] # not choose x-1
         c3 = solve(s, x - 3) + a[x] + a[x-1] # not choose x-2
@@ -77,6 +76,8 @@ def main(f = None):
     init(f)
     n = int(input())
     arr = [int(input()) for _ in range(n)]
+    dp = DP(arr)
+    dp.
 
 
 if __name__ == "__main__":
