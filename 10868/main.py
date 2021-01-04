@@ -51,9 +51,8 @@ def main(f = None):
 
     st = SegTree(arr)
 
-    for a, b in queries:
-        ans = st.query(a-1, b)
-        print(ans)
+    ansList = [int(st.query(a-1, b)) for a, b in queries]
+    sys.stdout.writelines(ansList)
 
 class SegTree:
     def __init__(s, arr):
