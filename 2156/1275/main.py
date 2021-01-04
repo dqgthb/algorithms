@@ -83,15 +83,15 @@ class SegTree:
         l += n
         r += n
         i = 0
-        while l <= r:
+        while l < r+1:
             if l & 1:
                 i += t[l]
                 l += 1
             
             if not r & 1:
                 i += t[r]
-            else:
                 r -= 1
+
             l >>= 1
             r += 1
             r >>= 1
