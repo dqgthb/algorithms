@@ -50,8 +50,12 @@ class DP:
     def __init__(s, arr):
         s.arr =arr
         s.n = len(arr)
-        s.dp = [None] * s.n
-        for i in range(len(s.n)):
+        dp = [None] * s.n
+        dp[0] = arr[0]
+        dp[1] = arr[1]
+        s.dp = dp
+        
+        for i in range(s.n):
             s.solve(i)
     
     def solve(s, lastIndex):
