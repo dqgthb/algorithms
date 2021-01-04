@@ -46,6 +46,16 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 def solve(arr, lastIndex):
     x = lastIndex
 
+class DP:
+    def __init__(s, arr):
+        s.arr =arr
+        s.n = len(arr)
+        s.dp = [None] * s.n
+    
+    def solve(s, lastIndex):
+        x = lastIndex
+        if dp[x] is not None:
+            return dp[x]
 
 
 def main(f = None):
