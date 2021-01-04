@@ -46,8 +46,18 @@ def main(f = None):
     init(f)
     N, Q = map(int, input().split())
     arr = list(map(int, input().split()))
+    st = SegTree(arr)
     for _ in range(Q):
         x, y, a, b = map(int, input().split())
+
+class SegTree:
+    def __init__(s, arr):
+        s.a = arr
+        n = len(arr)
+        tree = [None] * (2 * n)
+
+        s.n = n
+        s.tree = tree
 
 if __name__ == "__main__":
     main()
