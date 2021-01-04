@@ -42,8 +42,6 @@ def pfast(*args, end = "\n", sep=' '):
 
 def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
-
-
 class DP:
     def __init__(s, arr):
         s.arr =arr
