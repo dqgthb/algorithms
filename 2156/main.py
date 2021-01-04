@@ -51,8 +51,6 @@ class DP:
         s.arr =arr
         s.n = len(arr)
         dp = [None] * s.n
-        dp[0] = arr[0]
-        dp[1] = arr[1]
         s.dp = dp
         
         for i in range(s.n):
@@ -67,7 +65,7 @@ class DP:
         if x < 0:
             return 0
         if x < 2:
-            return a[:x]
+            return sum(a[:x+1])
 
         if val is not None:
             return val
