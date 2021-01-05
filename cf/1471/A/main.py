@@ -34,12 +34,11 @@ def main(f = None):
     init(f)
     for _ in range(int(input())):
         n, x = map(int, input().split())
-        for _ in range(n):
-            a = list(map(int, input().split()))
-            from math import ceil
-            max_ = sum(ceil(i/x) for i in a)
-            min_ = ceil(sum(a)/x)
-            print(max_, min_)
+        a = list(map(int, input().split()))
+        from math import ceil
+        max_ = sum(ceil(i/x) for i in a)
+        min_ = ceil(sum(a)/x)
+        print(min_, max_)
 
 if __name__ == "__main__":
     main()
