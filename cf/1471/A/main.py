@@ -32,6 +32,11 @@ def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
 def main(f = None):
     init(f)
+    for _ in range(int(input())):
+        n, x = map(int, input().split())
+        for _ in range(n):
+            a = list(map(int, input().split()))
+            from math import ceil
 
 if __name__ == "__main__":
     main()
