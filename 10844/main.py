@@ -203,13 +203,8 @@ def main(f = None):
             dp[i][j] = Mod.add(dp[i-1][j-1], dp[i-1][j+1])
         j = 9
         dp[i][j] = dp[i-1][8]
-    print(n)
-    n = 1
-    print(sum(dp[n]))
-    n = 100
-    print(dp[n])
-    print(sum(dp[n]))
-    print(Mod.sum(dp[n]))
+    inp = int(input())
+    print(Mod.sum(dp[inp]))
 
 
 if __name__ == "__main__":
