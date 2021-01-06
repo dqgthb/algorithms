@@ -122,26 +122,20 @@ maxN = 5
 FACT = [0] * maxN
 INV_FACT = [0] * maxN
 
-def add(x, y):
-    return (x+y) % MOD
+def add(x, y): return (x+y) % MOD
 
-def multiply(x, y):
-    return (x*y) % MOD
+def multiply(x, y): return (x*y) % MOD
 
 def power(x, y):
-    if y == 0:
-        return 1
-    elif y % 2:
-        return multiply(x, power(x, y-1))
+    if y == 0: return 1
+    elif y % 2: return multiply(x, power(x, y-1))
     else:
         a = power(x, y//2)
         return multiply(a, a)
 
-def inverse(x):
-    return power(x, MOD-2)
+def inverse(x): return power(x, MOD-2)
 
-def divide(x, y):
-    return multiply(x, inverse(y))
+def divide(x, y): return multiply(x, inverse(y))
 
 def allFactorials():
     FACT[0] = 1
@@ -164,7 +158,6 @@ def dprint(*args):
     if DEBUG: print(*args)
 
 def pfast(*args, end = "\n", sep=' '): sys.stdout.write(sep.join(map(str, args)) + end)
-
 
 def main(f = None):
     init(f)
