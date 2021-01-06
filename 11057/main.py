@@ -168,7 +168,8 @@ class Mod:
     @staticmethod
     def sum(it):
         res = 0
-        for i in it: res = Mod.add(res, i); return res
+        for i in it: res = Mod.add(res, i)
+        return res
     # END Mod #
 
 def dprint(*args):
@@ -200,15 +201,13 @@ def main(f = None):
             cands = [dpi1[k] for k in range(j+1)]
             dp[i][j] = sum(cands)
 
-    #n = int(input())
-    n = 3
+    n = int(input())
     ans = solve(n)
     print(ans)
-    print(Mod.sum((1, 2, 3)))
 
 def solve(n):
     global dp
-    return sum(dp[n-1])
+    return Mod.sum(dp[n-1])
 
 
 if __name__ == "__main__":
