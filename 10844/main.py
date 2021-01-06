@@ -117,42 +117,44 @@ def init(f = None):
 ### # END Standard IO #
 
 # MOD #
-MOD = 10**9 + 7
-maxN = 5
-FACT = [0] * maxN
-INV_FACT = [0] * maxN
+class MOD:
+    MOD = 10**9 + 7
+    maxN = 5
+    FACT = [0] * maxN
+    INV_FACT = [0] * maxN
 
-def add(x, y): return (x+y) % MOD
+    @staticmethod
+    def add(x, y): return (x+y) % MOD
 
-def multiply(x, y): return (x*y) % MOD
+    def multiply(x, y): return (x*y) % MOD
 
-def power(x, y):
-    if y == 0: return 1
-    elif y % 2: return multiply(x, power(x, y-1))
-    else:
-        a = power(x, y//2)
-        return multiply(a, a)
+    def power(x, y):
+        if y == 0: return 1
+        elif y % 2: return multiply(x, power(x, y-1))
+        else:
+            a = power(x, y//2)
+            return multiply(a, a)
 
-def inverse(x): return power(x, MOD-2)
+    def inverse(x): return power(x, MOD-2)
 
-def divide(x, y): return multiply(x, inverse(y))
+    def divide(x, y): return multiply(x, inverse(y))
 
-def allFactorials():
-    FACT[0] = 1
-    for i in range(1, maxN):
-        FACT[i] = multiply(i, FACT[i-1])
+    def allFactorials():
+        FACT[0] = 1
+        for i in range(1, maxN):
+            FACT[i] = multiply(i, FACT[i-1])
 
-def inverseFactorials():
-    n = len(INV_FACT)
-    INV_FACT[n-1] = inverse(FACT[n-1])
-    for i in range(n-2, -1, -1):
-        INV_FACT[i] = multiply(INV_FACT[i+1], i+1)
+    def inverseFactorials():
+        n = len(INV_FACT)
+        INV_FACT[n-1] = inverse(FACT[n-1])
+        for i in range(n-2, -1, -1):
+            INV_FACT[i] = multiply(INV_FACT[i+1], i+1)
 
-def coeffBinom(n, k):
-    if n < k:
-        return 0
-    return multiply(FACT[n], multiply(INV_FACT[k], INV_FACT[n-k]))
-# END MOD #
+    def coeffBinom(n, k):
+        if n < k:
+            return 0
+        return multiply(FACT[n], multiply(INV_FACT[k], INV_FACT[n-k]))
+    # END MOD #
 
 def dprint(*args):
     if DEBUG: print(*args)
@@ -176,7 +178,7 @@ def main(f = None):
     for i in range(2, 100):
         j = 1
         for j in range(1, 9):
-            dp[i][j] = dp[i-1][j-1]
+            dp[i][j] = dp[i-1][j-1] + dp[i-1][j+1] 
         j = 9
 
 if __name__ == "__main__":
