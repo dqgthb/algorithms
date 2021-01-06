@@ -124,6 +124,10 @@ class MOD:
     INV_FACT = [0] * maxN
 
     @staticmethod
+    def setMOD(n):
+        MOD.MOD = n
+
+    @staticmethod
     def add(x, y): return (x+y) % MOD
 
     @staticmethod
@@ -179,13 +183,14 @@ def isStair(n):
 
 def main(f = None):
     init(f)
+    MOD.setMOD(1000000000)
     dp = [[None for _ in range(10)] for _ in range(n+1)]
     for i in range(10):
         dp[1][i] = 1
     for i in range(2, 100):
         j = 1
         for j in range(1, 9):
-            dp[i][j] = dp[i-1][j-1] + dp[i-1][j+1] 
+            dp[i][j] = MOD.add(dp[i-1][j-1], dp[i-1][j+1])
         j = 9
 
 if __name__ == "__main__":
