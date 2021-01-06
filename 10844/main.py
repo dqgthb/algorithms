@@ -165,6 +165,13 @@ class Mod:
         if n < k:
             return 0
         return Mod.multiply(Mod.FACT[n], Mod.multiply(Mod.INV_FACT[k], Mod.INV_FACT[n-k]))
+    
+    @staticmethod
+    def sum(it):
+        res = 0
+        for i in it:
+            res = Mod.add(res, i)
+        return res
     # END Mod #
 
 def dprint(*args):
@@ -201,7 +208,6 @@ def main(f = None):
     print(sum(dp[n]))
     print(dp[n])
     n = 99
-    print(sum(dp[n]))
     print(dp[n])
 
 
