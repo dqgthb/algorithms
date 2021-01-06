@@ -200,7 +200,7 @@ def main(f = None):
     n = 1
     print(sum(dp[n]))
     print(dp[n])
-    n = 100
+    n = 99
     print(sum(dp[n]))
     print(dp[n])
 
