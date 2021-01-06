@@ -209,6 +209,5 @@ def solve(n):
     global dp
     return Mod.sum(dp[n-1])
 
-
 if __name__ == "__main__":
     main()
