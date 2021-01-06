@@ -159,11 +159,15 @@ def dprint(*args):
 
 def pfast(*args, end = "\n", sep=' '): sys.stdout.write(sep.join(map(str, args)) + end)
 
+def isStair(n):
+    a = list(map(int, str(n)))
+
 def main(f = None):
     init(f)
     n = int(input())
     a = list(map(int, str(n)))
-    for i in range(len(a)):
+
+    for i in range(len(a)-1):
         
 
 if __name__ == "__main__":
