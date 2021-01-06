@@ -8,7 +8,6 @@ from itertools import product
 from collections import deque, Counter
 from math import log, ceil, floor
 
-
 DEBUG = False
 
 def setStdin(f):
@@ -41,9 +40,7 @@ def init(f = None):
 
 # Standard IO #
 from io import BytesIO, IOBase
- 
 BUFSIZE = 8192
- 
 class FastIO(IOBase):
     newlines = 0
     def __init__(self, file):
@@ -107,7 +104,7 @@ def inp():
     
 def ii():
     return int(inp())
- 
+
 def si():
     return str(inp())
  
@@ -123,7 +120,7 @@ def mi(lag = 0):
     for i in range(n):
         matrix.append(li(lag))
     return matrix
- 
+
 def lsi(): #string list
     return list(map(str, inp().split()))
 
