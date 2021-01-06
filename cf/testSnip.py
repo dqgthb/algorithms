@@ -161,7 +161,6 @@ def pfast(*args, end = "\n", sep=' '): sys.stdout.write(sep.join(map(str, args))
 
 def main(f = None):
     init(f)
-    pass
 
 if __name__ == "__main__":
     main()
