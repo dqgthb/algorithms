@@ -196,7 +196,7 @@ def main(f = None):
     for i in range(10):
         dp[1][i] = 1
     dp[1][0] = 0
-    for i in range(2, n):
+    for i in range(2, n+1):
         j = 0
         dp[i][j] = dp[i-1][1]
         for j in range(1, 9):
@@ -206,9 +206,10 @@ def main(f = None):
     print(n)
     n = 1
     print(sum(dp[n]))
+    n = 100
     print(dp[n])
-    n = 99
-    print(dp[n])
+    print(sum(dp[n]))
+    print(Mod.sum(dp[n]))
 
 
 if __name__ == "__main__":
