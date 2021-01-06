@@ -175,7 +175,10 @@ class DP:
         dp = [[None for _ in range(10)] for _ in range(n+1)]
         s.dp =dp
         for i in range(10):
-            dp[1]
+            dp[1][i] = 1
+    
+    def solve(n):
+        if dp[n]
 
 def main(f = None):
     init(f)
