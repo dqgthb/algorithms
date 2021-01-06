@@ -185,6 +185,9 @@ def isStair(n):
 def main(f = None):
     init(f)
     global dp
+    dp = [[None for _ in range(10)] for _ in range(1000)]
+    for i in range(10):
+        dp[0][i] = 1
 
     for n in [1, 2, 3, 4]:
         ans = solve(n)
