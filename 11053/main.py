@@ -154,14 +154,16 @@ def pfast(*args, end = "\n", sep=' '): sys.stdout.write(sep.join(map(str, args))
 def main(f = None):
     init(f)
     n = int(input())
-    a = map(int, input().split())
+    a = [int(i) for i in input().split()]
     dp = [0] * n
     
     for i in range(n):
         v = a[i]
         for j in range(i):
-            if v > j[i]
-            dp[i] = max(dp[i], )
+            if v > a[j]:
+                dp[i] = max(dp[i], dp[j])
+    
+    print(dp)
 
 if __name__ == "__main__":
     main()
