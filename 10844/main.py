@@ -132,29 +132,29 @@ class MOD:
     @staticmethod
     def power(x, y):
         if y == 0: return 1
-        elif y % 2: return multiply(x, power(x, y-1))
+        elif y % 2: return MOD.multiply(x, MOD.power(x, y-1))
         else:
-            a = power(x, y//2)
-            return multiply(a, a)
+            a = MOD.power(x, y//2)
+            return MOD.multiply(a, a)
 
     @staticmethod
-    def inverse(x): return power(x, MOD-2)
+    def inverse(x): return MOD.power(x, MOD-2)
 
     @staticmethod
-    def divide(x, y): return multiply(x, inverse(y))
+    def divide(x, y): return MOD.multiply(x, MOD.inverse(y))
 
     @staticmethod
     def allFactorials():
         MOD.FACT[0] = 1
-        for i in range(1, maxN):
-            MOD.FACT[i] = multiply(i, MOD.FACT[i-1])
+        for i in range(1, MOD.maxN):
+            MOD.FACT[i] = MOD.multiply(i, MOD.FACT[i-1])
 
     @staticmethod
     def inverseFactorials():
         n = len(MOD.INV_FACT)
-        MOD.INV_FACT[n-1] = inverse(MOD.FACT[n-1])
+        MOD.INV_FACT[n-1] = MOD.inverse(MOD.FACT[n-1])
         for i in range(n-2, -1, -1):
-            MOD.INV_FACT[i] = multiply(MOD.INV_FACT[i+1], i+1)
+            MOD.INV_FACT[i] = MOD.multiply(MOD.INV_FACT[i+1], i+1)
 
     @staticmethod
     def coeffBinom(n, k):
