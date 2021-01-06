@@ -192,6 +192,10 @@ def main(f = None):
 
     for i in range(1, 1000):
         for j in range(10):
+            dpi = dp[i]
+            dpi1 = dp[i-1]
+            
+            cands = [dpi1[k] for k in range(j)]
             dp[i][j] = sum(list())
 
     for n in [1, 2, 3, 4]:
