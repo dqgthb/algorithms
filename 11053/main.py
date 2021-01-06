@@ -156,14 +156,14 @@ def main(f = None):
     n = int(input())
     a = [int(i) for i in input().split()]
     dp = [0] * n
+    dp[0] = 1
     
     for i in range(n):
         v = a[i]
         for j in range(i):
             if v > a[j]:
-                dp[i] = max(dp[i], dp[j])
-    
-    print(dp)
+                dp[i] = max(dp[i], dp[j]+1)
+    print(max(dp))
 
 if __name__ == "__main__":
     main()
