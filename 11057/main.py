@@ -187,16 +187,15 @@ def main(f = None):
     global dp
     Mod.setMOD(10007)
     dp = [[None for _ in range(10)] for _ in range(1000)]
-    for i in range(10):
+    for i in range(1000):
         dp[0][i] = 1
 
-    for i in range(1, 1000):
+    for i in range(1, n):
         for j in range(10):
             dpi = dp[i]
             dpi1 = dp[i-1]
-            
-            cands = [dpi1[k] for k in range(j)]
-            dp[i][j] = sum(list())
+            cands = [dpi1[k] for k in range(j+1)]
+            dp[i][j] = sum(cands)
 
     for n in [1, 2, 3, 4]:
         ans = solve(n)
