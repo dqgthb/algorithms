@@ -155,8 +155,7 @@ def main(f = None):
     init(f)
     n = int(input())
     a = [int(i) for i in input().split()]
-    dp = [0] * n
-    dp[0] = 1
+    dp = [1] * n
     
     for i in range(n):
         v = a[i]
