@@ -7,6 +7,7 @@ from functools import cmp_to_key
 from itertools import product
 from collections import deque, Counter
 from math import log, ceil, floor
+from typing import MappingView
 
 DEBUG = False
 
@@ -132,32 +133,28 @@ def power(x, y):
         return multiply(a, a)
 def inverse(x): return power(x, MOD-2)
 def divide(x, y): return multiply(x, inverse(y))
-
 def allFactorials():
     FACT[0] = 1
     for i in range(1, maxN):
         FACT[i] = multiply(i, FACT[i-1])
-
 def inverseFactorials():
     n = len(INV_FACT)
     INV_FACT[n-1] = inverse(FACT[n-1])
     for i in range(n-2, -1, -1):
         INV_FACT[i] = multiply(INV_FACT[i+1], i+1)
-
 def coeffBinom(n, k):
     if n < k:
         return 0
     return multiply(FACT[n], multiply(INV_FACT[k], INV_FACT[n-k]))
 # END MOD #
-
 def dprint(*args):
     if DEBUG: print(*args)
-
 def pfast(*args, end = "\n", sep=' '): sys.stdout.write(sep.join(map(str, args)) + end)
 
 def main(f = None):
     init(f)
-    
+    N = int(input())
+    A = map(int, input().split())
 
 if __name__ == "__main__":
     main()
