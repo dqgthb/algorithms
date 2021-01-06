@@ -124,8 +124,7 @@ class Mod:
     INV_FACT = [0] * maxN
 
     @staticmethod
-    def setMOD(n):
-        Mod.MOD = n
+    def setMOD(n): Mod.MOD = n
 
     @staticmethod
     def add(x, y): return (x+y) % Mod.MOD
@@ -150,28 +149,23 @@ class Mod:
     @staticmethod
     def allFactorials():
         Mod.FACT[0] = 1
-        for i in range(1, Mod.maxN):
-            Mod.FACT[i] = Mod.multiply(i, Mod.FACT[i-1])
+        for i in range(1, Mod.maxN): Mod.FACT[i] = Mod.multiply(i, Mod.FACT[i-1])
 
     @staticmethod
     def inverseFactorials():
         n = len(Mod.INV_FACT)
         Mod.INV_FACT[n-1] = Mod.inverse(Mod.FACT[n-1])
-        for i in range(n-2, -1, -1):
-            Mod.INV_FACT[i] = Mod.multiply(Mod.INV_FACT[i+1], i+1)
+        for i in range(n-2, -1, -1): Mod.INV_FACT[i] = Mod.multiply(Mod.INV_FACT[i+1], i+1)
 
     @staticmethod
     def coeffBinom(n, k):
-        if n < k:
-            return 0
+        if n < k: return 0
         return Mod.multiply(Mod.FACT[n], Mod.multiply(Mod.INV_FACT[k], Mod.INV_FACT[n-k]))
     
     @staticmethod
     def sum(it):
         res = 0
-        for i in it:
-            res = Mod.add(res, i)
-        return res
+        for i in it: res = Mod.add(res, i); return res
     # END Mod #
 
 def dprint(*args):
