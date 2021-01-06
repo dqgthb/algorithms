@@ -200,9 +200,11 @@ def main(f = None):
             cands = [dpi1[k] for k in range(j+1)]
             dp[i][j] = sum(cands)
 
-    n = int(input())
+    #n = int(input())
+    n = 3
     ans = solve(n)
     print(ans)
+    print(Mod.sum((1, 2, 3)))
 
 def solve(n):
     global dp
