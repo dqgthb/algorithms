@@ -126,6 +126,9 @@ class Mod:
     @staticmethod
     def setMOD(n): Mod.MOD = n
 
+    def printMOD():
+        print(Mod.MOD)
+
     @staticmethod
     def add(x, y): return (x+y) % Mod.MOD
 
