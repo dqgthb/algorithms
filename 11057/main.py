@@ -189,6 +189,8 @@ def main(f = None):
     for i in range(10):
         dp[0][i] = 1
 
+
+
     for n in [1, 2, 3, 4]:
         ans = solve(n)
         print(ans)
