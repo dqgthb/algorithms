@@ -192,7 +192,7 @@ def main(f = None):
 
     for i in range(1, 1000):
         for j in range(10):
-            dp[i][j] = dp[i-1][j]
+            dp[i][j] = sum(list())
 
     for n in [1, 2, 3, 4]:
         ans = solve(n)
