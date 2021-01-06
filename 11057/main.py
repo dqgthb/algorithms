@@ -184,9 +184,14 @@ def isStair(n):
 
 def main(f = None):
     init(f)
+    global dp
+
     for n in [1, 2, 3, 4]:
         ans = solve(n)
         print(ans)
+
+def solve(n):
+    
 
 if __name__ == "__main__":
     main()
