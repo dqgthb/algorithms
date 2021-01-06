@@ -171,7 +171,7 @@ def isStair(n):
 
 class DP:
     def __init__(s, n):
-        dp = 
+        dp = [[None for _ in range(10)]]
         s.dp =dp
 
 def main(f = None):
