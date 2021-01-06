@@ -171,7 +171,8 @@ def isStair(n):
 
 class DP:
     def __init__(s, n):
-        s.l = len(str(n))
+        dp = 
+        s.dp =dp
 
 def main(f = None):
     init(f)
