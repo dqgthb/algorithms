@@ -168,20 +168,14 @@ def isStair(n):
     else:
         return True
 
-
-class DP:
-    def __init__(s, n):
-        s.n = n
-        dp = [[None for _ in range(10)] for _ in range(n+1)]
-        s.dp =dp
-        for i in range(10):
-            dp[1][i] = 1
-    
-    def solve(n):
-        if dp[n]
-
 def main(f = None):
     init(f)
+    dp = [[None for _ in range(10)] for _ in range(n+1)]
+    for i in range(10):
+        dp[1][i] = 1
+
+if __name__ == "__main__":
+    main()
 
 
 if __name__ == "__main__":
