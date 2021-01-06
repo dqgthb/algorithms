@@ -172,8 +172,10 @@ def isStair(n):
 class DP:
     def __init__(s, n):
         s.n = n
-        dp = [[None for _ in range(10)] for _ in range(n)]
+        dp = [[None for _ in range(10)] for _ in range(n+1)]
         s.dp =dp
+        for i in range(10):
+            dp[1]
 
 def main(f = None):
     init(f)
