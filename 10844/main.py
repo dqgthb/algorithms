@@ -171,7 +171,7 @@ def isStair(n):
 def main(f = None):
     init(f)
     n = int(input())
-    print(isStair(n))
+    count = 0
 
 
 if __name__ == "__main__":
