@@ -187,10 +187,10 @@ def main(f = None):
     global dp
     Mod.setMOD(10007)
     dp = [[None for _ in range(10)] for _ in range(1000)]
-    for i in range(1000):
+    for i in range(10):
         dp[0][i] = 1
 
-    for i in range(1, n):
+    for i in range(1, 1000):
         for j in range(10):
             dpi = dp[i]
             dpi1 = dp[i-1]
@@ -201,8 +201,6 @@ def main(f = None):
         ans = solve(n)
         print(ans)
 
-def solve(n):
-    
 
 if __name__ == "__main__":
     main()
