@@ -128,10 +128,10 @@ class Mod:
         Mod.MOD = n
 
     @staticmethod
-    def add(x, y): return (x+y) % Mod
+    def add(x, y): return (x+y) % Mod.MOD
 
     @staticmethod
-    def multiply(x, y): return (x*y) % Mod
+    def multiply(x, y): return (x*y) % Mod.MOD
 
     @staticmethod
     def power(x, y):
@@ -195,7 +195,7 @@ def main(f = None):
             dp[i][j] = Mod.add(dp[i-1][j-1], dp[i-1][j+1])
         j = 9
         dp[i][j] = dp[i-1][8]
-    
+    print(n)
     print(sum(dp[n]))
 
 if __name__ == "__main__":
