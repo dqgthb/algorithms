@@ -185,11 +185,12 @@ def isStair(n):
 def main(f = None):
     init(f)
     global dp
+    Mod.setMOD(10007)
     dp = [[None for _ in range(10)] for _ in range(1000)]
     for i in range(10):
         dp[0][i] = 1
 
-
+    for ii n range(1, n)
 
     for n in [1, 2, 3, 4]:
         ans = solve(n)
