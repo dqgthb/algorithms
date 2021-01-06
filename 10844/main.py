@@ -163,7 +163,6 @@ def main(f = None):
     init(f)
     n = int(input())
     n = list(map(int, str(n)))
-    print(n)
 
 if __name__ == "__main__":
     main()
