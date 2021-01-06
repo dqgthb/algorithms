@@ -195,7 +195,7 @@ def main(f = None):
             dpi = dp[i]
             dpi1 = dp[i-1]
             cands = [dpi1[k] for k in range(j+1)]
-            dp[i][j] = sum(cands)
+            dp[i][j] = Mod.sum(cands)
 
     n = int(input())
     ans = solve(n)
