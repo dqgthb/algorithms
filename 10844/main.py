@@ -125,47 +125,47 @@ class Mod:
 
     @staticmethod
     def setMOD(n):
-        MOD.MOD = n
+        Mod.MOD = n
 
     @staticmethod
-    def add(x, y): return (x+y) % MOD
+    def add(x, y): return (x+y) % Mod
 
     @staticmethod
-    def multiply(x, y): return (x*y) % MOD
+    def multiply(x, y): return (x*y) % Mod
 
     @staticmethod
     def power(x, y):
         if y == 0: return 1
-        elif y % 2: return MOD.multiply(x, MOD.power(x, y-1))
+        elif y % 2: return Mod.multiply(x, Mod.power(x, y-1))
         else:
-            a = MOD.power(x, y//2)
-            return MOD.multiply(a, a)
+            a = Mod.power(x, y//2)
+            return Mod.multiply(a, a)
 
     @staticmethod
-    def inverse(x): return MOD.power(x, MOD-2)
+    def inverse(x): return Mod.power(x, Mod.MOD-2)
 
     @staticmethod
-    def divide(x, y): return MOD.multiply(x, MOD.inverse(y))
+    def divide(x, y): return Mod.multiply(x, Mod.inverse(y))
 
     @staticmethod
     def allFactorials():
-        MOD.FACT[0] = 1
-        for i in range(1, MOD.maxN):
-            MOD.FACT[i] = MOD.multiply(i, MOD.FACT[i-1])
+        Mod.FACT[0] = 1
+        for i in range(1, Mod.maxN):
+            Mod.FACT[i] = Mod.multiply(i, Mod.FACT[i-1])
 
     @staticmethod
     def inverseFactorials():
-        n = len(MOD.INV_FACT)
-        MOD.INV_FACT[n-1] = MOD.inverse(MOD.FACT[n-1])
+        n = len(Mod.INV_FACT)
+        Mod.INV_FACT[n-1] = Mod.inverse(Mod.FACT[n-1])
         for i in range(n-2, -1, -1):
-            MOD.INV_FACT[i] = MOD.multiply(MOD.INV_FACT[i+1], i+1)
+            Mod.INV_FACT[i] = Mod.multiply(Mod.INV_FACT[i+1], i+1)
 
     @staticmethod
     def coeffBinom(n, k):
         if n < k:
             return 0
-        return multiply(FACT[n], multiply(INV_FACT[k], INV_FACT[n-k]))
-    # END MOD #
+        return Mod.multiply(Mod.FACT[n], Mod.multiply(Mod.INV_FACT[k], Mod.INV_FACT[n-k]))
+    # END Mod #
 
 def dprint(*args):
     if DEBUG: print(*args)
@@ -183,7 +183,7 @@ def isStair(n):
 
 def main(f = None):
     init(f)
-    MOD.setMOD(1000000000)
+    Mod.setMOD(1000000000)
     n = int(input())
     dp = [[None for _ in range(10)] for _ in range(n+1)]
     for i in range(10):
@@ -192,7 +192,7 @@ def main(f = None):
         j = 0
         dp[i][j] = dp[i-1][1]
         for j in range(1, 9):
-            dp[i][j] = MOD.add(dp[i-1][j-1], dp[i-1][j+1])
+            dp[i][j] = Mod.add(dp[i-1][j-1], dp[i-1][j+1])
         j = 9
         dp[i][j] = dp[i-1][8]
     
