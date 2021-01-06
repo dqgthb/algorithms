@@ -168,9 +168,13 @@ def isStair(n):
     else:
         return True
 
+
+class DP:
+    def __init__(s, n):
+        s.l = len(str(n))
+
 def main(f = None):
     init(f)
-    dp
 
 
 if __name__ == "__main__":
