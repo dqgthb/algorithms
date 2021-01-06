@@ -117,7 +117,7 @@ def init(f = None):
 ### # END Standard IO #
 
 # MOD #
-class MOD:
+class Mod:
     MOD = 10**9 + 7
     maxN = 5
     FACT = [0] * maxN
@@ -184,6 +184,7 @@ def isStair(n):
 def main(f = None):
     init(f)
     MOD.setMOD(1000000000)
+    n = int(input())
     dp = [[None for _ in range(10)] for _ in range(n+1)]
     for i in range(10):
         dp[1][i] = 1
