@@ -161,7 +161,7 @@ def pfast(*args, end = "\n", sep=' '): sys.stdout.write(sep.join(map(str, args))
 
 def main(f = None):
     init(f)
-    
+    n = (int(i) for i in  input().split())
 
 if __name__ == "__main__":
     main()
