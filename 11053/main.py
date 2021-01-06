@@ -158,7 +158,10 @@ def main(f = None):
     dp = [0] * n
     
     for i in range(n):
+        v = a[i]
         for j in range(i):
+            if v > j[i]
+            dp[i] = max(dp[i], )
 
 if __name__ == "__main__":
     main()
