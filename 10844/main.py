@@ -161,14 +161,18 @@ def pfast(*args, end = "\n", sep=' '): sys.stdout.write(sep.join(map(str, args))
 
 def isStair(n):
     a = list(map(int, str(n)))
+    for i in range(len(a)-1):
+        x, y = a[i], a[i+1]
+        if abs(x - y) != 1:
+            return False
+    else:
+        return True
 
 def main(f = None):
     init(f)
     n = int(input())
-    a = list(map(int, str(n)))
+    print(isStair(n))
 
-    for i in range(len(a)-1):
-        
 
 if __name__ == "__main__":
     main()
