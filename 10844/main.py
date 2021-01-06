@@ -184,7 +184,6 @@ def isStair(n):
 def main(f = None):
     init(f)
     Mod.setMOD(1000000000)
-    n = int(input())
     dp = [[None for _ in range(10)] for _ in range(n+1)]
     for i in range(10):
         dp[1][i] = 1
@@ -196,7 +195,9 @@ def main(f = None):
         j = 9
         dp[i][j] = dp[i-1][8]
     print(n)
-    print(sum(dp[n]))
+    print(sum(1))
+    print(sum(2))
+    print(sum(dp[n-1]))
 
 
 if __name__ == "__main__":
