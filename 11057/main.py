@@ -197,9 +197,13 @@ def main(f = None):
             cands = [dpi1[k] for k in range(j+1)]
             dp[i][j] = sum(cands)
 
-    for n in [1, 2, 3, 4]:
-        ans = solve(n)
-        print(ans)
+    n = int(input())
+    ans = solve(n)
+    print(ans)
+
+def solve(n):
+    global dp
+    return sum(dp[n-1])
 
 
 if __name__ == "__main__":
