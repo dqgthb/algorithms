@@ -198,9 +198,6 @@ def main(f = None):
     print(n)
     print(sum(dp[n]))
 
-if __name__ == "__main__":
-    main()
-
 
 if __name__ == "__main__":
     main()
