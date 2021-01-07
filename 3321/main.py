@@ -191,8 +191,8 @@ def main(f = None):
     
     dp = list(range(m))
     print(dp)
-    
-    dp.sort(reverse=True, key=lambda x:cum[i][x])
+    dp.sort(reverse=True, key=lambda x:cum[0][x])
+    print(dp)
 
 if __name__ == "__main__":
     main()
