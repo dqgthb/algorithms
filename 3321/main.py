@@ -189,15 +189,17 @@ def main(f = None):
             if cum[i][j] != 0:
                 cum[i][j] += cum[i-1][j]
     
-    dp = [[cum[0][i], i] for i in range(m)]
-    print(dp)
+    dp = [[mat[0][i], i] for i in range(m)]
     dp.sort(reverse=True)
 
-    row = 0
+    row = 1
     for i in dp:
         idx = i[1]
         if mat[row][idx] == 1:
             i[0] += 1
+        else:
+            i[0] = 0
+    print(dp)
 
 
 
