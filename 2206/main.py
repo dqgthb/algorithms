@@ -184,6 +184,7 @@ def main(f = None):
     ans = -1
 
     dq = deque()
+    vis[0][0] = True
     dq.append((0, 0, True, 1))
 
     while dq:
@@ -199,10 +200,11 @@ def main(f = None):
         for x, y in zip(lr, ud):
             iN, jN = i+x, j+y
             if 0 <= iN < n and 0 <= jN < m:
-                if map[iN][jN] == 0:
-                    dq.append((iN, jN, canBreak, step+1))
-                elif canBreak:
-                    dq.append((iN, jN, False, step+1))
+                if not vis[iN][jN]:
+                    if map[iN][jN] == 0:
+                        dq.append((iN, jN, canBreak, step+1))
+                    elif canBreak:
+                        dq.append((iN, jN, False, step+1))
     print(ans)
 
 
