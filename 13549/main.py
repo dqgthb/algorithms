@@ -191,8 +191,11 @@ def main(f = None):
         cost = [1, 1, 0]
 
         for i in range(3):
-            if 0 <= next[i] <= 100000:
-            heappush(pq, (next[i], step+cost[i]))
+            ni = next[i]
+            if 0 <= ni <= 100000:
+                if not vis[ni]:
+                    vis[ni] = True
+                    heappush(pq, (ni, step+cost[i]))
 
 
 
