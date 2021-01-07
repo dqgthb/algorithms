@@ -7,6 +7,7 @@ from functools import cmp_to_key
 from itertools import product
 from collections import deque, Counter
 from math import log, ceil, floor
+from enum import Enum
 
 DEBUG = False
 
@@ -218,7 +219,6 @@ def main(f = None):
                         if map[iN][jN] == 0:
                             vis[iN][jN] = Naive
                             dq.append((iN, jN, True, step+1))
-                            
 
     print(ans)
 
