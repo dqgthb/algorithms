@@ -192,8 +192,8 @@ def main(f = None):
             ans = step
             break
 
-        lr = [-1, 1, -1, 1]
-        ud = [-1, -1, 1, 1]
+        lr = [1, 0, -1, 0]
+        ud = [0, -1, 1, 1]
 
         for x, y in zip(lr, ud):
             iN, jN = i+x, j+y
