@@ -179,16 +179,17 @@ def main(f = None):
     init(f)
     n, m = (int(i) for i in  input().split())
     map = [[int(i) for i in input().strip()] for _ in range(n)]
-    NoOne = 0
-    UsedAbility = 1
-    Naive = 2
-    vis = [[NoOne for _ in range(m)] for _ in range(n)]
+    class Vis(Enum):
+        NoOne = 0
+        UsedAbility = 1
+        Naive = 2
+    vis = [[Vis.NoOne for _ in range(m)] for _ in range(n)]
 
     arrival = (n-1, m-1)
     ans = -1
 
     dq = deque()
-    vis[0][0] = Naive
+    vis[0][0] = Vis.Naive
     dq.append((0, 0, True, 1))
 
     while dq:
@@ -204,12 +205,12 @@ def main(f = None):
             iN, jN = i+x, j+y
             if 0 <= iN < n and 0 <= jN < m:
                 visInfo = vis[iN][jN]
-                if visInfo == NoOne:
+                if visInfo == Vis.NoOne:
                     if map[iN][jN] == 0:
                         if not canBreak:
-                            vis[iN][jN] = UsedAbility
+                            vis[iN][jN] = Vis.UsedAbility
                         else:
-                            vis[iN][jN] = Naive
+                            vis[iN][jN] = Vis.Naive
                         dq.append((iN, jN, canBreak, step+1))
                     elif canBreak:
                         vis[iN][jN] = UsedAbility
