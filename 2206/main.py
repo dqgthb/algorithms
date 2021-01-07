@@ -185,6 +185,11 @@ def main(f = None):
     while dq:
         i, j, canBreak = dq.popleft()
 
+        ud = [-1, -1, 1, 1]
+        lr = [-1, 1, -1, 1]
+
+        for x, y in zip(ud, lr):
+
 
 
 if __name__ == "__main__":
