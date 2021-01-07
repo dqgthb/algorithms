@@ -180,10 +180,11 @@ def main(f = None):
     map = [[int(i) for i in input().strip()] for _ in range(n)]
 
     dq = deque()
-    dq.append((0, 0, True))
+    dq.append((0, 0, True, 0))
 
     while dq:
-        i, j, canBreak = dq.popleft()
+        i, j, canBreak, step = dq.popleft()
+        if i, j = 
 
         lr = [-1, 1, -1, 1]
         ud = [-1, -1, 1, 1]
