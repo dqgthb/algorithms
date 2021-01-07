@@ -191,7 +191,6 @@ def main(f = None):
     dq.append((0, 0, True, 1))
 
     while dq:
-        print(dq)
         i, j, canBreak, step = dq.popleft()
         if (i, j) == arrival:
             ans = step
