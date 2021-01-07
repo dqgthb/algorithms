@@ -186,7 +186,9 @@ def main(f = None):
 
     while pq:
         n, step = heappop(pq)
-        
+
+        next = [n+1, n-1, n*2]
+        cost = [1, 1, 0]
 
 
 
