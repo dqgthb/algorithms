@@ -183,12 +183,6 @@ def main(f = None):
     n, m = (int(i) for i in  input().split())
     mat = [list(int(i) for i in input().strip()) for _ in range(n)]
 
-    cum = [i[:] for i in mat]
-    for i in range(1, n):
-        for j in range(m):
-            if cum[i][j] != 0:
-                cum[i][j] += cum[i-1][j]
-    
     max_ = 0
 
     dp = [[mat[0][i], i] for i in range(m)]
