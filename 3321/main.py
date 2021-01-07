@@ -183,7 +183,11 @@ def main(f = None):
     n, m = (int(i) for i in  input().split())
     mat = [list(int(i) for i in input().strip()) for _ in range(n)]
 
-    cum = [mat[i][:]]
+    cum = [i[:] for i in mat]
+    for i in range(1, n):
+        for j in range(m):
+            cum[i][j] += cum[i-1][j]
+
 
 
 if __name__ == "__main__":
