@@ -192,6 +192,7 @@ def main(f = None):
         if n == K:
             ans = step
             break
+        if step > dis[n]: continue
 
         next = [n+1, n-1, n*2]
         cost = [1, 1, 0]
@@ -201,6 +202,7 @@ def main(f = None):
             if 0 <= ni <= 100000:
                 if not vis[ni]:
                     vis[ni] = True
+                    d = step+cost[i]
                     heappush(pq, (step+cost[i], ni))
     else:
         assert False
