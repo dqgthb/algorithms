@@ -213,12 +213,12 @@ def main(f = None):
                             vis[iN][jN] = Vis.Naive
                         dq.append((iN, jN, canBreak, step+1))
                     elif canBreak:
-                        vis[iN][jN] = UsedAbility
+                        vis[iN][jN] = Vis.UsedAbility
                         dq.append((iN, jN, False, step+1))
-                elif visInfo == UsedAbility:
+                elif visInfo == Vis.UsedAbility:
                     if canBreak:
                         if map[iN][jN] == 0:
-                            vis[iN][jN] = Naive
+                            vis[iN][jN] = Vis.Naive
                             dq.append((iN, jN, True, step+1))
 
     print(ans)
