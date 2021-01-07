@@ -192,13 +192,13 @@ def main(f = None):
     dp = [[mat[0][i], i] for i in range(m)]
     dp.sort(reverse=True)
 
-    row = 1
-    for i in dp:
-        idx = i[1]
-        if mat[row][idx] == 1:
-            i[0] += 1
-        else:
-            i[0] = 0
+    for row in (1, 2):
+        for i in dp:
+            idx = i[1]
+            if mat[row][idx] == 1:
+                i[0] += 1
+            else:
+                i[0] = 0
     print(dp)
 
 
