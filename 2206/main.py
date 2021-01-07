@@ -179,5 +179,6 @@ def main(f = None):
     n, m = (int(i) for i in  input().split())
     map = [[int(i) for i in input().strip()] for _ in range(n)]
 
+
 if __name__ == "__main__":
     main()
