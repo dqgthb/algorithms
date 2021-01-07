@@ -207,6 +207,9 @@ def main(f = None):
             if val != 0:
                 newDp.append(i)
             else:
+                zeros.append(i)
+        newDp.extend(zeros)
+        print(newDp)
 
 
 
