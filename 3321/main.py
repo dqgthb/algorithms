@@ -200,9 +200,13 @@ def main(f = None):
             else:
                 i[0] = 0
 
-        newDp = 
+        newDp = []
+        zeros = []
         for i in dp:
-
+            val, idx = i
+            if val != 0:
+                newDp.append(i)
+            else:
 
 
 
