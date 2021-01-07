@@ -181,7 +181,8 @@ def main(f = None):
     a = [int(i) for i in input().split()]
     b = [int(i) for i in input().split()]
     c = [int(i) for i in input().split()]
-    students = list(zip(idx, a, b, c))
+    students = list(zip(a, b, c, idx))
+    students.sort(reverse=True)
     print(students)
 
 if __name__ == "__main__":
