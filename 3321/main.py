@@ -189,7 +189,10 @@ def main(f = None):
             if cum[i][j] != 0:
                 cum[i][j] += cum[i-1][j]
     
-    dp = []
+    dp = list(range(m))
+    print(dp)
+    
+    dp.sort(reverse=True, key=lambda x:cum[i][x])
 
 if __name__ == "__main__":
     main()
