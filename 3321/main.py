@@ -208,8 +208,10 @@ def main(f = None):
                 newDp.append(i)
             else:
                 zeros.append(i)
+        print("oldDP:", newDp)
         newDp.extend(zeros)
-        print(newDp)
+        print("newDp:", newDp)
+        dp = newDp
 
 
 
