@@ -182,12 +182,12 @@ def main(f = None):
     vis = [False for _ in range(100001)]
 
     vis[N] = True
-    pq = [(N, 0)]
+    pq = [(0, N)]
     ans = -1
 
     while pq:
         print(pq)
-        n, step = heappop(pq)
+        step, n = heappop(pq)
         if n == K:
             ans = step
             break
@@ -200,7 +200,7 @@ def main(f = None):
             if 0 <= ni <= 100000:
                 if not vis[ni]:
                     vis[ni] = True
-                    heappush(pq, (ni, step+cost[i]))
+                    heappush(pq, (step+cost[i], ni))
 
     print(ans)
 
