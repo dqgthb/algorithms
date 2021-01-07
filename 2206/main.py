@@ -216,6 +216,8 @@ def main(f = None):
                 elif visInfo == UsedAbility:
                     if canBreak:
                         if map[iN][jN] == 0:
+                            vis[iN][jN] = Naive
+                            dq.append((iN, jN, True, step+1))
                             
 
     print(ans)
