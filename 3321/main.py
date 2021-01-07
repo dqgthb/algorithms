@@ -193,7 +193,10 @@ def main(f = None):
 
     dp = [[mat[0][i], i] for i in range(m)]
     dp.sort(reverse=True)
-    for i in dp:
+    for i, e in enumerate(dp):
+        val, idx = e
+        max_ = max(max_, (i+1) * val)
+    print(max_)
 
     for row in range(1, n):
         for i in dp:
