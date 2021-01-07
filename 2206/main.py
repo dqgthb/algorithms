@@ -179,6 +179,7 @@ def main(f = None):
     init(f)
     n, m = (int(i) for i in  input().split())
     map = [[int(i) for i in input().strip()] for _ in range(n)]
+
     class Vis(Enum):
         NoOne = 0
         UsedAbility = 1
