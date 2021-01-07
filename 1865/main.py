@@ -176,7 +176,7 @@ def pfast(*args, end = "\n", sep=' '): sys.stdout.write(sep.join(map(str, args))
 
 def solve(N, M, W):
     g = [[] for _ in range(N)]
-    for _ in range(M):
+    for _ in range(M+W):
         s, e, t = map(int, input().split())
         g[s].append((e, t))
 
