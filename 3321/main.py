@@ -181,7 +181,9 @@ def printArr(a):
 def main(f = None):
     init(f)
     n, m = (int(i) for i in  input().split())
-    mat = [input().split() for _ in range(n)]
+    mat = [list(int(i) for i in input().strip()) for _ in range(n)]
+
+    cum = mat[:]
 
 if __name__ == "__main__":
     main()
