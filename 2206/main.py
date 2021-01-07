@@ -202,6 +202,10 @@ def main(f = None):
         for x, y in zip(lr, ud):
             iN, jN = i+x, j+y
             if 0 <= iN < n and 0 <= jN < m:
+                visInfo = vis[iN][jN]
+                if visInfo < Naive:
+
+
                 if vis[iN][jN] != Naive:
                     if map[iN][jN] == 0:
                         vis[iN][jN] = True
