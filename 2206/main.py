@@ -205,13 +205,18 @@ def main(f = None):
                 visInfo = vis[iN][jN]
                 if visInfo == NoOne:
                     if map[iN][jN] == 0:
-                        vis[iN][jN] = True
+                        if not canBreak:
+                            vis[iN][jN] = UsedAbility
+                        else:
+                            vis[iN][jN] = Naive
                         dq.append((iN, jN, canBreak, step+1))
                     elif canBreak:
                         vis[iN][jN] = True
                         dq.append((iN, jN, False, step+1))
                 elif visInfo == UsedAbility:
                     if canBreak:
+                        if map[iN][jN] == 0:
+                            
 
     print(ans)
 
