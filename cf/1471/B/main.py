@@ -42,9 +42,29 @@ def pfast(*args, end = "\n", sep=' '):
 
 def ints(): return map(int, sys.stdin.readline().rstrip().split())
 
+def solve(n, x, a):
+    b = a[:]
+    
+    sum_ = sum(a)
+        
+    while True:
+        for i in range(n):
+            e = b[i]
+            q, r = divmod(e, x)
+            if r != 0:
+                return sum_
+            b[i] = q
+            sum_ += a[i]
+
+
 def main(f = None):
     init(f)
-    pass
+    t = int(input())
+    for _ in range(t):
+        n, x = map(int, input().split())
+        a = list(map(int, input().split()))
+        ans = solve(n, x, a)
+        print(ans)
 
 if __name__ == "__main__":
     main()
