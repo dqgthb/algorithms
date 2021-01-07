@@ -189,8 +189,9 @@ def main(f = None):
             if cum[i][j] != 0:
                 cum[i][j] += cum[i-1][j]
     
-    print()
-    dp.sort(reverse=True, key=lambda x:cum[0][x])
+    dp = [[cum[0][i], i] for i in range(m)]
+    print(dp)
+    dp.sort(reverse=True, key=lambda x:x[1])
     print(dp)
 
 if __name__ == "__main__":
