@@ -179,12 +179,17 @@ def main(f = None):
     n, m = (int(i) for i in  input().split())
     map = [[int(i) for i in input().strip()] for _ in range(n)]
 
+    arrival = (n-1, m-1)
+    ans = -1
+
     dq = deque()
     dq.append((0, 0, True, 1))
 
     while dq:
         i, j, canBreak, step = dq.popleft()
-        if i, j = 
+        if (i, j) == arrival:
+            ans = step
+            break
 
         lr = [-1, 1, -1, 1]
         ud = [-1, -1, 1, 1]
