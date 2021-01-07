@@ -176,10 +176,13 @@ def pfast(*args, end = "\n", sep=' '): sys.stdout.write(sep.join(map(str, args))
 
 def main(f = None):
     init(f)
-    n = int()
+    n = int(input())
+    idx = [i for i in range(n)]
     a = [int(i) for i in input().split()]
     b = [int(i) for i in input().split()]
     c = [int(i) for i in input().split()]
+    students = list(zip(idx, a, b, c))
+    print(students)
 
 if __name__ == "__main__":
     main()
