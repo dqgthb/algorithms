@@ -178,6 +178,7 @@ def main(f = None):
     init(f)
     n, m = (int(i) for i in  input().split())
     map = [[int(i) for i in input().strip()] for _ in range(n)]
+    vis = [[False for _ in range(m)] for _ in range(n)]
 
     arrival = (n-1, m-1)
     ans = -1
@@ -193,7 +194,7 @@ def main(f = None):
             break
 
         lr = [1, 0, -1, 0]
-        ud = [0, -1, 1, 1]
+        ud = [0, 1, 0, -1]
 
         for x, y in zip(lr, ud):
             iN, jN = i+x, j+y
