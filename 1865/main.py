@@ -174,6 +174,9 @@ def dprint(*args):
 
 def pfast(*args, end = "\n", sep=' '): sys.stdout.write(sep.join(map(str, args)) + end)
 
+def solve(N, M, W):
+    g = [[] for _ in range(N)]
+
 def main(f = None):
     init(f)
     tc = int(input())
