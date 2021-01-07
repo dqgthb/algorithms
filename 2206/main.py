@@ -180,10 +180,12 @@ def main(f = None):
     map = [[int(i) for i in input().strip()] for _ in range(n)]
 
     dq = deque()
-    dq.append((0, 0))
+    dq.append((0, 0, True))
 
     while dq:
-        i, j = dq.popleft()
+        i, j, canBreak = dq.popleft()
+
+
 
 if __name__ == "__main__":
     main()
