@@ -200,8 +200,6 @@ def main(f = None):
         for i in range(3):
             ni = next[i]
             if 0 <= ni <= 100000:
-                if not vis[ni]:
-                    vis[ni] = True
                     d = step+cost[i]
                     prevDis = dis[ni]
                     if d < prevDis:
