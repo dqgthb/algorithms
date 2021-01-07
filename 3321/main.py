@@ -194,6 +194,10 @@ def main(f = None):
     dp.sort(reverse=True)
 
     row = 0
+    for i in dp:
+        idx = i[1]
+        if mat[row][idx] == 1:
+            i[0] += 1
 
 
 
