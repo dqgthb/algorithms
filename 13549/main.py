@@ -179,7 +179,12 @@ def main(f = None):
     init(f)
     N, K = map(int, input().split())
 
-    pq = []
+    step = 0
+    pq = [(N, step)]
+
+    import heapq
+    while pq:
+        Heap
 
 
 
