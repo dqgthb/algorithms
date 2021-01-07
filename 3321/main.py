@@ -192,7 +192,7 @@ def main(f = None):
     dp = [[mat[0][i], i] for i in range(m)]
     dp.sort(reverse=True)
     print(dp)
-    for row in (1, 2):
+    for row in range(1, n):
         for i in dp:
             idx = i[1]
             if mat[row][idx] == 1:
@@ -200,7 +200,8 @@ def main(f = None):
             else:
                 i[0] = 0
 
-        dp = [i for i in dp]
+        newDp = 
+        for i in dp:
 
 
 
