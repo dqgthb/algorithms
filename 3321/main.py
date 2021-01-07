@@ -189,10 +189,7 @@ def main(f = None):
             if cum[i][j] != 0:
                 cum[i][j] += cum[i-1][j]
     
-    for i in cum:
-        print(i)
-
-
+    dp = []
 
 if __name__ == "__main__":
     main()
