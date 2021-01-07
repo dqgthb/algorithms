@@ -198,9 +198,10 @@ def main(f = None):
             iN, jN = i+x, j+y
             if 0 <= iN < n and 0 <= jN < m:
                 if map[iN][jN] == 0:
-                    dq.append((iN, jN, True))
+                    dq.append((iN, jN, canBreak, step+1))
                 elif canBreak:
-                    dq.append((iN, jN, False))
+                    dq.append((iN, jN, False, step+1))
+    print(ans)
 
 
 
