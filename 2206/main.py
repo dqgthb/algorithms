@@ -191,10 +191,8 @@ def main(f = None):
         for x, y in zip(lr, ud):
             iN, jN = i+x, j+y
             if 0 <= iN < n and 0 <= jN < m:
-
-
-            
-            dq.append((i+x, j+y, True))
+                if map[iN][jN] == 0:
+                    dq.append((i+x, j+y, True))
 
 
 
