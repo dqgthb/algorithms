@@ -189,7 +189,11 @@ def main(f = None):
         ud = [-1, -1, 1, 1]
 
         for x, y in zip(lr, ud):
-            if within Range
+            iN, jN = i+x, j+y
+            if 0 <= iN < n and 0 <= jN < m:
+
+
+            
             dq.append((i+x, j+y, True))
 
 
