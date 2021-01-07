@@ -183,9 +183,13 @@ def main(f = None):
 
     vis[N] = True
     pq = [(N, 0)]
+    ans = -1
 
     while pq:
         n, step = heappop(pq)
+        if n == K:
+            ans = step
+            break
 
         next = [n+1, n-1, n*2]
         cost = [1, 1, 0]
@@ -196,6 +200,8 @@ def main(f = None):
                 if not vis[ni]:
                     vis[ni] = True
                     heappush(pq, (ni, step+cost[i]))
+
+    print(step)
 
 
 
