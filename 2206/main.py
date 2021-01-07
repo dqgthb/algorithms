@@ -211,7 +211,7 @@ def main(f = None):
                             vis[iN][jN] = Naive
                         dq.append((iN, jN, canBreak, step+1))
                     elif canBreak:
-                        vis[iN][jN] = True
+                        vis[iN][jN] = UsedAbility
                         dq.append((iN, jN, False, step+1))
                 elif visInfo == UsedAbility:
                     if canBreak:
