@@ -193,6 +193,8 @@ def main(f = None):
 
     dp = [[mat[0][i], i] for i in range(m)]
     dp.sort(reverse=True)
+    for i in dp:
+
     for row in range(1, n):
         for i in dp:
             idx = i[1]
@@ -211,6 +213,7 @@ def main(f = None):
                 zeros.append(i)
         newDp.extend(zeros)
         dp = newDp
+
 
 
 
