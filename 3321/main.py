@@ -196,7 +196,6 @@ def main(f = None):
     for i, e in enumerate(dp):
         val, idx = e
         max_ = max(max_, (i+1) * val)
-    print(max_)
 
     for row in range(1, n):
         for i in dp:
@@ -216,8 +215,11 @@ def main(f = None):
                 zeros.append(i)
         newDp.extend(zeros)
         dp = newDp
-
-
+        for i, e in enumerate(dp):
+            val, idx = e
+            max_ = max(max_, (i+1) * val)
+    
+    print(max_)
 
 
 if __name__ == "__main__":
