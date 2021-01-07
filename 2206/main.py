@@ -180,7 +180,7 @@ def main(f = None):
     map = [[int(i) for i in input().strip()] for _ in range(n)]
 
     dq = deque()
-    dq.append((0, 0, True, 0))
+    dq.append((0, 0, True, 1))
 
     while dq:
         i, j, canBreak, step = dq.popleft()
