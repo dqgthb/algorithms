@@ -180,8 +180,10 @@ def main(f = None):
     init(f)
     N, K = map(int, input().split())
     vis = [False for _ in range(100001)]
+    dis = [float('inf') for _ in range(100001)]
 
     vis[N] = True
+    dis[N] = 0
     pq = [(0, N)]
     ans = -1
 
