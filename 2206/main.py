@@ -188,7 +188,6 @@ def main(f = None):
     dq.append((0, 0, True, 1))
 
     while dq:
-        print(dq)
         i, j, canBreak, step = dq.popleft()
         if (i, j) == arrival:
             ans = step
@@ -202,8 +201,10 @@ def main(f = None):
             if 0 <= iN < n and 0 <= jN < m:
                 if not vis[iN][jN]:
                     if map[iN][jN] == 0:
+                        vis[iN][jN] = True
                         dq.append((iN, jN, canBreak, step+1))
                     elif canBreak:
+                        vis[iN][jN] = True
                         dq.append((iN, jN, False, step+1))
     print(ans)
 
