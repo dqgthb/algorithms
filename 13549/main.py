@@ -201,7 +201,7 @@ def main(f = None):
                     vis[ni] = True
                     heappush(pq, (ni, step+cost[i]))
 
-    print(step)
+    print(ans)
 
 
 
