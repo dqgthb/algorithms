@@ -189,9 +189,10 @@ def main(f = None):
             if cum[i][j] != 0:
                 cum[i][j] += cum[i-1][j]
     
+    max_ = 0
+
     dp = [[mat[0][i], i] for i in range(m)]
     dp.sort(reverse=True)
-    print(dp)
     for row in range(1, n):
         for i in dp:
             idx = i[1]
@@ -208,9 +209,7 @@ def main(f = None):
                 newDp.append(i)
             else:
                 zeros.append(i)
-        print("oldDP:", newDp)
         newDp.extend(zeros)
-        print("newDp:", newDp)
         dp = newDp
 
 
