@@ -181,6 +181,8 @@ def main(f = None):
     t = int(input())
     for _ in range(t):
         l, r, w = [int(i) for i in input().split()]
+        a = l, r, w
+        
 
 if __name__ == "__main__":
     main()
