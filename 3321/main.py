@@ -193,8 +193,8 @@ def main(f = None):
     print(dp)
     dp.sort(reverse=True)
 
-    for i in dp:
-        dp[0] = i
+    row = 0
+
 
 
 if __name__ == "__main__":
