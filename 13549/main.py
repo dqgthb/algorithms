@@ -200,6 +200,8 @@ def main(f = None):
                 if not vis[ni]:
                     vis[ni] = True
                     heappush(pq, (step+cost[i], ni))
+    else:
+        assert False
 
     print(ans)
 
