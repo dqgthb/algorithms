@@ -179,12 +179,14 @@ def pfast(*args, end = "\n", sep=' '): sys.stdout.write(sep.join(map(str, args))
 def main(f = None):
     init(f)
     N, K = map(int, input().split())
+    vis = [False for _ in range(100001)]
 
-    step = 0
-    pq = [(N, step)]
+    vis[N] = True
+    pq = [(N, 0)]
 
     while pq:
-        n, s
+        n, step = heappop(pq)
+        
 
 
 
