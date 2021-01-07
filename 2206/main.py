@@ -179,13 +179,15 @@ def main(f = None):
     n, m = (int(i) for i in  input().split())
     map = [[int(i) for i in input().strip()] for _ in range(n)]
     NoOne = 0
-    vis = [[ for _ in range(m)] for _ in range(n)]
+    UsedAbility = 1
+    Naive = 2
+    vis = [[NoOne for _ in range(m)] for _ in range(n)]
 
     arrival = (n-1, m-1)
     ans = -1
 
     dq = deque()
-    vis[0][0] = True
+    vis[0][0] = Naive
     dq.append((0, 0, True, 1))
 
     while dq:
