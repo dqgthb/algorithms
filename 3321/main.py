@@ -174,10 +174,14 @@ def dprint(*args):
 
 def pfast(*args, end = "\n", sep=' '): sys.stdout.write(sep.join(map(str, args)) + end)
 
+def printArr(a):
+        print('\n'.join(str(i) for i in a))
+
+
 def main(f = None):
     init(f)
     n, m = (int(i) for i in  input().split())
-    mat = []
+    mat = [input().split() for _ in range(n)]
 
 if __name__ == "__main__":
     main()
