@@ -8,6 +8,7 @@ from itertools import product
 from collections import deque, Counter
 from math import log, ceil, floor
 from typing import MappingView
+from heapq import heappush, heappop
 
 DEBUG = False
 
@@ -182,9 +183,8 @@ def main(f = None):
     step = 0
     pq = [(N, step)]
 
-    import heapq
     while pq:
-        Heap
+        n, s
 
 
 
