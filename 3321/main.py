@@ -191,8 +191,11 @@ def main(f = None):
     
     dp = [[cum[0][i], i] for i in range(m)]
     print(dp)
-    dp.sort(reverse=True, key=lambda x:x[1])
-    print(dp)
+    dp.sort(reverse=True)
+
+    for i in dp:
+        dp[0] = i
+
 
 if __name__ == "__main__":
     main()
