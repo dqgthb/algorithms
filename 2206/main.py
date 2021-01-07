@@ -178,7 +178,8 @@ def main(f = None):
     init(f)
     n, m = (int(i) for i in  input().split())
     map = [[int(i) for i in input().strip()] for _ in range(n)]
-    vis = [[False for _ in range(m)] for _ in range(n)]
+    NoOne = 0
+    vis = [[ for _ in range(m)] for _ in range(n)]
 
     arrival = (n-1, m-1)
     ans = -1
@@ -199,7 +200,7 @@ def main(f = None):
         for x, y in zip(lr, ud):
             iN, jN = i+x, j+y
             if 0 <= iN < n and 0 <= jN < m:
-                if not vis[iN][jN]:
+                if vis[iN][jN]:
                     if map[iN][jN] == 0:
                         vis[iN][jN] = True
                         dq.append((iN, jN, canBreak, step+1))
