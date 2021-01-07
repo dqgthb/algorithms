@@ -190,6 +190,10 @@ def main(f = None):
         next = [n+1, n-1, n*2]
         cost = [1, 1, 0]
 
+        for i in range(3):
+            if 0 <= next[i] <= 100000:
+            heappush(pq, (next[i], step+cost[i]))
+
 
 
 
