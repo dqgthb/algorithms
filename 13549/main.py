@@ -179,10 +179,8 @@ def pfast(*args, end = "\n", sep=' '): sys.stdout.write(sep.join(map(str, args))
 def main(f = None):
     init(f)
     N, K = map(int, input().split())
-    vis = [False for _ in range(100001)]
     dis = [float('inf') for _ in range(100001)]
 
-    vis[N] = True
     dis[N] = 0
     pq = [(0, N)]
     ans = -1
@@ -200,11 +198,11 @@ def main(f = None):
         for i in range(3):
             ni = next[i]
             if 0 <= ni <= 100000:
-                    d = step+cost[i]
-                    prevDis = dis[ni]
-                    if d < prevDis:
-                        dis[ni] = d
-                        heappush(pq, (d, ni))
+                d = step+cost[i]
+                prevDis = dis[ni]
+                if d < prevDis:
+                    dis[ni] = d
+                    heappush(pq, (d, ni))
     else:
         assert False
 
