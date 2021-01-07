@@ -203,6 +203,8 @@ def main(f = None):
                 if not vis[ni]:
                     vis[ni] = True
                     d = step+cost[i]
+                    dis[ni] = min(dis[ni], d)
+                    prevDis = dis[ni]
                     heappush(pq, (step+cost[i], ni))
     else:
         assert False
