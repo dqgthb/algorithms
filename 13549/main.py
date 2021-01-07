@@ -186,6 +186,7 @@ def main(f = None):
     ans = -1
 
     while pq:
+        print(pq)
         n, step = heappop(pq)
         if n == K:
             ans = step
