@@ -214,8 +214,8 @@ def main(f = None):
             for i in range(1, n-1):
                 gi = geo[i]
                 gj = geo[i+1]
-                if gi > EVEN and gj > EVEN:
-                    return count -2
+                if gi == VALLEY nad gj == 
+                    if 
             return count - 1
 
         ans = solve()
