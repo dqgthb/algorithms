@@ -205,13 +205,13 @@ def main(f = None):
                 return count
 
             decrease = 0
-            for i in range(1, n-1):
+            for i in range(2, n-2):
                 gi = geo[i-1]
                 gj = geo[i]
                 gk = geo[i+1]
                 if gi > EVEN and gj > EVEN and gk > EVEN:
                     return count - 3
-            for i in range(n-1):
+            for i in range(1, n-1):
                 gi = geo[i]
                 gj = geo[i+1]
                 if gi > EVEN and gj > EVEN:
