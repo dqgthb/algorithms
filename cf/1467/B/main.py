@@ -217,7 +217,7 @@ def main(f = None):
                 if gi == VALLEY and gj == HILL:
                     if arr[i-1] > arr[i+1]:
                         return count - 2
-                else:
+                elif gi == HILL and gj == VALLEY:
                     if arr[i-1] < arr[i+1]:
                         return count - 2
 
