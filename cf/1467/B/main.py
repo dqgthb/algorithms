@@ -215,8 +215,11 @@ def main(f = None):
                 gi = geo[i]
                 gj = geo[i+1]
                 if gi == VALLEY and gj == HILL:
-                    arr[i-1] > arr[i+1]:
-                    return count - 2
+                    if arr[i-1] > arr[i+1]:
+                        return count - 2
+                else:
+                    if arr[i-1] < arr[i+1]:
+                        return count - 2
 
             return count - 1
 
