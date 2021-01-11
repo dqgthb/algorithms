@@ -93,33 +93,30 @@ def parr(arr):
 def main(f = None):
     init(f)
     N = int(input())
-    arr = [int(input()) for _ in range(N)]
-    if N == 1:
-        ele = arr[0]
-        print(ele)
-        print(ele)
-        print(ele)
-        print(0)
-        return
+    tasks = []
+    for i in range(1, N+1):
+        t, p = map(int, input().split())
+        if t + i <= N:
+            tasks.append([i, t, p])
+        else:
+            tasks.append([i, 0, 0])
 
-    arr.sort()
-    cnt = Counter(arr)
+    dp = [None] * (N+1)
+    def DP(n):
+        if dp[n] is not None:
+            return dp[n]
+        
+        if n == 0:
+            return 0
+        
+        c1 = DP(n-1) + tasks[n-1][2]
+        c2 = DP(n-1)
 
-    avg = sum(arr)/N
-    median = arr[N//2]
 
-    means = cnt.most_common()
-    fst = means[0]
-    snd = means[1]
-    if fst[1] == snd[1]:
-        mean = (snd[0])
-    else:
-        mean = (fst[0])
 
-    print(round(avg))
-    print(median)
-    print(mean)
-    print(max(arr) - min(arr))
+    parr(tasks)
+
+
 
 if __name__ == "__main__":
     main()

@@ -92,34 +92,22 @@ def parr(arr):
 
 def main(f = None):
     init(f)
-    N = int(input())
-    arr = [int(input()) for _ in range(N)]
-    if N == 1:
-        ele = arr[0]
-        print(ele)
-        print(ele)
-        print(ele)
-        print(0)
-        return
+    players = []
+    import heapq
+    n = int(input())
+    num = 2 ** n
+    a = [int(i) for i in input().split()]
+    a = [(a[i], i+1) for i in range(num)]
+    tree = [None] * (2*num)
+    tree[num:] = a
 
-    arr.sort()
-    cnt = Counter(arr)
+    for i in range(num-1, 0, -1):
+        tree[i] = max(tree[i*2], tree[i*2 + 1])
+    
+    c1 = tree[2]
+    c2 = tree[3]
+    print(min(c1, c2)[1])
 
-    avg = sum(arr)/N
-    median = arr[N//2]
-
-    means = cnt.most_common()
-    fst = means[0]
-    snd = means[1]
-    if fst[1] == snd[1]:
-        mean = (snd[0])
-    else:
-        mean = (fst[0])
-
-    print(round(avg))
-    print(median)
-    print(mean)
-    print(max(arr) - min(arr))
 
 if __name__ == "__main__":
     main()

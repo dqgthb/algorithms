@@ -6,9 +6,7 @@ import collections
 from functools import cmp_to_key
 from itertools import product
 from collections import deque, Counter
-from math import log, log2, ceil, floor
-import math
-from heapq import heappush, heappop
+from math import log, ceil, floor
 
 DEBUG = False
 
@@ -92,34 +90,12 @@ def parr(arr):
 
 def main(f = None):
     init(f)
-    N = int(input())
-    arr = [int(input()) for _ in range(N)]
-    if N == 1:
-        ele = arr[0]
-        print(ele)
-        print(ele)
-        print(ele)
-        print(0)
-        return
+    A, B, V = map(int, input().split())
 
-    arr.sort()
-    cnt = Counter(arr)
-
-    avg = sum(arr)/N
-    median = arr[N//2]
-
-    means = cnt.most_common()
-    fst = means[0]
-    snd = means[1]
-    if fst[1] == snd[1]:
-        mean = (snd[0])
-    else:
-        mean = (fst[0])
-
-    print(round(avg))
-    print(median)
-    print(mean)
-    print(max(arr) - min(arr))
+    import math
+    def solve(a, b, v):
+        return math.ceil((v-b)/(a-b))
+    print(solve(A, B, V))
 
 if __name__ == "__main__":
     main()

@@ -92,34 +92,18 @@ def parr(arr):
 
 def main(f = None):
     init(f)
-    N = int(input())
-    arr = [int(input()) for _ in range(N)]
-    if N == 1:
-        ele = arr[0]
-        print(ele)
-        print(ele)
-        print(ele)
-        print(0)
-        return
+    n = int(input())
 
-    arr.sort()
-    cnt = Counter(arr)
+    for i in range(n):
+        s = (n-1) - i
+        star = i * 2 + 1
+        print(' '*s + '*'*star)
+    
+    for i in range(n-1):
+        s = i + 1
+        star = (2*n-3) - i*2
+        print(' '*s + '*'*star)
 
-    avg = sum(arr)/N
-    median = arr[N//2]
-
-    means = cnt.most_common()
-    fst = means[0]
-    snd = means[1]
-    if fst[1] == snd[1]:
-        mean = (snd[0])
-    else:
-        mean = (fst[0])
-
-    print(round(avg))
-    print(median)
-    print(mean)
-    print(max(arr) - min(arr))
 
 if __name__ == "__main__":
     main()

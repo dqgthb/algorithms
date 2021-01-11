@@ -90,36 +90,57 @@ def parr(arr):
     for i in arr:
         print(i)
 
+import heapq
+class PrioritySet(object):
+    def __init__(self):
+        self.heap = []
+        self.set = set()
+
+    def add(self, d, pri):
+        if not d in self.set:
+            heapq.heappush(self.heap, (pri, d))
+            self.set.add(d)
+
+    def get(self):
+        pri, d = heapq.heappop(self.heap)
+        self.set.remove(d)
+        return d
+
 def main(f = None):
     init(f)
-    N = int(input())
-    arr = [int(input()) for _ in range(N)]
-    if N == 1:
-        ele = arr[0]
-        print(ele)
-        print(ele)
-        print(ele)
-        print(0)
-        return
+    n, C = map(int, input().split())
+    query = []
+    for _ in range(n):
+        a, b, c = map(int, input().split())
+        heappush(query, (a, c))
+        heappush(query, (b+1, -c))
+    dailyPayment = 0
+    total = 0
+    pay = 0
 
-    arr.sort()
-    cnt = Counter(arr)
+    prevDate, amount = heappop(query)
+    dailyPayment += amount
+    dailyPayment = max(0, dailyPayment)
+    what2pay = min(dailyPayment, C)
 
-    avg = sum(arr)/N
-    median = arr[N//2]
+    def makePayment():
+        nonlocal pay
+        what2pay = min(dailyPayment, C)
+        pay += (today - prevDate) * what2pay
 
-    means = cnt.most_common()
-    fst = means[0]
-    snd = means[1]
-    if fst[1] == snd[1]:
-        mean = (snd[0])
-    else:
-        mean = (fst[0])
+    while query:
+        today, amount = heappop(query)
+        if prevDate != today:
+            makePayment()
 
-    print(round(avg))
-    print(median)
-    print(mean)
-    print(max(arr) - min(arr))
+        dailyPayment += amount
+        dailyPayment = max(dailyPayment, 0)
+        what2pay = min(dailyPayment, C)
+        prevDate = today
+
+    pay += what2pay
+    print(pay)
+
 
 if __name__ == "__main__":
     main()

@@ -92,34 +92,70 @@ def parr(arr):
 
 def main(f = None):
     init(f)
-    N = int(input())
-    arr = [int(input()) for _ in range(N)]
-    if N == 1:
-        ele = arr[0]
-        print(ele)
-        print(ele)
-        print(ele)
-        print(0)
-        return
+    n, m = map(int, input().split())
+    mat = [[int(i) for i in input().split()] for _ in range(n)]
 
-    arr.sort()
-    cnt = Counter(arr)
+    cpy = [i[:] for i in mat]
 
-    avg = sum(arr)/N
-    median = arr[N//2]
+    virusSources = []
+    for i in range(n):
+        for j in range(m):
+            if mat[i][j] == 2:
+                virusSources.append((i, j))
 
-    means = cnt.most_common()
-    fst = means[0]
-    snd = means[1]
-    if fst[1] == snd[1]:
-        mean = (snd[0])
-    else:
-        mean = (fst[0])
+    dx = [-1, 0, 1, 0]
+    dy = [0, -1, 0, 1]
 
-    print(round(avg))
-    print(median)
-    print(mean)
-    print(max(arr) - min(arr))
+    def virus(mat):
+        for i, j in virusSources:
+            dfs(mat, i, j)
+        #parr(mat)
+        #print()
+        return countSafe(mat)
+    
+    def countSafe(mat):
+        count = 0
+        for i in range(n):
+            for j in range(m):
+                if mat[i][j] == 0:
+                    count += 1
+        return count
+
+    def dfs(mat, y, x):
+        mat[y][x] = 2
+
+        for i, j in zip(dx, dy):
+            ni = y + i
+            nj = x + j
+            if 0 <= ni < n and 0 <= nj < m:
+                if mat[ni][nj] == 0:
+                    dfs(mat, ni, nj)
+
+    global safeArea
+    safeArea = 0
+
+    def wall(wallCount, mat, i, j):
+        global safeArea
+        while i < n:
+            while j < m:
+                if mat[i][j] == 0:
+                    mat[i][j] = 8 
+                    if wallCount < 2:
+                        wall(wallCount + 1, mat, i, j)
+                    else:
+                        cpy = [i[:] for i in mat]
+                        safeArea = max(virus(cpy), safeArea)
+                    mat[i][j] = 0
+                j += 1
+                if j == m:
+                    j = 0
+                    break
+            i += 1
+
+    wall(0, mat, 0, 0)
+
+    print(safeArea)
+
 
 if __name__ == "__main__":
     main()

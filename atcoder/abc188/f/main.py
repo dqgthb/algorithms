@@ -90,36 +90,17 @@ def parr(arr):
     for i in arr:
         print(i)
 
+count = 0
+def bfs(x, y):
+    if x == y:
+        return count
+    
+    
+
 def main(f = None):
     init(f)
-    N = int(input())
-    arr = [int(input()) for _ in range(N)]
-    if N == 1:
-        ele = arr[0]
-        print(ele)
-        print(ele)
-        print(ele)
-        print(0)
-        return
-
-    arr.sort()
-    cnt = Counter(arr)
-
-    avg = sum(arr)/N
-    median = arr[N//2]
-
-    means = cnt.most_common()
-    fst = means[0]
-    snd = means[1]
-    if fst[1] == snd[1]:
-        mean = (snd[0])
-    else:
-        mean = (fst[0])
-
-    print(round(avg))
-    print(median)
-    print(mean)
-    print(max(arr) - min(arr))
+    x, y = map(int, input().split())
+    bfs(x, y)
 
 if __name__ == "__main__":
     main()
