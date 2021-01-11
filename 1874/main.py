@@ -97,5 +97,6 @@ def main(f = None):
     idx = 0
     stack = []
 
+
 if __name__ == "__main__":
     main()
