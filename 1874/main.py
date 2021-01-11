@@ -97,6 +97,8 @@ def main(f = None):
     idx = 0
     stack = []
     for i in range(1, n+1):
+        print("i =", i)
+        print(stack)
         if i < arr[idx]:
             stack.append(i)
             continue
@@ -106,11 +108,10 @@ def main(f = None):
             idx += 1
             continue
         else: #i > arr[idx]
-            while arr[idx] < stack[-1]:
+            while arr[idx] != stack[-1]:
                 print(a = stack.pop())
                 print("this must equal", arr[idx])
                 idx += 1
-            idx += 1
             continue
 
 
