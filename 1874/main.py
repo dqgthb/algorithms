@@ -93,8 +93,8 @@ def parr(arr):
 def main(f = None):
     init(f)
     n = int(input())
-    arr = [int(input()) for _ in range()]
-    print(arr)
+    arr = [int(input()) for _ in range(n)]
+    for i in range(1, n+1):
 
 if __name__ == "__main__":
     main()
