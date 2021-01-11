@@ -107,7 +107,9 @@ def main(f = None):
             continue
         else: #i > arr[idx]
             while arr[idx] < stack[-1]:
-                print(stack.pop())
+                print(a = stack.pop())
+                print("this must equal", arr[idx])
+                idx += 1
             idx += 1
             continue
 
