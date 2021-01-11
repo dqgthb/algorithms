@@ -94,7 +94,10 @@ def main(f = None):
     init(f)
     n = int(input())
     arr = [int(input()) for _ in range(n)]
+    stack = []
     for i in range(1, n+1):
+        stack.append(i)
+
 
 if __name__ == "__main__":
     main()
