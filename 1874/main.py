@@ -105,8 +105,9 @@ def main(f = None):
             print(stack.pop())
             idx += 1
             continue
-        else:
-            while stack.pop()
+        else: #i > arr[idx]
+            while stack:
+                stack.pop()
 
 
 if __name__ == "__main__":
