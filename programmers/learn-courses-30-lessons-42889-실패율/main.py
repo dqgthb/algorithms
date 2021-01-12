@@ -95,8 +95,10 @@ def solution(N, stages):
     freq =  [0] * N
     for i in stages:
         freq[i-1] += 1
-    reached = [0] * (N+2)
+    reached = [0] * N
     stages.sort()
+    for i in range(N):
+        reached[i] = 
 
     for i in range()
 
