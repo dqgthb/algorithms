@@ -91,6 +91,8 @@ def parr(arr):
         print(i)
 
 def solution(N, stages):
+    s = [0] * N
+    stages.sort()
     return answer
 
 def main(f = None):
