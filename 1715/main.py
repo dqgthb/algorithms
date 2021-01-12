@@ -8,7 +8,7 @@ from itertools import product
 from collections import deque, Counter
 from math import log, log2, ceil, floor
 import math
-from heapq import heappush, heappop
+from heapq import heappush, heappop, heapify
 
 DEBUG = False
 
@@ -94,6 +94,16 @@ def main(f = None):
     init(f)
     N = int(input())
     arr = [int(input()) for _ in range(N)]
+
+    if N == 1:
+        print(arr[0])
+        return
+
+    heapify(arr)
+
+    while arr:
+        
+
 
 
 
