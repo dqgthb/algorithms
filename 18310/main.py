@@ -94,12 +94,8 @@ def main(f = None):
     init(f)
     N = int(input())
     arr = [int(i) for i in input().split()]
-
-    import statistics
-    n = statistics.median_low(arr)
-    print(n)
-
-
+    arr.sort()
+    print(arr[(N-1)//2])
 
 if __name__ == "__main__":
     main()
