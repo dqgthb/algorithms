@@ -99,11 +99,11 @@ def solution(N, stages):
     stages.sort()
     curr = 0
     for i, e in enumerate(stages):
-        if e == curr:
-            continue
-        else:
+        if curr != e:
             curr = e
-            reached[e] = N 
+            reached[e] = ln - i
+    
+    for i, j in zip(freq, reached):
 
 
 
