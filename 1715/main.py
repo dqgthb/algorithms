@@ -92,7 +92,9 @@ def parr(arr):
 
 def main(f = None):
     init(f)
-    
+    N = int(input())
+    arr = [int(input()) for _ in range(N)]
+    arr.sort()
 
 if __name__ == "__main__":
     main()
