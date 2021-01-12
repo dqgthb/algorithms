@@ -103,17 +103,15 @@ def solution(N, stages):
     frac = [i/j for i, j in zip(freq, reached)]
     forSort = [(-e, i) for i, e in enumerate(frac)]
     forSort.sort()
-    ans = 
-
-
-
-
-    return answer
+    ans = [i[1]+1 for i in forSort]
+    print(ans)
+    return ans
 
 def main(f = None):
     init(f)
     N = 5
     stages = [2, 1, 2, 6, 2, 4, 3, 3]
+    stages = [4, 4, 4, 4, 4]
     solution(N, stages)
 
 if __name__ == "__main__":
