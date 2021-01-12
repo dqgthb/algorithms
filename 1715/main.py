@@ -1,3 +1,7 @@
+# data structure: min heap
+# time complexity: N + N * 
+
+
 # CP template Version 1.4
 import os
 import sys
@@ -104,10 +108,6 @@ def main(f = None):
         cum += c
         heappush(arr, c)
     print(cum)
-
-
-
-
 
 
 if __name__ == "__main__":
