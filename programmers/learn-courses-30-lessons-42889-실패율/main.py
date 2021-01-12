@@ -99,7 +99,7 @@ def solution(N, stages):
     stages.sort() # O(MlogM)
     from bisect import bisect_left as bi
     reached = [M - bi(stages, i+1) for i in range(N)] # O(N * logM)
-    reached = [i if i != 0 else 1 for i in reached]
+    reached = [i if i != 0 else 1 for i in reached] # get rid of zeros to avoid division by zero error
     
     frac = [i/j for i, j in zip(freq, reached)] # O(N)
     forSort = [(-e, i) for i, e in enumerate(frac)] # O(N)
