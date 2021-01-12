@@ -94,7 +94,7 @@ def solution(N, stages):
     ln = len(stages)
     freq =  [0] * N
     for i in stages:
-        if i == N: continue
+        if i == N+1: continue
         freq[i-1] += 1
     reached = [0] * N
     print("hello!")
@@ -102,7 +102,7 @@ def solution(N, stages):
     import bisect
     for i in range(N):
         idx = bisect.bisect_left(stages, i+1)
-        print(stages)
+        print(i, stages)
         print(idx)
         reached[i] = N - idx
     
