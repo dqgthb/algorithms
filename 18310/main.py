@@ -94,9 +94,12 @@ def main(f = None):
     init(f)
     N = int(input())
     arr = [int(i) for i in input().split()]
-    avg = sum(arr)/N
 
-    
+    import statistics
+    n = statistics.median_low(arr)
+    print(n)
+
+
 
 if __name__ == "__main__":
     main()
