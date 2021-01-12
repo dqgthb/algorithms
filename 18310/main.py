@@ -96,5 +96,7 @@ def main(f = None):
     arr = [int(i) for i in input().split()]
     avg = sum(arr)/N
 
+    
+
 if __name__ == "__main__":
     main()
