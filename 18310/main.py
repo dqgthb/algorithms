@@ -97,11 +97,13 @@ def main(f = None):
     avg = sum(arr)/N
 
     min_ = 987654321
-    val = 987654321
+    val = max(arr)
     for i, e in enumerate(arr):
         diff = abs(e - avg)
-        if diff <= min_:
+        if diff < min_:
             min_ = diff
+            val = e
+        elif diff == min_:
             if e < val:
                 val = e
     print(val)
