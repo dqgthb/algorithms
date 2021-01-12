@@ -104,7 +104,9 @@ def main(f = None):
         b = heappop(arr)
         c = a + b
         cum += c
-        
+        heappush(arr, c)
+    print()
+
 
 
 
