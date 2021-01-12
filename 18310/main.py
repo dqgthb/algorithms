@@ -95,10 +95,6 @@ def main(f = None):
     N = int(input())
     arr = [int(i) for i in input().split()]
     avg = sum(arr)/N
-    
-    #if N == 1:
-    #    print(arr[0])
-    #    return
 
     min_ = 987654321
     val = 987654321
