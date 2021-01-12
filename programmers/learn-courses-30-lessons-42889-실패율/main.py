@@ -96,13 +96,9 @@ def solution(N, stages):
     for i in stages:
         if i == N+1: continue
         freq[i-1] += 1
-    reached = [0] * N
-    print("hello!")
     stages.sort()
-    import bisect
-    for i in range(N):
-        idx = bisect.bisect_left(stages, i+1)
-        reached[i] = ln - idx
+    from bisect import bisect_left as bi
+    reached = [ln - bi(stages, i+1) for i in range(N)]
     
     frac = [i/j for i, j in zip(freq, reached)]
     forSort = [(-e, i) for i, e in enumerate(frac)]
