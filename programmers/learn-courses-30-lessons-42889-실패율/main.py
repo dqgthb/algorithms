@@ -107,7 +107,9 @@ def solution(N, stages):
     answer = []
     for i, j in zip(freq, reached):
         answer.append(i/j)
-        
+    forSort = []
+    for i, e in enumerate(answer):
+        forSort.append((e, i))
 
 
 
