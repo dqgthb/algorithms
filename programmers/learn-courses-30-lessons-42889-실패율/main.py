@@ -94,8 +94,10 @@ def solution(N, stages):
     ln = len(stages)
     freq =  [0] * N
     for i in stages:
+        if i == N: continue
         freq[i-1] += 1
     reached = [0] * N
+    print("hello!")
     stages.sort()
     import bisect
     for i in range(N):
