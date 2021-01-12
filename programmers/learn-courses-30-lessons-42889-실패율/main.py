@@ -92,10 +92,10 @@ def parr(arr):
 
 def solution(N, stages):
     ln = len(stages)
-    freq =  [0] * (N+1)
+    freq =  [0] * (N+2)
     for i in stages:
         freq[i] += 1
-    reached = [0] * (N+1)
+    reached = [0] * (N+2)
     stages.sort()
     curr = 0
     for i, e in enumerate(stages):
@@ -104,6 +104,7 @@ def solution(N, stages):
             reached[e] = ln - i
     
     reached[0] = 1
+    reached[N+1]
     answer = []
     for i, j in zip(freq, reached):
         answer.append(i/j)
@@ -121,7 +122,8 @@ def solution(N, stages):
 def main(f = None):
     init(f)
     N = 5
-    so
+    stages = [2, 1, 2, 6, 2, 4, 3, 3]
+    solution(N, stages)
 
 if __name__ == "__main__":
     main()
