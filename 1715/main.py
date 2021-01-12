@@ -96,6 +96,11 @@ def main(f = None):
     arr = [int(input()) for _ in range(N)]
     arr.sort()
     print(arr)
+    cum = arr[0] + ans[1]
+    for i in range(2, N):
+        cum = 2 * cum + arr[i]
+    print(cum)
+
 
 
 if __name__ == "__main__":
