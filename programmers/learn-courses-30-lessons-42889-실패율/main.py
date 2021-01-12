@@ -102,14 +102,12 @@ def solution(N, stages):
     import bisect
     for i in range(N):
         idx = bisect.bisect_left(stages, i+1)
-        print(stages)
-        print("success:", ln-idx)
         reached[i] = ln - idx
     
-    answer = [i/j for i, j in zip(freq, reached)]
-    forSort = [(-e, i) for i, e in enumerate(answer)]
+    frac = [i/j for i, j in zip(freq, reached)]
+    forSort = [(-e, i) for i, e in enumerate(frac)]
     forSort.sort()
-    print(forSort)
+    ans = 
 
 
 
