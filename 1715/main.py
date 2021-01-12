@@ -99,7 +99,7 @@ def main(f = None):
     heapify(arr)
 
     cum = 0
-    while len(arr) > 1:
+    while arr:
         a = heappop(arr)
         b = heappop(arr)
         c = a + b
