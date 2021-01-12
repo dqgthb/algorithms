@@ -94,16 +94,7 @@ def main(f = None):
     init(f)
     N = int(input())
     arr = [int(input()) for _ in range(N)]
-    arr.sort()
 
-    if N == 1:
-        print(arr[0])
-        return
-
-    cum = arr[0] + arr[1]
-    for i in range(2, N):
-        cum += cum + arr[i]
-    print(cum)
 
 
 if __name__ == "__main__":
