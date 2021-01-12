@@ -103,15 +103,11 @@ def solution(N, stages):
     for i in range(N):
         idx = bisect.bisect_left(stages, i+1)
         print(stages)
-        print("success:", N-idx)
-        reached[i] = N - idx
+        print("success:", ln-idx)
+        reached[i] = ln - idx
     
-    answer = []
-    for i, j in zip(freq, reached):
-        answer.append(i/j)
-    forSort = []
-    for i, e in enumerate(answer):
-        forSort.append((-e, i))
+    answer = [i/j for i, j in zip(freq, reached)]
+    forSort = [(-e, i) for i, e in enumerate(answer)]
     forSort.sort()
     print(forSort)
 
