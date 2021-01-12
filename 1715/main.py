@@ -1,5 +1,5 @@
 # data structure: min heap
-# time complexity: N + N * 
+# time complexity: O(N + N * 3 log(N)) = O(N log N)
 
 
 # CP template Version 1.4
