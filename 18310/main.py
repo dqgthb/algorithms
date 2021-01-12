@@ -96,17 +96,5 @@ def main(f = None):
     arr = [int(i) for i in input().split()]
     avg = sum(arr)/N
 
-    min_ = 987654321
-    val = 987654321
-    for i, e in enumerate(arr):
-        diff = abs(e - avg)
-        if diff < min_:
-            min_ = diff
-            val = e
-        elif diff == min_:
-            if e < val:
-                val = e
-    print(val)
-
 if __name__ == "__main__":
     main()
