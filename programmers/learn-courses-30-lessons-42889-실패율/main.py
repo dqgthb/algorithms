@@ -93,8 +93,8 @@ def parr(arr):
 def solution(N, stages):
     ln = len(stages)
     freq =  [0] * N
-    for i in stages:
-        if i == N+1: continue
+    for i in stages: # frequency calculation: O(N)
+        if i == N+1: continue # to avoid array index out of bound
         freq[i-1] += 1
     stages.sort()
     from bisect import bisect_left as bi
@@ -103,14 +103,13 @@ def solution(N, stages):
     frac = [i/j for i, j in zip(freq, reached)]
     forSort = [(-e, i) for i, e in enumerate(frac)]
     forSort.sort()
-    ans = [i[1]+1 for i in forSort]
-    print(ans)
-    return ans
+    return [i[1]+1 for i in forSort]
 
 def main(f = None):
     init(f)
     N = 5
     stages = [2, 1, 2, 6, 2, 4, 3, 3]
+    N = 4
     stages = [4, 4, 4, 4, 4]
     solution(N, stages)
 
