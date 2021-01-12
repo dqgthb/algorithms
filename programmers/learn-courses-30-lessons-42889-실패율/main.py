@@ -102,8 +102,8 @@ def solution(N, stages):
     import bisect
     for i in range(N):
         idx = bisect.bisect_left(stages, i+1)
-        print(i, stages)
-        print(idx)
+        print(stages)
+        print("success:", N-idx)
         reached[i] = N - idx
     
     answer = []
