@@ -94,18 +94,16 @@ def main(f = None):
     init(f)
     N = int(input())
     arr = [int(input()) for _ in range(N)]
-
-
     heapify(arr)
 
     cum = 0
-    while arr:
+    while len(arr) > 1:
         a = heappop(arr)
         b = heappop(arr)
         c = a + b
         cum += c
         heappush(arr, c)
-    print()
+    print(cum)
 
 
 
