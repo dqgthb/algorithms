@@ -90,6 +90,9 @@ def parr(arr):
     for i in arr:
         print(i)
 
+
+# algorithm used: sort
+# data structure: python list
 def solution(N, stages):
     M = len(stages)
     freq =  [0] * N
@@ -105,7 +108,7 @@ def solution(N, stages):
     forSort = [(-e, i) for i, e in enumerate(frac)] # O(N)
     forSort.sort() # O(NlogN)
     ans = [i[1]+1 for i in forSort] #O(N)
-    print(ans)
+    return ans
 
 def main(f = None):
     init(f)
