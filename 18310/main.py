@@ -1,5 +1,6 @@
 # data structure: python list
 # time complexity: O(nlogn) for sorting
+
 # CP template Version 1.4
 import os
 import sys
