@@ -103,7 +103,8 @@ def solution(N, stages):
     frac = [i/j for i, j in zip(freq, reached)] # O(N)
     forSort = [(-e, i) for i, e in enumerate(frac)] # O(N)
     forSort.sort() # O(NlogN)
-    return [i[1]+1 for i in forSort] #O(N)
+    ans = [i[1]+1 for i in forSort] #O(N)
+    print(ans)
 
 def main(f = None):
     init(f)
@@ -111,6 +112,8 @@ def main(f = None):
     stages = [2, 1, 2, 6, 2, 4, 3, 3]
     N = 4
     stages = [4, 4, 4, 4, 4]
+    N = 1
+    stages = [0, 0, 0, 0, 1]
     solution(N, stages)
 
 if __name__ == "__main__":
