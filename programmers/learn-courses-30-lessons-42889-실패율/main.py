@@ -100,10 +100,10 @@ def solution(N, stages):
     from bisect import bisect_left as bi
     reached = [M - bi(stages, i+1) for i in range(N)] # O(N * logM)
     
-    frac = [i/j for i, j in zip(freq, reached)]
-    forSort = [(-e, i) for i, e in enumerate(frac)]
-    forSort.sort()
-    return [i[1]+1 for i in forSort]
+    frac = [i/j for i, j in zip(freq, reached)] # O(N)
+    forSort = [(-e, i) for i, e in enumerate(frac)] # O(N)
+    forSort.sort() # O(NlogN)
+    return [i[1]+1 for i in forSort] #O(N)
 
 def main(f = None):
     init(f)
