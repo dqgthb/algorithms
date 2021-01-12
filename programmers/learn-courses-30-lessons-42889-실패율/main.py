@@ -97,8 +97,11 @@ def solution(N, stages):
         freq[i-1] += 1
     reached = [0] * N
     stages.sort()
+    import bisect
     for i in range(N):
-        reached[i] = 
+        idx = bisect.bisect_left(i+1)
+        pirnt(idx)
+        reached[i] = bisect.bisect_left(i+1)
 
     for i in range()
 
