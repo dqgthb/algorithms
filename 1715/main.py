@@ -95,6 +95,11 @@ def main(f = None):
     N = int(input())
     arr = [int(input()) for _ in range(N)]
     arr.sort()
+    cum = 0
+    for i in arr:
+        cum += cum + i
+    print(cum)
+
 
 if __name__ == "__main__":
     main()
