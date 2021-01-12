@@ -92,7 +92,11 @@ def parr(arr):
 
 def main(f = None):
     init(f)
-    
+    N = int(input())
+    arr = [int(i) for i in input().split()]
+    avg = sum(arr)/N
+
+    min_ = 987654321
 
 if __name__ == "__main__":
     main()
