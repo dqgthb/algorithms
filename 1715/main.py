@@ -95,14 +95,17 @@ def main(f = None):
     N = int(input())
     arr = [int(input()) for _ in range(N)]
 
-    if N == 1:
-        print(arr[0])
-        return
 
     heapify(arr)
 
-    while arr:
+    cum = 0
+    while len(arr) > 1:
+        a = heappop(arr)
+        b = heappop(arr)
+        c = a + b
+        cum += c
         
+
 
 
 
