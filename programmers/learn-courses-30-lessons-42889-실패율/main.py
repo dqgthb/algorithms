@@ -91,6 +91,7 @@ def parr(arr):
         print(i)
 
 def solution(N, stages):
+    ln = len(stages)
     freq =  [0] * (N+1)
     for i in stages:
         freq[i] += 1
@@ -100,6 +101,9 @@ def solution(N, stages):
     for i, e in enumerate(stages):
         if e == curr:
             continue
+        else:
+            curr = e
+            reached[e] = N 
 
 
 
