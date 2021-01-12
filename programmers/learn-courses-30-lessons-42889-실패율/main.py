@@ -102,9 +102,12 @@ def solution(N, stages):
         if curr != e:
             curr = e
             reached[e] = ln - i
+
+    print(freq)
+    print(reached)
     
     reached[0] = 1
-    reached[N+1]
+    reached[N+1] = 1
     answer = []
     for i, j in zip(freq, reached):
         answer.append(i/j)
