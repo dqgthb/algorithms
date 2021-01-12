@@ -96,6 +96,12 @@ def solution(N, stages):
         freq[i] += 1
     reached = [0] * (N+1)
     stages.sort()
+    curr = 0
+    for i, e in enumerate(stages):
+        if e == curr:
+            continue
+
+
 
     return answer
 
