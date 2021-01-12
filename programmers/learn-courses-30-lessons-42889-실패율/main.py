@@ -109,7 +109,10 @@ def solution(N, stages):
         answer.append(i/j)
     forSort = []
     for i, e in enumerate(answer):
-        forSort.append((e, i))
+        forSort.append((-e, i))
+    forSort.sort()
+    print(forSort)
+
 
 
 
@@ -117,6 +120,8 @@ def solution(N, stages):
 
 def main(f = None):
     init(f)
+    N = 5
+    so
 
 if __name__ == "__main__":
     main()
