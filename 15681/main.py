@@ -22,10 +22,13 @@ def main(f = None):
         g[V].append(U)
 
     dq = deque()
-    dq.append((R, -1))
+    dq.append(R)
 
+    vis = [False for _ in range(N)]
+    vis[R] = True
+    size = [None for _ in range(N)]
     while dq:
-        node, parent = dq.popleft()
+        node = dq.popleft()
 
 
     for _ in range(Q):
