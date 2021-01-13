@@ -12,8 +12,8 @@ def solution(words, queries):
     for query in queries:
         q = (len(query), query)
         if '?' not in query:
-            iB = bisect_left(prefix, q)
-            iE = bisect_right(prefix, q)
+            iB = bisect_left(prefix, q) # O(MlogM)
+            iE = bisect_right(prefix, q) # O(MLogM)
             ans.append(iE - iB)
         else:
             queryPre = query.replace('?', 'a')
@@ -27,8 +27,8 @@ def solution(words, queries):
                 qPre = (len(query), queryPre)
                 qPost = (len(query), queryPost)
                 usedArray = prefix
-            iB = bisect_left(usedArray, qPre)
-            iE = bisect_right(usedArray, qPost)
+            iB = bisect_left(usedArray, qPre) # O(MlogM)
+            iE = bisect_right(usedArray, qPost) #
             ans.append(iE - iB)
 
     return ans
