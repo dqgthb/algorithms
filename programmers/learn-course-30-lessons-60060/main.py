@@ -1,9 +1,11 @@
 # CP template Version 1.4
 
 def solution(words, queries):
+    # N = len(words)
+    # M = len(queries)
     from bisect import bisect_left, bisect_right
-    prefix = [(len(x), x) for x in words] # O(n)
-    prefix.sort()
+    prefix = [(len(x), x) for x in words] # O(M)
+    prefix.sort() # O(MlogM)
     postfix = [(len(x), x[::-1]) for x in words]
     postfix.sort()
     ans = []
