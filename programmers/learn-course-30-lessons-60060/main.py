@@ -1,5 +1,6 @@
 # CP template Version 1.4
 
+# time complexity: O(NlogN + M*MlogM)
 def solution(words, queries): # N = len(words) # M = len(queries)
     from bisect import bisect_left, bisect_right
     prefix = [(len(x), x) for x in words] # O(N)
