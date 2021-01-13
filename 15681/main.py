@@ -20,31 +20,13 @@ def main(f = None):
         U, V = map(lambda x: int(x)-1, input().split())
         g[U].append(V)
         g[V].append(U)
-    parentOf = [-1 for _ in range(N)]
 
     dq = deque()
     dq.append((R, -1))
-    
-    # find parents of each node
-    tree = [[] for _ in range(N)]
 
     while dq:
         node, parent = dq.popleft()
-        for neighbor in g[node]:
-            if neighbor == parent: continue
-            tree[node].append(neighbor)
-            parentOf[neighbor] = node
-            dq.append((neighbor, node))
-    
-    size: list[Any] = [None for _ in range(N)]
-    def countSubtreeNodes(node):
-        if size[node] is not None:
-            return size[node]
-        sum_ = 1
-        for child in tree[node]:
-            sum_ += countSubtreeNodes(child)
-        size[node] = sum_
-        return sum_
+
 
     for _ in range(Q):
         q = int(input())-1
