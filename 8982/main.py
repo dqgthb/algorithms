@@ -27,8 +27,13 @@ def main(f = None):
         a, b, c, _  = map(int, input().split())
         holes.append(a)
     
+    
+    holeIndices = []
     for hole in holes:
         idx = bisect_left(x, hole)
+        holeIndices.append(idx)
+    print(holeIndices)
+
 
 
 # CP template Version 1.005
