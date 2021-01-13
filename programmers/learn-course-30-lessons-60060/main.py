@@ -1,8 +1,6 @@
 # CP template Version 1.4
 
-def solution(words, queries):
-    # N = len(words)
-    # M = len(queries)
+def solution(words, queries): # N = len(words) # M = len(queries)
     from bisect import bisect_left, bisect_right
     prefix = [(len(x), x) for x in words] # O(M)
     prefix.sort() # O(MlogM)
@@ -12,20 +10,21 @@ def solution(words, queries):
     for query in queries:
         ln = len(query)
         q = (ln, query)
-        queryPre = query.replace('?', 'a')
-        queryPost = query.replace('?', 'z')
         usedArray = prefix
-        if query[0] == '?':
-            qPre = (ln, queryPre[::-1])
-            qPost = (ln, queryPost[::-1])
-            usedArray = postfix
-        elif query[-1] == '?':
-            qPre = (ln, queryPre)
-            qPost = (ln, queryPost)
+        if query[0] == '?' or query[-1] == '?':
+            queryPre = query.replace('?', 'a')
+            queryPost = query.replace('?', 'z')
+            if query[0] == '?':
+                qPre = (ln, queryPre[::-1])
+                qPost = (ln, queryPost[::-1])
+                usedArray = postfix
+            else:
+                qPre = (ln, queryPre)
+                qPost = (ln, queryPost)
         else:
             qPre, qPost = q, q
         iB = bisect_left(usedArray, qPre) # O(MlogM)
-        iE = bisect_right(usedArray, qPost) #
+        iE = bisect_right(usedArray, qPost) # O(MlogM)
         ans.append(iE - iB)
 
     return ans
