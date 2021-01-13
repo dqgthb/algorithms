@@ -4,8 +4,10 @@ def main(f = None):
     vis = [False for _ in range(F+1)]
     dp = [None] * (F+1)
 
-    def dfs(s):
-            
+    def dfs(cur):
+            next = cur + U
+            before = cur - D
+        
 
 
 
