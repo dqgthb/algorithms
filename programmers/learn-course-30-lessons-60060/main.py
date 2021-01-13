@@ -21,8 +21,8 @@ def solution(words, queries):
             else: # query[-1] == '?'
                 qPre = (len(query), queryPre)
                 qPost = (len(query), queryPost)
-    postfix = [(len(x), x[::-1]) for x in words]
-    postfix.sort()
+                postfix = [(len(x), x[::-1]) for x in words]
+                postfix.sort()
                 usedArray = postfix
             iB = bisect_left(usedArray, qPre)
             iE = bisect_right(usedArray, qPost)
