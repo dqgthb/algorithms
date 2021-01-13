@@ -19,7 +19,8 @@ def main(f = None):
     q.append(R)
     
     while q:
-        q.pop()
+        node = q.pop()
+        print(node)
 
 
 
