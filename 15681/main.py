@@ -16,7 +16,7 @@ def main(f = None):
     init(f)
     N: int
     R: int
-    q: int
+    Q: int
     N, R, Q = map(int, input().split())
     R -= 1
     g:list[list[int]] = [[] for _ in range(N)]
@@ -56,6 +56,10 @@ def main(f = None):
             if child == parentOf[node]: continue
             sum_ += numOfChildren(node) + 1
         return sum_
+    
+    for _ in range(q):
+        node = int(input()) - 1
+        print(numOfChildren(node))
     
 
 
