@@ -10,11 +10,11 @@ def solution(words, queries):
     postfix.sort()
     ans = []
     for query in queries:
+        ln = len(query)
         q = (len(query), query)
         queryPre = query.replace('?', 'a')
         queryPost = query.replace('?', 'z')
         usedArray = prefix
-        
         if query[0] == '?':
             qPre = (len(query), queryPre[::-1])
             qPost = (len(query), queryPost[::-1])
