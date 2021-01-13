@@ -2,8 +2,10 @@ def main(f = None):
     init(f)
     F, S, G, U, D = map(int, input().split())
     dp = [987654321] * (F+1)
+    dp[S] = 0
 
     def dfs(cur):
+        print(cur)
         next = cur + U
         before = cur - D
         
