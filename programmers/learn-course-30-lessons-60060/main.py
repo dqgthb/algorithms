@@ -1,4 +1,18 @@
 # CP template Version 1.4
+
+def solution(words, queries):
+    pass
+
+def main(f = None):
+    hello = [1, 2]
+    x = 5
+    heappush(hello, x)
+    init(f)
+    words = ["frodo", "front", "frost", "frozen", "frame", "kakao"]
+    queries = ["fro??", "????o", "fr???", "fro???", "pro?"]
+    solution(words, queries)
+    result = [3, 2, 4, 1, 0]
+
 import os
 import sys
 import itertools
@@ -89,11 +103,6 @@ def pfast(*args, end = "\n", sep=' '): sys.stdout.write(sep.join(map(str, args))
 def parr(arr):
     for i in arr:
         print(i)
-
-def main(f = None):
-    init(f)
-    words = ["frodo", "front", "frost", "frozen", "frame", "kakao"]
-    queries = ["fro??", "????o", "fr???", "fro???", "pro?"]
 
 if __name__ == "__main__":
     main()
