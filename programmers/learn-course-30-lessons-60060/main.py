@@ -23,10 +23,12 @@ def solution(words, queries):
                 qPre = (len(query), queryPre[::-1])
                 qPost = (len(query), queryPost[::-1])
                 usedArray = postfix
-            else: # query[-1] == '?'
+            elif query[-1] == '?':
                 qPre = (len(query), queryPre)
                 qPost = (len(query), queryPost)
                 usedArray = prefix
+            else:
+                qPre, qPost = q, q
             iB = bisect_left(usedArray, qPre) # O(MlogM)
             iE = bisect_right(usedArray, qPost) #
             ans.append(iE - iB)
