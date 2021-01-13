@@ -16,10 +16,8 @@ def main(f = None):
     init(f)
     N, R, Q = map(int, input().split())
     R -= 1
-    g: = [[] for _ in range(N)]
+    g = [[] for _ in range(N)]
     for _ in range(N-1):
-        U:int 
-        V:int
         U, V = map(lambda x: int(x)-1, input().split())
         g[U].append(V)
         g[V].append(U)
@@ -39,7 +37,7 @@ def main(f = None):
             parentOf[neighbor] = node
             dq.append((neighbor, node))
     
-    size: Optional(int) = [None for _ in range(N)]
+    size: list[Any] = [None for _ in range(N)]
     def countSubtreeNodes(node):
         if size[node] is not None:
             return size[node]
