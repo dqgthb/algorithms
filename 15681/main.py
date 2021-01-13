@@ -57,19 +57,11 @@ def main(f = None):
             sum_ += numOfChildren(node) + 1
         return sum_
     
-    for _ in range(q):
+    for _ in range(Q):
         node = int(input()) - 1
         print(numOfChildren(node))
-    
 
 
-    def solve(q:int) -> int:
-
-        return 0
-
-    for _ in range(Q):
-        q = int(input())
-        solve(q)
 
 DEBUG = False
 
