@@ -7,7 +7,7 @@ def main(f = None):
     q = deque([(S, 0)])
 
     while q:
-        print(q)
+        dprint(q)
         s, count = q.popleft()
         if s == G:
             print(count)
