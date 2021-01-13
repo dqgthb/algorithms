@@ -5,12 +5,12 @@ class Point:
 def main(f = None):
     init(f)
     N = int(input())
-    bottoms = []
+    v = []
+    h = []
     _, _ = map(int, input().split())
     for _ in range(N):
         a, b = map(int, input().split())
         c, d = map(int, input().split())
-        assert b==d
 
 # CP template Version 1.005
 import os
