@@ -8,6 +8,12 @@ def main(f = None):
             next = cur + U
             before = cur - D
         
+        if next <= F and dp[next] > dp[cur] + 1:
+            dp[next] = dp[cur] + 1
+            dfs(next)
+        
+        if before > 0 and dp[before] > dp[cur] + 1:
+
 
 
 
