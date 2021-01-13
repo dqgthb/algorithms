@@ -32,7 +32,10 @@ def main(f = None):
             return size[node]
         sum_ = 1
         for nbr in g[node]:
-            
+            if not vis[nbr]:
+                sum_ += sizeOf(nbr)
+        size[node] = sum_
+        return sum_
 
     while dq:
         node = dq.popleft()
