@@ -14,7 +14,7 @@ def main(f = None):
             return
 
         u = s + U
-        d = s + D
+        d = s - D
 
         for nxt in [u, d]:
             if 1 <= nxt <= F:
