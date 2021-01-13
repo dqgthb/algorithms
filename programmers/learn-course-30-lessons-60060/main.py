@@ -11,27 +11,22 @@ def solution(words, queries):
     ans = []
     for query in queries:
         q = (len(query), query)
-        if '?' not in query:
-            iB = bisect_left(prefix, q) # O(MlogM)
-            iE = bisect_right(prefix, q) # O(MLogM)
-            ans.append(iE - iB)
+        queryPre = query.replace('?', 'a')
+        queryPost = query.replace('?', 'z')
+        usedArray = prefix
+        
+        if query[0] == '?':
+            qPre = (len(query), queryPre[::-1])
+            qPost = (len(query), queryPost[::-1])
+            usedArray = postfix
+        elif query[-1] == '?':
+            qPre = (len(query), queryPre)
+            qPost = (len(query), queryPost)
         else:
-            queryPre = query.replace('?', 'a')
-            queryPost = query.replace('?', 'z')
-            
-            if query[0] == '?':
-                qPre = (len(query), queryPre[::-1])
-                qPost = (len(query), queryPost[::-1])
-                usedArray = postfix
-            elif query[-1] == '?':
-                qPre = (len(query), queryPre)
-                qPost = (len(query), queryPost)
-                usedArray = prefix
-            else:
-                qPre, qPost = q, q
-            iB = bisect_left(usedArray, qPre) # O(MlogM)
-            iE = bisect_right(usedArray, qPost) #
-            ans.append(iE - iB)
+            qPre, qPost = q, q
+        iB = bisect_left(usedArray, qPre) # O(MlogM)
+        iE = bisect_right(usedArray, qPost) #
+        ans.append(iE - iB)
 
     return ans
 
