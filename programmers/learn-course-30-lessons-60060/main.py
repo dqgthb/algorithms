@@ -22,7 +22,13 @@ def solution(words, queries):
             qPost = (len(query), queryPost[::-1])
             
             if query[0] == '?':
+                iB = bisect_left(prefix, qPre)
+                iE = bisect_right(prefix, qPost)
+                ans.append(iE - iB)
             else: # query[-1] == '?'
+                iB = bisect_left(postfix, qPre)
+                iE = bisect_right(postfix, qPost)
+                ans.append(iE - iB)
 
     return ans
 
