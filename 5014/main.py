@@ -8,6 +8,13 @@ def main(f = None):
 
     while q:
         s = q.popleft()
+        if s == G
+
+        u = s + U
+        d = s + D
+
+        for nxt in [u, d]:
+            if 1 <= u <= F:
 
 # CP template Version 1.005
 import os
