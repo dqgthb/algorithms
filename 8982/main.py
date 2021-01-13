@@ -8,9 +8,10 @@ def main(f = None):
     v = []
     h = []
     _, _ = map(int, input().split())
-    for _ in range(N):
+    for _ in range((N-2)):
         a, b = map(int, input().split())
         c, d = map(int, input().split())
+        assert b == d
 
 # CP template Version 1.005
 import os
