@@ -11,17 +11,9 @@ def solution(words, queries):
     ans = []
     for q in queries:
         if '?' not in q:
-            iB = bisect.
-            iE = 
-            ans.append()
-            
-        startQ = q.replace('?', 'a')
-        endQ = q.replace('?', 'z')
-
-            if q[-1]
-
-
-
+            iB = bisect_left(prefix)
+            iE = bisect_right(postfix)
+            ans.append(iE - iB)
 
     return ans
 
@@ -47,6 +39,7 @@ from collections import deque, Counter
 from math import log, log2, ceil, floor
 import math
 from heapq import heappush, heappop
+from bisect import bisect_left, bisect_right
 
 DEBUG = False
 
