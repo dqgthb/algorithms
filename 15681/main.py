@@ -2,7 +2,6 @@
 import os
 import sys
 sys.setrecursionlimit(987654321)
-from collections import deque
 DEBUG = False
 
 def setStdin(f):
@@ -37,6 +36,8 @@ def sizeOf(node):
             sizeOf(nbr)
             size[node] += size[nbr]
 
+init(None)
+
 N, R, Q = map(int, input().split())
 R -= 1
 g = [[] for _ in range(N)]
@@ -69,4 +70,5 @@ sys.stdout.write('\n'.join(ans))
 
 
 if __name__ == "__main__":
-    main()
+    pass
+    #main()
