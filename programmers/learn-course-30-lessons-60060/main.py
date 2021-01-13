@@ -1,6 +1,7 @@
 # CP template Version 1.4
 
 def solution(words, queries):
+    from bisect import bisect_left, bisect_right
     prefix = [(len(x), x) for x in words]
     prefix.sort()
     ans = []
