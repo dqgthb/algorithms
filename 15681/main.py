@@ -39,7 +39,8 @@ def main(f = None):
             if child == parent: continue
             parentOf[child] = node
             dq.append((child, node))
-    print(parentOf)
+    for i in range(N):
+        print("parent of", i+1, "is", parentOf[i]+1)
 
 
 
