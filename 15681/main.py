@@ -11,13 +11,15 @@ def setStdin(f):
     input=sys.stdin.readline
 
 def init(f = None):
+    global input
     if os.path.exists("o"): sys.stdout = open("o", "w")
     if f is not None: setStdin(f)
     else:
         if len(sys.argv) == 1:
             if os.path.isfile("in/iarstarstarstarst"): setStdin("in/i")
             elif os.path.isfile("iarstarstarstars"): setStdin("i")
-            else:
+            else: 
+                input = sys.stdin.readline
         elif len(sys.argv) == 2: setStdin(sys.argv[1])
         else: assert False, "Too many sys.argv: %d" % len(sys.argv)
 
