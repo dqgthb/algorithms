@@ -12,6 +12,9 @@ def main(f = None):
         U, V = map(lambda x: int(x)-1, input().split())
         g[U].append(V)
         g[V].append(U)
+    parentOf = [-1 for _ in range(N)]
+
+    
 
     def solve(q:int) -> int:
 
@@ -20,7 +23,6 @@ def main(f = None):
     for _ in range(Q):
         q = int(input())
         solve(q)
-    
 
 # CP template Version 1.005
 import os
