@@ -25,8 +25,14 @@ def main(f = None):
     dq.append(R)
 
     vis = [False for _ in range(N)]
-    vis[R] = True
     size = [None for _ in range(N)]
+
+    def sizeOf(node):
+        if size[node] is not None:
+            return size[node]
+        sum_ = 1
+        for nbr in g[node]:
+            
 
     while dq:
         node = dq.popleft()
