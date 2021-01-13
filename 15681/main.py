@@ -35,6 +35,7 @@ def main(f = None):
             if not vis[nbr]:
                 vis[nbr] = True
                 stack.append(nbr)
+                continue
 
 
 
