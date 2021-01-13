@@ -47,7 +47,10 @@ def main(f = None):
         print(node)
         if numOfChildrenOf[node] is not None:
             return numOfChildrenOf[node]
+        if node == R:
+            return N-1
         
+        assert len(g[node]) > 0, "wrong"
         if len(g[node]) == 1 and g[node][0] == parentOf[node]:
             numOfChildrenOf[node] = 0
             return 0
