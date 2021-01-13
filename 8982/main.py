@@ -26,6 +26,9 @@ def main(f = None):
     for _ in range(K):
         a, b, c, _  = map(int, input().split())
         holes.append(a)
+    
+    for hole in holes:
+        idx = bisect_left(x, hole)
 
 
 # CP template Version 1.005
