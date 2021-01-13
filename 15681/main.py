@@ -27,8 +27,13 @@ def main(f = None):
     vis = [False for _ in range(N)]
     vis[R] = True
     size = [None for _ in range(N)]
+
     while dq:
         node = dq.popleft()
+        sum_ = 1
+        for nbr in g[node]:
+            if not vis[nbr]:
+                sum_ += size
 
 
     for _ in range(Q):
