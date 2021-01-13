@@ -5,6 +5,7 @@ class Point:
 def main(f = None):
     init(f)
     N = int(input())
+    x = []
     v = []
     h = []
     _, _ = map(int, input().split())
@@ -12,11 +13,13 @@ def main(f = None):
         a, b = map(int, input().split())
         c, d = map(int, input().split())
         assert b == d
+        x.append(a)
         v.append(c-a)
         h.append(b)
     _, _ = map(int, input().split())
     print(v)
     print(h)
+    print(x)
 
     K = int(input())
     holes = []
