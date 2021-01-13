@@ -11,11 +11,14 @@ def main(f = None):
         U, V = map(int, input().split())
         g[U].append(V)
         g[V].append(U)
+
+    def solve(q:int) -> int:
+        return 0
+
     for _ in range(Q):
         q = int(input())
         solve(q)
     
-def solve()
 
 # CP template Version 1.005
 import os
