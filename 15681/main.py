@@ -58,8 +58,11 @@ def main(f = None):
             leafs.append(node)
     
     nodes = deque(leafs)
-    for node in nodes:
+    while nodes:
+        node = nodes.popleft()
         countSubtreeNodes(node)
+        nodes.append(parentOf[node])
+    print(size)
 
 
     for _ in range(Q):
