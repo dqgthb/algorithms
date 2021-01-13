@@ -8,9 +8,12 @@ def solution(words, queries):
     print(prefix)
     print(postfix)
 
+    ans = []
     for q in queries:
         if '?' not in q:
-            
+            iB = bisect.
+            iE = 
+            ans.append()
             
         startQ = q.replace('?', 'a')
         endQ = q.replace('?', 'z')
@@ -20,7 +23,6 @@ def solution(words, queries):
 
 
 
-    ans = []
     return ans
 
 def main(f = None):
