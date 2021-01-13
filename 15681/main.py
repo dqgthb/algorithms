@@ -52,9 +52,10 @@ def main(f = None):
             return 0
         
         sum_ = 0
-        for i in 
-
-
+        for child in g[node]:
+            if child == parentOf[node]: continue
+            sum_ += numOfChildren(node)
+        return sum_
 
 
     def solve(q:int) -> int:
