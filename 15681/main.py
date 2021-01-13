@@ -60,8 +60,8 @@ def main(f = None):
     ans = []
     for _ in range(Q):
         q = int(input())-1
-        ans.append(str(size[q]))
-    print('\n'.join(ans))
+        ans.append(str(size[q])+'\n')
+    sys.stdout.writelines(ans)
 
 
 if __name__ == "__main__":
