@@ -1,7 +1,10 @@
 # CP template Version 1.4
 
 def solution(words, queries):
-    pass
+
+
+    ans = []
+    return ans
 
 def main(f = None):
     hello = [1, 2]
@@ -10,8 +13,10 @@ def main(f = None):
     init(f)
     words = ["frodo", "front", "frost", "frozen", "frame", "kakao"]
     queries = ["fro??", "????o", "fr???", "fro???", "pro?"]
-    solution(words, queries)
+    ans = solution(words, queries)
+    print(ans)
     result = [3, 2, 4, 1, 0]
+    assert ans == result
 
 import os
 import sys
