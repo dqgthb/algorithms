@@ -18,6 +18,10 @@ def main(f = None):
     print(v)
     print(h)
 
+    for _ in range()
+    cum = 0
+    for i, e in enumerate(v):
+
 
 # CP template Version 1.005
 import os
