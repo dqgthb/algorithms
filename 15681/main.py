@@ -52,9 +52,7 @@ def sizeOf(node):
             sizeOf(nbr)
             size[node] += size[nbr]
 
-
 sizeOf(R)
-#print(size)
 
 ans = []
 count = 0
@@ -62,11 +60,6 @@ for _ in range(Q):
     count += 1
     q = int(input())-1
     ans.append(str(size[q]))
-
-    #if count == 10000000:
-    #    sys.stdout.write('\n'.join(ans))
-    #    ans = []
-    #    count = 0
 sys.stdout.write('\n'.join(ans))
 
 
