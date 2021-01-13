@@ -6,8 +6,8 @@ def main(f = None):
     vis[S] = True
     q = deque([(S, 0)])
 
-    while q:
-        s, count = q.popleft()
+        while q:
+            s, count = q.popleft()
         if s == G:
             print(count)
             return
@@ -17,7 +17,9 @@ def main(f = None):
 
         for nxt in [u, d]:
             if 1 <= nxt <= F:
-                q.append((nxt, count+1))
+                if not vis[nxt]:
+                    vis[nxt]
+                    q.append((nxt, count+1))
     print("use the stairs")
 
 # CP template Version 1.005
