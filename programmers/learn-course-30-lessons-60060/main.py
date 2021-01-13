@@ -2,12 +2,12 @@
 
 def solution(words, queries): # N = len(words) # M = len(queries)
     from bisect import bisect_left, bisect_right
-    prefix = [(len(x), x) for x in words] # O(M)
-    prefix.sort() # O(MlogM)
-    postfix = [(len(x), x[::-1]) for x in words]
+    prefix = [(len(x), x) for x in words] # O(N)
+    prefix.sort() # O(NlogN)
+    postfix = [(len(x), x[::-1]) for x in words] # O(NlogN)
     postfix.sort()
     ans = []
-    for query in queries:
+    for query in queries: # O(M * MlogM)
         ln = len(query)
         q = (ln, query)
         usedArray = prefix
