@@ -9,6 +9,13 @@ def solution(words, queries):
     print(postfix)
 
     for q in queries:
+        if '?' not in q:
+            
+            
+        startQ = q.replace('?', 'a')
+        endQ = q.replace('?', 'z')
+
+            if q[-1]
 
 
 
