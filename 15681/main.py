@@ -4,6 +4,7 @@ def main(f = None):
     R: int
     q: int
     N, R, Q = map(int, input().split())
+    R -= 1
     g:list[list[int]] = [[] for _ in range(N)]
     for _ in range(N-1):
         U:int 
