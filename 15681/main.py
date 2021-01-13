@@ -61,7 +61,8 @@ def main(f = None):
     while nodes:
         node = nodes.popleft()
         countSubtreeNodes(node)
-        nodes.append(parentOf[node])
+        if parentOf[node] != -1:
+            nodes.append(parentOf[node])
     print(size)
 
 
