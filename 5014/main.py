@@ -13,6 +13,15 @@ def main(f = None):
             dfs(next)
         
         if before > 0 and dp[before] > dp[cur] + 1:
+            dp[before] = dp[cur] + 1
+            dfs(before)
+    
+    dfs(S)
+
+    if dp[G] is not None:
+        print(dp[G])
+    else:
+        print("use the stairs")
 
 
 
