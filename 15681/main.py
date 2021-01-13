@@ -37,6 +37,7 @@ def main(f = None):
                 sum_ += sizeOf(nbr)
         size[node] = sum_
         return sum_
+    sizeOf(R)
 
     for _ in range(Q):
         q = int(input())-1
