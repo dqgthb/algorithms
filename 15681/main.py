@@ -10,7 +10,7 @@ from math import log, log2, ceil, floor
 import math
 from heapq import heappush, heappop
 from bisect import bisect_left, bisect_right
-from typing import Deque, Any, Optional
+#from typing import Deque, Any, Optional
 
 def main(f = None):
     init(f)
@@ -37,7 +37,7 @@ def main(f = None):
             parentOf[neighbor] = node
             dq.append((neighbor, node))
     
-    size: list[Any] = [None for _ in range(N)]
+    size = [None for _ in range(N)]
     def countSubtreeNodes(node):
         if size[node] is not None:
             return size[node]
