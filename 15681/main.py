@@ -9,7 +9,7 @@ def main(f = None):
         U:int 
         V:int
         U, V = map(int, input().split())
-        g[U].appent(V)
+        g[U].append(V)
         g[V] = U
     for _ in range(Q):
 
