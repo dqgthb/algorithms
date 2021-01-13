@@ -10,7 +10,6 @@ from math import log, log2, ceil, floor
 import math
 from heapq import heappush, heappop
 from bisect import bisect_left, bisect_right
-#from typing import Deque, Any, Optional
 
 def main(f = None):
     init(f)
@@ -23,7 +22,7 @@ def main(f = None):
         g[V].append(U)
     parentOf = [-1 for _ in range(N)]
 
-    dq: Deque[Any] = deque()
+    dq = deque()
     dq.append((R, -1))
     
     # find parents of each node
@@ -37,7 +36,7 @@ def main(f = None):
             parentOf[neighbor] = node
             dq.append((neighbor, node))
     
-    size = [None for _ in range(N)]
+    size: list[Any] = [None for _ in range(N)]
     def countSubtreeNodes(node):
         if size[node] is not None:
             return size[node]
@@ -46,19 +45,6 @@ def main(f = None):
             sum_ += countSubtreeNodes(child)
         size[node] = sum_
         return sum_
-
-    leafs = []
-    for node, children in enumerate(tree):
-        if not children:
-            leafs.append(node)
-    
-    nodes = deque(leafs)
-    while nodes:
-        node = nodes.popleft()
-        if size[node] is not None: continue
-        countSubtreeNodes(node)
-        if parentOf[node] != -1:
-            nodes.append(parentOf[node])
 
     for _ in range(Q):
         q = int(input())-1
