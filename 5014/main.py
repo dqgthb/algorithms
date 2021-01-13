@@ -2,9 +2,10 @@ def main(f = None):
     init(f)
     F, S, G, U, D = map(int, input().split())
     vis = [False for _ in range(F+1)]
+    dp = [None] * (F+1)
 
     def dfs(s):
-        
+            
 
 
 
