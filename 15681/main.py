@@ -60,7 +60,6 @@ def main(f = None):
         numOfChildrenOf[node] = sum_
         return sum_
     
-    print(numOfChildren(R))
     for _ in range(Q):
         node = int(input()) - 1
         print(numOfChildren(node)+1)
