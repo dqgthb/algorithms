@@ -2,7 +2,7 @@
 
 def solution(words, queries):
     from bisect import bisect_left, bisect_right
-    prefix = [(len(x), x) for x in words]
+    prefix = [(len(x), x) for x in words] # O(n)
     prefix.sort()
     ans = []
     for query in queries:
