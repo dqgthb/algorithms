@@ -17,6 +17,8 @@ def init(f = None):
         if len(sys.argv) == 1:
             if os.path.isfile("in/i"): setStdin("in/i")
             elif os.path.isfile("i"): setStdin("i")
+            else:
+                assert False, "wrong!"
         elif len(sys.argv) == 2: setStdin(sys.argv[1])
         else: assert False, "Too many sys.argv: %d" % len(sys.argv)
 
