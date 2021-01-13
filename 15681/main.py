@@ -33,6 +33,7 @@ def main(f = None):
     dq.append((R, -1))
     
     # find parents of each node
+    tree = [[] for _ in range(N)]
     while dq:
         node, parent = dq.popleft()
         for child in g[node]:
