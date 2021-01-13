@@ -15,7 +15,14 @@ def main(f = None):
     parentOf = [-1 for _ in range(N)]
     numOfChildOf = [-1 for _ in range(N)]
 
-    for i in range()
+    q = deque()
+    q.append(R)
+    
+    while q:
+        q.pop()
+
+
+
 
     def solve(q:int) -> int:
 
