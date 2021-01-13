@@ -10,9 +10,10 @@ def solution(words, queries):
 
     ans = []
     for q in queries:
-        if '?' not in q:
-            iB = bisect_left(prefix)
-            iE = bisect_right(postfix)
+        q = (len(q), q)
+        if '?' not in q[1]:
+            iB = bisect_left(prefix, q)
+            iE = bisect_right(prefix, q)
             ans.append(iE - iB)
 
     return ans
