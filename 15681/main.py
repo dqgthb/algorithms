@@ -36,8 +36,7 @@ def main(f = None):
         sum_ = 1
         for nbr in g[node]:
             if not vis[nbr]:
-                sum_ += node
-        size[node] = sum_
+                sum_ += 
 
 
 
