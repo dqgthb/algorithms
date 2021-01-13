@@ -47,7 +47,12 @@ def main(f = None):
         if numOfChildrenOf[node] is not None:
             return numOfChildrenOf[node]
         
-        if 
+        if len(g[node]) == 1 and g[node][0] == parentOf[node]:
+            numOfChildrenOf[node] = 0
+            return 0
+        
+        sum_ = 0
+        for i in 
 
 
 
