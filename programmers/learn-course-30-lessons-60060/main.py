@@ -23,7 +23,8 @@ def main(f = None):
     heappush(hello, x)
     init(f)
     words = ["frodo", "front", "frost", "frozen", "frame", "kakao"]
-    queries = ["fro??", "????o", "fr???", "fro???", "pro?"]
+    #queries = ["fro??", "????o", "fr???", "fro???", "pro?"]
+    queries = ["frodo", "fro??", "????o", "fr???", "fro???", "pro?"]
     ans = solution(words, queries)
     print(ans)
     result = [3, 2, 4, 1, 0]
