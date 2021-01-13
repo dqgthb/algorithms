@@ -4,17 +4,19 @@ def main(f = None):
     vis = [False for _ in range(F+1)]
 
     vis[S] = True
-    q = deque([S])
+    q = deque([(S, 0)])
 
     while q:
-        s = q.popleft()
-        if s == G
+        s, count = q.popleft()
+        if s == G:
+            print("")
 
         u = s + U
         d = s + D
 
         for nxt in [u, d]:
             if 1 <= u <= F:
+                q.append((nxt, count+1))
 
 # CP template Version 1.005
 import os
