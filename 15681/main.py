@@ -10,7 +10,7 @@ from math import log, log2, ceil, floor
 import math
 from heapq import heappush, heappop
 from bisect import bisect_left, bisect_right
-from typing import Deque, Any
+from typing import Deque, Any, Optional
 
 def main(f = None):
     init(f)
@@ -27,7 +27,7 @@ def main(f = None):
         g[U].append(V)
         g[V].append(U)
     parentOf = [-1 for _ in range(N)]
-    numOfChildOf: list[int] = [None for _ in range(N)]
+    numOfChildOf: list[Optional(int)] = [None for _ in range(N)]
     vis = [False for _ in range(N)]
 
     dq: Deque[Any] = deque()
