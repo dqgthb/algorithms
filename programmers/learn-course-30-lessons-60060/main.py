@@ -17,13 +17,13 @@ def solution(words, queries):
             if query[0] == '?':
                 qPre = (len(query), queryPre[::-1])
                 qPost = (len(query), queryPost[::-1])
-                usedArray = prefix
-            else: # query[-1] == '?'
-                qPre = (len(query), queryPre)
-                qPost = (len(query), queryPost)
                 postfix = [(len(x), x[::-1]) for x in words]
                 postfix.sort()
                 usedArray = postfix
+            else: # query[-1] == '?'
+                qPre = (len(query), queryPre)
+                qPost = (len(query), queryPost)
+                usedArray = prefix
             iB = bisect_left(usedArray, qPre)
             iE = bisect_right(usedArray, qPost)
             ans.append(iE - iB)
