@@ -5,9 +5,6 @@ def solution(words, queries):
     prefix.sort()
     postfix = [(len(x), x[::-1]) for x in words]
     postfix.sort()
-    print("prefix:", prefix)
-    print("postfix:", postfix)
-
     ans = []
     for query in queries:
         q = (len(query), query)
@@ -18,18 +15,20 @@ def solution(words, queries):
         else:
             queryPre = query.replace('?', 'a')
             queryPost = query.replace('?', 'z')
+
+            
             
             if query[0] == '?':
-                qPre = (len(query), queryPre)
-                qPost = (len(query), queryPost)
-                iB = bisect_left(prefix, qPre)
-                iE = bisect_right(prefix, qPost)
-                ans.append(iE - iB)
-            else: # query[-1] == '?'
                 qPre = (len(query), queryPre[::-1])
                 qPost = (len(query), queryPost[::-1])
                 iB = bisect_left(postfix, qPre)
                 iE = bisect_right(postfix, qPost)
+                ans.append(iE - iB)
+            else: # query[-1] == '?'
+                qPre = (len(query), queryPre)
+                qPost = (len(query), queryPost)
+                iB = bisect_left(prefix, qPre)
+                iE = bisect_right(prefix, qPost)
                 ans.append(iE - iB)
 
     return ans
