@@ -11,6 +11,8 @@ import math
 from heapq import heappush, heappop
 from bisect import bisect_left, bisect_right
 
+sys.setrecursionlimit(987654321)
+
 def main(f = None):
     init(f)
     N, R, Q = map(int, input().split())
@@ -40,6 +42,7 @@ def main(f = None):
         return sum_
     for i in range(N):
         sizeOf(i)
+    print(size)
 
     for _ in range(Q):
         q = int(input())-1
