@@ -29,16 +29,16 @@ def main(f = None):
     numOfChildOf = [-1 for _ in range(N)]
     vis = [False for _ in range(N)]
 
-    q = deque()
-    q.append((R, -1))
+    q: Deque[Any] = deque()
+    dq.append((R, -1))
     
-    while q:
-        node, parent = q.
+    while dq:
+        node, parent = dq.
 
         for child in g[node]:
             if child == parent: continue
             parentOf[child] = node
-            q.append((child, node))
+            dq.append((child, node))
 
 
 
