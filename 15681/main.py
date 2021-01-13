@@ -1,29 +1,14 @@
 # CP template Version 1.005
+import os
 import sys
 sys.setrecursionlimit(10**9)
 DEBUG = False
-
-def setStdin(f):
-    global DEBUG, input
-    DEBUG = True
-    sys.stdin = open(f)
-    input=sys.stdin.readline
-
-def dprint(*args):
-    if DEBUG: print(*args)
-
-def pfast(*args, end = "\n", sep=' '): sys.stdout.write(sep.join(map(str, args)) + end)
-
-def parr(arr):
-    for i in arr:
-        print(i)
 
 input = sys.stdin.readline
 
 N, R, Q = map(int, input().split())
 R -= 1
 g = [[] for _ in range(N)]
-
 
 for _ in range(N-1):
     #U, V = map(lambda x: int(x)-1, input().split())
