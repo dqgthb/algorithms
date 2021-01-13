@@ -39,8 +39,6 @@ def main(f = None):
             if child == parent: continue
             parentOf[child] = node
             dq.append((child, node))
-    for i in range(N):
-        print("parent of", i+1, "is", parentOf[i]+1)
     
     # find number of children of each node
     def numOfChildren(node: int) -> Optional[int]:
