@@ -8,10 +8,15 @@ def main(f = None):
     v = []
     h = []
     _, _ = map(int, input().split())
-    for _ in range((N-2)):
+    for _ in range((N-2)//2):
         a, b = map(int, input().split())
         c, d = map(int, input().split())
         assert b == d
+        v.append(c-a)
+        h.append(b)
+    _, _ = map(int, input().split())
+    print(v)
+    print(h)
 
 # CP template Version 1.005
 import os
