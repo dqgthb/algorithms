@@ -22,7 +22,7 @@ def main(f = None):
     holes = []
     for _ in range(K):
         a, b, c, _  = map(int, input().split())
-        holes.append((a,c))
+        holes.append(a)
     cum = 0
     for i, e in enumerate(v):
 
