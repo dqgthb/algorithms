@@ -1,4 +1,5 @@
 def main(f = None):
+    sys.setrecursionlimit(987654321)
     init(f)
     F, S, G, U, D = map(int, input().split())
     dp = [987654321] * (F+1)
@@ -23,7 +24,6 @@ def main(f = None):
     else:
         print("use the stairs")
 
-sys.setrecursionlimit(987654321)
 
 # CP template Version 1.005
 import os
