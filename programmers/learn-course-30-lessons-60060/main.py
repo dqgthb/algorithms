@@ -11,17 +11,17 @@ def solution(words, queries):
     ans = []
     for query in queries:
         ln = len(query)
-        q = (len(query), query)
+        q = (ln, query)
         queryPre = query.replace('?', 'a')
         queryPost = query.replace('?', 'z')
         usedArray = prefix
         if query[0] == '?':
-            qPre = (len(query), queryPre[::-1])
-            qPost = (len(query), queryPost[::-1])
+            qPre = (ln, queryPre[::-1])
+            qPost = (ln, queryPost[::-1])
             usedArray = postfix
         elif query[-1] == '?':
-            qPre = (len(query), queryPre)
-            qPost = (len(query), queryPost)
+            qPre = (ln, queryPre)
+            qPost = (ln, queryPost)
         else:
             qPre, qPost = q, q
         iB = bisect_left(usedArray, qPre) # O(MlogM)
