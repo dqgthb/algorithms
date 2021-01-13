@@ -52,7 +52,6 @@ def main(f = None):
         size[node] = sum_
         return sum_
 
-    
     for _ in range(Q):
         q = int(input())-1
         print(countSubtreeNodes(q))
