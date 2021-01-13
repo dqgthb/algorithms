@@ -42,12 +42,6 @@ def main(f = None):
             parentOf[neighbor] = node
             dq.append((neighbor, node))
     
-    isLeaf = []
-    for node, children in enumerate(tree):
-        if not children:
-            isLeaf.append(node)
-    print(isLeaf)
-    
     size: Optional(int) = [None for _ in range(N)]
     def countSubtreeNodes(node):
         if size[node] is not None:
@@ -57,6 +51,14 @@ def main(f = None):
             sum_ += countSubtreeNodes(child)
         size[node] = sum_
         return sum_
+
+    leafs = []
+    for node, children in enumerate(tree):
+        if not children:
+            leafs.append(node)
+    
+    for leaf in leafs:
+
 
     for _ in range(Q):
         q = int(input())-1
