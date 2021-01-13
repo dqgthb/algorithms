@@ -10,9 +10,12 @@ def main(f = None):
         V:int
         U, V = map(int, input().split())
         g[U].append(V)
-        g[V] = U
+        g[V].append(U)
     for _ in range(Q):
-
+        q = int(input())
+        solve(q)
+    
+def solve()
 
 # CP template Version 1.005
 import os
@@ -26,7 +29,6 @@ from math import log, log2, ceil, floor
 import math
 from heapq import heappush, heappop
 from bisect import bisect_left, bisect_right
-from typing import *
 
 DEBUG = False
 
