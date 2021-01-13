@@ -58,10 +58,14 @@ def main(f = None):
     #print(size)
 
     ans = []
+    count = 0
     for _ in range(Q):
+        while True:
         q = int(input())-1
+
         ans.append(str(size[q])+'\n')
-    sys.stdout.writelines(ans)
+        sys.stdout.writelines(ans)
+        ans = []
 
 
 if __name__ == "__main__":
