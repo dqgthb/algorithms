@@ -10,6 +10,7 @@ from math import log, log2, ceil, floor
 import math
 from heapq import heappush, heappop
 from bisect import bisect_left, bisect_right
+from typing import Deque, Any
 
 def main(f = None):
     init(f)
@@ -29,16 +30,16 @@ def main(f = None):
     numOfChildOf = [-1 for _ in range(N)]
     vis = [False for _ in range(N)]
 
-    q: Deque[Any] = deque()
+    dq: Deque[Any] = deque()
     dq.append((R, -1))
     
     while dq:
-        node, parent = dq.
-
+        node, parent = dq.popleft()
         for child in g[node]:
             if child == parent: continue
             parentOf[child] = node
             dq.append((child, node))
+    print(parentOf)
 
 
 
