@@ -60,15 +60,14 @@ def main(f = None):
     nodes = deque(leafs)
     while nodes:
         node = nodes.popleft()
+        if size[node] is not None: continue
         countSubtreeNodes(node)
         if parentOf[node] != -1:
             nodes.append(parentOf[node])
-    print(size)
-
 
     for _ in range(Q):
         q = int(input())-1
-        print(countSubtreeNodes(q))
+        print(size[q])
 
 
 
