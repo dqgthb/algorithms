@@ -18,8 +18,12 @@ def main(f = None):
     N, R, Q = map(int, input().split())
     R -= 1
     g = [[] for _ in range(N)]
+
     for _ in range(N-1):
-        U, V = map(lambda x: int(x)-1, input().split())
+        #U, V = map(lambda x: int(x)-1, input().split())
+        U, V = map(int, input().split())
+        U -= 1
+        V -= 1
         g[U].append(V)
         g[V].append(U)
 
