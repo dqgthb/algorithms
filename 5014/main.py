@@ -2,11 +2,11 @@ def main(f = None):
     init(f)
     F, S, G, U, D = map(int, input().split())
     vis = [False for _ in range(F+1)]
-    dp = [None] * (F+1)
+    dp = [987654321] * (F+1)
 
     def dfs(cur):
-            next = cur + U
-            before = cur - D
+        next = cur + U
+        before = cur - D
         
         if next <= F and dp[next] > dp[cur] + 1:
             dp[next] = dp[cur] + 1
@@ -18,7 +18,7 @@ def main(f = None):
     
     dfs(S)
 
-    if dp[G] is not None:
+    if dp[G] != 987654321:
         print(dp[G])
     else:
         print("use the stairs")
