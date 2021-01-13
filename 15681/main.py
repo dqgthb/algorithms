@@ -29,13 +29,6 @@ def parr(arr):
     for i in arr:
         print(i)
 
-def sizeOf(node):
-    size[node] = 1
-    for nbr in g[node]:
-        if not size[nbr]:
-            sizeOf(nbr)
-            size[node] += size[nbr]
-
 init(None)
 
 N, R, Q = map(int, input().split())
@@ -51,6 +44,13 @@ for _ in range(N-1):
     g[V].append(U)
 
 size = [None] * N
+
+def sizeOf(node):
+    size[node] = 1
+    for nbr in g[node]:
+        if not size[nbr]:
+            sizeOf(nbr)
+            size[node] += size[nbr]
 
 sizeOf(R)
 #print(size)
