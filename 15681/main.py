@@ -33,7 +33,6 @@ def main(f = None):
     vis = [False for _ in range(N)]
     size = [None for _ in range(N)]
 
-
     def sizeOf(node):
         if size[node] is not None:
             return size[node]
@@ -50,7 +49,6 @@ def main(f = None):
     for _ in range(Q):
         q = int(input())-1
         print(size[q])
-
 
 DEBUG = False
 
