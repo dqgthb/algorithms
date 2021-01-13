@@ -9,12 +9,14 @@ def solution(words, queries):
     print(postfix)
 
     ans = []
-    for q in queries:
-        q = (len(q), q)
-        if '?' not in q[1]:
+    for query in queries:
+        q = (len(query), query)
+        if '?' not in query:
             iB = bisect_left(prefix, q)
             iE = bisect_right(prefix, q)
             ans.append(iE - iB)
+        else:
+            
 
     return ans
 
