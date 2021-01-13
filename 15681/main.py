@@ -44,8 +44,6 @@ def main(f = None):
         print(size[q])
 
 
-
-
 DEBUG = False
 
 def setStdin(f):
