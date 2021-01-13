@@ -54,15 +54,6 @@ def sizeOf(node):
 
 sizeOf(R)
 
-ans = []
-count = 0
 for _ in range(Q):
-    count += 1
     q = int(input())-1
-    ans.append(str(size[q]))
-sys.stdout.write('\n'.join(ans))
-
-
-if __name__ == "__main__":
-    pass
-    #main()
+    print(size[q])
