@@ -15,7 +15,6 @@ def init(f = None):
     if f is not None: setStdin(f)
     else:
         if len(sys.argv) == 1:
-            assert False, "wrong!!"
             if os.path.isfile("in/i"): setStdin("in/i")
             elif os.path.isfile("i"): setStdin("i")
         elif len(sys.argv) == 2: setStdin(sys.argv[1])
