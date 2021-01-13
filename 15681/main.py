@@ -44,9 +44,6 @@ def main(f = None):
         g[U].append(V)
         g[V].append(U)
 
-    dq = deque()
-    dq.append(R)
-
     size = [None for _ in range(N)]
 
     def sizeOf(node):
@@ -60,9 +57,11 @@ def main(f = None):
     sizeOf(R)
     #print(size)
 
+    ans = []
     for _ in range(Q):
         q = int(input())-1
-        print(size[q])
+        ans.append(str(q))
+    print('\n'.join(ans))
 
 
 if __name__ == "__main__":
