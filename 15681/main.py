@@ -14,6 +14,7 @@ def main(f = None):
         g[V].append(U)
     parentOf = [-1 for _ in range(N)]
     numOfChildOf = [-1 for _ in range(N)]
+    vis = [False for _ in range(N)]
 
     q = deque()
     q.append((R, -1))
@@ -23,7 +24,7 @@ def main(f = None):
 
         for child in g[node]:
             if child == parent: continue
-            q.append
+            q.append((child, node))
 
 
 
