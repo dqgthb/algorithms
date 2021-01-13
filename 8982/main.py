@@ -17,6 +17,7 @@ def main(f = None):
         v.append(c-a)
         h.append(b)
     _, _ = map(int, input().split())
+    n = len(v)
     print(v)
     print(h)
     print(x)
@@ -34,7 +35,9 @@ def main(f = None):
         holeIndices.append(idx)
     print(holeIndices)
 
-    waterLevel = [0] * N
+    waterLvl = [0] * n
+    for i in range(n):
+        waterLvl[i]
 
 
 
