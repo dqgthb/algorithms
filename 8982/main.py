@@ -1,6 +1,10 @@
+class Point:
+    def __init__(s, x, y):
 def main(f = None):
     init(f)
-    
+    N = int(input())
+    A = (0, 0)
+    B = (1, )
 
 # CP template Version 1.005
 import os
