@@ -28,7 +28,6 @@ def main(f = None):
         g[V].append(U)
     parentOf = [-1 for _ in range(N)]
     numOfChildOf: list[Optional[int]] = [None for _ in range(N)]
-    vis = [False for _ in range(N)]
 
     dq: Deque[Any] = deque()
     dq.append((R, -1))
