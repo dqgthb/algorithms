@@ -37,38 +37,35 @@ def sizeOf(node):
             sizeOf(nbr)
             size[node] += size[nbr]
 
-def main(f = None):
-    global g, size
-    init(f)
-    N, R, Q = map(int, input().split())
-    R -= 1
-    g = [[] for _ in range(N)]
+N, R, Q = map(int, input().split())
+R -= 1
+g = [[] for _ in range(N)]
 
-    for _ in range(N-1):
-        #U, V = map(lambda x: int(x)-1, input().split())
-        U, V = map(int, input().split())
-        U -= 1
-        V -= 1
-        g[U].append(V)
-        g[V].append(U)
+for _ in range(N-1):
+    #U, V = map(lambda x: int(x)-1, input().split())
+    U, V = map(int, input().split())
+    U -= 1
+    V -= 1
+    g[U].append(V)
+    g[V].append(U)
 
-    size = [None] * N
+size = [None] * N
 
-    sizeOf(R)
-    #print(size)
+sizeOf(R)
+#print(size)
 
-    ans = []
-    count = 0
-    for _ in range(Q):
-        count += 1
-        q = int(input())-1
-        ans.append(str(size[q]))
+ans = []
+count = 0
+for _ in range(Q):
+    count += 1
+    q = int(input())-1
+    ans.append(str(size[q]))
 
-        #if count == 10000000:
-        #    sys.stdout.write('\n'.join(ans))
-        #    ans = []
-        #    count = 0
-    sys.stdout.write('\n'.join(ans))
+    #if count == 10000000:
+    #    sys.stdout.write('\n'.join(ans))
+    #    ans = []
+    #    count = 0
+sys.stdout.write('\n'.join(ans))
 
 
 if __name__ == "__main__":
