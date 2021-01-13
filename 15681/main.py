@@ -35,12 +35,10 @@ def main(f = None):
         if size[node] is not None:
             return size[node]
         size[node] = 1
-        sum_ = 1
         for nbr in g[node]:
             if not size[nbr]:
-                size[node] += sizeOf(nbr)
-        size[node] = sum_
-        return sum_
+                sizeOf(nbr)
+                size[node] += size[nbr]
     sizeOf(R)
     #print(size)
 
