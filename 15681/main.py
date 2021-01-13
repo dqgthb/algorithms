@@ -32,11 +32,11 @@ def main(f = None):
         node = stack.pop()
         if size[node] is not None:
             continue
+
         vis[node] = True
         sum_ = 1
         for nbr in g[node]:
             if not vis[nbr]:
-                sum_ += 
 
 
 
