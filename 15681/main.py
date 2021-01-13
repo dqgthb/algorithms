@@ -27,11 +27,12 @@ def main(f = None):
         g[U].append(V)
         g[V].append(U)
     parentOf = [-1 for _ in range(N)]
-    numOfChildOf: list[Optional[int]] = [None for _ in range(N)]
+    numOfChildrenOf: list[Optional[int]] = [None for _ in range(N)]
 
     dq: Deque[Any] = deque()
     dq.append((R, -1))
     
+    # find parents of each node
     while dq:
         node, parent = dq.popleft()
         for child in g[node]:
@@ -41,10 +42,11 @@ def main(f = None):
     for i in range(N):
         print("parent of", i+1, "is", parentOf[i]+1)
     
-    def numOfChild(node: int) -> Optional[int]:
-        if numOfChildOf[node] is not None:
-            return numOfChildOf[node]
-        return None
+    # find number of children of each node
+    def numOfChildren(node: int) -> Optional[int]:
+        if numOfChildrenOf[node] is not None:
+            return numOfChildrenOf[node]
+        
 
 
 
