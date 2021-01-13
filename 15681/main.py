@@ -13,8 +13,9 @@ def main(f = None):
         g[U].append(V)
         g[V].append(U)
     parentOf = [-1 for _ in range(N)]
+    numOfChildOf = [-1 for _ in range(N)]
 
-    
+    for i in range()
 
     def solve(q:int) -> int:
 
