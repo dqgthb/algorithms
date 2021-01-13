@@ -36,6 +36,14 @@ def main(f = None):
     tree = [[] for _ in range(N)]
     tree[R] = g[R][:]
     print(tree)
+
+    while dq:
+        node, parent = dq.popleft()
+        for neighbor in g[node]:
+            if neighbor == parent:
+        
+
+
     while dq:
         node, parent = dq.popleft()
         for child in g[node]:
