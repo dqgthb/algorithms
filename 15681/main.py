@@ -64,10 +64,10 @@ def main(f = None):
         q = int(input())-1
         ans.append(str(size[q]))
 
-        if count == 100:
-            sys.stdout.write('\n'.join(ans))
-            ans = []
-            count = 0
+        #if count == 10000000:
+        #    sys.stdout.write('\n'.join(ans))
+        #    ans = []
+        #    count = 0
     sys.stdout.write('\n'.join(ans))
 
 
