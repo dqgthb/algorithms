@@ -1,3 +1,16 @@
+# CP template Version 1.005
+import os
+import sys
+import itertools
+import collections
+from functools import cmp_to_key
+from itertools import product
+from collections import deque, Counter
+from math import log, log2, ceil, floor
+import math
+from heapq import heappush, heappop
+from bisect import bisect_left, bisect_right
+
 def main(f = None):
     init(f)
     N: int
@@ -20,10 +33,11 @@ def main(f = None):
     q.append((R, -1))
     
     while q:
-        node, parent = q.pop()
+        node, parent = q.
 
         for child in g[node]:
             if child == parent: continue
+            parentOf[child] = node
             q.append((child, node))
 
 
@@ -36,19 +50,6 @@ def main(f = None):
     for _ in range(Q):
         q = int(input())
         solve(q)
-
-# CP template Version 1.005
-import os
-import sys
-import itertools
-import collections
-from functools import cmp_to_key
-from itertools import product
-from collections import deque, Counter
-from math import log, log2, ceil, floor
-import math
-from heapq import heappush, heappop
-from bisect import bisect_left, bisect_right
 
 DEBUG = False
 
