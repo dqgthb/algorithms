@@ -27,14 +27,12 @@ def main(f = None):
         g[U].append(V)
         g[V].append(U)
     parentOf = [-1 for _ in range(N)]
-    numOfChildrenOf: list[Optional[int]] = [None for _ in range(N)]
 
     dq: Deque[Any] = deque()
     dq.append((R, -1))
     
     # find parents of each node
     tree = [[] for _ in range(N)]
-    print(tree)
 
     while dq:
         node, parent = dq.popleft()
@@ -43,6 +41,10 @@ def main(f = None):
             tree[node].append(neighbor)
             parentOf[neighbor] = node
             dq.append((neighbor, node))
+    
+    def countSubtreeNodes(node):
+        size[]
+
 
 
 DEBUG = False
