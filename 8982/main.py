@@ -5,8 +5,6 @@ class Point:
 def main(f = None):
     init(f)
     N = int(input())
-    A = Point(*map(int, input().split()))
-    B = Point(*map(int, input().split()))
 
 # CP template Version 1.005
 import os
