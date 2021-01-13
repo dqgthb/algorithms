@@ -34,22 +34,15 @@ def main(f = None):
     
     # find parents of each node
     tree = [[] for _ in range(N)]
-    tree[R] = g[R][:]
     print(tree)
 
     while dq:
         node, parent = dq.popleft()
         for neighbor in g[node]:
-            if neighbor == parent:
-        
-
-
-    while dq:
-        node, parent = dq.popleft()
-        for child in g[node]:
-            if child == parent: continue
-            parentOf[child] = node
-            dq.append((child, node))
+            if neighbor == parent: continue
+            tree[node].append(neighbor)
+            parentOf[neighbor] = node
+            dq.append((neighbor, node))
 
 
 DEBUG = False
