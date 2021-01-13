@@ -2,11 +2,16 @@
 
 def solution(words, queries):
     prefix = [(len(x), x) for x in words]
+    prefix.sort()
     postfix = [(len(x), x[::-1]) for x in words]
-    postfix = words[:]
-    postfix = sorted(words, key=lambda x: (len(x), x[::-1]))
+    postfix.sort()
     print(prefix)
     print(postfix)
+
+    for q in queries:
+        
+
+
 
 
     ans = []
