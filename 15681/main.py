@@ -47,6 +47,7 @@ def main(f = None):
         if numOfChildrenOf[node] is not None:
             return numOfChildrenOf[node]
         
+        if 
 
 
 
