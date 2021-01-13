@@ -23,9 +23,6 @@ def main(f = None):
     for _ in range(K):
         a, b, c, _  = map(int, input().split())
         holes.append(a)
-    cum = 0
-    for i, e in enumerate(v):
-        pass
 
 
 # CP template Version 1.005
