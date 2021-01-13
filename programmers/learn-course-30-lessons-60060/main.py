@@ -9,7 +9,6 @@ def solution(words, queries):
     print(postfix)
 
     for q in queries:
-        
 
 
 
