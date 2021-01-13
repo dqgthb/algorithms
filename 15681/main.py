@@ -60,7 +60,7 @@ def main(f = None):
     ans = []
     for _ in range(Q):
         q = int(input())-1
-        ans.append(str(q))
+        ans.append(str(size[q]))
     print('\n'.join(ans))
 
 
