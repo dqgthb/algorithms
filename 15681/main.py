@@ -8,11 +8,12 @@ def main(f = None):
     for _ in range(N-1):
         U:int 
         V:int
-        U, V = map(int, input().split())
+        U, V = map(lambda x: int(x)-1, input().split())
         g[U].append(V)
         g[V].append(U)
 
     def solve(q:int) -> int:
+
         return 0
 
     for _ in range(Q):
