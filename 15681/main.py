@@ -9,8 +9,10 @@ def main(f = None):
         U:int 
         V:int
         U, V = map(int, input().split())
-        g[U] = V
+        g[U].appent(V)
         g[V] = U
+    for _ in range(Q):
+
 
 # CP template Version 1.005
 import os
