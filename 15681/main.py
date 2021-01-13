@@ -1,7 +1,7 @@
 # CP template Version .005
 import os
 import sys
-sys.setrecursionlimit(10**9)
+sys.setrecursionlimit(987654321)
 DEBUG = False
 
 def setStdin(f):
@@ -25,8 +25,7 @@ def dprint(*args):
 
 def pfast(*args, end = "\n", sep=' '): sys.stdout.write(sep.join(map(str, args)) + end)
 
-
-#init(None)
+input=sys.stdin.readline
 
 N, R, Q = map(int, input().split())
 R -= 1
