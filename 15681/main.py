@@ -30,20 +30,13 @@ def main(f = None):
     def sizeOf(node):
         if size[node] is not None:
             return size[node]
+        vis[node] = True
         sum_ = 1
         for nbr in g[node]:
             if not vis[nbr]:
                 sum_ += sizeOf(nbr)
         size[node] = sum_
         return sum_
-
-    while dq:
-        node = dq.popleft()
-        sum_ = 1
-        for nbr in g[node]:
-            if not vis[nbr]:
-                sum_ += size
-
 
     for _ in range(Q):
         q = int(input())-1
