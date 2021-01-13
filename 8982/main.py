@@ -18,7 +18,9 @@ def main(f = None):
     print(v)
     print(h)
 
-    for _ in range()
+    K = int(input())
+    for _ in range(K):
+        a, b, c, _  = map(int, input().split())
     cum = 0
     for i, e in enumerate(v):
 
