@@ -5,7 +5,6 @@ def main(f = None):
     dp[S] = 0
 
     def dfs(cur):
-        print(cur)
         next = cur + U
         before = cur - D
         
@@ -18,15 +17,13 @@ def main(f = None):
             dfs(before)
     
     dfs(S)
-    print(dp)
 
     if dp[G] != 987654321:
         print(dp[G])
     else:
         print("use the stairs")
 
-
-
+sys.setrecursionlimit(987654321)
 
 # CP template Version 1.005
 import os
