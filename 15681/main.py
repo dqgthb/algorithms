@@ -44,6 +44,7 @@ def main(f = None):
     
     # find number of children of each node
     def numOfChildren(node: int) -> Optional[int]:
+        print(node)
         if numOfChildrenOf[node] is not None:
             return numOfChildrenOf[node]
         
@@ -58,7 +59,7 @@ def main(f = None):
         numOfChildrenOf[node] = sum_
         return sum_
     
-    print(numOfChildren(R)
+    print(numOfChildren(R))
     for _ in range(Q):
         node = int(input()) - 1
 
