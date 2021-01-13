@@ -40,8 +40,7 @@ def main(f = None):
                 sum_ += sizeOf(nbr)
         size[node] = sum_
         return sum_
-    for i in range(N):
-        sizeOf(i)
+    sizeOf(R)
     print(size)
 
     for _ in range(Q):
