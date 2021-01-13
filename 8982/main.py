@@ -25,6 +25,7 @@ def main(f = None):
         holes.append(a)
     cum = 0
     for i, e in enumerate(v):
+        pass
 
 
 # CP template Version 1.005
