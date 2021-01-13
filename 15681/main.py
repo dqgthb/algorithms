@@ -16,11 +16,14 @@ def main(f = None):
     numOfChildOf = [-1 for _ in range(N)]
 
     q = deque()
-    q.append(R)
+    q.append((R, -1))
     
     while q:
-        node = q.pop()
-        print(node)
+        node, parent = q.pop()
+
+        for child in g[node]:
+            if child == parent: continue
+            q.append
 
 
 
