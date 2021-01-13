@@ -42,7 +42,7 @@ def main(f = None):
     for i in range(N):
         print("parent of", i+1, "is", parentOf[i]+1)
     
-    def numOfChild(node: int) -> int:
+    def numOfChild(node: int) -> Optional[int]:
         if numOfChildOf[node] is not None:
             return numOfChildOf[node]
 
