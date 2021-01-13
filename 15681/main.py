@@ -60,12 +60,13 @@ def main(f = None):
     ans = []
     count = 0
     for _ in range(Q):
-        while True:
+        count += 1
         q = int(input())-1
 
-        ans.append(str(size[q])+'\n')
-        sys.stdout.writelines(ans)
-        ans = []
+        if count == 100:
+            ans.append(str(size[q]))
+            sys.stdout.write(ans)
+            ans = []
 
 
 if __name__ == "__main__":
