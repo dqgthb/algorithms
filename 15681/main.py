@@ -30,7 +30,15 @@ def parr(arr):
     for i in arr:
         print(i)
 
+def sizeOf(node):
+    size[node] = 1
+    for nbr in g[node]:
+        if not size[nbr]:
+            sizeOf(nbr)
+            size[node] += size[nbr]
+
 def main(f = None):
+    global g, size
     init(f)
     N, R, Q = map(int, input().split())
     R -= 1
@@ -46,14 +54,6 @@ def main(f = None):
 
     size = [None] * N
 
-def sizeOf(node):
-    if size[node] is not None:
-        return size[node]
-    size[node] = 1
-    for nbr in g[node]:
-        if not size[nbr]:
-            sizeOf(nbr)
-            size[node] += size[nbr]
     sizeOf(R)
     #print(size)
 
