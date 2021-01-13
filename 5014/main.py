@@ -9,14 +9,16 @@ def main(f = None):
     while q:
         s, count = q.popleft()
         if s == G:
-            print("")
+            print(count)
+            return
 
         u = s + U
         d = s + D
 
         for nxt in [u, d]:
-            if 1 <= u <= F:
+            if 1 <= nxt <= F:
                 q.append((nxt, count+1))
+    print("use the stairs")
 
 # CP template Version 1.005
 import os
