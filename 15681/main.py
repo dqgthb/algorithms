@@ -27,20 +27,6 @@ def main(f = None):
     vis = [False for _ in range(N)]
     size = [None for _ in range(N)]
 
-    stack = [R]
-    while stack:
-        node = stack.pop()
-        print(node)
-        sum_ = 1
-        for nbr in g[node]:
-            if not vis[nbr]:
-                vis[nbr] = True
-                stack.append((node, sum_))
-                stack.append(nbr)
-                continue
-
-
-
     def sizeOf(node):
         if size[node] is not None:
             return size[node]
@@ -51,6 +37,8 @@ def main(f = None):
                 sum_ += sizeOf(nbr)
         size[node] = sum_
         return sum_
+    for i in range(N):
+        sizeOf(i)
 
     for _ in range(Q):
         q = int(input())-1
