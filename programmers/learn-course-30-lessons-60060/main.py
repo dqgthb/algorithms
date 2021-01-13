@@ -4,6 +4,8 @@ def solution(words, queries):
     from bisect import bisect_left, bisect_right
     prefix = [(len(x), x) for x in words] # O(n)
     prefix.sort()
+    postfix = [(len(x), x[::-1]) for x in words]
+    postfix.sort()
     ans = []
     for query in queries:
         q = (len(query), query)
@@ -18,8 +20,6 @@ def solution(words, queries):
             if query[0] == '?':
                 qPre = (len(query), queryPre[::-1])
                 qPost = (len(query), queryPost[::-1])
-                postfix = [(len(x), x[::-1]) for x in words]
-                postfix.sort()
                 usedArray = postfix
             else: # query[-1] == '?'
                 qPre = (len(query), queryPre)
@@ -41,7 +41,7 @@ def main(f = None):
     queries = ["frodo", "fro??", "????o", "fr???", "fro???", "pro?"]
     ans = solution(words, queries)
     print(ans)
-    result = [3, 2, 4, 1, 0]
+    result = [1, 3, 2, 4, 1, 0]
     assert ans == result
 
 import os
