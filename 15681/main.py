@@ -52,6 +52,7 @@ def sizeOf(node):
             sizeOf(nbr)
             size[node] += size[nbr]
 
+
 sizeOf(R)
 #print(size)
 
