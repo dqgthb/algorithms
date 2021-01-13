@@ -55,11 +55,12 @@ def main(f = None):
         for child in g[node]:
             if child == parentOf[node]: continue
             sum_ += numOfChildren(node) + 1
+        numOfChildrenOf[node] = sum_
         return sum_
     
+    print(numOfChildren(R)
     for _ in range(Q):
         node = int(input()) - 1
-        print(numOfChildren(node))
 
 
 
