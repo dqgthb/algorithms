@@ -3,6 +3,12 @@ def main(f = None):
     F, S, G, U, D = map(int, input().split())
     vis = [False for _ in range(F+1)]
 
+    vis[S] = True
+    q = deque([S])
+
+    while q:
+        s = q.popleft()
+
 # CP template Version 1.005
 import os
 import sys
