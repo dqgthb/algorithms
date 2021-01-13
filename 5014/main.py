@@ -1,6 +1,6 @@
 def main(f = None):
     init(f)
-    
+    F, S, G, U, D = map(int, input().split())
 
 # CP template Version 1.005
 import os
