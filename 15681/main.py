@@ -14,12 +14,9 @@ from typing import Deque, Any, Optional
 
 def main(f = None):
     init(f)
-    N: int
-    R: int
-    Q: int
     N, R, Q = map(int, input().split())
     R -= 1
-    g:list[list[int]] = [[] for _ in range(N)]
+    g: = [[] for _ in range(N)]
     for _ in range(N-1):
         U:int 
         V:int
