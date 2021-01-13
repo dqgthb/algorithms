@@ -57,7 +57,9 @@ def main(f = None):
         if not children:
             leafs.append(node)
     
-    for leaf in leafs:
+    nodes = deque(leafs)
+    for node in nodes:
+        countSubtreeNodes(node)
 
 
     for _ in range(Q):
