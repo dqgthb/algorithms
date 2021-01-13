@@ -34,6 +34,8 @@ def main(f = None):
         holeIndices.append(idx)
     print(holeIndices)
 
+    waterLevel = [0] * N
+
 
 
 # CP template Version 1.005
