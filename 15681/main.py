@@ -42,8 +42,10 @@ def main(f = None):
             parentOf[neighbor] = node
             dq.append((neighbor, node))
     
+    size = [-1 for _ in range(N)]
+    for i in size
     def countSubtreeNodes(node):
-        size[]
+        size
 
 
 
