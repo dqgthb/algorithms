@@ -62,11 +62,13 @@ def main(f = None):
     for _ in range(Q):
         count += 1
         q = int(input())-1
+        ans.append(str(size[q]))
 
         if count == 100:
-            ans.append(str(size[q]))
-            sys.stdout.write(ans)
+            sys.stdout.write('\n'.join(ans))
             ans = []
+            count = 0
+    sys.stdout.write('\n'.join(ans))
 
 
 if __name__ == "__main__":
