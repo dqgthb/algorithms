@@ -1,8 +1,11 @@
 # CP template Version 1.4
 
 def solution(words, queries):
-    prefix = sorted(words, lambda x: (len(x), x))
-    postfix = sorted(words, lambda x: (len(x), -x))
+    prefix = sorted(words, key=lambda x: (len(x), x))
+    words
+    postfix = sorted(words, key=lambda x: (len(x), x[::-1]))
+    print(prefix)
+    print(postfix)
 
 
     ans = []
