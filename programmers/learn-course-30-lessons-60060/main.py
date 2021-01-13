@@ -16,7 +16,10 @@ def solution(words, queries):
             iE = bisect_right(prefix, q)
             ans.append(iE - iB)
         else:
+            qEnd = (len(query), query[::-1])
             
+            if query[0] == '?':
+            else: # query[-1] == '?'
 
     return ans
 
