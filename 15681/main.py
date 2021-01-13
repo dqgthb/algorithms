@@ -29,17 +29,16 @@ def main(f = None):
     dq = deque()
     dq.append(R)
 
-    vis = [False for _ in range(N)]
     size = [None for _ in range(N)]
 
     def sizeOf(node):
         if size[node] is not None:
             return size[node]
-        vis[node] = True
+        size[node] = 1
         sum_ = 1
         for nbr in g[node]:
-            if not vis[nbr]:
-                sum_ += sizeOf(nbr)
+            if not size[nbr]:
+                size[node] += sizeOf(nbr)
         size[node] = sum_
         return sum_
     sizeOf(R)
