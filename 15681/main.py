@@ -41,6 +41,10 @@ def main(f = None):
             dq.append((child, node))
     for i in range(N):
         print("parent of", i+1, "is", parentOf[i]+1)
+    
+    def numOfChild(node: int) -> int:
+        if numOfChildOf[node] is not None:
+            retrun 
 
 
 
