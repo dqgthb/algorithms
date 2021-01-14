@@ -27,10 +27,11 @@ def main(f = None):
     for _ in range(K):
         a, b, c, _  = map(int, input().split())
         holes.append(a)
-    holeIndices = []
+    holeIndices = [(0, 0)]
     for hole in holes:
         idx = bisect_left(x, hole)
         holeIndices.append((idx, h[idx]))
+    holeIndices.append((0, 0))
     print(holeIndices)
 
 
