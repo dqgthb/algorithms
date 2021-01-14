@@ -27,13 +27,12 @@ def main(f = None):
     for _ in range(K):
         a, b, c, _  = map(int, input().split())
         holes.append(a)
-    
-    
     holeIndices = []
     for hole in holes:
         idx = bisect_left(x, hole)
-        holeIndices.append(idx)
+        holeIndices.append((idx, h[idx]))
     print(holeIndices)
+
 
     waterLvl = [0] * n
     for i in range(n):
