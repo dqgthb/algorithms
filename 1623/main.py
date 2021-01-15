@@ -39,14 +39,14 @@ def main(f = None):
                 else:
                     dfs(nxt, 1, v)
                     v.append(nxt+1)
-    withoutBoss = []
+    withoutBoss = [1]
     dfs(0, 1, withoutBoss)
     withoutBoss.sort()
     print(*withoutBoss, -1)
 
     withBoss = []
     dfs(0, 0, withBoss)
-    withoutBoss.sort()
+    withBoss.sort()
     print(*withBoss, -1)
 
 
