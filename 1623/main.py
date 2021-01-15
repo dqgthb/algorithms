@@ -11,6 +11,8 @@ import math
 from heapq import heappush, heappop
 from bisect import bisect_left, bisect_right
 
+sys.setrecursionlimit(10**9)
+
 def dfs(node, doNotIncludeSelf = False):
     global nalaryDp, tree, nalary, participants
     if doNotIncludeSelf:
