@@ -7,8 +7,8 @@ def main(f = None):
         cache[cur][flag] = 0
 
         if flag:
-            ret = cache[cur][flag]
-            
+            cache[cur][flag] += cost[cur]
+
 
 
     
