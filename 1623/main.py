@@ -64,7 +64,7 @@ def Mat(h, w, default = None):
 # CP template Version 1.005
 import os
 import sys
-sys.setrecursionlimit(50000)
+sys.setrecursionlimit(300000)
 import itertools
 import collections
 from functools import cmp_to_key
