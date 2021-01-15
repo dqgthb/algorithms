@@ -18,7 +18,7 @@ def main(f = None):
             for nxt in tree[cur]:
                 cache[cur][flag] += max(sol(nxt, 0), sol(nxt, 1))
             return cache[cur][flag]
-    
+
     N = int(input())
     tree = [[] for _ in range(N)]
     cost = [int(i) for i in input().split()]
@@ -28,8 +28,8 @@ def main(f = None):
     
     print(sol(0, 1), sol(0, 0))
 
+    def dfs(cur, flag, v):
 
-    
 
 def For(*args):
     return itertools.product(*map(range, args))
