@@ -36,33 +36,32 @@ def dp(node): # returns both 0, 1
     nalaryDp[node][1] = nalaryWithoutMe
     return nalaryIncludeMe, nalaryWithoutMe
 
-def main(f = None):
-    global nalaryDp, tree, nalary, participants
-    init(f)
-    N = int(input())
-    nalary = [int(i) for i in input().split()]
-    parentOf = [None] + [int(i)-1 for i in input().split()]
-    tree = [[] for _ in range(N)]
-    for i in range(1, N):
-        tree[parentOf[i]].append(i)
-    del parentOf
-    
-    # 0: may include self 
-    # 1: does not include self
-    nalaryDp = [[None, None] for _ in range(N)]
-    print(*dp(0))
-    del nalary
+#def main(f = None):
+global nalaryDp, tree, nalary, participants
+N = int(input())
+nalary = [int(i) for i in input().split()]
+parentOf = [None] + [int(i)-1 for i in input().split()]
+tree = [[] for _ in range(N)]
+for i in range(1, N):
+    tree[parentOf[i]].append(i)
+del parentOf
 
-    participants = [0]
-    for sub in tree[0]:
-        dfs(sub, True)
-    print(*(i + 1 for i in participants), -1)
+# 0: may include self 
+# 1: does not include self
+nalaryDp = [[None, None] for _ in range(N)]
+print(*dp(0))
+del nalary
 
-    participants = []
-    for sub in tree[0]:
-        dfs(sub, False)
-    participants.sort()
-    print(*(i + 1 for i in participants), -1)
+participants = [0]
+for sub in tree[0]:
+    dfs(sub, True)
+print(*(i + 1 for i in participants), -1)
+
+participants = []
+for sub in tree[0]:
+    dfs(sub, False)
+participants.sort()
+print(*(i + 1 for i in participants), -1)
 
 
 
