@@ -35,6 +35,7 @@ def dp(node): # returns both 0, 1
     return nalaryIncludeMe, nalaryWithoutMe
 
 def main(f = None):
+    global nalaryDp, tree, nalary, participants
     init(f)
     N = int(input())
     nalary = [int(i) for i in input().split()]
