@@ -1,7 +1,6 @@
 def main(f = None):
     init(f)
     cache = [[-1]*2 for _ in range(200000)]
-    tree = [[] for _ in range(200000)]
 
     def sol(cur, flag):
         val = cache[cur][flag]
@@ -39,15 +38,15 @@ def main(f = None):
                 else:
                     dfs(nxt, 1, v)
                     v.append(nxt+1)
-    withoutBoss = [1]
-    dfs(0, 1, withoutBoss)
-    withoutBoss.sort()
-    print(*withoutBoss, -1)
+    lst = [1]
+    dfs(0, 1, lst)
+    lst.sort()
+    print(*lst, -1)
 
-    withBoss = []
-    dfs(0, 0, withBoss)
-    withBoss.sort()
-    print(*withBoss, -1)
+    lst = []
+    dfs(0, 0, lst)
+    lst.sort()
+    print(*lst, -1)
 
 
 
@@ -64,7 +63,7 @@ def Mat(h, w, default = None):
 # CP template Version 1.005
 import os
 import sys
-sys.setrecursionlimit(300000)
+sys.setrecursionlimit(205000)
 import itertools
 import collections
 from functools import cmp_to_key
