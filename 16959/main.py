@@ -16,14 +16,14 @@ def main(f = None):
         dp[i][j][k] = [3, 3, 2]
 
     def fromTo(start, end):
-        n
-
+        x, y = n2ij(start)
+        xe, ye = n2ij(end)
 
         dq = deque()
-        dq.append((x0, y0, K, 0))
-        dq.append((x0, y0, B, 0))
-        dq.append((x0, y0, L, 0))
-        dp[x0][y0] = [0]*3
+        dq.append((x, y, K, 0))
+        dq.append((x, y, B, 0))
+        dq.append((x, y, L, 0))
+        dp[x][y] = [0]*3
 
         while dq:
             x, y, unitType, step = dq.popleft()
