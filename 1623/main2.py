@@ -18,6 +18,11 @@ def main(f = None):
                 cache[cur][flag] += max(sol(nxt, 0), sol(nxt, 1))
             return ret
     
+    N = int(input())
+    tree = [[] for _ in range(N)]
+    parentOf = [None] + [int(i)-1 for i in input().split()]
+    for i in range(1, N):
+        tree[parentOf[i]].append(i)
 
 
     
