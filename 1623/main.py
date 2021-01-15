@@ -1,3 +1,38 @@
+def dfs(node, doNotIncludeSelf = False):
+    if doNotIncludeSelf:
+        for sub in tree[node]:
+            dfs(sub, False)
+    else:
+        valWithMe, valWithoutMe = dp(node)
+        chooseMe = valWithMe > valWithoutMe
+        if chooseMe:
+            participants.append(node)
+        for sub in tree[node]:
+            dfs(sub, chooseMe)
+
+def dp(node): # returns both 0, 1
+    val0 = nalaryDp[node][0]
+    val1 = nalaryDp[node][1]
+    if val0 is not None:
+        return val0, val1
+    
+    # leaf node
+    if not tree[node]:
+        participate = nalary[node]
+        nalaryDp[node][0] = participate
+        nalaryDp[node][1] = 0
+        return participate, 0
+    
+    nalaryWithoutMe = 0
+    nalaryIncludeMe = nalary[node]
+    for sub in tree[node]:
+        subVal0, subVal1 = dp(sub)
+        nalaryWithoutMe += max(subVal0, subVal1)
+        nalaryIncludeMe += subVal1
+
+    nalaryDp[node][0] = nalaryIncludeMe
+    nalaryDp[node][1] = nalaryWithoutMe
+    return nalaryIncludeMe, nalaryWithoutMe
 
 def main(f = None):
     init(f)
@@ -12,44 +47,9 @@ def main(f = None):
     # 1: does not include self
     nalaryDp = [[None, None] for _ in range(N)]
 
-    def dp(node): # returns both 0, 1
-        val0 = nalaryDp[node][0]
-        val1 = nalaryDp[node][1]
-        if val0 is not None:
-            return val0, val1
-        
-        # leaf node
-        if not tree[node]:
-            participate = nalary[node]
-            nalaryDp[node][0] = participate
-            nalaryDp[node][1] = 0
-            return participate, 0
-        
-        nalaryWithoutMe = 0
-        nalaryIncludeMe = nalary[node]
-        for sub in tree[node]:
-            subVal0, subVal1 = dp(sub)
-            nalaryWithoutMe += max(subVal0, subVal1)
-            nalaryIncludeMe += subVal1
-
-        nalaryDp[node][0] = nalaryIncludeMe
-        nalaryDp[node][1] = nalaryWithoutMe
-        return nalaryIncludeMe, nalaryWithoutMe
     
     print(*dp(0))
 
-    def dfs(node, doNotIncludeSelf = False):
-        if doNotIncludeSelf:
-            for sub in tree[node]:
-                dfs(sub, False)
-        else:
-            valWithMe, valWithoutMe = dp(node)
-            chooseMe = valWithMe > valWithoutMe
-            if chooseMe:
-                participants.append(node)
-            for sub in tree[node]:
-                dfs(sub, chooseMe)
-    
     participants = [0]
     for sub in tree[0]:
         dfs(sub, True)
