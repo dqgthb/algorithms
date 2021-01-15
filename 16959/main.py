@@ -4,7 +4,7 @@ def main(f = None):
     mat = [[int(i) for i in input().split()] for _ in range(N)]
     parr(mat)
 
-    n2idx = [None] * (N+1)
+    n2idx = [None] * (N*N+1)
     for i, j in For(N, N):
         n2idx[mat[i][j]] = (i, j)
     print(n2idx)
