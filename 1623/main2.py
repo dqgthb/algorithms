@@ -40,7 +40,16 @@ def main(f = None):
                     dfs(nxt, 1, v)
                     v.append(nxt+1)
     withoutBoss = []
-    dfs(0, 0, )
+    dfs(0, 1, withoutBoss)
+    withoutBoss.sort()
+    print(*withoutBoss, -1)
+
+    withBoss = []
+    dfs(0, 0, withBoss)
+    withoutBoss.sort()
+    print(*withBoss, -1)
+
+
 
 
 def For(*args):
