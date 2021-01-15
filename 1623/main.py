@@ -1,4 +1,71 @@
 
+def main(f = None):
+    init(f)
+    N = int(input())
+    nalary = [int(i) for i in input().split()]
+    parentOf = [None] + [int(i)-1 for i in input().split()]
+    tree = [[] for _ in range(N)]
+    for i in range(1, N):
+        tree[parentOf[i]].append(i)
+    
+    # 0: may include self 
+    # 1: does not include self
+    nalaryDp = [[None, None] for _ in range(N)]
+
+    def dp(node): # returns both 0, 1
+        val0 = nalaryDp[node][0]
+        val1 = nalaryDp[node][1]
+        if val0 is not None:
+            return val0, val1
+        
+        # leaf node
+        if not tree[node]:
+            participate = nalary[node]
+            nalaryDp[node][0] = participate
+            nalaryDp[node][1] = 0
+            return participate, 0
+        
+        nalaryWithoutMe = 0
+        nalaryIncludeMe = nalary[node]
+        for sub in tree[node]:
+            subVal0, subVal1 = dp(sub)
+            nalaryWithoutMe += max(subVal0, subVal1)
+            nalaryIncludeMe += subVal1
+
+        nalaryDp[node][0] = nalaryIncludeMe
+        nalaryDp[node][1] = nalaryWithoutMe
+        return nalaryIncludeMe, nalaryWithoutMe
+    
+    print(*dp(0))
+
+    def dfs(node, doNotIncludeSelf = False):
+        if doNotIncludeSelf:
+            for sub in tree[node]:
+                dfs(sub, False)
+        else:
+            valWithMe, valWithoutMe = dp(node)
+            chooseMe = valWithMe > valWithoutMe
+            if chooseMe:
+                participants.append(node)
+            for sub in tree[node]:
+                dfs(sub, chooseMe)
+    
+    participants = [0]
+    for sub in tree[0]:
+        dfs(sub, True)
+    print(*(i + 1 for i in participants), -1)
+
+    participants = []
+    for sub in tree[0]:
+        dfs(sub, False)
+    participants.sort()
+    print(*(i + 1 for i in participants), -1)
+
+
+
+    # boss participate
+
+
 
 
 def For(*args):
@@ -13,8 +80,17 @@ def Mat(h, w, default = None):
 # CP template Version 1.005
 import os
 import sys
-sys.setrecursionlimit(10**9)
+import itertools
+import collections
+from functools import cmp_to_key
+from itertools import product
+from collections import deque, Counter
+from math import log, log2, ceil, floor
+import math
+from heapq import heappush, heappop
+from bisect import bisect_left, bisect_right
 
+sys.setrecursionlimit(987654321)
 DEBUG = False
 
 def setStdin(f):
@@ -35,79 +111,67 @@ def init(f = None):
         elif len(sys.argv) == 2: setStdin(sys.argv[1])
         else: assert False, "Too many sys.argv: %d" % len(sys.argv)
 
+# Mod #
+class Mod:
+    MOD = 10**9 + 7
+    maxN = 5
+    FACT = [0] * maxN
+    INV_FACT = [0] * maxN
+
+    @staticmethod
+    def setMOD(n): Mod.MOD = n
+
+    @staticmethod
+    def add(x, y): return (x+y) % Mod.MOD
+
+    @staticmethod
+    def multiply(x, y): return (x*y) % Mod.MOD
+
+    @staticmethod
+    def power(x, y):
+        if y == 0: return 1
+        elif y % 2: return Mod.multiply(x, Mod.power(x, y-1))
+        else:
+            a = Mod.power(x, y//2)
+            return Mod.multiply(a, a)
+
+    @staticmethod
+    def inverse(x): return Mod.power(x, Mod.MOD-2)
+
+    @staticmethod
+    def divide(x, y): return Mod.multiply(x, Mod.inverse(y))
+
+    @staticmethod
+    def allFactorials():
+        Mod.FACT[0] = 1
+        for i in range(1, Mod.maxN): Mod.FACT[i] = Mod.multiply(i, Mod.FACT[i-1])
+
+    @staticmethod
+    def inverseFactorials():
+        n = len(Mod.INV_FACT)
+        Mod.INV_FACT[n-1] = Mod.inverse(Mod.FACT[n-1])
+        for i in range(n-2, -1, -1): Mod.INV_FACT[i] = Mod.multiply(Mod.INV_FACT[i+1], i+1)
+
+    @staticmethod
+    def coeffBinom(n, k):
+        if n < k: return 0
+        return Mod.multiply(Mod.FACT[n], Mod.multiply(Mod.INV_FACT[k], Mod.INV_FACT[n-k]))
+    
+    @staticmethod
+    def sum(it):
+        res = 0
+        for i in it: res = Mod.add(res, i)
+        return res
+# END Mod #
+
+def dprint(*args):
+    if DEBUG: print(*args)
+
 def pfast(*args, end = "\n", sep=' '): sys.stdout.write(sep.join(map(str, args)) + end)
 
 def parr(arr):
     for i in arr:
         print(i)
 
-input = sys.stdin.readline # by default
-
-def dfs(cur):
-    for child in tree[cur]:
-        dfs(child)
-    
-    if not tree[cur]:
-        cache[cur][0] = 0
-        cache[cur][1] = cost[cur]
-    else:
-        cache[cur][0] = sum(list(max(cache[x]) for x in tree[cur]))
-        cache[cur][1] = cost[cur] + sum(cache[x][0] for x in tree[cur])
-
-def sol(cur, flag):
-    val = cache[cur][flag]
-    if val != -1: return val
-    val = 0
-
-    if flag:
-        val += cost[cur]
-        for nxt in tree[cur]:
-            val += sol(nxt, 0)
-    
-    else:
-        for nxt in tree[cur]:
-            val += max(sol(nxt, 0), sol(nxt, 1))
-    cache[cur][flag] = val
-    return val
-
-def bt(cur, flag):
-    global lst
-    if flag:
-        for nxt in tree[cur]:
-            bt(nxt, 0)
-    else:
-        for nxt in tree[cur]:
-            if cache[nxt][0] > cache[nxt][1]:
-                bt(nxt, 0)
-            else:
-                bt(nxt, 1)
-                lst.append(nxt+1)
-
-def main(f):
-    init(f)
-    global tree, cache, cost, lst
-
-    N = int(input())
-    tree = [[] for _ in range(N)]
-    cost = [int(i) for i in input().split()]
-    parentOf = [None] + [int(i)-1 for i in input().split()]
-    for i in range(1, N):
-        tree[parentOf[i]].append(i)
-    del parentOf
-    cache = [[-1]*2 for _ in range(N)]
-    dfs(0)
-    #print(sol(0, 1), sol(0, 0))
-    print(cache[0][1], cache[0][0])
-    del cost
-    lst = [1]
-    bt(0, 1)
-    lst.sort()
-    pfast(*lst, -1)
-
-    lst = []
-    bt(0, 0)
-    lst.sort()
-    pfast(*lst, -1)
-
 if __name__ == "__main__":
-    main(None)
+    main()
