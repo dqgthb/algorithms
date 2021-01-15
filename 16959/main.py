@@ -20,16 +20,18 @@ def main(f = None):
         xe, ye = n2ij[end]
 
         dq = deque()
-        dq.append((x, y, K, 0))
-        dq.append((x, y, B, 0))
-        dq.append((x, y, L, 0))
+        dq.append((x, y, K))
+        dq.append((x, y, B))
+        dq.append((x, y, L))
         dp[start][x][y] = [0, 0, 0]
-        nextStage = start + 1
+        curr = start
         while dq:
-            x, y, unitType, step = dq.popleft()
+            x, y, unitType = dq.popleft()
             if x == xe and y == ye:
                 return min(dp[end][x][y])
-            currBoard = 
+            currBoard = dp[curr]
+
+            nextStage += 1
 
         return 100
     ans = fromTo(0, N*N-1)
