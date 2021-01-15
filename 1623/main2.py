@@ -1,7 +1,12 @@
 def main(f = None):
     init(f)
+    cache = [[None]*2 for _ in range(200000)]
     def sol(cur, flag):
-        val = 
+        val = cache[cur][flag]
+        if val is not None: return val
+        cache[cur][flag] = 0
+
+
     
 
 def For(*args):
