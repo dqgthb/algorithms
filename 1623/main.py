@@ -23,7 +23,7 @@ def main(f = None):
     parentOf = [None] + [int(i)-1 for i in input().split()]
     for i in range(1, N):
         tree[parentOf[i]].append(i)
-    cache = [[-1]*2 for _ in range(N+1)]
+    cache = [[-1]*2 for _ in range(N)]
     
     print(sol(0, 1), sol(0, 0))
 
