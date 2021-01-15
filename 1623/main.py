@@ -27,6 +27,7 @@ def main(f = None):
     cache = [[-1]*2 for _ in range(N)]
     
     print(sol(0, 1), sol(0, 0))
+    del cost
 
     def dfs(cur, flag, v):
         if flag:
