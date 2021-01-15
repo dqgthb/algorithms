@@ -8,7 +8,12 @@ def main(f = None):
 
         if flag:
             cache[cur][flag] += cost[cur]
-            for nxt in tree[]
+            for sub in tree[cur]:
+                cache[cur][flag] += sol(nxt, 0)
+            return cache[cur][flag]
+        
+        else:
+            for sub in tree[cur]:
 
 
 
