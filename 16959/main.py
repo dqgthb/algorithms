@@ -11,7 +11,8 @@ def main(f = None):
     for i, j in For(N, N):
         n2idx[mat[i][j]] = (i, j)
     
-    dp = nDim(100)
+    dp = nDim(100, N, N, 3)
+    parr(dp)
 
     def fromTo(start, end):
         x0, y0 = start
