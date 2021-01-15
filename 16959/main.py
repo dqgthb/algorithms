@@ -28,7 +28,7 @@ def main(f = None):
         while dq:
             x, y, unitType, step = dq.popleft()
             if x == xe and y == ye:
-                return step
+                return min(dp[end][x][y])
         return 100
     ans = fromTo(0, N*N-1)
     print(ans)
