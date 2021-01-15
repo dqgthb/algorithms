@@ -4,12 +4,12 @@ def main(f = None):
     def sol(cur, flag):
         val = cache[cur][flag]
         if val != -1: return val
-        cache[cur][flag] = 0
+        val = 0
 
         if flag:
-            cache[cur][flag] += cost[cur]
+            val += cost[cur]
             for nxt in tree[cur]:
-                cache[cur][flag] += sol(nxt, 0)
+                val += sol(nxt, 0)
             return cache[cur][flag]
         
         else:
