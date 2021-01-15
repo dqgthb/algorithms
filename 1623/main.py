@@ -1,4 +1,5 @@
 def dfs(node, doNotIncludeSelf = False):
+    global nalaryDp, tree, nalary, participants
     if doNotIncludeSelf:
         for sub in tree[node]:
             dfs(sub, False)
@@ -11,6 +12,7 @@ def dfs(node, doNotIncludeSelf = False):
             dfs(sub, chooseMe)
 
 def dp(node): # returns both 0, 1
+    global nalaryDp, tree, nalary, participants
     val0 = nalaryDp[node][0]
     val1 = nalaryDp[node][1]
     if val0 is not None:
