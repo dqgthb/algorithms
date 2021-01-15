@@ -31,6 +31,8 @@ def main(f = None):
     print(ans)
 
 
+def mat(*args):
+
 
 def For(*args):
     return itertools.product(*map(range, args))
