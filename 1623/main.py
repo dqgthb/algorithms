@@ -70,7 +70,21 @@ def sol(cur, flag):
     cache[cur][flag] = val
     return val
 
-def main():
+def bt(cur, flag):
+    if flag:
+        for nxt in tree[cur]:
+            dfs(nxt, 0)
+    else:
+        for nxt in tree[cur]:
+            if cache[nxt][0] > cache[nxt][1]:
+                dfs(nxt, 0)
+            else:
+                dfs(nxt, 1)
+                lst.append(nxt+1)
+
+def main(f):
+    init(f)
+    global tree, cache
 
     N = int(input())
     tree = [[] for _ in range(N)]
@@ -84,27 +98,15 @@ def main():
     #print(sol(0, 1), sol(0, 0))
     print(cache[0][1], cache[0][0])
     del cost
-
-    def bt(cur, flag):
-        if flag:
-            for nxt in tree[cur]:
-                dfs(nxt, 0)
-        else:
-            for nxt in tree[cur]:
-                if cache[nxt][0] > cache[nxt][1]:
-                    dfs(nxt, 0)
-                else:
-                    dfs(nxt, 1)
-                    lst.append(nxt+1)
     lst = [1]
-    dfs(0, 1)
+    bt(0, 1)
     lst.sort()
     pfast(*lst, -1)
 
     lst = []
-    dfs(0, 0)
+    bt(0, 0)
     lst.sort()
     pfast(*lst, -1)
 
 if __name__ == "__main__":
-    main()
+    main(None)
