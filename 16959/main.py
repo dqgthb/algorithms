@@ -5,9 +5,9 @@ def main(f = None):
     parr(mat)
 
     n2idx = [None] * (N+1)
-    for i, j in For(i, j):
-        n = mat[i][j]
-        n2idx[mat[i][j]]
+    for i, j in For(N, N):
+        n2idx[mat[i][j]] = (i, j)
+    print(n2idx)
 
     def fromTo(start, end):
         x0, y0 = start
