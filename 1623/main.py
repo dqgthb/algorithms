@@ -43,13 +43,13 @@ def main(f = None):
     tree = [[] for _ in range(N)]
     for i in range(1, N):
         tree[parentOf[i]].append(i)
+    del parentOf
     
     # 0: may include self 
     # 1: does not include self
     nalaryDp = [[None, None] for _ in range(N)]
-
-    
     print(*dp(0))
+    del nalary
 
     participants = [0]
     for sub in tree[0]:
