@@ -20,7 +20,7 @@ def main(f = None):
         dq.append((x0, y0, K, 0))
         dq.append((x0, y0, B, 0))
         dq.append((x0, y0, L, 0))
-        vis[x0][y0] = [0]*3
+        dp[x0][y0] = [0]*3
 
         while dq:
             x, y, unitType, step = dq.popleft()
