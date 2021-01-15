@@ -31,7 +31,9 @@ def main(f = None):
     print(ans)
 
 
-def mat(*args):
+def nDim(*args, default = None):
+    if len(args) == 1:
+        return [
 
 
 def For(*args):
