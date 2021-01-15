@@ -39,7 +39,8 @@ def main(f = None):
                 else:
                     dfs(nxt, 1, v)
                     v.append(nxt+1)
-    withoutBoss = []
+
+    withoutBoss = [0]
     dfs(0, 1, withoutBoss)
     withoutBoss.sort()
     print(*withoutBoss, -1)
