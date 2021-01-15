@@ -71,20 +71,21 @@ def sol(cur, flag):
     return val
 
 def bt(cur, flag):
+    global lst
     if flag:
         for nxt in tree[cur]:
-            dfs(nxt, 0)
+            bt(nxt, 0)
     else:
         for nxt in tree[cur]:
             if cache[nxt][0] > cache[nxt][1]:
-                dfs(nxt, 0)
+                bt(nxt, 0)
             else:
-                dfs(nxt, 1)
+                bt(nxt, 1)
                 lst.append(nxt+1)
 
 def main(f):
     init(f)
-    global tree, cache
+    global tree, cache, cost, lst
 
     N = int(input())
     tree = [[] for _ in range(N)]
