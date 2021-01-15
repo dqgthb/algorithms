@@ -21,7 +21,7 @@ def main(f = None):
         for child in tree[cur]:
             dfs(child)
         
-        if not tree[n]:
+        if not tree[cur]:
             cache[cur][0] = 0
             cache[cur][1] = cost[cur]
         else:
@@ -38,7 +38,7 @@ def main(f = None):
     cache = [[-1]*2 for _ in range(N)]
     dfs(0)
     #print(sol(0, 1), sol(0, 0))
-    print(dp[0][1])
+    print(cache[0][1], cache[0][0])
     del cost
 
     def dfs(cur, flag):
