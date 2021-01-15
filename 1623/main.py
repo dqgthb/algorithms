@@ -43,12 +43,12 @@ def main(f = None):
     lst = [1]
     dfs(0, 1)
     lst.sort()
-    print(*lst, -1)
+    pfast(*lst, -1)
 
     lst = []
-    dfs(0, 0, lst)
+    dfs(0, 0)
     lst.sort()
-    print(*lst, -1)
+    pfast(*lst, -1)
 
 
 
