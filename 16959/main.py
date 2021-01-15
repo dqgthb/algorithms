@@ -1,6 +1,7 @@
 def main(f = None):
     init(f)
     N = int(input())
+    N = 10
     mat = [[int(i)-1 for i in input().split()] for _ in range(N)]
 
     K = 0
@@ -16,8 +17,8 @@ def main(f = None):
         dp[i][j][k] = [3, 3, 2]
 
     def fromTo(start, end):
-        x, y = n2ij[start)
-        xe, ye = n2ij(end)
+        x, y = n2ij[start]
+        xe, ye = n2ij[end]
 
         dq = deque()
         dq.append((x, y, K, 0))
@@ -30,7 +31,7 @@ def main(f = None):
             if x == x1 and y == y1:
                 return step
         return 100
-    ans = fromTo(0, 99)
+    ans = fromTo(0, N*N-1)
     print(ans)
 
 
