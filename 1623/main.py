@@ -43,34 +43,34 @@ def parr(arr):
 
 input = sys.stdin.readline # by default
 
+def dfs(cur):
+    for child in tree[cur]:
+        dfs(child)
+    
+    if not tree[cur]:
+        cache[cur][0] = 0
+        cache[cur][1] = cost[cur]
+    else:
+        cache[cur][0] = sum(list(max(cache[x]) for x in tree[cur]))
+        cache[cur][1] = cost[cur] + sum(cache[x][0] for x in tree[cur])
+
+def sol(cur, flag):
+    val = cache[cur][flag]
+    if val != -1: return val
+    val = 0
+
+    if flag:
+        val += cost[cur]
+        for nxt in tree[cur]:
+            val += sol(nxt, 0)
+    
+    else:
+        for nxt in tree[cur]:
+            val += max(sol(nxt, 0), sol(nxt, 1))
+    cache[cur][flag] = val
+    return val
+
 def main():
-
-    def sol(cur, flag):
-        val = cache[cur][flag]
-        if val != -1: return val
-        val = 0
-
-        if flag:
-            val += cost[cur]
-            for nxt in tree[cur]:
-                val += sol(nxt, 0)
-        
-        else:
-            for nxt in tree[cur]:
-                val += max(sol(nxt, 0), sol(nxt, 1))
-        cache[cur][flag] = val
-        return val
-
-    def dfs(cur):
-        for child in tree[cur]:
-            dfs(child)
-        
-        if not tree[cur]:
-            cache[cur][0] = 0
-            cache[cur][1] = cost[cur]
-        else:
-            cache[cur][0] = sum(list(max(cache[x]) for x in tree[cur]))
-            cache[cur][1] = cost[cur] + sum(cache[x][0] for x in tree[cur])
 
     N = int(input())
     tree = [[] for _ in range(N)]
@@ -85,7 +85,7 @@ def main():
     print(cache[0][1], cache[0][0])
     del cost
 
-    def dfs(cur, flag):
+    def bt(cur, flag):
         if flag:
             for nxt in tree[cur]:
                 dfs(nxt, 0)
