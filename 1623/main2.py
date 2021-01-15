@@ -38,6 +38,9 @@ def main(f = None):
                     dfs(nxt, 0, v)
                 else:
                     dfs(nxt, 1, v)
+                    v.append(nxt+1)
+    withoutBoss = []
+    dfs(0, 0, )
 
 
 def For(*args):
