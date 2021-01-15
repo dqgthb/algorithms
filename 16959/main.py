@@ -10,6 +10,8 @@ def main(f = None):
     n2idx = [None] * (N*N+1)
     for i, j in For(N, N):
         n2idx[mat[i][j]] = (i, j)
+    
+    dp = nDim(100)
 
     def fromTo(start, end):
         x0, y0 = start
