@@ -10,12 +10,12 @@ def main(f = None):
             val += cost[cur]
             for nxt in tree[cur]:
                 val += sol(nxt, 0)
-            return cache[cur][flag]
         
         else:
             for nxt in tree[cur]:
-                cache[cur][flag] += max(sol(nxt, 0), sol(nxt, 1))
-            return cache[cur][flag]
+                val += max(sol(nxt, 0), sol(nxt, 1))
+        cache[cur][flag] = val
+        return val
 
     N = int(input())
     tree = [[] for _ in range(N)]
