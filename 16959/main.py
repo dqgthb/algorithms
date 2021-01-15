@@ -23,12 +23,14 @@ def main(f = None):
         dq.append((x, y, K, 0))
         dq.append((x, y, B, 0))
         dq.append((x, y, L, 0))
-        dp[start][x][y]
-
+        dp[start][x][y] = [0, 0, 0]
+        nextStage = start + 1
         while dq:
             x, y, unitType, step = dq.popleft()
             if x == xe and y == ye:
                 return min(dp[end][x][y])
+            currBoard = 
+
         return 100
     ans = fromTo(0, N*N-1)
     print(ans)
