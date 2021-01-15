@@ -1,13 +1,13 @@
 def main(f = None):
     init(f)
     N = int(input())
-    mat = [[int(i) for i in input().split()] for _ in range(N)]
+    mat = [[int(i)-1 for i in input().split()] for _ in range(N)]
 
     K = 0
     B = 1
     L = 2
 
-    n2ij = [None] * (N*N+1)
+    n2ij = [None] * (N*N)
     for i, j in For(N, N):
         n2ij[mat[i][j]] = (i, j)
     
@@ -16,7 +16,7 @@ def main(f = None):
         dp[i][j][k] = [3, 3, 2]
 
     def fromTo(start, end):
-        x, y = n2ij(start)
+        x, y = n2ij[start)
         xe, ye = n2ij(end)
 
         dq = deque()
@@ -30,7 +30,7 @@ def main(f = None):
             if x == x1 and y == y1:
                 return step
         return 100
-    ans = fromTo(n2ij[1], n2ij[N*N])
+    ans = fromTo(0, 99)
     print(ans)
 
 
