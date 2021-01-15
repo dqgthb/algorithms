@@ -4,6 +4,8 @@ def main(f = None):
     mat = [[int(i) for i in input().split()] for _ in range(N)]
     parr(mat)
 
+    n2idx = [0]
+
     def fromTo(start, end):
         x0, y0 = start
         x1, y1 = end
