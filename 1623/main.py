@@ -41,16 +41,12 @@ def main(f = None):
     lst = [1]
     dfs(0, 1, lst)
     lst.sort()
-    for i in lst:
-        print(i, end=' ')
-    print(-1)
+    print(*lst, -1)
 
     lst = []
     dfs(0, 0, lst)
     lst.sort()
-    for i in lst:
-        print(i, end=' ')
-    print(-1)
+    print(*lst, -1)
 
 
 
