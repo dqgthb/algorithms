@@ -8,6 +8,7 @@ def main(f = None):
 
         if flag:
             cache[cur][flag] += cost[cur]
+            for nxt in tree[]
 
 
 
