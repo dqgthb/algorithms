@@ -1,7 +1,6 @@
 def main(f = None):
     init(f)
     N = int(input())
-    N = 10
     mat = [[int(i)-1 for i in input().split()] for _ in range(N)]
 
     K = 0
@@ -28,7 +27,7 @@ def main(f = None):
 
         while dq:
             x, y, unitType, step = dq.popleft()
-            if x == x1 and y == y1:
+            if x == xe and y == ye:
                 return step
         return 100
     ans = fromTo(0, N*N-1)
