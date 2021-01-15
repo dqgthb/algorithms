@@ -11,12 +11,13 @@ def main(f = None):
     for i, j in For(N, N):
         n2idx[mat[i][j]] = (i, j)
     
-    dp = nDim(100, N, N, 3)
+    dp = nDim(100, N, N)
+    for i, j, k in For(100, N, N):
+        dp[i][j][k] 
 
     def fromTo(start, end):
         x0, y0 = start
         x1, y1 = end
-        dp = [[[10**9 for _ in range(3)] for _ in range(N)] for _ in range(N)]
 
         currBoard = dp[0]
 
