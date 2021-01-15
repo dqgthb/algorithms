@@ -16,6 +16,9 @@ def main(f = None):
                 val += max(sol(nxt, 0), sol(nxt, 1))
         cache[cur][flag] = val
         return val
+    
+    def dfs(cur):
+        for child in tree[cur]:
 
     N = int(input())
     tree = [[] for _ in range(N)]
