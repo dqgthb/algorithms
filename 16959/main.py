@@ -14,13 +14,13 @@ def main(f = None):
     def fromTo(start, end):
         x0, y0 = start
         x1, y1 = end
-        vis = [[[False for _ in range(3)] for _ in range(N)] for _ in range(N)]
+        dp = [[[10**9 for _ in range(3)] for _ in range(N)] for _ in range(N)]
 
         dq = deque()
         dq.append((x0, y0, K, 0))
         dq.append((x0, y0, B, 0))
         dq.append((x0, y0, L, 0))
-        vis[x0][y0] = [True]*3
+        vis[x0][y0] = [0]*3
 
         while dq:
             x, y, unitType, step = dq.popleft()
