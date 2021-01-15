@@ -29,19 +29,19 @@ def main(f = None):
     print(sol(0, 1), sol(0, 0))
     del cost
 
-    def dfs(cur, flag, v):
+    def dfs(cur, flag):
         if flag:
             for nxt in tree[cur]:
-                dfs(nxt, 0, v)
+                dfs(nxt, 0)
         else:
             for nxt in tree[cur]:
                 if cache[nxt][0] > cache[nxt][1]:
-                    dfs(nxt, 0, v)
+                    dfs(nxt, 0)
                 else:
-                    dfs(nxt, 1, v)
-                    v.append(nxt+1)
+                    dfs(nxt, 1)
+                    lst.append(nxt+1)
     lst = [1]
-    dfs(0, 1, lst)
+    dfs(0, 1)
     lst.sort()
     print(*lst, -1)
 
