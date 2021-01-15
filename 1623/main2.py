@@ -29,6 +29,15 @@ def main(f = None):
     print(sol(0, 1), sol(0, 0))
 
     def dfs(cur, flag, v):
+        if flag:
+            for nxt in tree[cur]:
+                dfs(nxt, 0, v)
+        else:
+            for nxt in tree[cur]:
+                if cache[nxt][0] > cache[nxt][1]:
+                    dfs(nxt, 0, v)
+                else:
+                    dfs(nxt, 1, v)
 
 
 def For(*args):
