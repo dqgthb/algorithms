@@ -25,7 +25,8 @@ def main(f = None):
             cache[cur][0] = 0
             cache[cur][1] = cost[cur]
         else:
-            cache[cur][0] = sum(list(max(dp[x])))
+            cache[cur][0] = sum(list(max(dp[x]) for x in tree[cur]))
+            cache[cur][1] = cost[cur] + sum(dp[x][0] for x in tree[cur]))
 
 
     N = int(input())
