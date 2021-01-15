@@ -1,36 +1,21 @@
+class Solution:
+def selectedTotal(self, values, multiple):
+    s = set(values)
+    ss = set()
+    for i in s:
+        for j in s:
+            if i == j:
+                continue
+            if (i + j) % multiple == 0:
+                ss.add(i)
+                ss.add(j)
+    return sum(ss)
+
+
 def main(f = None):
     init(f)
-    N = int(input())
-    mat = [[int(i) for i in input().split()] for _ in range(N)]
-
-    K = 0
-    B = 1
-    L = 2
-
-    n2idx = [None] * (N*N+1)
-    for i, j in For(N, N):
-        n2idx[mat[i][j]] = (i, j)
-
-    def fromTo(start, end):
-        x0, y0 = start
-        x1, y1 = end
-        vis = [[[False for _ in range(3)] for _ in range(N)] for _ in range(N)]
-
-        dq = deque()
-        dq.append((x0, y0, K, 0))
-        dq.append((x0, y0, B, 0))
-        dq.append((x0, y0, L, 0))
-        vis[x0][y0] = [True]*3
-
-        while dq:
-            x, y, unitType, step = dq.popleft()
-            if x == x1 and y == y1:
-                return step
-        return 100
-    ans = fromTo(n2idx[1], n2idx[N*N])
+    ans = Solution().selectedTotal([1,2,3,4,5], 3)
     print(ans)
-
-
 
 def For(*args):
     return itertools.product(*map(range, args))

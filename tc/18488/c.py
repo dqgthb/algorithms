@@ -1,36 +1,29 @@
+dp = [[-1] * 51 for _ in range(51)]
+
+
+def bCoeff(n, k):
+    if dp[n][k] is not None:
+        return dp[n][k]
+    
+    if k == 0 or k == n:
+        dp[n][k] = 1
+        return 1
+    
+    val = bCoeff(n-1, k-1) + bCoeff(n-1, k)
+    dp[n][k] = val
+    return val
+
+
+class Solution:
+    def winningChance(self, marbles):
+        pass
+
+
 def main(f = None):
     init(f)
-    N = int(input())
-    mat = [[int(i) for i in input().split()] for _ in range(N)]
-
-    K = 0
-    B = 1
-    L = 2
-
-    n2idx = [None] * (N*N+1)
-    for i, j in For(N, N):
-        n2idx[mat[i][j]] = (i, j)
-
-    def fromTo(start, end):
-        x0, y0 = start
-        x1, y1 = end
-        vis = [[[False for _ in range(3)] for _ in range(N)] for _ in range(N)]
-
-        dq = deque()
-        dq.append((x0, y0, K, 0))
-        dq.append((x0, y0, B, 0))
-        dq.append((x0, y0, L, 0))
-        vis[x0][y0] = [True]*3
-
-        while dq:
-            x, y, unitType, step = dq.popleft()
-            if x == x1 and y == y1:
-                return step
-        return 100
-    ans = fromTo(n2idx[1], n2idx[N*N])
-    print(ans)
-
-
+    ans = Solution().winningChance([1,1,1,1,1,5])
+    print(bCoeff(50, 25))
+    parr(dp)
 
 def For(*args):
     return itertools.product(*map(range, args))
