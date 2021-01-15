@@ -5,6 +5,10 @@ def main(f = None):
     parr(mat)
 
     def fromTo(start, end):
+        x0, y0 = start
+        x1, y1 = end
+
+
 
 
 def For(*args):
