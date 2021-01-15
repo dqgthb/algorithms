@@ -6,6 +6,9 @@ def main(f = None):
         if val is not None: return val
         cache[cur][flag] = 0
 
+        if flag:
+            ret +=
+
 
     
 
