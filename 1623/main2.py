@@ -10,18 +10,18 @@ def main(f = None):
 
         if flag:
             cache[cur][flag] += cost[cur]
-            for sub in tree[cur]:
+            for nxt in tree[cur]:
                 cache[cur][flag] += sol(nxt, 0)
             return cache[cur][flag]
         
         else:
-            for sub in tree[cur]:
+            for nxt in tree[cur]:
                 cache[cur][flag] += max(sol(nxt, 0), sol(nxt, 1))
-            return ret
+            return cache[cur][flag]
     
     N = int(input())
     tree = [[] for _ in range(N)]
-    nalary = [int(i) for i in input().split()]
+    cost = [int(i) for i in input().split()]
     parentOf = [None] + [int(i)-1 for i in input().split()]
     for i in range(1, N):
         tree[parentOf[i]].append(i)
