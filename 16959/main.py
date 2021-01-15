@@ -38,7 +38,7 @@ def nDim(*args, default = None):
     if len(args) == 1:
         return [default for _ in range(args[0])]
     else:
-        return [nDim(*args[1:], default) for _ in range(args[0])]
+        return [nDim(*args[1:], default = default) for _ in range(args[0])]
 
 
 def For(*args):
