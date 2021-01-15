@@ -1,6 +1,7 @@
 def main(f = None):
     init(f)
-    cache = [[None]*2 for _ in range(200000)]
+    cache = [[-1]*2 for _ in range(200000)]
+    tree = [[] for _ in range(200000)]
     def sol(cur, flag):
         val = cache[cur][flag]
         if val is not None: return val
@@ -14,7 +15,8 @@ def main(f = None):
         
         else:
             for sub in tree[cur]:
-
+                cache[cur][flag] += max(sol(nxt, 0), sol(nxt, 1))
+            return ret
 
 
     
