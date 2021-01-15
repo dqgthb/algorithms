@@ -7,7 +7,8 @@ def main(f = None):
         cache[cur][flag] = 0
 
         if flag:
-            ret +=
+            ret = cache[cur][flag]
+            
 
 
     
