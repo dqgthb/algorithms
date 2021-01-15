@@ -18,6 +18,8 @@ def main(f = None):
         x1, y1 = end
         dp = [[[10**9 for _ in range(3)] for _ in range(N)] for _ in range(N)]
 
+        currBoard = dp[0]
+
         dq = deque()
         dq.append((x0, y0, K, 0))
         dq.append((x0, y0, B, 0))
