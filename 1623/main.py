@@ -1,3 +1,16 @@
+# CP template Version 1.005
+import os
+import sys
+import itertools
+import collections
+from functools import cmp_to_key
+from itertools import product
+from collections import deque, Counter
+from math import log, log2, ceil, floor
+import math
+from heapq import heappush, heappop
+from bisect import bisect_left, bisect_right
+
 def dfs(node, doNotIncludeSelf = False):
     global nalaryDp, tree, nalary, participants
     if doNotIncludeSelf:
@@ -78,19 +91,6 @@ def copy2d(mat):
 
 def Mat(h, w, default = None):
     return [[default for _ in range(w)] for _ in range(h)]
-
-# CP template Version 1.005
-import os
-import sys
-import itertools
-import collections
-from functools import cmp_to_key
-from itertools import product
-from collections import deque, Counter
-from math import log, log2, ceil, floor
-import math
-from heapq import heappush, heappop
-from bisect import bisect_left, bisect_right
 
 sys.setrecursionlimit(987654321)
 DEBUG = False
@@ -175,5 +175,3 @@ def parr(arr):
     for i in arr:
         print(i)
 
-if __name__ == "__main__":
-    main()
