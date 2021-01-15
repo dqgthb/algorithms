@@ -25,9 +25,8 @@ def main(f = None):
             cache[cur][0] = 0
             cache[cur][1] = cost[cur]
         else:
-            cache[cur][0] = sum(list(max(dp[x]) for x in tree[cur]))
-            cache[cur][1] = cost[cur] + sum(dp[x][0] for x in tree[cur]))
-
+            cache[cur][0] = sum(list(max(cache[x]) for x in tree[cur]))
+            cache[cur][1] = cost[cur] + sum(cache[x][0] for x in tree[cur])
 
     N = int(input())
     tree = [[] for _ in range(N)]
@@ -37,8 +36,9 @@ def main(f = None):
         tree[parentOf[i]].append(i)
     del parentOf
     cache = [[-1]*2 for _ in range(N)]
-    
-    print(sol(0, 1), sol(0, 0))
+    dfs(0)
+    #print(sol(0, 1), sol(0, 0))
+    print(dp[0][1])
     del cost
 
     def dfs(cur, flag):
