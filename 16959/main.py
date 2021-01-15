@@ -7,19 +7,17 @@ def main(f = None):
     B = 1
     L = 2
 
-    n2idx = [None] * (N*N+1)
+    n2ij = [None] * (N*N+1)
     for i, j in For(N, N):
-        n2idx[mat[i][j]] = (i, j)
+        n2ij[mat[i][j]] = (i, j)
     
     dp = nDim(100, N, N)
     for i, j, k in For(100, N, N):
         dp[i][j][k] = [3, 3, 2]
 
     def fromTo(start, end):
-        x0, y0 = start
-        x1, y1 = end
+        n
 
-        currBoard = dp[0]
 
         dq = deque()
         dq.append((x0, y0, K, 0))
@@ -32,7 +30,7 @@ def main(f = None):
             if x == x1 and y == y1:
                 return step
         return 100
-    ans = fromTo(n2idx[1], n2idx[N*N])
+    ans = fromTo(n2ij[1], n2ij[N*N])
     print(ans)
 
 
