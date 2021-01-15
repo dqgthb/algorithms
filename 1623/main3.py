@@ -1,53 +1,91 @@
+
 def main(f = None):
     init(f)
-    cache = [[-1]*2 for _ in range(200000)]
-    tree = [[] for _ in range(200000)]
-
-    def sol(cur, flag):
-        val = cache[cur][flag]
-        if val != -1: return val
-        cache[cur][flag] = 0
-
-        if flag:
-            cache[cur][flag] += cost[cur]
-            for nxt in tree[cur]:
-                cache[cur][flag] += sol(nxt, 0)
-            return cache[cur][flag]
-        
-        else:
-            for nxt in tree[cur]:
-                cache[cur][flag] += max(sol(nxt, 0), sol(nxt, 1))
-            return cache[cur][flag]
-
     N = int(input())
-    tree = [[] for _ in range(N)]
-    cost = [int(i) for i in input().split()]
+    nalary = [int(i) for i in input().split()]
     parentOf = [None] + [int(i)-1 for i in input().split()]
+    tree = [[] for _ in range(N)]
     for i in range(1, N):
         tree[parentOf[i]].append(i)
     
-    print(sol(0, 1), sol(0, 0))
+    # 0: may include self 
+    # 1: does not include self
+    nalaryDp = [[None, None] for _ in range(N)]
 
-    def dfs(cur, flag, v):
-        if flag:
-            for nxt in tree[cur]:
-                dfs(nxt, 0, v)
+    def dp(node): # returns both 0, 1
+        val0 = nalaryDp[node][0]
+        val1 = nalaryDp[node][1]
+        if val0 is not None:
+            return val0, val1
+        
+        # leaf node
+        if not tree[node]:
+            participate = nalary[node]
+            nalaryDp[node][0] = participate
+            nalaryDp[node][1] = 0
+            return participate, 0
+        
+        # begin
+        nalaryWithoutMe = 0
+        nalaryIncludeMe = nalary[node]
+        for sub in tree[node]:
+            subVal0, subVal1 = dp(sub)
+            nalaryWithoutMe += max(subVal0, subVal1)
+            nalaryIncludeMe += subVal1
+        nalaryDp[node][0] = nalaryIncludeMe
+        nalaryDp[node][1] = nalaryWithoutMe
+        #return nalaryIncludeMe, nalaryWithoutMe
+        # end
+        
+        stack = [node]
+        while stack:
+            curr = stack.pop()
+            if not tree[node]:
+                participate = nalary[node]
+                nalaryDp[node][0] = participate
+                nalaryDp[node][1] = 0
+                continue
+
+            isMissing = False
+            for sub in tree[curr]:
+                if nalaryDp[sub][0] == None:
+                    isMissing = True
+                    stack.append(sub)
+            
+            if isMissing:
+                continue
+            else: # all valid
+
+
+
+
+
+    def dfs(node, doNotIncludeSelf = False):
+        if doNotIncludeSelf:
+            for sub in tree[node]:
+                dfs(sub, False)
         else:
-            for nxt in tree[cur]:
-                if cache[nxt][0] > cache[nxt][1]:
-                    dfs(nxt, 0, v)
-                else:
-                    dfs(nxt, 1, v)
-                    v.append(nxt+1)
-    withoutBoss = []
-    dfs(0, 1, withoutBoss)
-    withoutBoss.sort()
-    print(*withoutBoss, -1)
+            valWithMe, valWithoutMe = dp(node)
+            chooseMe = valWithMe > valWithoutMe
+            if chooseMe:
+                participants.append(node)
+            for sub in tree[node]:
+                dfs(sub, chooseMe)
+    
+    participants = [0]
+    for sub in tree[0]:
+        dfs(sub, True)
+    print(*(i + 1 for i in participants), -1)
 
-    withBoss = []
-    dfs(0, 0, withBoss)
-    withBoss.sort()
-    print(*withBoss, -1)
+    participants = []
+    for sub in tree[0]:
+        dfs(sub, False)
+    participants.sort()
+    print(*(i + 1 for i in participants), -1)
+
+
+
+    # boss participate
 
 
 
@@ -74,6 +112,7 @@ import math
 from heapq import heappush, heappop
 from bisect import bisect_left, bisect_right
 
+sys.setrecursionlimit(987654321)
 DEBUG = False
 
 def setStdin(f):
