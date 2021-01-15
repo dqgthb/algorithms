@@ -30,7 +30,7 @@ def main(f = None):
     ans = fromTo(n2idx[1], n2idx[N*N])
     print(ans)
 
-    print(nDim(1, 2, 3 ,4))
+    print(nDim(2, 2, 3 ,4))
 
 
 
