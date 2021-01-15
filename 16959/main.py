@@ -23,7 +23,7 @@ def main(f = None):
         dq.append((x, y, K, 0))
         dq.append((x, y, B, 0))
         dq.append((x, y, L, 0))
-        dp[x][y] = [0]*3
+        dp[start][x][y]
 
         while dq:
             x, y, unitType, step = dq.popleft()
