@@ -13,7 +13,9 @@ def main(f = None):
     
     dp = nDim(100, N, N)
     for i, j, k in For(100, N, N):
-        dp[i][j][k] 
+        dp[i][j][k] = [3, 3, 2]
+    
+    print(dp)
 
     def fromTo(start, end):
         x0, y0 = start
