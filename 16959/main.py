@@ -4,7 +4,10 @@ def main(f = None):
     mat = [[int(i) for i in input().split()] for _ in range(N)]
     parr(mat)
 
-    n2idx = [0]
+    n2idx = [None] * (N+1)
+    for i, j in For(i, j):
+        n = mat[i][j]
+        n2idx[mat[i][j]]
 
     def fromTo(start, end):
         x0, y0 = start
