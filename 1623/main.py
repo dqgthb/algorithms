@@ -19,6 +19,12 @@ def main(f = None):
     
     def dfs(cur):
         for child in tree[cur]:
+            dfs(child)
+        
+        if not tree[n]:
+            cache[cur][0] = 0
+            cache[cur][1] = 0
+
 
     N = int(input())
     tree = [[] for _ in range(N)]
