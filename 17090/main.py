@@ -1,47 +1,60 @@
 def main(f = None):
     init(f)
-    N = int(input())
-    x = []
-    w = []
-    h = []
-    _, _ = map(int, input().split())
-    for _ in range((N-2)//2):
-        a, b = map(int, input().split())
-        c, d = map(int, input().split())
-        assert b == d
-        x.append(a)
-        w.append(c-a)
-        h.append(b)
-    _, _ = map(int, input().split())
-    n = len(w)
+    N, M = map(int, input().split())
+    map_ = [list(input().strip()) for _ in range(N)]
+    log_ = Mat(N, M, None)
 
-    K = int(input())
-    holes = []
-    for _ in range(K):
-        a, b, c, _  = map(int, input().split())
-        holes.append(a)
+    moveDir = {'U': (-1, 0), 'R': (0, 1), 'D': (1, 0), 'L': (0, -1)}
 
-    holeIndices = []
-    for hole in holes:
-        idx = bisect_left(x, hole)
-        holeIndices.append((idx, h[idx]))
 
-    wl = [0] * n
+    def simulate(x, y):
 
-    for holeIdx, depth in holeIndices:
-        wl[holeIdx] = depth
-        lvl = depth
-        for i in range(holeIdx-1, -1, -1): # to left
-            lvl = min(lvl, h[i])
-            wl[i] = max(lvl, wl[i])
-        lvl = depth
-        for i in range(holeIdx+1, n): # to right
-            lvl = min(lvl, h[i])
-            wl[i] = max(lvl, wl[i])
+        visited = [(x, y)]
+        Undetermined = 2
+        log_[x][y] = Undetermined
 
-    waterLeft = [i - j for i, j in zip(h, wl)]
-    print(sum(i * j for i, j in zip(w, waterLeft)))
+        def setLogTo(val):
+            for i, j in visited:
+                log_[i][j] = val
 
+
+        while True:
+            dx, dy = moveDir[map_[x][y]]
+            x, y = x + dx, y + dy
+            if not (0 <= x < N and 0 <= y < M):
+                setLogTo(True)
+                return True
+            else:
+                visited.append((x, y))
+                if log_[x][y] == Undetermined: # cycle
+                    setLogTo(False)
+                    return False
+                elif log_[x][y] is not None:
+                    setLogTo(log_[x][y])
+                    return log_[x][y]
+                else:
+                    log_[x][y] = Undetermined
+
+    count = 0
+    for i, j in For(N, M):
+        if log_[i][j] is None:
+            count += simulate(i, j)
+        else:
+            count += log_[i][j]
+    
+    print(count)
+
+
+
+
+def For(*args):
+    return itertools.product(*map(range, args))
+
+def copy2d(mat):
+    return [row[:] for row in mat]
+
+def Mat(h, w, default = None):
+    return [[default for _ in range(w)] for _ in range(h)]
 
 # CP template Version 1.005
 import os

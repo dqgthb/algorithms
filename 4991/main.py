@@ -1,47 +1,97 @@
 def main(f = None):
     init(f)
-    N = int(input())
-    x = []
-    w = []
-    h = []
-    _, _ = map(int, input().split())
-    for _ in range((N-2)//2):
-        a, b = map(int, input().split())
-        c, d = map(int, input().split())
-        assert b == d
-        x.append(a)
-        w.append(c-a)
-        h.append(b)
-    _, _ = map(int, input().split())
-    n = len(w)
+    while True:
+        w, h = map(int, input().split())
+        if w == h == 0: return
+        mat = [list(input().strip()) for _ in range(h)]
 
-    K = int(input())
-    holes = []
-    for _ in range(K):
-        a, b, c, _  = map(int, input().split())
-        holes.append(a)
+        start = None
+        dirtyLocs = []
 
-    holeIndices = []
-    for hole in holes:
-        idx = bisect_left(x, hole)
-        holeIndices.append((idx, h[idx]))
+        for i, j in For(h, w):
+            if mat[i][j] == 'o':
+                start = (i, j)
+            elif mat[i][j] == '*':
+                dirtyLocs.append((i, j))
+        numD = len(dirtyLocs)
+        fStD = [None] * numD
 
-    wl = [0] * n
+        def getDistanceMatrix(start):
+            si, sj = start
+            dq = deque()
+            dq.append((si, sj, 0))
 
-    for holeIdx, depth in holeIndices:
-        wl[holeIdx] = depth
-        lvl = depth
-        for i in range(holeIdx-1, -1, -1): # to left
-            lvl = min(lvl, h[i])
-            wl[i] = max(lvl, wl[i])
-        lvl = depth
-        for i in range(holeIdx+1, n): # to right
-            lvl = min(lvl, h[i])
-            wl[i] = max(lvl, wl[i])
+            distance = Mat(h, w)
+            distance[si][sj] = 0
 
-    waterLeft = [i - j for i, j in zip(h, wl)]
-    print(sum(i * j for i, j in zip(w, waterLeft)))
+            dx = (-1, 1, 0, 0)
+            dy = (0, 0, -1, 1)
 
+            while dq:
+                i, j, d = dq.popleft()
+
+                for x, y in zip(dx, dy):
+                    ni, nj = i + x, j + y
+
+                    if 0 <= ni < h and 0 <= nj < w:
+                        if distance[ni][nj] is None:
+                            if mat[ni][nj] != 'x':
+                                distance[ni][nj] = d + 1
+                                dq.append((ni, nj, d+1))
+            return distance
+
+        points = [start] + dirtyLocs
+        nP = len(points)
+
+        distMat = Mat(nP, nP)
+        for i in range(nP):
+            fx, fy = points[i]
+            distMap = getDistanceMatrix((fx, fy))
+            for j in range(i, nP):
+                tx, ty = points[j]
+                d = distMap[tx][ty]
+                distMat[i][j] = d
+                distMat[j][i] = d
+
+        n = math.factorial(len(points)-1)
+        perms = itertools.islice(itertools.permutations(range(len(points))), n)
+        min_ = 987654321
+        minPath = None
+        for i in perms:
+            path = list(i)
+            sum_ = 0
+            valid = True
+            for i in range(len(path)-1):
+                f = path[i]
+                t = path[i+1]
+                val = distMat[f][t]
+                if val is None:
+                    valid = False
+                    break
+                sum_ += distMat[f][t]
+            if valid and min_ > sum_:
+                min_ = sum_
+                minPath = path
+        if min_ != 987654321:
+            print(min_)
+        else:
+            print(-1)
+
+
+
+
+
+
+
+
+def Mat(h, w, default = None):
+    return [[default for _ in range(w)] for _ in range(h)]
+
+def For(*args):
+    return itertools.product(*map(range, args))
+
+def copy2d(mat):
+    return [row[:] for row in mat]
 
 # CP template Version 1.005
 import os

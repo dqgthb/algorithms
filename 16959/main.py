@@ -1,47 +1,20 @@
 def main(f = None):
     init(f)
     N = int(input())
-    x = []
-    w = []
-    h = []
-    _, _ = map(int, input().split())
-    for _ in range((N-2)//2):
-        a, b = map(int, input().split())
-        c, d = map(int, input().split())
-        assert b == d
-        x.append(a)
-        w.append(c-a)
-        h.append(b)
-    _, _ = map(int, input().split())
-    n = len(w)
+    mat = [[int(i) for i in input().split()] for _ in range(N)]
+    parr(mat)
 
-    K = int(input())
-    holes = []
-    for _ in range(K):
-        a, b, c, _  = map(int, input().split())
-        holes.append(a)
+    def fromTo(start, end):
 
-    holeIndices = []
-    for hole in holes:
-        idx = bisect_left(x, hole)
-        holeIndices.append((idx, h[idx]))
 
-    wl = [0] * n
+def For(*args):
+    return itertools.product(*map(range, args))
 
-    for holeIdx, depth in holeIndices:
-        wl[holeIdx] = depth
-        lvl = depth
-        for i in range(holeIdx-1, -1, -1): # to left
-            lvl = min(lvl, h[i])
-            wl[i] = max(lvl, wl[i])
-        lvl = depth
-        for i in range(holeIdx+1, n): # to right
-            lvl = min(lvl, h[i])
-            wl[i] = max(lvl, wl[i])
+def copy2d(mat):
+    return [row[:] for row in mat]
 
-    waterLeft = [i - j for i, j in zip(h, wl)]
-    print(sum(i * j for i, j in zip(w, waterLeft)))
-
+def Mat(h, w, default = None):
+    return [[default for _ in range(w)] for _ in range(h)]
 
 # CP template Version 1.005
 import os
