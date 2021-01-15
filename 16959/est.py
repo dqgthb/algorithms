@@ -1,44 +1,6 @@
 def main(f = None):
     init(f)
-    N = int(input())
-    mat = [[int(i) for i in input().split()] for _ in range(N)]
-
-    K = 0
-    B = 1
-    L = 2
-
-    n2idx = [None] * (N*N+1)
-    for i, j in For(N, N):
-        n2idx[mat[i][j]] = (i, j)
     
-    dp = nDim(100, N, N, 3)
-
-    def fromTo(start, end):
-        x0, y0 = start
-        x1, y1 = end
-        dp = [[[10**9 for _ in range(3)] for _ in range(N)] for _ in range(N)]
-
-        dq = deque()
-        dq.append((x0, y0, K, 0))
-        dq.append((x0, y0, B, 0))
-        dq.append((x0, y0, L, 0))
-        dp[x0][y0] = [0]*3
-
-        while dq:
-            x, y, unitType, step = dq.popleft()
-            if x == x1 and y == y1:
-                return step
-        return 100
-    ans = fromTo(n2idx[1], n2idx[N*N])
-    print(ans)
-
-
-def nDim(*args, default = None):
-    if len(args) == 1:
-        return [default for _ in range(args[0])]
-    else:
-        return [nDim(*args[1:], default = default) for _ in range(args[0])]
-
 
 def For(*args):
     return itertools.product(*map(range, args))
@@ -48,6 +10,12 @@ def copy2d(mat):
 
 def Mat(h, w, default = None):
     return [[default for _ in range(w)] for _ in range(h)]
+
+def nDim(*args, default = None):
+    if len(args) == 1:
+        return [default for _ in range(args[0])]
+    else:
+        return [nDim(*args[1:], default = default) for _ in range(args[0])]
 
 # CP template Version 1.005
 import os
