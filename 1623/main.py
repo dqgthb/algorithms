@@ -1,36 +1,91 @@
+
 def main(f = None):
     init(f)
     N = int(input())
-    mat = [[int(i) for i in input().split()] for _ in range(N)]
+    nalary = [int(i) for i in input().split()]
+    parentOf = [None] + [int(i)-1 for i in input().split()]
+    tree = [[] for _ in range(N)]
+    for i in range(1, N):
+        tree[parentOf[i]].append(i)
+    
+    # 0: may include self 
+    # 1: does not include self
+    nalaryDp = [[None, None] for _ in range(N)]
 
-    K = 0
-    B = 1
-    L = 2
+    def dp(node): # returns both 0, 1
+        val0 = nalaryDp[node][0]
+        val1 = nalaryDp[node][1]
+        if val0 is not None:
+            return val0, val1
+        
+        # leaf node
+        if not tree[node]:
+            participate = nalary[node]
+            nalaryDp[node][0] = participate
+            nalaryDp[node][1] = 0
+            return participate, 0
+        
+        # begin
+        nalaryWithoutMe = 0
+        nalaryIncludeMe = nalary[node]
+        for sub in tree[node]:
+            subVal0, subVal1 = dp(sub)
+            nalaryWithoutMe += max(subVal0, subVal1)
+            nalaryIncludeMe += subVal1
+        nalaryDp[node][0] = nalaryIncludeMe
+        nalaryDp[node][1] = nalaryWithoutMe
+        #return nalaryIncludeMe, nalaryWithoutMe
+        # end
+        
+        stack = [node]
+        while stack:
+            curr = stack.pop()
+            if not tree[node]:
+                participate = nalary[node]
+                nalaryDp[node][0] = participate
+                nalaryDp[node][1] = 0
+                continue
 
-    n2idx = [None] * (N*N+1)
-    for i, j in For(N, N):
-        n2idx[mat[i][j]] = (i, j)
-
-    def fromTo(start, end):
-        x0, y0 = start
-        x1, y1 = end
-        vis = [[[False for _ in range(3)] for _ in range(N)] for _ in range(N)]
-
-        dq = deque()
-        dq.append((x0, y0, K, 0))
-        dq.append((x0, y0, B, 0))
-        dq.append((x0, y0, L, 0))
-        vis[x0][y0] = [True]*3
-
-        while dq:
-            x, y, unitType, step = dq.popleft()
-            if x == x1 and y == y1:
-                return step
-        return 100
-    ans = fromTo(n2idx[1], n2idx[N*N])
-    print(ans)
+            isMissing = False
+            for sub in tree[curr]:
+                if nalaryDp[sub][0] == None:
+                    isMissing = True
+                    stack.append(sub)
+            
+            if isMissing:
+                continue
+            else: # all valid
 
 
+
+
+
+    def dfs(node, doNotIncludeSelf = False):
+        if doNotIncludeSelf:
+            for sub in tree[node]:
+                dfs(sub, False)
+        else:
+            valWithMe, valWithoutMe = dp(node)
+            chooseMe = valWithMe > valWithoutMe
+            if chooseMe:
+                participants.append(node)
+            for sub in tree[node]:
+                dfs(sub, chooseMe)
+    
+    participants = [0]
+    for sub in tree[0]:
+        dfs(sub, True)
+    print(*(i + 1 for i in participants), -1)
+
+    participants = []
+    for sub in tree[0]:
+        dfs(sub, False)
+    participants.sort()
+    print(*(i + 1 for i in participants), -1)
+
+
+
+    # boss participate
 
 
 
@@ -57,6 +112,7 @@ import math
 from heapq import heappush, heappop
 from bisect import bisect_left, bisect_right
 
+sys.setrecursionlimit(987654321)
 DEBUG = False
 
 def setStdin(f):

@@ -1,38 +1,43 @@
 def main(f = None):
     init(f)
     N = int(input())
-    mat = [[int(i) for i in input().split()] for _ in range(N)]
+    col = [None] * N
+    cnt = 0
+    rSet = [False] * N
 
-    K = 0
-    B = 1
-    L = 2
+    def dfs(c, r):
+        nonlocal cnt
 
-    n2idx = [None] * (N*N+1)
-    for i, j in For(N, N):
-        n2idx[mat[i][j]] = (i, j)
+        tempR, tempC = r-1, c-1
+        while tempR >= 0 and tempC >= 0:
+            if col[tempC] == tempR:
+                return
+            tempR -= 1
+            tempC -= 1
 
-    def fromTo(start, end):
-        x0, y0 = start
-        x1, y1 = end
-        vis = [[[False for _ in range(3)] for _ in range(N)] for _ in range(N)]
+        tempR, tempC = r+1, c-1
+        while tempR < N and tempC >= 0:
+            if col[tempC] == tempR:
+                return
+            tempR += 1
+            tempC -= 1
 
-        dq = deque()
-        dq.append((x0, y0, K, 0))
-        dq.append((x0, y0, B, 0))
-        dq.append((x0, y0, L, 0))
-        vis[x0][y0] = [True]*3
+        col[c] = r # row
+        if c == N-1:
+            cnt += 1
+            return
 
-        while dq:
-            x, y, unitType, step = dq.popleft()
-            if x == x1 and y == y1:
-                return step
-        return 100
-    ans = fromTo(n2idx[1], n2idx[N*N])
-    print(ans)
+        for nr in range(N):
+            if not rSet[nr]:
+                rSet[nr] = True
+                dfs(c+1, nr)
+                rSet[nr] = False
 
-
-
-
+    for i in range(N):
+        rSet[i] = True
+        dfs(0, i)
+        rSet[i] = False
+    print(cnt)
 
 
 def For(*args):
@@ -48,6 +53,7 @@ def Mat(h, w, default = None):
 import os
 import sys
 import itertools
+from itertools import *
 import collections
 from functools import cmp_to_key
 from itertools import product
