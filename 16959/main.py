@@ -31,9 +31,12 @@ def main(f = None):
     print(ans)
 
 
+
 def nDim(*args, default = None):
     if len(args) == 1:
-        return [
+        return [default for _ in range(args[0])]
+    else:
+        return [nDim(*args[1:], default) for _ in range(args[0])]
 
 
 def For(*args):
