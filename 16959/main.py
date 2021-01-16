@@ -32,7 +32,9 @@ def main(f = None):
             currBoard = dp[curr]
 
             if unitType == K:
-
+                pass
+            elif unitType == L:
+                for i in range(N):
 
 
 
