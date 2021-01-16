@@ -40,9 +40,9 @@ def main(f = None):
                         currBoard[i][y][L] = currStep + 1
                 for j in range(N):
                     if j != y:
-                        currBoard[i][y][L] = currStep + 1
+                        currBoard[x][j][L] = currStep + 1
             else:
-                for i in 
+                for i in range(N):
 
 
 
