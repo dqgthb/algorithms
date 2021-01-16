@@ -1,91 +1,7 @@
 def main(f = None):
     init(f)
-    N = int(input())
-    mat = [[int(i)-1 for i in input().split()] for _ in range(N)]
-
-    K = 0
-    B = 1
-    L = 2
-
-    n2ij = [None] * (N*N)
-    for i, j in For(N, N):
-        n2ij[mat[i][j]] = (i, j)
-    
-    dp = nDim(N*N, N, N)
-    for i, j, k in For(N*N, N, N):
-        dp[i][j][k] = [3, 3, 2]
-
-    def fromTo(start, end):
-        x, y = n2ij[start]
-        xe, ye = n2ij[end]
-
-        dq = deque()
-        curr = start
-        dq.append((curr, x, y, K))
-        dq.append((curr, x, y, B))
-        dq.append((curr, x, y, L))
-        dp[curr][x][y] = [0, 0, 0]
-        while dq:
-            curr, x, y, unitType = dq.popleft()
-            if x == xe and y == ye:
-                return
-
-            currBoard = dp[curr]
-            currStep = currBoard[x][y][unitType]
-
-            target = curr+1
-            xt, yt = n2ij[target]
-
-            for i in range(3):
-                if i == unitType:
-                    continue
-                val = currBoard[x][y][i]
-                if val > currStep + 1:
-                    currBoard[x][y][i] = currStep + 1
-                    dq.append((curr, x, y, i))
-
-
-            if unitType == K:
-                pass
-            elif unitType == L:
-                for i in range(N):
-                    if i != x:
-                        val = currBoard[i][y][L]
-                        val = min(val, currStep+1)
-                        currBoard[i][y][L] = val
-                for j in range(N):
-                    if j != y:
-                        val = currBoard[x][j][L]
-                        val = min(val, currStep+1)
-                        currBoard[x][j][L] = val
-
-            else: # unitType == B
-                for i in range(N):
-                    if i == x: continue
-                    diff = i - x
-                    j0 = y - diff
-                    j1 = y + diff
-
-                    if 0 <= j0 < N:
-                        val = currBoard[i][j0][B]
-                        val = min(val, currStep+1)
-                        currBoard[i][j0][B] = val
-                    if 0 <= j1 < N:
-                        val = currBoard[i][j1][B]
-                        val = min(val, currStep+1)
-                        currBoard[i][j0][B] = val
-            nextStage += 1
-
-        return 100
-    ans = fromTo(0, N*N-1)
-    print(ans)
-
-
-def nDim(*args, default = None):
-    if len(args) == 1:
-        return [default for _ in range(args[0])]
-    else:
-        return [nDim(*args[1:], default = default) for _ in range(args[0])]
+    n, k = map(int, input().split())
+    arr = [int(input()) for _ in range(n)]
 
 
 def For(*args):
@@ -96,6 +12,12 @@ def copy2d(mat):
 
 def Mat(h, w, default = None):
     return [[default for _ in range(w)] for _ in range(h)]
+
+def nDim(*args, default = None):
+    if len(args) == 1:
+        return [default for _ in range(args[0])]
+    else:
+        return [nDim(*args[1:], default = default) for _ in range(args[0])]
 
 # CP template Version 1.005
 import os
