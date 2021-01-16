@@ -31,6 +31,10 @@ def main(f = None):
                 return min(dp[end][x][y])
             currBoard = dp[curr]
 
+            for unit in range(3):
+
+
+
             nextStage += 1
 
         return 100
