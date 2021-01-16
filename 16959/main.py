@@ -30,7 +30,6 @@ def main(f = None):
             if x == xe and y == ye:
                 return min(dp[end][x][y])
             currBoard = dp[curr]
-
             for unit in range(3):
 
 
