@@ -30,13 +30,19 @@ def main(f = None):
             if x == xe and y == ye:
                 return min(dp[end][x][y])
             currBoard = dp[curr]
-            currStep = currBoard[x][y][]
+            currStep = currBoard[x][y][unitType]
 
             if unitType == K:
                 pass
             elif unitType == L:
                 for i in range(N):
-                    currBoard[i][j][L] = 
+                    if i != x:
+                        currBoard[i][y][L] = currStep + 1
+                for j in range(N):
+                    if j != y:
+                        currBoard[i][y][L] = currStep + 1
+            else:
+                for i in 
 
 
 
