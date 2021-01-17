@@ -7,7 +7,8 @@ def main(f = None):
     dp = Mat(n, k)
     parr(dp)
 
-    
+    def DP(n, k):
+
 
 def For(*args):
     return itertools.product(*map(range, args))
