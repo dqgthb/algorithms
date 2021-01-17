@@ -4,26 +4,7 @@ def main(f = None):
     arr = [int(input()) for _ in range(n)]
     print(arr)
 
-    dp = [None for _ in range(k+1)]
-
-    def DP(n):
-        if dp[n] is not None:
-            return dp[n]
-
-        val = 0
-        for i in arr:
-            if i < n:
-                val += DP(n-i)
-            elif i == n:
-                val += 1
-        
-        dp[n] = val
-        return val
-    print(DP(k))
-    print(dp)
-
-
-
+    
 
 def For(*args):
     return itertools.product(*map(range, args))
