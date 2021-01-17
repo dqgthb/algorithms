@@ -4,13 +4,9 @@ def main(f = None):
 
     reach = iMat(N)
 
-    for i in range(N):
-        for j in range(N):
-            for k in range(N):
-                reach[i][j] = reach[i][j] or (reach[i][k] and reach[k][j])
-    for i in range(N):
-        for j in range(N):
-            for k in range(N):
+    for k in range(N):
+        for i in range(N):
+            for j in range(N):
                 reach[i][j] = reach[i][j] or (reach[i][k] and reach[k][j])
 
     for row in reach:
