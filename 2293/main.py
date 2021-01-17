@@ -12,6 +12,8 @@ def main(f = None):
             return dp[n][k]
         
         val = 0
+        for i in range(k, -1, -arr[n]):
+            val += dp[n-1][i]
 
 
 
