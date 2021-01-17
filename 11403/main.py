@@ -3,7 +3,6 @@ def main(f = None):
     N = int(input())
 
     reach = iMat(N)
-    for i in range(N):
 
     parr(reach)
     for i in range(N):
