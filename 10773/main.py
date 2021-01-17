@@ -6,6 +6,11 @@ def main(f = None):
     for _ in range(n):
         i = int(input())
         if i != 0:
+            sum_ += i
+        else:
+            sum_ -= prev
+        prev = i
+    print(sum_)
 
 def For(*args):
     return itertools.product(*map(range, args))
