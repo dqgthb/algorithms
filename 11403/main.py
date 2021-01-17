@@ -7,6 +7,10 @@ def main(f = None):
     reach = Mat(N, N)
 
     for i in range(N):
+        for j in range(N):
+            for k in range(N):
+                reach[i][j] = reach[i][k] * reach[k][j]
+
 
     parr(reach)
 
