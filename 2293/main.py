@@ -6,6 +6,8 @@ def main(f = None):
 
     dp = [None for _ in range(k+1)]
 
+    def DP(n):
+
 
 
 def For(*args):
