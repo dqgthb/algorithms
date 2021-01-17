@@ -11,6 +11,12 @@ def main(f = None):
             return dp[n]
         
         val = 0
+        for i in arr:
+            val += DP(n-i)
+        
+        dp[n] = val
+        return val
+
 
 
 
