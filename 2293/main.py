@@ -7,6 +7,10 @@ def main(f = None):
     dp = [None for _ in range(k+1)]
 
     def DP(n):
+        if dp[n] is not None:
+            return dp[n]
+        
+        val = 0
 
 
 
