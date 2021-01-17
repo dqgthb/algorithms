@@ -1,16 +1,14 @@
 def main(f = None):
     init(f)
     N = int(input())
-    mat = iMat(N)
-    parr(mat)
 
-    reach = Mat(N, N)
+    reach = iMat(N)
 
+    parr(reach)
     for i in range(N):
         for j in range(N):
             for k in range(N):
-                reach[i][j] = reach[i][k] * reach[k][j]
-
+                reach[i][j] = reach[i][k] or reach[k][j]
 
     parr(reach)
 
