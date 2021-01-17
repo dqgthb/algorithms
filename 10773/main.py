@@ -1,6 +1,11 @@
 def main(f = None):
     init(f)
-    
+    n = int(input())
+    sum_ = 0
+    prev = None
+    for _ in range(n):
+        i = int(input())
+        if i != 0:
 
 def For(*args):
     return itertools.product(*map(range, args))
