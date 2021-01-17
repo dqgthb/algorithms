@@ -3,12 +3,13 @@ def main(f = None):
     N = int(input())
 
     reach = iMat(N)
+    for i in range(N):
 
     parr(reach)
     for i in range(N):
         for j in range(N):
             for k in range(N):
-                reach[i][j] = reach[i][k] and reach[k][j]
+                reach[i][j] = reach[i][j] or (reach[i][k] and reach[k][j])
 
     parr(reach)
 
