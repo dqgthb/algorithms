@@ -2,6 +2,10 @@ def main(f = None):
     init(f)
     n, k = map(int, input().split())
     arr = [int(input()) for _ in range(n)]
+    print(arr)
+
+    dp = [None for _ in range(k+1)]
+
 
 
 def For(*args):
