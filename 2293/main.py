@@ -1,21 +1,25 @@
 def main(f = None):
     init(f)
     n, k = map(int, input().split())
+    k+=1
     arr = [int(input()) for _ in range(n)]
-    print(arr)
+    arr.sort()
 
-    dp = Mat(n, k, 0)
-    parr(dp)
+    dpArr = [0] * k
+    result = [0] * k
+    for i in range(k):
+        dpArr[i] = int((i % arr[0]) == 0)
 
-    def DP(n, k):
-        if dp[n][k] is not None:
-            return dp[n][k]
-        
-        val = 0
-        for i in range(k, 0, -arr[n]):
-            val += dp[n-1][i]
-        dp[n][K] = val
-        return val
+    for i in range(1, n):
+        for j in range(k):
+            newCoin = arr[i]
+            result[j] = 0
+            for prevK in range(j, -1, -newCoin):
+                result[j] += dpArr[prevK]
+        for i in range(len(dpArr)):
+            dpArr[i] = result[i]
+    print(dpArr[k-1])
+
 
 
 
