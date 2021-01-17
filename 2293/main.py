@@ -14,9 +14,12 @@ def main(f = None):
         for i in arr:
             if i < n:
                 val += DP(n-i)
+            elif i == n:
+                val += 1
         
         dp[n] = val
         return val
+    print(DP(k))
 
 
 
