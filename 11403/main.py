@@ -13,7 +13,8 @@ def main(f = None):
             for k in range(N):
                 reach[i][j] = reach[i][j] or (reach[i][k] and reach[k][j])
 
-    parr(reach)
+    for row in reach:
+        print(' '.join(map(str, row)))
 
 
 def iMat(row):
