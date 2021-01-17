@@ -8,8 +8,9 @@ def main(f = None):
         if i != 0:
             stack.append(i)
         else:
+            stack.pop()
 
-    print(sum_)
+    print(sum(stack))
 
 def For(*args):
     return itertools.product(*map(range, args))
