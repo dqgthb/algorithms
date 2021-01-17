@@ -9,10 +9,11 @@ def main(f = None):
     def DP(n):
         if dp[n] is not None:
             return dp[n]
-        
+
         val = 0
         for i in arr:
-            val += DP(n-i)
+            if i < n:
+                val += DP(n-i)
         
         dp[n] = val
         return val
