@@ -4,10 +4,13 @@ def main(f = None):
     arr = [int(input()) for _ in range(n)]
     print(arr)
 
-    dp = Mat(n, k)
+    dp = Mat(n, k, 0)
     parr(dp)
 
     def DP(n, k):
+        if dp[n][k] is not None:
+            return dp[n][k]
+
 
 
 def For(*args):
