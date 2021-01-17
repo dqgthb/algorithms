@@ -4,6 +4,9 @@ def main(f = None):
     arr = [int(input()) for _ in range(n)]
     print(arr)
 
+    dp = Mat(n, k)
+    parr(dp)
+
     
 
 def For(*args):
