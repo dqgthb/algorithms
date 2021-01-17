@@ -2,14 +2,13 @@ def main(f = None):
     init(f)
     n = int(input())
     sum_ = 0
-    prev = None
+    stack = []
     for _ in range(n):
         i = int(input())
         if i != 0:
-            sum_ += i
+            stack.append(i)
         else:
-            sum_ -= prev
-        prev = i
+
     print(sum_)
 
 def For(*args):
