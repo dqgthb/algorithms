@@ -8,7 +8,7 @@ def main(f = None):
     for i in range(N):
         for j in range(N):
             for k in range(N):
-                reach[i][j] = reach[i][k] or reach[k][j]
+                reach[i][j] = reach[i][k] and reach[k][j]
 
     parr(reach)
 
