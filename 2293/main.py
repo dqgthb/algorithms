@@ -11,7 +11,7 @@ def main(f = None):
         if dp[n][k] is not None:
             return dp[n][k]
         
-        if dp[n][k]
+        val = 0
 
 
 
