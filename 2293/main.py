@@ -20,6 +20,7 @@ def main(f = None):
         dp[n] = val
         return val
     print(DP(k))
+    print(dp)
 
 
 
