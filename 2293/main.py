@@ -10,6 +10,10 @@ def main(f = None):
     def DP(n, k):
         if dp[n][k] is not None:
             return dp[n][k]
+        
+        if dp[n][k]
+
+
 
 
 
