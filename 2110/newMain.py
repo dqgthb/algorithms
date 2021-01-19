@@ -48,6 +48,10 @@ def main(f = None):
         else:
             return binRight(arr, val, left, mid, func)
 
+    for i in range(9):
+        print(install(i), end=' ')
+    print()
+
     arr = [1, 2, 3, 4, 5, 6]
     #n = binLeft(arr, C, 1, maxDistance, install)
     n = binRight(arr, C, 1, maxDistance, install)
