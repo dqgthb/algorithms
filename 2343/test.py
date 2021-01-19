@@ -13,12 +13,13 @@ def main(f=None):
 # #############################################################################
 # #############################################################################
 
+
 def argmax(arr):
-    return max(enumerate(arr), key=lambda x:x[1])
+    return max(enumerate(arr), key=lambda x: x[1])
 
 
 def argmin(arr):
-    return min(enumerate(arr), key=lambda x:x[1])
+    return min(enumerate(arr), key=lambda x: x[1])
 
 
 def For(*args):
@@ -29,11 +30,11 @@ def copy2d(mat):
     return [row[:] for row in mat]
 
 
-def Mat(h, w, default = None):
+def Mat(h, w, default=None):
     return [[default for _ in range(w)] for _ in range(h)]
 
 
-def nDim(*args, default = None):
+def nDim(*args, default=None):
     if len(args) == 1:
         return [default for _ in range(args[0])]
     else:
