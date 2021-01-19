@@ -21,6 +21,7 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
     print(*range(9, 25))
+    print(*(numOfCD(arr, i) for i in range(9, 25)))
     print(binRight(arr, m, max(arr), sum(arr)+1))
 
 def binRight(arr, val, left, right):
@@ -30,10 +31,10 @@ def binRight(arr, val, left, right):
     mid = (left + right) // 2
     midVal = numOfCD(arr, mid)
 
-    if midVal >= val:
-        return binRight(arr, val, mid+1, right)
-    else:
+    if midVal <= val:
         return binRight(arr, val, left, mid)
+    else:
+        return binRight(arr, val, mid+1, right)
 
 
 
