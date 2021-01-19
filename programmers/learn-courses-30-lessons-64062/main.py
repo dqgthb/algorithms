@@ -1,8 +1,9 @@
 def solution(stones, k):
     count = 0
     while countConsecutiveZeros(stones) < k:
-        min_ = min(stones)
-        stones = [i - min_ for i in stones]
+        min_ = min(i for i in stones if i != 0)
+        print(min_)
+        stones = [i - min_ if i - min_ >= 0 else 0 for i in stones]
         print(stones)
         count += min_
 
