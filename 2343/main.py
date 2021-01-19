@@ -31,8 +31,8 @@ def main(f=None):
 
 def variablesAsGlobal(func):
     def wrapper():
-
-        
+        func()
+        func.globals().update(func.locals())
 
 def argmax(arr):
     return max(enumerate(arr), key=lambda x: x[1])
