@@ -13,6 +13,14 @@ from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
 
 
+def globalVar(func):
+    def wrapper(func):
+        func()
+        func.globals().update(func.locals())
+        return func
+    return wrapper
+
+
 @globalVar
 def main(f=None):
     init(f)
@@ -22,20 +30,17 @@ def main(f=None):
     n = 10
     # ######## INPUT AREA END ############
     # ####################################
+    increase()
 
     globals().update(locals())
+
+def increase():
+    print(n)
 # #############################################################################
 # #############################################################################
 # ############################## TEMPLATE AREA ################################
 # #############################################################################
 # #############################################################################
-
-def globalVar(func):
-    def wrapper(func):
-        func()
-        func.globals().update(func.locals())
-        return func
-    return wrapper
 
 def argmax(arr):
     return max(enumerate(arr), key=lambda x: x[1])
