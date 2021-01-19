@@ -31,7 +31,10 @@ def main(f = None):
             return left
         
         mid = (left + right) // 2
-        if func(mid) < 
+        midVal = func(mid)
+        if val <= midVal:
+            return binLeft(arr, val, left, mid, func)
+        else:
 
 
 def argmax(arr):
