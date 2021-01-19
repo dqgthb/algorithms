@@ -28,7 +28,10 @@ def binRight(arr, val, left, right):
     mid = (left + right) // 2
     midVal = numOfCD(arr, mid)
 
-    if left <= right:
+    if val <= midVal:
+        return binRight(arr, val, left, mid)
+    else:
+        return binRight(arr, val, mid+1, right)
 
 
 def numOfCD(arr, size):
