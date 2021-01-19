@@ -21,6 +21,10 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+    for i in range(10):
+        numOfCD(arr, 9)
+    
+
 def numOfCD(arr, size):
     count = 1
     left = size
@@ -30,6 +34,8 @@ def numOfCD(arr, size):
             left = subs
         else:
             count += 1
+            left = size - i
+    return count
 
 
 
