@@ -1,6 +1,6 @@
 def main(f = None):
     init(f)
-    sys.setrecursionlimit(10**9)
+    #sys.setrecursionlimit(10**9)
 
     N, C = map(int, input().split())
     arr = [int(input()) for _ in range(N)]
@@ -9,44 +9,45 @@ def main(f = None):
     minDistance = 1
     maxDistance = max(arr)
 
-    cache = dd(lambda: None)
+    #cache = dd(lambda: None)
 
     def install(distance):
-        val = cache[distance]
-        if val is not None:
-            return val
+        #val = cache[distance]
+        #if val is not None:
+        #    return val
 
-        modem = [arr[0]]
-
+        previousModem = arr[0]
+        cnt = 1
         for i in arr:
-            if i - modem[-1] >= distance:
-                modem.append(i)
-        return len(modem)
-
-    def binLeft(arr, val, left, right, func):
-        if left == right:
-            return left
-        
-        mid = (left + right) // 2
-        midVal = func(mid)
-        if val >= midVal:
-            return binLeft(arr, val, left, mid, func)
-        else:
-            return binLeft(arr, val, mid+1, right, func)
-    
-    def binRight(arr, val, left, right, func):
-        if left == right:
-            return left
-        
-        mid = (left + right)//2
-        midVal = func(mid)
-        if val <= midVal:
-            return binRight(arr, val, mid+1, right, func)
-        else:
-            return binRight(arr, val, left, mid, func)
-
+            if i - previousModem >= distance:
+                previousModem = i
+                cnt += 1
+        return cnt
     n = binRight(arr, C, 1, maxDistance, install)
     print(n-1)
+
+def binLeft(arr, val, left, right, func):
+    if left == right:
+        return left
+    
+    mid = (left + right) // 2
+    midVal = func(mid)
+    if val >= midVal:
+        return binLeft(arr, val, left, mid, func)
+    else:
+        return binLeft(arr, val, mid+1, right, func)
+
+def binRight(arr, val, left, right, func):
+    if left == right:
+        return left
+    
+    mid = (left + right)//2
+    midVal = func(mid)
+    if val <= midVal:
+        return binRight(arr, val, mid+1, right, func)
+    else:
+        return binRight(arr, val, left, mid, func)
+
 
 
 def argmax(arr):
