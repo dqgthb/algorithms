@@ -17,8 +17,8 @@ def main(f = None):
         cnt = 1
         for i in arr:
             if i - previousRouter >= distance: # once a router is installed
-                previousRouter = i
-                cnt += 1
+                previousRouter = i # log its location
+                cnt += 1 # increase the number of routers installed
         return cnt
 
     maxDistance = max(arr)
@@ -46,8 +46,6 @@ def binRight(arr, val, left, right, func):
         return binRight(arr, val, mid+1, right, func)
     else:
         return binRight(arr, val, left, mid, func)
-
-
 
 def argmax(arr):
     return max(enumerate(arr), key = lambda x:x[1])
