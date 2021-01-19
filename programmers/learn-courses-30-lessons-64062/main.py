@@ -22,7 +22,6 @@ def binRight(val, left, right, stones):
 
 
 def ccz(stones, people):
-    people -= 1
     stones = [stone - people for stone in stones]
     
     maxCount = 0
