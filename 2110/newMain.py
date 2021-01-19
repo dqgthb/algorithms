@@ -26,8 +26,6 @@ def main(f = None):
 
     print(install(1))
     print(install(maxDistance))
-    n = binLeft(arr, C, 1, maxDistance, install)
-    print(n)
 
     def binLeft(arr, val, left, right, func):
         if left == right:
@@ -39,6 +37,9 @@ def main(f = None):
             return binLeft(arr, val, left, mid, func)
         else:
             return binLeft(arr, val, arr+1, right, func)
+
+    n = binLeft(arr, C, 1, maxDistance, install)
+    print(n)
 
 
 def argmax(arr):
