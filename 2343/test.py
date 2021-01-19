@@ -1,88 +1,44 @@
 def main(f=None):
-    global arr
     init(f)
     # sys.setrecursionlimit(10**9)
-
     # ####################################
-    # ######## input area begin ##########
-
-    N, C = map(int, input().split())
-    arr = [int(input()) for _ in range(N)]
-    arr.sort()  # O(NlogN)
-
-    # ######## input area end ############
+    # ######## INPUT AREA BEGIN ##########
+    
+    # ######## INPUT AREA END ############
     # ####################################
-
-    maxDistance = max(arr)
-    n = binRight(arr, C, 1, maxDistance, install)
-    print(n-1)
-
-
-def install(distance):
-    """
-    returns how many routers one can install if a minimum distance between
-    each router is given.
-    """
-
-    previousRouter = arr[0]
-    cnt = 1
-    for i in arr:
-        if i - previousRouter >= distance: # once a router is installed
-            previousRouter = i # log its location
-            cnt += 1 # increase the number of routers installed
-    return cnt
-
-
-# Unused
-def binLeft(arr, val, left, right, func):
-    if left == right:
-        return left
     
-    mid = (left + right) // 2
-    midVal = func(mid)
-    if val >= midVal:
-        return binLeft(arr, val, left, mid, func)
-    else:
-        return binLeft(arr, val, mid+1, right, func)
-
-
-# O(N) * O(log N) == O(N log N) ?
-def binRight(arr, val, left, right, func):
-    if left == right:
-        return left
-    
-    mid = (left + right)//2
-    midVal = func(mid) # O(N)
-    if val <= midVal:
-        return binRight(arr, val, mid+1, right, func)
-    else:
-        return binRight(arr, val, left, mid, func)
-
-################################################################################
-################################################################################
-################################ TEMPLATE AREA #################################
-################################################################################
-################################################################################
+# ##############################################################################
+# ##############################################################################
+# ############################## TEMPLATE AREA #################################
+# ##############################################################################
+# ##############################################################################
 
 def argmax(arr):
     return max(enumerate(arr), key = lambda x:x[1])
+
+
 def argmin(arr):
     return min(enumerate(arr), key = lambda x:x[1])
+
 
 def For(*args):
     return itertools.product(*map(range, args))
 
+
 def copy2d(mat):
     return [row[:] for row in mat]
 
+
 def Mat(h, w, default = None):
     return [[default for _ in range(w)] for _ in range(h)]
+
 
 def nDim(*args, default = None):
     if len(args) == 1:
         return [default for _ in range(args[0])]
     else:
         return [nDim(*args[1:], default = default) for _ in range(args[0])]
+
 
 # CP template Version 1.005
 import os
@@ -105,6 +61,7 @@ def setStdin(f):
     sys.stdin = open(f)
     input = sys.stdin.readline
 
+
 def init(f = None):
     global input
     input = sys.stdin.readline # by default
@@ -116,6 +73,7 @@ def init(f = None):
             elif os.path.isfile("i"): setStdin("i")
         elif len(sys.argv) == 2: setStdin(sys.argv[1])
         else: assert False, "Too many sys.argv: %d" % len(sys.argv)
+
 
 # Mod #
 class Mod:
@@ -173,11 +131,14 @@ class Mod:
 def dprint(*args):
     if DEBUG: print(*args)
 
+
 def pfast(*args, end = "\n", sep=' '): sys.stdout.write(sep.join(map(str, args)) + end)
+
 
 def parr(arr):
     for i in arr:
         print(i)
+
 
 if __name__ == "__main__":
     main()
