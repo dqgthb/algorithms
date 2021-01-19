@@ -6,14 +6,9 @@ def main(f = None):
     arr = [int(input()) for _ in range(N)]
     arr.sort() # O(NlogN)
 
-    minDistance = 1
     maxDistance = max(arr)
 
-    cache = {}
-
     def install(distance):
-        if distance in cache:
-            return cache[distance]
 
         previousModem = arr[0]
         cnt = 1
