@@ -19,8 +19,7 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
     n = int(input())
-    for i in range(n):
-        print(fibonacci(i))
+    print(fibonacci(n))
 
     # ######## INPUT AREA END ############
     # ####################################
