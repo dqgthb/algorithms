@@ -33,17 +33,18 @@ Soldiers working in NSA
 
 look through the source code of these enemy country iter_child_nodes
 
-0111010000101010000010101011010101010
-->
 
 while ( i < 5 ){
     printf("hello owrld!")
 }
 
-2014 15 17
 
 NSA 
 Ghidra <- decompiler
+
+
+anersitao restn aiorst/ 10000000000000000000000000000007
+
 
 
 
