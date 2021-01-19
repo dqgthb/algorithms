@@ -9,3 +9,9 @@ while i < len(E):
     i += 1
 print(E)
 
+
+E = [x * 2 for x in arr]
+
+
+
+decompiler
