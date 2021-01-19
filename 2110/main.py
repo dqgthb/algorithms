@@ -23,13 +23,9 @@ def main(f = None):
 
     maxDistance = max(arr)
     n = binRight(arr, C, 1, maxDistance, install)
-    print(*range(10))
-    for i in range(10):
-        print(install(i), end =' ')
-    print()
-    print(binLeft(arr, C, 1, maxDistance, install))
     print(n-1)
 
+# not used
 def binLeft(arr, val, left, right, func):
     if left == right:
         return left
