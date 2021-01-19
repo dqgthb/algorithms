@@ -14,14 +14,14 @@ DEBUG = False
 
 
 def globalVar(func):
-    def wrapper(func):
+    def wrapper():
         func()
         func.globals().update(func.locals())
         return func
     return wrapper
 
 
-@globalVar
+#@globalVar
 def main(f=None):
     init(f)
     # sys.setrecursionlimit(10**9)
@@ -30,11 +30,11 @@ def main(f=None):
     n = 10
     # ######## INPUT AREA END ############
     # ####################################
-    increase()
 
     globals().update(locals())
 
 def increase():
+    global n
     print(n)
 # #############################################################################
 # #############################################################################
