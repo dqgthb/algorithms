@@ -16,13 +16,13 @@ def main(f=None):
     init(f)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
-    n = int(input())
+    n, m = map(int, input().split())
     arr = [int(i) for i in input().split()]
     # ######## INPUT AREA END ############
     # ####################################
 
-    for i in range(10):
-        numOfCD(arr, 9)
+    for i in range(9, 20):
+        print(numOfCD(arr, 9), end=' ')
     
 
 def numOfCD(arr, size):
