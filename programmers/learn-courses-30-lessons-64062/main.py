@@ -1,9 +1,6 @@
 def solution(stones, k):
     count = 0
 
-    for i in range(10):
-        print(ccz(stones, i))
-    
     return binRight(k, min(stones), max(stones), stones)
 
 
@@ -22,8 +19,8 @@ def binRight(val, left, right, stones):
 
 
 def ccz(stones, people):
+    people -= 1
     stones = [stone - people for stone in stones]
-    
     maxCount = 0
     count = 0
     for stone in stones:
@@ -32,7 +29,7 @@ def ccz(stones, people):
             maxCount = max(maxCount, count)
         else:
             count = 0
-    return maxCount
+    return maxCount+1
 
 
 stones = [2, 4, 5, 3, 2, 1, 4, 2, 5, 1]
