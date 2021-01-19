@@ -1,6 +1,8 @@
 def main(f = None):
     init(f)
     N, C = map(int, input().split())
+    arr = [int(input()) for _ in range(N)]
+
 
 # CP template Version 1.005
 import os
