@@ -26,10 +26,6 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    i = 0
-    while i < len(arr):
-        print(arr[i])
-        i += 1
 
 
 
