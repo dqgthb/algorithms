@@ -23,7 +23,7 @@ def main(f=None):
 
     for i in range(9, 20):
         print(numOfCD(arr, 9), end=' ')
-    
+    print()
 
 def numOfCD(arr, size):
     count = 1
