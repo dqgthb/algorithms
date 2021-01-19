@@ -22,12 +22,14 @@ def main(f=None):
     # ####################################
 
 def numOfCD(arr, size):
+    count = 1
     left = size
     for i in arr:
         subs = left - size
         if subs >= 0:
             left = subs
-
+        else:
+            count += 1
 
 
 
