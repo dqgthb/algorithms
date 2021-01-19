@@ -12,8 +12,6 @@ from heapq import heappush, heappop
 from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
 
-class Solution:
-    def __init__(s)
 
 def main(f=None):
     init(f)
@@ -21,6 +19,9 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
     N, M = int(input())
+    arr = [int(i) for i in input().split()]
+
+
 
 
 
