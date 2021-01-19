@@ -21,7 +21,14 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-def binRight)
+def binRight(arr, val, left, right):
+    if left == right:
+        return left
+    
+    mid = (left + right) // 2
+    midVal = numOfCD(arr, mid)
+
+    if left <= right:
 
 
 def numOfCD(arr, size):
