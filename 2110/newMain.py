@@ -9,19 +9,18 @@ def main(f = None):
     minDistance = 1
     maxDistance = max(arr)
 
-    #cache = dd(lambda: None)
+    cache = dd(lambda: None)
 
     def install(distance):
-        #val = cache[distance]
-        #if val is not None:
-        #    return val
+        val = cache[distance]
+        if val is not None:
+            return val
 
-        modem = [arr[0]]
+        previousModem = arr[0]
 
         for i in arr:
-            if i - modem[-1] >= distance:
-                modem.append(i)
-        l = len(modem)
+            if i - previousModem >= distance:
+                previousModem = i
         delete(modem)
         return len(modem)
 
