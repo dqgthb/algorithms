@@ -10,7 +10,6 @@ def main(f=None):
     arr = [int(input()) for _ in range(N)]
     arr.sort() # O(NlogN)
 
-
     # ######## input area end ############
     # ####################################
 
