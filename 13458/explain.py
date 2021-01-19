@@ -8,3 +8,4 @@ while i < len(E):
     E[i] = arr[i] * 2
     i += 1
 print(E)
+
