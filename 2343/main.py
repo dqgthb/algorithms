@@ -20,6 +20,7 @@ def main(f=None):
     arr = [int(i) for i in input().split()]
     # ######## INPUT AREA END ############
     # ####################################
+    print(*range(9, 25))
     print(binRight(arr, m, max(arr), sum(arr)+1))
 
 def binRight(arr, val, left, right):
