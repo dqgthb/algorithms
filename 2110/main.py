@@ -3,12 +3,15 @@ def main(f = None):
     init(f)
     #sys.setrecursionlimit(10**9)
 
+    ######################################
     ########## input area begin ##########
+
     N, C = map(int, input().split())
     arr = [int(input()) for _ in range(N)]
     arr.sort() # O(NlogN)
-    ########## input area end #######
-    ############################
+
+    ########## input area end ############
+    ######################################
 
     maxDistance = max(arr)
     n = binRight(arr, C, 1, maxDistance, install)
