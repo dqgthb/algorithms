@@ -7,8 +7,9 @@ def main(f = None):
     arr = [int(input()) for _ in range(N)]
     arr.sort() # O(NlogN)
 
-    maxDistance = max(arr)
     def install(distance):
+        """
+        """
 
         previousModem = arr[0]
         cnt = 1
@@ -17,6 +18,8 @@ def main(f = None):
                 previousModem = i
                 cnt += 1
         return cnt
+
+    maxDistance = max(arr)
     n = binRight(arr, C, 1, maxDistance, install)
     print(n-1)
 
