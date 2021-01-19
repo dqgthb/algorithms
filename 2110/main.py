@@ -23,7 +23,10 @@ def main(f = None):
 
     maxDistance = max(arr)
     n = binRight(arr, C, 1, maxDistance, install)
-    print(arr)
+    print(*range(10))
+    for i in range(10):
+        print(install(i), end =' ')
+    print()
     print(binLeft(arr, C, 1, maxDistance, install))
     print(n-1)
 
