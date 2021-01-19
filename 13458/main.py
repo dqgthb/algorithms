@@ -33,17 +33,15 @@ def main(f=None):
         else:
             newArr.append(0)
 
+    buGam = 0
     for i in newArr:
-        q = i // C
-        r = i % C
+        q, r = divmod(i, C)
 
         if r > 0:
             q += 1
-        newnewArr.append(q)
-    
+        buGam += q
 
-
-    print(N + sum(newnewArr))
+    print(N + buGam)
 
 
 
