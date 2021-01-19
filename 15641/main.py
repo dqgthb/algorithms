@@ -28,12 +28,19 @@ def main(f=None):
     left = 1
     right = 100
     while True:
-    
         if guess == ans:
             print("Correct! You made it in", count, "times!")
             return
         elif guess > ans:
             print("Lower!")
+            left = mid
+            mid = (left + right)//2
+            print("now mid is", mid)
+        else:
+            print("Higher!")
+            right = mid
+            mid = (left + right)//2
+            print("now mid is", mid)
 
 
 # #############################################################################
