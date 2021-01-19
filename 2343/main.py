@@ -3,7 +3,7 @@ import os
 import sys
 import itertools
 import collections
-from functools import cmp_to_key, reduce, cache
+from functools import cmp_to_key, reduce, cache, partial
 from itertools import product
 from collections import deque, Counter, defaultdict as dd
 from math import log, log2, ceil, floor, gcd, sqrt
