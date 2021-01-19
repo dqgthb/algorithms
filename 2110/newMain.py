@@ -5,10 +5,12 @@ def main(f = None):
     N, C = map(int, input().split())
     arr = [int(input()) for _ in range(N)]
     arr.sort() # O(NlogN)
+    print(arr)
+
     minDistance = 1
     maxDistance = max(arr)
 
-    #cache = dd(lambda: None)
+    cache = dd(lambda: None)
 
     def install(distance):
         val = cache[distance]
@@ -24,6 +26,9 @@ def main(f = None):
 
     print(install(1))
     print(install(maxDistance))
+    n = binLeft(arr, C, 1, maxDistance, install)
+    print(n)
+
     def binLeft(arr, val, left, right, func):
         if left == right:
             return left
@@ -34,10 +39,6 @@ def main(f = None):
             return binLeft(arr, val, left, mid, func)
         else:
             return binLeft(arr, val, arr+1, right, func)
-
-    n = binLeft(arr, C, 1, maxDistance, install)
-    print(n)
-
 
 
 def argmax(arr):
