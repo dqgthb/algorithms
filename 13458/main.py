@@ -43,6 +43,10 @@ def main(f=None):
             q += 1
         
         newnewArr.append(q)
+    
+
+
+    print(N + sum(newnewArr))
 
 
 
