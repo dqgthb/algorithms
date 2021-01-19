@@ -18,14 +18,16 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
-    n = 10
+    n = int(input())
+    print(factorial(n))
     
     # ######## INPUT AREA END ############
     # ####################################
 
-@cache
-def factorial(n):
-    if n == 0: return 1
+#@cache
+def fibonacci(n):
+    if n == 0 or n == 1: return n
+    return factorial(n-1) * n
 
 
 # #############################################################################
