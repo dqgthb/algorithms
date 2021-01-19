@@ -20,6 +20,7 @@ def main(f=None):
     arr = [int(i) for i in input().split()]
     # ######## INPUT AREA END ############
     # ####################################
+    print(binRight(arr, m, ))
 
 def binRight(arr, val, left, right):
     if left == right:
@@ -28,10 +29,11 @@ def binRight(arr, val, left, right):
     mid = (left + right) // 2
     midVal = numOfCD(arr, mid)
 
-    if val <= midVal:
-        return binRight(arr, val, left, mid)
-    else:
+    if midVal >= val:
         return binRight(arr, val, mid+1, right)
+    else:
+        return binRight(arr, val, left, mid)
+
 
 
 def numOfCD(arr, size):
