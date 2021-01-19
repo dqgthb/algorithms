@@ -12,13 +12,12 @@ from heapq import heappush, heappop
 from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
 
-def main(None):
-    pass
-
-if __name__ == "__main__":
-    main()
-
-
+def main(f=None):
+    init(f)
+    # ####################################
+    # ######## INPUT AREA BEGIN ##########
+    n = int(input())
+    arr = [int(i) for i in input().split()]
     # ######## INPUT AREA END ############
     # ####################################
 
@@ -159,5 +158,5 @@ def parr(arr):
         print(i)
 
 
-#if __name__ == "__main__":
-#    main()
+if __name__ == "__main__":
+    main()
