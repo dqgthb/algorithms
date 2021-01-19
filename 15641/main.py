@@ -24,10 +24,12 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
     count = 1
-    guess = int(input())
     left = 1
     right = 100
+    mid = (left + right)//2
     while True:
+        print("What is guess?")
+        guess = int(input())
         if guess == ans:
             print("Correct! You made it in", count, "times!")
             return
@@ -41,6 +43,7 @@ def main(f=None):
             right = mid
             mid = (left + right)//2
             print("now mid is", mid)
+        count += 1
 
 
 # #############################################################################
