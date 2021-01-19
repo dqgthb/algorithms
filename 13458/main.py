@@ -25,10 +25,14 @@ def main(f=None):
     B, C = map(int, input().split())
     # ######## INPUT AREA END ############
     # ####################################
+
     i = 0
-    while True:
+    while i < len(arr):
         print(arr[i])
         i += 1
+
+
+
 
 
 
