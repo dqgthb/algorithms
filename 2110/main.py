@@ -2,6 +2,9 @@ def main(f = None):
     init(f)
     N, C = map(int, input().split())
     arr = [int(input()) for _ in range(N)]
+    minDistance = 1
+    maxDistance = max(arr)
+
 
 
 # CP template Version 1.005
