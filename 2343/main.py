@@ -18,16 +18,9 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
-    n = int(input())
-    print(fibonacci(n))
 
     # ######## INPUT AREA END ############
     # ####################################
-
-@cache
-def fibonacci(n):
-    if n == 0 or n == 1: return n
-    return fibonacci(n-1) + fibonacci(n-2)
 
 
 # #############################################################################
