@@ -26,10 +26,15 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    print(arr)
-
     newArr = []
     for i in arr:
+        if i - B >= 0:
+            newArr.append(i-B)
+        else:
+            newArr.append(0)
+    print(newArr)
+
+    newnewArr = []
 
 
 
