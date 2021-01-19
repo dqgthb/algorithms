@@ -45,9 +45,12 @@ def main(f = None):
         midVal = func(mid)
         if val <= midVal:
             return binRight(arr, val, mid+1, right, func)
+        else:
+            return binRight(arr, val, left, mid, func)
 
     arr = [1, 2, 3, 4, 5, 6]
-    n = binLeft(arr, C, 1, maxDistance, install)
+    #n = binLeft(arr, C, 1, maxDistance, install)
+    n = binRight(arr, C, 1, maxDistance, install)
     print(arr)
     print(n)
 
