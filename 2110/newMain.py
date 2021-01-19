@@ -31,11 +31,13 @@ def main(f = None):
         
         mid = (left + right) // 2
         midVal = func(mid)
+        print("mid", mid, midVal)
         if val >= midVal:
             return binLeft(arr, val, left, mid, func)
         else:
             return binLeft(arr, val, mid+1, right, func)
 
+    arr = [1, 2, 3, 4, 5, 6]
     n = binLeft(arr, C, 1, maxDistance, install)
     print(arr)
     print(n)
