@@ -29,7 +29,7 @@ def numOfCD(arr, size):
     count = 1
     left = size
     for i in arr:
-        subs = left - size
+        subs = left - i
         if subs >= 0:
             left = subs
         else:
