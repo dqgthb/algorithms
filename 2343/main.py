@@ -21,9 +21,8 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    for i in range(9, 20):
-        print(numOfCD(arr, i), end=' ')
-    print()
+def binRight)
+
 
 def numOfCD(arr, size):
     count = 1
