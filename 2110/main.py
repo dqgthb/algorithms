@@ -25,7 +25,7 @@ def main(f = None):
     n = binRight(arr, C, 1, maxDistance, install)
     print(n-1)
 
-# not used
+# Unused
 def binLeft(arr, val, left, right, func):
     if left == right:
         return left
@@ -37,12 +37,13 @@ def binLeft(arr, val, left, right, func):
     else:
         return binLeft(arr, val, mid+1, right, func)
 
+# O(N) * O(log N) == O(N log N) ?
 def binRight(arr, val, left, right, func):
     if left == right:
         return left
     
     mid = (left + right)//2
-    midVal = func(mid) # O(n)
+    midVal = func(mid) # O(N)
     if val <= midVal:
         return binRight(arr, val, mid+1, right, func)
     else:
