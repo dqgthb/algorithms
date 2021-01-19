@@ -1,24 +1,12 @@
 def main(f = None):
     init(f)
-    N = int(input())
+    idx, max_ = argmax((1, 2))
+    print(idx, max_)
 
-    reach = iMat(N)
-
-    for k in range(N):
-        for i in range(N):
-            for j in range(N):
-                reach[i][j] = reach[i][j] or (reach[i][k] and reach[k][j])
-
-    for row in reach:
-        print(' '.join(map(str, row)))
-
-
-en = enumerate
 def argmax(arr):
     return max(enumerate(arr), key = lambda x:x[1])
-
-def iMat(row):
-    return [list(map(int, input().split())) for _ in range(row)]
+def argmin(arr):
+    return min(enumerate(arr), key = lambda x:x[1])
 
 def For(*args):
     return itertools.product(*map(range, args))
