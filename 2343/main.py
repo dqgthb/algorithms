@@ -13,29 +13,21 @@ from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
 
 
-def globalVar(func):
-    def wrapper():
-        func()
-        func.globals().update(func.locals())
-        return func
-    return wrapper
-
-
-#@globalVar
 def main(f=None):
     init(f)
     # sys.setrecursionlimit(10**9)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
     n = 10
+    
     # ######## INPUT AREA END ############
     # ####################################
 
-    globals().update(locals())
+@cache
+def factorial(n):
+    if n == 0: return 1
 
-def increase():
-    global n
-    print(n)
+
 # #############################################################################
 # #############################################################################
 # ############################## TEMPLATE AREA ################################
