@@ -2,12 +2,12 @@ def main(f = None):
     init(f)
     #sys.setrecursionlimit(10**9)
 
+    # input
     N, C = map(int, input().split())
     arr = [int(input()) for _ in range(N)]
     arr.sort() # O(NlogN)
 
     maxDistance = max(arr)
-
     def install(distance):
 
         previousModem = arr[0]
