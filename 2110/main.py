@@ -47,6 +47,12 @@ def binRight(arr, val, left, right, func):
     else:
         return binRight(arr, val, left, mid, func)
 
+#####
+#########################
+##### TEMPLATE AREA #####
+#########################
+#########################
+
 def argmax(arr):
     return max(enumerate(arr), key = lambda x:x[1])
 def argmin(arr):
