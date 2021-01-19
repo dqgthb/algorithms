@@ -36,6 +36,10 @@ def main(f = None):
             return binLeft(arr, val, left, mid, func)
         else:
             return binLeft(arr, val, mid+1, right, func)
+    
+    def binRight(arr, val, left, right, func):
+        if left == right:
+            return left
 
     arr = [1, 2, 3, 4, 5, 6]
     n = binLeft(arr, C, 1, maxDistance, install)
