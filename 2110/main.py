@@ -1,4 +1,5 @@
 def main(f = None):
+    global arr
     init(f)
     #sys.setrecursionlimit(10**9)
 
@@ -7,23 +8,23 @@ def main(f = None):
     arr = [int(input()) for _ in range(N)]
     arr.sort() # O(NlogN)
 
-    def install(distance):
-        """
-        returns how many routers one can install if a minimum distance between
-        each router is given.
-        """
-
-        previousRouter = arr[0]
-        cnt = 1
-        for i in arr:
-            if i - previousRouter >= distance: # once a router is installed
-                previousRouter = i # log its location
-                cnt += 1 # increase the number of routers installed
-        return cnt
-
     maxDistance = max(arr)
     n = binRight(arr, C, 1, maxDistance, install)
     print(n-1)
+
+def install(distance):
+    """
+    returns how many routers one can install if a minimum distance between
+    each router is given.
+    """
+
+    previousRouter = arr[0]
+    cnt = 1
+    for i in arr:
+        if i - previousRouter >= distance: # once a router is installed
+            previousRouter = i # log its location
+            cnt += 1 # increase the number of routers installed
+    return cnt
 
 # Unused
 def binLeft(arr, val, left, right, func):
