@@ -29,7 +29,10 @@ def main(f=None):
 # #############################################################################
 # #############################################################################
 
-def makeAllVariablesGlobal()
+def variablesAsGlobal(func):
+    def wrapper():
+
+        
 
 def argmax(arr):
     return max(enumerate(arr), key=lambda x: x[1])
