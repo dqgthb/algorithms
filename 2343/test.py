@@ -10,6 +10,8 @@ from math import log, log2, ceil, floor, gcd, sqrt
 import math
 from heapq import heappush, heappop
 from bisect import bisect_left as bl, bisect_right as br
+DEBUG = False
+
 
 def main(f=None):
     init(f)
@@ -48,13 +50,11 @@ def Mat(h, w, default=None):
 
 
 def nDim(*args, default=None):
-    if len(args) == 1: 
+    if len(args) == 1:
         return [default for _ in range(args[0])]
     else:
         return [nDim(*args[1:], default=default) for _ in range(args[0])]
 
-
-DEBUG = False
 
 def setStdin(f):
     global DEBUG, input
