@@ -65,7 +65,7 @@ def setStdin(f):
 
 def init(f=None):
     global input
-    input = sys.stdin.readline #  by default
+    input = sys.stdin.readline  # by default
     if os.path.exists("o"):
         sys.stdout = open("o", "w")
     if f is not None:
@@ -133,7 +133,8 @@ class Mod:
     def coeffBinom(n, k):
         if n < k:
             return 0
-        return Mod.multiply(Mod.FACT[n], Mod.multiply(Mod.INV_FACT[k], Mod.INV_FACT[n-k]))
+        return Mod.multiply(Mod.FACT[n],\
+            Mod.multiply(Mod.INV_FACT[k], Mod.INV_FACT[n-k]))
 
     @staticmethod
     def sum(it):
