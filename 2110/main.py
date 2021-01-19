@@ -2,6 +2,7 @@ def main(f = None):
     init(f)
     N, C = map(int, input().split())
     arr = [int(input()) for _ in range(N)]
+    arr.sort() # O(NlogN)
     minDistance = 1
     maxDistance = max(arr)
 
