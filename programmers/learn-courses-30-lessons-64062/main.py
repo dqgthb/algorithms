@@ -2,7 +2,7 @@ def solution(stones, k):
     count = 0
 
     for i in range(10):
-        print(stone, ccz(i))
+        print(ccz(stones, i))
     
     return binRight(k, min(stones), max(stones), stones)
 
