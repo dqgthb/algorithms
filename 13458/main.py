@@ -32,16 +32,13 @@ def main(f=None):
             newArr.append(i-B)
         else:
             newArr.append(0)
-    print(newArr)
 
-    newnewArr = []
     for i in newArr:
         q = i // C
         r = i % C
 
         if r > 0:
             q += 1
-        
         newnewArr.append(q)
     
 
