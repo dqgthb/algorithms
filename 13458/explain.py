@@ -38,13 +38,3 @@ while ( i < 5 ){
     printf("hello owrld!")
 }
 
-
-NSA 
-Ghidra <- decompiler
-
-
-anersitao restn aiorst/ 10000000000000000000000000000007
-
-
-
-
