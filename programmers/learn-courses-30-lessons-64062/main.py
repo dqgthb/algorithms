@@ -6,6 +6,7 @@ def solution(stones, k):
     
     return binRight(k, min(stones), max(stones), stones)
 
+
 def binRight(val, left, right, stones):
     print(left, right)
     if left == right:
@@ -18,10 +19,10 @@ def binRight(val, left, right, stones):
         return binRight(val, left, mid, stones)
     else:
         return binRight(val, mid+1, right, stones)
-        
-    
-    
+
+
 def ccz(stones, people):
+    people -= 1
     stones = [stone - people for stone in stones]
     
     maxCount = 0
@@ -33,8 +34,8 @@ def ccz(stones, people):
         else:
             count = 0
     return maxCount
-    
-    
+
+
 stones = [2, 4, 5, 3, 2, 1, 4, 2, 5, 1]
 k = 3
 ans = solution(stones, k)
