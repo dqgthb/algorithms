@@ -9,12 +9,11 @@ def main(f = None):
     minDistance = 1
     maxDistance = max(arr)
 
-    cache = dd(lambda: None)
+    cache = {}
 
     def install(distance):
-        val = cache[distance]
-        if val is not None:
-            return val
+        if distance in cache:
+            return cache[distance]
 
         previousModem = arr[0]
         cnt = 1
