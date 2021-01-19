@@ -26,7 +26,10 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+    print(arr)
 
+    newArr = []
+    for i in arr:
 
 
 
