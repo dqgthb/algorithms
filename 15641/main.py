@@ -35,12 +35,12 @@ def main(f=None):
             return
         elif guess > ans:
             print("Lower!")
-            left = mid
+            right = mid
             mid = (left + right)//2
             print("now mid is", mid)
         else:
             print("Higher!")
-            right = mid
+            left = mid
             mid = (left + right)//2
             print("now mid is", mid)
         count += 1
