@@ -8,9 +8,10 @@ def main(f = None):
     minDistance = 1
     maxDistance = max(arr)
 
+    cache = dd(lambda: None)
     def install(distance):
-        cached = cache[distance]
-        if cache[distance] is not None:
+        val = cache[distance]
+        if val is not None:
             
         modem = [arr[0]]
         for i in arr:
@@ -23,8 +24,6 @@ def main(f = None):
 
     1 2 3 4 5
     5 5 4 4 3
-
-    cache = {}
 
     def binLeft(arr, left, right, func):
         if left == right:
