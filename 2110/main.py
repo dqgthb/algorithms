@@ -7,7 +7,9 @@ def main(f = None):
     maxDistance = max(arr)
 
     def install(distance):
+        cached = cache[distance]
         if cache[distance] is not None:
+            
         modem = [arr[0]]
         for i in arr:
             if i - modem[-1] >= distance:
