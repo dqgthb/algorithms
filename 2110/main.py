@@ -20,7 +20,9 @@ def main(f = None):
     5 5 4 4 3
 
 
-    def binLeft()
+    def binLeft(arr, left, right):
+        if left == right:
+            return left
 
 
 
