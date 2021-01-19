@@ -12,6 +12,7 @@ from heapq import heappush, heappop
 from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
 
+
 def main(f=None):
     init(f)
     # ####################################
@@ -20,14 +21,13 @@ def main(f=None):
     arr = [int(i) for i in input().split()]
     # ######## INPUT AREA END ############
     # ####################################
-    print(*range(9, 25))
-    print(*(numOfCD(arr, i) for i in range(9, 25)))
+
     print(binRight(arr, m, max(arr), sum(arr)+1))
+
 
 def binRight(arr, val, left, right):
     if left == right:
         return left
-    
     mid = (left + right) // 2
     midVal = numOfCD(arr, mid)
 
@@ -35,7 +35,6 @@ def binRight(arr, val, left, right):
         return binRight(arr, val, left, mid)
     else:
         return binRight(arr, val, mid+1, right)
-
 
 
 def numOfCD(arr, size):
@@ -49,10 +48,6 @@ def numOfCD(arr, size):
             count += 1
             left = size - i
     return count
-
-
-
-
 
 
 # #############################################################################
