@@ -8,7 +8,7 @@ def main(f=None):
 
     N, C = map(int, input().split())
     arr = [int(input()) for _ in range(N)]
-    arr.sort() # O(NlogN)
+    arr.sort()  # O(NlogN)
 
     # ######## input area end ############
     # ####################################
@@ -16,6 +16,7 @@ def main(f=None):
     maxDistance = max(arr)
     n = binRight(arr, C, 1, maxDistance, install)
     print(n-1)
+
 
 def install(distance):
     """
@@ -31,6 +32,7 @@ def install(distance):
             cnt += 1 # increase the number of routers installed
     return cnt
 
+
 # Unused
 def binLeft(arr, val, left, right, func):
     if left == right:
@@ -42,6 +44,7 @@ def binLeft(arr, val, left, right, func):
         return binLeft(arr, val, left, mid, func)
     else:
         return binLeft(arr, val, mid+1, right, func)
+
 
 # O(N) * O(log N) == O(N log N) ?
 def binRight(arr, val, left, right, func):
