@@ -1,6 +1,11 @@
 arr = [1, 2, 3, 4, 5]
 
 
+C = []
+for i in arr:
+    C.append(i*2)
+print(C)
+
 
 def multiplyBy2(x):
     return x*2
