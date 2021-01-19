@@ -5,9 +5,16 @@ def main(f = None):
     minDistance = 1
     maxDistance = max(arr)
 
+    def install(distance):
+        modem = [arr[0]]
+        for i in arr:
+            if i - modem[-1] >= distance:
+                
+
     modem = [arr[0]]
     for i in arr:
         if i - modem[-1] >= minDistance:
+            
 
 
 
