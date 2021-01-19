@@ -1,3 +1,16 @@
+# CP template Version 1.006
+import os
+import sys
+import itertools
+import collections
+from functools import cmp_to_key
+from itertools import product
+from collections import deque, Counter, defaultdict as dd
+from math import log, log2, ceil, floor, gcd, sqrt
+import math
+from heapq import heappush, heappop
+from bisect import bisect_left as bl, bisect_right as br
+
 def main(f=None):
     init(f)
     # sys.setrecursionlimit(10**9)
@@ -35,24 +48,11 @@ def Mat(h, w, default=None):
 
 
 def nDim(*args, default=None):
-    if len(args) == 1:
+    if len(args) == 1: 
         return [default for _ in range(args[0])]
     else:
-        return [nDim(*args[1:], default = default) for _ in range(args[0])]
+        return [nDim(*args[1:], default=default) for _ in range(args[0])]
 
-
-# CP template Version 1.005
-import os
-import sys
-import itertools
-import collections
-from functools import cmp_to_key
-from itertools import product
-from collections import deque, Counter, defaultdict as dd
-from math import log, log2, ceil, floor, gcd, sqrt
-import math
-from heapq import heappush, heappop
-from bisect import bisect_left as bl, bisect_right as br
 
 DEBUG = False
 
