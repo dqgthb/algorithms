@@ -1,39 +1,73 @@
 def main(f = None):
     init(f)
+    sys.setrecursionlimit(10**9)
+
     N, C = map(int, input().split())
     arr = [int(input()) for _ in range(N)]
     arr.sort() # O(NlogN)
+
     minDistance = 1
     maxDistance = max(arr)
 
+    cache = dd(lambda: None)
+
     def install(distance):
-        cached = cache[distance]
-        if cache[distance] is not None:
-            
+        val = cache[distance]
+        if val is not None:
+            return val
+
         modem = [arr[0]]
+
         for i in arr:
             if i - modem[-1] >= distance:
                 modem.append(i)
         return len(modem)
 
-    print(install(1))
-    print(install(maxDistance))
-
-    1 2 3 4 5
-    5 5 4 4 3
-
-    cache = {}
-
-    def binLeft(arr, left, right):
+    def binLeft(arr, val, left, right, func):
         if left == right:
             return left
         
         mid = (left + right) // 2
-        if install()
+        midVal = func(mid)
+        if val >= midVal:
+            return binLeft(arr, val, left, mid, func)
+        else:
+            return binLeft(arr, val, mid+1, right, func)
+    
+    def binRight(arr, val, left, right, func):
+        if left == right:
+            return left
+        
+        mid = (left + right)//2
+        midVal = func(mid)
+        if val <= midVal:
+            return binRight(arr, val, mid+1, right, func)
+        else:
+            return binRight(arr, val, left, mid, func)
+
+    n = binRight(arr, C, 1, maxDistance, install)
+    print(n-1)
 
 
+def argmax(arr):
+    return max(enumerate(arr), key = lambda x:x[1])
+def argmin(arr):
+    return min(enumerate(arr), key = lambda x:x[1])
 
+def For(*args):
+    return itertools.product(*map(range, args))
 
+def copy2d(mat):
+    return [row[:] for row in mat]
+
+def Mat(h, w, default = None):
+    return [[default for _ in range(w)] for _ in range(h)]
+
+def nDim(*args, default = None):
+    if len(args) == 1:
+        return [default for _ in range(args[0])]
+    else:
+        return [nDim(*args[1:], default = default) for _ in range(args[0])]
 
 # CP template Version 1.005
 import os
@@ -42,11 +76,11 @@ import itertools
 import collections
 from functools import cmp_to_key
 from itertools import product
-from collections import deque, Counter
-from math import log, log2, ceil, floor
+from collections import deque, Counter, defaultdict as dd
+from math import log, log2, ceil, floor, gcd, sqrt
 import math
 from heapq import heappush, heappop
-from bisect import bisect_left, bisect_right
+from bisect import bisect_left as bl, bisect_right as br
 
 DEBUG = False
 
@@ -54,9 +88,11 @@ def setStdin(f):
     global DEBUG, input
     DEBUG = True
     sys.stdin = open(f)
-    input=sys.stdin.readline
+    input = sys.stdin.readline
 
 def init(f = None):
+    global input
+    input = sys.stdin.readline # by default
     if os.path.exists("o"): sys.stdout = open("o", "w")
     if f is not None: setStdin(f)
     else:
