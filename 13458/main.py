@@ -26,6 +26,14 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+A = "1 2 3 4 5".split()
+A = ["1", "2", "3", "4", "5"]
+
+
+
+
+
+
     newArr = [i-B if i-B >= 0 else 0 for i in arr]
 
     buGam = 0
