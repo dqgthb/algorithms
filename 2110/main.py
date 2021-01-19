@@ -9,13 +9,15 @@ def main(f = None):
 
     def install(distance):
         """
+        returns how many routers one can install if a minimum distance between
+        each router is given.
         """
 
-        previousModem = arr[0]
+        previousRouter = arr[0]
         cnt = 1
         for i in arr:
-            if i - previousModem >= distance:
-                previousModem = i
+            if i - previousRouter >= distance: # once a router is installed
+                previousRouter = i
                 cnt += 1
         return cnt
 
