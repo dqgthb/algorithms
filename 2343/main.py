@@ -12,12 +12,18 @@ from heapq import heappush, heappop
 from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
 
+class Solution:
+    def __init__(s)
 
 def main(f=None):
     init(f)
     # sys.setrecursionlimit(10**9)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
+    N, M = int(input())
+
+
+
 
     # ######## INPUT AREA END ############
     # ####################################
