@@ -9,12 +9,11 @@ def main(f = None):
         modem = [arr[0]]
         for i in arr:
             if i - modem[-1] >= distance:
-                
+                modem.append(i)
+        return len(modem)
 
-    modem = [arr[0]]
-    for i in arr:
-        if i - modem[-1] >= minDistance:
-            
+    print(install(1))
+    print(install(maxDistance))
 
 
 
