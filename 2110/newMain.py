@@ -24,9 +24,6 @@ def main(f = None):
                 modem.append(i)
         return len(modem)
 
-    print(install(1))
-    print(install(maxDistance))
-
     def binLeft(arr, val, left, right, func):
         if left == right:
             return left
@@ -36,7 +33,7 @@ def main(f = None):
         if val <= midVal:
             return binLeft(arr, val, left, mid, func)
         else:
-            return binLeft(arr, val, arr+1, right, func)
+            return binLeft(arr, val, mid+1, right, func)
 
     n = binLeft(arr, C, 1, maxDistance, install)
     print(n)
