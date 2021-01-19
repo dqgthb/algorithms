@@ -13,6 +13,7 @@ from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
 
 
+@globalVar
 def main(f=None):
     init(f)
     # sys.setrecursionlimit(10**9)
@@ -29,10 +30,12 @@ def main(f=None):
 # #############################################################################
 # #############################################################################
 
-def variablesAsGlobal(func):
-    def wrapper():
+def globalVar(func):
+    def wrapper(func):
         func()
         func.globals().update(func.locals())
+        return func
+    return wrapper
 
 def argmax(arr):
     return max(enumerate(arr), key=lambda x: x[1])
