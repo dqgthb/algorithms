@@ -48,6 +48,7 @@ def main(f = None):
         else:
             return binRight(arr, val, left, mid, func)
 
+    print(*range(6))
     for i in range(9):
         print(install(i), end=' ')
     print()
