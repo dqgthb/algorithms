@@ -12,18 +12,11 @@ from heapq import heappush, heappop
 from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
 
+def main(None):
+    pass
 
-def main(f=None):
-    init(f)
-    # sys.setrecursionlimit(10**9)
-    # ####################################
-    # ######## INPUT AREA BEGIN ##########
-    N, M = int(input())
-    arr = [int(i) for i in input().split()]
-
-
-
-
+if __name__ == "__main__":
+    main()
 
 
     # ######## INPUT AREA END ############
@@ -166,5 +159,5 @@ def parr(arr):
         print(i)
 
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+#    main()
