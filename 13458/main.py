@@ -26,17 +26,11 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    newArr = []
-    for i in arr:
-        if i - B >= 0:
-            newArr.append(i-B)
-        else:
-            newArr.append(0)
+    newArr = [i-B if i-B >= 0 else 0 for i in arr]
 
     buGam = 0
     for i in newArr:
         q, r = divmod(i, C)
-
         if r > 0:
             q += 1
         buGam += q
