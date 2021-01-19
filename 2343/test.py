@@ -144,12 +144,13 @@ class Mod:
         return res
 # END Mod #
 
+
 def dprint(*args):
     if DEBUG:
         print(*args)
 
 
-def pfast(*args, end = "\n", sep=' '):
+def pfast(*args, end="\n", sep=' '):
     sys.stdout.write(sep.join(map(str, args)) + end)
 
 
