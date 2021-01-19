@@ -1,5 +1,12 @@
 arr = [1, 2, 3, 4, 5]
 
 
-A = list(map(lambda x:x*2, arr))
+
+def multiplyBy2(x):
+    return x*2
+
+A = list(map(multiplyBy2, arr))
 print(A)
+
+B = [i*2 for i in arr]
+print(B)
