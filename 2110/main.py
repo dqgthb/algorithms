@@ -42,7 +42,7 @@ def binRight(arr, val, left, right, func):
         return left
     
     mid = (left + right)//2
-    midVal = func(mid)
+    midVal = func(mid) # O(n)
     if val <= midVal:
         return binRight(arr, val, mid+1, right, func)
     else:
