@@ -131,21 +131,25 @@ class Mod:
 
     @staticmethod
     def coeffBinom(n, k):
-        if n < k: return 0
+        if n < k:
+            return 0
         return Mod.multiply(Mod.FACT[n], Mod.multiply(Mod.INV_FACT[k], Mod.INV_FACT[n-k]))
-    
+
     @staticmethod
     def sum(it):
         res = 0
-        for i in it: res = Mod.add(res, i)
+        for i in it:
+            res = Mod.add(res, i)
         return res
 # END Mod #
 
 def dprint(*args):
-    if DEBUG: print(*args)
+    if DEBUG:
+        print(*args)
 
 
-def pfast(*args, end = "\n", sep=' '): sys.stdout.write(sep.join(map(str, args)) + end)
+def pfast(*args, end = "\n", sep=' '):
+    sys.stdout.write(sep.join(map(str, args)) + end)
 
 
 def parr(arr):
