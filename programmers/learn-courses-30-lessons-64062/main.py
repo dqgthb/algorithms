@@ -1,7 +1,7 @@
 def solution(stones, k):
     count = 0
 
-    return binRight(k, min(stones), max(stones)-1, stones) - 1
+    return binRight(k, min(stones), max(stones)+1, stones) - 1
 
 
 def binRight(val, left, right, stones):
