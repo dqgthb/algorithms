@@ -47,7 +47,7 @@ def sumWithUpperbound(arr, x, targetSum):
         return False
 
 
-class BisectWrapper:
+class BisectWrapper(collections.abc.Sequence):
     def __init__(self):
         pass
 
