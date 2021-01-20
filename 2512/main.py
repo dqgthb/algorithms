@@ -31,7 +31,10 @@ def main(f=None):
     #print(sumWithUpperbound(arr, 127))
 
 
-def sumWithUpperbound(arr, x):
+def binaryLef
+
+
+def sumWithUpperbound(arr, x, targetSum):
     sum_ = 0
     for i in arr:
         if i < x:
