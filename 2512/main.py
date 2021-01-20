@@ -3,6 +3,7 @@ import os
 import sys
 import itertools
 import collections
+import collections.abc
 # not for python < 3.9
 # from functools import cmp_to_key, reduce, partial, cache
 from functools import cmp_to_key, reduce, partial
@@ -30,7 +31,7 @@ def main(f=None):
 
     #idx = binaryRight(True, 0, max(arr)+1, arr, targetSum)-1
 
-    wrapper = Wrapper()
+    wrapper = BisectWrapper()
     idx = br(wrapper, -1, 0, max(arr)+1) - 1
 
 
@@ -50,6 +51,8 @@ def sumWithUpperbound(arr, x, targetSum):
 class BisectWrapper(collections.abc.Sequence):
     def __init__(self):
         pass
+    def __getitem__(self, n):
+
 
 
 
