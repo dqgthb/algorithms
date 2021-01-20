@@ -29,6 +29,8 @@ def main(f=None):
     # ####################################
 
     #print(sumWithUpperbound(arr, 127))
+    idx = binaryRight(targetSum, 0, max(arr)+1, arr, targetSum)
+    print
 
 
 def binaryRight(val, left, right, arr, targetSum):
