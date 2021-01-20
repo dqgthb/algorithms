@@ -34,6 +34,7 @@ def main(f=None):
     result = [0] * M
     for i, num in enu(nums):
         idx = bl(cards, i)
+        print(idx)
         if idx < len(cards) and cards[idx] == num:
             result[i] = 1
     print(*result)
