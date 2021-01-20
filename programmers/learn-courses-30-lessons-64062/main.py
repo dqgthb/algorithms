@@ -9,7 +9,6 @@ def solution(stones, k):
 def binRight(val, left, right, stones):
     if left == right:
         return left
-        
     mid = (left + right) // 2
     midVal = lowerboundK(stones, mid)
         
