@@ -1,6 +1,5 @@
 def solution(stones, k):
     count = 0
-    # rightmost number of stones required to use up k stones.
     return binRight(k, min(stones), max(stones)+1, stones) - 1
 
 
