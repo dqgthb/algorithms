@@ -45,6 +45,11 @@ def binaryRight(val, left, right, arr, targetSum):
         return binaryRight(val, left, mid, arr, targetSum)
 
 
+class Wrapper:
+    def __init__(self):
+
+
+
 
 def sumWithUpperbound(arr, x, targetSum):
     sum_ = 0
