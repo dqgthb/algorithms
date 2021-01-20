@@ -28,25 +28,11 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    idx = binaryRight(True, 0, max(arr)+1, arr, targetSum)-1
+    #idx = binaryRight(True, 0, max(arr)+1, arr, targetSum)-1
     print(idx)
 
 
-def binaryRight(val, left, right, arr, targetSum):
-    if left == right:
-        return left
 
-    mid = (left + right) // 2
-    midVal = sumWithUpperbound(arr, mid, targetSum)
-    1111100000
-    if midVal >= val:
-        return binaryRight(val, mid+1, right, arr, targetSum)
-    else:
-        return binaryRight(val, left, mid, arr, targetSum)
-
-
-class Wrapper:
-    def __init__(self):
 
 
 
