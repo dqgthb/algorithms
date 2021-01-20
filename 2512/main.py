@@ -29,10 +29,6 @@ def main(f=None):
     # ####################################
 
     #idx = binaryRight(True, 0, max(arr)+1, arr, targetSum)-1
-    print(idx)
-
-
-
 
 
 
