@@ -1,16 +1,15 @@
 def solution(stones, k):
     count = 0
 
-    return binRight(k, min(stones), max(stones), stones)
+    return binRight(k, min(stones), max(stones)-1, stones) - 1
 
 
 def binRight(val, left, right, stones):
-    print(left, right)
     if left == right:
         return left
         
     mid = (left + right) // 2
-    midVal = ccz(stones, mid)
+    midVal = lowerboundK(stones, mid)
         
     if val < midVal:
         return binRight(val, left, mid, stones)
@@ -18,7 +17,7 @@ def binRight(val, left, right, stones):
         return binRight(val, mid+1, right, stones)
 
 
-def ccz(stones, people):
+def lowerboundK(stones, people):
     people -= 1
     stones = [stone - people for stone in stones]
     maxCount = 0
