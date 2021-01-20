@@ -23,13 +23,17 @@ def main(f=None):
 
     N = int(input())
     cards = [int(i) for i in input().split()]
-    cardSet = set(cards)
 
     M = int(input())
     nums = [int(i) for i in input().split()]
 
     # ######## INPUT AREA END ############
     # ####################################
+
+    cards.sort()
+    for num in nums:
+        idx = bl(cards)
+
 
 
 

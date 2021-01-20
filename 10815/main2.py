@@ -23,7 +23,6 @@ def main(f=None):
 
     N = int(input())
     cards = [int(i) for i in input().split()]
-    cardSet = set(cards)
 
     M = int(input())
     nums = [int(i) for i in input().split()]
@@ -31,6 +30,7 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+    cardSet = set(cards)
     res = [0] * M
     for i, num in enu(nums):
         if num in cardSet:
