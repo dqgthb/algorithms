@@ -23,8 +23,13 @@ def main(f=None):
 
     N = int(input())
     cards = [int(i) for i in input().split()]
+    cardSet = set(cards)
+
     M = int(input())
     nums = [int(i) for i in input().split()]
+
+    res = []
+    for num in nums:
     
     # ######## INPUT AREA END ############
     # ####################################
