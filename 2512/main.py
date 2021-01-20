@@ -52,6 +52,7 @@ class BisectWrapper(collections.abc.Sequence):
     def __init__(self):
         pass
     def __getitem__(self, n):
+        return sumWithUpperbound(arr, x)
 
 
 
