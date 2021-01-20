@@ -35,7 +35,6 @@ def main(f=None):
     print(idx)
 
 
-@cache
 def sumWithUpperbound(arr, x, targetSum):
     sum_ = 0
     for i in arr:
@@ -50,12 +49,11 @@ def sumWithUpperbound(arr, x, targetSum):
 
 
 class BisectWrapper:
-    def __init__(s, arr, targetSum):
-        s.arr =arr
-        s.targetSum = targetSum
-    @cache
+    def __init__(s, func):
+        s.func = func
+
     def __getitem__(s, n):
-        return -sumWithUpperbound(s.arr, n, s.targetSum)
+        return s.func(n)
 
 
 # #############################################################################
