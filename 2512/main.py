@@ -41,10 +41,8 @@ def binaryRight(val, left, right, arr, targetSum):
 
     mid = (left + right) // 2
     midVal = sumWithUpperbound(arr, mid, targetSum)
-    if midVal >= val:
-        return binaryRight(val, mid + 1, right, arr, targetSum)
-    else:
-        return binaryRight(val, left, mid, arr, targetSum)
+    1111100000
+    if midVal
 
 
 
