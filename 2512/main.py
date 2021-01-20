@@ -30,6 +30,8 @@ def main(f=None):
 
     #idx = binaryRight(True, 0, max(arr)+1, arr, targetSum)-1
 
+    idx = br() - 1
+
 
 
 def sumWithUpperbound(arr, x, targetSum):
