@@ -29,10 +29,11 @@ def main(f=None):
     nums = [int(i) for i in input().split()]
 
     res = [0] * M
-    for i, num in en(nums):
+    for i, num in enu(nums):
         if num in cardSet:
+            res[i] = 1
+    print(*res)
 
-    
     # ######## INPUT AREA END ############
     # ####################################
     
@@ -43,6 +44,7 @@ def main(f=None):
 # #############################################################################
 
 enu = enumerate
+
 
 def argmax(arr):
     return max(enumerate(arr), key=lambda x: x[1])
