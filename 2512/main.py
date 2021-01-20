@@ -33,10 +33,6 @@ def main(f=None):
     wrapper = Wrapper()
     idx = br(wrapper, -1, 0, max(arr)+1) - 1
 
-class wrapper:
-    def __init__()
-
-
 
 def sumWithUpperbound(arr, x, targetSum):
     sum_ = 0
@@ -49,6 +45,9 @@ def sumWithUpperbound(arr, x, targetSum):
         return True
     else:
         return False
+
+
+def SortedCollections(object):
 
 
 
