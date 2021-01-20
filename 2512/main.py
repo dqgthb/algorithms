@@ -29,10 +29,9 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    #idx = binaryRight(True, 0, max(arr)+1, arr, targetSum)-1
-
-    wrapper = BisectWrapper()
+    wrapper = BisectWrapper(arr, targetSum)
     idx = br(wrapper, -1, 0, max(arr)+1) - 1
+    print(idx)
 
 
 def sumWithUpperbound(arr, x, targetSum):
@@ -48,17 +47,15 @@ def sumWithUpperbound(arr, x, targetSum):
         return False
 
 
-class BisectWrapper(collections.abc.Sequence):
+class BisectWrapper:
     def __init__(s, arr, targetSum):
         s.arr =arr
         s.targetSum = targetSum
     def __getitem__(s, n):
-        return sumWithUpperbound(s.arr, n, s.targetSum)
+        return -sumWithUpperbound(s.arr, n, s.targetSum)
 
-    def __len__(s,)
-
-
-
+    def __len__(s):
+        return 0
 
 
 # #############################################################################
