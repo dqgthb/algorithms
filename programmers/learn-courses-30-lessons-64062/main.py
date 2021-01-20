@@ -1,5 +1,6 @@
 def solution(stones, k):
     count = 0
+    # transfer maximum number of people while satisfying k == lowerboundK(stones, val)
     return binRight(k, min(stones), max(stones)+1, stones) - 1
 
 
