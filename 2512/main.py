@@ -7,6 +7,7 @@ import collections.abc
 # not for python < 3.9
 # from functools import cmp_to_key, reduce, partial, cache
 from functools import cmp_to_key, reduce, partial
+from functools import cache
 from itertools import product
 from collections import deque, Counter, defaultdict as dd
 from math import log, log2, ceil, floor, gcd, sqrt
@@ -34,6 +35,7 @@ def main(f=None):
     print(idx)
 
 
+@cache
 def sumWithUpperbound(arr, x, targetSum):
     sum_ = 0
     for i in arr:
@@ -51,6 +53,7 @@ class BisectWrapper:
     def __init__(s, arr, targetSum):
         s.arr =arr
         s.targetSum = targetSum
+    @cache
     def __getitem__(s, n):
         return -sumWithUpperbound(s.arr, n, s.targetSum)
 
