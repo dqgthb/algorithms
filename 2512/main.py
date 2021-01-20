@@ -50,7 +50,6 @@ class Wrapper:
 
 
 
-
 def sumWithUpperbound(arr, x, targetSum):
     sum_ = 0
     for i in arr:
