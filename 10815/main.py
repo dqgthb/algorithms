@@ -33,8 +33,7 @@ def main(f=None):
     cards.sort()
     result = [0] * M
     for i, num in enu(nums):
-        idx = bl(cards, i)
-        print(idx)
+        idx = bl(cards, num)
         if idx < len(cards) and cards[idx] == num:
             result[i] = 1
     print(*result)
