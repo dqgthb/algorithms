@@ -45,7 +45,6 @@ def main(f=None):
 
 enu = enumerate
 
-
 def argmax(arr):
     return max(enumerate(arr), key=lambda x: x[1])
 
