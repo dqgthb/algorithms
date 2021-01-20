@@ -28,7 +28,9 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    #print(sumWithUpperbound(arr, 127))
+    #print(sumWithUpperbound(arr, 127, targetSum))
+    for i in range(120, 130):
+        print(sumWithUpperbound(arr, i, targetSum))
     idx = binaryRight(True, 0, max(arr)+1, arr, targetSum)
     print(idx)
 
