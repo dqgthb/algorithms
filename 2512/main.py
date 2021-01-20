@@ -23,9 +23,15 @@ def main(f=None):
 
     N = int(input())
     arr = [int(i) for i in input().split()]
+    targetSum = int(input())
 
     # ######## INPUT AREA END ############
     # ####################################
+
+
+def sumWithUpperbound(arr, x):
+    sum_ = 0
+    for i in arr:
 
 
 # #############################################################################
