@@ -49,11 +49,13 @@ def sumWithUpperbound(arr, x, targetSum):
 
 
 class BisectWrapper(collections.abc.Sequence):
-    def __init__(self):
-        pass
-    def __getitem__(self, n):
-        return sumWithUpperbound(arr, x)
+    def __init__(s, arr, targetSum):
+        s.arr =arr
+        s.targetSum = targetSum
+    def __getitem__(s, n):
+        return sumWithUpperbound(s.arr, n, s.targetSum)
 
+    def __len__(s,)
 
 
 
