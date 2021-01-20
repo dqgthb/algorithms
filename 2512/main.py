@@ -31,13 +31,14 @@ def main(f=None):
     #print(sumWithUpperbound(arr, 127))
 
 
-def binaryRight(val, left, right, arr, mid, targetSum):
+def binaryRight(val, left, right, arr, targetSum):
     if left == right:
-        left
+        return left
 
     mid = (left + right) // 2
     midVal = sumWithUpperbound(arr, mid, targetSum)
     if midVal <= val:
+        return binaryRight(val, mid + 1, right, arr, mid, )
 
 
 
