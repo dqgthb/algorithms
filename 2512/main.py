@@ -41,7 +41,8 @@ def sumWithUpperbound(arr, x, targetSum):
             sum_ += i
         else:
             sum_ += x
-    return sum_
+    if sum_ <= targetSum:
+
 
 
 # #############################################################################
