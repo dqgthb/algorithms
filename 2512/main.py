@@ -31,8 +31,6 @@ def main(f=None):
     #print(sumWithUpperbound(arr, 127))
 
 
-def binaryLef
-
 
 def sumWithUpperbound(arr, x, targetSum):
     sum_ = 0
@@ -42,6 +40,9 @@ def sumWithUpperbound(arr, x, targetSum):
         else:
             sum_ += x
     if sum_ <= targetSum:
+        return True
+    else:
+        return False
 
 
 
