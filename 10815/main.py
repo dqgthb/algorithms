@@ -31,11 +31,10 @@ def main(f=None):
     # ####################################
 
     cards.sort()
-    for num in nums:
+    result = [0] * M
+    for i, num in enu(nums):
         idx = bl(cards)
-
-
-
+        if idx < len(cards) and cards[idx] == num:
 
 
 
