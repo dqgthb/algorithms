@@ -37,7 +37,7 @@ def binaryRight(val, left, right, arr, mid, targetSum):
 
     mid = (left + right) // 2
     midVal = sumWithUpperbound(arr, mid, targetSum)
-    if midVal < val:
+    if midVal <= val:
 
 
 
