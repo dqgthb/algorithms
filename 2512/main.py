@@ -28,10 +28,17 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+    print(sumWithUpperbound(arr, 128))
+
 
 def sumWithUpperbound(arr, x):
     sum_ = 0
     for i in arr:
+        if i < x:
+            sum_ += i
+        else:
+            sum_ += x
+    return sum_
 
 
 # #############################################################################
