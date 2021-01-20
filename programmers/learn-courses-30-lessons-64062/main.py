@@ -1,9 +1,11 @@
 def solution(stones, k):
     count = 0
-
+    # rightmost number of stones required to use up k stones.
     return binRight(k, min(stones), max(stones)+1, stones) - 1
 
 
+# Returns the rightmost index where 'val' can fit in a sorted list.
+# e.g. 1 1 1 2 2 2 3 3 5 5 <- binRight(2) returns 6
 def binRight(val, left, right, stones):
     if left == right:
         return left
@@ -17,6 +19,7 @@ def binRight(val, left, right, stones):
         return binRight(val, mid+1, right, stones)
 
 
+# minimum number of k required for 'people' people to cross the river.
 def lowerboundK(stones, people):
     people -= 1
     stones = [stone - people for stone in stones]
