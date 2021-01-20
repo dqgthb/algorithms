@@ -28,7 +28,7 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    print(sumWithUpperbound(arr, 128))
+    #print(sumWithUpperbound(arr, 127))
 
 
 def sumWithUpperbound(arr, x):
