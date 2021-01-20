@@ -30,7 +30,11 @@ def main(f=None):
 
     #idx = binaryRight(True, 0, max(arr)+1, arr, targetSum)-1
 
-    idx = br() - 1
+    wrapper = Wrapper()
+    idx = br(wrapper, -1, 0, max(arr)+1) - 1
+
+class wrapper:
+    def __init__()
 
 
 
