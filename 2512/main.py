@@ -47,7 +47,11 @@ def sumWithUpperbound(arr, x, targetSum):
         return False
 
 
-def SortedCollections(object):
+
+class sortedCollection:
+    def __init__(self):
+        pass
+
 
 
 
