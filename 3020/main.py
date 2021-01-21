@@ -48,6 +48,8 @@ def main(f=None):
         print(encounterBruteforce(up, h))
 
 
+def upEncounterBisect(up, height):
+    return encounterBruteforce(up, H-h)
 
 def encounterBothBruteforce(up, down, height):
     count = 0
