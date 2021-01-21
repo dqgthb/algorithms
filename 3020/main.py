@@ -42,6 +42,8 @@ def main(f=None):
     up.sort()
     down.sort()
 
+    for h in range(H)
+
 def encounterBruteforce(arr, height):
     count = 0
     for i in arr:
