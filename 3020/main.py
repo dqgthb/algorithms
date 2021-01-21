@@ -62,7 +62,7 @@ def main(f=None):
 
 
 def upEncounterBisect(up, height):
-    return encounterBruteforce(up, H-height+1)
+    return encounterBisect(up, H-height+1)
 
 
 def upEncounterBisectEfficient(arr, height):
@@ -71,7 +71,7 @@ def upEncounterBisectEfficient(arr, height):
 
 
 def encounterBothBisect(up, down, height):
-    return upEncounterBisectEfficient(up, height) + encounterBisect(down, height)
+    return upEncounterBisect(up, height) + encounterBisect(down, height)
 
 
 def encounterBisect(arr, height):
