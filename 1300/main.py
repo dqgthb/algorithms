@@ -28,6 +28,8 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+    ans = binSearch(k, 1, N*N)
+    print(ans)
 
 def binSearch(val, left, right):
     if left == right:
@@ -37,6 +39,10 @@ def binSearch(val, left, right):
     midVal = indexOfNum(mid)
 
     if val <= midVal:
+        return binSearch(val, left, mid)
+    else:
+        return binSearch(val, mid+1, right)
+
 
 
 
