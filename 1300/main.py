@@ -28,9 +28,10 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    for i in range(1, 5):
-        n = indexOfNum(i)
-        print()
+    for i in range(1, N*N+1):
+        print(indexOfNum(i))
+
+
 
 
 def indexOfNum(n):
