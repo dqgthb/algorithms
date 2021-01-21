@@ -31,10 +31,16 @@ def main(f=None):
     for _ in range(N):
         if downSwitch:
             down.append(int(input()))
+            downSwitch += 1
         else:
+            up.append(int(input()))
+            downSwitch = not downSwitch
 
     # ######## INPUT AREA END ############
     # ####################################
+
+    print(up)
+    print(down)
 
 
 # #############################################################################
