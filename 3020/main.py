@@ -70,6 +70,9 @@ def upEncounterBisectEfficient(arr, height):
     return len(arr) - firstEncounter
 
 
+def encounterBothBisectEfficient(up, down, height):
+
+
 def encounterBothBisect(up, down, height):
     return upEncounterBisectEfficient(up, height) + encounterBisect(down, height)
 
