@@ -27,7 +27,7 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-def
+def indexOfNum(n):
 
 
 
