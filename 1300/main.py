@@ -28,10 +28,18 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+    n = indexOfNum(16)
+    print(n)
+
+
 def indexOfNum(n):
-    numberOfSmallerNumbers = 0
+    numberOfSmallerOfEqualNumbers = 0
     for i in range(N):
         q, r = divmod(n, i)
+        numberOfSmallerOfEqualNumbers += q
+    return q
+
+
 
 
 
