@@ -31,7 +31,7 @@ def main(f=None):
     for _ in range(N):
         if downSwitch:
             down.append(int(input()))
-            downSwitch += 1
+            downSwitch = not downSwitch
         else:
             up.append(int(input()))
             downSwitch = not downSwitch
@@ -39,8 +39,8 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    print(up)
-    print(down)
+    up.sort()
+    down.sort()
 
 
 # #############################################################################
