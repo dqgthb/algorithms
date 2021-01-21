@@ -19,9 +19,8 @@ def main(f=None):
     init(f)
     # sys.setrecursionlimit(10**9)
     # ####################################
-    # ######## INPUT AREA BEGIN ##########
+   # ######## INPUT AREA BEGIN ##########
     global N, H
-    input = sys.stdin.readline
     N, H = map(int, input().split())
     # Stalagmite: suksoon (bottom up)
     # Stalactite: jongyoosuk (top down)
