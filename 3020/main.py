@@ -39,7 +39,7 @@ def main(f=None):
             downSwitch = not downSwitch
     '''
 
-    for _ in range(N):
+    for _ in range(N//2):
         down.append(int(input()))
         up.append(int(input()))
 
