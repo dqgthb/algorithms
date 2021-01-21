@@ -23,22 +23,19 @@ def main(f=None):
 
     global N, A
     N = int(input())
-    A = map(int, input().split())
+    A = [int(i) for i in input().split()]
 
     # ######## INPUT AREA END ############
     # ####################################
 
     seq = [A[0]]
     for i in A[1:]:
-        if i > seq:
+        if i > seq[-1]:
             seq.append(i)
         else:
             idx = bl(seq, i)
             seq[idx] = i
     print(len(seq))
-
-
-
 
 
 # #############################################################################
