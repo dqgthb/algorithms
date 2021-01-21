@@ -28,6 +28,7 @@ def main(f=None):
     up = []
     down = []
 
+    '''
     downSwitch = True
     for _ in range(N):
         if downSwitch:
@@ -36,10 +37,11 @@ def main(f=None):
         else:
             up.append(int(input()))
             downSwitch = not downSwitch
+    '''
 
     for _ in range(N):
-        down.append(int(input())
-        up.append(int(input())
+        down.append(int(input()))
+        up.append(int(input()))
 
     # ######## INPUT AREA END ############
     # ####################################
