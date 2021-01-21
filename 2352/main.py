@@ -29,6 +29,11 @@ def main(f=None):
 
     seq = [arr[0]]
     for i in arr[1:]:
+        if i > seq[-1]:
+            seq.append(i)
+        else:
+            seq[bl(seq, i)] = i
+    print(len(seq))
 
 
 # #############################################################################
