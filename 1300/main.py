@@ -31,6 +31,7 @@ def main(f=None):
     ans = binSearch(k-1, 1, N*N+1)
     print(ans)
 
+
 def binSearch(val, left, right):
     if left == right:
         return left
@@ -42,8 +43,6 @@ def binSearch(val, left, right):
         return binSearch(val, left, mid)
     else:
         return binSearch(val, mid+1, right)
-
-
 
 
 def indexOfNum(n):
@@ -58,14 +57,6 @@ def indexOfNum(n):
         else:
             numberOfSmallerOfEqualNumbers += N
     return numberOfSmallerOfEqualNumbers-1
-
-
-
-
-
-
-
-
 
 
 # #############################################################################
