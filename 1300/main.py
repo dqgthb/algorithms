@@ -29,12 +29,14 @@ def main(f=None):
     # ####################################
 
 
-def binSearch(k, left, right):
+def binSearch(val, left, right):
     if left == right:
         return left
 
     mid = (left + right) // 2
     midVal = indexOfNum(mid)
+
+    if val <= midVal:
 
 
 
