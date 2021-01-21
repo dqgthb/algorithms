@@ -28,8 +28,9 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    n = indexOfNum(16)
-    print(n)
+    for i in range(1, 5):
+        n = indexOfNum(i)
+        print(n)
 
 
 def indexOfNum(n):
@@ -37,7 +38,7 @@ def indexOfNum(n):
     for i in range(1, N+1):
         q, r = divmod(n, i)
         numberOfSmallerOfEqualNumbers += q
-    return q
+    return numberOfSmallerOfEqualNumbers
 
 
 
