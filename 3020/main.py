@@ -49,6 +49,10 @@ def encounterBruteforce(arr, height):
             count += 1
     return count
 
+def encounterBisect(arr, height):
+    firstEncounter = bl(arr, height, 0, len(H)+1)
+    return ~
+
 
 
 # #############################################################################
