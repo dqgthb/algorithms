@@ -43,16 +43,15 @@ def main(f=None):
     up.sort()
     down.sort()
 
-    max_ = 0
-    maxCount = 0
+    min_ = 10**9
+    minCount = 0
     for h in range(1, H+1):
         cand = encounterBothBisect(up, down, h)
-        if cand > max_:
-            max_ = cand
-            maxCount = 1
-        elif cand == max_:
-            maxCount += 1
-        print(cand)
+        if cand < min_:
+            min_ = cand
+            minCount = 1
+        elif cand == min_:
+            minCount += 1
 
 
 def upEncounterBisect(up, height):
