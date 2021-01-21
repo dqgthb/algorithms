@@ -32,10 +32,13 @@ def main(f=None):
     #idx = br(wrap, wrap[0], 0, 2000000001)
     #print(idx)
 
-    X = 100
-    Y = 80
+    x = 100
+    y = 80 * 100
 
-    q, r = divmod(Y, X)
+    q, r = divmod(y, x)
+
+    n = (r*x - r - x*x) / (y - r)
+    print(n)
 
 
 
