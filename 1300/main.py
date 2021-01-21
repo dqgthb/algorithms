@@ -45,7 +45,7 @@ def indexOfNum(n):
             numberOfSmallerOfEqualNumbers += q
         else:
             numberOfSmallerOfEqualNumbers += N
-    return numberOfSmallerOfEqualNumbers
+    return numberOfSmallerOfEqualNumbers-1
 
 
 
