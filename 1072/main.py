@@ -32,6 +32,11 @@ def main(f=None):
     #idx = br(wrap, wrap[0], 0, 2000000001)
     #print(idx)
 
+    X = 100
+    Y = 80
+
+    q, r = divmod(Y, X)
+
 
 
 
