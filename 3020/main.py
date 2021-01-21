@@ -52,7 +52,7 @@ def main(f=None):
             maxCount = 1
         elif cand == max_:
             maxCount += 1
-    print(max_, maxCount)
+        print(cand)
 
 
 def upEncounterBisect(up, height):
