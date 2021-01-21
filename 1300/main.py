@@ -35,6 +35,8 @@ def main(f=None):
 
 
 def indexOfNum(n):
+    if n > N * N:
+        return "NONE"
     numberOfSmallerOfEqualNumbers = 0
     for i in range(1, N+1):
         q, r = divmod(n, i)
