@@ -29,7 +29,7 @@ def main(f=None):
     # ####################################
 
 
-    for i in range(1, N*N+1):
+    for i in range(1, ):
         print(i, indexOfNum(i))
 
 
