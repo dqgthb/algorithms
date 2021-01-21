@@ -21,6 +21,7 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
+    global N, k
     N = int(input())
     k = int(input())
 
@@ -28,6 +29,10 @@ def main(f=None):
     # ####################################
 
 def indexOfNum(n):
+    for i in range(N):
+
+
+
 
 
 
