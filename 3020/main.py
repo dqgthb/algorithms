@@ -42,9 +42,12 @@ def main(f=None):
     up.sort()
     down.sort()
 
-
-def encounter(arr, height):
-    for i in
+def encounterBruteforce(arr, height):
+    count = 0
+    for i in arr:
+        if height <= i:
+            count += 1
+    return count
 
 
 
