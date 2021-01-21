@@ -38,6 +38,7 @@ def main(f=None):
             up.append(int(input()))
             downSwitch = not downSwitch
     '''
+    input = sys.stdin.readline
 
     for _ in range(N//2):
         down.append(int(input()))
@@ -68,9 +69,6 @@ def upEncounterBisect(up, height):
 def upEncounterBisectEfficient(arr, height):
     firstEncounter = bl(arr, H-height+1, 0, len(arr))
     return len(arr) - firstEncounter
-
-
-def encounterBothBisectEfficient(up, down, height):
 
 
 def encounterBothBisect(up, down, height):
