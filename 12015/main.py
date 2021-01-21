@@ -33,6 +33,9 @@ def main(f=None):
         if i > seq:
             seq.append(i)
         else:
+            idx = bl(seq, i)
+            seq[idx] = i
+    print(len(seq))
 
 
 
