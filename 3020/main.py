@@ -21,8 +21,11 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
     N, H = map(int, input().split())
-    # Stalactite:
-    # Stalagmite: sucksoon
+    # Stalagmite: suksoon (bottom up)
+    # Stalactite: jongyoosuk (top down)
+
+    up =
+    down =
 
 
 
