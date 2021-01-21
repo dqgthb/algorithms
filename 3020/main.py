@@ -21,6 +21,7 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
     global N, H
+    input = sys.stdin.readline
     N, H = map(int, input().split())
     # Stalagmite: suksoon (bottom up)
     # Stalactite: jongyoosuk (top down)
@@ -38,7 +39,6 @@ def main(f=None):
             up.append(int(input()))
             downSwitch = not downSwitch
     '''
-    input = sys.stdin.readline
 
     for _ in range(N//2):
         down.append(int(input()))
