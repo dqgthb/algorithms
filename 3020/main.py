@@ -20,6 +20,11 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
+    N, H = map(int, input().split())
+    # Stalactite:
+    # Stalagmite: sucksoon
+
+
 
     # ######## INPUT AREA END ############
     # ####################################
