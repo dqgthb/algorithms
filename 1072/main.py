@@ -40,6 +40,8 @@ def main(f=None):
     n = nume / deno
     if n > 0:
         print(math.ceil(n))
+    else:
+        print(-1)
 
 
 
