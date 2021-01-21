@@ -43,9 +43,9 @@ def main(f=None):
     up.sort()
     down.sort()
 
+    print(up)
     for h in range(H):
-        print(encounterBruteforce(down, h))
-        print(encounterBisect(down, h))
+        print(encounterBruteforce(up, h))
 
 def encounterBruteforce(arr, height):
     count = 0
@@ -55,7 +55,7 @@ def encounterBruteforce(arr, height):
     return count
 
 def encounterBisect(arr, height):
-    firstEncounter = bl(arr, height, 0, len(H)+1)
+    firstEncounter = bl(arr, height, 0, H+1)
     return len(arr) - firstEncounter
 
 
