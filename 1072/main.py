@@ -32,11 +32,16 @@ def main(f=None):
     #idx = br(wrap, wrap[0], 0, 2000000001)
     #print(idx)
 
-    x = 100
-    y = 80 * 100
-
     q, r = divmod(y, x)
 
+    nume = y - q*x - x
+    deno = q - 99
+
+    n = nume / deno
+
+    print(nume, deno)
+    print(n)
+    print(math.ceil(n))
 
 
 
