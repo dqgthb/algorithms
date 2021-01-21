@@ -36,13 +36,8 @@ def main(f=None):
     y = 80 * 100
 
     q, r = divmod(y, x)
-    print(q, r)
-
-    print((y - r)/x)
 
 
-    n = (r*x - r - x*x) / (y - r)
-    print(n)
 
 
 
