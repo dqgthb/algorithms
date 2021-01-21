@@ -24,10 +24,14 @@ def main(f=None):
     # Stalagmite: suksoon (bottom up)
     # Stalactite: jongyoosuk (top down)
 
-    up =
-    down =
+    up = []
+    down = []
 
-
+    downSwitch = True
+    for _ in range(N):
+        if downSwitch:
+            down.append(int(input()))
+        else:
 
     # ######## INPUT AREA END ############
     # ####################################
