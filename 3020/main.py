@@ -45,7 +45,7 @@ def main(f=None):
 
     max_ = 0
     maxCount = 0
-    for h in range(H):
+    for h in range(1, H+1):
         cand = encounterBothBisect(up, down, h)
         if cand > max_:
             max_ = cand
@@ -53,13 +53,6 @@ def main(f=None):
         elif cand == max_:
             maxCount += 1
     print(max_, maxCount)
-
-    for h in range(H):
-        print(upEncounterBisect(up, h), end=' ')
-    print()
-    for h in range(H):
-        print(encounterBisect(down, h), end=' ')
-
 
 
 def upEncounterBisect(up, height):
