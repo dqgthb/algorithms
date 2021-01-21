@@ -21,21 +21,24 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    X, Y = map(int, input().split())
+    #X, Y = map(int, input().split())
 
     # ######## INPUT AREA END ############
     # ####################################
 
-    Z = Y * 100 // X
+    wrap = Wrap(53, 47)
+    print(wrap[0])
+    bl()
 
-class wrap:
+
+class Wrap:
     def __init__(s, X, Y):
         s.X = X
         s.Y = Y
         pass
 
     def __getitem__(s, n):
-        return (s.Y ) * 100 // s.X
+        return (s.Y + n) * 100 // s.X
 
 
 # #############################################################################
