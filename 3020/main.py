@@ -43,11 +43,11 @@ def main(f=None):
     up.sort()
     down.sort()
 
-    print(up)
+    max_ = 0
+    maxCount = 0
     for h in range(H):
-        a = encounterBothBruteforce(up, down, h)
-        b = encounterBothBisect(up, down, h)
-        print(a, b)
+        cand = encounterBothBisect(up, down, h)
+        if max_ =
 
 
 
