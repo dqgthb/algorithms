@@ -64,7 +64,7 @@ def encounterBothBisect(up, down, height):
 
 
 def encounterBisect(arr, height):
-    firstEncounter = bl(arr, height, 1, H+1)
+    firstEncounter = bl(arr, height, 0, H+1)
     return len(arr) - firstEncounter
 
 
