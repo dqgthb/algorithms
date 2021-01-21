@@ -21,7 +21,8 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    #X, Y = map(int, input().split())
+    x, y = map(int, input().split())
+    y *= 100
 
     # ######## INPUT AREA END ############
     # ####################################
@@ -36,12 +37,9 @@ def main(f=None):
 
     nume = y - q*x - x
     deno = q - 99
-
     n = nume / deno
-
-    print(nume, deno)
-    print(n)
-    print(math.ceil(n))
+    if n > 0:
+        print(math.ceil(n))
 
 
 
