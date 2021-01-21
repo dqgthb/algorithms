@@ -28,9 +28,9 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+
     for i in range(1, N*N+1):
         print(indexOfNum(i))
-
 
 
 
