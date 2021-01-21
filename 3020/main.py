@@ -50,6 +50,7 @@ def main(f=None):
 def encounterBothBruteforce(up, down, height):
     count = 0
     for i in up:
+        if count > H - i:
 
 
 def encounterBruteforce(arr, height):
