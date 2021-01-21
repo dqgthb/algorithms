@@ -43,6 +43,9 @@ def main(f=None):
     down.sort()
 
 
+def encounter(arr, height):
+    for i in
+
 
 
 # #############################################################################
