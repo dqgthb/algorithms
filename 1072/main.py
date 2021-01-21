@@ -37,8 +37,10 @@ def main(f=None):
 
     q, r = divmod(y, x)
 
-    n = (y - r - q*r - x) // (1 + q - 100)
-    print(n)
+    nume = (y - r - q*r - x)
+    deno = (1 + q - 100)
+    print(nume, deno)
+
 
 
 
