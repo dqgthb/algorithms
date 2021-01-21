@@ -20,6 +20,7 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
+    global N, H
     N, H = map(int, input().split())
     # Stalagmite: suksoon (bottom up)
     # Stalactite: jongyoosuk (top down)
@@ -42,7 +43,9 @@ def main(f=None):
     up.sort()
     down.sort()
 
-    for h in range(H)
+    for h in range(H):
+        print(encounterBruteforce(down, h))
+        print(encounterBisect(down, h))
 
 def encounterBruteforce(arr, height):
     count = 0
