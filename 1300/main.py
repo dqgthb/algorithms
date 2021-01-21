@@ -29,7 +29,9 @@ def main(f=None):
     # ####################################
 
 def indexOfNum(n):
+    numberOfSmallerNumbers = 0
     for i in range(N):
+        q, r = divmod(n, i)
 
 
 
