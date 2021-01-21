@@ -28,7 +28,8 @@ def main(f=None):
 
     wrap = Wrap(53, 47)
     print(wrap[0])
-    br(wrap, wrap[0], 0, 1000000001)
+    idx = br(wrap, wrap[0], 0, 1000000001)
+    print(idx)
 
 
 class Wrap:
