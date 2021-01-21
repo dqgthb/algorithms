@@ -45,11 +45,11 @@ def main(f=None):
 
     print(up)
     for h in range(H):
-        print(encounterBruteforce(up, h))
+        a = encounterBothBruteforce(up, down, height)
 
 
 def upEncounterBisect(up, height):
-    return encounterBruteforce(up, H-h)
+    return encounterBruteforce(up, H-height+1)
 
 def encounterBothBruteforce(up, down, height):
     count = 0
