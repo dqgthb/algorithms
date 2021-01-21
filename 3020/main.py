@@ -56,7 +56,11 @@ def main(f=None):
     print(max_, maxCount)
     '''
 
-    for h in range(H)
+    for h in range(H):
+        print(upEncounterBisect(up, h), end=' ')
+    print()
+    for h in range(H):
+        print(encounterBisect(down, h), end=' ')
 
 
 
