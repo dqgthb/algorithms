@@ -26,9 +26,9 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    wrap = Wrap(99000, 0)
+    wrap = Wrap(47, 47)
     #print(wrap[0])
-    print(wrap[1000])
+    #print(wrap[000])
     idx = br(wrap, wrap[0], 0, 1000000001)
     print(idx)
 
