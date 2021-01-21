@@ -37,6 +37,10 @@ def main(f=None):
             up.append(int(input()))
             downSwitch = not downSwitch
 
+    for _ in range(N):
+        down.append(int(input())
+        up.append(int(input())
+
     # ######## INPUT AREA END ############
     # ####################################
 
@@ -52,6 +56,7 @@ def main(f=None):
             minCount = 1
         elif cand == min_:
             minCount += 1
+    print(min_, minCount)
 
 
 def upEncounterBisect(up, height):
