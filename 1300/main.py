@@ -30,14 +30,17 @@ def main(f=None):
 
     for i in range(1, 5):
         n = indexOfNum(i)
-        print(n)
+        print()
 
 
 def indexOfNum(n):
     numberOfSmallerOfEqualNumbers = 0
     for i in range(1, N+1):
         q, r = divmod(n, i)
-        numberOfSmallerOfEqualNumbers += q
+        if q <= n:
+            numberOfSmallerOfEqualNumbers += q
+        else:
+            numberOfSmallerOfEqualNumbers += n
     return numberOfSmallerOfEqualNumbers
 
 
