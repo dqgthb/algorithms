@@ -41,8 +41,8 @@ def main(f=None):
 
     up.sort()
     down.sort()
-    upRev = [H - i for i in up]
-    print(upRev)
+
+
 
 
 # #############################################################################
