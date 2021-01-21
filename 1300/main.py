@@ -37,13 +37,14 @@ def main(f=None):
 def indexOfNum(n):
     if n > N * N:
         return "NONE"
+
     numberOfSmallerOfEqualNumbers = 0
     for i in range(1, N+1):
         q, r = divmod(n, i)
-        if q <= n:
+        if q <= N:
             numberOfSmallerOfEqualNumbers += q
         else:
-            numberOfSmallerOfEqualNumbers += n
+            numberOfSmallerOfEqualNumbers += N
     return numberOfSmallerOfEqualNumbers
 
 
