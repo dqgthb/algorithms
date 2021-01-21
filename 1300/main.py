@@ -30,7 +30,7 @@ def main(f=None):
 
 
     for i in range(1, N*N+1):
-        print(indexOfNum(i))
+        print(i, indexOfNum(i))
 
 
 
