@@ -28,7 +28,7 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    for i in range(1, N*N):
+    for i in range(1, N*N+1):
         print(i, indexOfNum(i))
 
     ans = binSearch(k, 1, N*N)
