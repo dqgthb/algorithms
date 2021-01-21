@@ -28,7 +28,7 @@ def main(f=None):
 
     wrap = Wrap(99000, 0)
     #print(wrap[0])
-    print(wrap[990])
+    print(wrap[1000])
     idx = br(wrap, wrap[0], 0, 1000000001)
     print(idx)
 
@@ -40,7 +40,7 @@ class Wrap:
         pass
 
     def __getitem__(s, n):
-        return (s.Y + n) * 100 // s.X
+        return (s.Y + n) * 100 // (s.X + n)
 
 
 # #############################################################################
