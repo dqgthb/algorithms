@@ -61,6 +61,12 @@ def upEncounterBisect(up, height):
 def encounterBothBisect(up, down, height):
     return upEncounterBisect(up, height) + encounterBisect(down, height)
 
+
+def encounterBisect(arr, height):
+    firstEncounter = bl(arr, height, 0, H+1)
+    return len(arr) - firstEncounter
+
+
 def encounterBothBruteforce(up, down, height):
     count = 0
     for i in up:
@@ -79,11 +85,6 @@ def encounterBruteforce(arr, height):
         if height <= i:
             count += 1
     return count
-
-def encounterBisect(arr, height):
-    firstEncounter = bl(arr, height, 0, H+1)
-    return len(arr) - firstEncounter
-
 
 
 # #############################################################################
