@@ -34,7 +34,7 @@ def main(f=None):
 
 def indexOfNum(n):
     numberOfSmallerOfEqualNumbers = 0
-    for i in range(N):
+    for i in range(1, N+1):
         q, r = divmod(n, i)
         numberOfSmallerOfEqualNumbers += q
     return q
