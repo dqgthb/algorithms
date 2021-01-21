@@ -37,11 +37,12 @@ def main(f=None):
 
     nume = y - q*x - x
     deno = q - 99
-    n = nume / deno
 
     if deno == 0:
         print(-1)
         return
+
+    n = nume / deno
 
     if n > 0:
         print(math.ceil(n))
