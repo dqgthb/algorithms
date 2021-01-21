@@ -47,6 +47,11 @@ def main(f=None):
     for h in range(H):
         print(encounterBruteforce(up, h))
 
+def encounterBothBruteforce(up, down, height):
+    count = 0
+    for i in up:
+
+
 def encounterBruteforce(arr, height):
     count = 0
     for i in arr:
