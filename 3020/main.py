@@ -43,6 +43,7 @@ def main(f=None):
     up.sort()
     down.sort()
 
+    '''
     max_ = 0
     maxCount = 0
     for h in range(H):
@@ -53,6 +54,10 @@ def main(f=None):
         elif cand == max_:
             maxCount += 1
     print(max_, maxCount)
+    '''
+
+    for h in range(H)
+
 
 
 def upEncounterBisect(up, height):
