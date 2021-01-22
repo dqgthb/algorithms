@@ -41,6 +41,10 @@ def main(f=None):
     mem = []
     for i in range(N):
         idx = len(A) - i - 1
+        val, length = seq.pop()
+        if length == l:
+            mem.append(val)
+            l -= 1
 
 
 
