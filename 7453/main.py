@@ -43,7 +43,7 @@ def main(f=None):
     CD.sort()
 
     '''
-    # binary search method
+    # binary search method - time out for pypy3 submission
     oldCount = 0
     for i in AB:
         idx = bl(CD, -i)
@@ -53,6 +53,7 @@ def main(f=None):
     print(oldCount)
     '''
 
+    # two pointer method
     left, right = 0, len(CD)-1
 
     count = 0
@@ -67,6 +68,7 @@ def main(f=None):
         if lr == 0:
             sameAB = 1
             sameCD = 1
+            origLeft, origRight = left, right
             newL = left + 1
             newR = right + 1
 
@@ -80,7 +82,6 @@ def main(f=None):
             count += sameAB * sameCD
             left = newL
             right = newR
-            print(l, r, count)
 
         elif lr < 0:
             left += 1
