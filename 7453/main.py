@@ -43,18 +43,24 @@ def main(f=None):
     left, right = 0, len(CD)-1
 
     count = 0
+    print(AB)
+    print(CD)
+
     while left < right:
         l = AB[left]
         r = CD[right]
         lr = l + r
+        print(l, r, lr)
 
         if lr == 0:
             count += 1
             left += 1
+        elif lr < 0:
+            left += 1
+        else:
+            right -= 1
 
-
-
-
+    print(count)
 
 # #############################################################################
 # #############################################################################
