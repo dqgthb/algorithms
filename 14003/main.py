@@ -29,10 +29,11 @@ def main(f=None):
 
     seq = [A[0]]
     for i in A[1:]:
-        if i > seq:
+        if i > seq[-1]:
             seq.append(i)
         else:
-            seq[bl(A, i)]
+            seq[bl(A, i)] = i
+    print(len(seq))
 
 
 
