@@ -52,8 +52,10 @@ def main(f=None):
         lr = l + r
 
         if lr == 0:
-            leftCount = 0
-            rightCount = 0
+            sameAB = 0
+            sameCD = 0
+
+            while
 
 
         elif lr < 0:
