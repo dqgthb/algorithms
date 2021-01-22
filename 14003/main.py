@@ -29,6 +29,7 @@ def main(f=None):
 
     l = 1
     seq = [(A[0], l)]
+    print(seq)
     for i in A[1:]:
         if i > seq[-1][0]:
             l += 1
