@@ -35,9 +35,8 @@ def main(f=None):
             seq.append((i, l))
         else:
             idx = bl(A, i)
-            seq[bl(A, i)] = (i, l)
-    print(len(seq))
-    print(seq)
+            if seq[idx][0] > i:
+                seq[idx] = (i, l)
     print(l)
 
     mem = []
@@ -46,7 +45,7 @@ def main(f=None):
         if length == l:
             mem.append(val)
             l -= 1
-    print(list(reversed(mem)))
+    print(*list(reversed(mem)))
 
 
 
