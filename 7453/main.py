@@ -54,8 +54,8 @@ def main(f=None):
         if lr == 0:
             sameAB = 1
             sameCD = 1
-            newL = l+1
-            newR = r-1
+            newL = left + 1
+            newR = right + 1
 
             while l < N and AB[newL] + r == 0:
                 newL += 1
@@ -65,6 +65,8 @@ def main(f=None):
                 sameCD += 1
 
             count += sameAB * sameCD
+            left = newL
+            right = newR
 
         elif lr < 0:
             left += 1
