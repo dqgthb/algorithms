@@ -42,10 +42,8 @@ def main(f=None):
 
     for i in AB:
         idx = bl(CD, -i)
-        if idx < N and CD[idx] == i:
+        if idx < N and CD[idx] == -i:
             print(i, -i)
-
-
 
     left, right = 0, len(CD)-1
 
