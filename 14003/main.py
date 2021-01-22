@@ -28,12 +28,14 @@ def main(f=None):
     # ####################################
 
     seq = [A[0]]
+    log = [0]
     for i in A[1:]:
-        if i > seq[-1]:
+        if i > seq[-1][0]:
             seq.append(i)
         else:
             seq[bl(A, i)] = i
     print(len(seq))
+    print(seq)
 
 
 
