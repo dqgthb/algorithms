@@ -57,19 +57,15 @@ def main(f=None):
     left, right = 0, len(CD)-1
 
     count = 0
-    print(AB)
-    print(CD)
 
     while left < NN and right >= 0:
-        l = AB[left]
-        r = CD[right]
+        l, r = AB[left], CD[right]
         lr = l + r
 
         if lr == 0:
             sameAB = 0
             sameCD = 0
-
-            while left < NN and AB[] + r == 0:
+            while left < NN and AB[left] + r == 0:
                 left += 1
                 sameAB += 1
             while right >= 0 and l + CD[right] == 0:
