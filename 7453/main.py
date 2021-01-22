@@ -47,6 +47,9 @@ def main(f=None):
     print(CD)
 
     while left < right:
+        l = AB[left]
+        r = CD[right]
+        lr = l + r
 
         if lr == 0:
             sameAB = 1
