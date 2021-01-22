@@ -28,8 +28,8 @@ def main(f=None):
     # ####################################
 
     l = 1
-    seq = [(A[0], l)]
-    print(seq)
+    seq = []
+    seq.append((A[0], l))
     for i in A[1:]:
         if i > seq[-1][0]:
             l += 1
@@ -41,7 +41,7 @@ def main(f=None):
     print(l)
 
     mem = []
-    for i in range(l):
+    for i in range(len(seq)):
         val, length = seq.pop()
         if length == l:
             mem.append(val)
