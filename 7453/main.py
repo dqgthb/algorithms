@@ -39,9 +39,12 @@ def main(f=None):
     CD = [C[i] + D[j] for i in range(N) for j in range(N)]
     CD.sort()
 
+    count = 0
     for i in AB:
         idx = bl(CD, -i)
-        if idx < len(CD):
+        if idx < len(CD) and CD[idx] == -i:
+            count += 1
+    print(count)
 
 # #############################################################################
 # #############################################################################
