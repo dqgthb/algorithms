@@ -52,10 +52,12 @@ def main(f=None):
         lr = l + r
 
         if lr == 0:
-            sameAB = 0
-            sameCD = 0
+            sameAB = 1
+            sameCD = 1
+            newL = l+1
+            newR = r-1
 
-            while
+            while l < N and AB[newL] + r == 0:
 
 
         elif lr < 0:
