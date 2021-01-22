@@ -50,11 +50,12 @@ def main(f=None):
         l = AB[left]
         r = CD[right]
         lr = l + r
-        print(l, r, lr)
 
         if lr == 0:
-            count += 1
-            left += 1
+            leftCount = 0
+            rightCount = 0
+
+
         elif lr < 0:
             left += 1
         else:
