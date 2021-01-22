@@ -37,14 +37,15 @@ def main(f=None):
             seq[bl(A, i)] = (i, l)
     print(len(seq))
     print(seq)
+    print(l)
 
     mem = []
-    for i in range(N):
-        idx = len(A) - i - 1
+    for i in range(l):
         val, length = seq.pop()
         if length == l:
             mem.append(val)
             l -= 1
+    print(list(reversed(mem)))
 
 
 
