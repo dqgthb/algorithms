@@ -34,6 +34,8 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+    NN = N*N
+
     AB = [A[i] + B[j] for i in range(N) for j in range(N)]
     AB.sort()
 
@@ -43,7 +45,7 @@ def main(f=None):
     oldCount = 0
     for i in AB:
         idx = bl(CD, -i)
-        if idx < N and CD[idx] == -i:
+        if idx < NN and CD[idx] == -i:
             print(i, -i)
             oldCount += 1
     print(oldCount)
