@@ -66,22 +66,17 @@ def main(f=None):
         lr = l + r
 
         if lr == 0:
-            sameAB = 1
-            sameCD = 1
-            origLeft, origRight = left, right
-            newL = left + 1
-            newR = right + 1
+            sameAB = 0
+            sameCD = 0
 
-            while newL < NN and AB[newL] + r == 0:
-                newL += 1
+            while left < NN and AB[] + r == 0:
+                left += 1
                 sameAB += 1
-            while newR >= 0 and l + CD[newR] == 0:
-                newR -= 1
+            while right >= 0 and l + CD[right] == 0:
+                right -= 1
                 sameCD += 1
 
             count += sameAB * sameCD
-            left = newL
-            right = newR
 
         elif lr < 0:
             left += 1
