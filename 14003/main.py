@@ -27,13 +27,14 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    seq = [A[0]]
-    log = [0]
+    l = 1
+    seq = [(A[0], l)]
     for i in A[1:]:
         if i > seq[-1][0]:
-            seq.append(i)
+            l += 1
+            seq.append((i, l))
         else:
-            seq[bl(A, i)] = i
+            seq[bl(A, i)] = (i, l)
     print(len(seq))
     print(seq)
 
