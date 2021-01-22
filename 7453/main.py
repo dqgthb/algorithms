@@ -35,11 +35,18 @@ def main(f=None):
     # ####################################
 
     AB = [A[i] + B[j] for i in range(N) for j in range(N)]
+    AB.sort()
 
     CD = [C[i] + D[j] for i in range(N) for j in range(N)]
     CD.sort()
 
-    left, right = 0, len(CD)
+    left, right = 0, len(CD)-1
+
+    sum_ = 0
+    while left < right:
+        l = AB[left]
+        r = CD[right]
+
 
 
 
