@@ -40,10 +40,13 @@ def main(f=None):
     CD = [C[i] + D[j] for i in range(N) for j in range(N)]
     CD.sort()
 
+    oldCount = 0
     for i in AB:
         idx = bl(CD, -i)
         if idx < N and CD[idx] == -i:
             print(i, -i)
+            oldCount += 1
+    print(oldCount)
 
     left, right = 0, len(CD)-1
 
