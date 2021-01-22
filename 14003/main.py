@@ -35,7 +35,7 @@ def main(f=None):
             l += 1
             seq.append((i, l))
         else:
-            idx = bl(A, i)
+            idx = bl(seq, (i, l))
             if seq[idx][0] > i:
                 seq[idx] = (i, l)
     print(l)
