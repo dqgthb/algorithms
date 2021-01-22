@@ -38,6 +38,11 @@ def main(f=None):
     print(len(seq))
     print(seq)
 
+    mem = []
+    for i in range(N):
+        idx = len(A) - i - 1
+
+
 
 
 # #############################################################################
