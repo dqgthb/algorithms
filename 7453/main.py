@@ -42,6 +42,8 @@ def main(f=None):
     CD = [C[i] + D[j] for i in range(N) for j in range(N)]
     CD.sort()
 
+    '''
+    # binary search method
     oldCount = 0
     for i in AB:
         idx = bl(CD, -i)
@@ -49,6 +51,7 @@ def main(f=None):
             print(i, -i)
             oldCount += 1
     print(oldCount)
+    '''
 
     left, right = 0, len(CD)-1
 
@@ -56,7 +59,7 @@ def main(f=None):
     print(AB)
     print(CD)
 
-    while left < right:
+    while left < NN and right >= 0:
         l = AB[left]
         r = CD[right]
         lr = l + r
@@ -67,7 +70,7 @@ def main(f=None):
             newL = left + 1
             newR = right + 1
 
-            while newL < N and AB[newL] + r == 0:
+            while newL < NN and AB[newL] + r == 0:
                 newL += 1
                 sameAB += 1
             while newR >= 0 and l + CD[newR] == 0:
