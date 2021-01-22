@@ -47,9 +47,6 @@ def main(f=None):
     print(CD)
 
     while left < right:
-        l = AB[left]
-        r = CD[right]
-        lr = l + r
 
         if lr == 0:
             sameAB = 1
@@ -57,16 +54,17 @@ def main(f=None):
             newL = left + 1
             newR = right + 1
 
-            while l < N and AB[newL] + r == 0:
+            while newL < N and AB[newL] + r == 0:
                 newL += 1
                 sameAB += 1
-            while r >= 0 and l + CD[newR] == 0:
+            while newR >= 0 and l + CD[newR] == 0:
                 newR -= 1
                 sameCD += 1
 
             count += sameAB * sameCD
             left = newL
             right = newR
+            print(l, r, count)
 
         elif lr < 0:
             left += 1
