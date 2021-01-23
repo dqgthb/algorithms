@@ -44,10 +44,11 @@ def main(f=None):
             previousElementIdx[idx] = idx-1
         else:
             idx = bl(seq, i)
-            if seq[idx] > i:
-                seq[idx] = i
+            seq[idx] = i
+            previousElementIdx[idx] = idx-1
     print(l)
     print(seq)
+    print(previousElementIdx)
 
 
 
