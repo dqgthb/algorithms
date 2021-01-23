@@ -31,15 +31,17 @@ def main(f=None):
         g[a].append((b, limit))
         g[b].append((a, limit))
     start, end = map(lambda x: int(x)-1, input().split())
-    print(start, end)
 
     # ######## INPUT AREA END ############
     # ####################################
 
+def binSearch()
+
+
+
 
 def carry(load):
-    dq = deque()
-    dq.append((start))
+    dq = deque([start])
     visited = [False] * N
     visited[start] = True
 
