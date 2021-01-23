@@ -35,7 +35,7 @@ def main(f=None):
 
     l = 1
     seq = []
-    seq.append((A[0], -1))
+    seq.append(A[0], -1))
 
     for idx, i in enu(A[1:], 1):
         if i > seq[-1][0]:
