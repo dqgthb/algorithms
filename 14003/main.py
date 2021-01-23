@@ -30,6 +30,8 @@ def main(f=None):
 
     l = 1
     seq = []
+    lastNumberWhenLISis_i = []
+
     seq.append((A[0], l))
     for i in A[1:]:
         if i > seq[-1][0]:
