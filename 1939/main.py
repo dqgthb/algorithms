@@ -42,6 +42,11 @@ def binSearch(val, left, right):
     mid = (left + right) // 2
     midVal = carry(mid)
 
+    if val > midVal:
+        return binSearch(val, left, mid)
+    else:
+        return binSearch(val, mid+1, right)
+
 
 
 
