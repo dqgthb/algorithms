@@ -56,10 +56,15 @@ def main(f=None):
     seq.append(0)
     for i in range(1, N):
         val = A[i]
-        if val > A[seq[-1]]:
-            seq.append(i)
+        if val > seq[-1]:
+            seq.append(val)
+            indices.append(i)
     else:
-        idx = bl(seq, i)
+        idx = bl(seq, val)
+        seq[idx] = val
+        indices[idx] = i
+    print(seq)
+
 
 
 
