@@ -41,20 +41,16 @@ def main(f=None):
         if i > seq[-1]:
             l += 1
             seq.append(i)
-            previousElementIdx[idx] =
         else:
             idx = bl(seq, i)
             seq[idx] = i
-            previousElementIdx[idx] = idx-1
     print(l)
     print(seq)
-    print(previousElementIdx)
 
-    seq = []
-    seq.append(A[0])
-    indices = []
-    seq.append(0)
-    for i in range(1, N):
+    seq = [A[0]]
+    indices = [0]
+
+    for i, val in enu(A, 1):
         val = A[i]
         if val > seq[-1]:
             seq.append(val)
@@ -64,6 +60,7 @@ def main(f=None):
         seq[idx] = val
         indices[idx] = i
     print(seq)
+    print(indices)
 
 
 
