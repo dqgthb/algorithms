@@ -41,7 +41,7 @@ def main(f=None):
         if i > seq[-1]:
             l += 1
             seq.append(i)
-            previousElementIdx[idx] = idx-1
+            previousElementIdx[idx] =
         else:
             idx = bl(seq, i)
             seq[idx] = i
