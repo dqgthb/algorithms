@@ -71,11 +71,8 @@ def main(f=None):
         if currIdx is None:
             break
         mem.append(A[currIdx])
-
         prevIdx = prev[currIdx]
-        if prevIdx is None:
-            break
-        mem.append()
+    print(mem)
 
 
 
