@@ -24,6 +24,10 @@ def main(f=None):
     N, M = map(int, input().split())
     g = [[] for _ in range(N)]
     for _ in range(M):
+        a, b, limit = map(int, input().split())
+        a -= 1
+        b -= 1
+        fr
 
     # ######## INPUT AREA END ############
     # ####################################
