@@ -32,7 +32,7 @@ def main(f=None):
     fa = re.finditer(f'(?={P})', T)
     arr = []
     for i in fa:
-        arr.append(i.start())
+        arr.append(i.start()+1)
     print(len(arr))
     print(*arr)
 
