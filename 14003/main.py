@@ -35,16 +35,17 @@ def main(f=None):
 
     l = 1
     seq = []
-    seq.append(A[0], -1))
+    seq.append(A[0])
 
     for idx, i in enu(A[1:], 1):
-        if i > seq[-1][0]:
+        if i > seq[-1]:
             l += 1
-            seq.append((i, l))
+            seq.append(i)
+            previousElementIdx[idx] = idx-1
         else:
-            idx = bl(seq, (i, 0))
-            if seq[idx][0] > i:
-                seq[idx] = (i, l)
+            idx = bl(seq, i)
+            if seq[idx] > i:
+                seq[idx] = i
     print(l)
     print(seq)
 
