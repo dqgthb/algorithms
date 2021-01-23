@@ -23,6 +23,7 @@ def main(f=None):
 
     N = int(input())
     A = [int(i) for i in input().split()]
+    print(A)
 
     # ######## INPUT AREA END ############
     # ####################################
