@@ -65,6 +65,10 @@ def main(f=None):
     print(indices)
     print(prev)
 
+    mem = [seq[-1]]
+    while True:
+
+
 
 
 
