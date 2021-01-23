@@ -65,12 +65,17 @@ def main(f=None):
     print(indices)
     print(prev)
 
-    mem = [seq[-1]]
+    mem = []
     currIdx = indices[-1]
     while True:
+        if currIdx is None:
+            break
+        mem.append(A[currIdx])
+
         prevIdx = prev[currIdx]
         if prevIdx is None:
             break
+        mem.append()
 
 
 
