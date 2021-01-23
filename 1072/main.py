@@ -50,13 +50,6 @@ def main(f=None):
         print(-1)
 
 
-
-
-
-
-
-
-
 class Wrap:
     def __init__(s, X, Y):
         s.X = X
