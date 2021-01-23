@@ -35,7 +35,12 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-def binSearch()
+def binSearch(val, left, right):
+    if left == right:
+        return left
+
+    mid = (left + right) // 2
+    midVal = carry(mid)
 
 
 
