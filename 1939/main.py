@@ -35,6 +35,8 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+    idx = binSearch()
+
 def binSearch(val, left, right):
     if left == right:
         return left
