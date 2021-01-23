@@ -24,6 +24,7 @@ def main(f=None):
     N = int(input())
     A = [int(i) for i in input().split()]
     print(A)
+    beforeIdx =
 
     # ######## INPUT AREA END ############
     # ####################################
@@ -42,6 +43,8 @@ def main(f=None):
                 seq[idx] = (i, l)
     print(l)
     print(seq)
+
+
 
 
 # #############################################################################
