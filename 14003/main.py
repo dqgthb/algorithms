@@ -51,8 +51,15 @@ def main(f=None):
     print(previousElementIdx)
 
     seq = []
+    seq.append(A[0])
+    indices = []
     seq.append(0)
     for i in range(1, N):
+        val = A[i]
+        if val > A[seq[-1]]:
+            seq.append(i)
+    else:
+        idx = bl(seq, i)
 
 
 
