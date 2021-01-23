@@ -44,8 +44,14 @@ def carry(load):
 
     while dq:
         curr = dq.popleft()
+        if curr == end:
+            return True
         for neighbor, limit in g[curr]:
-            if curr
+            if not visited[neighbor]:
+                if limit >= load:
+                    visited[neighbor] = True
+                    dq.append(neighbor)
+    return False
 
 
 # #############################################################################
