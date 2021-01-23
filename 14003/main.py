@@ -50,6 +50,10 @@ def main(f=None):
     print(seq)
     print(previousElementIdx)
 
+    seq = []
+    seq.append(0)
+    for i in range(1, N):
+
 
 
 
