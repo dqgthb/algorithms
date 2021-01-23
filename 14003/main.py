@@ -66,7 +66,12 @@ def main(f=None):
     print(prev)
 
     mem = [seq[-1]]
+    currIdx = indices[-1]
     while True:
+        prevIdx = prev[currIdx]
+        if prevIdx is None:
+            break
+
 
 
 
