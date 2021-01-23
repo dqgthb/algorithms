@@ -30,15 +30,18 @@ def main(f=None):
         b -= 1
         g[a].append((b, limit))
         g[b].append((a, limit))
-    start, end = map(int, input().split())
+    start, end = map(lambda x: int(x)-1, input().split())
+    print(start, end)
 
     # ######## INPUT AREA END ############
     # ####################################
 
     dq = deque()
-    dq.append(())
+    dq.append((start))
+    visited = [False] * N
+    visited[start] = True
 
-
+    while dq:
 
 # #############################################################################
 # #############################################################################
