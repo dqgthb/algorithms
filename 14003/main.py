@@ -54,8 +54,8 @@ def main(f=None):
     for i, val in enu(A[1:], 1):
         if val > seq[-1]:
             seq.append(val)
-            indices.append(i)
             prev[i] = indices[-1]
+            indices.append(i)
     else:
         idx = bl(seq, val)
         seq[idx] = val
