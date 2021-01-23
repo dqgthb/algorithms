@@ -26,58 +26,34 @@ def main(f=None):
     N = int(input())
     A = [int(i) for i in input().split()]
     N = len(A)
-    print(A)
-
-    previousElementIdx = [None] * N
 
     # ######## INPUT AREA END ############
     # ####################################
 
-    l = 1
-    seq = []
-    seq.append(A[0])
-
-    for idx, i in enu(A[1:], 1):
-        if i > seq[-1]:
-            l += 1
-            seq.append(i)
-        else:
-            idx = bl(seq, i)
-            seq[idx] = i
-    print(l)
-    print(seq)
-
     seq = [A[0]]
-    indices = [0]
-    prev = [None] * N
+    loc = [None] * N
+    loc[0] = 0
+    cnt = 1
 
     for i, val in enu(A[1:], 1):
         if val > seq[-1]:
             seq.append(val)
-            prev[i] = indices[-1]
-            indices.append(i)
-    else:
-        idx = bl(seq, val)
-        seq[idx] = val
-        prev[i] = idx-1
-        indices[idx] = i
-    print(seq)
-    print(indices)
-    print(prev)
+            loc[i] = cnt
+            cnt += 1
+        else:
+            idx = bl(seq, val)
+            seq[idx] = val
+            loc[i] = idx
+    print(cnt)
 
+    cnt -= 1
     mem = []
-    currIdx = indices[-1]
-    while True:
-        if currIdx is None:
-            break
-        mem.append(A[currIdx])
-        prevIdx = prev[currIdx]
-    print(mem)
+    for i, e in zip(range(len(loc)-1, -1, -1), reversed(loc)):
+        if e == cnt:
+            mem.append(A[i])
+            cnt -= 1
 
-
-
-
-
+    print(*reversed(mem))
 
 
 # #############################################################################
