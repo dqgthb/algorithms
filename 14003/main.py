@@ -31,13 +31,11 @@ def main(f=None):
     l = 1
     seq = []
     seq.append((A[0], l))
-    lastNumberWhenLISisLengthOf_i = [None, A[0]]
 
     for i in A[1:]:
         if i > seq[-1][0]:
             l += 1
             seq.append((i, l))
-            lastNumberWhenLISisLengthOf_i.append()
         else:
             idx = bl(seq, (i, 0))
             if seq[idx][0] > i:
