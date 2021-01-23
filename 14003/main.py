@@ -49,12 +49,13 @@ def main(f=None):
 
     seq = [A[0]]
     indices = [0]
+    prev = [-1]
 
-    for i, val in enu(A, 1):
-        val = A[i]
+    for i, val in enu(A[1:], 1):
         if val > seq[-1]:
             seq.append(val)
             indices.append(i)
+            prev.append(indices[-1])
     else:
         idx = bl(seq, val)
         seq[idx] = val
