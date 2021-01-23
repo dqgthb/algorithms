@@ -36,6 +36,7 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+def carry(load):
     dq = deque()
     dq.append((start))
     visited = [False] * N
@@ -43,8 +44,8 @@ def main(f=None):
 
     while dq:
         curr = dq.popleft()
-
-        for i in range()
+        for neighbor, limit in g[curr]:
+            if curr
 
 
 # #############################################################################
