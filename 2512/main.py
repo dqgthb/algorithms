@@ -18,7 +18,7 @@ DEBUG = False
 
 
 def main(f=None):
-    init(f)
+   init(f)
     # sys.setrecursionlimit(10**9)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
