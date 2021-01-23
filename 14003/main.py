@@ -30,7 +30,7 @@ def main(f=None):
 
     l = 1
     seq = []
-    seq.append((A[0], l))
+    seq.append((A[0], -1))
 
     for i in A[1:]:
         if i > seq[-1][0]:
@@ -43,13 +43,6 @@ def main(f=None):
     print(l)
     print(seq)
 
-    mem = []
-    for i in range(len(seq)):
-        val, length = seq.pop()
-        if length == l:
-            mem.append(val)
-            l -= 1
-    print(*list(reversed(mem)))
 
 
 
