@@ -21,6 +21,10 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
+    global T, P
+    T = input().rstrip()
+    P = input().rstrip()
+
     # ######## INPUT AREA END ############
     # ####################################
 
