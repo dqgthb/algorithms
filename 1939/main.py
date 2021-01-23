@@ -52,8 +52,6 @@ def binSearch(val, left, right):
         return binSearch(val, mid+1, right)
 
 
-
-
 def carry(load):
     dq = deque([start])
     visited = [False] * N
