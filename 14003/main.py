@@ -59,8 +59,8 @@ def main(f=None):
     else:
         idx = bl(seq, val)
         seq[idx] = val
-        indices[idx] = i
         prev[i] = idx-1
+        indices[idx] = i
     print(seq)
     print(indices)
     print(prev)
