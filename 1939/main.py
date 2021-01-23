@@ -27,10 +27,12 @@ def main(f=None):
         a, b, limit = map(int, input().split())
         a -= 1
         b -= 1
-        fr
-
+        g[a].append((b, limit))
+        g[b].append((a, limit))
     # ######## INPUT AREA END ############
     # ####################################
+
+    print(g)
 
 
 # #############################################################################
