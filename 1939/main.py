@@ -20,6 +20,7 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
+
     global N, M, g, start, end
     N, M = map(int, input().split())
     g = [[] for _ in range(N)]
@@ -29,10 +30,14 @@ def main(f=None):
         b -= 1
         g[a].append((b, limit))
         g[b].append((a, limit))
+    start, end = map(int, input().split())
+
     # ######## INPUT AREA END ############
     # ####################################
 
-    print(g)
+    dq = deque()
+    dq.append(())
+
 
 
 # #############################################################################
