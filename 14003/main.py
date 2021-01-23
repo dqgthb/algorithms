@@ -39,6 +39,7 @@ def main(f=None):
             if seq[idx][0] > i:
                 seq[idx] = (i, l)
     print(l)
+    print(seq)
 
     mem = []
     for i in range(len(seq)):
