@@ -36,6 +36,7 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+
 def carry(load):
     dq = deque()
     dq.append((start))
