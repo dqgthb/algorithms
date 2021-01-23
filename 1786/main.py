@@ -30,9 +30,11 @@ def main(f=None):
 
     import re
     fa = re.finditer(f'(?={P})', T)
-    print(len(fa))
+    arr = []
     for i in fa:
-        i.start()
+        arr.append(i.start())
+    print(len(arr))
+    print(*arr)
 
 # #############################################################################
 # #############################################################################
