@@ -21,10 +21,14 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
+    global N, A
+
     N = int(input())
     A = [int(i) for i in input().split()]
+    N = len(A)
     print(A)
-    beforeIdx =
+
+    previousElementIdx = [None] * len(A)
 
     # ######## INPUT AREA END ############
     # ####################################
