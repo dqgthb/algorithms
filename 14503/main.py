@@ -41,7 +41,7 @@ def main(f=None):
 def clean():
     global STEP
     STEP = 1
-    funcs = [None, step1, step2, a, b, c, d]
+    funcs = [None, step1, step2]
     while True:
         if STEP == 0:
             break
@@ -107,22 +107,6 @@ def retreat():
 def backXY():
     x, y = direction[(d-2)%4]
     return r+x, c+y
-
-def a():
-    pass
-
-
-def b():
-    pass
-
-
-def c():
-    pass
-
-
-def d():
-    pass
-
 
 # #############################################################################
 # #############################################################################
