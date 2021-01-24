@@ -62,10 +62,11 @@ def step2():
     global STEP
     lx, ly = leftXY()
     nx, ny = r + lx, c + ly
-    if not (0 <= nx < N and 0 <= ny < M): # wall
-        pass
+    if (0 <= nx < N and 0 <= ny < M): # wall
+        if mat[nx][ny] == 0:
 
     if mat[nx][ny] == "1":
+
 
 
 
