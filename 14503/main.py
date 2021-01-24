@@ -35,6 +35,8 @@ def main(f=None):
 
     total = 0
     clean()
+    parr(mat)
+    print(total)
 
 def clean():
     global STEP
@@ -47,10 +49,10 @@ def clean():
 
 def step1():
     global STEP, total
-    if mat[r][c] == 1:
-        mat[r][c] = 0
+    if mat[r][c] == 0:
+        mat[r][c] = 2
         total += 1
-    STEP = 2
+    STEP = 0
 
 def step2():
     global STEP
@@ -59,8 +61,7 @@ def step2():
     nx, ny = r + lx, c + ly
 
     if not (0 <= nx < N and 0 <= ny < M): # wall
-        if
-
+        pass
 
 
 
