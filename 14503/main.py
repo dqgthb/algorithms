@@ -80,6 +80,11 @@ def step2():
                 STEP = 1
                 return
             else:
+                leftRotate()
+                continue
+        else:
+            leftRotate()
+            continue
 
 
     if mat[nx][ny] == "1":
