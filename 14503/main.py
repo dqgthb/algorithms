@@ -1,5 +1,4 @@
 import os
-nonlocal
 import sys
 import itertools
 import collections
@@ -61,7 +60,7 @@ def leftXY():
 
 def leftRotate():
     global d
-    d = direction[(d-1)%4]
+    d = (d-1) % 4
 
 def advance():
     global r, c
