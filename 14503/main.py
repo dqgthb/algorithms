@@ -72,8 +72,10 @@ def step2():
     print("STEP 2")
     global STEP
     for _ in range(4):
+        print("direction is", d)
         lx, ly = leftXY()
         nx, ny = r + lx, c + ly
+        print(nx, ny)
         if (0 <= nx < N and 0 <= ny < M): # wall
             if mat[nx][ny] == 0:
                 leftRotate()
