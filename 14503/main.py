@@ -43,6 +43,7 @@ def clean():
     funcs = [None, step1, step2]
     while True:
         parr(mat)
+        input()
         if STEP == 0:
             break
         funcs[STEP]()
