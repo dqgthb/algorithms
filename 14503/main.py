@@ -57,7 +57,9 @@ def step2():
     lx, ly = direction[leftD]
     nx, ny = r + lx, c + ly
 
-    if not (0 <= nx < r and 0 <= ny < c): # wall
+    if not (0 <= nx < N and 0 <= ny < M): # wall
+
+
 
 
 def a():
