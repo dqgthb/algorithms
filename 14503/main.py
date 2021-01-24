@@ -37,6 +37,14 @@ def main(f=None):
     count = 0
 
 def clean():
+    while True:
+        pass
+
+def step1():
+    if
+    mat[r][c] =
+
+
 
 
 
