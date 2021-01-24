@@ -77,7 +77,7 @@ def step2():
         if (0 <= nx < N and 0 <= ny < M): # wall
             if mat[nx][ny] == 0:
                 leftRotate()
-                advance()
+                moveTo(nx, ny)
                 STEP = 1
                 return
             else:
@@ -90,7 +90,7 @@ def step2():
         bx, by = backXY()
         if (0 <= bx < N and 0 <= by < M):
             if mat[bx][by] != 1:
-                retreat()
+                moveTo(bx, by)
                 STEP = 2
                 return
             else:
@@ -100,11 +100,10 @@ def step2():
             STEP = 0
             return
 
-def retreat():
+def moveTo(x, y):
     global r, c
-    bx, by = backXY()
-    r = bx
-    c = by
+    r = x
+    c = y
 
 def backXY():
     x, y = direction[(d-2)%4]
