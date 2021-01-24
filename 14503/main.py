@@ -22,7 +22,7 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N, M, r, c, d, mat, direction, TOTAL
+    global N, M, r, c, d, mat, direction, total
     N, M = map(int, input().split())
     r, c, d = map(int, input().split())
     mat = [list(map(int, input().split())) for _ in range(N)]
@@ -33,9 +33,7 @@ def main(f=None):
 
     direction = [(-1, 0), (0, 1), (1, 0), (0, -1)]
 
-    TOTAL = 0
-    count = 0
-
+    total = 0
     clean()
 
 def clean():
@@ -48,9 +46,10 @@ def clean():
         funcs[STEP]()
 
 def step1():
-    global STEP
+    global STEP, total
     if mat[r][c] == 1:
         mat[r][c] = 0
+        total += 1
     STEP = 2
 
 def step2():
