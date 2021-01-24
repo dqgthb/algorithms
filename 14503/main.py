@@ -37,12 +37,14 @@ def main(f=None):
     count = 0
 
 def clean():
+    funcs = [None, step1, step2, a, b, c, d]
     while True:
-        pass
 
 def step1():
-    if
-    mat[r][c] =
+    global STEP
+    if mat[r][c] == 1:
+        mat[r][c] = 0
+    STEP = 2
 
 
 
