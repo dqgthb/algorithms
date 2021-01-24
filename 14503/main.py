@@ -51,6 +51,8 @@ def step1():
         mat[r][c] = 0
     STEP = 2
 
+def step2():
+    global STEP
 
 def a():
     pass
