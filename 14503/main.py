@@ -90,6 +90,11 @@ def step2():
         if (0 <= bx < N and 0 <= by < M):
             if mat[bx][by] != 0:
 
+def retreat():
+    global r, c
+    bx, by = backXY()
+    r = bx
+    c = by
 
 def backXY():
     x, y = direction[(d-2)%4]
