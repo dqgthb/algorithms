@@ -1,5 +1,5 @@
-# CP template Version 1.006
 import os
+nonlocal
 import sys
 import itertools
 import collections
