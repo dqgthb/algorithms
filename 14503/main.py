@@ -89,7 +89,8 @@ def step2():
     else:
         bx, by = backXY()
         if (0 <= bx < N and 0 <= by < M):
-            if mat[bx][by] != 0:
+            if mat[bx][by] != 1:
+                retreat()
                 STEP = 2
                 return
             else:
