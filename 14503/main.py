@@ -55,12 +55,12 @@ def step1():
     STEP = 0
 
 def leftXY():
-    retunr direction[leftD]
+    x, y =  direction[(d-1)%4]
+    return r + x, c + y
 
 def step2():
     global STEP
-    leftD = (d-1)%4
-    lx, ly = direction[leftD]
+    lx, ly = leftXY()
     nx, ny = r + lx, c + ly
     if not (0 <= nx < N and 0 <= ny < M): # wall
         pass
