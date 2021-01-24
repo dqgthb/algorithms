@@ -89,6 +89,14 @@ def step2():
         bx, by = backXY()
         if (0 <= bx < N and 0 <= by < M):
             if mat[bx][by] != 0:
+                STEP = 2
+                return
+            else:
+                STEP = 0
+                return
+        else:
+            STEP = 0
+            return
 
 def retreat():
     global r, c
