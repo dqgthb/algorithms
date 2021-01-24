@@ -55,6 +55,10 @@ def step2():
     global STEP
     l = (d-1)%4
     lx, ly = direction[leftD]
+    nx, ny = r + lx, c + ly
+
+    if not (0 <= nx < r and 0 <= ny < c): # wall
+
 
 def a():
     pass
