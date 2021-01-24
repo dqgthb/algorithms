@@ -86,7 +86,11 @@ def step2():
             leftRotate()
             continue
     else:
-        if
+        if (0 <= n)
+
+def backXY():
+    x, y = direction[(d-2)%4]
+    return r+x, c+y
 
 def a():
     pass
