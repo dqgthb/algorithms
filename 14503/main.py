@@ -48,11 +48,12 @@ def clean():
         funcs[STEP]()
 
 def step1():
+    print("STEP 1")
     global STEP, total
     if mat[r][c] == 0:
         mat[r][c] = 2
         total += 1
-    STEP = 0
+    STEP = 2
 
 def leftXY():
     x, y =  direction[(d-1)%4]
@@ -69,6 +70,7 @@ def advance():
     c += y
 
 def step2():
+    print("STEP 2")
     global STEP
     for _ in range(4):
         lx, ly = leftXY()
