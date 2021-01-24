@@ -70,16 +70,17 @@ def advance():
 
 def step2():
     global STEP
-    lx, ly = leftXY()
-    nx, ny = r + lx, c + ly
-    rotate = 0
-    if (0 <= nx < N and 0 <= ny < M): # wall
-        if mat[nx][ny] == 0:
-            leftRotate()
-            advance()
-            STEP = 1
-            return
-        else:
+    for _ in range(4):
+        lx, ly = leftXY()
+        nx, ny = r + lx, c + ly
+        if (0 <= nx < N and 0 <= ny < M): # wall
+            if mat[nx][ny] == 0:
+                leftRotate()
+                advance()
+                STEP = 1
+                return
+            else:
+
 
     if mat[nx][ny] == "1":
         pass
