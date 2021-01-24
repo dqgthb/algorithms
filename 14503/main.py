@@ -58,12 +58,20 @@ def leftXY():
     x, y =  direction[(d-1)%4]
     return r + x, c + y
 
+def leftRotate():
+    global d
+    d = direction[(d-1)%4]
+
+def advance():
+    global r, c
+
 def step2():
     global STEP
     lx, ly = leftXY()
     nx, ny = r + lx, c + ly
     if (0 <= nx < N and 0 <= ny < M): # wall
         if mat[nx][ny] == 0:
+            leftRotate()
 
     if mat[nx][ny] == "1":
 
