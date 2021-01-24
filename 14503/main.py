@@ -36,7 +36,9 @@ def main(f=None):
 
     count = 0
 
-    clean()
+    #clean()
+    for i in range(4):
+        print("left of", i, "is", (i-1)%4)
 
 def clean():
     global STEP
@@ -53,6 +55,7 @@ def step1():
 
 def step2():
     global STEP
+    leftD = (d-1)%4
 
 def a():
     pass
