@@ -85,10 +85,8 @@ def step2():
         else:
             leftRotate()
             continue
-
-
-    if mat[nx][ny] == "1":
-        pass
+    else:
+        if
 
 def a():
     pass
