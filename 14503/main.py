@@ -22,12 +22,19 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
+    global N, M, r, c, d, mat
     N, M = map(int, input().split())
     r, c, d = map(int, input().split())
-
+    mat = [list(map(int, input().split())) for _ in range(N)]
 
     # ######## INPUT AREA END ############
     # ####################################
+
+    count = 0
+
+    parr(mat)
+
+
 
 
 # #############################################################################
