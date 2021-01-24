@@ -65,6 +65,8 @@ def step2():
     if not (0 <= nx < N and 0 <= ny < M): # wall
         pass
 
+    if mat[nx][ny] == "1":
+
 
 
 def a():
