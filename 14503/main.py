@@ -34,7 +34,6 @@ def main(f=None):
 
     total = 0
     clean()
-    parr(mat)
     print(total)
 
 def clean():
@@ -47,7 +46,6 @@ def clean():
         funcs[STEP]()
 
 def step1():
-    print("STEP 1")
     global STEP, total
     if mat[r][c] == 0:
         mat[r][c] = 2
@@ -69,13 +67,9 @@ def advance():
     c += y
 
 def step2():
-    print("STEP 2")
     global STEP
     for _ in range(4):
-        print("direction is", d)
-        lx, ly = leftXY()
-        nx, ny = r + lx, c + ly
-        print(nx, ny)
+        nx, ny = leftXY()
         if (0 <= nx < N and 0 <= ny < M): # wall
             if mat[nx][ny] == 0:
                 leftRotate()
@@ -104,7 +98,6 @@ def step2():
 
 def moveTo(x, y):
     global r, c
-    print("move to", x, y)
     r = x
     c = y
 
