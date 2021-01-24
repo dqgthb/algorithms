@@ -60,7 +60,6 @@ def step2():
     nx, ny = r + lx, c + ly
 
     if not (0 <= nx < N and 0 <= ny < M): # wall
-        if
 
 
 
