@@ -22,13 +22,17 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N, M, r, c, d, mat
+    global N, M, r, c, d, mat, direction
     N, M = map(int, input().split())
     r, c, d = map(int, input().split())
+    r -= 1
+    c -= 1
     mat = [list(map(int, input().split())) for _ in range(N)]
 
     # ######## INPUT AREA END ############
     # ####################################
+
+    direction = [(-1, -1), (1, 0), (0, 1), (-1, 0)]
 
     count = 0
 
