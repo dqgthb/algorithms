@@ -102,6 +102,7 @@ def step2():
 
 def moveTo(x, y):
     global r, c
+    print("move to", x, y)
     r = x
     c = y
 
