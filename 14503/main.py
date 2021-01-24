@@ -34,7 +34,6 @@ def main(f=None):
 
     total = 0
     clean()
-    parr(mat)
     print(total)
 
 def clean():
@@ -42,7 +41,6 @@ def clean():
     STEP = 1
     funcs = [None, step1, step2]
     while True:
-        parr(mat)
         if STEP == 0:
             break
         funcs[STEP]()
