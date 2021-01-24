@@ -36,13 +36,15 @@ def main(f=None):
 
     count = 0
 
-    #clean()
+    clean()
 
 def clean():
     global STEP
     STEP = 1
     funcs = [None, step1, step2, a, b, c, d]
     while True:
+        if STEP == 0:
+            break
         funcs[STEP]()
 
 def step1():
@@ -58,6 +60,7 @@ def step2():
     nx, ny = r + lx, c + ly
 
     if not (0 <= nx < N and 0 <= ny < M): # wall
+        if
 
 
 
