@@ -86,7 +86,10 @@ def step2():
             leftRotate()
             continue
     else:
-        if (0 <= n)
+        bx, by = backXY()
+        if (0 <= bx < N and 0 <= by < M):
+            if mat[bx][by] != 0:
+
 
 def backXY():
     x, y = direction[(d-2)%4]
