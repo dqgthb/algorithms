@@ -37,8 +37,12 @@ def main(f=None):
     count = 0
 
 def clean():
+    global STEP
+    STEP = 1
     funcs = [None, step1, step2, a, b, c, d]
     while True:
+        funcs[STEP]()
+
 
 def step1():
     global STEP
@@ -47,8 +51,20 @@ def step1():
     STEP = 2
 
 
+def a():
+    pass
 
 
+def b():
+    pass
+
+
+def c():
+    pass
+
+
+def d():
+    pass
 
 
 # #############################################################################
