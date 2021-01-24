@@ -22,18 +22,18 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N, M, r, c, d, mat, direction
+    global N, M, r, c, d, mat, direction, TOTAL
     N, M = map(int, input().split())
     r, c, d = map(int, input().split())
-    r -= 1
-    c -= 1
     mat = [list(map(int, input().split())) for _ in range(N)]
 
     # ######## INPUT AREA END ############
     # ####################################
 
+
     direction = [(-1, 0), (0, 1), (1, 0), (0, -1)]
 
+    TOTAL = 0
     count = 0
 
     clean()
@@ -60,6 +60,7 @@ def step2():
     nx, ny = r + lx, c + ly
 
     if not (0 <= nx < N and 0 <= ny < M): # wall
+        if
 
 
 
