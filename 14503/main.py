@@ -36,13 +36,14 @@ def main(f=None):
 
     count = 0
 
+    clean()
+
 def clean():
     global STEP
     STEP = 1
     funcs = [None, step1, step2, a, b, c, d]
     while True:
         funcs[STEP]()
-
 
 def step1():
     global STEP
