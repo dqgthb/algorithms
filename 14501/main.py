@@ -38,7 +38,7 @@ def main(f=None):
     dp[N-1] = p[N-1]
     for i in range(N-2, -1, -1):
         if p[i] == 0:
-            dp[i] == dp[i+1]
+            dp[i] = dp[i+1]
             continue
         dp[i] = max(p[i] + dp[i + t[i]], dp[i+1])
 
