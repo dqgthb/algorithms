@@ -24,6 +24,8 @@ def solution(t, p):
     dp = p[:]
     for i in range(n):
         for j in range(i + t[i], n):
+            print(dp)
+            print(j, dp[j], dp[i] + p[j])
             dp[j] = max(dp[j], dp[i] + p[j])
     # dp 생성 완료 후, T(상담이 걸리는 기간) 을 따져서, 조건을 만족시키는 가장 큰 수를 반환하고자 함
     max_ = 0
