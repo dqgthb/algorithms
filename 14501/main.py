@@ -32,15 +32,13 @@ def main(f=None):
         p.append(P if n + T <= N + 1 else 0)
     print(t)
     print(p)
-    dp = [0] * N
+    dp = [0] * (N+1)
 
     # ######## INPUT AREA END ############
     # ####################################
 
     dp[N-1] = p[N-1]
     for i in range(N-2, -1, -1):
-        print(i)
-        print(t[i])
         if p[i] == 0:
             dp[i] == dp[i+1]
             continue
