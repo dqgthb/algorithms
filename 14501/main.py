@@ -39,6 +39,8 @@ def main(f=None):
 
     dp[N-1] = p[N-1]
     for i in range(N-2, -1, -1):
+        print(i)
+        print(t[i])
         if p[i] == 0:
             dp[i] == dp[i+1]
             continue
