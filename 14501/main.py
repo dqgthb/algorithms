@@ -30,10 +30,14 @@ def main(f=None):
         T, P = map(int, input().split())
         t.append(T)
         p.append(P if n + T <= N + 1 else 0)
-    dp = []
+    dp = [None] * N
 
     # ######## INPUT AREA END ############
     # ####################################
+
+    dp[N-1] = p[N-1]
+    for i in range(N-2, -1, -1):
+        dp[i]
 
 
 # #############################################################################
