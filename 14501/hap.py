@@ -1,4 +1,12 @@
 import sys
+import os
+
+
+def setStdin(f):
+    global DEBUG, input
+    DEBUG = True
+    sys.stdin = open(f)
+    input = sys.stdin.readline
 
 
 if len(sys.argv) == 1:
@@ -6,8 +14,11 @@ if len(sys.argv) == 1:
         setStdin("in/i")
     elif os.path.isfile("i"):
         setStdin("i")
-sys.stdin = open()
-input = sys.stdin.readline  # by default
+elif len(sys.argv) == 2:
+    setStdin(sys.argv[1])
+else:
+    assert False, "Too many sys.argv: %d" % len(sys.argv)
+
 
 def solution(t, p):
     #dp = [consult[i][1] for i in range(n)]
@@ -23,6 +34,7 @@ def solution(t, p):
         if t[i] <= n-i: # 현재 인덱스에 해당하는 T 를 더했을때 배열 범위를 벗어나지 않는다면
             return dp[i]
 
+
 n = int(input())
 consult = []
 t = []
@@ -32,7 +44,6 @@ for i in range(n):
     T, P = map(int, input().split())
     t.append(T)
     p.append(P)
-print(consult)
 print(t)
 print(p)
 #print(solution(consult))
