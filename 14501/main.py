@@ -40,10 +40,7 @@ def main(f=None):
         if p[i] == 0:
             dp[i] == dp[i+1]
             continue
-        try:
-            dp[i] = max(p[i] + dp[i + t[i]], dp[i+1])
-        except:
-            dp[i] = dp[i+1]
+        dp[i] = max(p[i] + dp[i + t[i]], dp[i+1])
 
     print(dp[0])
 
