@@ -25,10 +25,10 @@ def main(f=None):
     N = map(int, input().split())
     t = []
     p = []
-    for _ in range(N):
+    for n in range(1, N+1):
         T, P = map(int, input().split())
         t.append(T)
-        if
+        if n + T - 1 < N:
         p.append(P)
 
 
