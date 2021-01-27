@@ -35,13 +35,14 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    for i in range(N-1, -1, -1):
+    dp[N-1] = p[N-1]
+    for i in range(N-2, -1, -1):
         if p[i] == 0:
             dp[i] == dp[i+1]
             continue
         dp[i] = max(p[i] + dp[i + t[i]], dp[i+1])
 
-    print(dp)
+    print(dp[0])
 
 
 # #############################################################################
