@@ -30,8 +30,6 @@ def main(f=None):
         T, P = map(int, input().split())
         t.append(T)
         p.append(P if n + T <= N + 1 else 0)
-    print(t)
-    print(p)
     dp = [0] * (N+1)
 
     # ######## INPUT AREA END ############
