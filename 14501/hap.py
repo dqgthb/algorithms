@@ -1,5 +1,12 @@
 import sys
 
+
+if len(sys.argv) == 1:
+    if os.path.isfile("in/i"):
+        setStdin("in/i")
+    elif os.path.isfile("i"):
+        setStdin("i")
+sys.stdin = open()
 input = sys.stdin.readline  # by default
 
 def solution(t, p):
