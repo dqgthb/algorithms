@@ -38,7 +38,6 @@ def main(f=None):
             idx = bl(arr, a)
             if idx != N:
                 seq[idx] = a
-            else:
 
 
     print(N - len(seq))
