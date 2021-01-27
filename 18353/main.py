@@ -36,6 +36,9 @@ def main(f=None):
             seq.append(a)
         else:
             idx = bl(arr, a)
+            print(a)
+            print(arr)
+            print(idx)
             seq[idx] = a
     print(seq)
 
