@@ -1,8 +1,9 @@
-def solution(consult):
+def solution(t, p):
     #dp = [consult[i][1] for i in range(n)]
     dp = p[:]
     for i in range(n):
-        for j in range(i+consult[i][0],len(consult)):
+        #for j in range(i+consult[i][0],len(consult)):
+        for j in range(i+consult[i][0],n):
             dp[j] = max(dp[j], dp[i] + consult[j][1])
     # dp 생성 완료 후, T(상담이 걸리는 기간) 을 따져서, 조건을 만족시키는 가장 큰 수를 반환하고자 함
     for i in range(n-1,-1,-1):
