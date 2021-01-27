@@ -38,7 +38,8 @@ def main(f=None):
             idx = bl(arr, a)
             seq[idx] = a
 
-    print(N-len(seq))
+    print(N - len(seq))
+
 
 
 
