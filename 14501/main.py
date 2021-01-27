@@ -28,7 +28,10 @@ def main(f=None):
     for n in range(1, N+1):
         T, P = map(int, input().split())
         t.append(T)
-        if n + T - 1 < N:
+        if n + T - 1 < N + 1:
+            p.append(P)
+        else:
+            p.append(0)
         p.append(P)
 
 
