@@ -22,6 +22,16 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
+    N = map(int, input().split())
+    t = []
+    p = []
+    for _ in range(N):
+        T, P = map(int, input().split())
+        t.append(T)
+        if
+        p.append(P)
+
+
     # ######## INPUT AREA END ############
     # ####################################
 
