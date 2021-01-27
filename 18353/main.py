@@ -33,6 +33,7 @@ def main(f=None):
     # binarySearchSolution()
     DPsolution()
 
+
 def DPsolution():
     dp = [1] * N
     for i in range(1, N):
@@ -40,7 +41,6 @@ def DPsolution():
             if arr[i] > arr[j]:
                 dp[i] = max(dp[i], dp[j]+1)
     print(N - max(dp))
-
 
 
 def binarySearchSolution():
@@ -54,8 +54,6 @@ def binarySearchSolution():
             seq[idx] = a
 
     print(N - len(seq))
-
-
 
 
 # #############################################################################
