@@ -31,11 +31,12 @@ def main(f=None):
     # ####################################
 
 def DPsolution():
-    dp = [None] * N
+    dp = [-1] * N
     dp[0] = 1
-    for i in range(N):
+    for i in range(1, N):
         for j in range(i):
-            dp[i] = dp[0]
+            dp[i] =
+
 
 
 def binarySearchSolution():
