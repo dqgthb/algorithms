@@ -21,7 +21,8 @@ else:
 
 
 def solution(t, p):
-    dp = p[:]
+    #dp = p[:]
+
     for i in range(n):
         for j in range(i + t[i], n):
             dp[j] = max(dp[j], dp[i] + p[j])
