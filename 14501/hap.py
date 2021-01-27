@@ -13,8 +13,11 @@ consult = []
 t = []
 p = []
 for i in range(n):
-    consult.append(list(map(int,input().split())))
+    #consult.append(list(map(int,input().split())))
     T, P = map(int, input().split())
     t.append(T)
     p.append(P)
+print(consult)
+print(t)
+print(p)
 print(solution(consult))
