@@ -22,6 +22,7 @@ else:
 
 def solution(t, p):
     #dp = p[:]
+    dp = [p[i] if t[i]+i <= n else 0 for i in range(n)]
 
     for i in range(n):
         for j in range(i + t[i], n):
@@ -42,4 +43,6 @@ for i in range(n):
     t.append(T)
     p.append(P)
 #print(solution(consult))
+p = [p[i] if t[i] + i <= n else 0 for i in range(0)]
+print(p)
 print(solution(t, p))
