@@ -30,6 +30,11 @@ def main(f=None):
 
     seq = [arr[0]]
     for i in range(1, N):
+        a = arr[i]
+        if a < seq[-1]:
+            seq.append(a)
+        else:
+
 
 
 # #############################################################################
