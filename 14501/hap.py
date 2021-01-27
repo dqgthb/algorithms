@@ -1,5 +1,7 @@
 import sys
 
+input = sys.stdin.readline  # by default
+
 def solution(t, p):
     #dp = [consult[i][1] for i in range(n)]
     dp = p[:]
