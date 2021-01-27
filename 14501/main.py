@@ -30,18 +30,15 @@ def main(f=None):
         T, P = map(int, input().split())
         t.append(T)
         p.append(P if n + T <= N + 1 else 0)
-    dp = [None] * N
+    dp = [0] * N
 
     # ######## INPUT AREA END ############
     # ####################################
 
-    dp[N-1] = p[N-1]
-    for i in range(N-2, -1, -1):
-        print(dp)
+    for i in range(N-1, -1, -1):
         if p[i] == 0:
             dp[i] == dp[i+1]
             continue
-
         dp[i] = max(p[i] + dp[i + t[i]], dp[i+1])
 
     print(dp)
