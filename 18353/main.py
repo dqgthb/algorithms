@@ -22,6 +22,7 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
+    global N, arr
     N = int(input())
     arr = [int(i) for i in input().split()]
     arr.reverse()
@@ -29,6 +30,11 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+def DPsolution():
+    dp = [None] * N
+
+
+def binarySearchSolution():
     seq = [arr[0]]
     for i in range(1, N):
         a = arr[i]
