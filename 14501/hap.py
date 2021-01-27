@@ -36,7 +36,6 @@ def solution(t, p):
 
 
 n = int(input())
-consult = []
 t = []
 p = []
 for i in range(n):
