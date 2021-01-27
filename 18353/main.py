@@ -36,9 +36,8 @@ def main(f=None):
             seq.append(a)
         else:
             idx = bl(arr, a)
-            if idx != N:
-                seq[idx] = a
-
+            seq[idx] = a
+    print(seq)
 
     print(N - len(seq))
 
