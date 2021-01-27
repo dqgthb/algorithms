@@ -24,7 +24,7 @@ def main(f=None):
 
     N = int(input())
     arr = [int(i) for i in input().split()]
-    arr = arr.reverse()
+    arr.reverse()
 
     # ######## INPUT AREA END ############
     # ####################################
@@ -38,7 +38,7 @@ def main(f=None):
             idx = bl(arr, a)
             seq[idx] = a
 
-    print(seq)
+    print(N-len(seq))
 
 
 
