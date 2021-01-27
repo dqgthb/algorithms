@@ -35,12 +35,8 @@ def main(f=None):
         if a > seq[-1]:
             seq.append(a)
         else:
-            idx = bl(arr, a)
-            print(a)
-            print(arr)
-            print(idx)
+            idx = bl(seq, a)
             seq[idx] = a
-    print(seq)
 
     print(N - len(seq))
 
