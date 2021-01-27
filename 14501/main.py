@@ -22,18 +22,15 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    N = map(int, input().split())
+    global N, t, p, dp
+    N = int(input())
     t = []
     p = []
     for n in range(1, N+1):
         T, P = map(int, input().split())
         t.append(T)
-        if n + T <= N + 1:
-            p.append(0 if)
-        else:
-            p.append(0)
-        p.append(P)
-
+        p.append(P if n + T <= N + 1 else 0)
+    dp = []
 
     # ######## INPUT AREA END ############
     # ####################################
