@@ -44,7 +44,6 @@ def main(f=None):
             print(stack)
             next(s)
         val = stackPop()
-        print(operators)
         if val != e:
             print("NO")
             return
