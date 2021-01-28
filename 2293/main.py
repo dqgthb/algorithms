@@ -28,7 +28,7 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    dp = [0] * k
+    dp = [0] * (k+1)
     coins.sort()
     firstCoin = coins[0]
     for i in range(n):
@@ -37,7 +37,7 @@ def main(f=None):
 
     for coin in coins:
         for i in range(n):
-            if
+            dp[i] += dp[i-coin]
 
 
 
