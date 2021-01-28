@@ -35,7 +35,9 @@ def main(f=None):
     for coin in coins:
         for i in range(k+1):
             if 0 <= i - coin <= k:
-                dp[i] += dp[i-coin] + 1
+                dp[i] += dp[i-coin]
+        print(dp)
+
 
 
 
