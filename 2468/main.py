@@ -34,12 +34,15 @@ def main(f=None):
     dy = [0, 1, 0, -1]
 
 
-    matCopy = [i[:] for i in mat]
-    ans = countIsland(matCopy, 4)
-    print(ans)
 
     nums = []
-    for i in range(1, 101):
+    for i in range(2, 10):
+        matCopy = [i[:] for i in mat]
+        ans = countIsland(matCopy, i)
+        nums.append(ans)
+
+    print(nums)
+
 
 
 def countIsland(mat, n):
