@@ -42,7 +42,7 @@ def main(f=None):
         ans = countIsland(matCopy, i)
         nums.append(ans)
 
-    print(nums)
+    print(max(nums))
 
 
 def countIsland(mat, n):
