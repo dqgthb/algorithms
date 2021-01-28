@@ -29,6 +29,7 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+    global operators
     operators = []
 
     global stack
@@ -38,11 +39,12 @@ def main(f=None):
     for i, e in enu(a):
         while stack[-1] < e:
             stackPush()
-        elif stack[-1]
+        stack.pop()
 
 def stackPush():
     for i in range(1, n+1):
         stack.append(i)
+        operators.append("+")
         yield
 
 
