@@ -34,11 +34,19 @@ def main(f=None):
         for i in range(N-1):
             O[i] = o[i]
 
-        res = 0
-        res +=
+        res = A[0]
+
 
 
 def oper(a, o, b):
+    if o == 0:
+        return a + b
+    elif o == 1:
+        return a - b
+    elif o == 2:
+        return a * b
+    else: # o == 3
+        return a // b
 
 
 
