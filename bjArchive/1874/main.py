@@ -33,7 +33,13 @@ def main(f=None):
 
     stack = []
 
+    curr = 0
     for i, e in enu(a):
+        if curr < e:
+
+def stackPush():
+
+
 
 
 # #############################################################################
