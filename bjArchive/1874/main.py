@@ -45,12 +45,16 @@ def main(f=None):
             print(stack)
             try:
                 next(s)
+            except:
+                cannotPrint()
         val = stackPop()
         if val != e:
-            print("NO")
-            return
+            cannotPrint()
     parr(operators)
 
+def cannotPrint():
+    print("NO")
+    sys.exit(0)
 
 def stackPush():
     for i in range(1, n+1):
