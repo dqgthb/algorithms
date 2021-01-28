@@ -22,7 +22,7 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N, mat
+    global N
     N = int(input())
     mat = [list(map(int, input().split())) for _ in range(N)]
 
@@ -40,8 +40,14 @@ def main(f=None):
 def countIsland(mat, n):
     global count
     for i in range(N):
+        for j in range(N):
+            if mat[i][j] <= N:
+                dfs(i, j, n)
 
-def dfs(i, j):
+def dfs(mat, i, j, n):
+    mat[i][j]
+
+
 
 
 
