@@ -34,12 +34,15 @@ def main(f=None):
 
     global stack
     stack = []
-
     stackPush()
+
     for i, e in enu(a):
         while stack[-1] < e:
             stackPush()
-        stackPop()
+        val = stackPop()
+        if val != e:
+            print("NO")
+            return
     parr(operators)
 
 
@@ -51,8 +54,8 @@ def stackPush():
 
 
 def stackPop():
-    stack.pop()
     operators.append("-")
+    return stack.pop()
 
 
 
