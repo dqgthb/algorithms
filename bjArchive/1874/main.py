@@ -43,6 +43,7 @@ def main(f=None):
         while stack[-1] < e:
             print(stack)
             next(s)
+
         val = stackPop()
         if val != e:
             print("NO")
