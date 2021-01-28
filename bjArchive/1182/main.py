@@ -29,15 +29,15 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    global results
-    results = []
-
     dfs(0, 0)
-    print(results)
+    global count
+    count = 0
+
 
 def dfs(idx, res):
     if idx == N:
-        results.append(res)
+        if res == S:
+            count += 1
         return
     dfs(idx + 1, res)
     dfs(idx + 1, res + A[idx])
