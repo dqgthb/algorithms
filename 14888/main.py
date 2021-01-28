@@ -45,6 +45,7 @@ def main(f=None):
             resMid = [res]
             for i in range(1, N):
                 res = oper(res, O[i-1], A[i])
+                resMid.append(res)
 
             min_ = min(min_, res)
             max_ = max(max_, res)
@@ -52,6 +53,7 @@ def main(f=None):
                 print(O)
                 print(o)
                 print(os)
+                print(resMid)
         O = [None] * (N-1)
         os = ops[:]
     print(max_)
