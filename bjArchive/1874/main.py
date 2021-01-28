@@ -39,7 +39,9 @@ def main(f=None):
     for i, e in enu(a):
         while stack[-1] < e:
             stackPush()
-        stack.pop()
+        stackPop()
+    parr(operators)
+
 
 def stackPush():
     for i in range(1, n+1):
@@ -47,6 +49,10 @@ def stackPush():
         operators.append("+")
         yield
 
+
+def stackPop():
+    stack.pop()
+    operators.append("-")
 
 
 
