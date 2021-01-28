@@ -39,12 +39,12 @@ def main(f=None):
     print(stack)
 
     print(a)
-
     for i, e in enu(a):
         print("###", i, e)
-        while stack[-1] < e:
+        while not stack or stack[-1] < e:
             print(stack)
-            next(s)
+            try:
+                next(s)
         val = stackPop()
         if val != e:
             print("NO")
