@@ -29,13 +29,18 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+    dx = [1, 0, -1, 0]
+    dy = [0, 1, 0, -1]
+
+
     parr(mat)
+
 
 def countIsland(mat, n):
     count = 0
     for i in range(N):
         for j in range(N):
-            if coutn
+            if mat[i]
 
 
 
