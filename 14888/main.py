@@ -35,8 +35,10 @@ def main(f=None):
             O[i] = o[i]
 
         res = 0
+        res +=
 
 
+def oper(a, o, b):
 
 
 
