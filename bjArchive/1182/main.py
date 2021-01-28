@@ -35,6 +35,9 @@ def main(f=None):
         for j in range(1, N+1):
             val = cum[j]-cum[i]
             if val == S:
+                print(val)
+                count += 1
+    print(count)
 
 
 
