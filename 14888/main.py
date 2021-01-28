@@ -31,15 +31,13 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-
     global results
     results = []
-
     dfs(ops, 1, A[0])
-    print(results)
 
     print(max(results))
     print(min(results))
+
 
 def dfs(operators, cnt, res):
     if cnt == N:
@@ -51,12 +49,6 @@ def dfs(operators, cnt, res):
             copy = operators[:]
             copy[i] -= 1
             dfs(copy, cnt+1, oper(res, i, A[cnt]))
-
-
-
-
-
-
 
 
 def oper(a, o, b):
@@ -71,8 +63,6 @@ def oper(a, o, b):
             return -(-a // b)
         else:
             return a // b
-
-
 
 
 # #############################################################################
