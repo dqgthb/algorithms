@@ -22,6 +22,9 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
+    N = int(input())
+    A = [int(i) for i in input().split()]
+    ops = [int(i) for i in input().split()]
 
     # ######## INPUT AREA END ############
     # ####################################
