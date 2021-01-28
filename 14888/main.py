@@ -45,7 +45,8 @@ def main(f=None):
 
             print(res)
 
-            O = [None] * (N-1)
+        O = [None] * (N-1)
+        os = ops[:]
 
 
 
