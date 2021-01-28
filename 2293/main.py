@@ -29,9 +29,15 @@ def main(f=None):
     # ####################################
 
     dp = [0] * k
+    coins.sort()
+    firstCoin = coin[0]
+    for i in range(n):
+        if k % coin[] == 0:
+            dp[i
 
     for coin in coins:
         for i in range(n):
+
 
 
 
