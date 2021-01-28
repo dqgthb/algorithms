@@ -28,6 +28,14 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+    global results = []
+
+    DFS(0, 0)
+
+def dfs(idx, res):
+    if idx == N:
+    dfs()
+
 
 
 
