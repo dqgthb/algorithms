@@ -29,15 +29,9 @@ def main(f=None):
     # ####################################
 
     cum = list(accumulate([0] + A))
-    print(A)
-    print(cum)
-
 
     for i in range(N):
-        for j in range(i+1, N+1):
-            y = sum(A[i:j])
-
-            #assert y == x
+        for j in range(1, N+1):
 
 
 
