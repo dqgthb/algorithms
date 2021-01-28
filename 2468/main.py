@@ -22,6 +22,7 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
+    global N, mat
     N = int(input())
     mat = [list(map(int, input().split())) for _ in range(N)]
 
@@ -29,6 +30,17 @@ def main(f=None):
     # ####################################
 
     parr(mat)
+
+def countIsland(mat, n):
+    count = 0
+    for i in range(N):
+        for j in range(N):
+            if coutn
+
+
+
+
+
 
 
 
