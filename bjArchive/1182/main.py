@@ -22,13 +22,15 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
+    global N, S, A
     N, S = map(int, input().split())
     A = [int(i) for i in input().split()]
 
     # ######## INPUT AREA END ############
     # ####################################
 
-    global results = []
+    global results
+    results = []
 
     dfs(0, 0)
     print(results)
@@ -38,7 +40,7 @@ def dfs(idx, res):
         results.append(res)
         return
     dfs(idx + 1, res)
-    dfs(idx + 1, res + A[i])
+    dfs(idx + 1, res + A[idx])
 
 
 
