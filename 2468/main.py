@@ -18,46 +18,53 @@ DEBUG = False
 
 def main(f=None):
     init(f)
-    # sys.setrecursionlimit(10**9)
+    sys.setrecursionlimit(10**9)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global n, a
-    n = int(input())
-    a = [int(input()) for _ in range(n)]
+    global N
+    N = int(input())
+    mat = [list(map(int, input().split())) for _ in range(N)]
 
     # ######## INPUT AREA END ############
     # ####################################
 
-    global operators
-    operators = []
+    global dx, dy
+    dx = [1, 0, -1, 0]
+    dy = [0, 1, 0, -1]
 
-    global stack
-    stack = []
-    s = stackPush()
-    for i, e in enu(a):
-        while not stack or stack[-1] < e:
-            next(s)
-        val = stackPop()
-        if val != e:
-            cannotPrint()
-    parr(operators)
-
-def cannotPrint():
-    print("NO")
-    sys.exit(0)
-
-def stackPush():
-    for i in range(1, n+1):
-        stack.append(i)
-        operators.append("+")
-        yield
+    #nums = []
+    max_ = 0
+    #minVal = min(itertools.chain.from_iterable(mat))
+    #maxVal = max(itertools.chain.from_iterable(mat))
+    #for i in range(minVal, maxVal+1):
+    for i in range(0, 101):
+        matCopy = [i[:] for i in mat]
+        ans = countIsland(matCopy, i)
+        del matCopy
+        max_ = max(max_, ans)
+    print(max_)
 
 
-def stackPop():
-    operators.append("-")
-    return stack.pop()
 
+def countIsland(mat, n):
+    count = 0
+    for i in range(N):
+        for j in range(N):
+            if mat[i][j] > n:
+                dfs(mat, i, j, n)
+                count += 1
+    return count
+
+
+def dfs(mat, i, j, n):
+    mat[i][j] = n
+    for x, y in zip(dx, dy):
+        nx = i+x
+        ny = j+y
+        if 0 <= nx < N and 0 <= ny < N:
+            if mat[nx][ny] > n:
+                dfs(mat, nx, ny, n)
 
 
 # #############################################################################

@@ -16,48 +16,53 @@ from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
 
 
+
 def main(f=None):
     init(f)
     # sys.setrecursionlimit(10**9)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global n, a
-    n = int(input())
-    a = [int(input()) for _ in range(n)]
+    global N, A, ops
+    N = int(input())
+    A = [int(i) for i in input().split()]
+    ops = [int(i) for i in input().split()]
 
     # ######## INPUT AREA END ############
     # ####################################
 
-    global operators
-    operators = []
+    global results
+    results = []
+    dfs(ops, 1, A[0])
 
-    global stack
-    stack = []
-    s = stackPush()
-    for i, e in enu(a):
-        while not stack or stack[-1] < e:
-            next(s)
-        val = stackPop()
-        if val != e:
-            cannotPrint()
-    parr(operators)
-
-def cannotPrint():
-    print("NO")
-    sys.exit(0)
-
-def stackPush():
-    for i in range(1, n+1):
-        stack.append(i)
-        operators.append("+")
-        yield
+    print(max(results))
+    print(min(results))
 
 
-def stackPop():
-    operators.append("-")
-    return stack.pop()
+def dfs(operators, cnt, res):
+    if cnt == N:
+        results.append(res)
+        return
 
+    for i, e in enu(operators):
+        if e > 0:
+            copy = operators[:]
+            copy[i] -= 1
+            dfs(copy, cnt+1, oper(res, i, A[cnt]))
+
+
+def oper(a, o, b):
+    if o == 0:
+        return a + b
+    elif o == 1:
+        return a - b
+    elif o == 2:
+        return a * b
+    else: # o == 3
+        if a <= 0:
+            return -(-a // b)
+        else:
+            return a // b
 
 
 # #############################################################################
