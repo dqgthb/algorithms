@@ -34,13 +34,13 @@ def main(f=None):
 
     global stack
     stack = []
-    stackPusher = stackPush()
-    next(stackPusher)
+    s = stackPush()
     print(stack)
 
     for i, e in enu(a):
+        print(stack)
         while stack[-1] < e:
-            next(stackPusher)
+            s = next(s)
         val = stackPop()
         if val != e:
             print("NO")
