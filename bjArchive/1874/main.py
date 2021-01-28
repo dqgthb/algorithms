@@ -34,7 +34,8 @@ def main(f=None):
 
     global stack
     stack = []
-    stackPush()
+    gen = stackPush()
+    next(gen)
 
     for i, e in enu(a):
         while stack[-1] < e:
