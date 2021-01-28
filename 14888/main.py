@@ -42,6 +42,7 @@ def main(f=None):
                 break
         else:
             res = A[0]
+            resMid = [res]
             for i in range(1, N):
                 res = oper(res, O[i-1], A[i])
 
