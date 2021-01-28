@@ -38,6 +38,9 @@ def main(f=None):
     ans = countIsland(matCopy, 4)
     print(ans)
 
+    nums = []
+    for i in range():
+
 
 
 def countIsland(mat, n):
