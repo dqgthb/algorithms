@@ -31,12 +31,13 @@ def main(f=None):
     dp = [0] * (k+1)
     coins.sort()
     firstCoin = coins[0]
+    dp[0] = 1
 
     for coin in coins:
         for i in range(k+1):
             if 0 <= i - coin <= k:
                 dp[i] += dp[i-coin]
-        print(dp)
+    print(dp[k])
 
 
 
