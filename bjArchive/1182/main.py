@@ -33,6 +33,10 @@ def main(f=None):
     print(cum)
 
 
+    for i in range(N):
+        for j in range(N):
+            print(A[i:j])
+
 
 
 # #############################################################################
