@@ -41,6 +41,7 @@ def main(f=None):
     for i in range(0, 101):
         matCopy = [i[:] for i in mat]
         ans = countIsland(matCopy, i)
+        del matCopy
         max_ = max(max_, ans)
     print(max_)
 
