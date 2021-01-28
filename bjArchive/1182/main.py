@@ -30,11 +30,16 @@ def main(f=None):
 
     global results = []
 
-    DFS(0, 0)
+    dfs(0, 0)
+    print(results)
 
 def dfs(idx, res):
     if idx == N:
-    dfs()
+        results.append(res)
+        return
+    dfs(idx + 1, res)
+    dfs(idx + 1, res + A[i])
+
 
 
 
