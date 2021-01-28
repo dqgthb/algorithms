@@ -25,9 +25,16 @@ def main(f=None):
     N = int(input())
     A = [int(i) for i in input().split()]
     N = len(A)
+    A.sort()
 
     # ######## INPUT AREA END ############
     # ####################################
+
+    l = 0
+    r = N-1
+    res = 1
+    while l < r:
+        res *=
 
     res = A[0]
     for i in range(0, N):
