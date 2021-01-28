@@ -42,18 +42,11 @@ def main(f=None):
                 break
         else:
             res = A[0]
-            resMid = [res]
             for i in range(1, N):
                 res = oper(res, O[i-1], A[i])
-                resMid.append(res)
 
             min_ = min(min_, res)
             max_ = max(max_, res)
-            if res == 48:
-                print(O)
-                print(o)
-                print(os)
-                print(resMid)
         O = [None] * (N-1)
         os = ops[:]
     print(max_)
@@ -70,7 +63,11 @@ def oper(a, o, b):
     elif o == 2:
         return a * b
     else: # o == 3
-        return a // b
+        if a <= 0:
+            return -(-a // b)
+        else:
+            return a // b
+
 
 
 
