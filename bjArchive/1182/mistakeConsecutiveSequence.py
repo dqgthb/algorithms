@@ -57,8 +57,9 @@ def main(f = None):
         count += 1
     for i in range(N):
         for j in range(i+1, N):
-            print(arr[i:j])
+            print(arr[i:j], sum(arr[i:j]))
             parSum = cum[j] - cum[i]
+            print(parSum)
             if parSum == S:
                 count += 1
     print(count)
