@@ -23,6 +23,7 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
+    global N, A, ops
     N = int(input())
     A = [int(i) for i in input().split()]
     ops = [int(i) for i in input().split()]
@@ -32,6 +33,8 @@ def main(f=None):
 
 
 def dfs(plus, minus, mult, div, cnt, res):
+    if cnt == N:
+
 
 
 
