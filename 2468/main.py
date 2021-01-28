@@ -29,18 +29,19 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+    global dx, dy, count
     dx = [1, 0, -1, 0]
     dy = [0, 1, 0, -1]
-
+    count = 0
 
     parr(mat)
 
 
-def countIsland(mat, n):
-    count = 0
+def dfs(mat, n):
+    global count
     for i in range(N):
         for j in range(N):
-            if mat[i]
+
 
 
 
