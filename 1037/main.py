@@ -29,9 +29,11 @@ def main(f=None):
     # ####################################
 
     res = A[0]
-    for i in range(1, N):
+    for i in range(0, N):
         res = lcm(res, A[i])
-        if res == A[i]
+        if res == A[i]:
+            res *= 2
+    print(res)
 
 
 def lcm(a, b):
