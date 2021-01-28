@@ -29,22 +29,23 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+    os = ops[:]
     O = [None] * (N-1)
     for o in product(list(range(4)), repeat = N-1):
         for i in range(N-1):
-            if ops[i] > 0:
+            if os[i] > 0:
                 O[i] = o[i]
+                os[i] -= 1
             else:
                 break
         else:
+            res = A[0]
+            for i in range(1, N):
+                res = oper(res, O[i-1], A[i])
 
-        res = A[0]
-        for i in range(1, N):
-            res = oper(res, O[i-1], A[i])
+            print(res)
 
-        print(res)
-
-        O = [None] * (N-1)
+            O = [None] * (N-1)
 
 
 
