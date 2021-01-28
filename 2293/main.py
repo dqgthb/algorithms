@@ -31,13 +31,11 @@ def main(f=None):
     dp = [0] * (k+1)
     coins.sort()
     firstCoin = coins[0]
-    for i in range(n):
-        if i % firstCoin == 0:
-            dp[i] = 1
 
     for coin in coins:
-        for i in range(n):
-            dp[i] += dp[i-coin]
+        for i in range(k+1):
+            if 0 <= i - coin <= k:
+                dp[i] += dp[i-coin] + 1
 
 
 
