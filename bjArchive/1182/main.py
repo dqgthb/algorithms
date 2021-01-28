@@ -7,7 +7,7 @@ import string
 # not for python < 3.9
 # from functools import cmp_to_key, reduce, partial, cache
 from functools import cmp_to_key, reduce, partial
-from itertools import product
+from itertools import accumulate, product
 from collections import deque, Counter, defaultdict as dd
 from math import log, log2, ceil, floor, gcd, sqrt
 import math
@@ -27,6 +27,11 @@ def main(f=None):
 
     # ######## INPUT AREA END ############
     # ####################################
+
+    cum = list(accumulate(A))
+    print(A)
+    print(cum)
+
 
 
 
