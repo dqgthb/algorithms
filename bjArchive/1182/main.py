@@ -32,10 +32,9 @@ def main(f=None):
 
     count = 0
     for i in range(N):
-        for j in range(1, N+1):
-            val = cum[j]-cum[i]
+        for j in range(i+1, N+1):
+            val = cum[j] - cum[i]
             if val == S:
-                print(val)
                 count += 1
     print(count)
 
