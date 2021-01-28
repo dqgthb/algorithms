@@ -29,20 +29,22 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    global dx, dy, count
+    global dx, dy
     dx = [1, 0, -1, 0]
     dy = [0, 1, 0, -1]
-    count = 0
 
-    parr(mat)
+    countIsland(mat[:], 4)
+
 
 
 def countIsland(mat, n):
-    global count
+    count = 0
     for i in range(N):
         for j in range(N):
             if mat[i][j] <= N:
                 dfs(mat, i, j, n)
+                count += 1
+    return count
 
 def dfs(mat, i, j, n):
     mat[i][j] = n+1
@@ -50,6 +52,8 @@ def dfs(mat, i, j, n):
     for x, y in zip(dx, dy):
         nx = i+x
         ny = j+y
+        if 0 <= nx < N and 0 <= ny < N:
+            if mat[nx][ny] <= N:
 
 
 
