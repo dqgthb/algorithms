@@ -33,8 +33,12 @@ def main(f=None):
     global count
     count = 0
 
+    if S == 0:
+        count -= 1
+    print(count)
 
 def dfs(idx, res):
+    global count
     if idx == N:
         if res == S:
             count += 1
