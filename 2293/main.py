@@ -21,10 +21,6 @@ def main(f = None):
     print(dpArr[k-1])
 
 
-
-
-
-
 def For(*args):
     return itertools.product(*map(range, args))
 
@@ -118,7 +114,7 @@ class Mod:
     def coeffBinom(n, k):
         if n < k: return 0
         return Mod.multiply(Mod.FACT[n], Mod.multiply(Mod.INV_FACT[k], Mod.INV_FACT[n-k]))
-    
+
     @staticmethod
     def sum(it):
         res = 0
