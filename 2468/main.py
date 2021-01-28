@@ -39,8 +39,7 @@ def main(f=None):
     print(ans)
 
     nums = []
-    for i in range():
-
+    for i in range(1, 101):
 
 
 def countIsland(mat, n):
