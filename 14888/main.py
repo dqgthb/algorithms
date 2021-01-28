@@ -33,6 +33,10 @@ def main(f=None):
 
 
     global results
+    results = []
+
+    dfs(ops, 0, A[0])
+    print(results)
 
 def dfs(operators, cnt, res):
     if cnt == N:
@@ -43,7 +47,7 @@ def dfs(operators, cnt, res):
         if e > 0:
             copy = operators[:]
             copy[i] -= 1
-            dfs(copy, cnt+1, oper(res, i, A[cnt])
+            dfs(copy, cnt+1, oper(res, i, A[cnt]))
 
 
 
