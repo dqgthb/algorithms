@@ -47,6 +47,7 @@ def main(f=None):
 
             min_ = min(min_, res)
             max_ = max(max_, res)
+            pirnt()
         O = [None] * (N-1)
         os = ops[:]
     print(max_)
