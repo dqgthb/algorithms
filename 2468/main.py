@@ -33,23 +33,27 @@ def main(f=None):
     dx = [1, 0, -1, 0]
     dy = [0, 1, 0, -1]
 
-    nums = []
+    #nums = []
+    max_ = 0
     #minVal = min(itertools.chain.from_iterable(mat))
     #maxVal = max(itertools.chain.from_iterable(mat))
     #for i in range(minVal, maxVal+1):
     for i in range(0, 101):
         matCopy = [i[:] for i in mat]
         ans = countIsland(matCopy, i)
-        nums.append(ans)
+        max_ = max(max_, ans)
+    print(max_)
 
-    print(max(nums))
 
 
 def countIsland(mat, n):
+    count = 0
     for i in range(N):
         for j in range(N):
             if mat[i][j] > n:
                 dfs(mat, i, j, n)
+                count += 1
+    return count
 
 
 def dfs(mat, i, j, n):
