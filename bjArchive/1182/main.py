@@ -28,14 +28,15 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    cum = list(accumulate(A))
+    cum = list(accumulate([0] + A))
     print(A)
     print(cum)
 
 
     for i in range(N):
         for j in range(i+1, N+1):
-            print(A[i:j])
+            print(A[i:j], sum(A[i:j]))
+            print(cum[j] - cum[i])
 
 
 
