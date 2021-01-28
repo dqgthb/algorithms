@@ -45,9 +45,12 @@ def main(f=None):
             for i in range(1, N):
                 res = oper(res, O[i-1], A[i])
 
-
+            min_ = min(min_, res)
+            max_ = max(max_, res)
         O = [None] * (N-1)
         os = ops[:]
+    print(max_)
+    print(min_)
 
 
 
