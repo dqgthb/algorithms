@@ -49,12 +49,15 @@ def main(f = None):
     cum = [i for i in arr]
     for i in range(1, len(cum)):
         cum[i] += cum[i-1]
-    
+
+    print(arr)
+    print(cum)
     count = 0
     if arr[0] == S:
         count += 1
     for i in range(N):
         for j in range(i+1, N):
+            print(arr[i:j])
             parSum = cum[j] - cum[i]
             if parSum == S:
                 count += 1
