@@ -43,7 +43,7 @@ def dfs(operators, cnt, res):
         if e > 0:
             copy = operators[:]
             copy[i] -= 1
-            dfs(copy, cnt+1, oper(res, i, b)
+            dfs(copy, cnt+1, oper(res, i, A[cnt])
 
 
 
