@@ -41,7 +41,9 @@ def dfs(operators, cnt, res):
 
     for i, e in operators:
         if e > 0:
-            dfs(ope)
+            copy = operators[:]
+            copy[i] -= 1
+            dfs(copy, cnt+1, oper(res, i, b)
 
 
 
