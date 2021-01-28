@@ -35,13 +35,15 @@ def main(f=None):
     global stack
     stack = []
     s = stackPush()
+    next(s)
     print(stack)
 
     for i, e in enu(a):
-        print(stack)
         while stack[-1] < e:
-            s = next(s)
+            print(stack)
+            next(s)
         val = stackPop()
+        print(val)
         if val != e:
             print("NO")
             return
