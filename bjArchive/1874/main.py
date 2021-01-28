@@ -35,18 +35,9 @@ def main(f=None):
     global stack
     stack = []
     s = stackPush()
-    next(s)
-    print(stack)
-
-    print(a)
     for i, e in enu(a):
-        print("###", i, e)
         while not stack or stack[-1] < e:
-            print(stack)
-            try:
-                next(s)
-            except:
-                cannotPrint()
+            next(s)
         val = stackPop()
         if val != e:
             cannotPrint()
