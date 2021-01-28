@@ -34,8 +34,8 @@ def main(f=None):
     dy = [0, 1, 0, -1]
 
     nums = []
-    minVal = min(itertools.chain.from_iterable(mat))
-    maxVal = max(itertools.chain.from_iterable(mat))
+    #minVal = min(itertools.chain.from_iterable(mat))
+    #maxVal = max(itertools.chain.from_iterable(mat))
     #for i in range(minVal, maxVal+1):
     for i in range(0, 101):
         matCopy = [i[:] for i in mat]
