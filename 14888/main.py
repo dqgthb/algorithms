@@ -31,6 +31,10 @@ def main(f=None):
     # ####################################
 
 
+def dfs(plus, minus, mult, div, cnt, res):
+
+
+
 def oper(a, o, b):
     if o == 0:
         return a + b
