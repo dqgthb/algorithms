@@ -36,7 +36,6 @@ def main(f=None):
     nums = []
     minVal = min(itertools.chain.from_iterable(mat))
     maxVal = max(itertools.chain.from_iterable(mat))
-    print(minVal, maxVal)
     for i in range(minVal, maxVal+1):
         matCopy = [i[:] for i in mat]
         ans = countIsland(matCopy, i)
