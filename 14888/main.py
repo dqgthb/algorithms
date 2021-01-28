@@ -31,11 +31,13 @@ def main(f=None):
 
     os = ops[:]
     O = [None] * (N-1)
+    min_ = 10**9
+    max_ = -10**9
     for o in product(list(range(4)), repeat = N-1):
         for i in range(N-1):
-            if os[i] > 0:
+            if os[o[i]] > 0:
                 O[i] = o[i]
-                os[i] -= 1
+                os[o[i]] -= 1
             else:
                 break
         else:
@@ -43,7 +45,6 @@ def main(f=None):
             for i in range(1, N):
                 res = oper(res, O[i-1], A[i])
 
-            print(res)
 
         O = [None] * (N-1)
         os = ops[:]
