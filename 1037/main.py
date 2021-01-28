@@ -30,22 +30,7 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    l = 0
-    r = N-1
-    res = 1
-    while l < r:
-        res *=
-
-    res = A[0]
-    for i in range(0, N):
-        res = lcm(res, A[i])
-        if res == A[i]:
-            res *= 2
-    print(res)
-
-
-def lcm(a, b):
-    return a*b//gcd(a,b)
+    print(A[0] * A[-1])
 
 
 
