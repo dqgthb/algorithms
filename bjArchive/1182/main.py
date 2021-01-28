@@ -29,17 +29,17 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    dfs(0, 0)
     global count
     count = 0
+    dfs(0, 0)
 
     if S == 0:
         count -= 1
     print(count)
 
 def dfs(idx, res):
-    global count
     if idx == N:
+        global count
         if res == S:
             count += 1
         return
