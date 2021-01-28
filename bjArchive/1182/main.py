@@ -30,8 +30,12 @@ def main(f=None):
 
     cum = list(accumulate([0] + A))
 
+    count = 0
     for i in range(N):
         for j in range(1, N+1):
+            val = cum[j]-cum[i]
+            if val == S:
+
 
 
 
