@@ -35,6 +35,9 @@ def main(f=None):
             O[i] = o[i]
 
         res = A[0]
+        for i in range(1, N):
+            res = oper(res, O[i-1], A[i])
+        print(res)
 
 
 
