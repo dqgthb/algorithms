@@ -36,8 +36,9 @@ def main(f=None):
 
     stackPush()
     for i, e in enu(a):
-        if stack[-1] < e:
+        while stack[-1] < e:
             stackPush()
+        elif stack[-1]
 
 def stackPush():
     for i in range(1, n+1):
