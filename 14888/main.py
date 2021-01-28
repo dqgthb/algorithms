@@ -29,31 +29,6 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    os = ops[:]
-    O = [None] * (N-1)
-    min_ = 10**9
-    max_ = -10**9
-    for o in product(list(range(4)), repeat = N-1):
-        for i in range(N-1):
-            if os[o[i]] > 0:
-                O[i] = o[i]
-                os[o[i]] -= 1
-            else:
-                break
-        else:
-            res = A[0]
-            for i in range(1, N):
-                res = oper(res, O[i-1], A[i])
-
-            min_ = min(min_, res)
-            max_ = max(max_, res)
-        O = [None] * (N-1)
-        os = ops[:]
-    print(max_)
-    print(min_)
-
-
-
 
 def oper(a, o, b):
     if o == 0:
