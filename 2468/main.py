@@ -33,7 +33,7 @@ def main(f=None):
     dx = [1, 0, -1, 0]
     dy = [0, 1, 0, -1]
 
-    matCopy = [i[:] for _ in mat]
+    matCopy = [i[:] for i in mat]
     ans = countIsland(matCopy, 4)
     print(ans)
 
@@ -50,12 +50,11 @@ def countIsland(mat, n):
 
 def dfs(mat, i, j, n):
     mat[i][j] = n+1
-
     for x, y in zip(dx, dy):
         nx = i+x
         ny = j+y
         if 0 <= nx < N and 0 <= ny < N:
-            if mat[nx][ny] <= N:
+            if mat[nx][ny] <= n:
                 dfs(mat, nx, ny, n)
 
 
