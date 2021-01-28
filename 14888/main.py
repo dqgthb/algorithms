@@ -31,7 +31,12 @@ def main(f=None):
 
     O = [None] * (N-1)
     for o in product(list(range(4)), repeat = N-1):
-        for op in o:
+        for i in range(N-1):
+            O[i] = o[i]
+
+        res = 0
+
+
 
 
 
