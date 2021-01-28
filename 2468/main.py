@@ -23,28 +23,27 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     global N
+    global dx, dy
     N = int(input())
     mat = [list(map(int, input().split())) for _ in range(N)]
+    matCopy = Mat(N, N)
 
     # ######## INPUT AREA END ############
     # ####################################
 
-    global dx, dy
     dx = [1, 0, -1, 0]
     dy = [0, 1, 0, -1]
 
-    #nums = []
     max_ = 0
-    #minVal = min(itertools.chain.from_iterable(mat))
-    #maxVal = max(itertools.chain.from_iterable(mat))
-    #for i in range(minVal, maxVal+1):
-    for i in range(0, 101):
-        matCopy = [i[:] for i in mat]
-        ans = countIsland(matCopy, i)
-        del matCopy
+    minVal = min(itertools.chain.from_iterable(mat))
+    maxVal = max(itertools.chain.from_iterable(mat))
+    for waterLevel in range(minVal-1, maxVal+1):
+        for i in range(N):
+            for j in range(N):
+                matCopy[i][j] = mat[i][j]
+        ans = countIsland(matCopy, waterLevel)
         max_ = max(max_, ans)
     print(max_)
-
 
 
 def countIsland(mat, n):
