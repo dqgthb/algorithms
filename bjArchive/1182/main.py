@@ -35,8 +35,10 @@ def main(f=None):
 
     for i in range(N):
         for j in range(i+1, N+1):
+            y = A[i:j]
             print(A[i:j], sum(A[i:j]))
-            print(cum[j] - cum[i])
+            print((x := cum[j] - cum[i]))
+            assert sum(y == x)
 
 
 
