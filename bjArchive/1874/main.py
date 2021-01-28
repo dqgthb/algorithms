@@ -31,13 +31,18 @@ def main(f=None):
 
     operators = []
 
+    global stack
     stack = []
 
-    curr = 0
+    stackPush()
     for i, e in enu(a):
-        if curr < e:
+        if stack[-1] < e:
+            stackPush()
 
 def stackPush():
+    for i in range(1, n+1):
+        stack.append(i)
+        yield
 
 
 
