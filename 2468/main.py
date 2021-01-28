@@ -46,13 +46,10 @@ def main(f=None):
 
 
 def countIsland(mat, n):
-    count = 0
     for i in range(N):
         for j in range(N):
             if mat[i][j] > n:
                 dfs(mat, i, j, n)
-                count += 1
-    return count
 
 
 def dfs(mat, i, j, n):
