@@ -33,16 +33,16 @@ def main(f=None):
     dx = [1, 0, -1, 0]
     dy = [0, 1, 0, -1]
 
-
-
     nums = []
-    for i in range(2, 10):
+    minVal = min(itertools.chain.from_iterable(mat))
+    maxVal = max(itertools.chain.from_iterable(mat))
+    print(minVal, maxVal)
+    for i in range(minVal, maxVal+1):
         matCopy = [i[:] for i in mat]
         ans = countIsland(matCopy, i)
         nums.append(ans)
 
     print(nums)
-
 
 
 def countIsland(mat, n):
@@ -52,8 +52,6 @@ def countIsland(mat, n):
             if mat[i][j] > n:
                 dfs(mat, i, j, n)
                 count += 1
-                parr(mat)
-                print()
     return count
 
 
