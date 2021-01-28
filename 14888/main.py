@@ -32,8 +32,16 @@ def main(f=None):
     # ####################################
 
 
+    global results
+
 def dfs(plus, minus, mult, div, cnt, res):
     if cnt == N:
+        results.append(res)
+        return
+
+
+
+
 
 
 
