@@ -45,6 +45,8 @@ def countIsland(mat, n):
             if mat[i][j] <= N:
                 dfs(mat, i, j, n)
                 count += 1
+                parr(mat)
+                print()
     return count
 
 
