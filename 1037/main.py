@@ -25,12 +25,11 @@ def main(f=None):
     N = int(input())
     A = [int(i) for i in input().split()]
     N = len(A)
-    A.sort()
 
     # ######## INPUT AREA END ############
     # ####################################
 
-    print(A[0] * A[-1])
+    print(min(A) * max(A))
 
 
 
