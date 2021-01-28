@@ -24,7 +24,7 @@ def main(f=None):
 
     global n, a
     n = int(input())
-    a = [int(i) for i in input().split()]
+    a = [int(input()) for _ in range(n)]
 
     # ######## INPUT AREA END ############
     # ####################################
@@ -38,12 +38,13 @@ def main(f=None):
     next(s)
     print(stack)
 
+    print(a)
+
     for i, e in enu(a):
         print("###", i, e)
         while stack[-1] < e:
             print(stack)
             next(s)
-
         val = stackPop()
         if val != e:
             print("NO")
