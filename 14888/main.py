@@ -31,7 +31,8 @@ def main(f=None):
 
     O = [None] * (N-1)
     for o in product(list(range(4)), repeat = N-1):
-        print(o)
+        for op in o:
+
 
 
 # #############################################################################
