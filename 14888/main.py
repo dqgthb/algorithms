@@ -40,7 +40,8 @@ def dfs(operators, cnt, res):
         return
 
     for i, e in operators:
-        if
+        if e > 0:
+            dfs(ope)
 
 
 
