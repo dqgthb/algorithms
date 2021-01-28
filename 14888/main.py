@@ -35,15 +35,18 @@ def main(f=None):
     global results
     results = []
 
-    dfs(ops, 0, A[0])
+    dfs(ops, 1, A[0])
     print(results)
+
+    print(max(results))
+    print(min(results))
 
 def dfs(operators, cnt, res):
     if cnt == N:
         results.append(res)
         return
 
-    for i, e in operators:
+    for i, e in enu(operators):
         if e > 0:
             copy = operators[:]
             copy[i] -= 1
