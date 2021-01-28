@@ -47,7 +47,10 @@ def main(f=None):
 
             min_ = min(min_, res)
             max_ = max(max_, res)
-            pirnt()
+            if res == 48:
+                print(O)
+                print(o)
+                print(os)
         O = [None] * (N-1)
         os = ops[:]
     print(max_)
