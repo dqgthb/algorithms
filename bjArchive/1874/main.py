@@ -39,11 +39,12 @@ def main(f=None):
     print(stack)
 
     for i, e in enu(a):
+        print("###", i, e)
         while stack[-1] < e:
             print(stack)
             next(s)
         val = stackPop()
-        print(val)
+        print(operators)
         if val != e:
             print("NO")
             return
