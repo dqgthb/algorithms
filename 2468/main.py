@@ -37,11 +37,11 @@ def main(f=None):
     parr(mat)
 
 
-def dfs(mat, n):
+def countIsland(mat, n):
     global count
     for i in range(N):
-        for j in range(N):
 
+def dfs(i, j):
 
 
 
