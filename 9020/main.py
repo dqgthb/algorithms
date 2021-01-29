@@ -25,13 +25,18 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-
     T = int(input())
     for _ in range(T):
         n = int(input())
 
+        for p in primes:
+            i
+
+
+
     # ######## INPUT AREA END ############
     # ####################################
+
 
 
 
