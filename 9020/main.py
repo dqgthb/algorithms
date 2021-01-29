@@ -18,17 +18,23 @@ DEBUG = False
 
 def main(f=None):
     init(f)
+    s = Sieve()
+
     # sys.setrecursionlimit(10**9)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
+
     T = int(input())
-    arr = [int(input()) for _ in range(T)]
+    for _ in range(T):
+        n = int(input())
 
     # ######## INPUT AREA END ############
     # ####################################
 
-    s = Sieve()
+
+
+
 
 class Sieve:
     def __init__(s):
