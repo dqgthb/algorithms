@@ -27,6 +27,10 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+    # easy solution
+    for i in product(range(1, N+1), repeat=M):
+        print(*i)
+
 
 
 
