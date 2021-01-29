@@ -34,8 +34,11 @@ def main(f=None):
         for p in primes:
             if p > n-p:
                 break
-            if s.isPrime(n - p):
-                left =
+            if s.isPrime(n-p):
+                left = p
+                right = n-p
+
+        print(left, right)
 
 
 
