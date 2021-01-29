@@ -41,6 +41,10 @@ def dfs(m, res):
     if m == M:
         results.append(res)
 
+    for i in arr:
+        res.append(i)
+
+
 
 
 
