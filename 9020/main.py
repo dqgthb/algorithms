@@ -47,8 +47,13 @@ class Sieve:
             for j in range(i*2, N, i):
                 arr[j] = False
 
+        s.primes = []
+
+
     def isPrime(s, n):
         return s.arr[n]
+
+    def primes()
 
 
 
