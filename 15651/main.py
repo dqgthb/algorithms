@@ -39,7 +39,7 @@ def main(f=None):
 
 def dfs(m, res):
     if m == M:
-        results.append()
+        results.append(res)
 
 
 
