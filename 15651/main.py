@@ -33,7 +33,14 @@ def main(f=None):
     #for i in product(range(1, N+1), repeat=M):
     #    print(*i)
 
-    dfs(ar)
+    results = []
+    dfs(0, [])
+
+
+def dfs(m, res):
+    if m == M:
+        results.append()
+
 
 
 
