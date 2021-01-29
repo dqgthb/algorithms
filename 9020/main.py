@@ -19,6 +19,7 @@ DEBUG = False
 def main(f=None):
     init(f)
     s = Sieve()
+    primes = s.primes
 
     # sys.setrecursionlimit(10**9)
     # ####################################
@@ -36,6 +37,8 @@ def main(f=None):
 
 
 
+
+
 class Sieve:
     def __init__(s):
         s.arr = [True] * 10001
@@ -47,13 +50,12 @@ class Sieve:
             for j in range(i*2, N, i):
                 arr[j] = False
 
-        s.primes = []
+        s.primes = [i for i in range(N) if arr[i] == True]
 
 
     def isPrime(s, n):
         return s.arr[n]
 
-    def primes()
 
 
 
