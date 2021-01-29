@@ -37,15 +37,17 @@ def main(f=None):
     results = []
     dfs(0, [])
 
-    print(results)
+    for i in results:
+        print(*i)
 
 
 def dfs(m, res):
     if m == M:
         results.append(res)
+        return
 
     for i in arr:
-        dfs(m+1, res[:].append(i))
+        dfs(m+1, res[:] + [i])
 
 
 
