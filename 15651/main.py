@@ -33,8 +33,11 @@ def main(f=None):
     #for i in product(range(1, N+1), repeat=M):
     #    print(*i)
 
+    global results
     results = []
     dfs(0, [])
+
+    print(results)
 
 
 def dfs(m, res):
@@ -42,7 +45,8 @@ def dfs(m, res):
         results.append(res)
 
     for i in arr:
-        res.append(i)
+        dfs(m+1, res[:].append(i))
+
 
 
 
