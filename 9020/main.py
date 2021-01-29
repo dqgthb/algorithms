@@ -29,17 +29,20 @@ def main(f=None):
     # ####################################
 
     s = Sieve()
-    print(s.arr[:100])
 
 class Sieve:
     def __init__(s):
         s.arr = [True] * 10001
         arr = s.arr
         N = len(arr)
-
-        for i in range(N):
+        arr[0] = False
+        arr[1] = False
+        for i in range(2, N):
             for j in range(i*2, N, i):
                 arr[j] = False
+
+    def isPrime(s, n):
+        return s.arr[n]
 
 
 
