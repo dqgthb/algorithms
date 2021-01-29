@@ -23,8 +23,10 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     e, s, m = map(int, input().split())
+
     # ######## INPUT AREA END ############
     # ####################################
+
     ans = e*6916 + s*4845 + m*4200
     ans %= 7980
     print(ans)
