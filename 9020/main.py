@@ -32,9 +32,11 @@ class Sieve:
     def __init__(s):
         s.arr = [True] * 10001
         arr = s.arr
+        s.N = len(arr)
 
         for i in range(len(s.arr)):
-            s.arr[0]
+            for j in range(i*2, s.N, i):
+
 
 
 
