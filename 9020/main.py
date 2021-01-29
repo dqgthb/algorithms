@@ -30,7 +30,13 @@ def main(f=None):
 
 class Sieve:
     def __init__(s):
-        s.arr = [0] * 10001
+        s.arr = [True] * 10001
+        arr = s.arr
+
+        for i in range(len(s.arr)):
+            s.arr[0]
+
+
 
 
 
