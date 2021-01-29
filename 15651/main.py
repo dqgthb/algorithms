@@ -22,7 +22,9 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
+    global N, M, arr
     N, M = map(int, input().split())
+    arr = list(range(1, N+1))
 
     # ######## INPUT AREA END ############
     # ####################################
@@ -31,8 +33,7 @@ def main(f=None):
     #for i in product(range(1, N+1), repeat=M):
     #    print(*i)
 
-    res = []
-    dfs(n)
+    dfs(ar)
 
 
 
