@@ -29,8 +29,13 @@ def main(f=None):
     for _ in range(T):
         n = int(input())
 
+        left = 0
+        right = 0
         for p in primes:
-            i
+            if p > n-p:
+                break
+            if s.isPrime(n - p):
+                left =
 
 
 
