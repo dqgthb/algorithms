@@ -28,14 +28,19 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+    s = Sieve()
+    print(s.arr[:100])
+
 class Sieve:
     def __init__(s):
         s.arr = [True] * 10001
         arr = s.arr
-        s.N = len(arr)
+        N = len(arr)
 
-        for i in range(len(s.arr)):
-            for j in range(i*2, s.N, i):
+        for i in range(N):
+            for j in range(i*2, N, i):
+                arr[j] = False
+
 
 
 
