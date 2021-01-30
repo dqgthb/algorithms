@@ -36,7 +36,7 @@ def main(f=None):
     # ####################################
 
 def convert(x, y):
-    return y + n - 1, x
+    return m - y - 1, x
 
 
 
