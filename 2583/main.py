@@ -26,10 +26,14 @@ def main(f=None):
     mat = Mat(m, n, 0)
     for _ in range(k):
         a, b, c, d = map(int, input().split())
+        a, b = convert(a, b)
+        c, d = convert(c, d)
+
 
     # ######## INPUT AREA END ############
     # ####################################
 
+def convert(x, y):
 
 
 # #############################################################################
