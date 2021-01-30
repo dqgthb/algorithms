@@ -22,15 +22,21 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
+    global N, M, conds, dishes
     N, M = map(int, input().split())
+    dishses = [False for _ in range(N)]
     conds = []
     for _ in range(M):
         a, b = map(int, input().split())
+        conds.append((a, b))
 
     # ######## INPUT AREA END ############
     # ####################################
 
 def countSatisfiedConditions():
+    count = 0
+    for a, b in conds:
+        if
 
 
 
