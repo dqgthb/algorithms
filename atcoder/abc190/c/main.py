@@ -37,8 +37,11 @@ def main(f=None):
         c, d = map(int, input().split())
         choices.append((c-1, d-1))
 
-    for i in itertools.product([0, 1], repeat=K):
-        print(i)
+    for i, indices in enu(itertools.product([0, 1], repeat=K)):
+        dishses = [False for _ in range(N)]
+
+        for
+
 
     # ######## INPUT AREA END ############
     # ####################################
