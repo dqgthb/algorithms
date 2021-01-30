@@ -26,7 +26,8 @@ def main(f=None):
     # ####################################
 
     facs = factors(N)
-    odds = )
+    odds = [i for i in facs if i % 2 == 0]
+    print(odds)
 
 
 
