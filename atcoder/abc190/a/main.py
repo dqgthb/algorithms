@@ -29,6 +29,14 @@ def main(f=None):
 
     twins = False
     if C == 0:
+        twins = A > B
+    else:
+        twins = A >= B
+
+    if twins:
+        print("Takahashi")
+    else:
+        print("Aoki")
 
 
 
