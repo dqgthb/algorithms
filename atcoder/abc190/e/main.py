@@ -43,6 +43,8 @@ def main(f=None):
         for node in nodes:
             distanceMatrix[i][node] = 1
 
+    reachabilityMatrix =Mat(N, N, False)
+
     parr(distanceMatrix)
 
 
