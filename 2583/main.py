@@ -39,8 +39,9 @@ def main(f=None):
     countIsland()
 
 
-def countIsland()
-mat
+def countIsland():
+    for i, j in For(m, n):
+        bfs(i, j)
 
 
 def convert(x, y):
