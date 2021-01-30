@@ -29,7 +29,7 @@ def main(f=None):
         a, b, c, d = map(int, input().split())
         a, b = convert(a, b)
         c, d = convert(c-1, d-1)
-        color(a, b, c, d)
+        color(c, b, a, d)
 
 
 
@@ -38,6 +38,10 @@ def main(f=None):
 
 def convert(x, y):
     return m - y - 1, x
+
+
+def color(a, b, c, d):
+
 
 
 
