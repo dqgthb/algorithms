@@ -38,10 +38,15 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    distanceMatrix = Mat(N, N, float("inf"))
+    dist = Mat(N, N, float("inf"))
     for i, nodes in enu(g):
         for node in nodes:
-            distanceMatrix[i][node] = 1
+            dist[i][node] = 1
+
+    for k in range(N):
+        for i in range(N):
+            for j in range(N):
+                distanceMatrix[i][j] = min(dist[i][j], dist[i][k] + dist[k][j])
 
 
 
