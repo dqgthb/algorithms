@@ -23,7 +23,11 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     n, s, d = map(int, input().split())
+    x, y = [], []
     for _ in range(n):
+        a, b = map(int, input().split())
+        x.append(a)
+        y.append(b)
 
     # ######## INPUT AREA END ############
     # ####################################
