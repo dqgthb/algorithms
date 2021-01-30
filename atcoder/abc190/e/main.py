@@ -23,6 +23,15 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     N, M = map(int, input().split())
+    g = [[] for _ in range(N)]
+    for _ in range(M):
+        a, b = map(int, input().split())
+        a -= 1
+        b -= 1
+        g[a].append(b)
+        g[b].append(c)
+
+
 
     # ######## INPUT AREA END ############
     # ####################################
