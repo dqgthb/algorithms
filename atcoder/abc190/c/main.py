@@ -40,7 +40,9 @@ def main(f=None):
     for i, indices in enu(itertools.product([0, 1], repeat=K)):
         dishses = [False for _ in range(N)]
 
-        for
+        for worker, index in enu(indices):
+            choice = choices[i][]
+
 
 
     # ######## INPUT AREA END ############
