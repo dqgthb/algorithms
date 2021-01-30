@@ -28,15 +28,18 @@ def main(f=None):
     conds = []
     for _ in range(M):
         a, b = map(int, input().split())
-        conds.append((a, b))
+        conds.append((a-1, b-1))
 
     # ######## INPUT AREA END ############
     # ####################################
 
+
 def countSatisfiedConditions():
     count = 0
     for a, b in conds:
-        if
+        if dishes[a] and dishes[b]:
+            count += 1
+    return count
 
 
 
