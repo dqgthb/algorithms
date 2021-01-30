@@ -24,7 +24,7 @@ def main(f=None):
 
     global N, M, conds, dishes
     N, M = map(int, input().split())
-    dishses = [False for _ in range(N)]
+    dishes = [False for _ in range(N)]
     conds = []
     for _ in range(M):
         a, b = map(int, input().split())
@@ -37,14 +37,17 @@ def main(f=None):
         c, d = map(int, input().split())
         choices.append((c-1, d-1))
 
+    max_ = 0
     for i, indices in enu(itertools.product([0, 1], repeat=K)):
-        dishses = [False for _ in range(N)]
+        dishes = [False for _ in range(N)]
 
         for personNo, index in enu(indices):
             choice = choices[personNo][index]
             dishes[choice] = True
 
-        print(dishes)
+        max_ = max(max_, countSatisfiedConditions())
+    print(max_)
+
 
 
 
