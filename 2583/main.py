@@ -44,5 +44,5 @@ for i in range(m):
 
 print(len(area))
 area.sort()
-sys.stdout.write(' '.join(map(str, *area)))
+sys.stdout.write(' '.join(map(str, area)))
 
