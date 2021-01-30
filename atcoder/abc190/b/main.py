@@ -26,9 +26,14 @@ def main(f=None):
     x, y = [], []
     for _ in range(n):
         a, b = map(int, input().split())
-        if x >= s:
+        if a >= s:
+            continue
+        if b <= d:
+            continue
         x.append(a)
         y.append(b)
+    print(x)
+    print(y)
 
     # ######## INPUT AREA END ############
     # ####################################
