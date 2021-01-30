@@ -39,9 +39,19 @@ def main(f=None):
     countIsland()
 
 
+dx = [-1, 0, 1, 0]
+dy = [0, -1, 0, 1]
+def bfs(i, j):
+    q = deque()
+    q.append((i, j))
+    while q:
+
+
 def countIsland():
     for i, j in For(m, n):
-        bfs(i, j)
+        if mat[i][j] == 0:
+            bfs(i, j)
+
 
 
 def convert(x, y):
