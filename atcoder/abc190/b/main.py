@@ -26,6 +26,7 @@ def main(f=None):
     x, y = [], []
     for _ in range(n):
         a, b = map(int, input().split())
+        if x >= s:
         x.append(a)
         y.append(b)
 
