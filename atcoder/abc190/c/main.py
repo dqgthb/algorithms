@@ -30,8 +30,18 @@ def main(f=None):
         a, b = map(int, input().split())
         conds.append((a-1, b-1))
 
+    global K
+    K = int(input())
+    choices = []
+    for _ in range(K):
+        c, d = map(int, input().split())
+        choices.append((c-1, d-1))
+
     # ######## INPUT AREA END ############
     # ####################################
+
+
+
 
 
 def countSatisfiedConditions():
