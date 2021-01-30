@@ -23,17 +23,15 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     N, M = map(int, input().split())
+    conds = []
     for _ in range(M):
         a, b = map(int, input().split())
 
     # ######## INPUT AREA END ############
     # ####################################
 
-from functools import reduce
+def countSatisfiedConditions():
 
-def factors(n):
-    return set(reduce(list.__add__,
-                ([i, n//i] for i in range(1, int(n**0.5) + 1) if n % i == 0)))
 
 
 # #############################################################################
