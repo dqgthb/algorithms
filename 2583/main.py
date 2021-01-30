@@ -39,12 +39,14 @@ def main(f=None):
     countIsland()
 
 
-dx = [-1, 0, 1, 0]
-dy = [0, -1, 0, 1]
+ud = [-1, 0, 1, 0]
+lr = [0, -1, 0, 1]
 def bfs(i, j):
     q = deque()
     q.append((i, j))
     while q:
+        x, y = q.popleft()
+        for
 
 
 def countIsland():
