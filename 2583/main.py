@@ -30,12 +30,18 @@ def main(f=None):
         a, b = convert(a, b)
         c, d = convert(c-1, d-1)
         color(c, b, a, d)
-    parr(mat)
-
-
 
     # ######## INPUT AREA END ############
     # ####################################
+
+    global area
+    area = []
+    countIsland()
+
+
+def countIsland()
+mat
+
 
 def convert(x, y):
     return m - y - 1, x
