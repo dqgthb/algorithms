@@ -22,6 +22,7 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
+    global N, M, g, K, C
     N, M = map(int, input().split())
     g = [[] for _ in range(N)]
     for _ in range(M):
@@ -29,7 +30,10 @@ def main(f=None):
         a -= 1
         b -= 1
         g[a].append(b)
-        g[b].append(c)
+        g[b].append(a)
+
+    K = int(input())
+    C = [int(i) for i in input().split()]
 
 
 
