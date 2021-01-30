@@ -40,8 +40,11 @@ def main(f=None):
     for i, indices in enu(itertools.product([0, 1], repeat=K)):
         dishses = [False for _ in range(N)]
 
-        for worker, index in enu(indices):
-            choice = choices[i][]
+        for personNo, index in enu(indices):
+            choice = choices[personNo][index]
+            dishes[choice] = True
+
+        print(dishes)
 
 
 
