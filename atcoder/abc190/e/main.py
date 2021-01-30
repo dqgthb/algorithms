@@ -35,12 +35,12 @@ def main(f=None):
     K = int(input())
     C = [int(i) for i in input().split()]
 
-
-
-
-
     # ######## INPUT AREA END ############
     # ####################################
+
+    distanceMatrix = Mat(N, N)
+    parr(distanceMatrix)
+
 
 
 # #############################################################################
