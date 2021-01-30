@@ -38,10 +38,10 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    distanceMatrix = Mat(N, N)
-    for i, node in enu(g):
-
-
+    distanceMatrix = Mat(N, N, float("inf"))
+    for i, nodes in enu(g):
+        for node in nodes:
+            distanceMatrix[i][node] = 1
 
     parr(distanceMatrix)
 
