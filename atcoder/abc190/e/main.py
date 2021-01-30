@@ -33,7 +33,7 @@ def main(f=None):
         g[b].append(a)
 
     K = int(input())
-    C = [int(i) for i in input().split()]
+    C = [int(i)-1 for i in input().split()]
 
 
     # ######## INPUT AREA END ############
@@ -51,7 +51,7 @@ def main(f=None):
 
     parr(dist)
 
-    minDist = 0
+    minDist = 1
     for i in range(0, K-1):
         f = C[i]
         t = C[i+1]
