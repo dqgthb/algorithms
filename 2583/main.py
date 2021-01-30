@@ -46,12 +46,17 @@ def bfs(i, j):
     q.append((i, j))
     while q:
         x, y = q.popleft()
-        for
+        for dx, dy in zip(ud, lr):
+            nx = x + dx
+            ny = y + dy
+            if 0 <= nx < m and 0 <= ny < n:
+                if mat[nx][ny]
 
 
 def countIsland():
     for i, j in For(m, n):
         if mat[i][j] == 0:
+            mat[i][j] = 1
             bfs(i, j)
 
 
