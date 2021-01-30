@@ -22,18 +22,21 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
+    global m, n, k, mat
     m, n, k = map(int, input().split())
     mat = Mat(m, n, 0)
     for _ in range(k):
         a, b, c, d = map(int, input().split())
         a, b = convert(a, b)
         c, d = convert(c-1, d-1)
+        print(a, b, c, d)
 
 
     # ######## INPUT AREA END ############
     # ####################################
 
 def convert(x, y):
+    return x + m - 1, y
 
 
 
