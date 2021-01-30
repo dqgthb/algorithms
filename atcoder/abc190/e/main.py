@@ -43,14 +43,7 @@ def main(f=None):
         for node in nodes:
             distanceMatrix[i][node] = 1
 
-    reachabilityMatrix =Mat(N, N, False)
-    for i, nodes in enu(g):
-        for node in nodes:
-            reachabilityMatrix[i][node] = True
 
-    for n in range(N):
-        for i in range(N):
-            for j in range(N):
 
     parr(distanceMatrix)
 
