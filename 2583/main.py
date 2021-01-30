@@ -37,6 +37,9 @@ def main(f=None):
     global area
     area = []
     countIsland()
+    print(len(area))
+    print(*sorted(area))
+
 
 
 ud = [-1, 0, 1, 0]
@@ -55,7 +58,7 @@ def bfs(i, j):
                     count += 1
                     mat[nx][ny] = 1
                     q.append((nx, ny))
-
+    area.append(count)
 
 
 def countIsland():
