@@ -29,7 +29,8 @@ def main(f=None):
         a, b, c, d = map(int, input().split())
         a, b = convert(a, b)
         c, d = convert(c-1, d-1)
-        print(a, b, c, d)
+        color(a, b, c, d)
+
 
 
     # ######## INPUT AREA END ############
