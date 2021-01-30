@@ -39,7 +39,12 @@ def main(f=None):
     # ####################################
 
     distanceMatrix = Mat(N, N)
+    for i, node in enu(g):
+
+
+
     parr(distanceMatrix)
+
 
 
 
