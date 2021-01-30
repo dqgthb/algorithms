@@ -35,6 +35,7 @@ def main(f=None):
     K = int(input())
     C = [int(i) for i in input().split()]
 
+
     # ######## INPUT AREA END ############
     # ####################################
 
@@ -55,6 +56,7 @@ def main(f=None):
         f = C[i]
         t = C[i+1]
         d = dist[f][t]
+        print(f, t, d)
         if d == float("inf"):
             print("-1")
             return
