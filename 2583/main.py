@@ -30,6 +30,7 @@ def main(f=None):
         a, b = convert(a, b)
         c, d = convert(c-1, d-1)
         color(c, b, a, d)
+    parr(mat)
 
 
 
@@ -41,6 +42,9 @@ def convert(x, y):
 
 
 def color(a, b, c, d):
+    for i in range(a, c+1):
+        for j in range(b, d+1):
+            mat[i][j] = 1
 
 
 
