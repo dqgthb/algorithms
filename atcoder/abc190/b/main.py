@@ -30,10 +30,10 @@ def main(f=None):
             continue
         if b <= d:
             continue
-        x.append(a)
-        y.append(b)
-    print(x)
-    print(y)
+        print("Yes")
+        return
+    print("No")
+
 
     # ######## INPUT AREA END ############
     # ####################################
