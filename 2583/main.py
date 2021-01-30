@@ -5,22 +5,6 @@ from collections import deque
 ud = [-1, 0, 1, 0]
 lr = [0, -1, 0, 1]
 
-def bfs(i, j):
-    count = 1
-    q = deque()
-    q.append((i, j))
-    while q:
-        x, y = q.popleft()
-        for dx, dy in zip(ud, lr):
-            nx = x + dx
-            ny = y + dy
-            if 0 <= nx < m and 0 <= ny < n:
-                if mat[nx][ny] == 0:
-                    count += 1
-                    mat[nx][ny] = 1
-                    q.append((nx, ny))
-    area.append(count)
-
 input = sys.stdin.readline
 
 m, n, k = map(int, input().split())
@@ -59,5 +43,6 @@ for i in range(m):
 
 
 print(len(area))
-print(*sorted(area))
+area.sort()
+sys.stdout.write(' '.join(map(str, *area)))
 
