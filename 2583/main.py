@@ -42,6 +42,7 @@ def main(f=None):
 ud = [-1, 0, 1, 0]
 lr = [0, -1, 0, 1]
 def bfs(i, j):
+    count = 1
     q = deque()
     q.append((i, j))
     while q:
@@ -50,7 +51,11 @@ def bfs(i, j):
             nx = x + dx
             ny = y + dy
             if 0 <= nx < m and 0 <= ny < n:
-                if mat[nx][ny]
+                if mat[nx][ny] == 0:
+                    count += 1
+                    mat[nx][ny] = 1
+                    q.append((nx, ny))
+
 
 
 def countIsland():
