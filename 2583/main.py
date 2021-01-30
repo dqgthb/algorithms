@@ -23,10 +23,13 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     m, n, k = map(int, input().split())
-
+    mat = Mat(m, n, 0)
+    for _ in range(k):
+        a, b, c, d = map(int, input().split())
 
     # ######## INPUT AREA END ############
     # ####################################
+
 
 
 # #############################################################################
