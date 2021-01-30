@@ -46,11 +46,17 @@ def main(f=None):
     for k in range(N):
         for i in range(N):
             for j in range(N):
-                distanceMatrix[i][j] = min(dist[i][j], dist[i][k] + dist[k][j])
+                dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j])
+
+    parr(dist)
+
+    minDist = 0
+    for i in range(0, K-1):
+        f = C[i]
+        t = C[i+1]
 
 
 
-    parr(distanceMatrix)
 
 
 
