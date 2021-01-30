@@ -54,6 +54,12 @@ def main(f=None):
     for i in range(0, K-1):
         f = C[i]
         t = C[i+1]
+        d = dist[f][t]
+        if d == float("inf"):
+            print("-1")
+            return
+        minDist += d
+    print(minDist)
 
 
 
