@@ -34,12 +34,12 @@ def main(f=None):
     DP = Mat(N, M)
     DP[0][0] = 1
     ans = dp(N-1, M-1)
-    print(an)
+    print(ans)
 
 
 def dp(i, j):
     if DP[i][j] is not None:
-        return i, j
+        return DP[i][j]
 
     val = 0
     for di, dj in zip(ud, lr):
