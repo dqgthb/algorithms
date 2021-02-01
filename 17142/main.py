@@ -34,6 +34,7 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+    global virusLocs
     virusLocs = []
     for i, j in For(N, N):
         val = mat[i][j]
@@ -53,7 +54,7 @@ def main(f=None):
         bfs(indices)
     print(minTime)
 
-def bfs():
+def bfs(indices):
     sMat = copy2d(mat)
     time = 0
 
