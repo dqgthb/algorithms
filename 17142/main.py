@@ -15,6 +15,8 @@ from heapq import heappush, heappop
 from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
 
+ud = [-1, 0, 1, 0]
+lr = [0, -1, 0, 1]
 
 def main(f=None):
     init(f)
@@ -42,9 +44,14 @@ def main(f=None):
     results = []
     for indices in itertools.combinations(range(len(virusLocs)), r = M):
         sMat = copy2d(mat)
+        time = 1
         for idx in indices:
             x, y = virusLocs[idx]
-            sMat[x][y] = 1
+            sMat[x][y] = time
+
+        for i, j in For(N, N):
+
+
 
 
 
