@@ -17,7 +17,9 @@ DEBUG = False
 
 ud = [-1, 0, 1, 0]
 lr = [0, -1, 0, 1]
-EMPTY = 0
+EMPTY = -2
+WALL = -1
+VIRUS = -3
 
 def main(f=None):
     init(f)
@@ -37,14 +39,15 @@ def main(f=None):
         val = mat[i][j]
         if val == 2:
             virusLocs.append((i, j))
-            mat[i][j] = -3
+            mat[i][j] = EMPTY
         elif val == 1:
-            mat[i][j] = -1
+            mat[i][j] = WALL
         else:
-            mat[i][j] = -2
+            mat[i][j] = EMPTY
     parr(mat)
 
     results = []
+
     for indices in itertools.combinations(range(len(virusLocs)), r = M):
         sMat = copy2d(mat)
         time = 0
@@ -52,28 +55,19 @@ def main(f=None):
         dq = deque()
         for idx in indices:
             i, j = virusLocs[idx]
+            sMat[i][j] = time
             dq.append((i, j, time))
 
         while dq:
             i, j, t = dq.popleft()
-            sMat[i][j] = t
-
             for di, dj in zip(ud, lr):
                 ni = i + di
                 nj = j + dj
 
                 if 0 <= ni < N and 0 <= nj < N:
-                    if sMat[ni][nj] == -2:
-
-
-
-
-            sMat[x][y] = time
-
-
-
-
-
+                    if sMat[ni][nj] == EMPTY:
+                        sMat[ni][nj] = t + 1
+                        dq.append((ni, nj, t+1))
 
 
 
