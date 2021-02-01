@@ -80,6 +80,9 @@ def bfs(indices):
                     sMat[ni][nj] = t + 1
                     dq.append((ni, nj, t+1))
                 elif val == NONACTIVE_VIRUS:
+                    sMat[ni][nj] = t
+                    dq.append((ni, nj, t))
+
 
     for i, j in For(N, N):
         if sMat[i][j] == EMPTY:
