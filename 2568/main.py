@@ -68,9 +68,12 @@ def main(f=None):
                 no.append(i)
 
     print(no)
+    answers = []
     for i in no:
         idx = bl(lookup, [i, 0])
-        print(lookup[idx])
+        answers.append(lookup[idx])
+    answers.append()
+
 
 
 
