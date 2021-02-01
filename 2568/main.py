@@ -36,7 +36,7 @@ def main(f=None):
     arr.sort()
     parr(arr)
 
-    lookup = [[y, False] for x, y in arr]
+    lookup = [[y, x] for x, y in arr]
     lookup.sort()
 
     maxVal = lookup[-1][0]
@@ -58,18 +58,17 @@ def main(f=None):
     print(nums, cnt)
     cnt -= 1
     mem = []
+    no = []
     for i in range(len(loc)-1, -1, -1):
         if loc[i] == cnt:
             mem.append(i)
             cnt -= 1
-    print(seq)
-    print(loc)
-    print(mem)
+        else:
+            no.append(i)
 
-    for m in mem:
-        idx = bl(lookup, [m, False])
-        lookup[idx][1] = True
-    print(lookup)
+    for i in no:
+        idx = bl(lookup, [i, 0])
+        print(lookup[idx])
 
 
 
