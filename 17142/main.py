@@ -17,6 +17,7 @@ DEBUG = False
 
 ud = [-1, 0, 1, 0]
 lr = [0, -1, 0, 1]
+EMPTY = 0
 
 def main(f=None):
     init(f)
@@ -36,10 +37,11 @@ def main(f=None):
         val = mat[i][j]
         if val == 2:
             virusLocs.append((i, j))
-            mat[i][j] = -2
+            mat[i][j] = -3
         elif val == 1:
             mat[i][j] = -1
         else:
+            mat[i][j] = -2
     parr(mat)
 
     results = []
@@ -61,7 +63,7 @@ def main(f=None):
                 nj = j + dj
 
                 if 0 <= ni < N and 0 <= nj < N:
-                    if sMat[ni][nj] == 0:
+                    if sMat[ni][nj] == -2:
 
 
 
