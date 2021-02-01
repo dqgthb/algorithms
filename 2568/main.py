@@ -43,8 +43,8 @@ def main(f=None):
 
     seq = [arr[0][1]]
     loc = [-1 for _ in range(maxVal+1)]
-    loc[seq[-1]] = 0
-    cnt = 0
+    cnt = 1
+    loc[seq[-1]] = 1
     for x, y in arr:
         if seq[-1] < y:
             seq.append(y)
@@ -54,7 +54,7 @@ def main(f=None):
             idx = bl(seq, y)
             seq[idx] = y
             loc[y] = cnt
-    nums = cnt + 1
+    nums = cnt
     print(nums, cnt)
     mem = []
     for i in range(len(loc)-1, -1, -1):
