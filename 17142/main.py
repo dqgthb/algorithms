@@ -31,8 +31,12 @@ def main(f=None):
 
     virusLocs = []
     for i, j in For(N, N):
+        val = mat[i][j]
         if mat[i][j] == 2:
             virusLocs.append((i, j))
+            vir
+
+
 
 
 
