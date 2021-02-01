@@ -23,6 +23,11 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     N = map(int, input().split())
+    arr = []
+    for _ in range(N):
+        x, y = map(int, input().split())
+        x -= 1
+        y -= 1
 
     # ######## INPUT AREA END ############
     # ####################################
