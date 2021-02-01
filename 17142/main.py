@@ -19,7 +19,7 @@ ud = [-1, 0, 1, 0]
 lr = [0, -1, 0, 1]
 EMPTY = -2
 WALL = -1
-VIRUS = -3
+ACTIVE_VIRUS = -3
 
 def main(f=None):
     init(f)
