@@ -16,6 +16,8 @@ from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
 
 
+ud = [-1, 0, 1, 0]
+lr = [0, 1, 0, -1]
 def main(f=None):
     init(f)
     # sys.setrecursionlimit(10**9)
@@ -30,9 +32,16 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-def dp(n, m):
-    if DP[n][m] is not None:
-        return n, m
+
+def dp(i, j):
+    if DP[i][j] is not None:
+        return i, j
+
+    DP[i][j] = val
+    return val
+
+
+
 
 
 
