@@ -22,10 +22,18 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
+    global N, M, mat
     N, M = map(int, input().split())
+    mat = [list(map(int, input().split())) for _ in range(N)]
 
     # ######## INPUT AREA END ############
     # ####################################
+
+    virusLocs = []
+    for i, j in For(N, N):
+        if mat[i][j] == 2:
+            virusLocs.append((i, j))
+
 
 
 # #############################################################################
