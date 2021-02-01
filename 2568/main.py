@@ -55,9 +55,15 @@ def main(f=None):
             seq[idx] = y
             loc[y] = cnt
 
-    nums = len(seq)
+    nums = cnt
+    cnt -= 1
     mem = []
     for i in range(len(loc)-1, -1, -1):
+        if loc[i] == cnt:
+            mem.append(i)
+            cnt -= 1
+    print(mem)
+
 
 
 
