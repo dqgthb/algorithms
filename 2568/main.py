@@ -54,8 +54,8 @@ def main(f=None):
             idx = bl(seq, y)
             seq[idx] = y
             loc[y] = cnt
-    nums = cnt
-    cnt -= 1
+    nums = cnt + 1
+    print(nums, cnt)
     mem = []
     for i in range(len(loc)-1, -1, -1):
         if loc[i] == cnt:
