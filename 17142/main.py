@@ -48,7 +48,7 @@ def main(f=None):
 
     results = []
 
-    maxTime = 0
+    minTime = 10 ** 9
     for indices in itertools.combinations(range(len(virusLocs)), r = M):
         sMat = copy2d(mat)
         time = 0
@@ -70,9 +70,8 @@ def main(f=None):
                         time = max(time, t+1)
                         sMat[ni][nj] = t + 1
                         dq.append((ni, nj, t+1))
-        parr(sMat)
-        print(time)
-        return
+        minTime = min(minTime, time)
+    print(minTime)
 
 
 # #############################################################################
