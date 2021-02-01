@@ -62,6 +62,7 @@ def main(f=None):
         if loc[i] == cnt:
             mem.append(i)
             cnt -= 1
+    print(seq)
     print(loc)
     print(mem)
 
