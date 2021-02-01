@@ -44,11 +44,20 @@ def main(f=None):
     results = []
     for indices in itertools.combinations(range(len(virusLocs)), r = M):
         sMat = copy2d(mat)
-        time = 1
+        time = 0
+
+        dq = deque()
+        dq.append
         for idx in indices:
             i, j = virusLocs[idx]
+            sMat[i][j] = time
 
             for di, dj in zip(ud, lr):
+                ni = i + di
+                nj = j + dj
+
+                if 0 <= ni < N and 0 <= nj < N:
+                    if sMat[]
 
 
 
