@@ -43,8 +43,8 @@ def main(f=None):
 
     seq = [arr[0][1]]
     loc = [-1 for _ in range(maxVal+1)]
+    loc[seq[-1]] = 0
     cnt = 1
-    loc[seq[-1]] = 1
     for x, y in arr:
         if seq[-1] < y:
             seq.append(y)
