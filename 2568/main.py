@@ -34,7 +34,6 @@ def main(f=None):
     # ####################################
 
     arr.sort()
-    parr(arr)
 
     lookup = [[y, x] for x, y in arr]
     lookup.sort()
@@ -54,8 +53,8 @@ def main(f=None):
             idx = bl(seq, y)
             seq[idx] = y
             loc[y] = idx
+
     nums = cnt
-    print(nums, cnt)
     cnt -= 1
     mem = []
     no = []
@@ -67,12 +66,13 @@ def main(f=None):
             if loc[i] != -1:
                 no.append(i)
 
-    print(no)
     answers = []
     for i in no:
         idx = bl(lookup, [i, 0])
-        answers.append(lookup[idx])
-    answers.append()
+        answers.append(lookup[idx][1]+1)
+    answers.sort()
+    print(nums)
+    parr(answers)
 
 
 
