@@ -68,6 +68,8 @@ def main(f=None):
 
     for m in mem:
         idx = bl(lookup, [m, False])
+        lookup[idx][1] = True
+    print(lookup)
 
 
 
