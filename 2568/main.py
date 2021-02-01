@@ -28,12 +28,11 @@ def main(f=None):
         x, y = map(int, input().split())
         x -= 1
         y -= 1
-        arr.append((x, y))
+        arr[x] = y
 
     # ######## INPUT AREA END ############
     # ####################################
 
-    arr.sort()
     parr(arr)
 
 
