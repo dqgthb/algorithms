@@ -52,8 +52,8 @@ def main(f=None):
             dq.append((i, j, time))
 
         while dq:
-            i, j = dq.popleft()
-            sMat[i][j] = time
+            i, j, t = dq.popleft()
+            sMat[i][j] = t
 
             for di, dj in zip(ud, lr):
                 ni = i + di
