@@ -46,10 +46,15 @@ def main(f=None):
         sMat = copy2d(mat)
         time = 1
         for idx in indices:
-            x, y = virusLocs[idx]
+            i, j = virusLocs[idx]
+
+            for di, dj in zip(ud, lr):
+
+
+
             sMat[x][y] = time
 
-        for i, j in For(N, N):
+
 
 
 
