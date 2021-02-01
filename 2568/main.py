@@ -71,7 +71,7 @@ def main(f=None):
         idx = bl(lookup, [i, 0])
         answers.append(lookup[idx][1]+1)
     answers.sort()
-    print(nums)
+    print(N - nums)
     parr(answers)
 
 
