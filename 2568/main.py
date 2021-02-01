@@ -44,7 +44,7 @@ def main(f=None):
     seq = [arr[0][1]]
     loc = [-1 for _ in range(maxVal+1)]
     loc[seq[-1]] = 0
-    cnt = 1
+    cnt = 0
     for x, y in arr:
         if seq[-1] < y:
             seq.append(y)
@@ -54,7 +54,6 @@ def main(f=None):
             idx = bl(seq, y)
             seq[idx] = y
             loc[y] = cnt
-
     nums = cnt
     cnt -= 1
     mem = []
@@ -62,6 +61,7 @@ def main(f=None):
         if loc[i] == cnt:
             mem.append(i)
             cnt -= 1
+    print(loc)
     print(mem)
 
 
