@@ -53,7 +53,7 @@ def main(f=None):
         else:
             idx = bl(seq, y)
             seq[idx] = y
-            loc[y] = cnt
+            loc[y] = idx
     nums = cnt
     print(nums, cnt)
     cnt -= 1
