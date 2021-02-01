@@ -74,6 +74,8 @@ def main(f=None):
         for i, j in For(N, N):
             if mat[i][j] == EMPTY:
                 continue
+        if time == 2:
+            parr(sMat)
         minTime = min(minTime, time)
     print(minTime)
 
