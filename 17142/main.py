@@ -70,6 +70,9 @@ def main(f=None):
                         time = max(time, t+1)
                         sMat[ni][nj] = t + 1
                         dq.append((ni, nj, t+1))
+        if time == 5:
+            parr(sMat)
+
         minTime = min(minTime, time)
     print(minTime)
 
