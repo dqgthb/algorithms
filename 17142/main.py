@@ -48,6 +48,7 @@ def main(f=None):
 
     results = []
 
+    maxTime = 0
     for indices in itertools.combinations(range(len(virusLocs)), r = M):
         sMat = copy2d(mat)
         time = 0
@@ -66,9 +67,11 @@ def main(f=None):
 
                 if 0 <= ni < N and 0 <= nj < N:
                     if sMat[ni][nj] == EMPTY:
+                        time = max(time, t+1)
                         sMat[ni][nj] = t + 1
                         dq.append((ni, nj, t+1))
         parr(sMat)
+        print(time)
         return
 
 
