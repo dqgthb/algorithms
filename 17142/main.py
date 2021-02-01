@@ -39,7 +39,7 @@ def main(f=None):
             mat[i][j] = -1
     parr(mat)
 
-    for viruses in itertools.combinations
+    for indices in itertools.combinations(range(len(virusLocs)), r = M):
 
 
 
