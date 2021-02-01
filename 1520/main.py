@@ -22,12 +22,17 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N, M, mat
+    global N, M, mat, DP
     N, M = map(int, input().split())
     mat = [list(map(int, input().split())) for _ in range(N)]
+    DP = Mat(N, M)
 
     # ######## INPUT AREA END ############
     # ####################################
+
+def dp(n, m):
+    if DP[n][m] is not None:
+        return n, m
 
 
 
