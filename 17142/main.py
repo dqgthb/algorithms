@@ -47,9 +47,12 @@ def main(f=None):
         time = 0
 
         dq = deque()
-        dq.append
         for idx in indices:
             i, j = virusLocs[idx]
+            dq.append((i, j, time))
+
+        while dq:
+            i, j = dq.popleft()
             sMat[i][j] = time
 
             for di, dj in zip(ud, lr):
@@ -57,7 +60,7 @@ def main(f=None):
                 nj = j + dj
 
                 if 0 <= ni < N and 0 <= nj < N:
-                    if sMat[]
+                    if sMat[ni][nj] == 0:
 
 
 
