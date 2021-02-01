@@ -50,34 +50,38 @@ def main(f=None):
 
     minTime = 10 ** 9
     for indices in itertools.combinations(range(len(virusLocs)), r = M):
-        sMat = copy2d(mat)
-        time = 0
-
-        dq = deque()
-        for idx in indices:
-            i, j = virusLocs[idx]
-            sMat[i][j] = time
-            dq.append((i, j, time))
-
-        while dq:
-            i, j, t = dq.popleft()
-            for di, dj in zip(ud, lr):
-                ni = i + di
-                nj = j + dj
-
-                if 0 <= ni < N and 0 <= nj < N:
-                    if sMat[ni][nj] == EMPTY:
-                        time = max(time, t+1)
-                        sMat[ni][nj] = t + 1
-                        dq.append((ni, nj, t+1))
-
-        for i, j in For(N, N):
-            if mat[i][j] == EMPTY:
-                continue
-        if time == 2:
-            parr(sMat)
-        minTime = min(minTime, time)
+        bfs(indices)
     print(minTime)
+
+def bfs():
+    sMat = copy2d(mat)
+    time = 0
+
+    dq = deque()
+    for idx in indices:
+        i, j = virusLocs[idx]
+        sMat[i][j] = time
+        dq.append((i, j, time))
+
+    while dq:
+        i, j, t = dq.popleft()
+        for di, dj in zip(ud, lr):
+            ni = i + di
+            nj = j + dj
+
+            if 0 <= ni < N and 0 <= nj < N:
+                if sMat[ni][nj] == EMPTY:
+                    time = max(time, t+1)
+                    sMat[ni][nj] = t + 1
+                    dq.append((ni, nj, t+1))
+
+    for i, j in For(N, N):
+        if mat[i][j] == EMPTY:
+            continue
+    if time == 2:
+        parr(sMat)
+    minTime = min(minTime, time)
+
 
 
 # #############################################################################
