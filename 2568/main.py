@@ -66,6 +66,10 @@ def main(f=None):
     print(loc)
     print(mem)
 
+    for m in mem:
+        idx = bl(lookup, [m, False])
+
+
 
 
 
