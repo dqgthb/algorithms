@@ -39,7 +39,7 @@ def main(f=None):
         val = mat[i][j]
         if val == 2:
             virusLocs.append((i, j))
-            mat[i][j] = EMPTY
+            mat[i][j] = WALL
         elif val == 1:
             mat[i][j] = WALL
         else:
@@ -70,9 +70,10 @@ def main(f=None):
                         time = max(time, t+1)
                         sMat[ni][nj] = t + 1
                         dq.append((ni, nj, t+1))
-        if time == 5:
-            parr(sMat)
 
+        for i, j in For(N, N):
+            if mat[i][j] == EMPTY:
+                continue
         minTime = min(minTime, time)
     print(minTime)
 
