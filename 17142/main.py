@@ -68,13 +68,8 @@ def main(f=None):
                     if sMat[ni][nj] == EMPTY:
                         sMat[ni][nj] = t + 1
                         dq.append((ni, nj, t+1))
-
-
-
-
-
-
-
+        parr(sMat)
+        return
 
 
 # #############################################################################
