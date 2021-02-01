@@ -39,7 +39,10 @@ def main(f=None):
     lookup = [(y, x) for x, y in arr]
     lookup.sort()
 
+    maxVal = lookup[-1][0]
+
     seq = [arr[0][1]]
+    loc = [None for _ in range(maxVal+1)]
     for x, y in arr:
         if seq[-1] < y:
             seq.append(y)
