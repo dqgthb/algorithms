@@ -38,10 +38,13 @@ def dp(i, j):
         return i, j
 
 
+    val = 0
     for di, dj in zip(ud, lr):
         ni, nj = i + di, j + dj
 
         if 0 <= ni < N and 0 <= nj < M:
+            if mat[ni][nj] > mat[i][j]:
+                val += dp(ni, nj)
 
     DP[i][j] = val
     return val
