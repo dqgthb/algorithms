@@ -27,16 +27,19 @@ def main(f=None):
     global N, M, mat, DP
     N, M = map(int, input().split())
     mat = [list(map(int, input().split())) for _ in range(N)]
-    DP = Mat(N, M)
 
     # ######## INPUT AREA END ############
     # ####################################
+
+    DP = Mat(N, M)
+    DP[0][0] = 1
+    ans = dp(N-1, M-1)
+    print(an)
 
 
 def dp(i, j):
     if DP[i][j] is not None:
         return i, j
-
 
     val = 0
     for di, dj in zip(ud, lr):
