@@ -64,8 +64,10 @@ def main(f=None):
             mem.append(i)
             cnt -= 1
         else:
-            no.append(i)
+            if loc[i] != -1:
+                no.append(i)
 
+    print(no)
     for i in no:
         idx = bl(lookup, [i, 0])
         print(lookup[idx])
