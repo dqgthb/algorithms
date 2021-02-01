@@ -2,7 +2,6 @@ import sys
 import string
 
 for line in sys.stdin:
-    print(line)
     lower, upper, digit, blank = 0, 0, 0, 0
     for i in line:
         if i in string.ascii_lowercase:
