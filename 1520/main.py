@@ -37,6 +37,12 @@ def dp(i, j):
     if DP[i][j] is not None:
         return i, j
 
+
+    for di, dj in zip(ud, lr):
+        ni, nj = i + di, j + dj
+
+        if 0 <= ni < N and 0 <= nj < M:
+
     DP[i][j] = val
     return val
 
