@@ -53,8 +53,11 @@ def main(f=None):
         else:
             idx = bl(seq, y)
             seq[idx] = y
+            loc[y] = cnt
 
     nums = len(seq)
+    mem = []
+    for i in range(len(loc)-1, -1, -1):
 
 
 
