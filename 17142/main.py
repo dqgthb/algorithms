@@ -46,8 +46,6 @@ def main(f=None):
         else:
             mat[i][j] = EMPTY
 
-    results = []
-
     minTime = 10 ** 9
     for indices in itertools.combinations(range(len(virusLocs)), r = M):
         time = bfs(indices)
