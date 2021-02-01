@@ -38,10 +38,10 @@ def main(f=None):
 
     lookup = [(y, x) for x, y in arr]
     lookup.sort()
-    parr(lookup)
 
-
-    arr =
+    seq = [arr[0][1]]
+    for x, y in arr:
+        seq
 
 
 # #############################################################################
