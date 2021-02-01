@@ -41,7 +41,11 @@ def main(f=None):
 
     seq = [arr[0][1]]
     for x, y in arr:
-        seq
+        if seq[-1] < y:
+            seq.append(y)
+        else:
+            idx = bl(seq, y)
+            seq[idx] = y
 
 
 # #############################################################################
