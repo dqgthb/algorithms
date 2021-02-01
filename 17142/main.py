@@ -39,6 +39,8 @@ def main(f=None):
             mat[i][j] = -1
     parr(mat)
 
+    for viruses in itertools.combinations
+
 
 
 
