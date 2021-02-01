@@ -36,7 +36,7 @@ def main(f=None):
     arr.sort()
     parr(arr)
 
-    lookup = [(y, x) for x, y in arr]
+    lookup = [[y, False] for x, y in arr]
     lookup.sort()
 
     maxVal = lookup[-1][0]
