@@ -39,7 +39,10 @@ def main(f=None):
             mat[i][j] = -1
     parr(mat)
 
+    simulMat = copy2d(mat)
     for indices in itertools.combinations(range(len(virusLocs)), r = M):
+        for idx in indices:
+            x, y = virusLocs[idx]
 
 
 
