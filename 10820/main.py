@@ -2,7 +2,6 @@ import sys
 import string
 
 for line in sys.stdin:
-    line = line.strip()
     print(line)
     lower, upper, digit, blank = 0, 0, 0, 0
     for i in line:
@@ -12,6 +11,6 @@ for line in sys.stdin:
             upper += 1
         elif i in string.digits:
             digit += 1
-        else:
+        elif i == ' ':
             blank += 1
     print(lower, upper, digit, blank)
