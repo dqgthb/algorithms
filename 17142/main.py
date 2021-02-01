@@ -78,10 +78,10 @@ def bfs(indices):
 
     for i, j in For(N, N):
         if mat[i][j] == EMPTY:
-            continue
+            return 10 ** 9
     if time == 2:
         parr(sMat)
-    minTime = min(minTime, time)
+
 
 
 
