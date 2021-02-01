@@ -19,7 +19,7 @@ ud = [-1, 0, 1, 0]
 lr = [0, -1, 0, 1]
 EMPTY = -2
 WALL = -1
-ACTIVE_VIRUS = -3
+NONACTIVE_VIRUS = -3
 
 def main(f=None):
     init(f)
@@ -40,7 +40,7 @@ def main(f=None):
         val = mat[i][j]
         if val == 2:
             virusLocs.append((i, j))
-            mat[i][j] = WALL
+            mat[i][j] = NONACTIVE_VIRUS
         elif val == 1:
             mat[i][j] = WALL
         else:
