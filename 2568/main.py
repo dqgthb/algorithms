@@ -56,6 +56,7 @@ def main(f=None):
             loc[y] = cnt
     nums = cnt
     print(nums, cnt)
+    cnt -= 1
     mem = []
     for i in range(len(loc)-1, -1, -1):
         if loc[i] == cnt:
