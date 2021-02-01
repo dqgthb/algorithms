@@ -80,7 +80,7 @@ def bfs(indices):
                     dq.append((ni, nj, t+1))
 
     for i, j in For(N, N):
-        if mat[i][j] == EMPTY:
+        if sMat[i][j] == EMPTY:
             return 10 ** 9
     return time
 
