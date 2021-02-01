@@ -42,10 +42,12 @@ def main(f=None):
     maxVal = lookup[-1][0]
 
     seq = [arr[0][1]]
+    cnt = 1
     loc = [None for _ in range(maxVal+1)]
     for x, y in arr:
         if seq[-1] < y:
             seq.append(y)
+            cnt += 1
         else:
             idx = bl(seq, y)
             seq[idx] = y
