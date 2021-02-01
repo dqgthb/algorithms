@@ -45,14 +45,17 @@ def main(f=None):
             mat[i][j] = WALL
         else:
             mat[i][j] = EMPTY
-    parr(mat)
 
     results = []
 
     minTime = 10 ** 9
     for indices in itertools.combinations(range(len(virusLocs)), r = M):
-        bfs(indices)
-    print(minTime)
+        time = bfs(indices)
+        minTime = min(minTime, time)
+    if minTime == 10 ** 9:
+        print(-1)
+    else:
+        print(minTime)
 
 def bfs(indices):
     sMat = copy2d(mat)
@@ -79,8 +82,7 @@ def bfs(indices):
     for i, j in For(N, N):
         if mat[i][j] == EMPTY:
             return 10 ** 9
-    if time == 2:
-        parr(sMat)
+    return time
 
 
 
