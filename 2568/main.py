@@ -49,7 +49,10 @@ def main(f=None):
         else:
             idx = bl(seq, y)
             seq[idx] = y
-    print(len(seq))
+
+    nums = len(seq)
+
+
 
 
 # #############################################################################
