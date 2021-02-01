@@ -23,16 +23,17 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     N = int(input())
-    arr = [None for _ in range(N)]
+    arr = []
     for _ in range(N):
         x, y = map(int, input().split())
         x -= 1
         y -= 1
-        arr[x] = y
+        arr.append((x, y))
 
     # ######## INPUT AREA END ############
     # ####################################
 
+    arr.sort()
     parr(arr)
 
 
