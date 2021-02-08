@@ -15,55 +15,43 @@ from heapq import heappush, heappop
 from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
 
-
+direction = ((1, 0), (0, 1), (-1, 0), (0, -1))
 def main(f=None):
     init(f)
     # sys.setrecursionlimit(10**9)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N, M, G
-    N, M = map(int, input().split())
-    G = [[] for _ in range(N)]
-    for _ in range(M):
-        a, b, c = map(int, input().split())
-        a -= 1
-        b -= 1
-        G[a].append((b, c))
-        G[b].append((a, c))
+    M, N = map(int, input().split())
+    mat = [list(map(int, input().strip())) for _ in range(N)]
 
     # ######## INPUT AREA END ############
     # ####################################
 
-    dSuper, parents = dijkstra(0)
+    distance = Mat(N, M, 10**9)
+    distance[0][0] = 0
 
-    print(N-1)
-    for i, p in enu(parents[1:]):
-        print(i+2, p+1)
-
-
-def dijkstra(s):
-    d = [10**9 for _ in range(N)]
-    d[s] = 0
-    p = [None for _ in range(N)]
-
-    pq = []
-    heappush(pq, (0, s))
-
-    while pq:
-        dist, t = heappop(pq)
-        if dist > d[t]:
+    dq = deque()
+    dq.append((0, 0, 0))
+    while dq:
+        i, j, d = dq.popleft()
+        if d > distance[i][j]:
             continue
 
-        for neighbor, tToN in G[t]:
-            newDist = dist + tToN
-            if newDist < d[neighbor]:
-                d[neighbor] = newDist
-                p[neighbor] = t
-                heappush(pq, (newDist, neighbor))
-    return d, p
+        for di, dj in direction:
+            ni, nj = i + di, j + dj
 
+            if 0 <= ni < N and 0 <= nj < M:
+                dist = distance[ni][nj]
+                nd = d
+                if mat[ni][nj] == 1:
+                    nd += 1
 
+                if nd < dist:
+                    distance[ni][nj] = nd
+                    dq.append((ni, nj, nd))
+
+    print(distance[N-1][M-1])
 
 
 # #############################################################################

@@ -15,7 +15,9 @@ from heapq import heappush, heappop
 from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
 
-direction = ((1, 0), (0, 1), (-1, 0), (0, -1))
+
+directions = ((-1, 0), (1, 0), (0, -1), (0, 1))
+
 def main(f=None):
     init(f)
     # sys.setrecursionlimit(10**9)
@@ -28,30 +30,40 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    distance = Mat(N, M, 10**9)
-    distance[0][0] = 0
+    distances = Mat(N, M, 10**9)
+    distances[0][0] = 0
+    pq = []
+    heappush(pq, (0, 0, 0))
 
-    dq = deque()
-    dq.append((0, 0, 0))
-    while dq:
-        i, j, d = dq.popleft()
-        if d > distance[i][j]:
+    while pq:
+        print(pq)
+        d, i, j = heappop(pq)
+        if d > distances[i][j]:
             continue
 
-        for di, dj in direction:
+        for di, dj in directions:
             ni, nj = i + di, j + dj
 
             if 0 <= ni < N and 0 <= nj < M:
-                dist = distance[ni][nj]
-                nd = d
+                newDistance = d
                 if mat[ni][nj] == 1:
-                    nd += 1
+                    newDistance += 1
 
-                if nd < dist:
-                    distance[ni][nj] = nd
-                    dq.append((ni, nj, nd))
+                if newDistance < distances[ni][nj]:
+                    distances[i][j] = newDistance
+                    heappush(pq, (newDistance, ni, nj))
 
-    print(distance[N-1][M-1])
+    parr(distances)
+
+
+
+
+
+
+
+
+
+
 
 
 # #############################################################################
