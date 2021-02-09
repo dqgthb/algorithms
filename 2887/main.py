@@ -23,8 +23,12 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
     N = map(int, input().split())
     points = []
-    for _ in range(N):
+    for i in range(N):
         points.append([int(i) for i in input().split()])
+
+
+
+
 
 
 
