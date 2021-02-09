@@ -48,7 +48,15 @@ def solve():
             G[i][team] = True
             G[team][i] = False
         teamsAbove.append(i)
+
+    for x, y in pairs:
+        if G[x][y]:
+            G[x][y] = False
+
+
+
     parr(G)
+
 
 
 # #############################################################################
