@@ -26,16 +26,8 @@ def main(f=None):
     for i in range(N):
         points.append((i, tuple(int(i) for i in input().split())))
 
-    root = 0
-    pointSet = set([0])
-
-    print(pointSet)
-
-
-
-
-
-
+    points.sort(key = lambda x:x[1])
+    print(points)
 
 
     # ######## INPUT AREA END ############
