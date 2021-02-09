@@ -40,8 +40,8 @@ def main(f=None):
             edges.append((distance, points[j][3], points[j+1][3]))
 
     edges.sort()
-    print(edges)
-    print(edges)
+
+    for edge in edges:
 
 
 
