@@ -27,11 +27,11 @@ def main(f=None):
     for _ in range(T):
         N = int(input())
         G = [[] for _ in range(N)]
-        arr = [int(i) for i in input().split()]
+        arr = [int(i)-1 for i in input().split()]
         M = int(input())
         pairs = []
         for _ in range(M):
-            x, y = map(int, input().split())
+            x, y = map(lambda x:int(x)-1, input().split())
             pairs.append((x, y))
 
         solve()
