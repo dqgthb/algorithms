@@ -55,7 +55,7 @@ def solve():
     print(degree)
 
     q = deque()
-    for i, e in degree:
+    for i, e in enu(degree):
         if e == 0:
             q.append(i)
 
