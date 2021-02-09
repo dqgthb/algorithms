@@ -26,7 +26,7 @@ def main(f=None):
     T = int(input())
     for _ in range(T):
         N = int(input())
-        G = Mat(N, N, 0)
+        G = Mat(N, N, False)
         arr = [int(i)-1 for i in input().split()]
         M = int(input())
         degree = [None for _ in range(N)]
@@ -34,7 +34,6 @@ def main(f=None):
         for _ in range(M):
             x, y = map(lambda x:int(x)-1, input().split())
             pairs.append((x, y))
-
 
         solve()
 
@@ -50,7 +49,6 @@ def solve():
             G[team][i] = False
         teamsAbove.append(i)
     parr(G)
-
 
 
 # #############################################################################
