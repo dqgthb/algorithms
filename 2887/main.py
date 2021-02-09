@@ -27,9 +27,10 @@ def main(f=None):
         points.append((i, tuple(int(i) for i in input().split())))
 
     root = 0
+    pointSet = set([0])
 
+    print(pointSet)
 
-    parr(points)
 
 
 
