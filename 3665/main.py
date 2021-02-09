@@ -44,37 +44,11 @@ def main(f=None):
 
 def solve():
     teams = []
-    degreeCount = N-1
     for i in arr:
         G[i] = teams[:]
         teams.append(i)
-        degree[i] = degreeCount
-        degreeCount -= 1
 
-    print(G)
-    print(degree)
-
-    q = deque()
-    for i, e in enu(degree):
-        if e == 0:
-            q.append(i)
-
-    seq = []
-    while q:
-        node = q.popleft()
-        seq.append(node)
-
-        for nbr in G[node]:
-            degree[nbr] -= 1
-            if degree[nbr] == 0:
-                q.append(nbr)
-    print(seq)
-
-
-
-
-
-
+    for i in
 
 # #############################################################################
 # #############################################################################
