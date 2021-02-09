@@ -31,6 +31,8 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+    global parents
+
     edges = []
     for i in range(3):
         points.sort(key = lambda x: x[i])
@@ -41,17 +43,7 @@ def main(f=None):
 
     edges.sort()
 
-    pointSet = set()
-    sum_ = 0
-    for distance, x, y in edges:
-        if x in pointSet and y in pointSet:
-            continue
-        pointSet.add(x)
-        pointSet.add(y)
-        print(distance)
-        sum_ += distance
-    print(pointSet)
-    print(sum_)
+
 
 
 
