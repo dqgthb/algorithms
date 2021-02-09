@@ -22,17 +22,19 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global T, N, G, arr, M, pairs
+    global T, N, G, arr, M, pairs, degree
     T = int(input())
     for _ in range(T):
         N = int(input())
         G = [[] for _ in range(N)]
         arr = [int(i)-1 for i in input().split()]
         M = int(input())
+        degree = [None for _ in range(N)]
         pairs = []
         for _ in range(M):
             x, y = map(lambda x:int(x)-1, input().split())
             pairs.append((x, y))
+
 
         solve()
 
@@ -45,7 +47,6 @@ def solve():
     for i in reversed(arr):
         G[i] = teams[:]
         teams.append(i)
-    parr(G)
 
 
 # #############################################################################
