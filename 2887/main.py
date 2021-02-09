@@ -36,7 +36,9 @@ def main(f=None):
         points.sort(key = lambda x: x[i])
 
         for j in range(N-1):
+            print(points[j+1], points[j])
             distance = points[j+1][i] - points[j][i]
+            print(distance)
             edges.append((distance, points[j][3], points[j+1][3]))
 
     edges.sort()
@@ -48,6 +50,7 @@ def main(f=None):
             continue
         pointSet.add(x)
         pointSet.add(y)
+        print(distance)
         sum_ += distance
     print(sum_)
 
