@@ -44,7 +44,15 @@ def main(f=None):
 
     edges.sort()
 
+    result = 0
+    count = 0
     for distance, x, y in edges:
+        if Find(x) != Find(y):
+            result += distance
+            Union(x, y)
+            count += 1
+
+
 
 
 
