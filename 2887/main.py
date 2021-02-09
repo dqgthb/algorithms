@@ -24,10 +24,12 @@ def main(f=None):
     N = int(input())
     points = []
     for i in range(N):
-        points.append((i, tuple(int(i) for i in input().split())))
+        x, y, z = map(int, input().split())
+        points.append((x, y, z, i))
 
-    points.sort(key = lambda x:x[1])
-    print(points)
+    points.sort()
+
+
 
 
     # ######## INPUT AREA END ############
