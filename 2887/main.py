@@ -41,7 +41,12 @@ def main(f=None):
 
     edges.sort()
 
-    for edge in edges:
+    pointSet = set()
+    for distance, x, y in edges:
+        if x in pointSet and y in pointSet:
+            continue
+        pointSet.add(x)
+        pointSet.add(y)
 
 
 
