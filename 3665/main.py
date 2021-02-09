@@ -65,6 +65,7 @@ def solve():
                 countTrue += 1
         degree[i] = N - countTrue - 1
 
+    # create q with in-degree of 0
     q = deque()
     for i, e in enu(degree):
         if e == 0:
@@ -73,6 +74,7 @@ def solve():
         print("?")
         return
 
+    # topological sort
     seq = []
     while q:
         if len(q) > 1:
@@ -86,6 +88,7 @@ def solve():
                 if degree[i] == 0:
                     q.append(i)
 
+    # if there is a cycle
     if len(seq) != N:
         print("IMPOSSIBLE")
         return
