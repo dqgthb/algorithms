@@ -65,6 +65,7 @@ def solve():
                 countTrue += 1
         degree[i] = countTrue
 
+    print(degree)
     q = deque()
     for i, e in enu(degree):
         if e == 0:
@@ -72,6 +73,7 @@ def solve():
 
     seq = []
     while q:
+        print(q)
         node = q.popleft()
         seq.append(node)
 
