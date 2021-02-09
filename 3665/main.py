@@ -51,7 +51,10 @@ def solve():
 
     for x, y in pairs:
         if G[x][y]:
-            G[x][y] = False
+            x, y = y, x
+        G[x][y] = True
+        G[y][x] = False
+
 
 
 
