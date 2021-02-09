@@ -75,9 +75,13 @@ def solve():
         node = q.popleft()
         seq.append(node)
 
-        for nbr in enu(G[node])
+        for i, isNbr in enu(G[node]):
+            if isNbr:
+                degree[i] -= 1
+                if degree[i] == 0:
+                    q.append(i)
 
-
+    print(seq)
 
 
 # #############################################################################
