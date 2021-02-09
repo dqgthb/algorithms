@@ -42,6 +42,7 @@ def main(f=None):
 
 
 def solve():
+    # last year's result
     teamsAbove = []
     for i in arr:
         for team in teamsAbove:
@@ -49,21 +50,21 @@ def solve():
             G[team][i] = False
         teamsAbove.append(i)
 
+    # this year's result
     for x, y in pairs:
         if G[x][y]:
             x, y = y, x
         G[x][y] = True
         G[y][x] = False
 
+    # degree calculation
     for i in range(N):
         countTrue = 0
         for j in range(N):
-            if mat[i][j]:
-                count += 1
+            if G[i][j]:
+                countTrue += 1
+        degree[i] = countTrue
 
-        degree[i] =
-
-    parr(G)
 
 
 
