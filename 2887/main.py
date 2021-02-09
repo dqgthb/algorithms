@@ -48,12 +48,12 @@ def main(f=None):
     count = 0
     for distance, x, y in edges:
         if Find(x) != Find(y):
+            count += 1
             result += distance
             Union(x, y)
-            count += 1
-
-
-
+            if count == N-1:
+                break
+    print(result)
 
 
 def Find(x):
@@ -63,6 +63,7 @@ def Find(x):
         y = Find(p[x])
         p[x] = y
         return y
+
 
 def Union(x, y):
     x = Find(x)
