@@ -55,8 +55,13 @@ def solve():
         G[x][y] = True
         G[y][x] = False
 
+    for i in range(N):
+        countTrue = 0
+        for j in range(N):
+            if mat[i][j]:
+                count += 1
 
-
+        degree[i] =
 
     parr(G)
 
