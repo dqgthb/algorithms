@@ -22,12 +22,19 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
+    global T, N, G, arr, M, pairs
     T = int(input())
     for _ in range(T):
         N = int(input())
         G = [[] for _ in range(N)]
         arr = [int(i) for i in input().split()]
+        M = int(input())
+        pairs = []
+        for _ in range(M):
+            x, y = map(int, input().split())
+            pairs.append((x, y))
 
+        solve()
 
     # ######## INPUT AREA END ############
     # ####################################
