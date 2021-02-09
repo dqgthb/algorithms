@@ -43,9 +43,14 @@ def main(f=None):
 
 
 def solve():
-    teamsBelow = []
+    teamsAbove = []
     for i in arr:
-        retrun
+        for team in teamsAbove:
+            G[i][team] = True
+            G[team][i] = False
+        teamsAbove.append(i)
+    parr(G)
+
 
 
 # #############################################################################
