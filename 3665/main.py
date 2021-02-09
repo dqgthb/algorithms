@@ -87,10 +87,10 @@ def solve():
                     q.append(i)
 
     if len(seq) != N:
-        print("IMPOSSIBLE"):
+        print("IMPOSSIBLE")
         return
 
-    print(*(i+1 for i in seq))
+    print(*(i+1 for i in reversed(seq)))
 
 
 # #############################################################################
