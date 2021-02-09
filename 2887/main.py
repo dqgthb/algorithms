@@ -31,8 +31,8 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    global parents
-    parents = [i for i in range(N)]
+    global p
+    p = [i for i in range(N)]
 
     edges = []
     for i in range(3):
@@ -45,14 +45,19 @@ def main(f=None):
     edges.sort()
 
 
-def find(x):
+def Find(x):
     if p[x] == x:
         return x
     else:
-        y = find(p[x])
-        y = find
+        y = Find(p[x])
+        p[x] = y
+        return y
 
-
+def Union(x, y):
+    x = Find(x)
+    y = Find(y)
+    if x != y:
+        p[y] = x
 
 
 
