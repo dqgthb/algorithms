@@ -32,7 +32,7 @@ def main(f=None):
         points.sort(key = lambda x: x[i])
 
         for j in range(N-1):
-            distance = points[j][i+1] - points[j][i]
+            distance = points[j+1][i] - points[j][i]
             edges.append((distance, points[j][3], points[j+1][3]))
 
     print(edges)
