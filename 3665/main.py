@@ -41,8 +41,11 @@ def main(f=None):
 
 
 def solve():
-    nodes = []
+    teams = []
     for i in reversed(arr):
+        G[i] = teams[:]
+        teams.append(i)
+    parr(G)
 
 
 
