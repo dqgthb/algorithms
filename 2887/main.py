@@ -21,10 +21,15 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
-    N = map(int, input().split())
+    N = int(input())
     points = []
     for i in range(N):
-        points.append([int(i) for i in input().split()])
+        points.append((i, tuple(int(i) for i in input().split())))
+
+    root = 0
+
+
+    parr(points)
 
 
 
