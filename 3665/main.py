@@ -63,13 +63,16 @@ def solve():
         for j in range(N):
             if G[i][j]:
                 countTrue += 1
-        degree[i] = countTrue
+        degree[i] = N - countTrue - 1
 
     print(degree)
     q = deque()
     for i, e in enu(degree):
         if e == 0:
             q.append(i)
+    if len(q) > 1:
+        print("?")
+        return
 
     seq = []
     while q:
