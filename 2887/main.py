@@ -27,7 +27,7 @@ def main(f=None):
         x, y, z = map(int, input().split())
         points.append((x, y, z, i))
 
-    points.sort()
+    edges = []
 
 
 
