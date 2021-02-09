@@ -44,6 +44,9 @@ def main(f=None):
 
     edges.sort()
 
+    for distance, x, y in edges:
+
+
 
 def Find(x):
     if p[x] == x:
@@ -58,7 +61,6 @@ def Union(x, y):
     y = Find(y)
     if x != y:
         p[y] = x
-
 
 
 # #############################################################################
