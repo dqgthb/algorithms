@@ -35,6 +35,7 @@ def main(f=None):
             distance = points[j+1][i] - points[j][i]
             edges.append((distance, points[j][3], points[j+1][3]))
 
+    edges.sort()
     print(edges)
 
 
