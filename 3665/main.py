@@ -65,6 +65,18 @@ def solve():
                 countTrue += 1
         degree[i] = countTrue
 
+    q = deque()
+    for i, e in enu(degree):
+        if e == 0:
+            q.append(i)
+
+    seq = []
+    while q:
+        node = q.popleft()
+        seq.append(node)
+
+        for nbr in enu(G[node])
+
 
 
 
