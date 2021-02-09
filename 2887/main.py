@@ -48,6 +48,9 @@ def main(f=None):
 def find(x):
     if p[x] == x:
         return x
+    else:
+        y = find(p[x])
+        y = find
 
 
 
