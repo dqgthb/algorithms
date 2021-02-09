@@ -32,6 +32,7 @@ def main(f=None):
     # ####################################
 
     global parents
+    parents = [i for i in range(N)]
 
     edges = []
     for i in range(3):
@@ -42,6 +43,11 @@ def main(f=None):
             edges.append((distance, points[j][3], points[j+1][3]))
 
     edges.sort()
+
+
+def find(x):
+    if p[x] == x:
+        return x
 
 
 
