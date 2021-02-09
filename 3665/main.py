@@ -65,7 +65,6 @@ def solve():
                 countTrue += 1
         degree[i] = N - countTrue - 1
 
-    print(degree)
     q = deque()
     for i, e in enu(degree):
         if e == 0:
@@ -76,7 +75,8 @@ def solve():
 
     seq = []
     while q:
-        print(q)
+        if len(q) > 1:
+            print("?")
         node = q.popleft()
         seq.append(node)
 
@@ -86,7 +86,11 @@ def solve():
                 if degree[i] == 0:
                     q.append(i)
 
-    print(seq)
+    if len(seq) != N:
+        print("IMPOSSIBLE"):
+        return
+
+    print(*(i+1 for i in seq))
 
 
 # #############################################################################
