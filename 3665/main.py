@@ -54,6 +54,15 @@ def solve():
     print(G)
     print(degree)
 
+    q = deque()
+    for i, e in degree:
+        if e == 0:
+            q.append(i)
+
+    while q:
+        node = q.popleft()
+
+
 
 
 
