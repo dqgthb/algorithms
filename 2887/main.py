@@ -28,6 +28,11 @@ def main(f=None):
         points.append((x, y, z, i))
 
     edges = []
+    for i in range(3):
+        points.sort(key = lambda x: x[i])
+
+        for j in range( N-1):
+
 
 
 
