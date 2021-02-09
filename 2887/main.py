@@ -31,7 +31,10 @@ def main(f=None):
     for i in range(3):
         points.sort(key = lambda x: x[i])
 
-        for j in range( N-1):
+        for j in range(N-1):
+            distance = points[j][i+1]
+            edges.append()
+
 
 
 
