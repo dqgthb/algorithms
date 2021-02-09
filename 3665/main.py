@@ -24,7 +24,10 @@ def main(f=None):
 
     T = int(input())
     for _ in range(T):
-        n = int(input())
+        N = int(input())
+        G = [[] for _ in range(N)]
+        arr = [int(i) for i in input().split()]
+
 
     # ######## INPUT AREA END ############
     # ####################################
