@@ -21,11 +21,15 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
+
     N = int(input())
     points = []
     for i in range(N):
         x, y, z = map(int, input().split())
         points.append((x, y, z, i))
+
+    # ######## INPUT AREA END ############
+    # ####################################
 
     edges = []
     for i in range(3):
@@ -37,14 +41,8 @@ def main(f=None):
 
     edges.sort()
     print(edges)
+    print(edges)
 
-
-
-
-
-
-    # ######## INPUT AREA END ############
-    # ####################################
 
 
 # #############################################################################
