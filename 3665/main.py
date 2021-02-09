@@ -44,10 +44,16 @@ def main(f=None):
 
 def solve():
     teams = []
+    degreeCount = N-1
     for i in arr:
         G[i] = teams[:]
         teams.append(i)
+        degree[i] = degreeCount
+        degreeCount -= 1
+
     print(G)
+    print(degree)
+
 
 
 
