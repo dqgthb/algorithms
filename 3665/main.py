@@ -44,7 +44,7 @@ def main(f=None):
 
 def solve():
     teams = []
-    for i in reversed(arr):
+    for i in arr:
         G[i] = teams[:]
         teams.append(i)
     for i in range(N):
@@ -56,6 +56,10 @@ def solve():
             q.append(i)
 
     while q:
+        node = q.pop()
+
+        for neighbor in G[i]:
+
 
 
 
