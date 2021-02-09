@@ -59,8 +59,17 @@ def solve():
         if e == 0:
             q.append(i)
 
+    seq = []
     while q:
         node = q.popleft()
+        seq.append(node)
+
+        for nbr in G[node]:
+            degree[nbr] -= 1
+            if degree[nbr] == 0:
+                q.append(nbr)
+    print(seq)
+
 
 
 
