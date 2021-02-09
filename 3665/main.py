@@ -47,18 +47,7 @@ def solve():
     for i in arr:
         G[i] = teams[:]
         teams.append(i)
-    for i in range(N):
-        degree[i] = len(G[i])
-
-    q = deque()
-    for i, e in degree:
-        if e == 0:
-            q.append(i)
-
-    while q:
-        node = q.pop()
-
-        for neighbor in G[i]:
+    print(G)
 
 
 
