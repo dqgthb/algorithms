@@ -26,7 +26,7 @@ def main(f=None):
     T = int(input())
     for _ in range(T):
         N = int(input())
-        G = [[] for _ in range(N)]
+        G = Mat(N, N, 0)
         arr = [int(i)-1 for i in input().split()]
         M = int(input())
         degree = [None for _ in range(N)]
@@ -43,12 +43,10 @@ def main(f=None):
 
 
 def solve():
-    teams = []
+    teamsBelow = []
     for i in arr:
-        G[i] = teams[:]
-        teams.append(i)
+        retrun
 
-    for x, y in pairs:
 
 # #############################################################################
 # #############################################################################
