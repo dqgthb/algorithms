@@ -36,6 +36,10 @@ def main(f=None):
     for i in range(H):
         box[i] = [list(map(int, input().split())) for _ in range(N)]
 
+    # ######## INPUT AREA END ############
+    # ####################################
+
+
     dq = deque()
     for h in range(H):
         for n in range(N):
@@ -62,14 +66,6 @@ def main(f=None):
             print("-1")
             return
     print(maxTime)
-
-
-
-
-
-
-    # ######## INPUT AREA END ############
-    # ####################################
 
 
 # #############################################################################
