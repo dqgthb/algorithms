@@ -48,9 +48,8 @@ def main(f=None):
 
     minCount = 11
     while dq:
-        x = input()
         r, b, count = dq.popleft()
-        printMap(r, b)
+        #printMap(r, b)
 
         for i in range(4):
             nr, nb = move(i, r, b)
