@@ -48,7 +48,7 @@ def main(f=None):
 
     minCount = 10 ** 9
     while dq:
-        input()
+        x = input()
         r, b, count = dq.popleft()
         printMap(r, b)
 
