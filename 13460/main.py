@@ -60,12 +60,16 @@ def move(direction, rPos, bPos, oPos):
     mat[bi][bj] = 'B'
     mat[oi][oj] = 'O'
 
-    while True:
+    rMove = False
+    bMove = False
+    while rMove or bMove:
         nri, nrj = ri + di, rj + dj
         if mat[nri][nrj] == '.':
             ri, rj = nri, nrj
 
         nbi, nbj = bi + di, bj + dj
+        if mat[nbi][nbj] == '.':
+            bi, bj = nbi, nbj
 
 
 
