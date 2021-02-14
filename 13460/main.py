@@ -55,6 +55,9 @@ def main(f=None):
         for i in range(4):
             nr, nb = move(i, r, b)
 
+            if nr == r and nb == b:
+                continue
+
             if nb == oPos:
                 continue
 
