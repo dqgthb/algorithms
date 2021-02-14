@@ -29,7 +29,8 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    parr(mat)
+    global oPos
+    oPos = (-1, -1)
     for i, j in For(N, M):
         val = mat[i][j]
         if val == 'R':
@@ -43,7 +44,7 @@ def main(f=None):
             mat[i][j] = '.'
 
     dq = deque()
-    dq.append((rPos, bPos, oPos, 0))
+    dq.append((rPos, bPos, 0))
 
     minCount = 10 ** 9
     while dq:
@@ -67,7 +68,7 @@ def main(f=None):
         print(-1)
 
 
-def printMap(mat, rPos, bPos, oPos):
+def printMap(mat, rPos, bPos):
     ri, rj = rPos
     bi, bj = bPos
     oi, oj = oPos
