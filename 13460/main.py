@@ -46,12 +46,14 @@ def main(f=None):
     dq = deque()
     dq.append((rPos, bPos, oPos))
     while dq:
+        pass
 
-        for i in range)
 
 DIRECTION = [(-1, 0), (0, -1), (1, 0), (0, 1)]
+
 def move(direction, rPos, bPos, oPos):
     while True:
+
 
 
 
