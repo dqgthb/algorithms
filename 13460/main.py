@@ -40,6 +40,10 @@ def main(f=None):
             oPos = (i, j)
     print(rPos, bPos, oPos)
 
+    dq = deque()
+    dq
+    while dq
+
 
 
 # #############################################################################
