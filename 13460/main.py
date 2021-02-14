@@ -92,6 +92,8 @@ def move(direction, rPos, bPos, oPos):
                 rMove = True
             else:
                 rMove = False
+        else:
+            rMove = False
 
         if not bHole:
             nbi, nbj = bi + di, bj + dj
@@ -107,6 +109,8 @@ def move(direction, rPos, bPos, oPos):
                 bHole = True
             else:
                 bMove = False
+        else:
+            bMove = False
 
     mat[ri][rj] = '.'
     mat[bi][bj] = '.'
