@@ -28,6 +28,8 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+    parr(mat)
+    global rPos, bPos, oPos
     for i, j in range(N, M):
         val = mat[i][j]
         if val == 'R':
@@ -35,8 +37,9 @@ def main(f=None):
         if val == 'B':
             bPos = (i, j)
         if val == 'O':
+            oPos = (i, j)
+    print(rPos, bPos, oPos)
 
-    rPos =
 
 
 # #############################################################################
