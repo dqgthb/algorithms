@@ -61,7 +61,8 @@ def main(f=None):
             if nr == no:
                 minCount = min(minCount, count + 1)
 
-            dq.append((nr, nb, no, count + 1))
+            if count + 1 < 10:
+                dq.append((nr, nb, no, count + 1))
     print(minCount)
 
 
