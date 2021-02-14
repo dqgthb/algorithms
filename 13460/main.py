@@ -49,19 +49,19 @@ def main(f=None):
     minCount = 10 ** 9
     while dq:
         print(dq)
-        r, b, o, count = dq.popleft()
+        r, b, count = dq.popleft()
 
         for i in range(4):
-            nr, nb, no = move(i, r, b, o)
+            nr, nb = move(i, r, b)
 
-            if nb == no:
+            if nb == oPos:
                 continue
 
-            if nr == no:
+            if nr == oPos:
                 minCount = min(minCount, count + 1)
 
             if count + 1 < 10:
-                dq.append((nr, nb, no, count + 1))
+                dq.append((nr, nb, count + 1))
     if minCount != 10 ** 9:
         print(minCount)
     else:
@@ -83,7 +83,7 @@ def printMap(mat, rPos, bPos):
 
 DIRECTION = [(-1, 0), (0, -1), (1, 0), (0, 1)]
 
-def move(direction, rPos, bPos, oPos):
+def move(direction, rPos, bPos):
     di, dj = DIRECTION[direction]
     ri, rj = rPos
     bi, bj = bPos
@@ -134,7 +134,7 @@ def move(direction, rPos, bPos, oPos):
     mat[ri][rj] = '.'
     mat[bi][bj] = '.'
     mat[oi][oj] = '.'
-    return (ri, rj), (bi, bj), (oi, oj)
+    return (ri, rj), (bi, bj)
 
 
 
