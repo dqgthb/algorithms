@@ -82,6 +82,7 @@ def move(direction, rPos, bPos, oPos):
             mat[nri][nrj] = 'R'
             ri, rj = nri, nrj
             rMove = True
+        elif:
         else:
             rMove = False
 
