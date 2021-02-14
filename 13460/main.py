@@ -30,7 +30,7 @@ def main(f=None):
 
     parr(mat)
     global rPos, bPos, oPos
-    for i, j in range(N, M):
+    for i, j in For(N, M):
         val = mat[i][j]
         if val == 'R':
             rPos = (i, j)
