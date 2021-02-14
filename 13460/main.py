@@ -22,6 +22,7 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
+    global mat, N, M
     N, M = map(int, input().split())
     mat = [list(input().strip()) for _ in range(N)]
 
@@ -33,9 +34,12 @@ def main(f=None):
         val = mat[i][j]
         if val == 'R':
             rPos = (i, j)
+            mat[i][j] = '.'
         if val == 'B':
             bPos = (i, j)
+            mat[i][j] = '.'
         if val == 'O':
+            oPos = (i, j)
             oPos = (i, j)
     print(rPos, bPos, oPos)
 
@@ -47,6 +51,8 @@ def main(f=None):
 
 DIRECTION = [(-1, 0), (0, -1), (1, 0), (0, 1)]
 def move(direction, rPos, bPos, oPos):
+    while True:
+
 
 
 
