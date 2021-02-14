@@ -46,7 +46,7 @@ def main(f=None):
     dq = deque()
     dq.append((rPos, bPos, 0))
 
-    minCount = 10 ** 9
+    minCount = 11
     while dq:
         x = input()
         r, b, count = dq.popleft()
@@ -62,10 +62,10 @@ def main(f=None):
                 minCount = min(minCount, count + 1)
                 continue
 
-            if count < 9:
+            if count < minCount:
                 dq.append((nr, nb, count + 1))
 
-    if minCount != 10 ** 9:
+    if minCount != 11:
         print(minCount)
     else:
         print(-1)
