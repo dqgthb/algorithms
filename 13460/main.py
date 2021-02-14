@@ -48,7 +48,6 @@ def main(f=None):
 
     minCount = 10 ** 9
     while dq:
-        print(dq)
         r, b, count = dq.popleft()
 
         for i in range(4):
@@ -59,8 +58,9 @@ def main(f=None):
 
             if nr == oPos:
                 minCount = min(minCount, count + 1)
+                continue
 
-            if count + 1 < 10:
+            if count < 9:
                 dq.append((nr, nb, count + 1))
     if minCount != 10 ** 9:
         print(minCount)
