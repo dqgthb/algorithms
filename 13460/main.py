@@ -44,7 +44,7 @@ def main(f=None):
 
     dq = deque()
     dq.append((rPos, bPos, oPos))
-    rPos, bPos, oPos = move(0, rPos, bPos, oPos)
+    rPos, bPos, oPos = move(3, rPos, bPos, oPos)
     print(rPos, bPos, oPos)
     printMap(mat, rPos, bPos, oPos)
 
@@ -104,7 +104,7 @@ def move(direction, rPos, bPos, oPos):
                 mat[bi][bj] = '.'
                 bi, bj = nbi, nbj
                 bMove = True
-
+                bHole = True
             else:
                 bMove = False
 
