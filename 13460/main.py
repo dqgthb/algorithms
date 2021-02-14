@@ -78,9 +78,9 @@ def move(direction, rPos, bPos, oPos):
     while rMove or bMove:
         nri, nrj = ri + di, rj + dj
         if mat[nri][nrj] == '.':
-            ri, rj = nri, nrj
             mat[ri][rj] = '.'
             mat[nri][nrj] = 'R'
+            ri, rj = nri, nrj
             rMove = True
         else:
             rMove = False
@@ -89,6 +89,7 @@ def move(direction, rPos, bPos, oPos):
         if mat[nbi][nbj] == '.':
             mat[bi][bj] = '.'
             mat[nbi][nbj] = 'B'
+            bi, bj = nbi, nbj
             bMove = True
         else:
             bMove = False
