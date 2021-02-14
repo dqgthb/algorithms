@@ -40,7 +40,7 @@ def main(f=None):
             mat[i][j] = '.'
         if val == 'O':
             oPos = (i, j)
-            oPos = (i, j)
+            mat[i][j] = '.'
     print(rPos, bPos, oPos)
 
     dq = deque()
