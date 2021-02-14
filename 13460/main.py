@@ -45,16 +45,21 @@ def main(f=None):
     dq = deque()
     dq.append((rPos, bPos, oPos, 0))
 
+    minCount = 10 ** 9
     while dq:
         r, b, o, count = dq.popleft()
         if count == 10:
+            print("-1")
+            return
 
         for i in range(4):
             nr, nb, no = move(i, r, b, o)
 
-
             if nb == no:
                 continue
+
+            if nr == no:
+                minCount = min(minCount, count + 1)
 
 
 
