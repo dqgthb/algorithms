@@ -93,14 +93,20 @@ def move(direction, rPos, bPos, oPos):
             else:
                 rMove = False
 
-        nbi, nbj = bi + di, bj + dj
-        if mat[nbi][nbj] == '.':
-            mat[bi][bj] = '.'
-            mat[nbi][nbj] = 'B'
-            bi, bj = nbi, nbj
-            bMove = True
-        else:
-            bMove = False
+        if not bHole:
+            nbi, nbj = bi + di, bj + dj
+            if mat[nbi][nbj] == '.':
+                mat[bi][bj] = '.'
+                mat[nbi][nbj] = 'B'
+                bi, bj = nbi, nbj
+                bMove = True
+            elif mat[nbi][nbj] == 'O':
+                mat[bi][bj] = '.'
+                bi, bj = nbi, nbj
+                bMove = True
+
+            else:
+                bMove = False
 
     mat[ri][rj] = '.'
     mat[bi][bj] = '.'
