@@ -61,10 +61,8 @@ def main(f=None):
             if nr == no:
                 minCount = min(minCount, count + 1)
 
-
-
-
-    printMap(mat, rPos, bPos, oPos)
+            dq.append((nr, nb, no, count + 1))
+    print(minCount)
 
 
 def printMap(mat, rPos, bPos, oPos):
