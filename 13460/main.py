@@ -52,6 +52,13 @@ def main(f=None):
 DIRECTION = [(-1, 0), (0, -1), (1, 0), (0, 1)]
 
 def move(direction, rPos, bPos, oPos):
+    ri, rj = rPos
+    bi, bj = bPos
+    oi, oj = oPos
+    mat[ri][rj] = 'R'
+    mat[bi][bj] = 'B'
+    mat[oi][oj] = 'O'
+
     while True:
 
 
