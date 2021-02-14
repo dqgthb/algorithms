@@ -46,6 +46,7 @@ def main(f=None):
     dq = deque()
     dq.append((rPos, bPos, oPos))
     rPos, bPos, oPos = move(0, rPos, bPos, oPos)
+    printMap(mat, rPos, bPos, oPos)
 
 
 def printMap(mat, rPos, bPos, oPos):
@@ -56,6 +57,9 @@ def printMap(mat, rPos, bPos, oPos):
     mat[bi][bj] = 'B'
     mat[oi][oj] = 'O'
     parr(mat)
+    mat[ri][rj] = '.'
+    mat[bi][bj] = '.'
+    mat[oi][oj] = '.'
 
 
 DIRECTION = [(-1, 0), (0, -1), (1, 0), (0, 1)]
