@@ -41,7 +41,7 @@ def main(f=None):
     print(rPos, bPos, oPos)
 
     dq = deque()
-    dq
+    dq.append((rPos, bPos, oPos))
     while dq
 
 
