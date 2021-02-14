@@ -23,7 +23,7 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     N, M = map(int, input().split())
-
+    mat = [list(input().strip()) for _ in range(N)]
 
     # ######## INPUT AREA END ############
     # ####################################
