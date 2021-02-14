@@ -29,7 +29,6 @@ def main(f=None):
     # ####################################
 
     parr(mat)
-    global rPos, bPos, oPos
     for i, j in For(N, M):
         val = mat[i][j]
         if val == 'R':
@@ -42,7 +41,13 @@ def main(f=None):
 
     dq = deque()
     dq.append((rPos, bPos, oPos))
-    while dq
+    while dq:
+
+        for i in range)
+
+
+def move
+
 
 
 
