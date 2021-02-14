@@ -47,10 +47,8 @@ def main(f=None):
 
     minCount = 10 ** 9
     while dq:
+        print(dq)
         r, b, o, count = dq.popleft()
-        if count == 10:
-            print("-1")
-            return
 
         for i in range(4):
             nr, nb, no = move(i, r, b, o)
@@ -63,7 +61,10 @@ def main(f=None):
 
             if count + 1 < 10:
                 dq.append((nr, nb, no, count + 1))
-    print(minCount)
+    if minCount != 10 ** 9:
+        print(minCount)
+    else:
+        print(-1)
 
 
 def printMap(mat, rPos, bPos, oPos):
