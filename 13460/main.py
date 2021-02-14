@@ -45,8 +45,9 @@ def main(f=None):
 
         for i in range)
 
+DIRECTION = [(-1, 0), (0, -1), (1, 0), (0, 1)]
+def move(direction, rPos, bPos, oPos):
 
-def move
 
 
 
