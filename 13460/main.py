@@ -41,7 +41,6 @@ def main(f=None):
         if val == 'O':
             oPos = (i, j)
             mat[i][j] = '.'
-    print(rPos, bPos, oPos)
 
     dq = deque()
     dq.append((rPos, bPos, oPos))
@@ -79,14 +78,16 @@ def move(direction, rPos, bPos, oPos):
         nri, nrj = ri + di, rj + dj
         if mat[nri][nrj] == '.':
             ri, rj = nri, nrj
-            mat[ri]
+            mat[ri][rj] = '.'
+            mat[nri][nrj] = 'R'
             rMove = True
         else:
             rMove = False
 
         nbi, nbj = bi + di, bj + dj
         if mat[nbi][nbj] == '.':
-            bi, bj = nbi, nbj
+            mat[bi][bj] = '.'
+            mat[nbi][nbj] = 'B'
             bMove = True
         else:
             bMove = False
