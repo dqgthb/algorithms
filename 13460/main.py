@@ -43,9 +43,10 @@ def main(f=None):
             mat[i][j] = '.'
 
     dq = deque()
-    dq.append((rPos, bPos, oPos))
-    rPos, bPos, oPos = move(3, rPos, bPos, oPos)
-    print(rPos, bPos, oPos)
+    dq.append((rPos, bPos, oPos, 0))
+
+    while dq:
+        r, b, o, count = dq.popleft()
     printMap(mat, rPos, bPos, oPos)
 
 
