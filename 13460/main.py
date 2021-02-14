@@ -62,7 +62,10 @@ def move(direction, rPos, bPos, oPos):
 
     while True:
         nri, nrj = ri + di, rj + dj
+        if mat[nri][nrj] == '.':
+
         nbi, nbj = bi + di, bj + dj
+
 
 
 
