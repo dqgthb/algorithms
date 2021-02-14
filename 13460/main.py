@@ -32,6 +32,9 @@ def main(f=None):
         val = mat[i][j]
         if val == 'R':
             rPos = (i, j)
+        if val == 'B':
+            bPos = (i, j)
+        if val == 'O':
 
     rPos =
 
