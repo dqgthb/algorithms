@@ -45,6 +45,7 @@ def main(f=None):
     dq = deque()
     dq.append((rPos, bPos, oPos))
     rPos, bPos, oPos = move(0, rPos, bPos, oPos)
+    print(rPos, bPos, oPos)
     printMap(mat, rPos, bPos, oPos)
 
 
@@ -72,8 +73,8 @@ def move(direction, rPos, bPos, oPos):
     mat[bi][bj] = 'B'
     mat[oi][oj] = 'O'
 
-    rMove = False
-    bMove = False
+    rMove = True
+    bMove = True
     while rMove or bMove:
         nri, nrj = ri + di, rj + dj
         if mat[nri][nrj] == '.':
