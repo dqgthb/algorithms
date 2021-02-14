@@ -47,6 +47,12 @@ def main(f=None):
 
     while dq:
         r, b, o, count = dq.popleft()
+
+        for i in range(4):
+            nr, nb, no = move(i, r, b, o)
+
+            if nr == nb == no:
+
     printMap(mat, rPos, bPos, oPos)
 
 
