@@ -46,7 +46,6 @@ def main(f=None):
     dq = deque()
     dq.append((rPos, bPos, oPos))
     while dq:
-        pass
 
 
 DIRECTION = [(-1, 0), (0, -1), (1, 0), (0, 1)]
@@ -76,6 +75,11 @@ def move(direction, rPos, bPos, oPos):
             bMove = True
         else:
             bMove = False
+
+    mat[ri][rj] = '.'
+    mat[bi][bj] = '.'
+    mat[oi][oj] = '.'
+    return (ri, rj), (bi, bj), (oi, oj)
 
 
 
