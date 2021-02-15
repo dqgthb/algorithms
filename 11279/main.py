@@ -22,56 +22,61 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    # prim
-    V, E = map(int, input().split())
-    G = [[] for _ in range(V)]
-    for _ in range(E):
-        a, b, c = map(int, input().split())
-        a -= 1
-        b -= 1
-        G[a].append((b, c))
-        G[b].append((a, c))
+    N = int(input())
+    pq = []
+    for _ in range(N):
+        x = int(input())
+        if x == 0:
+            if pq:
+                print(Myheap.heappop(pq))
+            else:
+                print(0)
+        else:
+            Myheap.heappush(pq, x)
 
     # ######## INPUT AREA END ############
     # ####################################
 
-    root = 0
-    added = [False for _ in range(V)]
-    added[root] = True
-    tree = [[] for _ in range(V)]
 
-    pq = []
-    for to, w in G[root]:
-        heappush(pq, (w, root, to))
+class Myheap:
+    @staticmethod
+    def heappush(lst, a):
+        lst.append(a)
+        idx = len(lst)-1
+        if idx == 0:
+            return
 
-    while pq:
-        weight, frm, to = heappop(pq)
+        while True:
+            pidx = (idx-1)//2
+            if pidx < 0:
+                return
 
-        if added[to]:
-            continue
+            if lst[pidx] < lst[idx]:
+                lst[idx], lst[pidx] = lst[pidx], lst[idx]
+                idx = pidx
+            else:
+                break
 
-        added[to] = True
-        tree[frm].append((to, weight))
+    def heappop(lst):
+        if len(lst) == 1:
+            return lst.pop()
+        val = lst[0]
+        lst[0] = lst.pop()
 
-        for nbr, w in G[to]:
-            if not added[nbr]:
-                heappush(pq, (w, to, nbr))
+        N = len(lst)
+        idx = 0
+        while True:
+            lidx = 2 * idx + 1
+            ridx = 2 * idx + 2
+            if lidx >= N:
+                return val
+            bigIdx = ridx if ridx < N and lst[ridx] > lst[lidx] else lidx
 
-
-    sum_ = 0
-    dq = deque()
-    dq.append(root)
-    while dq:
-        x = dq.popleft()
-        for to, w in tree[x]:
-            sum_ += w
-            dq.append(to)
-    print(sum_)
-
-
-
-
-
+            if lst[idx] < lst[bigIdx]:
+                lst[idx], lst[bigIdx] = lst[bigIdx], lst[idx]
+                idx = bigIdx
+            else:
+                return val
 
 
 # #############################################################################

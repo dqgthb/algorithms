@@ -22,51 +22,62 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    # prim
-    V, E = map(int, input().split())
-    G = [[] for _ in range(V)]
-    for _ in range(E):
-        a, b, c = map(int, input().split())
-        a -= 1
-        b -= 1
-        G[a].append((b, c))
-        G[b].append((a, c))
+    global mat, zeroes, N
+    mat = [list(map(int, input().split())) for _ in range(9)]
 
     # ######## INPUT AREA END ############
     # ####################################
 
-    root = 0
-    added = [False for _ in range(V)]
-    added[root] = True
-    tree = [[] for _ in range(V)]
+    zeroes = []
+    for i, j in For(9, 9):
+        n = mat[i][j]
+        if n == 0:
+            zeroes.append((i, j))
 
-    pq = []
-    for to, w in G[root]:
-        heappush(pq, (w, root, to))
+    N = len(zeroes)
 
-    while pq:
-        weight, frm, to = heappop(pq)
+    dfs(0)
 
-        if added[to]:
+
+dx = [-1, 0, 1, -1, 1, -1, 0, 1, 0]
+dy = [-1, -1, -1, 0, 0, 1, 1, 1, 0]
+def dfs(n):
+    if n == N:
+        for i in mat:
+            print(*i)
+        exit(0)
+
+    x, y = zeroes[n]
+
+    for i in range(1, 10):
+
+        skip = False
+        for a in range(9):
+            if mat[a][y] == i:
+
+                skip = True
+                break
+            if mat[x][a] == i:
+                skip = True
+                break
+        if skip:
             continue
 
-        added[to] = True
-        tree[frm].append((to, weight))
+        baseX = x // 3 * 3 + 1
+        baseY = y // 3 * 3 + 1
+        for d in range(9):
+            nx = baseX + dx[d]
+            ny = baseY + dy[d]
+            if mat[nx][ny] == i:
+                skip = True
+                break
+        if skip:
+            continue
 
-        for nbr, w in G[to]:
-            if not added[nbr]:
-                heappush(pq, (w, to, nbr))
+        mat[x][y] = i
+        dfs(n+1)
+        mat[x][y] = 0
 
-
-    sum_ = 0
-    dq = deque()
-    dq.append(root)
-    while dq:
-        x = dq.popleft()
-        for to, w in tree[x]:
-            sum_ += w
-            dq.append(to)
-    print(sum_)
 
 
 

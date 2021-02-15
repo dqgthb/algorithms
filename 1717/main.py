@@ -22,56 +22,39 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    # prim
-    V, E = map(int, input().split())
-    G = [[] for _ in range(V)]
-    for _ in range(E):
-        a, b, c = map(int, input().split())
-        a -= 1
-        b -= 1
-        G[a].append((b, c))
-        G[b].append((a, c))
+    global p
+    N, M = map(int, input().split())
+    p = [i for i in range(N+1)]
+    for _ in range(M):
+        c, a, b = map(int, input().split())
+        if c == 0:
+            union(a, b)
+        else:
+            if find(a) == find(b):
+                print("YES")
+            else:
+                print("NO")
 
     # ######## INPUT AREA END ############
     # ####################################
 
-    root = 0
-    added = [False for _ in range(V)]
-    added[root] = True
-    tree = [[] for _ in range(V)]
 
-    pq = []
-    for to, w in G[root]:
-        heappush(pq, (w, root, to))
-
-    while pq:
-        weight, frm, to = heappop(pq)
-
-        if added[to]:
-            continue
-
-        added[to] = True
-        tree[frm].append((to, weight))
-
-        for nbr, w in G[to]:
-            if not added[nbr]:
-                heappush(pq, (w, to, nbr))
+def union(a, b):
+    pa = find(a)
+    pb = find(b)
+    if pa != pb:
+        p[pa] = pb
 
 
-    sum_ = 0
-    dq = deque()
-    dq.append(root)
-    while dq:
-        x = dq.popleft()
-        for to, w in tree[x]:
-            sum_ += w
-            dq.append(to)
-    print(sum_)
-
-
-
-
-
+def find(a):
+    if p[a] == a:
+        return a
+    else:
+        pa = p[a]
+        while pa != p[pa]:
+            pa = p[pa]
+        p[a] = pa
+        return p[a]
 
 
 # #############################################################################

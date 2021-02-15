@@ -22,56 +22,60 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    # prim
+    global V, E, edges, p
     V, E = map(int, input().split())
-    G = [[] for _ in range(V)]
+    edges = []
     for _ in range(E):
         a, b, c = map(int, input().split())
         a -= 1
         b -= 1
-        G[a].append((b, c))
-        G[b].append((a, c))
+        edges.append((c, a, b))
 
     # ######## INPUT AREA END ############
     # ####################################
 
-    root = 0
-    added = [False for _ in range(V)]
-    added[root] = True
-    tree = [[] for _ in range(V)]
+    p = [i for i in range(V)]
+    edges.sort()
+    root = edges[0][1]
 
-    pq = []
-    for to, w in G[root]:
-        heappush(pq, (w, root, to))
+    G = [[] for _ in range(V)]
 
-    while pq:
-        weight, frm, to = heappop(pq)
-
-        if added[to]:
-            continue
-
-        added[to] = True
-        tree[frm].append((to, weight))
-
-        for nbr, w in G[to]:
-            if not added[nbr]:
-                heappush(pq, (w, to, nbr))
-
+    for w, a, b in edges:
+        if find(a) != find(b):
+            union(a, b)
+            G[a].append((b, w))
+            G[b].append((a, w))
 
     sum_ = 0
+
+    visited = [False for _ in range(V)]
     dq = deque()
     dq.append(root)
+    visited[root] = True
     while dq:
         x = dq.popleft()
-        for to, w in tree[x]:
-            sum_ += w
-            dq.append(to)
+
+        for i, w in G[x]:
+            if not visited[i]:
+                visited[i] = True
+                dq.append(i)
+                sum_ += w
     print(sum_)
 
 
+def find(v):
+    if p[v] == v:
+        return v
+    else:
+        p[v] = find(p[v])
+        return p[v]
 
 
-
+def union(x, y):
+    px = find(x)
+    py = find(y)
+    if px != py:
+        p[px] = py
 
 
 # #############################################################################
