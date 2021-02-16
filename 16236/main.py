@@ -31,12 +31,16 @@ def main(f=None):
 
     size = 2
 
+    sx, sy = 0, 0
     for i, j in For(N, N):
-        if amt]
+        if mat[i][j] == 9:
+            sx, sy = i, j
+            break
 
     dq = deque()
-
+    dq.append((sx, sy, 0))
     while dq:
+        x, y, t = dq.popleft()
 
 
 dx = [-1, 0, 1, 0]
