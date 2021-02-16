@@ -35,11 +35,14 @@ def main(f=None):
     count = 0
     for _ in range(M):
         arr = [int(i) for i in input().split()]
+        lie = True
         for i in range(1, len(arr)):
             if arr[i] in knowsTruth:
-        else:
-            count += 1
-    print(count)
+                lie = False
+                break
+        if not lie:
+
+
 
 
 
