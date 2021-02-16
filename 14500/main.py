@@ -75,6 +75,8 @@ def tSum(i, j):
                 continue
             ni = i + dx[d]
             nj = j + dy[d]
+            if not (0 <= ni < N and 0 <= nj < M):
+                break
 
 
 
