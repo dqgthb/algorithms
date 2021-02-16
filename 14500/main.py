@@ -41,6 +41,7 @@ dy = [0, 0, -1, 1]
 def dfs(i, j, cnt, sum_):
     global max_
     if cnt == 4:
+        print(sum_)
         max_ = max(max_, sum_)
         return
 
@@ -48,7 +49,6 @@ def dfs(i, j, cnt, sum_):
         ni = i + dx[d]
         nj = j + dy[d]
         if 0 <= ni < N and 0 <= nj < M:
-            print(i, j, ni, nj, sum_)
             dfs(ni, nj, cnt + 1, sum_ + mat[i][j])
 
 # #############################################################################
