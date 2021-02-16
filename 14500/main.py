@@ -66,7 +66,10 @@ def dfs(i, j, cnt, sum_):
 di = [-1, 0, 1, 0]
 dj = [0, -1, 0, 1]
 def tSum(i, j):
+    global max_
+
     for d in range(4):
+        for sides in range(4):
 
 
 
