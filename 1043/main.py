@@ -31,7 +31,6 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    print(knowsTruth)
     count = 0
     for _ in range(M):
         arr = [int(i) for i in input().split()]
@@ -39,7 +38,9 @@ def main(f=None):
             if arr[i] in knowsTruth:
                 break
         else:
+
             count += 1
+    print(count)
 
 
 
