@@ -31,9 +31,10 @@ def main(f=None):
 
     global max_
     global vis
-    vis = Mat(N, M, False)
     max_ = 0
     for i, j in For(N, M):
+        vis = Mat(N, M, False)
+        vis[i][j] = True
         dfs(i, j, 0, mat[i][j])
     print(max_)
 
@@ -43,7 +44,6 @@ dy = [0, 0, -1, 1]
 def dfs(i, j, cnt, sum_):
     global max_
     if cnt == 3:
-        print(sum_)
         max_ = max(max_, sum_)
         return
 
@@ -51,7 +51,9 @@ def dfs(i, j, cnt, sum_):
         ni = i + dx[d]
         nj = j + dy[d]
         if 0 <= ni < N and 0 <= nj < M:
-            dfs(ni, nj, cnt + 1, sum_ + mat[ni][nj])
+            if not vis[ni][nj]:
+                vis[ni][nj] = True
+                dfs(ni, nj, cnt + 1, sum_ + mat[ni][nj])
 
 # #############################################################################
 # #############################################################################
