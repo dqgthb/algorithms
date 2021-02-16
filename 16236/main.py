@@ -16,8 +16,8 @@ from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
 
 
-dx = [-1, 0, 1, 0]
-dy = [0, -1, 0, 1]
+di = [-1, 0, 1, 0]
+dj = [0, -1, 0, 1]
 def main(f=None):
     init(f)
     # sys.setrecursionlimit(10**9)
@@ -62,7 +62,12 @@ def bfs(x, y, size):
     dq.append((x, y, time))
 
     while dq:
-        i, j, t =
+        i, j, t = dq.popleft()
+
+        for d in range(4):
+            ni = i + di[d]
+            nj = j + dj[d]
+
 
     return size, time
 
