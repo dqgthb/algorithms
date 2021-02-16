@@ -39,6 +39,14 @@ def main(f=None):
     print(max_)
 
 
+    for i, j in For(N, M):
+
+def t(i, j):
+
+
+
+
+
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
 def dfs(i, j, cnt, sum_):
