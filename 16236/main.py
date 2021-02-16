@@ -24,7 +24,8 @@ def main(f=None):
 
     global N, mat
     N = int(input())
-    mat =
+    mat = [list(map(int, input().split())) for _ in range(N)]
+
 
     # ######## INPUT AREA END ############
     # ####################################
