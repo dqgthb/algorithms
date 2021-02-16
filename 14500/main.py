@@ -69,7 +69,11 @@ def tSum(i, j):
     global max_
 
     for d in range(4):
+        sum_ = 0
         for sides in range(4):
+            if sides == d:
+                continue
+
 
 
 
