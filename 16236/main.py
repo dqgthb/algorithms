@@ -67,6 +67,12 @@ def bfs(x, y, size):
         for d in range(4):
             ni = i + di[d]
             nj = j + dj[d]
+            if 0 <= ni < N and 0 <= nj < N:
+                v = mat[ni][nj]
+                if v > size:
+                    continue
+                elif v == size:
+
 
 
     return size, time
