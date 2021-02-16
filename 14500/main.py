@@ -54,6 +54,11 @@ def dfs(i, j, cnt, sum_):
     stack.append((i, j, cnt, sum_))
     while stack:
         i, j, cnt, sum_ = stack.pop()
+        if cnt == 3:
+            max_ = max(max_, sum_)
+            vis[i][j] = False
+            continue
+
         for d in range(4):
             ni = i + dx[d]
             nj = j + dy[d]
