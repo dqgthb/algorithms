@@ -40,17 +40,16 @@ def main(f=None):
 
 
     fishCount = 0
+    fishCountAfterlvlUp = 0
     while True:
         sx, sy, time = bfs(sx, sy, size)
         if sx == sy == -1:
             print(time)
             return
         fishCount += 1
-
-
-
-    parr(mat)
-    print(i, j, time)
+        fishCountAfterlvlUp += 1
+        if fishCountAfterlvlUp == size:
+            size += 1
 
 
 def bfs(x, y, size):
