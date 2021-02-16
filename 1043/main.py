@@ -37,12 +37,12 @@ def main(f=None):
     for _ in range(M):
         arr = [int(i) for i in input().split()]
         members = arr[1:]
+        parties.append(members)
         for member in members:
             if member in knowsTruth:
                 knowsTruth.update(members)
                 break
 
-        parties.append(arr[1:])
 
     count = 0
     for party in parties:
@@ -51,6 +51,7 @@ def main(f=None):
                 break
         else:
             count += 1
+    print(count)
 
 
 
