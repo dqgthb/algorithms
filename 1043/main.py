@@ -52,13 +52,13 @@ def main(f=None):
         for member in members:
             union(firstMember, member)
 
+    count = 0
     for party in parties:
         for member in party:
             if find(rootTruthKnower) == find(member):
+                break
         else:
-
-
-
+            count += 1
 
 
 def find(u):
