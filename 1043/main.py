@@ -39,8 +39,18 @@ def main(f=None):
 
 
 def find(u):
-    if p(u) == u:
+    if p[u] == u:
         return u
+    else:
+        p[u] = find(p[u])
+        return p[u]
+
+def union(x, y):
+    px = find(x)
+    py = find(y)
+    if px != py:
+        p[px] = py
+
 
 
 
