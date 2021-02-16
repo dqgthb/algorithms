@@ -48,8 +48,6 @@ def dfs(i, j, cnt, sum_):
         ni = i + dx[d]
         nj = j + dy[d]
         if 0 <= ni < N and 0 <= nj < M:
-            if sum_ + mat[i][j] == 22:
-                print(i, j, sum_, mat[i][j])
             dfs(i + dx[d], j + dy[d], cnt + 1, sum_ + mat[i][j])
 
 # #############################################################################
