@@ -27,7 +27,7 @@ def main(f=None):
     if arr[0] == 0:
         print(M)
         return
-    knowsTruth = set()
+    knowsTruth = arr[1:]
     for i in range(1, len(arr)):
         knowsTruth.add(arr[i])
 
@@ -42,13 +42,21 @@ def main(f=None):
         union(rootTruthKnower, truthKnower)
 
 
+    parties = []
     for _ in range(N):
         party = [int(i) for i in input().split()]
         members = party[1:]
+        parties.append(members)
 
         firstMember = members[0]
         for member in members:
             union(firstMember, member)
+
+    for party in parties:
+        for member in party:
+            if find(rootTruthKnower) == find(member):
+        else:
+
 
 
 
