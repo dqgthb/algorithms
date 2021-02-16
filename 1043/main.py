@@ -33,12 +33,17 @@ def main(f=None):
 
     global p
     p = [i for i in range(N)]
-    for i in knowsTruth:
 
 
     for _ in range(N):
         party = [int(i) for i in input().split()]
         members = party[1:]
+
+        firstMember = members[0]
+        for member in members:
+            union(firstMember, member)
+
+
 
 
 def find(u):
