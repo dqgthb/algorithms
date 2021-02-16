@@ -34,6 +34,7 @@ def main(f=None):
     size = 2
 
     sx, sy = 0, 0
+
     for i, j in For(N, N):
         if mat[i][j] == 9:
             sx, sy = i, j
@@ -51,6 +52,7 @@ def bfs(x, y, size):
     vis[x][y] = True
     while dq:
         i, j, t = dq.popleft()
+        print(i, j, t)
         for d in range(4):
             ni = i + di[d]
             nj = j + dj[d]
@@ -64,7 +66,7 @@ def bfs(x, y, size):
                     else:
                         mat[ni][nj] = 0
                         return ni, nj, t+1
-        return -1, -1, t
+    return -1, -1, t
 
 # #############################################################################
 # #############################################################################
