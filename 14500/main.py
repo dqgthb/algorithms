@@ -63,7 +63,9 @@ def dfs(i, j, cnt, sum_):
                 vis[ni][nj] = True
                 dfs(ni, nj, cnt + 1, sum_ + mat[ni][nj])
 
-def t(i, j):
+
+def t(i, j, i):
+
     for d in range(4):
         ni = i + dx[d]
         nj = j + dy[d]
