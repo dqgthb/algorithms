@@ -45,6 +45,21 @@ def main(f=None):
 
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
+def dfs(i, j, cnt, sum_):
+    global max_
+    if cnt == 3:
+        max_ = max(max_, sum_)
+        return
+
+    for d in range(4):
+        ni = i + dx[d]
+        nj = j + dy[d]
+        if 0 <= ni < N and 0 <= nj < M:
+            if not vis[ni][nj]:
+                vis[ni][nj] = True
+                dfs(ni, nj, cnt + 1, sum_ + mat[ni][nj])
+                vis[ni][nj] = False
+
 def tSum(i, j):
     global max_
 
