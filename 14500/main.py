@@ -32,7 +32,7 @@ def main(f=None):
     global max_
     max_ = 0
     for i, j in For(N, M):
-        dfs(i, j, 0, 0)
+        dfs(i, j, 0, mat[i][j])
     print(max_)
 
 
