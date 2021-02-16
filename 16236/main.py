@@ -57,6 +57,7 @@ def main(f=None):
         totalTime += time
         if fishCountAfterlvlUp == size:
             size += 1
+            fishCountAfterlvlUp = 0
 
 
 def bfs(x, y, size):
