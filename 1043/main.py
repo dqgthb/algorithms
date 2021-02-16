@@ -43,7 +43,7 @@ def main(f=None):
 
 
     parties = []
-    for _ in range(N):
+    for _ in range(M):
         party = [int(i) for i in input().split()]
         members = party[1:]
         parties.append(members)
@@ -59,6 +59,7 @@ def main(f=None):
                 break
         else:
             count += 1
+    print(count)
 
 
 def find(u):
