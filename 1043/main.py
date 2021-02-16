@@ -33,6 +33,8 @@ def main(f=None):
 
     global p
     p = [i for i in range(N)]
+    for i in knowsTruth:
+
 
     for _ in range(N):
         party = [int(i) for i in input().split()]
