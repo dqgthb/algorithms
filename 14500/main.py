@@ -68,11 +68,15 @@ dj = [0, -1, 0, 1]
 def tSum(i, j):
     global max_
 
-    for d in range(4):
-        sum_ = 0
-        for sides in range(4):
-            if sides == d:
+    for turn in range(4):
+        sum_ = mat[i][j]
+        for d in range(4):
+            if d == turn:
                 continue
+            ni = i + dx[d]
+            nj = j + dy[d]
+
+
 
 
 
