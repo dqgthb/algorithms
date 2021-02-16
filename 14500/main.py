@@ -38,15 +38,13 @@ def main(f=None):
         dfs(i, j, 0, mat[i][j])
         vis[i][j] = False
 
-    for i, j in For(N, M):
         tSum(i, j)
+
     print(max_)
 
 
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
-di = [-1, 0, 1, 0]
-dj = [0, -1, 0, 1]
 def tSum(i, j):
     global max_
 
