@@ -39,8 +39,10 @@ def main(f=None):
             sx, sy = i, j
             break
 
+    vis = mat(N, N, False)
     dq = deque()
     dq.append((sx, sy, 0))
+    vis[sx][sy] = True
     while dq:
         x, y, t = dq.popleft()
 
@@ -48,6 +50,9 @@ def main(f=None):
             nx = x + dx[d]
             ny = y + dy[d]
             if 0 <= nx < N and 0 <= ny < N:
+                if not vis[sx][sy]:
+                    dq.append(())
+
 
 
 # #############################################################################
