@@ -41,6 +41,7 @@ def main(f=None):
                 lie = False
                 break
         if not lie:
+            knowsTruth.update(arr[1:])
 
 
 
