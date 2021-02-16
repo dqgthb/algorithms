@@ -30,9 +30,10 @@ def main(f=None):
     # ####################################
 
     global max_
-    max = 0
+    max_ = 0
     for i, j in For(N, M):
         dfs(i, j, 0, 0)
+    print(max_)
 
 
 dx = [-1, 1, 0, 0]
@@ -45,8 +46,8 @@ def dfs(i, j, cnt, sum_):
     for d in range(4):
         ni = i + dx[d]
         nj = j + dy[d]
-
-        dfs(i + dx[d], j + dy[d], cnt + 1, sum_ + mat[i][j])
+        if 0 <= ni < N and 0 <= nj < M:
+            dfs(i + dx[d], j + dy[d], cnt + 1, sum_ + mat[i][j])
 
 # #############################################################################
 # #############################################################################
