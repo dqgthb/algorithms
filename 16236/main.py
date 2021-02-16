@@ -43,6 +43,7 @@ def main(f=None):
     fishCountAfterlvlUp = 0
     while True:
         sx, sy, time = bfs(sx, sy, size)
+        parr(mat)
         if sx == sy == -1:
             print(time)
             return
@@ -60,7 +61,6 @@ def bfs(x, y, size):
     vis[x][y] = True
     while dq:
         i, j, t = dq.popleft()
-        print(i, j, t)
         for d in range(4):
             ni = i + di[d]
             nj = j + dj[d]
@@ -70,6 +70,7 @@ def bfs(x, y, size):
                     if v > size:
                         continue
                     elif v == 0 or v == size:
+                        vis[ni][nj] == True:
                         dq.append((ni, nj, t+1))
                     else:
                         mat[ni][nj] = 0
