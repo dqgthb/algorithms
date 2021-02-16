@@ -36,10 +36,11 @@ def main(f=None):
         vis = Mat(N, M, False)
         vis[i][j] = True
         dfs(i, j, 0, mat[i][j])
-    print(max_)
-
 
     for i, j in For(N, M):
+        tSum(i, j)
+    print(max_)
+
 
 
 
@@ -77,6 +78,9 @@ def tSum(i, j):
             nj = j + dy[d]
             if not (0 <= ni < N and 0 <= nj < M):
                 break
+            sum_ += mat[ni][nj]
+        else:
+            max_ = max(max_, sum_)
 
 
 
