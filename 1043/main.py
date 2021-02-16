@@ -29,13 +29,13 @@ def main(f=None):
         return
     knowsTruth = arr[1:]
     for i in range(1, len(arr)):
-        knowsTruth.add(arr[i])
+        knowsTruth.append(arr[i])
 
     # ######## INPUT AREA END ############
     # ####################################
 
     global p
-    p = [i for i in range(N)]
+    p = [i for i in range(N+1)]
 
     rootTruthKnower = knowsTruth[0]
     for truthKnower in knowsTruth:
