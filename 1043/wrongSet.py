@@ -25,13 +25,35 @@ def main(f=None):
     N, M = map(int, input().split())
     arr = [int(i) for i in input().split()]
     knowsTruth = set()
+    heardLie = set()
     for i in range(1, len(arr)):
         knowsTruth.add(arr[i])
 
     # ######## INPUT AREA END ############
     # ####################################
 
-    p = [i for i in range(N)]
+    count = 0
+    parties = []
+    for _ in range(M):
+        arr = [int(i) for i in input().split()]
+        members = arr[1:]
+        parties.append(members)
+        for member in members:
+            if member in knowsTruth:
+                knowsTruth.update(members)
+                break
+
+
+    count = 0
+    for party in parties:
+        for partyMember in party:
+            if partyMember in knowsTruth:
+                break
+        else:
+            count += 1
+    print(knowsTruth)
+    print(count)
+
 
 
 
