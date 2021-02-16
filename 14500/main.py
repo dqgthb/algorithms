@@ -45,36 +45,6 @@ def main(f=None):
 
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
-def dfs(i, j, cnt, sum_):
-    global max_
-    if cnt == 3:
-        max_ = max(max_, sum_)
-        return
-    stack = []
-    stack.append((i, j, cnt, sum_))
-    while stack:
-        i, j, cnt, sum_ = stack.pop()
-        if cnt == 3:
-            max_ = max(max_, sum_)
-            vis[i][j] = False
-            continue
-
-        for d in range(4):
-            ni = i + dx[d]
-            nj = j + dy[d]
-            if 0 <= ni < N and 0 <= nj < M:
-                if not vis[ni][nj]:
-
-
-    for d in range(4):
-        ni = i + dx[d]
-        nj = j + dy[d]
-        if 0 <= ni < N and 0 <= nj < M:
-            if not vis[ni][nj]:
-                vis[ni][nj] = True
-                dfs(ni, nj, cnt + 1, sum_ + mat[ni][nj])
-                vis[ni][nj] = False
-
 di = [-1, 0, 1, 0]
 dj = [0, -1, 0, 1]
 def tSum(i, j):
