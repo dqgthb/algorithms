@@ -42,12 +42,6 @@ def main(f=None):
     print(max_)
 
 
-
-
-
-
-
-
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
 def dfs(i, j, cnt, sum_):
