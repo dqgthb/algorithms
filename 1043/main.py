@@ -33,6 +33,7 @@ def main(f=None):
     # ####################################
 
     count = 0
+    parties = []
     for _ in range(M):
         arr = [int(i) for i in input().split()]
         lie = True
@@ -42,6 +43,16 @@ def main(f=None):
                 break
         if not lie:
             knowsTruth.update(arr[1:])
+
+        parties.append(arr[1:])
+
+    count = 0
+    for party in parties:
+        for partyMember in party:
+            if partyMember in knowsTruth:
+                count += 1
+
+
 
 
 
