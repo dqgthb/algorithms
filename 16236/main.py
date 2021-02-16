@@ -37,6 +37,7 @@ def main(f=None):
     for i, j in For(N, N):
         if mat[i][j] == 9:
             sx, sy = i, j
+            mat[i][j] = 0
 
 
     fishCount = 0
