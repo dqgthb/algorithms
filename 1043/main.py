@@ -25,7 +25,6 @@ def main(f=None):
     N, M = map(int, input().split())
     arr = [int(i) for i in input().split()]
     knowsTruth = set()
-    numTruth = arr[0]
     for i in range(1, len(arr)):
         knowsTruth.add(arr[i])
 
@@ -33,6 +32,12 @@ def main(f=None):
     # ####################################
 
     print(knowsTruth)
+    count = 0
+    for _ in range(M):
+        arr = [int(i) for i in input().split()]
+    else:
+        count += 1
+
 
 
 # #############################################################################
