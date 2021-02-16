@@ -45,14 +45,15 @@ def main(f=None):
     vis[sx][sy] = True
     while dq:
         x, y, t = dq.popleft()
+        if mat[x][y] != 0:
 
         for d in range(4):
             nx = x + dx[d]
             ny = y + dy[d]
             if 0 <= nx < N and 0 <= ny < N:
-                if not vis[sx][sy]:
-                    dq.append(())
+                if not vis[nx][ny]:
 
+                    dq.append((nx, ny, t + 1))
 
 
 # #############################################################################
