@@ -34,6 +34,10 @@ def main(f=None):
     global p
     p = [i for i in range(N)]
 
+    if knowsTruth:
+        rootTruthKnower = knowsTruth[0]
+        for truthKnower in knowsTruth:
+
 
     for _ in range(N):
         party = [int(i) for i in input().split()]
