@@ -27,54 +27,14 @@ def main(f=None):
     if arr[0] == 0:
         print(M)
         return
-    knowsTruth = arr[1:]
-    for i in range(1, len(arr)):
-        knowsTruth.append(arr[i])
+    knowsTruth = set(arr[1:])
 
     # ######## INPUT AREA END ############
     # ####################################
 
-    global p
-    p = [i for i in range(N+1)]
-
-    rootTruthKnower = knowsTruth[0]
-    for truthKnower in knowsTruth:
-        union(rootTruthKnower, truthKnower)
-
-
     parties = []
-    for _ in range(M):
-        party = [int(i) for i in input().split()]
-        members = party[1:]
-        parties.append(members)
-
-        firstMember = members[0]
-        for member in members:
-            union(firstMember, member)
-
-    count = 0
     for party in parties:
-        for member in party:
-            if find(rootTruthKnower) == find(member):
-                break
-        else:
-            count += 1
-    print(count)
-
-
-def find(u):
-    if p[u] == u:
-        return u
-    else:
-        p[u] = find(p[u])
-        return p[u]
-
-def union(x, y):
-    px = find(x)
-    py = find(y)
-    if px != py:
-        p[px] = py
-
+        members = party[1:]
 
 # #############################################################################
 # #############################################################################
