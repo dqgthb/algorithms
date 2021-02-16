@@ -34,8 +34,9 @@ def main(f=None):
     global p
     p = [i for i in range(N)]
 
-
-    for _ in range(N)
+    for _ in range(N):
+        party = [int(i) for i in input().split()]
+        members = party[1:]
 
 
 def find(u):
@@ -50,9 +51,6 @@ def union(x, y):
     py = find(y)
     if px != py:
         p[px] = py
-
-
-
 
 
 # #############################################################################
