@@ -24,6 +24,9 @@ def main(f=None):
 
     N, M = map(int, input().split())
     arr = [int(i) for i in input().split()]
+    if arr[0] == 0:
+        print(M)
+        return
     knowsTruth = set()
     for i in range(1, len(arr)):
         knowsTruth.add(arr[i])
@@ -34,9 +37,9 @@ def main(f=None):
     global p
     p = [i for i in range(N)]
 
-    if knowsTruth:
-        rootTruthKnower = knowsTruth[0]
-        for truthKnower in knowsTruth:
+    rootTruthKnower = knowsTruth[0]
+    for truthKnower in knowsTruth:
+        union(rootTruthKnower, truthKnower)
 
 
     for _ in range(N):
