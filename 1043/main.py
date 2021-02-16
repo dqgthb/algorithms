@@ -24,15 +24,14 @@ def main(f=None):
 
     N, M = map(int, input().split())
     arr = [int(i) for i in input().split()]
-    if arr[0] == 0:
-        T = 0
-    else:
-        T, tp = arr
+    knowsTruth = set()
+    numTruth = arr[0]
+    for i in range(1, numTruth+1):
+        knowsTruth.add(arr[i])
 
     # ######## INPUT AREA END ############
     # ####################################
 
-    knowsTruth = set(tp)
     print(knowsTruth)
 
 
