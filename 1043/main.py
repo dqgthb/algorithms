@@ -25,6 +25,7 @@ def main(f=None):
     N, M = map(int, input().split())
     arr = [int(i) for i in input().split()]
     knowsTruth = set()
+    heardLie = set()
     for i in range(1, len(arr)):
         knowsTruth.add(arr[i])
 
@@ -38,7 +39,6 @@ def main(f=None):
             if arr[i] in knowsTruth:
                 break
         else:
-
             count += 1
     print(count)
 
