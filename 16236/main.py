@@ -34,12 +34,16 @@ def main(f=None):
     size = 2
 
     sx, sy = 0, 0
-
     for i, j in For(N, N):
         if mat[i][j] == 9:
             sx, sy = i, j
 
-    i, j, time = bfs(sx, sy, size)
+    lvlUp = [1]
+
+    while True:
+        sx, sy, time = bfs(sx, sy, size)
+
+
     parr(mat)
     print(i, j, time)
 
