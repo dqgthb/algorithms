@@ -35,11 +35,12 @@ def main(f=None):
 
     sx, sy = 0, 0
 
-    i, j, time = bfs(sx, sy
+    i, j, time = bfs(sx, sy, size)
+    print(i, j, time)
 
 
 def bfs(x, y, size):
-    vis = mat(N, N, False)
+    vis = Mat(N, N, False)
     dq = deque()
     time = 0
     dq.append((x, y, time))
