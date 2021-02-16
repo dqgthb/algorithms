@@ -74,6 +74,8 @@ def bfs(x, y, size):
                 elif v == 0 or v == size:
                     dq.append((ni, nj, t+1))
                 else:
+                    mat[ni][nj] = 0
+
 
 
 
