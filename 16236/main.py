@@ -45,10 +45,7 @@ def main(f=None):
     totalTime = 0
     while True:
         sx, sy, time = bfs(sx, sy, size)
-        print(sx, sy, time)
-        mat[sx][sy] = 9
-        parr(mat)
-        mat[sx][sy] = 0
+
         if sx == sy == -1:
             print(totalTime)
             return
