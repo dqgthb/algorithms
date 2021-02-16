@@ -21,6 +21,7 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
+    global N, M, mat
     N, M = map(int, input().split())
 
     mat = [list(map(int, input().split())) for _ in range(N)]
@@ -42,6 +43,10 @@ def dfs(i, j, cnt, sum_):
         max_ = max(max_, sum_)
 
     for d in range(4):
+        ni = i + dx[d]
+        nj = j + dy[d]
+
+        dfs(i + dx[d], j + dy[d], cnt + 1, sum_ + mat[i][j])
 
 # #############################################################################
 # #############################################################################
