@@ -56,6 +56,13 @@ def main(f=None):
                     dq.append((nx, ny, t + 1))
 
 def bfs(x, y, size):
+    vis = mat(N, N, False)
+    dq = deque()
+    time = 0
+    dq.append((x, y, time))
+
+    while dq:
+        i, j, t =
 
     return size, time
 
