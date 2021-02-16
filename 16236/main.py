@@ -16,6 +16,8 @@ from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
 
 
+dx = [-1, 0, 1, 0]
+dy = [0, -1, 0, 1]
 def main(f=None):
     init(f)
     # sys.setrecursionlimit(10**9)
@@ -42,9 +44,11 @@ def main(f=None):
     while dq:
         x, y, t = dq.popleft()
 
+        for d in range(4):
+            nx = x + dx[d]
+            ny = y + dy[d]
+            if 0 <= nx < N and 0 <= ny < N:
 
-dx = [-1, 0, 1, 0]
-dy = [0, -1, 0, 1]
 
 # #############################################################################
 # #############################################################################
