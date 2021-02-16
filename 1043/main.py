@@ -51,6 +51,7 @@ def main(f=None):
                 break
         else:
             count += 1
+    print(knowsTruth)
     print(count)
 
 
