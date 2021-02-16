@@ -22,13 +22,14 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N, mat
+    global N, mat, size
     N = int(input())
     mat = [list(map(int, input().split())) for _ in range(N)]
 
-
     # ######## INPUT AREA END ############
     # ####################################
+
+    size = 2
 
 
 # #############################################################################
