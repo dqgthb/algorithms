@@ -41,7 +41,7 @@ def main(f=None):
 
     for i, j in For(N, M):
 
-def t(i, j):
+
 
 
 
@@ -62,6 +62,12 @@ def dfs(i, j, cnt, sum_):
             if not vis[ni][nj]:
                 vis[ni][nj] = True
                 dfs(ni, nj, cnt + 1, sum_ + mat[ni][nj])
+
+def t(i, j):
+    for d in range(4):
+        ni = i + dx[d]
+        nj = j + dy[d]
+        if not(0 <= ni < N and 0 <= nj < M):
 
 # #############################################################################
 # #############################################################################
