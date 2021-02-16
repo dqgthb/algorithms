@@ -31,6 +31,14 @@ def main(f=None):
 
     size = 2
 
+    for i, j in For(N, N):
+        if amt]
+
+    dq = deque()
+
+    while dq:
+
+
 dx = [-1, 0, 1, 0]
 dy = [0, -1, 0, 1]
 
