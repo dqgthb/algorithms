@@ -31,8 +31,16 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+    global p
     p = [i for i in range(N)]
 
+
+    for _ in range(N)
+
+
+def find(u):
+    if p(u) == u:
+        return u
 
 
 
