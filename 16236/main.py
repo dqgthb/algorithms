@@ -34,26 +34,9 @@ def main(f=None):
     size = 2
 
     sx, sy = 0, 0
-    for i, j in For(N, N):
-        if mat[i][j] == 9:
-            sx, sy = i, j
-            break
 
-    vis = mat(N, N, False)
-    dq = deque()
-    dq.append((sx, sy, 0))
-    vis[sx][sy] = True
-    while dq:
-        x, y, t = dq.popleft()
-        if mat[x][y] != 0:
+    i, j, time = bfs(sx, sy
 
-        for d in range(4):
-            nx = x + dx[d]
-            ny = y + dy[d]
-            if 0 <= nx < N and 0 <= ny < N:
-                if not vis[nx][ny]:
-
-                    dq.append((nx, ny, t + 1))
 
 def bfs(x, y, size):
     vis = mat(N, N, False)
@@ -75,11 +58,8 @@ def bfs(x, y, size):
                     dq.append((ni, nj, t+1))
                 else:
                     mat[ni][nj] = 0
-
-
-
-
-    return size, time
+                    return ni, nj, t+1
+        return -1, -1, t
 
 # #############################################################################
 # #############################################################################
