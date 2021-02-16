@@ -42,6 +42,7 @@ def dfs(i, j, cnt, sum_):
     global max_
     if cnt == 4:
         max_ = max(max_, sum_)
+        return
 
     for d in range(4):
         ni = i + dx[d]
