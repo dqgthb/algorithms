@@ -34,8 +34,10 @@ def main(f=None):
     size = 2
 
     sx, sy = 0, 0
+    for i, j in For(N, N):
 
     i, j, time = bfs(sx, sy, size)
+    parr(mat)
     print(i, j, time)
 
 
