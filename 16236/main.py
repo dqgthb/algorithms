@@ -38,10 +38,15 @@ def main(f=None):
         if mat[i][j] == 9:
             sx, sy = i, j
 
-    lvlUp = [1]
 
+    fishCount = 0
     while True:
         sx, sy, time = bfs(sx, sy, size)
+        if sx == sy == -1:
+            print(time)
+            return
+        fishCount += 1
+
 
 
     parr(mat)
