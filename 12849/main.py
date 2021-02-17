@@ -22,15 +22,17 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global D, dp
+    global D, DP
     D = int(input())
 
     # ######## INPUT AREA END ############
     # ####################################
 
-    dp = [[100001]i for i in range(8)]
-    dp[1] = 1
-    dp[1] = 1
+    global DP
+    DP = [[None for _ in range(100001)] for _ in range(8)]
+    DP[1][1] = 1
+    DP[1][1] = 1
+
 
 
 
