@@ -32,13 +32,15 @@ def main(f=None):
     DP = [[None for _ in range(D)] for _ in range(8)]
     for i in range(8):
         DP[i][0] = 0
-    DP[1][1] = 1
-    DP[7][1] = 1
+    DP[0][0] = 1
 
     global G
     G = [[] for _ in range(8)]
-    G[1].append(7)
+    G[0].append(1)
+    G[0].append(7)
+    G[1].append(0)
     G[1].append(2)
+    G[1].append(7)
     G[2].append(1)
     G[2].append(3)
     G[2].append(6)
@@ -54,6 +56,7 @@ def main(f=None):
     G[6].append(4)
     G[6].append(5)
     G[6].append(7)
+    G[7].append(0)
     G[7].append(1)
     G[7].append(2)
     G[7].append(6)
