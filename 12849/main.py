@@ -34,7 +34,12 @@ def main(f=None):
     DP[7][1] = 1
 
 
-def dp(d, b):
+def dp(b, d):
+    if DP[b][d] is not None:
+        return DP[b][d]
+
+    sum_ = 0
+    for i in G[b]:
 
 
 
