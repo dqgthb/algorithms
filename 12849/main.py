@@ -55,7 +55,7 @@ def main(f=None):
     G[7].append(2)
     G[7].append(6)
 
-
+    x)
 
 
 def dp(b, d):
