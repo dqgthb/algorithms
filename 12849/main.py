@@ -33,6 +33,12 @@ def main(f=None):
     DP[1][1] = 1
     DP[7][1] = 1
 
+    G = [[] for _ in range(8)]
+    G[1].append(7)
+    G[1].append(2)
+    G[]
+
+
 
 def dp(b, d):
     if DP[b][d] is not None:
@@ -43,8 +49,6 @@ def dp(b, d):
         sum_ += dp(nbr, d-1)
     DP[b][d] = sum_
     return sum_
-
-
 
 
 # #############################################################################
