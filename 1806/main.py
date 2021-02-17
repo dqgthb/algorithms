@@ -33,13 +33,16 @@ def main(f=None):
     r = 0
     sum_ = 0
     min_ = 10 ** 9
-    while r < len(arr):
+    while True:
         print(sum_, l, r)
         if sum_ < S:
+            if r >= len(arr):
+                break
             sum_ += arr[r]
             r += 1
         else:
-            min_ = min(min_, l - r)
+            min_ = min(min_, r - l)
+            print(min_)
             sum_ -= arr[l]
             l += 1
 
