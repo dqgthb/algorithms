@@ -45,7 +45,15 @@ def main(f=None):
     G[3].append(6)
     G[4].append(3)
     G[4].append(5)
-    G[4].append(5)
+    G[5].append(4)
+    G[5].append(6)
+    G[6].append(3)
+    G[6].append(4)
+    G[6].append(5)
+    G[6].append(7)
+    G[7].append(1)
+    G[7].append(2)
+    G[7].append(6)
 
 
 
