@@ -31,7 +31,10 @@ def main(f=None):
     global DP
     DP = [[None for _ in range(100001)] for _ in range(8)]
     DP[1][1] = 1
-    DP[1][1] = 1
+    DP[7][1] = 1
+
+
+def dp(d, b):
 
 
 
