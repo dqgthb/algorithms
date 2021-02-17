@@ -29,7 +29,7 @@ def main(f=None):
     # ####################################
 
     global DP
-    DP = [[None for _ in range(D+1)] for _ in range(8)]
+    DP = [[None for _ in range(D)] for _ in range(8)]
     for i in range(8):
         DP[i][0] = 0
     DP[1][1] = 1
