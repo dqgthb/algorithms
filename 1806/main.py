@@ -34,7 +34,6 @@ def main(f=None):
     sum_ = 0
     min_ = 10 ** 9
     while l <= r:
-        print(sum_, l, r)
         if sum_ < S:
             if r >= len(arr):
                 break
@@ -42,9 +41,12 @@ def main(f=None):
             r += 1
         else:
             min_ = min(min_, r - l)
-            print(min_)
             sum_ -= arr[l]
             l += 1
+    if min_ == 10 ** 9:
+        print(0)
+    else:
+        print(min_)
 
 # #############################################################################
 # #############################################################################
