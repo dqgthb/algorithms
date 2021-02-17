@@ -61,12 +61,11 @@ def main(f=None):
     G[7].append(2)
     G[7].append(6)
 
+    for i in range(8):
+
     x = dp(1, D-1)
     y = dp(7, D-1)
     print(x + y)
-    print(dp(0, D))
-    parr(DP)
-    print(G)
 
 
 def dp(b, d):
