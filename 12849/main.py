@@ -77,7 +77,7 @@ def dp(b, d):
 
     sum_ = 0
     for nbr in G[b]:
-        sum_ += dp(nbr, d-1)
+        sum_ += dp(nbr, d-1) % MOD
     DP[b][d] = sum_
     return sum_
 
