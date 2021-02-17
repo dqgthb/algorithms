@@ -14,6 +14,7 @@ import math
 from heapq import heappush, heappop
 from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
+MOD = 1000000007
 
 
 def main(f=None):
@@ -61,11 +62,13 @@ def main(f=None):
     G[7].append(2)
     G[7].append(6)
 
-    for i in range(8):
+    for i in range(D-1):
+        for j in range(8):
+            dp(j, i)
 
     x = dp(1, D-1)
     y = dp(7, D-1)
-    print(x + y)
+    print((x + y) % MOD)
 
 
 def dp(b, d):
