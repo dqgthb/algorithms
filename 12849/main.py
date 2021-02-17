@@ -29,7 +29,7 @@ def main(f=None):
     # ####################################
 
     global DP
-    DP = [[None for _ in range(100001)] for _ in range(8)]
+    DP = [[0 for _ in range(100001)] for _ in range(8)]
     DP[1][1] = 1
     DP[7][1] = 1
 
@@ -39,7 +39,10 @@ def dp(b, d):
         return DP[b][d]
 
     sum_ = 0
-    for i in G[b]:
+    for nbr in G[b]:
+        sum_ += dp(nbr, d-1)
+    DP[b][d] = sum_
+    return sum_
 
 
 
