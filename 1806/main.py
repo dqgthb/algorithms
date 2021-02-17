@@ -38,6 +38,7 @@ def main(f=None):
             sum_ += arr[r]
             r += 1
         else:
+            min_ = min(min_, l - r)
             sum_ -= arr[l]
             l += 1
 
