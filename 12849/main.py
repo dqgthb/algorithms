@@ -30,6 +30,8 @@ def main(f=None):
 
     global DP
     DP = [[None for _ in range(D+1)] for _ in range(8)]
+    for i in range(8):
+        DP[i][0] = 0
     DP[1][1] = 1
     DP[7][1] = 1
 
@@ -65,9 +67,6 @@ def main(f=None):
 def dp(b, d):
     if DP[b][d] is not None:
         return DP[b][d]
-
-    if d == 0:
-        return 0
 
     sum_ = 0
     for nbr in G[b]:
