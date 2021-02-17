@@ -28,7 +28,9 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    dp = [i for i in range(8)]
+    dp = [[100001]i for i in range(8)]
+    dp[1] = 1
+    dp[1] = 1
 
 
 
