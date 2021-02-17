@@ -36,7 +36,17 @@ def main(f=None):
     G = [[] for _ in range(8)]
     G[1].append(7)
     G[1].append(2)
-    G[]
+    G[2].append(1)
+    G[2].append(3)
+    G[2].append(6)
+    G[2].append(7)
+    G[3].append(2)
+    G[3].append(4)
+    G[3].append(6)
+    G[4].append(3)
+    G[4].append(5)
+    G[4].append(5)
+
 
 
 
