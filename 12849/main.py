@@ -29,7 +29,7 @@ def main(f=None):
     # ####################################
 
     global DP
-    DP = [[None for _ in range(100001)] for _ in range(8)]
+    DP = [[None for _ in range(D+1)] for _ in range(8)]
     DP[1][1] = 1
     DP[7][1] = 1
 
@@ -59,7 +59,7 @@ def main(f=None):
     x = dp(1, D-1)
     y = dp(7, D-1)
     print(x + y)
-    print(DP)
+    parr(DP)
 
 
 def dp(b, d):
