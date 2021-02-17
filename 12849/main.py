@@ -60,7 +60,6 @@ def main(f=None):
     G[7].append(1)
     G[7].append(2)
     G[7].append(6)
-    print(len(G))
 
     x = dp(1, D-1)
     y = dp(7, D-1)
