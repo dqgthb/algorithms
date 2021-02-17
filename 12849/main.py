@@ -18,7 +18,7 @@ DEBUG = False
 
 def main(f=None):
     init(f)
-    # sys.setrecursionlimit(10**9)
+    #sys.setrecursionlimit(10**9)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
@@ -33,6 +33,7 @@ def main(f=None):
     DP[1][1] = 1
     DP[7][1] = 1
 
+    global G
     G = [[] for _ in range(8)]
     G[1].append(7)
     G[1].append(2)
