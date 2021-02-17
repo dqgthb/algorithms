@@ -23,9 +23,12 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     N = int(input())
-    r, c = int(input())
+    r, c = map(int, input().split())
+    arr = [r, c]
     for _ in range(N-1):
-        r, c = map(int, input().split())
+        _, c = map(int, input().split())
+        arr.append(c)
+    print(arr)
 
     # ######## INPUT AREA END ############
     # ####################################
