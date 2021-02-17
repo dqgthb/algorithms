@@ -59,11 +59,15 @@ def main(f=None):
     x = dp(1, D-1)
     y = dp(7, D-1)
     print(x + y)
+    print(DP)
 
 
 def dp(b, d):
     if DP[b][d] is not None:
         return DP[b][d]
+
+    if d == 0:
+        return 0
 
     sum_ = 0
     for nbr in G[b]:
