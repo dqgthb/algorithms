@@ -25,7 +25,12 @@ def main(f=None):
 
     mat = []
     for _ in range(4):
-        arr =
+        arr = [int(i) for i in input().split()]
+        a = []
+        for i in range(0, 8, 2):
+            a.append((arr[i], arr[i+1]))
+        mat.append(a)
+    print(mat)
 
     # ######## INPUT AREA END ############
     # ####################################
