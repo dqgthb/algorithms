@@ -22,24 +22,23 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N, atk, rooms, HPmax
+    global N, atk, rooms
     N, atk = map(int, input().split())
     rooms = []
     for i in range(N):
         t, a, h = map(int, input().split())
         rooms.append((t, a, h))
 
-    HPmax = 10**100
-
     #ans = tryWithHP(49)
     #print(ans)
-    hp = binLeft(0, HPmax)
+    hp = binLeft(0, 10**100)
     print(hp)
 
 
 def binLeft(l, r):
     if l == r:
         return l
+    print(l, r)
 
     mid = (l + r)//2
     midVal = tryWithHP(mid)
@@ -51,7 +50,8 @@ def binLeft(l, r):
 
 
 
-def tryWithHP(hp):
+def tryWithHP(hpMax):
+    hp = hpMax
     global atk
     for room in rooms:
         t, a, h = room
@@ -66,7 +66,7 @@ def tryWithHP(hp):
                     return False
         else:
             atk += a
-            hp = HPmax if hp + h > hp else hp + h
+            hp = hpMax if hp + h > hp else hp + h
     else:
         return True
 
