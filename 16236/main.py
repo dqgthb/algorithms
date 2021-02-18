@@ -84,10 +84,11 @@ def bfs(x, y, size):
                         vis[ni][nj] = True
                         minDist = min(minDist, t + 1)
                         if ni < tx:
-                            tx
-
-                        if t+1 == minDist:
-                            pool.append((ni, nj))
+                            tx, ty = ni, nj
+                            continue
+                        elif ni == tx:
+                            if nj < ty:
+                                tx, ty = ni, nj
     return tx, ty, minDist
 
 # #############################################################################
