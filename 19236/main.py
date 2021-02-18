@@ -48,8 +48,13 @@ def moveFish():
         _, d = mat[i][j]
 
         for _ in range(8):
-        ni = di[d]
-        nj = dj[d]
+            ni = di[d]
+            nj = dj[d]
+
+            if not (0 <= ni < 4 and 0 <= nj < 4):
+                continue
+
+
 
 
 
