@@ -41,7 +41,8 @@ def binSearch(hp, l, r):
         return l
 
     val = tryWithHp(hp)
-
+    mid = (l + r)//2
+    midVal = tryWithHP(mid)
 
 
 
