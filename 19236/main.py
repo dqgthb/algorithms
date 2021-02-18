@@ -45,7 +45,14 @@ def main(f=None):
 
 def moveFish():
     for i, j in fish:
-        _, direction = mat[i][j]
+        _, d = mat[i][j]
+
+        for _ in range(8):
+        ni = di[d]
+        nj = dj[d]
+
+
+
 
 
 
