@@ -82,7 +82,7 @@ def bfs(x, y, size):
                         dq.append((ni, nj, t+1))
                     else:
                         vis[ni][nj] = True
-                        minDist = t + 1
+                        minDist = min(minDist, t + 1)
                         if t+1 == minDist:
                             pool.append((ni, nj))
     if not pool:
