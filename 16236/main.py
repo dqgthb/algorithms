@@ -55,8 +55,8 @@ def main(f=None):
         if fishCountAfterlvlUp == size:
             size += 1
             fishCountAfterlvlUp = 0
-        print(sx, sy, time, size, fishCount)
         parr(mat)
+        print(sx, sy, time, size, fishCount)
 
 
 def bfs(x, y, size):
