@@ -91,6 +91,7 @@ def bfs(x, y, size):
                                 tx, ty = ni, nj
     if tx == 10**9:
         return -1, -1, 0
+    mat[tx][ty] = 0
     return tx, ty, minDist
 
 # #############################################################################
