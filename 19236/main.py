@@ -45,8 +45,8 @@ def main(f=None):
 
     si, sj = 0, 0
     prey, sd = mat[si][sj]
-    mat[si][sj] = [prey, sd]
-    fish[prey] = [-1, None]
+    mat[si][sj] = [None, None]
+    fish[prey] = (-1, None)
     moveFish()
     parr(mat)
     printFish(mat)
