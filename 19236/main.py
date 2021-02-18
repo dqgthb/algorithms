@@ -50,6 +50,12 @@ def main(f=None):
     moveFish()
     parr(mat)
 
+
+def printFish(mat):
+    lst = []
+    for i, j in For(4, 4):
+        lst.append(mat[i][j][0]+1)
+
 def moveFish():
     for i, j in fish:
         if i == -1:
