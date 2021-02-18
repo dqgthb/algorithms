@@ -26,7 +26,7 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global mat, fish
+    global mat, fish, si, sj
     mat = []
     for _ in range(4):
         arr = [int(i)-1 for i in input().split()]
@@ -52,6 +52,8 @@ def moveFish():
             nj = dj[d]
 
             if not (0 <= ni < 4 and 0 <= nj < 4):
+                continue
+            if ni == si and nj == sj:
                 continue
 
 
