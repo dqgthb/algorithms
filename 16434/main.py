@@ -50,19 +50,18 @@ def tryWithHP(hpMax, atk):
         t, a, h = room
 
         if t == 1:
-            while True:
-                q, r = divmod(h, atk)
-                q2, r2 = divmod(hp, a)
-                if r != 0:
-                    q += 1
-                if r2 != 0:
-                    q2 += 1
+            q, r = divmod(h, atk)
+            q2, r2 = divmod(hp, a)
+            if r != 0:
+                q += 1
+            if r2 != 0:
+                q2 += 1
 
-                if q <= q2:
-                    hp -= (q-1) * a
-                    break
-                else:
-                    return False
+            if q <= q2:
+                hp -= (q-1) * a
+                continue
+            else:
+                return False
         else:
             atk += a
             hp = hpMax if hp + h > hp else hp + h
