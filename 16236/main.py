@@ -48,6 +48,7 @@ def main(f=None):
         print(sx, sy, time, size, fishCount)
 
         if sx == sy == -1:
+            parr(mat)
             print(totalTime)
             return
         fishCount += 1
