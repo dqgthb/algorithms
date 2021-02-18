@@ -45,7 +45,6 @@ def main(f=None):
     totalTime = 0
     while True:
         sx, sy, time = bfs(sx, sy, size)
-        print(sx, sy, time, size, fishCount)
 
         if sx == sy == -1:
             print(totalTime)
@@ -56,6 +55,7 @@ def main(f=None):
         if fishCountAfterlvlUp == size:
             size += 1
             fishCountAfterlvlUp = 0
+        print(sx, sy, time, size, fishCount)
 
 
 def bfs(x, y, size):
