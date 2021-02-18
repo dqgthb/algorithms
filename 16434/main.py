@@ -39,7 +39,6 @@ def binLeft(l, r):
 
     mid = (l + r)//2
     midVal = tryWithHP(mid, Hatk)
-    print(l, r, midVal)
     if midVal < True:
         return binLeft(mid + 1, r)
     else:
