@@ -1,4 +1,5 @@
 # CP template Version 1.006
+
 import os
 import sys
 import itertools
@@ -21,6 +22,10 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
+
+    mat = []
+    for _ in range(4):
+        arr =
 
     # ######## INPUT AREA END ############
     # ####################################
