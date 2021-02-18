@@ -29,7 +29,7 @@ def main(f=None):
         t, a, h = map(int, input().split())
         rooms.append((t, a, h))
 
-    HPmax = 49
+    HPmax = 999999000001
     ans = tryWithHP(HPmax)
     print(ans)
     #ans = tryWithHP(49)
@@ -51,7 +51,7 @@ def tryWithHP(hp):
                     return False
         else:
             atk += a
-            hp = min(hp + h, HPmax)
+            hp = HPmax if hp + h > hp else hp + h
     else:
         return True
 
