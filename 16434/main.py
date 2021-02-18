@@ -29,7 +29,8 @@ def main(f=None):
         t, a, h = map(int, input().split())
         rooms.append((t, a, h))
 
-    hp = binLeft(0, 10**19)
+    hp = tryWithHP(48, Hatk)
+    #hp = binLeft(0, 10**19)
     print(hp)
 
 
