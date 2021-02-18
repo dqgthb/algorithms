@@ -47,7 +47,6 @@ def main(f=None):
     prey, sd = mat[si][sj]
     mat[si][sj] = [prey, sd]
     fish[prey] = [-1, None]
-    print(fish)
     moveFish()
     parr(mat)
 
@@ -74,6 +73,7 @@ def moveFish():
 def swapFish(i, j, ni, nj):
     fish1 = mat[i][j][0]
     fish2 = mat[ni][nj][0]
+    print(fish1, fish2)
     mat[i][j], mat[ni][nj] = mat[ni][nj], mat[i][j]
     fish[fish1], fish[fish2] = fish[fish2], fish[fish1]
 
