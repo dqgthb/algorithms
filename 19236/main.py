@@ -55,7 +55,7 @@ def moveFish():
         if i == -1:
             continue
         fishNum, d = mat[i][j]
-        print("fish:", fishNum, d)
+        print("fish:", fishNum+1, d)
 
         for _ in range(8):
             ni = di[d]
@@ -69,6 +69,7 @@ def moveFish():
                 continue
             mat[i][j][1] = d
             swapFish(i, j, ni, nj)
+            break
 
 
 def swapFish(i, j, ni, nj):
