@@ -20,6 +20,7 @@ DEBUG = False
 di = [-1, -1, 0, 1, 1, 1, 0, -1]
 dj = [0, -1, -1, -1, 0, 1, 1, 1]
 
+
 def main(f=None):
     init(f)
     # sys.setrecursionlimit(10**9)
@@ -61,6 +62,7 @@ def printFish(mat):
             lst.append(mat[i][j][0]+1)
         print(' '.join(map(str, lst)))
         lst = []
+
 
 def moveFish():
     for i, j in fish:
