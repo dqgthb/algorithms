@@ -45,9 +45,6 @@ def binLeft(l, r):
     else:
         return binLeft(l, mid)
 
-
-
-
 def tryWithHP(hpMax, atk):
     hp = hpMax
     for room in rooms:
@@ -55,12 +52,11 @@ def tryWithHP(hpMax, atk):
 
         if t == 1:
             while True:
-                h -= atk
-                if h <= 0:
+                q, r = divmod(h, atk)
+                q2, r2 = divmod(hp, a)
+                if q < q2:
                     break
-                hp -= a
-                if hp <= 0:
-                    return False
+                else:
         else:
             atk += a
             hp = hpMax if hp + h > hp else hp + h
