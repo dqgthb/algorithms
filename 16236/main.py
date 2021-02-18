@@ -55,8 +55,6 @@ def main(f=None):
         if fishCountAfterlvlUp == size:
             size += 1
             fishCountAfterlvlUp = 0
-        parr(mat)
-        print(sx, sy, time, size, fishCount)
 
 
 def bfs(x, y, size):
@@ -88,9 +86,10 @@ def bfs(x, y, size):
     if not pool:
         return -1, -1, 0
     pool.sort()
-    first = pool[0]
-
-    return pool[0][0], pool[0][1], minDist
+    target = pool[0]
+    x, y = target
+    mat[x][y] = 0
+    return x, y, minDist
 
 # #############################################################################
 # #############################################################################
