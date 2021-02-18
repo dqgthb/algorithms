@@ -65,6 +65,7 @@ def bfs(x, y, size):
     time = 0
     dq.append((x, y, time))
     vis[x][y] = True
+    pool = []
     while dq:
         i, j, t = dq.popleft()
         for d in range(4):
@@ -79,7 +80,6 @@ def bfs(x, y, size):
                         vis[ni][nj] = True
                         dq.append((ni, nj, t+1))
                     else:
-                        mat[ni][nj] = 0
                         return ni, nj, t+1
     return -1, -1, 0
 
