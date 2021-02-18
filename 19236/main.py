@@ -63,6 +63,9 @@ def moveFish():
 
 
 def swapFish(i, j, ni, nj):
+    fish1 = mat[i][j][0]
+    mat[i][j], mat[ni][nj] = mat[ni][nj], mat[i][j]
+
 
 
 
