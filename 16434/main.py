@@ -29,7 +29,7 @@ def main(f=None):
         t, a, h = map(int, input().split())
         rooms.append((t, a, h))
 
-    hp = binLeft(0, 10**10)
+    hp = binLeft(0, 10**19)
     print(hp)
 
 
@@ -50,6 +50,7 @@ def tryWithHP(hpMax, atk):
         t, a, h = room
 
         if t == 1:
+            print(h, a, hp, atk)
             q, r = divmod(h, atk)
             q2, r2 = divmod(hp, a)
             if r != 0:
