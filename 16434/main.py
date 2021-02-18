@@ -22,9 +22,16 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
+    global N, H, rooms
     N, H = map(int, input().split())
     rooms = []
     for i in range(N):
+        t, a, h = map(int, input().split())
+
+
+def tryWithHP(hp):
+
+
 
 
 
