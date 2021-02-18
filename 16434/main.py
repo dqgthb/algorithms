@@ -29,8 +29,8 @@ def main(f=None):
         t, a, h = map(int, input().split())
         rooms.append((t, a, h))
 
-    HPmax = 10 ** 9
-    ans = tryWithHP(48)
+    HPmax = 49
+    ans = tryWithHP(HPmax)
     print(ans)
     #ans = tryWithHP(49)
     #print(ans)
