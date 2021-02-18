@@ -29,7 +29,7 @@ def main(f=None):
         t, a, h = map(int, input().split())
         rooms.append((t, a, h))
 
-    hp = binLeft(0, 10**13)
+    hp = binLeft(0, 10**20)
     print(hp)
 
 
@@ -59,8 +59,8 @@ def tryWithHP(hpMax, atk):
                 if r2 != 0:
                     q2 += 1
 
-                if timesToKill <= timesToDie:
-                    hp -= (timesToKill - 1) * a
+                if q <= q2:
+                    hp -= (q-1) * a
                     break
                 else:
                     return False
