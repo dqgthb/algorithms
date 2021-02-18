@@ -36,13 +36,14 @@ def main(f=None):
     #print(ans)
 
 
-def binSearch(hp, l, r):
+def binLeft(l, r):
     if l == r:
         return l
 
-    val = tryWithHp(hp)
     mid = (l + r)//2
     midVal = tryWithHP(mid)
+
+    if l
 
 
 
