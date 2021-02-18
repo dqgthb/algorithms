@@ -17,6 +17,9 @@ from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
 
 
+di = [-1, ]
+dj = [0, -1, -1, -1, 0, 1, 1, 1]
+
 def main(f=None):
     init(f)
     # sys.setrecursionlimit(10**9)
@@ -26,7 +29,7 @@ def main(f=None):
     global mat, fish
     mat = []
     for _ in range(4):
-        arr = [int(i) for i in input().split()]
+        arr = [int(i)-1 for i in input().split()]
         a = []
         for i in range(0, 8, 2):
             a.append([arr[i], arr[i+1]])
