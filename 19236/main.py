@@ -17,7 +17,7 @@ from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
 
 
-di = [-1, ]
+di = [-1, -1, 0, 1, 1, 1, 0, -1]
 dj = [0, -1, -1, -1, 0, 1, 1, 1]
 
 def main(f=None):
@@ -46,6 +46,12 @@ def main(f=None):
 def moveFish():
     for i, j in fish:
         _, direction = mat[i][j]
+
+
+
+
+
+
 
 
 
