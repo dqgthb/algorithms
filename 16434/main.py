@@ -54,13 +54,12 @@ def tryWithHP(hpMax, atk):
             while True:
                 q, r = divmod(h, atk)
                 q2, r2 = divmod(hp, a)
-                if not r:
+                if r != 0:
                     q += 1
-                if not r2:
-                    q2 += 1
+                if r2 != 0:
 
-
-                if q <= q2:
+                if q < q2:
+                    hp = r2
                     break
                 else:
                     return False
