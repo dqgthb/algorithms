@@ -53,9 +53,9 @@ def main(f=None):
 
 def moveFish():
     for i, j in fish:
-        fishNum, d = mat[i][j]
-        if fishNum == -1:
+        if i == -1:
             continue
+        fishNum, d = mat[i][j]
 
         for _ in range(8):
             ni = di[d]
