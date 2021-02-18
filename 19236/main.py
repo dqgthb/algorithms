@@ -39,7 +39,7 @@ def main(f=None):
     # ####################################
 
     si, sj = 0, 0
-    mat[si][sj] = [0, 1]
+    mat[si][sj] = [-1, mat[si][sj][1]]
     fish = [[0, 0] for _ in range(16)]
     for i, j in For(4, 4):
         val = mat[i][j]
@@ -50,7 +50,9 @@ def main(f=None):
 
 def moveFish():
     for i, j in fish:
-        _, d = mat[i][j]
+        fishNum, d = mat[i][j]
+        if fishNum == -1:
+            continue
 
         for _ in range(8):
             ni = di[d]
