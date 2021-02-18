@@ -35,6 +35,9 @@ def main(f=None):
     # ####################################
 
     fish = [[0, 0] for _ in range(16)]
+    for i, j in For(4, 4):
+        val = mat[i][j]
+        fish[val-1]
     parr(mat)
 
 
