@@ -31,6 +31,7 @@ def main(f=None):
 
     HPmax = 10 ** 9
     ans = tryWithHP(48)
+    print(ans)
     ans = tryWithHP(49)
     print(ans)
 
@@ -46,6 +47,7 @@ def tryWithHP(hp):
                 if h <= 0:
                     break
                 hp -= a
+                print(atk, hp, a, h)
                 if hp <= 0:
                     return False
         else:
