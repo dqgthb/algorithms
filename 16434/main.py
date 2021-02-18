@@ -31,17 +31,18 @@ def main(f=None):
 
     #ans = tryWithHP(49)
     #print(ans)
-    hp = binLeft(0, 10**100)
-    print(hp)
+    #hp = binLeft(0, 10**100)
+    #print(hp)
 
 
 def binLeft(l, r):
     if l == r:
         return l
-    print(l, r)
 
     mid = (l + r)//2
     midVal = tryWithHP(mid)
+    print(l, r)
+    print(midVal)
     if midVal < True:
         return binLeft(mid + 1, r)
     else:
@@ -50,9 +51,8 @@ def binLeft(l, r):
 
 
 
-def tryWithHP(hpMax):
+def tryWithHP(hpMax, atk):
     hp = hpMax
-    global atk
     for room in rooms:
         t, a, h = room
 
