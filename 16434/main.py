@@ -42,8 +42,11 @@ def binLeft(l, r):
 
     mid = (l + r)//2
     midVal = tryWithHP(mid)
+    if midVal < True:
+        return binLeft(mid + 1, r)
+    else:
+        return binLeft(l, mid)
 
-    if l
 
 
 
