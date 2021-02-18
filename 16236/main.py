@@ -67,8 +67,6 @@ def bfs(x, y, size):
     minDist = 10**9
     while dq:
         i, j, t = dq.popleft()
-        if t > minDist:
-            continue
         for d in range(4):
             ni = i + di[d]
             nj = j + dj[d]
@@ -79,7 +77,8 @@ def bfs(x, y, size):
                         continue
                     elif v == 0 or v == size:
                         vis[ni][nj] = True
-                        dq.append((ni, nj, t+1))
+                        if t+1 <= minDist:
+                            dq.append((ni, nj, t+1))
                     else:
                         vis[ni][nj] = True
                         minDist = min(minDist, t + 1)
