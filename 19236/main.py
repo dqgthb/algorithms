@@ -42,7 +42,7 @@ def main(f=None):
     fish = [[0, 0] for _ in range(16)]
     for i, j in For(4, 4):
         val = mat[i][j]
-        fish[val[0]-1] = (i, j)
+        fish[val[0]] = (i, j)
 
     moveFish()
     parr(mat)
@@ -56,8 +56,10 @@ def moveFish():
             nj = dj[d]
 
             if not (0 <= ni < 4 and 0 <= nj < 4):
+                d = (d + 1) % 8
                 continue
             if ni == si and nj == sj:
+                d = (d + 1) % 8
                 continue
             swapFish(i, j, ni, nj)
 
