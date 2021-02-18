@@ -46,9 +46,7 @@ def tryWithHP(hp):
                 h -= atk
                 if h <= 0:
                     break
-                print(atk, hp, a, h)
                 hp -= a
-                print(atk, hp, a, h)
                 if hp <= 0:
                     return False
         else:
