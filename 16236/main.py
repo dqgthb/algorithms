@@ -83,12 +83,13 @@ def bfs(x, y, size):
                     else:
                         vis[ni][nj] = True
                         minDist = min(minDist, t + 1)
-                        if ni < tx:
-                            tx, ty = ni, nj
-                            continue
-                        elif ni == tx:
-                            if nj < ty:
+                        if t+1 == minDist:
+                            if ni < tx:
                                 tx, ty = ni, nj
+                                continue
+                            elif ni == tx:
+                                if nj < ty:
+                                    tx, ty = ni, nj
     if tx == 10**9:
         return -1, -1, 0
     mat[tx][ty] = 0
