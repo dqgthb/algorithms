@@ -45,7 +45,7 @@ def main(f=None):
     totalTime = 0
     while True:
         sx, sy, time = bfs(sx, sy, size)
-        print(sx, sy, time)
+        print(sx, sy, time, size)
 
         if sx == sy == -1:
             print(totalTime)
