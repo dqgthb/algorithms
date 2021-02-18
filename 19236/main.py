@@ -38,13 +38,14 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    si, sj = 0, 0
-    mat[si][sj] = [-1, mat[si][sj][1]]
-    print(fish)
+    fish = [None for _ in range(16)]
     for i, j in For(4, 4):
         val = mat[i][j]
         fish[val[0]] = (i, j)
-    fish = [[0, 0] for _ in range(16)]
+
+    si, sj = 0, 0
+    mat[si][sj] = [-1, mat[si][sj][1]]
+    print(fish)
 
     moveFish()
     parr(mat)
