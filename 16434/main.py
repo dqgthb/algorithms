@@ -53,16 +53,14 @@ def tryWithHP(hpMax, atk):
         if t == 1:
             while True:
                 q, r = divmod(h, atk)
-                timesToKill = q
                 q2, r2 = divmod(hp, a)
-                timesToDie = q2
                 if r != 0:
-                    timesToKill += 1
+                    q += 1
                 if r2 != 0:
-                    timesToDie += 1
+                    q2 += 1
 
                 if timesToKill <= timesToDie:
-                    hp -= a * q
+                    hp -= (timesToKill - 1) * a
                     break
                 else:
                     return False
