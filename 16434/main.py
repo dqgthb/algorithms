@@ -70,12 +70,6 @@ def tryWithHP(hpMax, atk):
         return True
 
 
-
-
-
-
-
-
     # ######## INPUT AREA END ############
     # ####################################
 
