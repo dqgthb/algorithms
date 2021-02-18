@@ -29,7 +29,7 @@ def main(f=None):
         t, a, h = map(int, input().split())
         rooms.append((t, a, h))
 
-    hp = binLeft(0, 10**100)
+    hp = binLeft(0, 10**13)
     print(hp)
 
 
