@@ -16,8 +16,8 @@ from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
 
 
-di = [-1, 0, 1, 0]
-dj = [0, -1, 0, 1]
+di = [-1, 0, 0, 1]
+dj = [0, -1, 1, 0]
 def main(f=None):
     init(f)
     # sys.setrecursionlimit(10**9)
