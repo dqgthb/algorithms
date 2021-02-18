@@ -49,12 +49,16 @@ def main(f=None):
     fish[prey] = [-1, None]
     moveFish()
     parr(mat)
+    printFish(mat)
 
 
 def printFish(mat):
     lst = []
-    for i, j in For(4, 4):
-        lst.append(mat[i][j][0]+1)
+    for i in range(4):
+        for j in range(4):
+            lst.append(mat[i][j][0]+1)
+        print(' '.join(map(str, lst)))
+        lst = []
 
 def moveFish():
     for i, j in fish:
