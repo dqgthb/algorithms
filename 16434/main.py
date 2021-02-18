@@ -57,9 +57,10 @@ def tryWithHP(hpMax, atk):
                 if r != 0:
                     q += 1
                 if r2 != 0:
+                    q2 += 1
 
-                if q < q2:
-                    hp = r2
+                if q <= q2:
+                    hp -= a * q
                     break
                 else:
                     return False
