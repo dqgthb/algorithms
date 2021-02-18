@@ -22,17 +22,15 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N, atk, rooms
-    N, atk = map(int, input().split())
+    global N, Hatk, rooms
+    N, Hatk = map(int, input().split())
     rooms = []
     for i in range(N):
         t, a, h = map(int, input().split())
         rooms.append((t, a, h))
 
-    #ans = tryWithHP(49)
-    #print(ans)
-    #hp = binLeft(0, 10**100)
-    #print(hp)
+    hp = binLeft(0, 10**100)
+    print(hp)
 
 
 def binLeft(l, r):
@@ -40,9 +38,7 @@ def binLeft(l, r):
         return l
 
     mid = (l + r)//2
-    midVal = tryWithHP(mid)
-    print(l, r)
-    print(midVal)
+    midVal = tryWithHP(mid, Hatk)
     if midVal < True:
         return binLeft(mid + 1, r)
     else:
