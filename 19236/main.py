@@ -58,8 +58,8 @@ def moveFish():
         print("fish:", fishNum+1, d)
 
         for _ in range(8):
-            ni = di[d]
-            nj = dj[d]
+            ni = i + di[d]
+            nj = j + dj[d]
 
             if not (0 <= ni < 4 and 0 <= nj < 4):
                 d = (d + 1) % 8
