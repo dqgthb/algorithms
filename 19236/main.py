@@ -50,6 +50,7 @@ def main(f=None):
     moveFish()
     parr(mat)
     printFish(mat)
+    print(fish)
 
 
 def printFish(mat):
