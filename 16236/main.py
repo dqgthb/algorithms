@@ -65,6 +65,7 @@ def bfs(x, y, size):
     vis[x][y] = True
     pool = []
     minDist = 10**9
+    tx, ty = -1, -1
     while dq:
         i, j, t = dq.popleft()
         for d in range(4):
@@ -82,15 +83,12 @@ def bfs(x, y, size):
                     else:
                         vis[ni][nj] = True
                         minDist = min(minDist, t + 1)
+                        if ni < tx:
+                            tx
+
                         if t+1 == minDist:
                             pool.append((ni, nj))
-    if not pool:
-        return -1, -1, 0
-    pool.sort()
-    target = pool[0]
-    x, y = target
-    mat[x][y] = 0
-    return x, y, minDist
+    return tx, ty, minDist
 
 # #############################################################################
 # #############################################################################
