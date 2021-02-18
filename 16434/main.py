@@ -30,9 +30,13 @@ def main(f=None):
         rooms.append((t, a, h))
 
     HPmax = 10 ** 9
+    ans = tryWithHP(48)
+    ans = tryWithHP(49)
+    print(ans)
 
 
 def tryWithHP(hp):
+    global atk
     for room in rooms:
         t, a, h = room
 
