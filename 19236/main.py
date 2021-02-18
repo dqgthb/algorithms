@@ -28,12 +28,14 @@ def main(f=None):
         arr = [int(i) for i in input().split()]
         a = []
         for i in range(0, 8, 2):
-            a.append((arr[i], arr[i+1]))
+            a.append([arr[i], arr[i+1]])
         mat.append(a)
-    print(mat)
 
     # ######## INPUT AREA END ############
     # ####################################
+
+    fish = [[0, 0] for _ in range(16)]
+    parr(mat)
 
 
 # #############################################################################
