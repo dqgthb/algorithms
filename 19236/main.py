@@ -23,6 +23,7 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
+    global mat, fish
     mat = []
     for _ in range(4):
         arr = [int(i) for i in input().split()]
@@ -40,7 +41,9 @@ def main(f=None):
         fish[val[0]-1] = (i, j)
 
 def moveFish():
-    for
+    for i, j in fish:
+        _, direction = mat[i][j]
+
 
 
 # #############################################################################
