@@ -22,12 +22,14 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N, atk, rooms
+    global N, atk, rooms, HPmax
     N, atk = map(int, input().split())
     rooms = []
     for i in range(N):
         t, a, h = map(int, input().split())
         rooms.append((t, a, h))
+
+    HPmax = 10 ** 9
 
 
 def tryWithHP(hp):
@@ -43,7 +45,10 @@ def tryWithHP(hp):
                 if hp <= 0:
                     return False
         else:
-
+            atk += a
+            hp = min(hp + h, HPmax)
+    else:
+        return True
 
 
 
