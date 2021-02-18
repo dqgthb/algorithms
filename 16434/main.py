@@ -29,11 +29,12 @@ def main(f=None):
         t, a, h = map(int, input().split())
         rooms.append((t, a, h))
 
-    ans = tryWithHP(HPmax)
-    print(ans)
+    HPmax = 10**100
+
     #ans = tryWithHP(49)
     #print(ans)
-    binLeft(0, r)
+    hp = binLeft(0, HPmax)
+    print(hp)
 
 
 def binLeft(l, r):
