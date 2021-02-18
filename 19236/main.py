@@ -38,10 +38,14 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+    si, sj = 0, 0
     fish = [[0, 0] for _ in range(16)]
     for i, j in For(4, 4):
         val = mat[i][j]
         fish[val[0]-1] = (i, j)
+
+    moveFish()
+    parr(mat)
 
 def moveFish():
     for i, j in fish:
@@ -55,6 +59,11 @@ def moveFish():
                 continue
             if ni == si and nj == sj:
                 continue
+            swapFish(i, j, ni, nj)
+
+
+def swapFish(i, j, ni, nj):
+
 
 
 
