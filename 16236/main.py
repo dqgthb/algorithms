@@ -56,6 +56,7 @@ def main(f=None):
             size += 1
             fishCountAfterlvlUp = 0
         print(sx, sy, time, size, fishCount)
+        parr(mat)
 
 
 def bfs(x, y, size):
