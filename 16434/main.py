@@ -36,6 +36,15 @@ def main(f=None):
     #print(ans)
 
 
+def binSearch(hp, l, r):
+    if l == r:
+        return l
+
+    val = tryWithHp(hp)
+
+
+
+
 def tryWithHP(hp):
     global atk
     for room in rooms:
