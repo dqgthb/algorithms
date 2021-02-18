@@ -22,8 +22,8 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N, H, rooms
-    N, H = map(int, input().split())
+    global N, atk, rooms
+    N, atk = map(int, input().split())
     rooms = []
     for i in range(N):
         t, a, h = map(int, input().split())
@@ -35,6 +35,11 @@ def tryWithHP(hp):
         t, a, h = room
 
         if t == 1:
+            while True:
+                h -= atk
+                if h <= 0:
+                    break
+
 
 
 
