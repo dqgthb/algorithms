@@ -39,6 +39,11 @@ def tryWithHP(hp):
                 h -= atk
                 if h <= 0:
                     break
+                hp -= a
+                if hp <= 0:
+                    return False
+        else:
+
 
 
 
