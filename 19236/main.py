@@ -40,10 +40,11 @@ def main(f=None):
 
     si, sj = 0, 0
     mat[si][sj] = [-1, mat[si][sj][1]]
-    fish = [[0, 0] for _ in range(16)]
+    print(fish)
     for i, j in For(4, 4):
         val = mat[i][j]
         fish[val[0]] = (i, j)
+    fish = [[0, 0] for _ in range(16)]
 
     moveFish()
     parr(mat)
@@ -71,7 +72,6 @@ def moveFish():
 def swapFish(i, j, ni, nj):
     fish1 = mat[i][j][0]
     fish2 = mat[ni][nj][0]
-    print("swap", fish1, fish2)
     mat[i][j], mat[ni][nj] = mat[ni][nj], mat[i][j]
     fish[fish1], fish[fish2] = fish[fish2], fish[fish1]
 
