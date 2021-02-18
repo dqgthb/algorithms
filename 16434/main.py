@@ -27,9 +27,16 @@ def main(f=None):
     rooms = []
     for i in range(N):
         t, a, h = map(int, input().split())
+        rooms.append((t, a, h))
 
 
 def tryWithHP(hp):
+    for room in rooms:
+        t, a, h = room
+
+        if t == 1:
+
+
 
 
 
