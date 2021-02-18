@@ -54,9 +54,16 @@ def tryWithHP(hpMax, atk):
             while True:
                 q, r = divmod(h, atk)
                 q2, r2 = divmod(hp, a)
-                if q < q2:
+                if not r:
+                    q += 1
+                if not r2:
+                    q2 += 1
+
+
+                if q <= q2:
                     break
                 else:
+                    return False
         else:
             atk += a
             hp = hpMax if hp + h > hp else hp + h
