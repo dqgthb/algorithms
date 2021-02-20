@@ -32,14 +32,17 @@ def main(f=None):
     arr.sort()
     print(arr)
 
-    cMin = 10 ** 9
     cL = 0
-    cR = arr[N-1]
+    cR = N-1
+    cMin = arr[cL] + arr[cR]
+
     for i in range(N):
         l, r, c = closeToArr_idx(i)
         if c <= cMin:
-
-
+            c = cMin
+            cL = l
+            cR = r
+    print(l, r, )
 
 
 def closeToArr_idx(idx):
