@@ -37,9 +37,10 @@ def closestToN(idx):
 
     l = 0
     r = len(N)-1
+    v = arr[l] + arr[r]
     cL = l
     cR = r
-    closest = 10 ** 9
+    closest = abs(v - n)
 
     while l < r:
         if l == n:
@@ -50,16 +51,16 @@ def closestToN(idx):
             continue
 
         v = arr[l] + arr[r]
+        avn = abs(v-n)
 
-        if v - n < closest:
-            closest = v - n
+        if avn < closest:
+            closest = avn
             cL = l
             cR = r
 
-        if v == n:
-            return (abs(v-n), l, r)
-        elif v < n:
-            l += 1
+        if avn == 0:
+            return (cL, cR)
+
 
 # #############################################################################
 # #############################################################################
