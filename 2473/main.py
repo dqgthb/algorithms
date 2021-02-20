@@ -31,6 +31,9 @@ def main(f=None):
 
     arr.sort()
 
+    l, r, c = closeToArr_idx(0)
+    print(l, r, c)
+
 
 def closeToArr_idx(idx):
     n = arr[idx]
