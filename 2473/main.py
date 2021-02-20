@@ -39,17 +39,17 @@ def closeToArr_idx(idx):
     n = arr[idx]
 
     l = 0
-    r = len(N)-1
+    r = N-1
     v = arr[l] + arr[r]
     cL = l
     cR = r
     closest = abs(v - n)
 
     while l < r:
-        if l == n:
+        if l == idx:
             l += 1
             continue
-        if r == n:
+        if r == idx:
             l -= 1
             continue
 
