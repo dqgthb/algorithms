@@ -39,7 +39,7 @@ def main(f=None):
 
     for i in range(N-2):
         l, r, c = closeToArr_idx(i)
-        if c <= cMin:
+        if c < cMin:
             c = cMin
             cL = l
             cR = r
