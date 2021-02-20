@@ -32,8 +32,9 @@ def main(f=None):
     arr.sort()
     print(arr)
 
-    cL = 0
+    cL = 1
     cR = N-1
+    cI = 0
     cMin = arr[cL] + arr[cR]
 
     for i in range(N):
@@ -42,7 +43,8 @@ def main(f=None):
             c = cMin
             cL = l
             cR = r
-    print(l, r, )
+            cI = i
+    print(l, r, i)
 
 
 def closeToArr_idx(idx):
@@ -60,7 +62,7 @@ def closeToArr_idx(idx):
             l += 1
             continue
         if r == idx:
-            l -= 1
+            r -= 1
             continue
 
         v = arr[l] + arr[r]
