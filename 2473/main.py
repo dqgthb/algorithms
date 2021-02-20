@@ -30,6 +30,7 @@ def main(f=None):
     # ####################################
 
     arr.sort()
+    print(arr)
 
     l, r, c = closeToArr_idx(0)
     print(l, r, c)
