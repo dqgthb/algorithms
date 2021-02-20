@@ -35,7 +35,7 @@ def main(f=None):
     cL = 1
     cR = N-1
     cI = 0
-    cMin = arr[cL] + arr[cR]
+    cMin = arr[cL] + arr[cR] + arr[cI]
 
     for i in range(N-2):
         l, r, c = closeToArr_idx(i)
@@ -51,7 +51,7 @@ def main(f=None):
 
 
 def closeToArr_idx(idx):
-    n = arr[idx]
+    n = -arr[idx]
 
     l = idx + 1
     r = N-1
