@@ -32,7 +32,7 @@ def main(f=None):
     arr.sort()
 
 
-def closestToN(idx):
+def closeToArr_idx(idx):
     n = arr[idx]
 
     l = 0
@@ -59,7 +59,9 @@ def closestToN(idx):
             cR = r
 
         if avn == 0:
-            return (cL, cR)
+            return (cL, cR, avn)
+
+
 
 
 # #############################################################################
