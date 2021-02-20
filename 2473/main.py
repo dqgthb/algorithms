@@ -50,7 +50,7 @@ def main(f=None):
 def closeToArr_idx(idx):
     n = arr[idx]
 
-    l = 0
+    l = idx + 1
     r = N-1
     v = arr[l] + arr[r]
     cL = l
