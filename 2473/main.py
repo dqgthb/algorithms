@@ -37,7 +37,7 @@ def main(f=None):
     cI = 0
     cMin = arr[cL] + arr[cR]
 
-    for i in range(N):
+    for i in range(N-2):
         l, r, c = closeToArr_idx(i)
         if c <= cMin:
             c = cMin
@@ -45,6 +45,9 @@ def main(f=None):
             cR = r
             cI = i
     print(l, r, i)
+    ans = [arr[l], arr[r], arr[i]]
+    ans.sort()
+    print(ans)
 
 
 def closeToArr_idx(idx):
