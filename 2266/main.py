@@ -22,59 +22,17 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N, arr
-    N = int(input())
-    arr = [int(i) for i in input().split()]
+    global dp
+    N, K = map(int, input().split())
+    dp = Mat(N+1, K+1, 10**9)
 
     # ######## INPUT AREA END ############
     # ####################################
 
-    arr.sort()
+    for n in range(N+1):
+        dp[n][1] = 1
 
-    sum_ = 10 ** 21
-    A, B, C = -1, -1, -1
-    for i in range(N-2):
-        l, r = closeToZero(i)
-        a, b, c = arr[i], arr[l], arr[r]
-        v = a + b + c
-        if abs(v) < sum_:
-            sum_ = abs(v)
-            A, B, C = a, b, c
-    print(A, B, C)
-
-
-def closeToZero(idx):
-    a = arr[idx]
-    l = idx + 1
-    r = N - 1
-
-    closest = 10**21
-    cl = l
-    cr = r
-
-    while l < r:
-        b = arr[l]
-        c = arr[r]
-        v = a + b + c
-        if abs(v) < closest:
-            cl = l
-            cr = r
-            closest = abs(v)
-
-        if v == 0:
-            return l, r
-
-        elif v < 0:
-            l += 1
-        else:
-            r -= 1
-    return cl, cr
-
-
-
-
-
-
+    parr(dp)
 
 
 # #############################################################################
