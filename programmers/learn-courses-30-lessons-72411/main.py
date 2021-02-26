@@ -4,6 +4,8 @@ import itertools
 def solution(orders, course):
     answer = []
     menus = set(menu for order in orders for menu in order)
+    menus = list(menus)
+    menus.sort()
     orderSet = [set(order) for order in orders]
     for num in course:
         maxCount = 2
@@ -22,8 +24,6 @@ def solution(orders, course):
                 maxCandidates = [course]
                 maxCount = count
         for candidate in maxCandidates:
-            candidate = list(candidate)
-            candidate.sort()
             answer.append(''.join(candidate))
     answer.sort()
     return answer
