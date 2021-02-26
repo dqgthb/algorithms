@@ -20,12 +20,12 @@ def solution(orders, course):
             if count == maxCount:
                 maxCandidates.append(course)
             elif count > maxCount:
-                maxCandidates = []
+                maxCandidates = [course]
+                maxCount = count
+        for candidate in maxCandidates:
+            answer.append(candidate)
 
-        answer.append(maxCount)
-
-
-    return answer
+    return maxCandidates
 
 def main():
     ans = solution(["ABCFG", "AC", "CDE", "ACDE", "BCFG", "ACDEH"], [2, 3, 4])
