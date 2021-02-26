@@ -7,7 +7,8 @@ def solution(orders, course):
     orderSet = [set(order) for order in orders]
     for num in course:
         maxCount = 0
-        for course in itertools.product(menus, repeat=num):
+        for course in itertools.combinations(menus, r=num):
+            print(course)
             count = 0
             for order in orderSet:
                 for menu in course:
@@ -21,9 +22,9 @@ def solution(orders, course):
 
     return answer
 
-
 def main():
-    solution(["ABCFG", "AC", "CDE", "ACDE", "BCFG", "ACDEH"], [2, 3, 4])
+    ans = solution(["ABCFG", "AC", "CDE", "ACDE", "BCFG", "ACDEH"], [2, 3, 4])
+    print(ans)
 
 if __name__ == "__main__":
     main()
