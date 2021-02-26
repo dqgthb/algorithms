@@ -23,9 +23,12 @@ def solution(orders, course):
                 maxCandidates = [course]
                 maxCount = count
         for candidate in maxCandidates:
-            answer.append(candidate)
+            candidate = [i for i in candidate]
+            candidate.sort()
+            answer.append(''.join(candidate))
+    answer.sort()
+    return answer
 
-    return maxCandidates
 
 def main():
     ans = solution(["ABCFG", "AC", "CDE", "ACDE", "BCFG", "ACDEH"], [2, 3, 4])
