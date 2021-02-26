@@ -7,6 +7,7 @@ def solution(orders, course):
     orderSet = [set(order) for order in orders]
     for num in course:
         maxCount = 0
+        maxCandidates = []
         for course in itertools.combinations(menus, r=num):
             print(course)
             count = 0
@@ -16,7 +17,11 @@ def solution(orders, course):
                         break
                 else:
                     count += 1
-            maxCount = max(count, maxCount)
+            if count == maxCount:
+                maxCandidates.append(course)
+            elif count > maxCount:
+                maxCandidates = []
+
         answer.append(maxCount)
 
 
