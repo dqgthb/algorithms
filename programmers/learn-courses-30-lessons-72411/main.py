@@ -6,13 +6,13 @@ def solution(orders, course):
     menus = set(menu for order in orders for menu in order)
     menus = list(menus)
     menus.sort()
-    orderSet = [set(order) for order in orders]
+    #orderSet = [set(order) for order in orders]
     for num in course:
         maxCount = 2
         maxCandidates = []
         for course in itertools.combinations(menus, r=num):
             count = 0
-            for order in orderSet:
+            for order in orders:
                 for menu in course:
                     if menu not in order:
                         break
@@ -31,6 +31,7 @@ def solution(orders, course):
 
 def main():
     ans = solution(["ABCFG", "AC", "CDE", "ACDE", "BCFG", "ACDEH"], [2, 3, 4])
+    ans = solution(["XYZ", "XWY", "WXA"], [2, 3, 4])
     print(ans)
 
 if __name__ == "__main__":
