@@ -9,7 +9,6 @@ def solution(orders, course):
         maxCount = 2
         maxCandidates = []
         for course in itertools.combinations(menus, r=num):
-            print(course)
             count = 0
             for order in orderSet:
                 for menu in course:
