@@ -22,7 +22,7 @@ def solution(orders, course):
                 maxCandidates = [course]
                 maxCount = count
         for candidate in maxCandidates:
-            candidate = [i for i in candidate]
+            candidate = list(candidate)
             candidate.sort()
             answer.append(''.join(candidate))
     answer.sort()
