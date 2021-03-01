@@ -30,7 +30,11 @@ def main(f=None):
     # ####################################
 
     dp = [1] * N
-    for i, e in enu(arr):
+    for i in range(1, N):
+        for j in range(i):
+            if dp[i] > dp[j]:
+                dp[i] = max(dp[i], dp[j]+1)
+        dp[i] =
 
 
 
