@@ -21,10 +21,15 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
+
+    global N, mat
     N = int(input())
+    mat = [list(input().split()) for _ in range(N)]
 
     # ######## INPUT AREA END ############
     # ####################################
+
+    parr(mat)
 
 
 # #############################################################################
