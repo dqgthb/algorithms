@@ -29,9 +29,8 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-
-
-
+    dp = [1] * N
+    for i, e in enu(arr):
 
 
 
