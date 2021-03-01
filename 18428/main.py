@@ -45,6 +45,8 @@ def dfs(i, j, numObs):
             parr(mat)
             print("YES")
             exit(0)
+        else:
+            return
 
     while True:
         i += 1
