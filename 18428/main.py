@@ -30,15 +30,9 @@ def main(f=None):
     # ####################################
 
     teacherLocs = []
-    studentLocs = []
     for i, j in For(N, N):
         if mat[i][j] == 'T':
             teacherLocs.append((i, j))
-        elif mat[i][j] == 'S':
-            studentLocs.append((i, j))
-
-    print(check())
-
 
 def check():
     for i, j in teacherLocs:
@@ -88,8 +82,9 @@ def check():
 
 
 def dfs(numObs):
+    if numObs == 3:
     if dfs == 4:
-        pass
+
 
 
 
