@@ -26,7 +26,7 @@ def main(f=None):
     N = int(input())
     arr = [int(i) for i in input().split()]
     M = int(input())
-    DP = Mat(N+1, N+1)
+    DP = Mat(N, N)
     for i in range(N):
         DP[i][i] = True
 
@@ -40,8 +40,6 @@ def main(f=None):
             print(1)
         else:
             print(0)
-    parr(DP)
-
 
 
     # ######## INPUT AREA END ############
