@@ -22,15 +22,24 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N, arr, M, S, E
+    global N, arr, M, S, E, DP
     N = int(input())
     arr = [int(i) for i in input().split()]
     M = int(input())
+    DP = Mat(N+1, N+1)
+
     for _ in range(M):
         S, E = map(int, input().split())
+        print(solve())
 
     # ######## INPUT AREA END ############
     # ####################################
+
+def dp():
+
+    return
+
+
 
 
 # #############################################################################
