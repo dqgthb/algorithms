@@ -87,8 +87,10 @@ def dfs(i, j, numObs):
             print("YES")
             exit(0)
 
-    for i, j in For(N, N):
-        if
+    while True:
+
+
+
 
 
 
