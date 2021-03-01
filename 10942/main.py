@@ -32,7 +32,7 @@ def main(f=None):
 
     for i in range(N):
         for j in range(i, N):
-            dp(i, j)
+            #dp(i, j)
 
     for _ in range(M):
         S, E = map(lambda x: int(x) - 1, input().split())
