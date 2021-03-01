@@ -33,19 +33,16 @@ def main(f=None):
     for i, j in For(N, N):
         if mat[i][j] == 'T':
             teacherLocs.append((i, j))
-
-    studentLocs = []
-    for i, j in For(N, N):
-        if mat[i][j] == 'T':
+        elif mat[i][j] == 'S':
             studentLocs.append((i, j))
-
-
 
     parr(mat)
     dfs(0)
 
 
 def check():
+    for i, j in teacherLocs:
+
 
 
 def dfs(numObs):
