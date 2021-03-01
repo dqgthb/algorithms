@@ -34,6 +34,7 @@ def main(f=None):
         if mat[i][j] == 'T':
             teacherLocs.append((i, j))
 
+    dfs(0, 0, 0)
 
 
 def dfs(i, j, numObs):
@@ -52,7 +53,7 @@ def dfs(i, j, numObs):
 
         if mat[i][j] == 'X':
             mat[i][j] = 'O'
-            dfs(i, j)
+            dfs(i, j, numObs + 1)
             mat[i][j] = 'X'
 
 
