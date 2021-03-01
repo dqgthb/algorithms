@@ -42,6 +42,12 @@ def main(f=None):
 
 def check():
     for i, j in teacherLocs:
+        # up
+        ni = i
+        while True:
+            ni -= 1
+            if mat[]
+
 
 
 
