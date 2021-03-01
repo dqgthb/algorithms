@@ -5,6 +5,11 @@ def solution(orders, course):
     menus = set(menu for order in orders for menu in order)
     print(menus)
 
+    for num in course:
+
+
+
+
 
 
 def main():
