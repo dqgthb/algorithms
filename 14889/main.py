@@ -29,8 +29,8 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    for i in itertools.combinations(range(N), r=N//2):
-        print(i)
+    team = [False] * N
+    for team in itertools.combinations(range(N), r=N//2):
 
 
 
