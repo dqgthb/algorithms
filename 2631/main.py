@@ -32,9 +32,10 @@ def main(f=None):
     dp = [1] * N
     for i in range(1, N):
         for j in range(i):
-            if dp[i] > dp[j]:
+            if arr[i] > arr[j]:
                 dp[i] = max(dp[i], dp[j]+1)
-        dp[i] =
+    ans = max(dp)
+    print(N - ans)
 
 
 
