@@ -30,11 +30,8 @@ def main(f=None):
     for i in range(N):
         DP[i][i] = True
 
-    for i in range(1, N-1):
-        for j in range(i, N):
-            #dp(i, j)
-            print(i, j)
-            DP[i][j] = DP[i+1][j-1] and arr[i] == arr[j]
+    for i i range(n-1):
+
 
     for _ in range(M):
         S, E = map(lambda x: int(x) - 1, input().split())
