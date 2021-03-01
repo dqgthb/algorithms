@@ -31,7 +31,7 @@ def main(f=None):
         DP[i][i] = True
 
     for _ in range(M):
-        S, E = map(int, input().split())
+        S, E = map(lambda x: int(x) - 1, input().split())
         print(dp(S, E))
 
     # ######## INPUT AREA END ############
