@@ -2,6 +2,8 @@
 import itertools
 
 def solution(orders, course):
+    menus = set(menu for order in orders for menu in order)
+
 
 
 def main():
