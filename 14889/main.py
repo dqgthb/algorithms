@@ -31,7 +31,8 @@ def main(f=None):
 
     t = [False] * N
     for team in itertools.combinations(range(N), r=N//2):
-        print(team)
+        for member in team:
+            t
 
 
 
