@@ -18,7 +18,7 @@ DEBUG = False
 
 def main(f=None):
     init(f)
-    # sys.setrecursionlimit(10**9)
+    #sys.setrecursionlimit(10**9)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
@@ -32,10 +32,11 @@ def main(f=None):
 
     for _ in range(M):
         S, E = map(lambda x: int(x) - 1, input().split())
-        print(S, E)
-        print(dp(S, E))
+        if dp(S, E):
+            print(1)
+        else:
+            print(0)
 
-    parr(DP)
 
     # ######## INPUT AREA END ############
     # ####################################
