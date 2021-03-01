@@ -34,6 +34,28 @@ def main(f=None):
         if mat[i][j] == 'T':
             teacherLocs.append((i, j))
 
+
+
+def dfs(i, j, numObs):
+    if numObs == 3:
+        if check():
+            print("YES")
+            exit(0)
+
+    while True:
+        i += 1
+        if i == N:
+            i = 0
+            j += 1
+        if j == N:
+            break
+
+        if mat[i][j] == 'X':
+            mat[i][j] = 'O'
+            dfs(i, j)
+            mat[i][j] = 'X'
+
+
 def check():
     for i, j in teacherLocs:
         # up
@@ -78,27 +100,6 @@ def check():
                 return False
 
     return True
-
-
-
-def dfs(i, j, numObs):
-    if numObs == 3:
-        if check():
-            print("YES")
-            exit(0)
-
-    while True:
-        i += 1
-        if i == N:
-            i = 0
-            j += 1
-        if j == N:
-            break
-
-
-
-
-
 
 
 # #############################################################################
