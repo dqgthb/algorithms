@@ -39,12 +39,15 @@ def main(f=None):
 
 def dp(s, e):
     if s == e:
+        return True
+    if e - s == 1:
+        return arr[s] == arr[e]
 
     if DP[s][e] is not None:
         return DP[s][e]
 
-    if dp(s+1, e+1):
-
+    if dp(s+1, e+1) and arr[s] == arr[e]:
+        return True
     return
 
 
