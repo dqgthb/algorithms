@@ -24,6 +24,7 @@ def main(f=None):
 
     N, K = map(int, input().split())
 
+
     # ######## INPUT AREA END ############
     # ####################################
 
