@@ -45,6 +45,9 @@ def check():
 
 
 
+
+
+
 def dfs(numObs):
     if dfs == 4:
 
