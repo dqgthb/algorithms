@@ -46,7 +46,16 @@ def check():
         ni = i
         while True:
             ni -= 1
-            if mat[]
+            if ni < 0:
+                break
+            if mat[ni][j] == 'O':
+                break
+            if mat[ni][j] == 'S':
+                return False
+
+        ni = i
+        while True:
+            ni += 1
 
 
 
