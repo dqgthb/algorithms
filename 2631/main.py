@@ -22,12 +22,13 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N, arr
+    global N, arr, dp
     N = int(input())
     arr = [int(input()) for _ in range(N)]
 
     # ######## INPUT AREA END ############
     # ####################################
+
 
 
 
