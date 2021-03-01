@@ -29,10 +29,8 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    t = [False] * N
     for team in itertools.combinations(range(N), r=N//2):
         for member in team:
-            t
 
 
 
