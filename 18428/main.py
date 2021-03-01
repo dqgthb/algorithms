@@ -25,13 +25,20 @@ def main(f=None):
     global N, mat
     N = int(input())
     mat = [list(input().split()) for _ in range(N)]
-    teacherLocs = []
 
     # ######## INPUT AREA END ############
     # ####################################
 
+    teacherLocs = []
     for i, j in For(N, N):
         if mat[i][j] == 'T':
+            teacherLocs.append((i, j))
+
+    studentLocs = []
+    for i, j in For(N, N):
+        if mat[i][j] == 'T':
+            studentLocs.append((i, j))
+
 
 
     parr(mat)
