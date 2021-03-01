@@ -38,10 +38,12 @@ def main(f=None):
     # ####################################
 
 def dp(s, e):
+    if s == e:
+
     if DP[s][e] is not None:
         return DP[s][e]
 
-
+    if dp(s+1, e+1):
 
     return
 
