@@ -78,19 +78,18 @@ def check():
             nj += 1
             if nj >= N:
                 break
+            if mat[i][nj] == 'O':
+                break
+            if mat[i][nj] == 'S':
+                return False
 
-
-
-
+    return True
 
 
 
 def dfs(numObs):
     if dfs == 4:
-
-
-
-
+        pass
 
 
 
