@@ -34,9 +34,14 @@ def main(f=None):
         mat[i][0] = 0
         mat[i][1] = 1
 
+    for i in range(K+1):
+        mat[0][i] = 1
+
+    parr(mat)
+
     for i in range(N+1):
         for j in range(2, K+1):
-            mat[i][j]
+            mat[i][j] = mat[i]
 
 
 
