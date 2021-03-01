@@ -22,7 +22,7 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N, mat
+    global N, mat, teacherLocs
     N = int(input())
     mat = [list(input().split()) for _ in range(N)]
 
@@ -30,14 +30,14 @@ def main(f=None):
     # ####################################
 
     teacherLocs = []
+    studentLocs = []
     for i, j in For(N, N):
         if mat[i][j] == 'T':
             teacherLocs.append((i, j))
         elif mat[i][j] == 'S':
             studentLocs.append((i, j))
 
-    parr(mat)
-    dfs(0)
+    print(check())
 
 
 def check():
