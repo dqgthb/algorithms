@@ -66,6 +66,18 @@ def check():
         nj = j
         while True:
             nj -= 1
+            if nj < 0:
+                break
+            if mat[i][nj] == 'O':
+                break
+            if mat[i][nj] == 'S':
+                return False
+
+        nj = j
+        while True:
+            nj += 1
+            if nj >= N:
+                break
 
 
 
