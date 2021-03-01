@@ -81,9 +81,14 @@ def check():
 
 
 
-def dfs(numObs):
+def dfs(i, j, numObs):
     if numObs == 3:
-    if dfs == 4:
+        if check():
+            print("YES")
+            exit(0)
+
+    for i, j in For(N, N):
+        if
 
 
 
