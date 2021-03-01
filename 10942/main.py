@@ -32,9 +32,10 @@ def main(f=None):
 
     for _ in range(M):
         S, E = map(lambda x: int(x) - 1, input().split())
+        print(S, E)
         print(dp(S, E))
 
-    parr(dp)
+    parr(DP)
 
     # ######## INPUT AREA END ############
     # ####################################
@@ -49,7 +50,7 @@ def dp(s, e):
         return DP[s][e]
 
     val = False
-    if dp(s+1, e+1) and arr[s] == arr[e]:
+    if dp(s+1, e-1) and arr[s] == arr[e]:
         val = True
     DP[s][e] = val
     return val
