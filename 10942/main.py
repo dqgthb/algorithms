@@ -34,8 +34,9 @@ def main(f=None):
         DP[i][i+1] = arr[i] == arr[i+1]
     parr(DP)
 
-    for i in range(2, N):
+    for i in range(2,):
         for j in range(i, N):
+            DP[i][j] = DP[i+1][j-1] and arr[i] == arr[j]
 
     for _ in range(M):
         S, E = map(lambda x: int(x) - 1, input().split())
