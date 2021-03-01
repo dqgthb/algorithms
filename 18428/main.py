@@ -39,8 +39,10 @@ def main(f=None):
 
 
 def dfs(i, j, numObs):
+    print(i, j, numObs)
     if numObs == 3:
         if check():
+            parr(mat)
             print("YES")
             exit(0)
 
