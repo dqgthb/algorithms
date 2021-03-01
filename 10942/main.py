@@ -32,7 +32,7 @@ def main(f=None):
 
     for _ in range(M):
         S, E = map(int, input().split())
-        print(solve())
+        print(dp(S, E))
 
     # ######## INPUT AREA END ############
     # ####################################
@@ -46,9 +46,11 @@ def dp(s, e):
     if DP[s][e] is not None:
         return DP[s][e]
 
+    val = False
     if dp(s+1, e+1) and arr[s] == arr[e]:
-        return True
-    return
+        val = True
+    DP[s][e] = val
+    return val
 
 
 
