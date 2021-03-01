@@ -88,6 +88,12 @@ def dfs(i, j, numObs):
             exit(0)
 
     while True:
+        i += 1
+        if i == N:
+            i = 0
+            j += 1
+        if j == N:
+            break
 
 
 
