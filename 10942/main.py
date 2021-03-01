@@ -54,9 +54,7 @@ def dp(s, e):
     if DP[s][e] is not None:
         return DP[s][e]
 
-    val = False
-    if dp(s+1, e-1) and arr[s] == arr[e]:
-        val = True
+    val = dp(s+1, e-1) and arr[s] == arr[e]:
     DP[s][e] = val
     return val
 
