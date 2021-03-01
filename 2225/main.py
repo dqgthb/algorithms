@@ -40,8 +40,7 @@ def main(f=None):
 
     for j in range(2, K+1):
         for i in range(1, N+1):
-            mat[i][j] = (mat[i][j-1] + mat[i-1][j]
-    parr(mat)
+            mat[i][j] = (mat[i][j-1] + mat[i-1][j]) % 1000000000
 
     print(mat[N][K])
 
