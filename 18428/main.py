@@ -35,6 +35,7 @@ def main(f=None):
             teacherLocs.append((i, j))
 
     dfs(0, 0, 0)
+    print("NO")
 
 
 def dfs(i, j, numObs):
