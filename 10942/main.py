@@ -40,21 +40,23 @@ def main(f=None):
             print(1)
         else:
             print(0)
+    parr(DP)
+
 
 
     # ######## INPUT AREA END ############
     # ####################################
 
 def dp(s, e):
-    if s == e:
-        return True
-    if e - s == 1:
-        return arr[s] == arr[e]
-
     if DP[s][e] is not None:
         return DP[s][e]
 
-    val = dp(s+1, e-1) and arr[s] == arr[e]:
+    if s == e:
+        val = True
+    elif e - s == 1:
+        val = arr[s] == arr[e]
+    else:
+        val = dp(s+1, e-1) and arr[s] == arr[e]
     DP[s][e] = val
     return val
 
