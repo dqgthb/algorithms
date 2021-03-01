@@ -27,6 +27,8 @@ def main(f=None):
     arr = [int(i) for i in input().split()]
     M = int(input())
     DP = Mat(N+1, N+1)
+    for i in range(N):
+        DP[i][i] = True
 
     for _ in range(M):
         S, E = map(int, input().split())
@@ -35,7 +37,11 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-def dp():
+def dp(s, e):
+    if DP[s][e] is not None:
+        return DP[s][e]
+
+
 
     return
 
