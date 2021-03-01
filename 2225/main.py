@@ -37,11 +37,13 @@ def main(f=None):
     for i in range(K+1):
         mat[0][i] = 1
 
-    parr(mat)
 
     for j in range(2, K+1):
         for i in range(1, N+1):
-            mat[i][j] = mat[i][] + mat[][]
+            mat[i][j] = mat[i][j-1] + mat[i-1][j]
+
+    print(mat[N][K])
+
 
 
 
