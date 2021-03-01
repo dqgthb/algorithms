@@ -39,9 +39,9 @@ def main(f=None):
 
     parr(mat)
 
-    for i in range(N+1):
-        for j in range(2, K+1):
-            mat[i][j] = mat[i]
+    for j in range(2, K+1):
+        for i in range(1, N+1):
+            mat[i][j] = mat[i][] + mat[][]
 
 
 
