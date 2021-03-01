@@ -34,6 +34,8 @@ def main(f=None):
         S, E = map(lambda x: int(x) - 1, input().split())
         print(dp(S, E))
 
+    parr(dp)
+
     # ######## INPUT AREA END ############
     # ####################################
 
