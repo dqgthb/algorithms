@@ -22,63 +22,18 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N, mat, isTeam1
-    N = int(input())
-    mat = [list(map(int, input().split())) for _ in range(N)]
-    isTeam1 = [False] * N
+    global N, Q, G
+    N, Q = map(int, input().split())
+    G = [[] * N]
+    for _ in range(N-1):
+        p, q, r = map(lambda x: int(x) - 1, input().split())
+        r += 1
+        G[p].append((q, r))
+        G[q].append((p, r))
+
 
     # ######## INPUT AREA END ############
     # ####################################
-
-    global diff, s1, s2
-    diff = 10 ** 9
-    s1 = 0
-    s2 = 0
-
-    dfs(0, 0)
-    print(diff)
-
-
-def dfs(idx, num):
-    if idx == N:
-        return
-    if num == N // 2:
-        calculate()
-        return
-    isTeam1[idx] = True
-    dfs(idx + 1, num+1)
-    isTeam1[idx] = False
-    dfs(idx + 1, num)
-
-
-def calculate():
-    team1 = []
-    team2 = []
-    for i, e in enu(isTeam1):
-        if e:
-            team1.append(i)
-        else:
-            team2.append(i)
-
-
-    t1Score = 0
-    t2Score = 0
-    for x, y in product(team1, repeat=2):
-        t1Score += mat[x][y]
-
-    for x, y in product(team2, repeat=2):
-        t2Score += mat[x][y]
-
-    d = abs(t1Score - t2Score)
-    global diff, s1, s2
-    if d < diff:
-        diff = d
-        s1 = t1Score
-        s2 = t2Score
-
-
-
-
 
 
 # #############################################################################
