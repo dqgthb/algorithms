@@ -38,8 +38,22 @@ def main(f=None):
         for i in range(0, 9, 3):
             mat.append(arr[i:i+3])
 
-        if isWinner('X'):
+        xWin = isWinner('X')
+        oWin = isWinner('O')
+        if xWin and oWin:
+            print("invalid")
+            continue
+
+
+        if xWin:
             if xCount - oCount != 1:
+                print("invalid")
+                continue
+
+        if oWin:
+            if xCount - oCount != 0:
+                print("invalid")
+                continue
 
 
         print("valid")
