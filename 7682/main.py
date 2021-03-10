@@ -27,11 +27,17 @@ def main(f=None):
         if line == "end": break
         arr = list(line)
         counter = Counter(arr)
+        xCount = counter["X"]
+        oCount = counter["O"]
+        if not 0 <= xCount - oCount <= 1:
+            print("invalid")
+            continue
 
         mat = []
         for i in range(0, 9, 3):
             mat.append(arr[i:i+3])
-        parr(mat)
+
+        print("valid")
 
 
     # ######## INPUT AREA END ############
