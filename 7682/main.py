@@ -27,6 +27,10 @@ def main(f=None):
         if line == "end": break
 
         arr = list(line)
+        mat = []
+        for i in range(0, 9, 3):
+            mat.append(arr[i:i+3])
+        parr(mat)
 
 
     # ######## INPUT AREA END ############
