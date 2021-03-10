@@ -25,9 +25,14 @@ def main(f=None):
     global N, arr, dp
     N = int(input())
     arr = [int(i) for i in input().split()]
+    dp = [1] * N
 
     # ######## INPUT AREA END ############
     # ####################################
+
+    for i in range(1, N):
+
+
 
 
 
