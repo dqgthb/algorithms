@@ -21,6 +21,7 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
+    global mat
     mat = Mat(3, 3)
     while True:
         line = input().strip()
@@ -46,6 +47,10 @@ def main(f=None):
 
 
 def isWinner(char):
+    for i in range(3):
+        for j in range(3):
+            mat[i][j] =
+
 
 
 # #############################################################################
