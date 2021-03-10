@@ -57,8 +57,9 @@ def main(f=None):
                 continue
 
         if not xWin and not oWin:
-            if counter['.']
-
+            if counter['.'] != 0:
+                print("invalid")
+                continue
 
         print("valid")
 
