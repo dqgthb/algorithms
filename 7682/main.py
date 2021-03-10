@@ -21,9 +21,12 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
+    mat = Mat(3, 3)
     while True:
         line = input().strip()
         if line == "end": break
+
+        arr = list(line)
 
 
     # ######## INPUT AREA END ############
