@@ -21,6 +21,10 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
+    while True:
+        line = input().strip()
+        if line == "end": break
+
 
     # ######## INPUT AREA END ############
     # ####################################
