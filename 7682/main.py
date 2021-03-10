@@ -38,6 +38,9 @@ def main(f=None):
         for i in range(0, 9, 3):
             mat.append(arr[i:i+3])
 
+        if isWinner('X'):
+            if xCount - oCount != 1:
+
 
         print("valid")
 
@@ -51,8 +54,9 @@ def isWinner(char):
         if mat[i][0] == mat[i][1] == mat[i][2] == char:
             return True
 
-    f
-
+    for j in range(3):
+        if mat[0][j] == mat[1][j] == mat[j][2] == char:
+            return True
 
 
 # #############################################################################
