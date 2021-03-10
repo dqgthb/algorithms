@@ -48,8 +48,10 @@ def main(f=None):
 
 def isWinner(char):
     for i in range(3):
-        for j in range(3):
-            mat[i][j] =
+        if mat[i][0] == mat[i][1] == mat[i][2] == char:
+            return True
+
+    f
 
 
 
