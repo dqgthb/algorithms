@@ -74,7 +74,7 @@ def isWinner(char):
             return True
 
     for j in range(3):
-        if mat[0][j] == mat[1][j] == mat[j][2] == char:
+        if mat[0][j] == mat[1][j] == mat[2][j] == char:
             return True
 
     if mat[0][0] == mat[1][1] == mat[2][2] == char:
