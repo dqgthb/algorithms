@@ -30,7 +30,8 @@ def main(f=None):
         counter = Counter(arr)
         xCount = counter["X"]
         oCount = counter["O"]
-        if not 0 <= xCount - oCount <= 1:
+        diff = xCount - oCount
+        if not 0 <= diff <= 1:
             print("invalid")
             continue
 
@@ -46,14 +47,17 @@ def main(f=None):
 
 
         if xWin:
-            if xCount - oCount != 1:
+            if diff != 1:
                 print("invalid")
                 continue
 
         if oWin:
-            if xCount - oCount != 0:
+            if diff != 0:
                 print("invalid")
                 continue
+
+        if not xWin and not oWin:
+            if counter['.']
 
 
         print("valid")
