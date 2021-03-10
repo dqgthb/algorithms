@@ -31,7 +31,7 @@ def main(f=None):
         xCount = counter["X"]
         oCount = counter["O"]
         diff = xCount - oCount
-        if not 0 <= diff <= 1:
+        if not (diff == 0 or diff == 1):
             print("invalid")
             continue
 
