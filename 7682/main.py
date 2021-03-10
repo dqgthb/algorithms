@@ -25,8 +25,9 @@ def main(f=None):
     while True:
         line = input().strip()
         if line == "end": break
-
         arr = list(line)
+        counter = Counter(arr)
+
         mat = []
         for i in range(0, 9, 3):
             mat.append(arr[i:i+3])
