@@ -22,9 +22,21 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
+    global n, arr
+    T = int(input())
+    for _ in range(T):
+        n = int(input())
+        arr = [int(i)-1 for i in input().split()]
+        solve()
 
     # ######## INPUT AREA END ############
     # ####################################
+
+
+def solve():
+    visited = [False] * n
+    for i in range()
+
 
 
 # #############################################################################
