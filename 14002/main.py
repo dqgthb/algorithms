@@ -31,7 +31,8 @@ def main(f=None):
     # ####################################
 
     for i in range(1, N):
-        dp[i] =
+        if arr[i] > arr[i-1]:
+            dp[i] = dp[i-1] + 1
 
 
 
