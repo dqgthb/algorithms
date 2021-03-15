@@ -38,6 +38,11 @@ def solve():
     result = []
 
     for i in range(n):
+        if not visited[i]:
+            cycle = []
+            arg = i
+            while True:
+
 
 
 
