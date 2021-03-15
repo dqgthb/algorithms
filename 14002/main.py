@@ -41,6 +41,14 @@ def main(f=None):
     idx, max_ = argmax(dp)
     print(max_)
 
+    vals = [idx]
+    while not prev[idx]:
+        pr
+
+
+
+
+
 
 
 
