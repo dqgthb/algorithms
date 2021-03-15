@@ -26,7 +26,7 @@ def main(f=None):
     N = int(input())
     arr = [int(i) for i in input().split()]
     dp = [1] * N
-    prev = [None]
+    prev = [None] * N
 
     # ######## INPUT AREA END ############
     # ####################################
@@ -34,9 +34,11 @@ def main(f=None):
     for i in range(1, N):
         for j in range(0, i):
             if arr[j] < arr[i]:
-                dp[i] = max(dp[i], dp[j]+1)
+                if dp[j] + 1 > dp[i]:
+                    prev[i] = j
+                    dp[i] = dp[j] + 1
 
-    print(dp)
+    print(prev)
     max_ = max(dp)
     print(max_)
     value = 1
