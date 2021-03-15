@@ -22,20 +22,6 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    T = int(input())
-    for _ in range(T):
-        n = int(input())
-        arr = [int(i)-1 for i in input().split()]
-        team = [0] * n
-
-        for i in arr:
-            team[i] += 1
-
-        cnt = 0
-        for i, e in enu(arr):
-            if team[e] == 1:
-                cnt += 1
-        print(cnt)
 
     # ######## INPUT AREA END ############
     # ####################################
