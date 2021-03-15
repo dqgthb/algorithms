@@ -35,8 +35,9 @@ def main(f=None):
 
 def solve():
     visited = [False] * n
-    for i in range()
-
+    for i, e in enu(arr):
+        if visited[i]:
+            continue
 
 
 # #############################################################################
