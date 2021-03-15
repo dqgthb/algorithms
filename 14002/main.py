@@ -37,7 +37,13 @@ def main(f=None):
 
     max_ = max(dp)
     print(max_)
-    for i in dp:
+    value = 1
+    vals = []
+    for i, e in enu(dp):
+        if e == value:
+            vals.append(arr[i])
+            value += 1
+
 
 
 
