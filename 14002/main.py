@@ -26,6 +26,7 @@ def main(f=None):
     N = int(input())
     arr = [int(i) for i in input().split()]
     dp = [1] * N
+    prev = [None]
 
     # ######## INPUT AREA END ############
     # ####################################
