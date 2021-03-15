@@ -39,6 +39,13 @@ def solve():
     for i, e in enu(arr):
         if done[i]: continue
 
+        if not visited[i]:
+            visited[i] = True
+
+        nxt = e
+        while visited[e]
+
+
 
 
 
