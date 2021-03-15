@@ -34,7 +34,10 @@ def main(f=None):
 
 
 def solve():
+    visited =[False] * n
+    result = []
 
+    for i in range(n):
 
 
 
