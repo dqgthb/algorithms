@@ -40,13 +40,9 @@ def main(f=None):
 
     idx, max_ = argmax(dp)
     print(max_)
-    value = 1
-    vals = []
-    for i, e in enu(dp):
-        if e == value:
-            vals.append(arr[i])
-            value += 1
-    print(*vals)
+
+
+
 
 
 
