@@ -35,11 +35,10 @@ def main(f=None):
 
 def solve():
     visited = [False] * n
-    cycle = [False] * n
+    done = [False] * n
     for i, e in enu(arr):
-        if visited[i]:
-            continue
-        while
+        if done[i]: continue
+
 
 
 
