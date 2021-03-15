@@ -43,7 +43,7 @@ def solve():
             visited[i] = True
 
         nxt = e
-        while visited[e]
+        while not visited[e]:
 
 
 
