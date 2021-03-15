@@ -35,6 +35,7 @@ def main(f=None):
             if arr[j] < arr[i]:
                 dp[i] = max(dp[i], dp[j]+1)
 
+    print(dp)
     max_ = max(dp)
     print(max_)
     value = 1
