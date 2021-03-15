@@ -34,23 +34,6 @@ def main(f=None):
 
 
 def solve():
-    visited = [False] * n
-    done = [False] * n
-    for i, e in enu(arr):
-        if done[i]: continue
-
-        if not visited[i]:
-            visited[i] = True
-
-        cur = e
-        while not visited[cur]:
-            visited[cur] = True
-            cur = arr[cur]
-        if done[cur]:
-            continue
-        else:
-
-
 
 
 
