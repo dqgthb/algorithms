@@ -43,6 +43,7 @@ def main(f=None):
         if e == value:
             vals.append(arr[i])
             value += 1
+    print(*vals)
 
 
 
