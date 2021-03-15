@@ -38,8 +38,7 @@ def main(f=None):
                     prev[i] = j
                     dp[i] = dp[j] + 1
 
-    print(prev)
-    max_ = max(dp)
+    idx, max_ = argmax(dp)
     print(max_)
     value = 1
     vals = []
