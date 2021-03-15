@@ -43,7 +43,9 @@ def solve():
             visited[i] = True
 
         nxt = e
-        while not visited[e]:
+        while not visited[nxt]:
+            visited[nxt] = True
+            nxt = arr[nxt]
 
 
 
