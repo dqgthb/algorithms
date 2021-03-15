@@ -41,12 +41,18 @@ def main(f=None):
     idx, max_ = argmax(dp)
     print(max_)
 
-    vals = [idx]
+    vals = [arr[idx]]
     prevVal = prev[idx]
-    while prevVal:
-        vals.append(prevVal)
-        prevVal = prev[idx]
-    print(vals)
+    while prevVal is not None:
+        vals.append(arr[prevVal])
+        prevVal = prev[prevVal]
+    vals.reverse()
+    print(*vals)
+
+
+
+
+
 
 
 
