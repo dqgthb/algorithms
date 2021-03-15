@@ -42,8 +42,11 @@ def main(f=None):
     print(max_)
 
     vals = [idx]
-    while not prev[idx]:
-        pr
+    prevVal = prev[idx]
+    while prevVal:
+        vals.append(prevVal)
+        prevVal = prev[idx]
+    print(vals)
 
 
 
