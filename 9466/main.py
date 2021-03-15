@@ -25,7 +25,7 @@ def main(f=None):
     T = int(input())
     for _ in range(T):
         n = int(input())
-        arr = [int(i) for i in input().split()]
+        arr = [int(i)-1 for i in input().split()]
         team = [0] * n
 
         for i in arr:
