@@ -31,8 +31,11 @@ def main(f=None):
         for i in arr:
             team[i] += 1
 
-
-
+        cnt = 0
+        for i, e in enu(arr):
+            if team[e] == 1:
+                cnt += 1
+        print(cnt)
 
     # ######## INPUT AREA END ############
     # ####################################
