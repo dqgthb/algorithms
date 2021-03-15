@@ -42,10 +42,13 @@ def solve():
         if not visited[i]:
             visited[i] = True
 
-        nxt = e
-        while not visited[nxt]:
-            visited[nxt] = True
-            nxt = arr[nxt]
+        cur = e
+        while not visited[cur]:
+            visited[cur] = True
+            cur = arr[cur]
+        if done[cur]:
+            continue
+        else:
 
 
 
