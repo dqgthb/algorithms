@@ -43,9 +43,7 @@ def main(f=None):
         heappush(pq, (distance, to_))
 
     while pq:
-
-
-
+        to_, distance = heappop(pq)
 
 
 
