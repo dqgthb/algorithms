@@ -36,6 +36,9 @@ def main(f=None):
     dist = dd(list)
     dist[0] = 0
 
+    pq = []
+    for to_, distance in G[0]:
+
 
     # ######## INPUT AREA END ############
     # ####################################
