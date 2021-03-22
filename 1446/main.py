@@ -28,7 +28,8 @@ def main(f=None):
     for _ in range(N):
         a, b, c = map(int, input().split())
         G[a].append((b, c))
-        G[b]
+        if b < D:
+            G[b].append((D, D-b))
     print(G)
 
 
