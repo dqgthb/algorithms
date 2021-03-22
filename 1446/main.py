@@ -33,8 +33,9 @@ def main(f=None):
             G[b].append((D, D-b))
     print(G.keys())
 
-    pq = []
-    while pq:
+    distance = dd(list)
+
+
 
 
     # ######## INPUT AREA END ############
