@@ -29,6 +29,7 @@ def main(f=None):
     for _ in range(N):
         a, b, c = map(int, input().split())
         G[a].append((b, c))
+        G[0].append((a, a))
         if b < D:
             G[b].append((D, D-b))
     print(G)
@@ -40,6 +41,10 @@ def main(f=None):
     pq = []
     for to_, distance in G[0]:
         heappush(pq, (distance, to_))
+
+    while pq:
+
+
 
 
 
