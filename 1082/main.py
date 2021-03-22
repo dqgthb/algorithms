@@ -23,6 +23,10 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     N = int(input())
+    arr = [int(i) for i in input().split()]
+    W = int(input())
+
+    dp = mat(N, W)
 
     # ######## INPUT AREA END ############
     # ####################################
