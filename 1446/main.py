@@ -33,9 +33,8 @@ def main(f=None):
             G[b].append((D, D-b))
     print(G.keys())
 
-    distance = dd(list)
-
-
+    dist = dd(list)
+    dist[0] = 0
 
 
     # ######## INPUT AREA END ############
