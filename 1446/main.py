@@ -23,9 +23,12 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     N, D = map(int, input().split())
-    G = dd()
+    G = dd(list)
+    G[0].append((D, D))
     for _ in range(N):
-        G[0]
+        a, b, c = map(int, input().split())
+        G[a].append((b, c))
+    print(G)
 
 
     # ######## INPUT AREA END ############
