@@ -30,11 +30,11 @@ def main(f=None):
 
     stack = [10**9]
     ans = []
-    for i in arr:
-        while stack[-1] < i:
+    for i, e in enu(arr):
+        while stack[-1][1] < i:
             stack.pop()
-        ans.append(len(stack))
-        stack.append(i)
+        ans.append(len(stack[-1][0]))
+        stack.append((i, e))
     print(ans)
 
 
