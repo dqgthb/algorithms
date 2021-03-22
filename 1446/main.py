@@ -23,8 +23,9 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     N, D = map(int, input().split())
-    G = {}
+    G = dd()
     for _ in range(N):
+        G[0]
 
 
     # ######## INPUT AREA END ############
