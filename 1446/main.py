@@ -38,6 +38,12 @@ def main(f=None):
 
     pq = []
     for to_, distance in G[0]:
+        heappush(pq, (distance, to_))
+
+    visited
+
+
+
 
 
     # ######## INPUT AREA END ############
