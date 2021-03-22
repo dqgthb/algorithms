@@ -25,12 +25,14 @@ def main(f=None):
     N, D = map(int, input().split())
     G = dd(list)
     G[0].append((D, D))
+    G[D]
     for _ in range(N):
         a, b, c = map(int, input().split())
         G[a].append((b, c))
         if b < D:
             G[b].append((D, D-b))
     print(G)
+    print(G.keys())
 
 
     # ######## INPUT AREA END ############
