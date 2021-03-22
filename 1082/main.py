@@ -31,7 +31,7 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-def DP(return )
+def DP()
 
 
 
