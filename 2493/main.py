@@ -28,12 +28,13 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    stack = [10**9]
+    stack = [(-1, 10**9)]
     ans = []
     for i, e in enu(arr):
         while stack[-1][1] < i:
             stack.pop()
-        ans.append(len(stack[-1][0]))
+        ans.append(stack[-1][0])
+        print(stack)
         stack.append((i, e))
     print(ans)
 
