@@ -33,8 +33,9 @@ def main(f=None):
     for i in arr:
         while stack[-1] < i:
             stack.pop()
-
-
+        ans.append(len(stack))
+        stack.append(i)
+    print(ans)
 
 
 # #############################################################################
