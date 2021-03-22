@@ -31,8 +31,10 @@ def main(f=None):
         G[a].append((b, c))
         if b < D:
             G[b].append((D, D-b))
-    print(G)
     print(G.keys())
+
+    pq = []
+    while pq:
 
 
     # ######## INPUT AREA END ############
