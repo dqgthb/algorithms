@@ -31,6 +31,7 @@ def main(f=None):
         G[a].append((b, c))
         if b < D:
             G[b].append((D, D-b))
+    print(G)
     print(G.keys())
 
     dist = dd(list)
@@ -40,7 +41,6 @@ def main(f=None):
     for to_, distance in G[0]:
         heappush(pq, (distance, to_))
 
-    visited
 
 
 
