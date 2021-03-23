@@ -13,6 +13,7 @@ from math import log, log2, ceil, floor, gcd, sqrt
 import math
 from heapq import heappush, heappop
 from bisect import bisect_left as bl, bisect_right as br
+import re
 DEBUG = False
 
 
@@ -28,7 +29,8 @@ def main(f=None):
     # ####################################
 
     print(equation)
-    parse = equation.split("*+-/")
+    #parse = equation.split("*+-/")
+    parse = re.split("+-*/", equation)
     print(parse)
 
 
