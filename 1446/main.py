@@ -32,8 +32,6 @@ def main(f=None):
         G[0].append((a, a))
         if b < D:
             G[b].append((D, D-b))
-    print(G)
-    print(G.keys())
 
     dist = {i:i for i in G.keys()}
     dist[0] = 0
@@ -48,14 +46,13 @@ def main(f=None):
             continue
 
         for nbr, dFromNode2Nbr in G[node]:
-            if nbr >= 150: continue
+            if nbr > 150: continue
             newD = distance + dFromNode2Nbr
             if newD < dist[nbr]:
-                print(newD, "is better than", dist[nbr], "from", node, nbr)
-                print(nbr)
                 dist[nbr] = newD
                 heappush(pq, (newD, nbr))
-    print(dist)
+
+    print(dist[D])
 
 
 
