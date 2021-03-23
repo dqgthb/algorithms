@@ -41,6 +41,7 @@ def main(f=None):
     pq = []
     for to_, distance in G[0]:
         heappush(pq, (distance, to_))
+        dist[to_] = min(dist[to_], distance)
 
     while pq:
         distance, node = heappop(pq)
