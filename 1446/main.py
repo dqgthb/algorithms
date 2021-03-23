@@ -44,6 +44,8 @@ def main(f=None):
 
     while pq:
         to_, distance = heappop(pq)
+        if dist[to_] <= distance:
+            continue
 
 
 
