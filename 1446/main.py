@@ -43,12 +43,15 @@ def main(f=None):
         heappush(pq, (distance, to_))
 
     while pq:
-        to_, distance = heappop(pq)
-        if dist[to_] <= distance:
+        node, distance = heappop(pq)
+        if dist[node] <= distance:
             continue
 
-        for nbr, to2Nbr in G[to_]:
-            newD = distance +
+        for nbr, dFromNode2Nbr in G[to_]:
+            newD = distance + dFromNode2Nbr
+            if newD < dist[nbr]:
+                dist[nbr] = newD
+                heappush(pq, (newD, nbr))
 
 
 
