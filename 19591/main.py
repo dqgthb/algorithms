@@ -30,7 +30,7 @@ def main(f=None):
 
     print(equation)
     #parse = equation.split("*+-/")
-    parse = re.split("+-*/", equation)
+    parse = re.split(r"+|-|*", equation)
     print(parse)
 
 
