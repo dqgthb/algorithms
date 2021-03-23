@@ -34,6 +34,8 @@ def main(f=None):
     maxDigits, remainder = divmod(W, arr[0])
     digits = [0] * maxDigits
     if remainder == 0:
+        print("reduce digits")
+    else:
 
 
 
