@@ -41,17 +41,17 @@ def main(f=None):
     pq = []
     for to_, distance in G[0]:
         heappush(pq, (distance, to_))
-        dist[to_] = min(dist[to_], distance)
 
     while pq:
         distance, node = heappop(pq)
-        if dist[node] <= distance:
+        if dist[node] < distance:
             continue
 
         for nbr, dFromNode2Nbr in G[node]:
             newD = distance + dFromNode2Nbr
             if newD < dist[nbr]:
                 print(newD, "is better than", dist[nbr], "from", node, nbr)
+                print(nbr)
                 dist[nbr] = newD
                 heappush(pq, (newD, nbr))
     print(dist)
