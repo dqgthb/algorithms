@@ -26,14 +26,19 @@ def main(f=None):
     arr = [int(i) for i in input().split()]
     W = int(input())
 
-    dp = mat(N, W)
+    dp = Mat(N, W)
 
     # ######## INPUT AREA END ############
     # ####################################
 
-    maxDigits = W // arr[0]
+    maxDigits, remainder = divmod(W, arr[0])
+    if maxDigits == 0:
+        print(0)
 
-def DP()
+    print(maxDigits)
+
+
+
 
 
 
