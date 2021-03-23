@@ -22,29 +22,10 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N, K, arr, dq, robots
-    N, K = map(int, input().split())
-    arr = [int(i) for i in input().split()]
-    dq = deque(arr)
-    robots = []
+
 
     # ######## INPUT AREA END ############
     # ####################################
-
-    while True:
-        rotate()
-
-
-
-    print(dq)
-    rotate()
-    print(dq)
-
-
-
-def rotate():
-    x = dq.pop()
-    dq.appendleft(x)
 
 
 # #############################################################################
