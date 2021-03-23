@@ -31,6 +31,8 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+    maxDigits = W // arr[0]
+
 def DP()
 
 
