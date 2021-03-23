@@ -43,7 +43,8 @@ def main(f=None):
         heappush(pq, (distance, to_))
 
     while pq:
-        node, distance = heappop(pq)
+        print(pq)
+        distance, node = heappop(pq)
         if dist[node] <= distance:
             continue
 
