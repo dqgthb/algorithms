@@ -47,6 +47,9 @@ def main(f=None):
         if dist[to_] <= distance:
             continue
 
+        for nbr, to2Nbr in G[to_]:
+            newD = distance +
+
 
 
 
