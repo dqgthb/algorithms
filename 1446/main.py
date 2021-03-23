@@ -35,7 +35,7 @@ def main(f=None):
     print(G)
     print(G.keys())
 
-    dist = dd(int)
+    dist = {i:i for i in G.keys()}
     dist[0] = 0
 
     pq = []
