@@ -31,6 +31,10 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+    while True:
+        rotate()
+
+
     print(dq)
     rotate()
     print(dq)
