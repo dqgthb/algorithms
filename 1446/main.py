@@ -35,7 +35,7 @@ def main(f=None):
     print(G)
     print(G.keys())
 
-    dist = dd(list)
+    dist = dd(int)
     dist[0] = 0
 
     pq = []
@@ -47,11 +47,12 @@ def main(f=None):
         if dist[node] <= distance:
             continue
 
-        for nbr, dFromNode2Nbr in G[to_]:
+        for nbr, dFromNode2Nbr in G[node]:
             newD = distance + dFromNode2Nbr
             if newD < dist[nbr]:
                 dist[nbr] = newD
                 heappush(pq, (newD, nbr))
+    print(dist)
 
 
 
