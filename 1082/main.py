@@ -33,7 +33,8 @@ def main(f=None):
 
     maxDigits, remainder = divmod(W, arr[0])
     digits = [0] * maxDigits
-    print(maxDigits)
+    if remainder == 0:
+
 
 
 
