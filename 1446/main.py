@@ -43,8 +43,6 @@ def main(f=None):
         heappush(pq, (distance, to_))
 
     while pq:
-        print(pq)
-        print(dist)
         distance, node = heappop(pq)
         if dist[node] <= distance:
             continue
@@ -52,6 +50,7 @@ def main(f=None):
         for nbr, dFromNode2Nbr in G[node]:
             newD = distance + dFromNode2Nbr
             if newD < dist[nbr]:
+                print(newD, "is better than", dist[nbr], "from", node, nbr)
                 dist[nbr] = newD
                 heappush(pq, (newD, nbr))
     print(dist)
