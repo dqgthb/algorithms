@@ -31,6 +31,7 @@ def main(f=None):
     print(equation)
     #parse = equation.split("*+-/")
     parse = re.split(r"(\+)|(\*)|(\-)|(\/)", equation)
+    parse = [x for x in parse if x is not None]
     print(parse)
 
 
