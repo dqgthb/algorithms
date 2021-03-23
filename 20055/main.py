@@ -23,6 +23,8 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     N, K = map(int, input().split())
+    arr = [int(i) for i in input().split()]
+    dq = deque(arr)
 
     # ######## INPUT AREA END ############
     # ####################################
