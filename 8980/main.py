@@ -25,6 +25,8 @@ def main(f=None):
     M = int(input())
     boxes = []
     for _ in range(M):
+        frm, to_, num = map(int, input().split())
+
 
 
     # ######## INPUT AREA END ############
