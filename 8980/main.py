@@ -24,7 +24,7 @@ def main(f=None):
     N, C = map(int, input().split())
     M = int(input())
     boxes = []
-    numOfBoxByDestination = [0] * (M+1)
+    numOfBoxByDestination = [0] * (N+1)
     for _ in range(M):
         frm, to_, num = map(int, input().split())
         boxes.append((to_, frm, num))
@@ -34,13 +34,10 @@ def main(f=None):
     boxes.sort()
     print(numOfBoxByDestination)
 
-    capacities = [0] * M
+    capacities = [0] * N
     print(boxes)
 
 
-    for m in M:
-        capacity = 0
-        for i
 
 
 
