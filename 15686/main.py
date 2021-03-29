@@ -32,6 +32,8 @@ def main(f=None):
     for i in range(N):
         for j in range(N):
             if mat[i][j] == 2:
+                chickens.append((i, j))
+    print(chickens)
 
 
     parr(mat)
