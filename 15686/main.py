@@ -43,6 +43,8 @@ def main(f=None):
     for chickenPicks in itertools.combinations(chickens, M):
         min_ = min(min_, calculateMin(chickenPicks))
 
+    print(min_)
+
 
 
 def calculateMin(picks):
@@ -50,8 +52,10 @@ def calculateMin(picks):
 
     for house in houses:
         distance = 10 ** 9
-        for chicken in chickenPicks:
+        for chicken in picks:
             distance = min(distance, calculateDistance(house, chicken))
+        totalDistance += distance
+    return totalDistance
 
 
 def calculateDistance(p1, p2):
