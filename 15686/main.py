@@ -51,6 +51,11 @@ def calculateMin(picks):
     for house in houses:
         distance = 10 ** 9
         for chicken in chickenPicks:
+            distance = min(distance, calculateDistance(house, chicken))
+
+
+def calculateDistance(p1, p2):
+    return abs(p1[0] - p2[0]) + abs(p1[1] + p2[1])
 
 
 
