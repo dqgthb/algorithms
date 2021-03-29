@@ -37,6 +37,7 @@ def main(f=None):
             if mat[i][j] == 2:
                 chickens.append((i, j))
 
+
     min_ = 10**19
     for chickenPicks in itertools.combinations(chickens, M):
         print(chickenPicks)
