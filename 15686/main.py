@@ -28,15 +28,20 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+    houses = []
     chickens = []
     for i in range(N):
         for j in range(N):
+            if mat[i][j] == 1:
+                houses.append((i, j))
             if mat[i][j] == 2:
                 chickens.append((i, j))
-    print(chickens)
+
+    min_ = 10**19
+    for chickenPicks in itertools.combinations(chickens, M):
+        print(chickenPicks)
 
 
-    parr(mat)
 
 
 # #############################################################################
