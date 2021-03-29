@@ -46,7 +46,13 @@ def main(f=None):
 
 
 def calculateMin(picks):
+    totalDistance = 0
+
     for house in houses:
+        distance = 10 ** 9
+        for chicken in chickenPicks:
+
+
 
 
 
