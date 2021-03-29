@@ -28,6 +28,7 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+    global houses, chickens
     houses = []
     chickens = []
     for i in range(N):
@@ -40,7 +41,14 @@ def main(f=None):
 
     min_ = 10**19
     for chickenPicks in itertools.combinations(chickens, M):
-        print(chickenPicks)
+        min_ = min(min_, calculateMin(chickenPicks))
+
+
+
+def calculateMin(picks):
+    for house in houses:
+
+
 
 
 
