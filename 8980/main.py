@@ -26,6 +26,10 @@ def main(f=None):
     boxes = []
     for _ in range(M):
         frm, to_, num = map(int, input().split())
+        boxes.append((to_, frm, num))
+
+    boxes.sort()
+    print(boxes)
 
 
 
