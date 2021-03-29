@@ -21,6 +21,11 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
+    N, C = map(int, input().split())
+    M = int(input())
+    boxes = []
+    for _ in range(M):
+
 
     # ######## INPUT AREA END ############
     # ####################################
