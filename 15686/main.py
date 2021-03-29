@@ -51,10 +51,12 @@ def calculateMin(picks):
     totalDistance = 0
 
     for house in houses:
+        print(house)
         distance = 10 ** 9
         for chicken in picks:
             distance = min(distance, calculateDistance(house, chicken))
         totalDistance += distance
+        print(totalDistance)
     return totalDistance
 
 
