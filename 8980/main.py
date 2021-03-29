@@ -29,11 +29,14 @@ def main(f=None):
         boxes.append((to_, frm, num))
 
     boxes.sort()
+
     capacities = [0] * M
     print(boxes)
 
+
     for m in M:
         capacity = 0
+        for i
 
 
 
