@@ -23,9 +23,12 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     N, M = map(int, input().split())
+    mat = [list(map(int, input().split())) for _ in range(N)]
 
     # ######## INPUT AREA END ############
     # ####################################
+
+    parr(mat)
 
 
 # #############################################################################
