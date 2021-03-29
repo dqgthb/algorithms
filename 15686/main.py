@@ -28,6 +28,12 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+    chickens = []
+    for i in range(N):
+        for j in range(N):
+            if mat[i][j] == 2:
+
+
     parr(mat)
 
 
