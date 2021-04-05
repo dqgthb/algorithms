@@ -29,8 +29,12 @@ def main(f=None):
         deadline, cup = map(int, input().split())
         heappush(pq, (deadline, -cup))
 
+    days = 0
     while pq:
-        print(heappop(pq))
+        deadline, cup = heappop(pq)
+        cup = -cup
+
+
 
 
     # ######## INPUT AREA END ############
