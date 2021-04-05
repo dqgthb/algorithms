@@ -21,12 +21,18 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
+    global N, K, arr
     N, K = map(int, input().split())
     arr = [i for i in input().strip()]
     print(arr)
 
     # ######## INPUT AREA END ############
     # ####################################
+
+def nextH(start):
+    for i in range(start, N):
+        if arr[i]:
+
 
 
 # #############################################################################
