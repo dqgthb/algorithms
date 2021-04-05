@@ -26,6 +26,11 @@ def main(f=None):
     pq = []
 
     for _ in range(N):
+        deadline, cup = map(int, input().split())
+        heappush(pq, (deadline, -cup))
+
+    while pq:
+        print(heappop(pq))
 
 
     # ######## INPUT AREA END ############
