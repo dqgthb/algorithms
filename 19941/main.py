@@ -29,7 +29,10 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    firstH = next_()
+    firstH = next_(0, 'H')
+    firstP = next_(0, 'P')
+    print(firstH, firstP)
+
 
 
 def next_(start, type_):
