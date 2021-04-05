@@ -25,19 +25,20 @@ def main(f=None):
     N = int(input())
     pq = []
 
-    for _ in range(N):
+    for idx in range(N):
         deadline, cup = map(int, input().split())
-        heappush(pq, (deadline, -cup))
+        heappush(pq, (deadline, -cup, idx+1))
 
-    days = 0
+    days = 1
     sum_ = 0
     while pq:
-        deadline, cup = heappop(pq)
+        deadline, cup, idx = heappop(pq)
         cup = -cup
 
-        if deadline <= days:
+        if deadline < days:
             continue
         else:
+            print(idx)
             sum_ += cup
             days += 1
     print(sum_)
