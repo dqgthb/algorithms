@@ -35,10 +35,9 @@ def main(f=None):
         deadline, cup = heappop(pq)
         cup = -cup
 
-        if deadline < days:
+        if deadline <= days:
             continue
         else:
-            print(deadline, cup)
             sum_ += cup
             days += 1
     print(sum_)
