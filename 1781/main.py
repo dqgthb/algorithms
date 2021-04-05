@@ -38,6 +38,7 @@ def main(f=None):
         if deadline < days:
             continue
         else:
+            print(deadline, cup)
             sum_ += cup
             days += 1
     print(sum_)
