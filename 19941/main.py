@@ -28,8 +28,8 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    currH = next_(0, 'H')
-    currP = next_(0, 'P')
+    currH = next_(-1, 'H')
+    currP = next_(-1, 'P')
 
     count = 0
     while currH != None and currP != None:
