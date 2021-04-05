@@ -31,7 +31,6 @@ def main(f=None):
 
     currH = next_(0, 'H')
     currP = next_(0, 'P')
-    print(firstH, firstP)
 
     count = 0
     while currH != None and currP != None:
@@ -42,7 +41,9 @@ def main(f=None):
         else:
             if currH > currP:
                 currP = next_(currP, 'P')
-
+            else:
+                currH = next_(currH, 'H')
+    print(count)
 
 def next_(start, type_):
     for i in range(start, N):
