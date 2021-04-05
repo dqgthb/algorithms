@@ -34,8 +34,12 @@ def main(f=None):
     print(firstH, firstP)
 
     count = 0
-
-
+    while True:
+        if abs(currH - currP) <= K:
+            count += 1
+            currH = next_(currH, 'H')
+            currP = next_(currP, 'P')
+        else:
 
 
 def next_(start, type_):
