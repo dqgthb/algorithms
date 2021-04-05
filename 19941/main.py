@@ -24,7 +24,6 @@ def main(f=None):
     global N, K, arr
     N, K = map(int, input().split())
     arr = [i for i in input().strip()]
-    print(arr)
 
     # ######## INPUT AREA END ############
     # ####################################
@@ -46,7 +45,7 @@ def main(f=None):
     print(count)
 
 def next_(start, type_):
-    for i in range(start, N):
+    for i in range(start+1, N):
         if arr[i] == type_:
             return i
     return None
