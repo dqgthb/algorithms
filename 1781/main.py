@@ -30,9 +30,17 @@ def main(f=None):
         heappush(pq, (deadline, -cup))
 
     days = 0
+    sum_ = 0
     while pq:
         deadline, cup = heappop(pq)
         cup = -cup
+
+        if deadline < days:
+            continue
+        else:
+            sum_ += cup
+            days += 1
+    print(sum_)
 
 
 
