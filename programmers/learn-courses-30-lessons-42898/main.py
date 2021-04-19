@@ -34,18 +34,18 @@ def DP(x, y):
     if dp[x][y] is not None:
         return dp[x][y]
 
+    sum_ = 0
     if x != 0:
         up = dp[x-1][y]
+        if up == -1:
+            sum_ += up
     if y != 0:
         left = dp[x][y-1]
+        if left == -1:
+            sum_ += left
 
-    if up == -1:
-        up = 0
-    if left == -1:
-        left = 0
-
-    dp[x][y] = up + left
-    dp[]
+    dp[x][y] = sum_
+    return dp[x][y]
 
 
 
