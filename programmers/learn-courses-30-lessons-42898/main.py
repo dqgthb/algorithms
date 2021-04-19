@@ -36,11 +36,12 @@ def DP(x, y):
 
     sum_ = 0
     if x != 0:
-        up = dp[x-1][y]
+        up = DP(x-1, y)
         if up == -1:
             sum_ += up
+
     if y != 0:
-        left = dp[x][y-1]
+        left = DP(x, y-1)
         if left == -1:
             sum_ += left
 
