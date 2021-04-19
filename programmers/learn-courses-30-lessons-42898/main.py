@@ -54,9 +54,12 @@ def DP(x, y):
 def solution(m, n, puddles):
     global dp
     dp = Mat(m, n)
+    dp[0][0] = 1
     for i, j in puddles:
         dp[i][j] = -1
+    print(DP(m-1, n-1))
     parr(dp)
+
 
 
 
