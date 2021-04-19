@@ -36,15 +36,23 @@ def DP(x, y):
     if dp[x][y] is not None:
         return dp[x][y]
 
-    up = dp[x-1][y]
-    left = dp[x][y-1]
+    if x != 0:
+        up = dp[x-1][y]
+    if y != 0:
+        left = dp[x][y-1]
+
+    if up == -1:
+        up = 0
+    if left == -1:
+        left = 0
 
 
 
 
 def solution(m, n, puddles):
     mat = Mat(m, n)
-    parr(mat)
+    for i, j in For(m, n):
+        mat[i][j]
 
 
 
