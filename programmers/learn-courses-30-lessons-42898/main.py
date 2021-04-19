@@ -32,8 +32,13 @@ def main(f=None):
     dp = Mat(m, n)
 
 
-def DP(m, n):
-    if m == 0:
+def DP(x, y):
+    if dp[x][y] is not None:
+        return dp[x][y]
+
+    up = dp[x-1][y]
+    left = dp[x][y-1]
+
 
 
 
