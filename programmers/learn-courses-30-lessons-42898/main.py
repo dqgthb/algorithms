@@ -28,8 +28,6 @@ def main(f=None):
     print(ret)
     print(ret == 4)
 
-    global dp
-    dp = Mat(m, n)
 
 
 def DP(x, y):
@@ -46,13 +44,19 @@ def DP(x, y):
     if left == -1:
         left = 0
 
+    dp[x][y] = up + left
+    dp[]
+
 
 
 
 def solution(m, n, puddles):
-    mat = Mat(m, n)
-    for i, j in For(m, n):
-        mat[i][j]
+    global dp
+    dp = Mat(m, n)
+    for i, j in puddles:
+        dp[i][j] = -1
+    parr(dp)
+
 
 
 
