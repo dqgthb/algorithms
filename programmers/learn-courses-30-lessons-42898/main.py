@@ -33,6 +33,7 @@ def main(f=None):
 def DP(x, y):
     if dp[x][y] is not None:
         return dp[x][y]
+    print(x, y)
 
     sum_ = 0
     if x != 0:
@@ -56,7 +57,7 @@ def solution(m, n, puddles):
     dp = Mat(m, n)
     dp[0][0] = 1
     for i, j in puddles:
-        dp[i][j] = -1
+        dp[i-1][j-1] = -1
     print(DP(m-1, n-1))
     parr(dp)
 
