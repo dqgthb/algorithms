@@ -29,6 +29,8 @@ def main(f=None):
     print(ret == 4)
 
 
+dp = Mat(m, n)
+
 def solution(m, n, puddles):
     mat = Mat(m, n)
     parr(mat)
