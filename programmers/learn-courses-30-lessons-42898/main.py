@@ -24,8 +24,14 @@ def main(f=None):
 
     # ######## INPUT AREA END ############
     # ####################################
+    ret = solution(4, 3, [[2, 2]])
+    print(ret)
+    print(ret == 4)
+
 
 def solution(m, n, puddles):
+    mat = Mat(m, n)
+    parr(mat)
 
 
 
