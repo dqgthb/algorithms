@@ -28,8 +28,14 @@ def main(f=None):
     print(ret)
     print(ret == 4)
 
+    global dp
+    dp = Mat(m, n)
 
-dp = Mat(m, n)
+
+def DP(m, n):
+    if m == 0:
+
+
 
 def solution(m, n, puddles):
     mat = Mat(m, n)
