@@ -33,20 +33,20 @@ def main(f=None):
 def DP(x, y):
     if dp[x][y] is not None:
         return dp[x][y]
-    print(x, y)
 
     sum_ = 0
     if x != 0:
         up = DP(x-1, y)
-        if up == -1:
+        if up != -1:
             sum_ += up
 
     if y != 0:
         left = DP(x, y-1)
-        if left == -1:
+        if left != -1:
             sum_ += left
 
     dp[x][y] = sum_
+    print(sum_)
     return dp[x][y]
 
 
