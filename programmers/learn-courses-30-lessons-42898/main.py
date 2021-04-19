@@ -46,7 +46,6 @@ def DP(x, y):
             sum_ += left
 
     dp[x][y] = sum_
-    print(sum_)
     return dp[x][y]
 
 
@@ -58,8 +57,7 @@ def solution(m, n, puddles):
     dp[0][0] = 1
     for i, j in puddles:
         dp[i-1][j-1] = -1
-    print(DP(m-1, n-1))
-    parr(dp)
+    return DP(m-1, n-1)
 
 
 
