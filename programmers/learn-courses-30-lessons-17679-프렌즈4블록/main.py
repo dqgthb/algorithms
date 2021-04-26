@@ -28,10 +28,19 @@ def main(f=None):
     m = 4
     n = 5
     board = ["CCBDE", "AAADE", "AAABF", "CCBBF"]
-    ans = solution(m, n, board)
-    print(ans == 14)
+    ret = solution(m, n, board)
+    print(ret)
+    print(ret == 14)
 
 def solution(m, n, board):
+    b = [list(i) for i in board]
+
+
+def collapse(m, n, b):
+    for i in range(m):
+        for j in range(n):
+
+
 
 
 
