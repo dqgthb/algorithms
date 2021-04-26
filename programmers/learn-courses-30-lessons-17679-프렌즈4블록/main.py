@@ -72,11 +72,11 @@ def collapse(m, n, b, mat):
     for j in range(n):
         shift = 0
         for i in range(m-1, -1, -1):
-            print(i, j)
             val = mat[i][j]
             mat[i][j] = shift
             if val:
                 shift += 1
+                b[i][j] = None
 
     for j in range(n):
         for i in range(m-1, -1, -1):
