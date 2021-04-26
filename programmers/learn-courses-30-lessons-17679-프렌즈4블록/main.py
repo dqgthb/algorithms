@@ -45,7 +45,13 @@ def collapse(m, n, b):
             val = b[i][j]
             for dx, dy in dxy:
                 ni, nj = i + dx, j + dy
-                if b[ni][nj]
+                if b[ni][nj] != val:
+                    break
+            else:
+                for i, j in For(m, n):
+                    b[i][j] = None
+
+
 
 
 
