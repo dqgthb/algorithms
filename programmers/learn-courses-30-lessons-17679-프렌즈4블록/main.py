@@ -80,9 +80,14 @@ def collapse(m, n, b, mat):
     for j in range(n):
         for i in range(m-1, -1, -1):
             val = b[i][j]
-            b[i-][j]
+            shift = mat[i][j]
+            if shift == 0:
+                continue
+            b[i-shift][j] = val
+            b[i][j] = None
 
     parr(mat)
+    parr(b)
 
 
 
