@@ -34,14 +34,15 @@ def main(f=None):
 
 def solution(m, n, board):
     global mat
+    mat = Mat(m, n, False)
     b = [list(i) for i in board]
-
 
 dxy = ((0, 0), (0, 1), (1, 0), (1, 1))
 
 def collapse(m, n, b):
     for i in range(m):
         for j in range(n):
+
 
 
 
