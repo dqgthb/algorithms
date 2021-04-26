@@ -33,8 +33,6 @@ def main(f=None):
     print(ret == 14)
 
 def solution(m, n, board):
-    global mat
-    mat = Mat(m, n, False)
     b = [list(i) for i in board]
 
 dxy = ((0, 0), (0, 1), (1, 0), (1, 1))
