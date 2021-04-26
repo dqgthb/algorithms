@@ -40,6 +40,7 @@ def solution(m, n, board):
 dxy = ((0, 0), (0, 1), (1, 0), (1, 1))
 
 def collapse(m, n, b):
+    mat = Mat(m, n, False)
     for i in range(m):
         for j in range(n):
             val = b[i][j]
@@ -48,10 +49,9 @@ def collapse(m, n, b):
                 if b[ni][nj] != val:
                     break
             else:
-                for i, j in For(m, n):
-                    b[i][j] = None
-
-
+                for dx, dy in dxy:
+                    ni, nj = i + dx, j + dy
+                    mat[ni][nj] = True
 
 
 
