@@ -42,6 +42,10 @@ dxy = ((0, 0), (0, 1), (1, 0), (1, 1))
 def collapse(m, n, b):
     for i in range(m):
         for j in range(n):
+            val = b[i][j]
+            for dx, dy in dxy:
+                ni, nj = i + dx, j + dy
+                if b[ni][nj]
 
 
 
