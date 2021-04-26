@@ -40,7 +40,7 @@ def solution(m, n, board):
     count = 0
 
     while True:
-        changed = collapse(m, n, b)
+        changed = mark(m, n, b)
         if not changed:
             break
     return count
@@ -67,10 +67,6 @@ def collapse(m, n, b, mat):
     for i, j in For(m, n):
         if mat[i][j]:
             b[i][j] = None
-
-    for i in range(m-1, -1, -1):
-        for j in range(n):
-            if
 
 
 
