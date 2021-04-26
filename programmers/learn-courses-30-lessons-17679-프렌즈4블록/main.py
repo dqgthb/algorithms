@@ -66,8 +66,10 @@ def mark(m, n, b):
 def collapse(m, n, b, mat):
     for j in range(n):
         shift = 0
-        for i in range(m-1, -1, -1):
-            if mat[i][j]:
+        for i in range(m, -1, -1):
+            val = mat[i][j]
+            mat[i][j] = shift
+            if val:
 
 
 
