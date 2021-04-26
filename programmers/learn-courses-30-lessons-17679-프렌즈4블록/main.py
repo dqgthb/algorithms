@@ -39,13 +39,13 @@ def solution(m, n, board):
     global count
     count = 0
 
-
     while True:
         changed = collapse(m, n, b)
         if not changed:
             break
+    return count
 
-def collapse(m, n, b):
+def mark(m, n, b):
     changed = False
     mat = Mat(m, n, False)
     for i in range(m):
@@ -57,10 +57,13 @@ def collapse(m, n, b):
                     break
             else:
                 changed = True
+                count += 1
                 for dx, dy in dxy:
                     ni, nj = i + dx, j + dy
                     mat[ni][nj] = True
     return changed
+
+def collapse(m, n, b, mat):
 
 
 
