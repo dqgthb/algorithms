@@ -43,6 +43,7 @@ def solution(m, n, board):
         changed = mark(m, n, b)
         if not changed:
             break
+        input()
     return count
 
 def mark(m, n, b):
