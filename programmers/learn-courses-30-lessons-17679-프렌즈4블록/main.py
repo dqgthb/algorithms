@@ -36,6 +36,7 @@ dxy = ((0, 0), (0, 1), (1, 0), (1, 1))
 
 def solution(m, n, board):
     b = [list(i) for i in board]
+    parr(b)
     global count
     count = 0
 
