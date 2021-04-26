@@ -46,6 +46,8 @@ def solution(m, n, board):
     return count
 
 def mark(m, n, b):
+    global count
+
     changed = False
     mat = Mat(m, n, False)
     for i in range(m-1):
@@ -61,6 +63,8 @@ def mark(m, n, b):
                 for dx, dy in dxy:
                     ni, nj = i + dx, j + dy
                     mat[ni][nj] = True
+
+    collapse(m, n, b, mat)
     return changed
 
 def collapse(m, n, b, mat):
@@ -70,6 +74,8 @@ def collapse(m, n, b, mat):
             val = mat[i][j]
             mat[i][j] = shift
             if val:
+                shift += 1
+    parr(mat)
 
 
 
