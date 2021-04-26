@@ -48,8 +48,8 @@ def solution(m, n, board):
 def mark(m, n, b):
     changed = False
     mat = Mat(m, n, False)
-    for i in range(m):
-        for j in range(n):
+    for i in range(m-1):
+        for j in range(n-1):
             val = b[i][j]
             for dx, dy in dxy:
                 ni, nj = i + dx, j + dy
@@ -64,6 +64,11 @@ def mark(m, n, b):
     return changed
 
 def collapse(m, n, b, mat):
+    for i, j in For(m, n):
+
+    for i in range(m, -1, -1):
+        for j in range(n):
+
 
 
 
