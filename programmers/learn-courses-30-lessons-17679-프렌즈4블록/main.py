@@ -77,6 +77,8 @@ def collapse(m, n, b, mat):
             mat[i][j] = shift
             if val:
                 shift += 1
+    parr(b)
+    input()
 
     for j in range(n):
         for i in range(m-1, -1, -1):
