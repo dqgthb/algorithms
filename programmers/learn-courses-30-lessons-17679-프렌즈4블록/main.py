@@ -65,9 +65,12 @@ def mark(m, n, b):
 
 def collapse(m, n, b, mat):
     for i, j in For(m, n):
+        if mat[i][j]:
+            b[i][j] = None
 
-    for i in range(m, -1, -1):
+    for i in range(m-1, -1, -1):
         for j in range(n):
+            if
 
 
 
