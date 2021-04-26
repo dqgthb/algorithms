@@ -32,12 +32,21 @@ def main(f=None):
     print(ret)
     print(ret == 14)
 
-def solution(m, n, board):
-    b = [list(i) for i in board]
-
 dxy = ((0, 0), (0, 1), (1, 0), (1, 1))
 
+def solution(m, n, board):
+    b = [list(i) for i in board]
+    global count
+    count = 0
+
+
+    while True:
+        changed = collapse(m, n, b)
+        if not changed:
+            break
+
 def collapse(m, n, b):
+    changed = False
     mat = Mat(m, n, False)
     for i in range(m):
         for j in range(n):
@@ -47,9 +56,11 @@ def collapse(m, n, b):
                 if b[ni][nj] != val:
                     break
             else:
+                changed = True
                 for dx, dy in dxy:
                     ni, nj = i + dx, j + dy
                     mat[ni][nj] = True
+    return changed
 
 
 
