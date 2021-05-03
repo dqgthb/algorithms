@@ -18,88 +18,34 @@ DEBUG = False
 
 def main(f=None):
     init(f)
+
     # sys.setrecursionlimit(10**9)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
+    global N, G, visited
+    N = int(input())
+    G = [[] for _ in range(N)]
+    for _ in range(N):
+        a, b = map(int, input().split())
+        a -= 1
+        b -= 1
+        print(a, b)
+        G[a].append(b)
+        G[b].append(a)
+    visited = [False] * N
+
     # ######## INPUT AREA END ############
     # ####################################
+    print(dfs(0))
 
-    m = 4
-    n = 5
-    board = ["CCBDE", "AAADE", "AAABF", "CCBBF"]
-    ret = solution(m, n, board)
-    print(ret)
-    print(ret == 14)
-
-dxy = ((0, 0), (0, 1), (1, 0), (1, 1))
-
-def solution(m, n, board):
-    b = [list(i) for i in board]
-    parr(b)
-    global count
-    count = 0
-
-    while True:
-        changed = mark(m, n, b)
-        if not changed:
-            break
-        input()
-    return count
-
-def mark(m, n, b):
-    global count
-
-    changed = False
-    mat = Mat(m, n, False)
-    for i in range(m-1):
-        for j in range(n-1):
-            val = b[i][j]
-            for dx, dy in dxy:
-                ni, nj = i + dx, j + dy
-                if b[ni][nj] != val:
-                    break
-            else:
-                changed = True
-                count += 1
-                for dx, dy in dxy:
-                    ni, nj = i + dx, j + dy
-                    mat[ni][nj] = True
-
-    collapse(m, n, b, mat)
-    return changed
-
-def collapse(m, n, b, mat):
-    for j in range(n):
-        shift = 0
-        for i in range(m-1, -1, -1):
-            val = mat[i][j]
-            mat[i][j] = shift
-            if val:
-                shift += 1
-    print("before")
-    parr(b)
-
-    for j in range(n):
-        for i in range(m-1, -1, -1):
-            val = b[i][j]
-            shift = mat[i][j]
-            if shift == 0:
-                continue
-            b[i-shift][j] = val
-            b[i][j] = None
-
-    print("after")
-    parr(mat)
-    parr(b)
-
-
-
-
-
-
-
-
+def dfs(n):
+    if visited[n]:
+        return
+    for i in G[n]:
+        visited[i] = True
+        dfs(i)
+        visited[i] = False
 
 
 # #############################################################################

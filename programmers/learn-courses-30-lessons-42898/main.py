@@ -24,79 +24,40 @@ def main(f=None):
 
     # ######## INPUT AREA END ############
     # ####################################
-
-    m = 4
-    n = 5
-    board = ["CCBDE", "AAADE", "AAABF", "CCBBF"]
-    ret = solution(m, n, board)
+    ret = solution(4, 3, [[2, 2]])
     print(ret)
-    print(ret == 14)
+    print(ret == 4)
 
-dxy = ((0, 0), (0, 1), (1, 0), (1, 1))
 
-def solution(m, n, board):
-    b = [list(i) for i in board]
-    parr(b)
-    global count
-    count = 0
 
-    while True:
-        changed = mark(m, n, b)
-        if not changed:
-            break
-        input()
-    return count
+def DP(x, y):
+    if dp[x][y] is not None:
+        return dp[x][y]
 
-def mark(m, n, b):
-    global count
+    sum_ = 0
+    if x != 0:
+        up = DP(x-1, y)
+        if up != -1:
+            sum_ += up
 
-    changed = False
-    mat = Mat(m, n, False)
-    for i in range(m-1):
-        for j in range(n-1):
-            val = b[i][j]
-            for dx, dy in dxy:
-                ni, nj = i + dx, j + dy
-                if b[ni][nj] != val:
-                    break
-            else:
-                changed = True
-                count += 1
-                for dx, dy in dxy:
-                    ni, nj = i + dx, j + dy
-                    mat[ni][nj] = True
+    if y != 0:
+        left = DP(x, y-1)
+        if left != -1:
+            sum_ += left
 
-    collapse(m, n, b, mat)
-    return changed
-
-def collapse(m, n, b, mat):
-    for j in range(n):
-        shift = 0
-        for i in range(m-1, -1, -1):
-            val = mat[i][j]
-            mat[i][j] = shift
-            if val:
-                shift += 1
-    print("before")
-    parr(b)
-
-    for j in range(n):
-        for i in range(m-1, -1, -1):
-            val = b[i][j]
-            shift = mat[i][j]
-            if shift == 0:
-                continue
-            b[i-shift][j] = val
-            b[i][j] = None
-
-    print("after")
-    parr(mat)
-    parr(b)
+    dp[x][y] = sum_
+    return dp[x][y]
 
 
 
 
-
+def solution(m, n, puddles):
+    global dp
+    dp = Mat(m, n)
+    dp[0][0] = 1
+    for i, j in puddles:
+        dp[i-1][j-1] = -1
+    return DP(m-1, n-1)
 
 
 
