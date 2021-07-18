@@ -28,16 +28,25 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+
 def countZero(n):
     n = list(str(n))
     n.reverse()
-    for
+    cnt = 0
+    for c in n:
+        if c == "0":
+            cnt += 1
+            continue
+        break
+    return cnt
+
 
 def solve(n):
     zeros = 0
     res = 1
 
     for i in range(2, n):
+        res * i
 
 
 
