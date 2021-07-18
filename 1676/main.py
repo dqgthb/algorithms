@@ -24,7 +24,8 @@ def main(f=None):
 
     global N
     N = int(input())
-    solve(N)
+    ans = solve(N)
+    print(ans)
 
     # ######## INPUT AREA END ############
     # ####################################
@@ -53,11 +54,9 @@ def solve(n):
 
     for i in range(2, n+1):
         res = res * i
-        print(zeros, res)
         numZero, lastDigit = countZero(res)
         zeros += numZero
         res = int(lastDigit)
-    print(zeros)
     return zeros
 
 
