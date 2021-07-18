@@ -51,11 +51,11 @@ def solve(n):
     zeros = 0
     res = 1
 
-    for i in range(2, n):
+    for i in range(2, n+1):
         res = res * i
+        print(zeros, res)
         numZero, lastDigit = countZero(res)
         zeros += numZero
-        print(zeros)
         res = int(lastDigit)
     print(zeros)
     return zeros
