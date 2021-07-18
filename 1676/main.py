@@ -54,7 +54,6 @@ def solve(n):
     for i in range(2, n):
         res = res * i
         numZero, lastDigit = countZero(res)
-        numZero += zeros
         zeros += numZero
         print(zeros)
         res = int(lastDigit)
