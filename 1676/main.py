@@ -33,14 +33,14 @@ def countZero(n):
     n = list(str(n))
     n.reverse()
     cnt = 0
-    lastNonZero = None
+    lastNonZero = n[-1]
     for c in n:
         if c == "0":
             cnt += 1
             continue
-
+        lastNonZero = c
         break
-    return cnt
+    return cnt, c
 
 
 def lastNonzeroDigit(n):
@@ -52,8 +52,10 @@ def solve(n):
 
     for i in range(2, n):
         res = res * i
-        zeros += countZero(res)
-        res = lastNonzeroDigit(res)
+        numZero, lastDigit = countZero(res)
+        zeros += numZero
+        res = int(lastDigit)
+    print(zeros)
 
 
 
