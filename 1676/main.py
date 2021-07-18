@@ -21,12 +21,11 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
-    for i in range(11):
-        print(i)
-        print(math.factorial(i))
 
     # ######## INPUT AREA END ############
     # ####################################
+
+def countZero(i):
 
 
 # #############################################################################
