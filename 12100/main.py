@@ -15,7 +15,6 @@ from heapq import heappush, heappop
 from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
 
-MOD = 1000000007
 
 def main(f=None):
     init(f)
@@ -23,39 +22,86 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    n = int(input())
-    mat = fib(n)
-    print(mat[0][1])
+    global N, mat
+    N = int(input())
+    mat = [list(map(int, input().split())) for _ in range(N)]
 
     # ######## INPUT AREA END ############
     # ####################################
+    parr(mat)
+    moveUp(0)
+    moveUp(1)
+    moveUp(2)
+    parr(mat)
 
 
-def fib(n):
-    if n == 0:
-        return [[1, 0], [0, 1]]
-    elif n == 1:
-        return [[1, 1], [1, 0]]
-    elif n % 2 == 0:
-        mat = fib(n//2)
-        return matMul(mat, mat)
-    else:
-        mat = fib(n//2)
-        return matMul(matMul(mat, mat), [[1, 1], [1, 0]])
+def moveRight(row):
+    prevCol = None
+
+    for currCol in range(N-1, -1, -1):
+        currNo = mat[row][currCol]
+
+        if currNo == 0:
+            pass
+        else:
+            if prevCol is None:
+                mat[row][currCol] = 0
+                mat[row][N-1] = currNo
+                prevCol = N-1
+            else:
+                if mat[row][prevCol] == currNo:
+                    mat[row][prevCol] *= 2
+                    mat[row][currCol] = 0
+                else:
+                    mat[row][currCol] = 0
+                    mat[row][prevCol-1] = currNo
+                    prevCol -= 1
 
 
-def matMul(a, b):
-    h1, w1 = len(a), len(a[0])
-    h2, w2 = len(b), len(b[0])
+def moveLeft(row):
+    prevCol = None
 
-    mat = Mat(h1, w2, 0)
+    for currCol in range(N):
+        currNo = mat[row][currCol]
 
-    for i in range(h1):
-        for j in range(w2):
-            for k in range(w1):
-                mat[i][j] += a[i][k] * b[k][j] % MOD
-                mat[i][j] = mat[i][j] % MOD
-    return mat
+        if currNo == 0:
+            pass
+        else:
+            if prevCol is None:
+                mat[row][currCol] = 0
+                mat[row][0] = currNo
+                prevCol = 0
+            else:
+                if mat[row][prevCol] == currNo:
+                    mat[row][prevCol] *= 2
+                    mat[row][currCol] = 0
+                else:
+                    mat[row][currCol] = 0
+                    mat[row][prevCol+1] = currNo
+                    prevCol += 1
+
+
+def moveUp(col):
+    prevRow = None
+
+    for currRow in range(N):
+        currNo = mat[currRow][col]
+
+        if currNo == 0:
+            pass
+        else:
+            if prevRow is None:
+                mat[currRow][col] = 0
+                mat[0][col] = currNo
+                prevRow = 0
+            else:
+                if mat[prevRow][col] == currNo:
+                    mat[prevRow][col] *= 2
+                    mat[currRow][col] = 0
+                else:
+                    mat[currRow][col] = 0
+                    mat[prevRow+1][col] = currNo
+                    prevRow += 1
 
 
 # #############################################################################
