@@ -34,11 +34,11 @@ def main(f=None):
     dp[2] = 2
 
 
-    i = 0
-    while i < N+1:
+    i = 1
+    while i*i < N+1:
         dp[i*i] = 1
         i += 1
-
+    parr(dp)
 
     for i in range(3, N+1):
         for j in range(i):
