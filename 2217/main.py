@@ -33,7 +33,7 @@ def main(f=None):
     max_ = 0
 
     for i, rope in enu(arr):
-        max_ = max(max_, rope//(N-i))
+        max_ = max(max_, rope*(N-i))
 
     print(max_)
 
