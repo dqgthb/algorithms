@@ -32,9 +32,8 @@ def main(f=None):
     arr.sort()
     max_ = 0
 
-    for i in arr:
-
-
+    for i, rope in enu(arr):
+        max_ = max(max_, rope//(N-i))
 
 
 # #############################################################################
