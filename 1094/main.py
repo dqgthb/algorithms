@@ -21,26 +21,13 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
-
-    global N, dp
     N = int(input())
-    dp = [10**9 for _ in range(N+1)]
+    bn = bin(N)
+    print(bn.count("1"))
+
 
     # ######## INPUT AREA END ############
     # ####################################
-
-    dp[0] = 0
-
-    i = 1
-    while i*i < N+1:
-        dp[i*i] = 1
-        i += 1
-
-    for i in range(1, N+1):
-        for j in range(i//2+1):
-            dp[i] = min(dp[i], dp[i-j] + dp[j])
-
-    print(dp[N])
 
 
 # #############################################################################

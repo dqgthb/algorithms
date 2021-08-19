@@ -22,25 +22,39 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N, dp
+    global right, left
+    left = list(input().rstrip())
     N = int(input())
-    dp = [10**9 for _ in range(N+1)]
+    right = []
+    for _ in range(N):
+        com = input().rstrip()
+        edit(com)
+    right.reverse()
+    left.extend(right)
+    print(''.join(left))
 
     # ######## INPUT AREA END ############
     # ####################################
 
-    dp[0] = 0
 
-    i = 1
-    while i*i < N+1:
-        dp[i*i] = 1
-        i += 1
+def edit(com):
+    if com == "L":
+        if left:
+            right.append(left.pop())
+        pass
+    elif com == "D":
+        if right:
+            left.append(right.pop())
+        pass
+    elif com == "B":
+        if left:
+            left.pop()
+        pass
+    else:
+        p, b = com.split()
+        left.append(b)
 
-    for i in range(1, N+1):
-        for j in range(i//2+1):
-            dp[i] = min(dp[i], dp[i-j] + dp[j])
 
-    print(dp[N])
 
 
 # #############################################################################

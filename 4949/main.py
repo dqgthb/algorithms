@@ -22,25 +22,60 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N, dp
-    N = int(input())
-    dp = [10**9 for _ in range(N+1)]
+    while True:
+        line = input().rstrip()
+        if line == ".":
+            return
+
+        bool = checkBalance(line)
+        if bool:
+            print("yes")
+        else:
+            print("no")
+
+
+
+
 
     # ######## INPUT AREA END ############
     # ####################################
 
-    dp[0] = 0
 
-    i = 1
-    while i*i < N+1:
-        dp[i*i] = 1
-        i += 1
+def checkBalance(line):
+    arr = []
 
-    for i in range(1, N+1):
-        for j in range(i//2+1):
-            dp[i] = min(dp[i], dp[i-j] + dp[j])
+    for c in line:
+        if c in "([":
+            arr.append(c)
+        elif c in ")]":
+            if arr:
+                d = arr.pop()
+                if c == ")" and d != "(":
+                    return False
+                if c == "]" and d != "[":
+                    return False
+            else:
+                return False
+        else:
+            pass
+    if not arr:
+        return True
+    return False
 
-    print(dp[N])
+
+
+
+# #############################################################################
+# #############################################################################
+# ############################## TEMPLATE AREA ################################
+# #############################################################################
+# #############################################################################
+
+enu = enumerate
+
+
+def argmax(arr):
+    return max(enumerate(arr), key=lambda x: x[1])
 
 
 # #############################################################################
