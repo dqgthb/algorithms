@@ -24,7 +24,7 @@ def main(f=None):
 
     global N, dp
     N = int(input())
-    dp = [None for _ in range(N+1)]
+    dp = [10**9 for _ in range(N+1)]
 
     # ######## INPUT AREA END ############
     # ####################################
@@ -41,7 +41,8 @@ def main(f=None):
     parr(dp)
 
     for i in range(3, N+1):
-        for j in range(i):
+        for j in range(i//2+1):
+            dp[i] = min(dp[i], dp[i-j] + dp[j])
 
 
 # #############################################################################
