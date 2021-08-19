@@ -38,11 +38,12 @@ def main(f=None):
     while i*i < N+1:
         dp[i*i] = 1
         i += 1
-    parr(dp)
 
     for i in range(3, N+1):
         for j in range(i//2+1):
             dp[i] = min(dp[i], dp[i-j] + dp[j])
+
+    parr(dp)
 
 
 # #############################################################################
