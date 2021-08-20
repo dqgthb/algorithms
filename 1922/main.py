@@ -30,8 +30,8 @@ def main(f=None):
         a, b, c = map(int, input().split())
         a -= 1
         b -= 1
-        G[a].append((c, b))
-        G[b].append((c, a))
+        G[a].append((c, a, b))
+        G[b].append((c, b, a))
 
     # ######## INPUT AREA END ############
     # ####################################
@@ -44,11 +44,11 @@ def mst_prim():
     edges = []
 
     while pq:
-        c, node = heappop(pq)
-        if visited[node]:
+        c, from_, to_ = heappop(pq)
+        if visited[to_]:
             continue
+        visited[to_] = True
 
-        visited[node] = True
         for edge in G[start]:
             heappush(pq, edge)
 
