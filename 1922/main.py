@@ -25,15 +25,22 @@ def main(f=None):
     N = int(input())
     M = int(input())
     G = [[] for _ in range(N)]
+    edges = []
     for _ in range(M):
         a, b, c = map(int, input().split())
         a -= 1
         b -= 1
         G[a].append((c, b))
         G[b].append((c, a))
+        edges.append((c, a, b))
 
     # ######## INPUT AREA END ############
     # ####################################
+
+    edges.sort()
+    parr(edges)
+
+
 
 
 
