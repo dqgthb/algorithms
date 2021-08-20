@@ -36,11 +36,13 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+    edges = mst_prim()
+    parr(edges)
+
 def mst_prim():
     pq = []
     visited = [False for _ in range(N)]
     start = 0
-    heappush(pq, start)
     for edge in G[start]:
         heappush(pq, edge)
     edges = []
@@ -54,6 +56,7 @@ def mst_prim():
 
         for edge in G[to_]:
             heappush(pq, edge)
+    return edges
 
 
 
