@@ -41,10 +41,17 @@ def mst_prim():
     visited = [False for _ in range(N)]
     start = 0
     visited[0] = True
-    for edge in G[start]:
-        heappush(pq, edge)
+    heappush(pq, start)
 
-    c, b = heappop(pq)
+    while pq:
+        c, node = heappop(pq)
+
+        for edge in G[start]:
+            heappush(pq, edge)
+
+        c, b = heappop(pq)
+        if
+
 
 
 
