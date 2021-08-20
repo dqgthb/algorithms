@@ -22,6 +22,7 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
+    global N, M, G
     N = int(input())
     M = int(input())
     G = [[] for _ in range(N)]
@@ -35,10 +36,7 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-def mst_prim(graph, start):
-
-
-
+def mst_prim():
 
 
 
