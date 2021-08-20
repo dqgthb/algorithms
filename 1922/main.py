@@ -38,6 +38,7 @@ def main(f=None):
 
 def mst_prim():
     pq = []
+    visited = [False for _ in range(N)]
 
     start = 0
     for edge in G[start]:
