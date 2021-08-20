@@ -41,6 +41,8 @@ def mst_prim():
     visited = [False for _ in range(N)]
     start = 0
     heappush(pq, start)
+    for edge in G[start]:
+        heappush(pq, edge)
     edges = []
 
     while pq:
@@ -48,8 +50,9 @@ def mst_prim():
         if visited[to_]:
             continue
         visited[to_] = True
+        edges.append((from_, to_))
 
-        for edge in G[start]:
+        for edge in G[to_]:
             heappush(pq, edge)
 
 
