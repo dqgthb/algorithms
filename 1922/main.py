@@ -39,10 +39,13 @@ def main(f=None):
 def mst_prim():
     pq = []
     visited = [False for _ in range(N)]
-
     start = 0
+    visited[0] = True
     for edge in G[start]:
         heappush(pq, edge)
+
+    c, b = heappop(pq)
+
 
 
 
