@@ -37,15 +37,17 @@ def main(f=None):
     # ####################################
 
     edges = mst_prim()
-    parr(edges)
+    print(edges)
 
 def mst_prim():
     pq = []
     visited = [False for _ in range(N)]
     start = 0
+    visited[start] = True
     for edge in G[start]:
         heappush(pq, edge)
     edges = []
+    cost = 0
 
     while pq:
         c, from_, to_ = heappop(pq)
@@ -53,10 +55,11 @@ def mst_prim():
             continue
         visited[to_] = True
         edges.append((from_, to_))
+        cost += c
 
         for edge in G[to_]:
             heappush(pq, edge)
-    return edges
+    return cost
 
 
 
