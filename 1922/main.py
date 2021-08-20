@@ -37,6 +37,10 @@ def main(f=None):
     # ####################################
 
 def mst_prim():
+    edges = []
+
+    start = 0
+
 
 
 
