@@ -37,9 +37,11 @@ def main(f=None):
     # ####################################
 
 def mst_prim():
-    edges = []
+    pq = []
 
     start = 0
+    for edge in G[start]:
+        heappush(pq, edge)
 
 
 
