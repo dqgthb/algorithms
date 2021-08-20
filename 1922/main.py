@@ -29,6 +29,7 @@ def main(f=None):
         a, b, c = map(int, input().split())
         a -= 1
         b -= 1
+        G[a].append((c, b))
 
     # ######## INPUT AREA END ############
     # ####################################
