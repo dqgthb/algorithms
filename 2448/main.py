@@ -18,40 +18,32 @@ DEBUG = False
 
 def main(f=None):
     init(f)
-    # sys.setrecursionlimit(10**9)
-    # ####################################
-    # ######## INPUT AREA BEGIN ##########
 
-    N, M = map(int, input().split())
-    arr = [int(i)-1 for i in input().split()]
-    dq = deque([i for i in range(N)])
+    global N, mat
+    N = int(input())
+    mat = Mat(N, 2*N, ' ')
+    drawTriangle(N, 0, 0)
 
-    # ######## INPUT AREA END ############
-    # ####################################
+    for i in mat:
+        print(''.join(i))
 
-    sum_ = 0
-    for e in arr:
-        rightD = dq.index(e)
-        leftD = len(dq)-rightD
-        sum_ += min(rightD, leftD)
+dx = [0, 1, 1, 2, 2, 2, 2, 2]
+dy = [2, 1, 3, 0, 1, 2, 3, 4]
 
-        if leftD < rightD:
-            for _ in range(leftD):
-                rightRotate(dq)
-            dq.popleft()
-        else:
-            for _ in range(rightD):
-                leftRotate(dq)
-            dq.popleft()
-    print(sum_)
+def drawTriangle(n, x, y):
+    if n == 3:
+        for i, j in zip(dx, dy):
+            mat[i+x][j+y] = "*"
+
+    else:
+        drawTriangle(n//2, x + n//2, y)
+        drawTriangle(n//2, x + n//2, y + n)
+        drawTriangle(n//2, x, y + n//2)
 
 
 
-def leftRotate(dq):
-    dq.append(dq.popleft())
 
-def rightRotate(dq):
-    dq.appendleft(dq.pop())
+
 
 
 
@@ -63,7 +55,6 @@ def rightRotate(dq):
 # ############################## TEMPLATE AREA ################################
 # #############################################################################
 # #############################################################################
-
 enu = enumerate
 
 

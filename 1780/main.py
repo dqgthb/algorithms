@@ -22,37 +22,33 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    N, M = map(int, input().split())
-    arr = [int(i)-1 for i in input().split()]
-    dq = deque([i for i in range(N)])
+    global paperCount, N, mat
+    paperCount = [0, 0, 0]
+    N = int(input())
+    mat = [list(map(int, input().split())) for _ in range(N)]
+    countSquare(mat, N, 0, 0)
+    output = ""
+    for i in [-1, 0, 1]:
+        print(paperCount[i])
+
 
     # ######## INPUT AREA END ############
     # ####################################
 
-    sum_ = 0
-    for e in arr:
-        rightD = dq.index(e)
-        leftD = len(dq)-rightD
-        sum_ += min(rightD, leftD)
 
-        if leftD < rightD:
-            for _ in range(leftD):
-                rightRotate(dq)
-            dq.popleft()
-        else:
-            for _ in range(rightD):
-                leftRotate(dq)
-            dq.popleft()
-    print(sum_)
+delX = [0, 0, 0, 1, 1, 1, 2, 2, 2]
+delY = [0, 1, 2, 0, 1, 2, 0, 1, 2]
 
-
-
-def leftRotate(dq):
-    dq.append(dq.popleft())
-
-def rightRotate(dq):
-    dq.appendleft(dq.pop())
-
+def countSquare(mat, l, x, y):
+    fst = mat[x][y]
+    for i in range(x, l+x):
+        for j in range(y, y+l):
+            if mat[i][j] != fst:
+                for dx, dy in zip(delX, delY):
+                    countSquare(mat, l//3, x + dx * l//3, y + dy * l//3)
+                return
+    else:
+        paperCount[fst] += 1
 
 
 
