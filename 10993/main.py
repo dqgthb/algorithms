@@ -25,8 +25,9 @@ def main(f=None):
     global N, mat
     N = int(input())
     h = 2 ** N - 1
-    w = 2 * h - 1
-    mat = Mat(h, w)
+    w = 2 * h
+    mat = Mat(h, w, default=" ")
+    parr(mat)
 
     # ######## INPUT AREA END ############
     # ####################################
