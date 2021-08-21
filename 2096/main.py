@@ -31,7 +31,12 @@ def main(f=None):
     a = mat[0]
 
     for i in range(1, N):
-        chooseFirst = mat[i]
+        chooseFirst = mat[i][0] + min(a[0], a[1])
+        chooseSecond = mat[i][1] + min(a[0], a[1], a[2])
+        chooseThird = mat[i][2] + min(a[1], a[2])
+        a = (chooseFirst, chooseSecond, chooseThird)
+
+    print(min(a))
 
 
 
