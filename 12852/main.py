@@ -28,6 +28,15 @@ def main(f=None):
     seq = [None for _ in range(X+1)]
     print(dp(X))
     print(seq)
+    x = X
+    while True:
+        idx = seq[x]
+        if idx == 0:
+            x -= 1
+        elif idx == 1:
+            x //= 2
+        else:
+            x
 
     # ######## INPUT AREA END ############
     # ####################################
