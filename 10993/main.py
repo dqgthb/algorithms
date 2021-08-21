@@ -24,7 +24,7 @@ def main(f=None):
 
     global N, mat
     #N = int(input())
-    N = 2
+    N = 4
     h = 2 ** N - 1
     w = 2 * h - 1
     mat = Mat(h, w, default=" ")
@@ -46,8 +46,7 @@ def drawStar(n, x, y):
             mat[x + 0][y + i] = '*'
         for i in range(h):
             mat[x+i][y+i] = '*'
-            mat[i][w-i-1] = '*'
-
+            mat[x+i][y+w-i-1] = '*'
 
     else:
         for i in range(w):
