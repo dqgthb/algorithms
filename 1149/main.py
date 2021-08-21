@@ -37,7 +37,7 @@ def main(f=None):
         chooseGreen = mat[i][1] + min(a[i-1][0], a[i-1][2])
         chooseBlue = mat[i][2] + min(a[i-1][0], a[i-1][1])
         a.append([chooseRed, chooseGreen, chooseBlue])
-    print(a[N-1])
+    print(min(a[N-1]))
 
 
 
@@ -118,4 +118,4 @@ def parr(arr):
 
 
 if __name__ == "__main__":
-    mai
+    main()
