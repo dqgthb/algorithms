@@ -29,10 +29,12 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    answers = [mat[0]]
+    a = [mat[0]]
 
-    i
-    chooseRed = mat
+    # i th house
+    chooseRed = min(a[i-1][1], a[i-1][2])
+    chooseGreen = min(a[i-1][0], a[i-1][2])
+    chooseBlue = min(a[i-1][0], a[i-1][2])
 
 
 
