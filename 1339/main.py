@@ -30,11 +30,13 @@ def main(f=None):
                 alps[c] = 1 * 10 ** i
             else:
                 alps[c] += 1 * 10 ** i
+
     lst = [(v, k) for k, v in alps.items()]
     lst.sort(reverse=True)
+
     trans = {}
-    for i, c in zip(itertools.count(), lst):
-        print(i, c)
+    for i, c in zip(range(9, -1, -1), lst):
+        trans[c] = i
 
 
 
