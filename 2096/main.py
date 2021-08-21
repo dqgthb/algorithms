@@ -36,9 +36,9 @@ def main(f=None):
         minA[2] = z + min(minA[1], minA[2])
 
 
-        mmaxAxA[0] = x + mmaxAx(maxA[0], maxA[1])
-        mmaxAxA[1] = y + mmaxAx(maxA[0], maxA[1], maxA[2])
-        mmaxAxA[2] = z + mmaxAx(maxA[1], maxA[2])
+        maxA[0] = x + max(maxA[0], maxA[1])
+        maxA[1] = y + max(maxA[0], maxA[1], maxA[2])
+        maxA[2] = z + max(maxA[1], maxA[2])
 
     min_ = min(minA)
     max_ = max(maxA)
