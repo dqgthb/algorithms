@@ -55,6 +55,8 @@ def drawStar(n, x, y):
             mat[x+h-i-1][y+i] = '*'
             mat[x+i][y+w//2 + i] = '*'
 
+    drawStar(n-1, h//2, 2 ** (n-1) + 1)
+
 
 
 
