@@ -25,6 +25,8 @@ def main(f=None):
     global N, arr
     N = int(input())
     arr = [list(input().strip()) for _ in range(N)]
+    arr = [[ord(c)-ord('A') for c in str_] for str_ in arr]
+    parr(arr)
 
     # ######## INPUT AREA END ############
     # ####################################
