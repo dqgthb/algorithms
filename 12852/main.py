@@ -27,7 +27,6 @@ def main(f=None):
     DP = [None for _ in range(X+1)]
     seq = [None for _ in range(X+1)]
     print(dp(X))
-    print(seq)
     x = X
     while True:
         idx = seq[x]
@@ -35,8 +34,13 @@ def main(f=None):
             x -= 1
         elif idx == 1:
             x //= 2
+        elif idx == 2:
+            x //= 3
         else:
-            x
+            x = 1
+            break
+        print(x)
+
 
     # ######## INPUT AREA END ############
     # ####################################
