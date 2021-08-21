@@ -34,11 +34,11 @@ def main(f=None):
 
     # i th house
     for i in range(1, N):
-        chooseRed = mat[i][0] + min(a[i-1][1], a[i-1][2])
-        chooseGreen = mat[i][1] + min(a[i-1][0], a[i-1][2])
-        chooseBlue = mat[i][2] + min(a[i-1][0], a[i-1][1])
+        chooseRed = mat[i][0] + min(a[1], a[2])
+        chooseGreen = mat[i][1] + min(a[0], a[2])
+        chooseBlue = mat[i][2] + min(a[0], a[1])
         a = (chooseRed, chooseGreen, chooseBlue)
-    print(min(a[N-1]))
+    print(min(a))
 
 
 
