@@ -32,7 +32,7 @@ def main(f=None):
     len_ = len(set_)
 
     trans = {c:i for c, i in zip(set_, range(len_))}
-    arr = [[ord(c)-ord('A') for c in str_] for str_ in arr]
+    arr = [[trans[c] for c in str_] for str_ in arr]
 
     # ######## INPUT AREA END ############
     # ####################################
@@ -48,7 +48,7 @@ def main(f=None):
 def solve(perm):
     sum_ = 0
     for l in arr:
-        num_ = int(''.join(perm[trans[i]] for i in l))
+        num_ = int(''.join(perm[i] for i in l))
         sum_ += num_
     return sum_
 
