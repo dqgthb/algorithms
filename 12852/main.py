@@ -26,6 +26,9 @@ def main(f=None):
     X = int(input())
     DP = [None for _ in range(X+1)]
     seq = [None for _ in range(X+1)]
+    for i in range(X):
+        dp(i)
+
     print(dp(X))
     ans = [X]
 
