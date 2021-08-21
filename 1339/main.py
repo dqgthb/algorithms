@@ -22,7 +22,11 @@ def main(f=None):
 
     N = int(input())
     alps = dd()
-    for line in arr:
+    for _ in range(N):
+        line = list(input().strip())
+        line.reverse()
+        for i, c in enu(line):
+
 
 
 
