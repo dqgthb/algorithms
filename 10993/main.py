@@ -23,13 +23,13 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     global N, mat
-    #N = int(input())
-    N = 4
+    N = int(input())
     h = 2 ** N - 1
     w = 2 * h - 1
     mat = Mat(h, w, default=" ")
     drawStar(N, 0, 0)
-    parr(mat)
+    for i in mat:
+        print(''.join(i))
 
     # ######## INPUT AREA END ############
     # ####################################
