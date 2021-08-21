@@ -30,7 +30,7 @@ def main(f=None):
         for c in l:
             set_.add(c)
     #arr = [[ord(c)-ord('A') for c in str_] for str_ in arr]
-    l = len(set_)
+    len_ = len(set_)
 
     # ######## INPUT AREA END ############
     # ####################################
