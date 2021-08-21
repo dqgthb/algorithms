@@ -19,38 +19,9 @@ DEBUG = False
 def main(f=None):
     init(f)
     # sys.setrecursionlimit(10**9)
-    # ####################################
-    # ######## INPUT AREA BEGIN ##########
 
-    global N, arr, set_, trans
     N = int(input())
-    arr = [list(input().strip()) for _ in range(N)]
-    set_ = set()
-    for l in arr:
-        for c in l:
-            set_.add(c)
-    len_ = len(set_)
 
-    trans = {c:i for c, i in zip(set_, range(len_))}
-    arr = [[trans[c] for c in str_] for str_ in arr]
-
-    # ######## INPUT AREA END ############
-    # ####################################
-
-    nums = list(map(str, [i for i in range(9, 9-len_, -1)]))
-    max_ = -1
-
-    for perm in itertools.permutations(nums):
-        max_ = max(max_, solve(perm))
-    print(max_)
-
-
-def solve(perm):
-    sum_ = 0
-    for l in arr:
-        num_ = int(''.join(perm[i] for i in l))
-        sum_ += num_
-    return sum_
 
 
 # #############################################################################
