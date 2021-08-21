@@ -7,7 +7,7 @@ import string
 # not for python < 3.9
 # from functools import cmp_to_key, reduce, partial, cache
 from functools import cmp_to_key, reduce, partial
-from itertools import product
+from itertools import product, zip_longest
 from collections import deque, Counter, defaultdict as dd
 from math import log, log2, ceil, floor, gcd, sqrt
 import math
@@ -33,8 +33,8 @@ def main(f=None):
     lst = [(v, k) for k, v in alps.items()]
     lst.sort(reverse=True)
     trans = {}
-    for i, c in zip(range(9, -1) lst):
-        trans[c] =
+    for i, c in zip(itertools.count(), lst):
+        print(i, c)
 
 
 
