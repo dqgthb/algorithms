@@ -30,9 +30,8 @@ def main(f=None):
                 alps[c] = 1 * 10 ** i
             else:
                 alps[c] += 1 * 10 ** i
-    lst = [(v, k) for k, v in alps.all()]
-    lst.sort()
-    print(lst)
+    lst = [(v, k) for k, v in alps.items()]
+    lst.sort(reverse=True)
 
 
 # #############################################################################
