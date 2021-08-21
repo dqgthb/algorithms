@@ -36,10 +36,15 @@ def main(f=None):
     trans = {}
     for i, c in zip(range(9, -1, -1), lst):
         val, alp = c
-        trans[alp] = i
+        trans[alp] = str(i)
+
+    print(trans)
 
     sum_ = 0
     for line in input_:
+        sum_ += int(''.join(trans[c] for c in line))
+        print(sum_)
+    print(sum_)
 
 
 
