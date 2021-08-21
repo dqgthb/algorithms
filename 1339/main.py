@@ -26,8 +26,8 @@ def main(f=None):
         line = list(input().strip())
         line.reverse()
         for i, c in enu(line):
-
-
+            alps[c] += 1 * 10 ** i
+    print(alps)
 
 
 # #############################################################################
