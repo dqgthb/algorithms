@@ -34,11 +34,13 @@ def main(f=None):
         nx = x + min(minA[0], minA[1])
         ny = y + min(minA[0], minA[1], minA[2])
         nz = z + min(minA[1], minA[2])
+        minA = [nx, ny, nz]
 
 
-        maxA[0] = x + max(maxA[0], maxA[1])
-        maxA[1] = y + max(maxA[0], maxA[1], maxA[2])
-        maxA[2] = z + max(maxA[1], maxA[2])
+        nx = x + max(maxA[0], maxA[1])
+        ny = y + max(maxA[0], maxA[1], maxA[2])
+        nz = z + max(maxA[1], maxA[2])
+        maxA = [nx, ny, nz]
 
     min_ = min(minA)
     max_ = max(maxA)
