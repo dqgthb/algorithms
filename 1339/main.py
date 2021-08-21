@@ -21,7 +21,7 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
 
     N = int(input())
-    alps = {c:0 for c in "ABCDEFGHIJ"}
+    alps = {c:0 for c in string.ascii_uppercase}
     input_ = []
     for _ in range(N):
         line = list(input().strip())
