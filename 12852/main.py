@@ -27,6 +27,8 @@ def main(f=None):
     DP = [None for _ in range(X+1)]
     seq = [None for _ in range(X+1)]
     print(dp(X))
+    ans = [X]
+
     x = X
     while True:
         idx = seq[x]
@@ -39,7 +41,8 @@ def main(f=None):
         else:
             x = 1
             break
-        print(x)
+        ans.append(x)
+    print(' '.join(map(str, ans)))
 
 
     # ######## INPUT AREA END ############
