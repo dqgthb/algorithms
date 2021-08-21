@@ -25,29 +25,24 @@ def main(f=None):
     N = int(input())
 
     x, y, z = input().split()
+    minA = [x, y, z]
+    maxA = [x, y, z]
 
     for line in sys.stdin:
         x, y, z = line.split()
-        a = [x, y, z]
 
-    # ######## INPUT AREA END ############
-    # ####################################
+        minA[0] = mat[i][0] + min(a[0], a[1])
+        minA[1] = mat[i][1] + min(a[0], a[1], a[2])
+        minA[2] = mat[i][2] + min(a[1], a[2])
 
 
     for i in range(1, N):
-        a[0] = mat[i][0] + min(a[0], a[1])
-        a[1] = mat[i][1] + min(a[0], a[1], a[2])
-        a[2] = mat[i][2] + min(a[1], a[2])
+        maxA[0] = mat[i][0] + max(a[0], a[1])
+        maxA[1] = mat[i][1] + max(a[0], a[1], a[2])
+        maxA[2] = mat[i][2] + max(a[1], a[2])
 
-    min_ = min(a)
-
-    a = mat[0]
-    for i in range(1, N):
-        a[0] = mat[i][0] + max(a[0], a[1])
-        a[1] = mat[i][1] + max(a[0], a[1], a[2])
-        a[2] = mat[i][2] + max(a[1], a[2])
-
-    max_ = max(a)
+    min_ = min(minA)
+    max_ = max(maxA)
     print(max_, min_)
 
 
