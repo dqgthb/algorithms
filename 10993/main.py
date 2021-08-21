@@ -29,7 +29,7 @@ def main(f=None):
     mat = Mat(h, w, default=" ")
     drawStar(N, 0, 0)
     for i in mat:
-        print(''.join(i))
+        print(''.join(i).rstrip())
 
     # ######## INPUT AREA END ############
     # ####################################
