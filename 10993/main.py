@@ -22,8 +22,11 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N
+    global N, mat
     N = int(input())
+    h = 2 ** N - 1
+    w = 2 * h - 1
+    mat = Mat(h, w)
 
     # ######## INPUT AREA END ############
     # ####################################
