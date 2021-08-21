@@ -32,6 +32,9 @@ def main(f=None):
     #arr = [[ord(c)-ord('A') for c in str_] for str_ in arr]
     len_ = len(set_)
 
+    trans = [i for i in range(len_)]
+
+
     # ######## INPUT AREA END ############
     # ####################################
 
