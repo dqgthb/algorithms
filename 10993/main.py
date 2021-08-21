@@ -36,17 +36,19 @@ def main(f=None):
 
 
 def drawStar(n, x, y):
+    if n == 1:
+
     h = 2 ** n - 1
     w = 2 * h - 1
     if n % 2 == 0:
         for i in range(w):
-            mat[0][i] = '*'
+            mat[x + 0][y + i] = '*'
     else:
         for i in range(w):
-            mat[h-1][i] = '*'
+            mat[x+h-1][y+i] = '*'
         for i in range(1, h):
-            mat[h-i-1][i] = '*'
-            mat[i][w//2 - i] = '*'
+            mat[x+h-i-1][y+i] = '*'
+            mat[x+i][w//2 + i] = '*'
 
 
 
