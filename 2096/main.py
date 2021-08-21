@@ -24,16 +24,16 @@ def main(f=None):
 
     N = int(input())
 
-    x, y, z = input().split()
+    x, y, z = map(int, input().split())
     minA = [x, y, z]
     maxA = [x, y, z]
 
     for line in sys.stdin:
-        x, y, z = line.split()
+        x, y, z = map(int, line.split())
 
-        minA[0] = x + min(minA[0], minA[1])
-        minA[1] = y + min(minA[0], minA[1], minA[2])
-        minA[2] = z + min(minA[1], minA[2])
+        nx = x + min(minA[0], minA[1])
+        ny = y + min(minA[0], minA[1], minA[2])
+        nz = z + min(minA[1], minA[2])
 
 
         maxA[0] = x + max(maxA[0], maxA[1])
