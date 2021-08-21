@@ -21,12 +21,15 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
 
     N = int(input())
-    alps = dd()
+    alps = {}
     for _ in range(N):
         line = list(input().strip())
         line.reverse()
         for i, c in enu(line):
-            alps[c] += 1 * 10 ** i
+            if c not in alps:
+                alps[c] = 1 * 10 ** i
+            else:
+                alps[c] += 1 * 10 ** i
     print(alps)
 
 
