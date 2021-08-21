@@ -36,7 +36,7 @@ def main(f=None):
         chooseThird = mat[i][2] + min(a[1], a[2])
         a = (chooseFirst, chooseSecond, chooseThird)
 
-    print(min(a))
+    min_ = min(a)
 
     a = mat[0]
     for i in range(1, N):
@@ -44,7 +44,9 @@ def main(f=None):
         chooseSecond = mat[i][1] + max(a[0], a[1], a[2])
         chooseThird = mat[i][2] + max(a[1], a[2])
         a = (chooseFirst, chooseSecond, chooseThird)
-    print(max(a))
+
+    max_ = max(a)
+    print(max_, min_)
 
 
 
