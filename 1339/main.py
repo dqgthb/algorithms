@@ -31,7 +31,6 @@ def main(f=None):
     # ####################################
 
     alps = "ABCDEFGHIJ"
-    nums = list(map(str, reversed([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])))
     max_ = -1
 
     global dic
