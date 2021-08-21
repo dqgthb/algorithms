@@ -44,7 +44,10 @@ def main(f=None):
 
 
 def solve():
+    sum_ = 0
     for l in arr:
+        num_ = int(''.join(dic[c] for c in l))
+        sum_ += num_
 
 
 
