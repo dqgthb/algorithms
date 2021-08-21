@@ -21,22 +21,23 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
 
     N = int(input())
-    alps = {}
+    alps = {c:0 for c in "ABCDEFGHIJ"}
     for _ in range(N):
         line = list(input().strip())
         line.reverse()
         for i, c in enu(line):
-            if c not in alps:
-                alps[c] = 1 * 10 ** i
-            else:
-                alps[c] += 1 * 10 ** i
+            alps[c] += 1 * 10 ** i
 
     lst = [(v, k) for k, v in alps.items()]
     lst.sort(reverse=True)
 
     trans = {}
     for i, c in zip(range(9, -1, -1), lst):
+        val, alp = c
         trans[c] = i
+
+    print(trans)
+
 
 
 
