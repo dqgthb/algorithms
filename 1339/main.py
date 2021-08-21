@@ -21,6 +21,8 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
 
     N = int(input())
+    alps = dd()
+    for line in arr:
 
 
 
