@@ -22,7 +22,7 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N, arr
+    global N, arr, set_, trans
     N = int(input())
     arr = [list(input().strip()) for _ in range(N)]
     set_ = set()
@@ -50,7 +50,7 @@ def main(f=None):
 def solve(perm):
     sum_ = 0
     for l in arr:
-        num_ = int(''.join(perm[i] for i in l))
+        num_ = int(''.join(perm[trans[i]] for i in l))
         sum_ += num_
     return sum_
 
