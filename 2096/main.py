@@ -31,15 +31,14 @@ def main(f=None):
     for line in sys.stdin:
         x, y, z = line.split()
 
-        minA[0] = mat[i][0] + min(a[0], a[1])
-        minA[1] = mat[i][1] + min(a[0], a[1], a[2])
-        minA[2] = mat[i][2] + min(a[1], a[2])
+        minA[0] = x + min(minA[0], minA[1])
+        minA[1] = y + min(minA[0], minA[1], minA[2])
+        minA[2] = z + min(minA[1], minA[2])
 
 
-    for i in range(1, N):
-        maxA[0] = mat[i][0] + max(a[0], a[1])
-        maxA[1] = mat[i][1] + max(a[0], a[1], a[2])
-        maxA[2] = mat[i][2] + max(a[1], a[2])
+        mmaxAxA[0] = x + mmaxAx(maxA[0], maxA[1])
+        mmaxAxA[1] = y + mmaxAx(maxA[0], maxA[1], maxA[2])
+        mmaxAxA[2] = z + mmaxAx(maxA[1], maxA[2])
 
     min_ = min(minA)
     max_ = max(maxA)
