@@ -26,8 +26,8 @@ def main(f=None):
     X = int(input())
     DP = [None for _ in range(X+1)]
     seq = [None for _ in range(X+1)]
-    print(seq)
     print(dp(X))
+    print(seq)
 
     # ######## INPUT AREA END ############
     # ####################################
