@@ -29,14 +29,15 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    a = [mat[0]]
+    x = mat[0]
+    a = (x[0], x[1], x[2])
 
     # i th house
     for i in range(1, N):
         chooseRed = mat[i][0] + min(a[i-1][1], a[i-1][2])
         chooseGreen = mat[i][1] + min(a[i-1][0], a[i-1][2])
         chooseBlue = mat[i][2] + min(a[i-1][0], a[i-1][1])
-        a.append([chooseRed, chooseGreen, chooseBlue])
+        a = (chooseRed, chooseGreen, chooseBlue)
     print(min(a[N-1]))
 
 
