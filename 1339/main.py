@@ -38,7 +38,6 @@ def main(f=None):
         dic = {}
         for a, p in zip(alps, perm):
             dic[a] = p
-        print(dic)
         max_ = max(max_, solve())
     print(max_)
 
@@ -46,6 +45,8 @@ def main(f=None):
 def solve():
     sum_ = 0
     for l in arr:
+        a = ''.join(dic[c] for c in l)
+        print(a)
         num_ = int(''.join(dic[c] for c in l))
         sum_ += num_
     return sum_
