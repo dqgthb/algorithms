@@ -42,8 +42,9 @@ def main(f=None):
 
     sum_ = 0
     for line in input_:
-        sum_ += int(''.join(trans[c] for c in line))
-        print(sum_)
+        num = int(''.join(trans[c] for c in line))
+        print(num)
+        sum_ += num
     print(sum_)
 
 
