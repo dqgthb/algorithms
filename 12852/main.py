@@ -22,6 +22,7 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
+    global X, DP
     X = int(input())
     DP = [10**9 for _ in range(X+1)]
 
@@ -32,8 +33,14 @@ def main(f=None):
 def dp(x):
     if x == 1:
         return 0
+    if DP[x] is not None:
+        return DP[x]
     else:
-        a = dp(x//3)
+        cands = [dp(x-1)]
+        if x % 3 == 0:
+            cands.append(dp(x//3))
+        if x % 2 == 0:
+            cands.append(dp(x//2))
 
 
 
