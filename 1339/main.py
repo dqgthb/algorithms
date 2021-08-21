@@ -32,15 +32,13 @@ def main(f=None):
 
     lst = [(v, k) for k, v in alps.items()]
     lst.sort(reverse=True)
-    print(lst)
 
-    trans = {}
     sum_ = 0
     for i, c in zip(range(9, -1, -1), lst):
-        val, alp = c
-        trans[alp] = str(i)
+        val, _ = c
+        sum_ += val * i
 
-        sum_
+    print(sum_)
 
 
 
