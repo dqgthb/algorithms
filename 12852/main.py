@@ -39,11 +39,11 @@ def dp(x):
     if DP[x] is not None:
         return DP[x]
     else:
-        cands = [dp(x-1)]
-        if x % 3 == 0:
-            cands.append(dp(x//3))
+        cands = [dp(x-1), 10**9, 10**9]
         if x % 2 == 0:
-            cands.append(dp(x//2))
+            cands[1] = dp(x//2)
+        if x % 3 == 0:
+            cands[2]= dp(x//3)
 
         DP[x] = min(cands) + 1
         idx = cands.index(min(cands))
