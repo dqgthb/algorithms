@@ -25,6 +25,10 @@ def main(f=None):
     N = int(input())
     mat = [list(map(int, input().split())) for _ in range(N)]
 
+    for line in sys.stdin:
+        x, y, z = line.split()
+
+
     # ######## INPUT AREA END ############
     # ####################################
 
