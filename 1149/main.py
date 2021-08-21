@@ -33,11 +33,11 @@ def main(f=None):
 
     # i th house
     for i in range(1, N):
-        chooseRed = min(a[i-1][1], a[i-1][2])
-        chooseGreen = min(a[i-1][0], a[i-1][2])
-        chooseBlue = min(a[i-1][0], a[i-1][1])
+        chooseRed = mat[i][0] + min(a[i-1][1], a[i-1][2])
+        chooseGreen = mat[i][1] + min(a[i-1][0], a[i-1][2])
+        chooseBlue = mat[i][2] + min(a[i-1][0], a[i-1][1])
         a.append([chooseRed, chooseGreen, chooseBlue])
-    print(a)
+    print(a[N-1])
 
 
 
@@ -118,4 +118,4 @@ def parr(arr):
 
 
 if __name__ == "__main__":
-    main()
+    mai
