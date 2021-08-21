@@ -22,8 +22,10 @@ def main(f=None):
 
     N = int(input())
     alps = {c:0 for c in "ABCDEFGHIJ"}
+    input_ = []
     for _ in range(N):
         line = list(input().strip())
+        input_.append(line)
         line.reverse()
         for i, c in enu(line):
             alps[c] += 1 * 10 ** i
@@ -34,9 +36,12 @@ def main(f=None):
     trans = {}
     for i, c in zip(range(9, -1, -1), lst):
         val, alp = c
-        trans[c] = i
+        trans[alp] = i
 
-    print(trans)
+    sum_ = 0
+    for line in input_:
+
+
 
 
 
