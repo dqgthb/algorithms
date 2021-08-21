@@ -29,19 +29,17 @@ def main(f=None):
     for l in arr:
         for c in l:
             set_.add(c)
-    #arr = [[ord(c)-ord('A') for c in str_] for str_ in arr]
     len_ = len(set_)
 
     trans = {c:i for c, i in zip(set_, range(len_))}
+    arr = [[ord(c)-ord('A') for c in str_] for str_ in arr]
 
     # ######## INPUT AREA END ############
     # ####################################
 
-    alps = "ABCDEFGHIJ"
     nums = list(map(str, [i for i in range(9, 9-len_, -1)]))
     max_ = -1
 
-    global dic
     for perm in itertools.permutations(nums):
         max_ = max(max_, solve(perm))
     print(max_)
