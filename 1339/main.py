@@ -31,11 +31,17 @@ def main(f=None):
 
     alps = "ABCDEFGHIJ"
     nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    max_ = -1
 
     for perm in itertools.permutations(nums):
         dic = {}
-        for
+        for a, p in zip(alps, perm):
+            dic[a] = p
+            max_ = max(max_, solve())
+    print(max_)
 
+
+def solve():
 
 
 
