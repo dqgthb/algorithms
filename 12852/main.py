@@ -45,6 +45,7 @@ def dp(x):
             cands.append(dp(x//2))
 
         DP[x] = min(cands) + 1
+        idx = cands.index(min(cands))
 
         return DP[x]
 
