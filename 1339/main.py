@@ -25,9 +25,12 @@ def main(f=None):
     global N, arr
     N = int(input())
     arr = [list(input().strip()) for _ in range(N)]
-    set_ = {}
-    for i
+    set_ = set()
+    for l in arr:
+        for c in l:
+            set_.add(c)
     #arr = [[ord(c)-ord('A') for c in str_] for str_ in arr]
+    l = len(set_)
 
     # ######## INPUT AREA END ############
     # ####################################
