@@ -22,9 +22,10 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global X, DP
+    global X, DP, seq
     X = int(input())
-    DP = [10**9 for _ in range(X+1)]
+    DP = [None for _ in range(X+1)]
+    seq = []
     print(dp(X))
 
     # ######## INPUT AREA END ############
@@ -43,7 +44,7 @@ def dp(x):
         if x % 2 == 0:
             cands.append(dp(x//2))
 
-        DP[x] = min(cands)
+        DP[x] = min(cands) + 1
         return DP[x]
 
 
