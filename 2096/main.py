@@ -38,6 +38,14 @@ def main(f=None):
 
     print(min(a))
 
+    a = mat[0]
+    for i in range(1, N):
+        chooseFirst = mat[i][0] + max(a[0], a[1])
+        chooseSecond = mat[i][1] + max(a[0], a[1], a[2])
+        chooseThird = mat[i][2] + max(a[1], a[2])
+        a = (chooseFirst, chooseSecond, chooseThird)
+    print(max(a))
+
 
 
 # #############################################################################
