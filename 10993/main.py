@@ -47,6 +47,7 @@ def drawStar(n, x, y):
         for i in range(h):
             mat[x+i][y+i] = '*'
             mat[x+i][y+w-i-1] = '*'
+        drawStar(n-1, 0, 2 ** (n-1) + 1)
 
     else:
         for i in range(w):
@@ -54,8 +55,7 @@ def drawStar(n, x, y):
         for i in range(1, h):
             mat[x+h-i-1][y+i] = '*'
             mat[x+i][y+w//2 + i] = '*'
-
-    drawStar(n-1, h//2, 2 ** (n-1) + 1)
+        drawStar(n-1, h//2, 2 ** (n-1) + 1)
 
 
 
