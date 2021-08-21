@@ -26,6 +26,7 @@ def main(f=None):
     X = int(input())
     DP = [None for _ in range(X+1)]
     seq = [None for _ in range(X+1)]
+    print(seq)
     print(dp(X))
 
     # ######## INPUT AREA END ############
@@ -46,6 +47,7 @@ def dp(x):
 
         DP[x] = min(cands) + 1
         idx = cands.index(min(cands))
+        seq[x] = idx
 
         return DP[x]
 
