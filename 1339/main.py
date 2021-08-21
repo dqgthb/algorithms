@@ -23,7 +23,8 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     global N
-    arr = [int(i) for i in input().split()]
+    N = int(input())
+    arr = [int(input()) for _ in range(N)]
 
     # ######## INPUT AREA END ############
     # ####################################
