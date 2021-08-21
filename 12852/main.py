@@ -25,7 +25,7 @@ def main(f=None):
     global X, DP, seq
     X = int(input())
     DP = [None for _ in range(X+1)]
-    seq = []
+    seq = [None for _ in range(X+1)]
     print(dp(X))
 
     # ######## INPUT AREA END ############
@@ -45,6 +45,7 @@ def dp(x):
             cands.append(dp(x//2))
 
         DP[x] = min(cands) + 1
+
         return DP[x]
 
 
