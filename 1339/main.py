@@ -32,6 +32,7 @@ def main(f=None):
 
     lst = [(v, k) for k, v in alps.items()]
     lst.sort(reverse=True)
+    print(lst)
 
     trans = {}
     for i, c in zip(range(9, -1, -1), lst):
