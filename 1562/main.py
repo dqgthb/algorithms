@@ -33,6 +33,14 @@ def solve(startsWithN, digits):
     if digits == 1:
         return 1
     else:
+        if startsWithN == 0:
+            return solve(1, digits-1)
+        elif startsWithN == 9:
+            return solve(8, digits-1)
+        else:
+            a = solve(startsWithN-1, digits-1)
+            b = solve(startsWithN+1, digits-1)
+            return a + b
 
 
 # #############################################################################
