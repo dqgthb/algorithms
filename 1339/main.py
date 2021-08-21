@@ -24,7 +24,7 @@ def main(f=None):
 
     global N, arr
     N = int(input())
-    arr = [int(input()) for _ in range(N)]
+    arr = [input().strip() for _ in range(N)]
 
     # ######## INPUT AREA END ############
     # ####################################
@@ -32,8 +32,8 @@ def main(f=None):
     alps = "ABCDEFGHIJ"
     nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-    for i in range(nums):
-        print(nums)
+    for i in itertools.permutations(nums):
+        print(i)
 
 
 
