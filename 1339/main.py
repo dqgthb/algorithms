@@ -36,7 +36,7 @@ def main(f=None):
     # ####################################
 
     alps = "ABCDEFGHIJ"
-    nums =
+    nums = list(map(str, [i for i in range(9, 9-len_, -1)]))
     max_ = -1
 
     global dic
