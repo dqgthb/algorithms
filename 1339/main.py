@@ -34,13 +34,12 @@ def main(f=None):
     max_ = -1
 
     global dic
-
     for perm in itertools.permutations(nums):
         dic = {}
         for a, p in zip(alps, perm):
             dic[a] = p
-            max_ = max(max_, solve())
-            print(max_)
+        print(dic)
+        max_ = max(max_, solve())
     print(max_)
 
 
