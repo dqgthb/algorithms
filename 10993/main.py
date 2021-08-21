@@ -26,7 +26,7 @@ def main(f=None):
     #N = int(input())
     N = 3
     h = 2 ** N - 1
-    w = 2 * h
+    w = 2 * h - 1
     mat = Mat(h, w, default=" ")
     drawStar(N, 0, 0)
     parr(mat)
@@ -37,7 +37,7 @@ def main(f=None):
 
 def drawStar(n, x, y):
     h = 2 ** n - 1
-    w = 2 * h
+    w = 2 * h - 1
     if n % 2 == 0:
         for i in range(w):
             mat[0][i] = '*'
@@ -46,6 +46,7 @@ def drawStar(n, x, y):
             mat[h-1][i] = '*'
         for i in range(1, h):
             mat[h-i-1][i] = '*'
+            mat[w//2+i][i] = '*'
 
 
 
