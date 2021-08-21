@@ -44,6 +44,8 @@ def drawStar(n, x, y):
     else:
         for i in range(w):
             mat[h-1][i] = '*'
+        for i in range(1, h):
+            mat[h-i-1][i] = '*'
 
 
 
