@@ -31,7 +31,8 @@ def main(f=None):
     sum_ = 0
     for i in range(10):
         a =  solve(i, N)
-        print(sum_)
+        print(a)
+        sum_ += a
     print(sum_)
 
 
