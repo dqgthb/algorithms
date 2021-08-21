@@ -24,12 +24,12 @@ def main(f=None):
 
     global N, mat
     #N = int(input())
-    N = 4
+    N = 3
     h = 2 ** N - 1
     w = 2 * h
     mat = Mat(h, w, default=" ")
-    parr(mat)
     drawStar(N, 0, 0)
+    parr(mat)
 
     # ######## INPUT AREA END ############
     # ####################################
@@ -37,10 +37,14 @@ def main(f=None):
 
 def drawStar(n, x, y):
     h = 2 ** n - 1
-    w = 2 * n
+    w = 2 * h
     if n % 2 == 0:
         for i in range(w):
             mat[0][i] = '*'
+    else:
+        for i in range(w):
+            mat[h-1][i] = '*'
+
 
 
 
