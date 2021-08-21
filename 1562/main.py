@@ -28,6 +28,12 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+    sum_ = 0
+    for i in range(10):
+        sum_ += solve(i, N-1)
+    print(sum_)
+
+
 
 def solve(startsWithN, digits):
     if digits == 1:
