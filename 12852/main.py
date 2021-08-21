@@ -25,6 +25,7 @@ def main(f=None):
     global X, DP
     X = int(input())
     DP = [10**9 for _ in range(X+1)]
+    print(dp(X))
 
     # ######## INPUT AREA END ############
     # ####################################
@@ -41,6 +42,9 @@ def dp(x):
             cands.append(dp(x//3))
         if x % 2 == 0:
             cands.append(dp(x//2))
+
+        DP[x] = min(cands)
+        return DP[x]
 
 
 
