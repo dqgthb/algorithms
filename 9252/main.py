@@ -38,7 +38,7 @@ def main(f=None):
     str_ = ""
     if ans != 0:
         x, y = 0, 0
-        while x != la and y != lb:
+        while True:
             cur = dp[x][y]
             if 0 <= x+1 < la and dp[x+1][y] == cur:
                 x += 1
@@ -51,7 +51,10 @@ def main(f=None):
                 str_ += a[x]
                 x+=1
                 y+=1
-            print(x, y)
+
+            if x == la - 1 and y == lb - 1:
+
+            print(str_)
 
 
 
