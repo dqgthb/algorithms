@@ -53,6 +53,7 @@ def main(f=None):
                 y+=1
 
             if x == la - 1 and y == lb - 1:
+                break
 
             print(str_)
 
