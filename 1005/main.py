@@ -57,10 +57,12 @@ def solve():
         ans.append(building)
         time[tier] = max(time[tier], times[building])
         if building == target:
+            targetTier = tier
         for nextBuilding in G[building]:
             numParens[nextBuilding] -= 1
             if numParens[nextBuilding] == 0:
                 q.append((nextBuilding, tier + 1))
+    print(sum(time[:targetTier+1]))
 
 
 
