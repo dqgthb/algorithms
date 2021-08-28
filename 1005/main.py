@@ -27,8 +27,11 @@ def main(f=None):
     for _ in range(T):
         N, K = map(int, input().split())
         times = [int(i) for i in input().split()]
+        G = [[] for _ in range(N)]
+        numParens = [0 for _ in range(N)]
 
         for _ in range(K):
+
 
 
 
