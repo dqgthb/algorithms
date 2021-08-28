@@ -47,9 +47,9 @@ def solve(x, y):
     cand3 = 0
     if a[x] == b[y]:
         cand3 = 1 + solve(x+1, y+1)
-    max(cand1, cand2, cand3)
-
-    return max(cand1, cand2, cand3)
+    ans = max(cand1, cand2, cand3)
+    dp[x][y] = ans
+    return dp[x][y]
 
 
 
