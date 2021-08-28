@@ -32,6 +32,7 @@ def main(f=None):
 
         for _ in range(K):
             from_, to = map(int, input().split())
+            from_ -= 1
             G[from_].append(to)
             numParens[to] += 1
         target = int(input())
@@ -42,6 +43,12 @@ def main(f=None):
     # ####################################
 
     def solve():
+        q = deque()
+        for i, e in enu(numParens):
+            if e == 0:
+                q.append(i)
+
+
 
 
 
