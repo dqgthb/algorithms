@@ -22,7 +22,7 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global T, N, K, times
+    global T, N, K, times, G, numParens
     T = int(input())
     for _ in range(T):
         N, K = map(int, input().split())
@@ -31,12 +31,16 @@ def main(f=None):
         numParens = [0 for _ in range(N)]
 
         for _ in range(K):
-
-
+            from_, to = map(int, input().split())
+            G[from_].append(to)
+            numParens[to] += 1
+        solve()
 
 
     # ######## INPUT AREA END ############
     # ####################################
+
+    def solve():
 
 
 # #############################################################################
