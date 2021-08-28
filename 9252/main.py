@@ -38,6 +38,7 @@ def main(f=None):
     if ans != 0:
         x, y = 0, 0
         while True:
+            if 0 <= x+1 < la:
 
 
 def solve(x, y):
