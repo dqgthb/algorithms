@@ -35,9 +35,10 @@ def main(f=None):
     ans = solve(0, 0)
     print(ans)
     parr(dp)
+    str_ = ""
     if ans != 0:
         x, y = 0, 0
-        while True:
+        while x != la and y != lb:
             cur = dp[x][y]
             if 0 <= x+1 < la and dp[x+1][y] == cur:
                 x += 1
@@ -47,6 +48,7 @@ def main(f=None):
                 continue
 
             if x + 1 < la and y + 1 < lb:
+                str_ += a[x]
                 x+=1
                 y+=1
             print(x, y)
