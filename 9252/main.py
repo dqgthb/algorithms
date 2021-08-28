@@ -35,6 +35,7 @@ def main(f=None):
     ans = solve(0, 0)
     print(ans)
     parr(dp)
+    if ans != 0:
 
 
 def solve(x, y):
