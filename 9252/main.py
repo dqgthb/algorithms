@@ -37,14 +37,17 @@ def main(f=None):
 
 
 def solve(x, y):
+    if dp[x][y] is not None:
+        return dp[x][y]
     if x == la or y == lb:
         return 0
 
-    cand1 = solve(x[1:], y[0:])
-    cand2 = solve(x[0:], y[1:])
+    cand1 = solve(x+1, y)
+    cand2 = solve(x, y+1)
     cand3 = 0
-    if x[0] == y[0]:
-        cand3 = 1 + solve(x[1:], y[1:])
+    if a[x] == b[y]:
+        cand3 = 1 + solve(x+1, y+1)
+    max(cand1, cand2, cand3)
 
     return max(cand1, cand2, cand3)
 
