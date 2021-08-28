@@ -51,6 +51,11 @@ def main(f=None):
 
         while q:
             building = q.popleft()
+            for nextBuilding in G[building]:
+                numParens[nextBuilding] -= 1
+                if numParens[nextBuilding] == 0:
+                    q.append(nextBuilding)
+
 
 
 
