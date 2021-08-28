@@ -46,7 +46,7 @@ def main(f=None):
 def solve():
     q = deque()
     ans = []
-    requiredTime = [i for i in range(N)]
+    requiredTime = [i for i in times]
     targetTier = 0
     for i, e in enu(numParens):
         if e == 0:
@@ -59,6 +59,7 @@ def solve():
             targetTier = tier
 
         for nextBuilding in G[building]:
+            requiredTime[nextBuilding] = max(requiredTime[building])
             numParens[nextBuilding] -= 1
             if numParens[nextBuilding] == 0:
                 q.append((nextBuilding, tier + 1))
