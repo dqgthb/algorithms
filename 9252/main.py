@@ -31,7 +31,8 @@ def main(f=None):
     # ####################################
 
 
-def solve(x, B):
+def solve(x, xi, y, yi):
+
 
 
 
