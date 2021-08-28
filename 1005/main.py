@@ -59,11 +59,11 @@ def solve():
             targetTier = tier
 
         for nextBuilding in G[building]:
-            requiredTime[nextBuilding] = max(requiredTime[building])
+            requiredTime[nextBuilding] = max(requiredTime[building] + times[nextBuilding], requiredTime[nextBuilding])
             numParens[nextBuilding] -= 1
             if numParens[nextBuilding] == 0:
                 q.append((nextBuilding, tier + 1))
-
+    print(requiredTime[target])
 
 
 
