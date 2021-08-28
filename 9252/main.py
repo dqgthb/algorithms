@@ -31,7 +31,10 @@ def main(f=None):
     # ####################################
 
 
-def solve(x, xi, y, yi):
+def solve(x, y):
+
+    if x[0] == y[0]:
+        return max(solve(x[1:], y[1:])+1, )
 
 
 
