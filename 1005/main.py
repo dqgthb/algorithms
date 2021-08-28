@@ -47,6 +47,7 @@ def solve():
     q = deque()
     ans = []
     time = [0 for _ in range(N)]
+    targetTier = 0
     for i, e in enu(numParens):
         if e == 0:
             q.append((i, 0))
@@ -56,8 +57,6 @@ def solve():
         ans.append(building)
         time[tier] = max(time[tier], times[building])
         if building == target:
-            print(sum(time[:tier+1]))
-            return
         for nextBuilding in G[building]:
             numParens[nextBuilding] -= 1
             if numParens[nextBuilding] == 0:
