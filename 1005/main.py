@@ -49,16 +49,18 @@ def solve():
     time = [0 for _ in range(N)]
     for i, e in enu(numParens):
         if e == 0:
-            q.append(i)
+            q.append((i, 0))
 
     while q:
-        building = q.popleft()
+        building, tier = q.popleft()
         ans.append(building)
+        time[tier] = max(time[tier], times[building])
         for nextBuilding in G[building]:
             numParens[nextBuilding] -= 1
             if numParens[nextBuilding] == 0:
-                q.append(nextBuilding)
+                q.append((nextBuilding, tier + 1))
     print(ans)
+    print(times)
 
 
 
