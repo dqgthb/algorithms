@@ -56,7 +56,8 @@ def solve():
         ans.append(building)
         time[tier] = max(time[tier], times[building])
         if building == target:
-            print(time[:tier+1])
+            print(sum(time[:tier+1]))
+            return
         for nextBuilding in G[building]:
             numParens[nextBuilding] -= 1
             if numParens[nextBuilding] == 0:
