@@ -54,13 +54,14 @@ def solve():
     while q:
         building, tier = q.popleft()
         ans.append(building)
+        print(time)
         time[tier] = max(time[tier], times[building])
         for nextBuilding in G[building]:
             numParens[nextBuilding] -= 1
             if numParens[nextBuilding] == 0:
                 q.append((nextBuilding, tier + 1))
     print(ans)
-    print(times)
+    print(time)
 
 
 
