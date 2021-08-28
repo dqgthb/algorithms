@@ -32,9 +32,12 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+    for i in range(la-1, -1, -1):
+        for j in range(lb-1, -1, -1):
+            solve(i, j)
+
     ans = solve(0, 0)
     print(ans)
-    parr(dp)
     str_ = ""
     if ans != 0:
         x, y = 0, 0
@@ -53,18 +56,24 @@ def main(f=None):
                 y+=1
                 continue
 
-            if x + 1 == la:
+            if x + 1 == la and y + 1 < lb:
+                if cur != dp[x][y+1]:
+                    str_ += a[x]
                 y += 1
                 continue
 
-            if y + 1 == lb:
+            if y + 1 == lb and x + 1 < la:
+                if cur != dp[x+1][y]:
+                    str_ += a[x]
                 x += 1
                 continue
 
             if x == la - 1 and y == lb - 1:
+                if dp[x][y] == 1:
+                    str_ += a[x]
                 break
 
-            print(str_)
+        print(str_)
 
 
 
