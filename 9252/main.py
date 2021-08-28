@@ -36,6 +36,8 @@ def main(f=None):
     print(ans)
     parr(dp)
     if ans != 0:
+        x, y = 0, 0
+        while True:
 
 
 def solve(x, y):
