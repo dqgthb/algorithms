@@ -46,6 +46,11 @@ def main(f=None):
                 y += 1
                 continue
 
+            if x + 1 < la and y + 1 < lb:
+                x+=1
+                y+=1
+            print(x, y)
+
 
 
 def solve(x, y):
