@@ -22,10 +22,15 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
+    global T, N, K, times
     T = int(input())
     for _ in range(T):
         N, K = map(int, input().split())
         times = [int(i) for i in input().split()]
+
+        for _ in range(K):
+
+
 
     # ######## INPUT AREA END ############
     # ####################################
