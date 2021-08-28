@@ -43,19 +43,21 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    def solve():
-        q = deque()
-        ans = []
-        for i, e in enu(numParens):
-            if e == 0:
-                q.append(i)
+def solve():
+    q = deque()
+    ans = []
+    for i, e in enu(numParens):
+        if e == 0:
+            q.append(i)
 
-        while q:
-            building = q.popleft()
-            for nextBuilding in G[building]:
-                numParens[nextBuilding] -= 1
-                if numParens[nextBuilding] == 0:
-                    q.append(nextBuilding)
+    while q:
+        building = q.popleft()
+        ans.append(building)
+        for nextBuilding in G[building]:
+            numParens[nextBuilding] -= 1
+            if numParens[nextBuilding] == 0:
+                q.append(nextBuilding)
+    print(ans)
 
 
 
