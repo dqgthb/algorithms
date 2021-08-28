@@ -33,8 +33,10 @@ def main(f=None):
 
 def solve(x, y):
 
+    cand1 = solve(x[1:], y[0:])
+    cand2 = solve(x[0:], y[1:])
     if x[0] == y[0]:
-        return max(solve(x[1:], y[1:])+1, )
+        cand3 = solve(x[1:], y[1:])
 
 
 
