@@ -22,9 +22,11 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global a, b, dp
+    global a, b, dp, la, lb
     a = input().strip()
+    la = (len(a))
     b = input().strip()
+    lb= (len(b))
     dp = Mat(len(a), len(b))
 
     # ######## INPUT AREA END ############
@@ -35,7 +37,7 @@ def main(f=None):
 
 
 def solve(x, y):
-    if x == '' or y == '':
+    if x == la or y == lb:
         return 0
 
     cand1 = solve(x[1:], y[0:])
