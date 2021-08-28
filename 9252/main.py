@@ -51,6 +51,15 @@ def main(f=None):
                 str_ += a[x]
                 x+=1
                 y+=1
+                continue
+
+            if x + 1 == la:
+                y += 1
+                continue
+
+            if y + 1 == lb:
+                x += 1
+                continue
 
             if x == la - 1 and y == lb - 1:
                 break
