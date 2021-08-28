@@ -45,6 +45,7 @@ def main(f=None):
 
     def solve():
         q = deque()
+        ans = []
         for i, e in enu(numParens):
             if e == 0:
                 q.append(i)
