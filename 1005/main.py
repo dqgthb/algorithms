@@ -25,6 +25,7 @@ def main(f=None):
     T = int(input())
     for _ in range(T):
         N, K = map(int, input().split())
+        times = [int(i) for i in input().split()]
 
     # ######## INPUT AREA END ############
     # ####################################
