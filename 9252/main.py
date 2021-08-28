@@ -38,7 +38,14 @@ def main(f=None):
     if ans != 0:
         x, y = 0, 0
         while True:
-            if 0 <= x+1 < la:
+            cur = dp[x][y]
+            if 0 <= x+1 < la and dp[x+1][y] == cur:
+                x += 1
+                continue
+            if 0 <= y+1 < lb and dp[x][y+1] == cur:
+                y += 1
+                continue
+
 
 
 def solve(x, y):
