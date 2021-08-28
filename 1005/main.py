@@ -36,7 +36,7 @@ def main(f=None):
             to -= 1
             G[from_].append(to)
             numParens[to] += 1
-        target = int(input())
+        target = int(input())-1
         solve()
 
 
@@ -54,14 +54,13 @@ def solve():
     while q:
         building, tier = q.popleft()
         ans.append(building)
-        print(time)
         time[tier] = max(time[tier], times[building])
+        if building == target:
+            print(time[:tier+1])
         for nextBuilding in G[building]:
             numParens[nextBuilding] -= 1
             if numParens[nextBuilding] == 0:
                 q.append((nextBuilding, tier + 1))
-    print(ans)
-    print(time)
 
 
 
