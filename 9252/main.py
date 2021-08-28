@@ -30,13 +30,21 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
+    ans = solve(a, b)
+    print(ans)
+
 
 def solve(x, y):
+    if x == '' or y == '':
+        return 0
 
     cand1 = solve(x[1:], y[0:])
     cand2 = solve(x[0:], y[1:])
+    cand3 = 0
     if x[0] == y[0]:
-        cand3 = solve(x[1:], y[1:])
+        cand3 = 1 + solve(x[1:], y[1:])
+
+    return max(cand1, cand2, cand3)
 
 
 
