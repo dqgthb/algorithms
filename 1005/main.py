@@ -46,6 +46,7 @@ def main(f=None):
 def solve():
     q = deque()
     ans = []
+    time = [0 for _ in range(N)]
     for i, e in enu(numParens):
         if e == 0:
             q.append(i)
