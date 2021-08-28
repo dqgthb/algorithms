@@ -32,15 +32,16 @@ def main(f=None):
     # ######## INPUT AREA END ############
     # ####################################
 
-    ans = solve(a, b)
+    ans = solve(0, 0)
     print(ans)
+    parr(dp)
 
 
 def solve(x, y):
-    if dp[x][y] is not None:
-        return dp[x][y]
     if x == la or y == lb:
         return 0
+    if dp[x][y] is not None:
+        return dp[x][y]
 
     cand1 = solve(x+1, y)
     cand2 = solve(x, y+1)
