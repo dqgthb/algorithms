@@ -62,7 +62,7 @@ def solve():
             numParens[nextBuilding] -= 1
             if numParens[nextBuilding] == 0:
                 q.append((nextBuilding, tier + 1))
-    print(sum(time[:targetTier+1]))
+    print(sum(time[:targetTier]) + times[target])
 
 
 
