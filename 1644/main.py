@@ -22,46 +22,55 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    # NOTICE
-    # used topological sort
-    # can also use dfs?
-
-    global n, arr, G, numParents
-    T = int(input())
-    for _ in range(T):
-        n = int(input())
-        arr = [int(i)-1 for i in input().split()]
-        G = [[] for _ in range(n)]
-        numParents = [0] * n
-        for i, e in enu(arr):
-            G[i].append(e)
-            numParents[e] += 1
-        ans = solve()
-        print(ans)
+    global N
+    N = int(input())
+    sieve = [True for _ in range(N+1)]
 
     # ######## INPUT AREA END ############
     # ####################################
 
-def solve():
+    sieve[0] = False
+    sieve[1] = False
+    for i in range(2, N+1):
+        j = 2
+        k = 4
+        while k <= N:
+            sieve[k] = False
+            j += 1
+            k = i * j
 
-    numToTeam = 0
-    q = deque()
-    for i, e in enu(numParents):
-        if e == 0:
-            q.append(i)
+    primes = []
+    for i, b in enu(sieve):
+        if b:
+            primes.append(i)
 
-    while q:
-        student = q.popleft()
-        numToTeam += 1
+    left = 0
+    right = 0
+    L = len(primes)
+    if L == 0:
+        print(0)
+        exit()
 
-        for chosenStudent in G[student]:
-            numParents[chosenStudent] -= 1
-            if numParents[chosenStudent] == 0:
-                q.append(chosenStudent)
-
-    return numToTeam
-
-
+    val = primes[right]
+    count = 0
+    while left <= right:
+        if val < N:
+            right += 1
+            if right == L:
+                break
+            val += primes[right]
+        elif val > N:
+            val -= primes[left]
+            left += 1
+        else:
+            count += 1
+            val -= primes[left]
+            left += 1
+            right += 1
+            if right == L:
+                break
+            val += primes[right]
+    print(count)
 
 
 

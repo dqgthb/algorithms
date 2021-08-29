@@ -22,48 +22,36 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    # NOTICE
-    # used topological sort
-    # can also use dfs?
-
-    global n, arr, G, numParents
-    T = int(input())
-    for _ in range(T):
-        n = int(input())
-        arr = [int(i)-1 for i in input().split()]
-        G = [[] for _ in range(n)]
-        numParents = [0] * n
-        for i, e in enu(arr):
-            G[i].append(e)
-            numParents[e] += 1
-        ans = solve()
-        print(ans)
+    global N, M, A, c, dp
+    N, M = map(int, input().split())
+    A = [int(i) for i in input().split()]
+    c = [int(i) for i in input().split()]
+    dp = Mat(N, sum(c) + 1)
 
     # ######## INPUT AREA END ############
     # ####################################
 
-def solve():
-
-    numToTeam = 0
-    q = deque()
-    for i, e in enu(numParents):
-        if e == 0:
-            q.append(i)
-
-    while q:
-        student = q.popleft()
-        numToTeam += 1
-
-        for chosenStudent in G[student]:
-            numParents[chosenStudent] -= 1
-            if numParents[chosenStudent] == 0:
-                q.append(chosenStudent)
-
-    return numToTeam
+    for cost in range(sum(c)+1):
+        ans = maxMemory(0, cost)
+        if ans >= M:
+            print(cost)
+            break
 
 
+def maxMemory(idx, cost):
+    if idx == N:
+        return 0
 
+    if dp[idx][cost] is not None:
+        return dp[idx][cost]
 
+    cand1 = 0
+    if cost-c[idx] >= 0:
+        cand1 = A[idx] + maxMemory(idx+1, cost-c[idx])
+    cand2 = maxMemory(idx+1, cost)
+    ret = max(cand1, cand2)
+    dp[idx][cost] = ret
+    return ret
 
 
 # #############################################################################

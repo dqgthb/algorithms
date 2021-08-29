@@ -15,6 +15,10 @@ from heapq import heappush, heappop
 from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
 
+# NOTICE
+# first trial failed because this solve function returns the minimum cost for required memory and the memory is too large.
+# Think differently.
+# Design a function which returns the maximum memory per cost
 
 def main(f=None):
     init(f)
@@ -22,46 +26,33 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    # NOTICE
-    # used topological sort
-    # can also use dfs?
-
-    global n, arr, G, numParents
-    T = int(input())
-    for _ in range(T):
-        n = int(input())
-        arr = [int(i)-1 for i in input().split()]
-        G = [[] for _ in range(n)]
-        numParents = [0] * n
-        for i, e in enu(arr):
-            G[i].append(e)
-            numParents[e] += 1
-        ans = solve()
-        print(ans)
+    global N, M, A, c, dp
+    N, M = map(int, input().split())
+    A = [int(i) for i in input().split()]
+    c = [int(i) for i in input().split()]
+    dp = Mat(N, M+1)
 
     # ######## INPUT AREA END ############
     # ####################################
 
-def solve():
-
-    numToTeam = 0
-    q = deque()
-    for i, e in enu(numParents):
-        if e == 0:
-            q.append(i)
-
-    while q:
-        student = q.popleft()
-        numToTeam += 1
-
-        for chosenStudent in G[student]:
-            numParents[chosenStudent] -= 1
-            if numParents[chosenStudent] == 0:
-                q.append(chosenStudent)
-
-    return numToTeam
+    ans = solve(0, M)
+    print(ans)
 
 
+def solve(idx, memoryRequired):
+    if memoryRequired <= 0:
+        return 0
+    if idx == N:
+        return 10 ** 15
+
+    if dp[idx][memoryRequired] is not None:
+        return dp[idx][memoryRequired]
+
+    cand1 = c[idx] + solve(idx+1, memoryRequired - A[idx])
+    cand2 = solve(idx+1, memoryRequired)
+    ans = min(cand1, cand2)
+    dp[idx][memoryRequired] = ans
+    return ans
 
 
 

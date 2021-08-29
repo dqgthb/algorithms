@@ -14,24 +14,60 @@ import math
 from heapq import heappush, heappop
 from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
+from typing import Optional, Union
+from typing import TypeVar
+from typing import List, cast
 
 
+dp:List[List[Optional[int]]]
 def main(f=None):
     init(f)
     # sys.setrecursionlimit(10**9)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
+
+    global N, r, c, arr, dp
     N = int(input())
     r, c = map(int, input().split())
     arr = [r, c]
     for _ in range(N-1):
         _, c = map(int, input().split())
         arr.append(c)
-    print(arr)
+    #print(arr)
+
+    dp = Mat(N, N)
+    ans = solve(0, N-1)
+    print(ans)
 
     # ######## INPUT AREA END ############
     # ####################################
+
+def solve(start: int, end: int) -> int:
+    if start == end:
+        return 0
+    ans: int = 10 ** 9
+
+    if dp[start][end] is not None:
+        ans = cast(int, dp[start][end])
+        return ans
+
+    for i in range(start, end):
+        s1 = solve(start, i)
+        s2 = solve(i+1, end)
+        if s1 is not None and s2 is not None:
+            cand: int = s1 + s2
+            cand += arr[start] * arr[i+1] * arr[end+1]
+            ans = min(ans, cand)
+
+    dp[start][end] = ans
+    return ans
+
+
+
+
+
+
 
 
 # #############################################################################
@@ -58,8 +94,8 @@ def For(*args):
 def copy2d(mat):
     return [row[:] for row in mat]
 
-
-def Mat(h, w, default=None):
+T = TypeVar('T')
+def Mat(h, w, default:Optional[T] = None) -> List[List[Optional[T]]]:
     return [[default for _ in range(w)] for _ in range(h)]
 
 

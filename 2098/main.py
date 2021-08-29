@@ -22,45 +22,54 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    # NOTICE
-    # used topological sort
-    # can also use dfs?
+    global N, dist, dp
+    N = int(input())
 
-    global n, arr, G, numParents
-    T = int(input())
-    for _ in range(T):
-        n = int(input())
-        arr = [int(i)-1 for i in input().split()]
-        G = [[] for _ in range(n)]
-        numParents = [0] * n
-        for i, e in enu(arr):
-            G[i].append(e)
-            numParents[e] += 1
-        ans = solve()
-        print(ans)
+    dist = [list(map(int, input().split())) for _ in range(N)]
+    for i, j in For(N, N):
+        if dist[i][j] == 0:
+            dist[i][j] = 10 ** 15
+
+    dp = Mat(N, 2 ** N)
+    mask = 2 ** N - 1
+    ans = 10 ** 15
+    '''
+    for i in range(3,N):
+        notVisited = mask & ~(2 ** i)
+        cand = tsp(i, i, notVisited)
+        print(cand)
+        ans = min(cand, ans)
+        parr(dp)
+    '''
+    notVisited = mask & ~(2 ** 0)
+    ans = tsp(0, 0, notVisited)
+    print(ans)
+
+
 
     # ######## INPUT AREA END ############
     # ####################################
 
-def solve():
 
-    numToTeam = 0
-    q = deque()
-    for i, e in enu(numParents):
-        if e == 0:
-            q.append(i)
+def tsp(start, from_, notVisited):
+    if notVisited == 0:
+        return dist[from_][start]
 
-    while q:
-        student = q.popleft()
-        numToTeam += 1
+    if dp[from_][notVisited] is not None:
+        print("dp!", from_, notVisited)
+        return dp[from_][notVisited]
 
-        for chosenStudent in G[student]:
-            numParents[chosenStudent] -= 1
-            if numParents[chosenStudent] == 0:
-                q.append(chosenStudent)
 
-    return numToTeam
-
+    ans = 10 ** 15
+    cand = 10 ** 15
+    mask = notVisited
+    for i in range(N):
+        mask, r = divmod(mask, 2)
+        if r == 1:
+            cand = dist[from_][i] + tsp(start, i, notVisited & ~(2 ** i))
+            ans = min(cand, ans)
+    dp[from_][notVisited] = ans
+    return ans
 
 
 

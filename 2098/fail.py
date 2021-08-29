@@ -22,45 +22,72 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    # NOTICE
-    # used topological sort
-    # can also use dfs?
+    global N, dist, dp
+    N = int(input())
+    dist = [list(map(int, input().split())) for _ in range(N)]
 
-    global n, arr, G, numParents
-    T = int(input())
-    for _ in range(T):
-        n = int(input())
-        arr = [int(i)-1 for i in input().split()]
-        G = [[] for _ in range(n)]
-        numParents = [0] * n
-        for i, e in enu(arr):
-            G[i].append(e)
-            numParents[e] += 1
-        ans = solve()
-        print(ans)
+    dp = nDim(N, 2 ** N)
+
+    ans = 10 ** 15
+
+    '''
+    for i in range(2 ** N):
+        for j in range(N):
+            solve(j, j, i)
+    '''
+
+    for i in range(N):
+        cand = solve(i, i, (2 ** N - 1) & ~(2 ** i))
+        print(cand)
+        ans = min(cand, ans)
+    #ans = solve(0, 0, 2 ** N - 1 & ~(2 ** 0))
+    print(ans)
+
+    parr(dp)
+
 
     # ######## INPUT AREA END ############
     # ####################################
 
-def solve():
 
-    numToTeam = 0
-    q = deque()
-    for i, e in enu(numParents):
-        if e == 0:
-            q.append(i)
+def solve(from_, to, mustVisit):
+    print(from_, to, format(mustVisit, '04b'))
 
-    while q:
-        student = q.popleft()
-        numToTeam += 1
+    ret = dp[from_][mustVisit]
+    if ret is not None:
+        return ret
 
-        for chosenStudent in G[student]:
-            numParents[chosenStudent] -= 1
-            if numParents[chosenStudent] == 0:
-                q.append(chosenStudent)
+    ret = 10 ** 15
 
-    return numToTeam
+    mask = mustVisit
+    idx = 0
+    while mask:
+        mask, r = divmod(mask, 2)
+        if idx == from_ or idx == to:
+            idx += 1
+            continue
 
+        if dist[from_][idx] == 0:
+            idx += 1
+            continue
+
+        if r == 1:
+            newMustVisit = mustVisit & ~(2**idx)
+            if newMustVisit == 0:
+                if dist[idx][to] != 0:
+                    ans = dist[from_][idx] + dist[idx][to]
+                    dp[from_][0] = ans
+                    return ans
+                else:
+                    dp[from_][0] = 10 ** 15
+                    return ans
+            else:
+                cand = dist[from_][idx] + solve(idx, to, newMustVisit)
+            ret = min(ret, cand)
+            print("ret updated to", ret)
+        idx += 1
+    dp[from_][mustVisit] = ret
+    return ret
 
 
 
