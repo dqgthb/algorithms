@@ -23,10 +23,16 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     while True:
-        ipt = input().split()
+        arr = [int(i) for i in input().split()]
+        if ipt[0] == 0:
+            return
+        solve(arr)
 
     # ######## INPUT AREA END ############
     # ####################################
+
+
+def solve(arr):
 
 
 # #############################################################################
