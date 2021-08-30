@@ -24,7 +24,7 @@ def main(f=None):
 
     while True:
         arr = [int(i) for i in input().split()]
-        if ipt[0] == 0:
+        if arr[0] == 0:
             return
         solve(arr)
 
@@ -33,6 +33,21 @@ def main(f=None):
 
 
 def solve(arr):
+    arr[0] = 0
+    arr.append(0)
+    stack = [0]
+    max_ = 0
+    for i in range(1, len(arr)):
+        while stack and arr[stack[-1]] > arr[i]:
+            height = arr[stack[-1]]
+            stack.pop()
+            width = i - stack[-1] - 1
+            max_ = max(max_, height * width)
+        stack.append(i)
+    print(max_)
+
+
+
 
 
 # #############################################################################
