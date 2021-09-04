@@ -23,6 +23,10 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     N, M, K = map(int, input().split())
+    arr = [int(input()) for _ in range(N)]
+    for _ in range(M + K):
+        a, b, c = map(int, input().split())
+        if a == 1:
 
 
     # ######## INPUT AREA END ############
