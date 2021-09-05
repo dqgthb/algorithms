@@ -47,7 +47,11 @@ def main(f=None):
 
 
 def dfs(node, parent):
+    parent[node][0] = parent
     for i in g[node]:
+        if not visited[i]:
+            visited[i] = True
+            dfs(i, node)
 
 
     # ######## INPUT AREA END ############
