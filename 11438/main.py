@@ -38,11 +38,16 @@ def main(f=None):
         g[a].append(b)
         g[b].append(a)
 
-    dfs(0)
+    visited[0] = True
+    dfs(0, None)
 
     M = int(input())
     for _ in range(M):
         a, b = map(int, input().split())
+
+
+def dfs(node, parent):
+    for i in g[node]:
 
 
     # ######## INPUT AREA END ############
