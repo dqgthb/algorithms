@@ -22,12 +22,15 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
+    global N, g, depth, parent, visited
     N = int(input())
     g = [[] for _ in range(N)]
     depth = [0] * N
 
     # parent[A][B] = A's 2**B th parent
     parent = [[None] * (ceil(log2(N))+1) for _ in range(N)]
+    visited = [False] * N
+
     for _ in range(N-1):
         a, b = map(int, input().split())
         a -= 1
