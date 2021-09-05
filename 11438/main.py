@@ -46,8 +46,11 @@ def main(f=None):
         a, b = map(int, input().split())
 
 
-def dfs(node, parent):
-    parent[node][0] = parent
+def dp(node):
+
+
+def dfs(node, par):
+    parent[node][0] = par
     for i in g[node]:
         if not visited[i]:
             visited[i] = True
