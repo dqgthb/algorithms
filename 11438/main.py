@@ -18,17 +18,18 @@ DEBUG = False
 
 def main(f=None):
     init(f)
-    # sys.setrecursionlimit(10**9)
+    sys.setrecursionlimit(2 * 10**6)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N, g, depth, parent, visited
+    global N, g, depth, parent, visited, lN
     N = int(input())
+    lN = ceil(log2(N))+1
     g = [[] for _ in range(N)]
-    depth = [0] * N
+    depth = [None] * N
 
     # parent[A][B] = A's 2**B th parent
-    parent = [[None] * (ceil(log2(N))+1) for _ in range(N)]
+    parent = [[None] * lN for _ in range(N)]
     visited = [False] * N
 
     for _ in range(N-1):
@@ -39,26 +40,132 @@ def main(f=None):
         g[b].append(a)
 
     visited[0] = True
-    dfs(0, None)
+    depth[0] = 0
+    parent[0][0] = None
+    dfs(0, 0)
+
+    for i in range(1, lN):
+        for j in range(1, N):
+            half = parent[j][i-1]
+            if half is not None:
+                parent[j][i] = parent[half][i-1]
+
 
     M = int(input())
+    #'''
+    ans = []
     for _ in range(M):
         a, b = map(int, input().split())
+        a -= 1
+        b -= 1
+        ans.append(query(a, b)+1)
+
+    print('\n'.join(map(str, ans)))
+
+    #'''
+    #print(query(0, 6))
 
 
-def dp(node):
+def DP(i, j):
+    if j == 0:
+        return parent[i][j]
+    if parent[i][j] is not None:
+        return parent[i][j]
+
+    halfParent = DP(i, j-1)
+    if halfParent is not None:
+        halfParentOfHalfParent = DP(halfParent, j-1)
+        parent[i][j] = halfParentOfHalfParent
+        return halfParentOfHalfParent
+    return None
 
 
-def dfs(node, par):
-    parent[node][0] = par
+def query(a, b):
+    if a == b:
+        return a
+
+    if a is None or b is None:
+        assert False
+    da = depth[a]
+    db = depth[b]
+
+    if da == db:
+        for i in range(lN-1, -1, -1):
+            pa = parent[a][i]
+            pb = parent[b][i]
+
+            if pa != pb:
+                return query(pa, pb)
+        return parent[a][0]
+
+    if da < db:
+        a, b = b, a
+        da, db = db, da
+
+    for i in range(lN-1, -1, -1):
+        pa = parent[a][i]
+
+        if pa is not None and depth[pa] >= db:
+            return query(pa, b)
+
+    return a
+
+
+def query3(a, b):
+    if a == b:
+        return a
+    da = depth[a]
+    db = depth[b]
+
+    if da == db:
+        for i in range(lN-1, -1, -1):
+            pa = parent[a][i]
+            pb = parent[b][i]
+            if pa != pb:
+
+                return query(pa, pb)
+        return parent[a][0]
+
+    # a must be always deeper
+    if da < db:
+        a, b = b, a
+        da, db = db, da
+
+    for i in range(lN-1, -1, -1):
+        dpa = da - 2 ** i
+        if dpa >= db:
+            return query(parent[a][i], b)
+    return 0
+
+
+def dfs(node, d):
     for i in g[node]:
         if not visited[i]:
             visited[i] = True
-            dfs(i, node)
+            parent[i][0] = node
+            depth[i] = d + 1
+            dfs(i, d + 1)
 
 
-    # ######## INPUT AREA END ############
-    # ####################################
+def query2(a, b):
+    if a == b:
+        return a
+
+    da = depth[a]
+    db = depth[b]
+
+    if da < db:
+        a, b = b, a
+        da, db = db, da
+
+    while depth[a] != db:
+        a = parent[a][0]
+
+    while a != b:
+        a = parent[a][0]
+        b = parent[b][0]
+
+    return a
 
 
 # #############################################################################
