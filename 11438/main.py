@@ -38,13 +38,12 @@ def main(f=None):
         g[a].append(b)
         g[b].append(a)
 
+    dfs(0)
+
     M = int(input())
     for _ in range(M):
         a, b = map(int, input().split())
 
-    parent[0][1] = 4
-
-    parr(parent)
 
     # ######## INPUT AREA END ############
     # ####################################
