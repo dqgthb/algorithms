@@ -3,7 +3,6 @@ import os
 import sys
 import itertools
 import collections
-import string
 # not for python < 3.9
 # from functools import cmp_to_key, reduce, partial, cache
 from functools import cmp_to_key, reduce, partial
@@ -22,71 +21,20 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N, M, K, arr, t, MOD
-    MOD = 10 ** 9 + 7
-    N, M, K = map(int, input().split())
-    arr = [int(input()) for _ in range(N)]
-    t = [None] * 2 * 2**ceil(log2(N))
-    buildT(0, N-1, 1)
-    answers = []
-    for _ in range(M + K):
-        a, b, c = map(lambda x: int(x) -1, input().split())
-        if a == 0:
-            c += 1
-            update(0, N-1, 1, b, c)
-            arr[b] = c
-        else:
-            ans = query(0, N-1, 1, b, c)
-            answers.append(ans)
-    print('\n'.join(map(str, answers)))
-
+    global T, P
+    T = input().rstrip()
+    P = input().rstrip()
 
     # ######## INPUT AREA END ############
     # ####################################
 
-
-def buildT(left, right, idx):
-    if left == right:
-        t[idx] = arr[left]
-        return t[idx]
-    mid = (left + right) // 2
-    t[idx] = buildT(left, mid, idx * 2) * buildT(mid + 1, right, idx * 2 + 1) % MOD
-    return t[idx]
-
-
-def update(start, end, idx, b, changed):
-    if start == end:
-        t[idx] = changed
-        return t[idx]
-
-    mid = (start + end) // 2
-    if start <= b <= mid:
-        res = update(start, mid, idx * 2, b, changed)
-        t[idx] = res * t[idx * 2 + 1] % MOD
-        return t[idx]
-    else:
-        res = update(mid+1, end, idx * 2+1, b, changed)
-        t[idx] = res * t[idx * 2] % MOD
-        return t[idx]
-
-
-def query(start, end, idx, left, right):
-    if right < start:
-        return 1
-    if end < left:
-        return 1
-    if left <= start and end <= right:
-        return t[idx]
-
-    mid = (start + end) // 2
-    leftQuery = query(start, mid, idx * 2, left, right)
-    rightQuery = query(mid+1, end, idx * 2 + 1, left, right)
-    return leftQuery * rightQuery % MOD
-
-
-
-
-
+    import re
+    fa = re.finditer(f'(?={P})', T)
+    arr = []
+    for i in fa:
+        arr.append(i.start()+1)
+    print(len(arr))
+    print(*arr)
 
 # #############################################################################
 # #############################################################################
@@ -148,6 +96,69 @@ def init(f=None):
             setStdin(sys.argv[1])
         else:
             assert False, "Too many sys.argv: %d" % len(sys.argv)
+
+
+# Mod #
+class Mod:
+    MOD = 10**9 + 7
+    maxN = 5
+    FACT = [0] * maxN
+    INV_FACT = [0] * maxN
+
+    @staticmethod
+    def setMOD(n): Mod.MOD = n
+
+    @staticmethod
+    def add(x, y): return (x+y) % Mod.MOD
+
+    @staticmethod
+    def multiply(x, y): return (x*y) % Mod.MOD
+
+    @staticmethod
+    def power(x, y):
+        if y == 0:
+            return 1
+        elif y % 2:
+            return Mod.multiply(x, Mod.power(x, y-1))
+        else:
+            a = Mod.power(x, y//2)
+            return Mod.multiply(a, a)
+
+    @staticmethod
+    def inverse(x):
+        return Mod.power(x, Mod.MOD-2)
+
+    @staticmethod
+    def divide(x, y):
+        return Mod.multiply(x, Mod.inverse(y))
+
+    @staticmethod
+    def allFactorials():
+        Mod.FACT[0] = 1
+        for i in range(1, Mod.maxN):
+            Mod.FACT[i] = Mod.multiply(i, Mod.FACT[i-1])
+
+    @staticmethod
+    def inverseFactorials():
+        n = len(Mod.INV_FACT)
+        Mod.INV_FACT[n-1] = Mod.inverse(Mod.FACT[n-1])
+        for i in range(n-2, -1, -1):
+            Mod.INV_FACT[i] = Mod.multiply(Mod.INV_FACT[i+1], i+1)
+
+    @staticmethod
+    def coeffBinom(n, k):
+        if n < k:
+            return 0
+        return Mod.multiply(Mod.FACT[n],
+                            Mod.multiply(Mod.INV_FACT[k], Mod.INV_FACT[n-k]))
+
+    @staticmethod
+    def sum(it):
+        res = 0
+        for i in it:
+            res = Mod.add(res, i)
+        return res
+# END Mod #
 
 
 def dprint(*args):
