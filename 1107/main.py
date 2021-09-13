@@ -22,39 +22,23 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-
-    global N, seq, M, dp
+    global N, M, broken, unbroken
     N = int(input())
-    seq = [int(i) for i in input().split()]
     M = int(input())
-
-    answers = []
-
-    # dp[s][n] = checks whether seq[s:s+n+1] is a palindrome
-    dp = Mat(N, N)
-    for i in range(N):
-        dp[i][0] = True
-
-    for i in range(N-1):
-        dp[i][1] = seq[i] == seq[i+1]
-
-    for j in range(2, N):
-        for i in range(N - j):
-            dp[i][j] = dp[i+1][j-2] and (seq[i] == seq[i+j])
-
-
-    for _ in range(M):
-        s, e = map(lambda x:int(x)-1, input().split())
-        answers.append("1" if dp[s][e-s] else "0")
-
-    print('\n'.join(answers))
+    broken = []
+    unbroken = {str(i) for i in range(10)}
+    if M > 0:
+        unbroken -= {i for i in input().split()}
 
     # ######## INPUT AREA END ############
     # ####################################
 
+    min_ = abs(N - 100)
+    for i in range(1000000):
+        if set(str(i)) <= unbroken:
+            min_ = min(min_, len(str(i)) + abs(N - i))
+    print(min_)
 
-def solve(s, e):
-    n = e - s
 
 
 
