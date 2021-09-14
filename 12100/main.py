@@ -22,86 +22,150 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N, mat
+    global N, mat, merged, max_, command, cnt
     N = int(input())
     mat = [list(map(int, input().split())) for _ in range(N)]
+    merged = Mat(N, N, default=False)
+    max_ = -1
+    command = []
+    cnt = 0
 
     # ######## INPUT AREA END ############
     # ####################################
-    parr(mat)
-    moveUp(0)
-    moveUp(1)
-    moveUp(2)
-    parr(mat)
+
+    dfs(5)
+    print(max_)
 
 
-def moveRight(row):
-    prevCol = None
+def dfs(step = 5):
+    global mat, cnt
+    global max_
+    if step == 0:
+        print(command)
+        parr(mat)
+        max_ = max(max_, findMax())
+        return
 
-    for currCol in range(N-1, -1, -1):
-        currNo = mat[row][currCol]
+    copy = [arr[:] for arr in mat]
 
-        if currNo == 0:
-            pass
-        else:
-            if prevCol is None:
-                mat[row][currCol] = 0
-                mat[row][N-1] = currNo
-                prevCol = N-1
-            else:
-                if mat[row][prevCol] == currNo:
-                    mat[row][prevCol] *= 2
-                    mat[row][currCol] = 0
+    moveUp()
+    command.append("up")
+    dfs(step - 1)
+    for i in range(N):
+        for j in range(N):
+            mat[i][j] = copy[i][j]
+    command.pop()
+
+    moveLeft()
+    command.append("left")
+    dfs(step - 1)
+    for i in range(N):
+        for j in range(N):
+            mat[i][j] = copy[i][j]
+    command.pop()
+
+    moveDown()
+    command.append("down")
+    dfs(step - 1)
+    command.pop()
+    for i in range(N):
+        for j in range(N):
+            mat[i][j] = copy[i][j]
+
+    moveRight()
+    command.append("right")
+    dfs(step - 1)
+    command.pop()
+
+
+
+def findMax():
+    max_ = -1
+    for i in range(N):
+        for j in range(N):
+            max_ = max(max_, mat[i][j])
+    return max_
+
+
+def clearMerged():
+    for i in range(N):
+        for j in range(N):
+            merged[i][j] = False
+
+
+def moveUp():
+    for c in range(N):
+        for r in range(N):
+            while r > 0:
+                if mat[r-1][c] == 0:
+                    mat[r-1][c] = mat[r][c]
+                    mat[r][c] = 0
+                    r -= 1
+                elif mat[r-1][c] == mat[r][c] and not merged[r-1][c]:
+                    mat[r-1][c] *= 2
+                    mat[r][c] = 0
+                    merged[r-1][c] = True
                 else:
-                    mat[row][currCol] = 0
-                    mat[row][prevCol-1] = currNo
-                    prevCol -= 1
+                    break
+    clearMerged()
 
 
-def moveLeft(row):
-    prevCol = None
-
-    for currCol in range(N):
-        currNo = mat[row][currCol]
-
-        if currNo == 0:
-            pass
-        else:
-            if prevCol is None:
-                mat[row][currCol] = 0
-                mat[row][0] = currNo
-                prevCol = 0
-            else:
-                if mat[row][prevCol] == currNo:
-                    mat[row][prevCol] *= 2
-                    mat[row][currCol] = 0
+def moveDown():
+    for c in range(N):
+        for r in range(N-1, -1, -1):
+            while r < N-1:
+                if mat[r+1][c] == 0:
+                    mat[r+1][c] = mat[r][c]
+                    mat[r][c] = 0
+                    r += 1
+                elif mat[r+1][c] == mat[r][c] and not merged[r+1][c]:
+                    mat[r+1][c] *= 2
+                    mat[r][c] = 0
+                    merged[r+1][c] = True
                 else:
-                    mat[row][currCol] = 0
-                    mat[row][prevCol+1] = currNo
-                    prevCol += 1
+                    break
+    clearMerged()
 
 
-def moveUp(col):
-    prevRow = None
-
-    for currRow in range(N):
-        currNo = mat[currRow][col]
-
-        if currNo == 0:
-            pass
-        else:
-            if prevRow is None:
-                mat[currRow][col] = 0
-                mat[0][col] = currNo
-                prevRow = 0
-            else:
-                if mat[prevRow][col] == currNo:
-                    mat[prevRow][col] *= 2
-                    mat[currRow][col] = 0
+def moveLeft():
+    for r in range(N):
+        for c in range(N):
+            while c > 0:
+                if mat[r][c-1] == 0:
+                    mat[r][c-1] = mat[r][c]
+                    mat[r][c] = 0
+                    c -= 1
+                elif mat[r][c-1] == mat[r][c] and not merged[r][c-1]:
+                    mat[r][c-1] *= 2
+                    mat[r][c] = 0
+                    merged[r][c-1] = True
                 else:
-                    mat[currRow][col] = 0
-                    mat[prevRow+1][col] = currNo
-                    prevRow += 1
+                    break
+    clearMerged()
+
+
+def moveRight():
+    for r in range(N):
+        for c in range(N-1, -1, -1):
+            while c < N-1:
+                if mat[r][c+1] == 0:
+                    mat[r][c+1] = mat[r][c]
+                    mat[r][c] = 0
+                    c += 1
+                elif mat[r][c+1] == mat[r][c] and not merged[r][c+1]:
+                    mat[r][c+1] *= 2
+                    mat[r][c] = 0
+                    merged[r][c+1] = True
+                else:
+                    break
+    clearMerged()
+
+
+
+
+
+
+
 
 
 # #############################################################################
