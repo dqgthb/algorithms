@@ -22,43 +22,23 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N
-    N = int(input())
+    t = int(input())
 
-    nums = 0
-    for i in range(1, N+1):
-        j = i
-        cnt = 0
-        while i % 5 == 0:
-            cnt += 1
-            i //= 5
-        i = j
-        nums += cnt
-    print(nums)
+    for _ in range(t):
+        n = int(input())
+
+        for i in range(n, 0, -1):
+            arr = '(' * i + ')' * i + '()' * (n-i)
+            print(arr)
+
+
+
+
+
+
 
     # ######## INPUT AREA END ############
     # ####################################
-
-
-def solve(i):
-    factI = 1
-    for i in range(2, i+1):
-        factI *= i
-
-    str_ = str(factI)
-
-    cnt = 0
-    for c in reversed(str_):
-        if c == '0':
-            cnt += 1
-        else:
-            break
-    return cnt
-
-
-
-
-
 
 
 # #############################################################################

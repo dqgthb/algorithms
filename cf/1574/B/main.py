@@ -22,43 +22,23 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N
-    N = int(input())
+    t = int(input())
 
-    nums = 0
-    for i in range(1, N+1):
-        j = i
-        cnt = 0
-        while i % 5 == 0:
-            cnt += 1
-            i //= 5
-        i = j
-        nums += cnt
-    print(nums)
+    for _ in range(t):
+        a, b, c, m = map(int, input().split())
+        a, b, c = sorted((a, b, c))
+        sum_ = 0
+        for i in (a, b, c):
+            sum_ += max(i-1, 0)
+
+        min_ = (c - 1) - a - b
+        if min_ <= m <= sum_:
+            print("YES")
+        else:
+            print("NO")
 
     # ######## INPUT AREA END ############
     # ####################################
-
-
-def solve(i):
-    factI = 1
-    for i in range(2, i+1):
-        factI *= i
-
-    str_ = str(factI)
-
-    cnt = 0
-    for c in reversed(str_):
-        if c == '0':
-            cnt += 1
-        else:
-            break
-    return cnt
-
-
-
-
-
 
 
 # #############################################################################

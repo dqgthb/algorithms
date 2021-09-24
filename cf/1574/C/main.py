@@ -22,38 +22,48 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N
-    N = int(input())
-
-    nums = 0
-    for i in range(1, N+1):
-        j = i
-        cnt = 0
-        while i % 5 == 0:
-            cnt += 1
-            i //= 5
-        i = j
-        nums += cnt
-    print(nums)
+    global n, a, m, sum_
+    n = int(input())
+    a = [int(i) for i in input().split()]
+    a.sort()
+    sum_ = sum(a)
+    m = int(input())
+    for _ in range(m):
+        x, y = map(int, input().split())
+        ans = solve(x, y)
+        print(ans)
 
     # ######## INPUT AREA END ############
     # ####################################
 
 
-def solve(i):
-    factI = 1
-    for i in range(2, i+1):
-        factI *= i
+def solve(x, y):
+    idx = bl(a, x)
 
-    str_ = str(factI)
+    if x < a[0]:
+        defense = sum_ - a[0]
+        return max(y - defense, 0)
 
-    cnt = 0
-    for c in reversed(str_):
-        if c == '0':
-            cnt += 1
-        else:
-            break
-    return cnt
+    elif x > a[n-1]:
+        coin = x - a[n-1]
+        defense = sum_ - a[n-1]
+        return max(y - defense, 0) + coin
+
+    elif a[idx] == x:
+        defense = sum_ - a[idx]
+        return max(y - defense, 0)
+
+    else:
+        coin = x - a[idx-1]
+        defense = sum_ - a[idx-1]
+        cand1 =  max(y - defense, 0) + coin
+
+        defense = sum_ - a[idx]
+        cand2 = max(y - defense, 0)
+
+        return min(cand1, cand2)
+
+
 
 
 

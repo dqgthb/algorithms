@@ -22,38 +22,75 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N
-    N = int(input())
+    global T, h, w, mat, keys, doors
 
-    nums = 0
-    for i in range(1, N+1):
-        j = i
-        cnt = 0
-        while i % 5 == 0:
-            cnt += 1
-            i //= 5
-        i = j
-        nums += cnt
-    print(nums)
+    T = int(input())
+    for _ in range(T):
+        h, w = map(int, input().split())
+        mat = [list(input().strip()) for _ in range(h)]
+        keys = set(input().strip())
+        doors = [[] for _ in range(26)]
+        if '0' in keys:
+            keys = set()
+        solve()
 
     # ######## INPUT AREA END ############
     # ####################################
 
 
-def solve(i):
-    factI = 1
-    for i in range(2, i+1):
-        factI *= i
+def addQ(x, y):
+    global vis, count
+    v = mat[x][y]
+    vis[x][y] = True
 
-    str_ = str(factI)
+    if v == '*':
+        return
 
-    cnt = 0
-    for c in reversed(str_):
-        if c == '0':
-            cnt += 1
-        else:
-            break
-    return cnt
+    if 'A' <= v <= 'Z':
+        doors[ord(v)-ord('A')].append((x, y))
+        if v.lower() in keys:
+            dq.append((x, y))
+    else:
+        dq.append((x, y))
+        if 'a' <= v <= 'z':
+            if v not in keys:
+                keys.add(v)
+                for door in doors[ord(v) - ord('a')]:
+                    dq.append(door)
+
+        elif v == '$':
+            count += 1
+
+
+dx = [-1, 0, 1, 0]
+dy = [0, -1, 0, 1]
+def solve():
+    global vis, dq, count
+    count = 0
+    vis = Mat(h, w, False)
+    dq = deque()
+
+    for i in range(w):
+        addQ(0, i)
+        addQ(h-1, i)
+
+    for i in range(1, h-1):
+        addQ(i, 0)
+        addQ(i, w-1)
+
+
+    while dq:
+        x, y = dq.popleft()
+
+        for i, j in zip(dx, dy):
+            nx, ny = x + i, y + j
+            if 0 <= nx < h and 0 <= ny < w:
+                if not vis[nx][ny]:
+                    addQ(nx, ny)
+    print(count)
+
+
+
 
 
 

@@ -22,42 +22,44 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N
-    N = int(input())
-
-    nums = 0
-    for i in range(1, N+1):
-        j = i
-        cnt = 0
-        while i % 5 == 0:
-            cnt += 1
-            i //= 5
-        i = j
-        nums += cnt
-    print(nums)
+    ax, ay, bx, by = map(int, input().split())
+    cx, cy, dx, dy = map(int, input().split())
 
     # ######## INPUT AREA END ############
     # ####################################
 
+    accw = ccw(cx, cy, dx, dy, ax, ay)
+    bccw = ccw(cx, cy, dx, dy, bx, by)
+    cccw = ccw(ax, ay, bx, by, cx, cy)
+    dccw = ccw(ax, ay, bx, by, dx, dy)
+    #print(accw, bccw, cccw, dccw)
 
-def solve(i):
-    factI = 1
-    for i in range(2, i+1):
-        factI *= i
+    if accw == bccw == cccw == dccw == 0:
+        abD = (ax - bx) ** 2 + (ay - by) ** 2
+        cdD = (cx - dx) ** 2 + (cy - dy) ** 2
+        acD = (ax - cx) ** 2 + (ay - cy) ** 2
+        adD = (ax - dx) ** 2 + (ay - dy) ** 2
+        bcD = (bx - cx) ** 2 + (by - cy) ** 2
+        bdD = (bx - dx) ** 2 + (by - dy) ** 2
+        maxD = max(acD, adD, bcD, bdD)
 
-    str_ = str(factI)
-
-    cnt = 0
-    for c in reversed(str_):
-        if c == '0':
-            cnt += 1
+        #print(abD, cdD, acD, adD, bcD, bdD)
+        l = abD ** (1/2) + cdD ** (1/2)
+        d = maxD ** (1/2)
+        if l < d:
+            print("0")
         else:
-            break
-    return cnt
+            print("1")
+        return
+
+    elif accw * bccw <= 0 and cccw * dccw <= 0:
+        print("1")
+    else:
+        print("0")
 
 
-
-
+def ccw(x1, y1, x2, y2, x3, y3):
+    return x1 * y2 + x2 * y3 + x3 * y1 - y1 * x2 - y2 * x3 - y3 * x1
 
 
 

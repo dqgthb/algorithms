@@ -13,6 +13,7 @@ from math import log, log2, ceil, floor, gcd, sqrt
 import math
 from heapq import heappush, heappop
 from bisect import bisect_left as bl, bisect_right as br
+from typing import Literal
 DEBUG = False
 
 
@@ -22,43 +23,19 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N
     N = int(input())
+    arr = [[int(i) for i in input().split()] for _ in range(N)]
+    arr.append(arr[0])
 
-    nums = 0
-    for i in range(1, N+1):
-        j = i
-        cnt = 0
-        while i % 5 == 0:
-            cnt += 1
-            i //= 5
-        i = j
-        nums += cnt
-    print(nums)
+    sum_ = 0
+    for i in range(N):
+        x, y = arr[i]
+        xx, yy = arr[i+1]
+        sum_ += x * yy - xx * y
+    print(round(abs(sum_)/2, 1))
 
     # ######## INPUT AREA END ############
     # ####################################
-
-
-def solve(i):
-    factI = 1
-    for i in range(2, i+1):
-        factI *= i
-
-    str_ = str(factI)
-
-    cnt = 0
-    for c in reversed(str_):
-        if c == '0':
-            cnt += 1
-        else:
-            break
-    return cnt
-
-
-
-
-
 
 
 # #############################################################################

@@ -22,43 +22,55 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N
-    N = int(input())
+    n = int(input())
+    slots = []
+    cand = []
+    for _ in range(n):
+        c, *arr = [int(i) for i in input().split()]
+        cand.append(c)
+        slots.append(arr)
+    m = int(input())
+    banned = set()
+    for _ in range(m):
+        banned.add(tuple(map(int, input().split())))
 
-    nums = 0
-    for i in range(1, N+1):
-        j = i
-        cnt = 0
-        while i % 5 == 0:
-            cnt += 1
-            i //= 5
-        i = j
-        nums += cnt
-    print(nums)
+    cands = deque([tuple(cand)])
+
+    max_ = -1
+    cand = None
+    added = set([cand])
+    while cands:
+        x = cands.popleft()
+        if x in banned:
+            # calculate anyway
+            sum_ = 0
+            for i, e in enu(x):
+                sum_ += slots[i][e-1]
+            # no reason to add children
+            if sum_ < max_:
+                continue
+
+            for i in range(len(x)):
+                new_ = list(x)
+                new_[i] = x[i]-1
+                if x[i]-1 == 0:
+                    continue
+                new_ = tuple(new_)
+                if new_ not in added:
+                    added.add(new_)
+                    cands.append(new_)
+        else:
+            sum_ = 0
+            for i, e in enu(x):
+                sum_ += slots[i][e-1]
+            if max_ <= sum_:
+                max_ = sum_
+                cand = x
+    print(*cand)
+
 
     # ######## INPUT AREA END ############
     # ####################################
-
-
-def solve(i):
-    factI = 1
-    for i in range(2, i+1):
-        factI *= i
-
-    str_ = str(factI)
-
-    cnt = 0
-    for c in reversed(str_):
-        if c == '0':
-            cnt += 1
-        else:
-            break
-    return cnt
-
-
-
-
-
 
 
 # #############################################################################

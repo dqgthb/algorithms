@@ -22,41 +22,50 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N
-    N = int(input())
-
-    nums = 0
-    for i in range(1, N+1):
-        j = i
-        cnt = 0
-        while i % 5 == 0:
-            cnt += 1
-            i //= 5
-        i = j
-        nums += cnt
-    print(nums)
+    global N, S, arr
+    N, S = map(int, input().split())
+    arr = [int(i) for i in input().split()]
 
     # ######## INPUT AREA END ############
     # ####################################
 
+    left = []
+    right = []
 
-def solve(i):
-    factI = 1
-    for i in range(2, i+1):
-        factI *= i
+    mid = (0 + N - 1) // 2
 
-    str_ = str(factI)
+    powerSet(left, 0, mid+1, 0)
+    powerSet(right, mid+1, N, 0)
 
+
+    right.sort()
     cnt = 0
-    for c in reversed(str_):
-        if c == '0':
-            cnt += 1
-        else:
-            break
-    return cnt
+    for i in left:
+        l = bl(right, S-i)
+        u = br(right, S-i)
+        cnt += u - l
+    if S == 0:
+        cnt -= 1
+    print(cnt)
+
+
+def powerSet(a, idx, last, cum):
+    if idx == last:
+        a.append(cum)
+        return
+    powerSet(a, idx + 1, last, cum)
+    powerSet(a, idx + 1, last, cum + arr[idx])
 
 
 
+
+
+
+
+
+
+    # left sums
+    # right sums <- sort and binary search
 
 
 
