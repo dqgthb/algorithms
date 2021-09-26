@@ -1,4 +1,3 @@
-# CP template Version 1.006
 import os
 import sys
 import itertools
@@ -20,13 +19,15 @@ dj = [0, 1, 0, -1]
 
 def main(f=None):
     init(f)
-    # sys.setrecursionlimit(10**9)
+    #sys.setrecursionlimit(10**9)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N, M, mat
+    global N, M, mat, vis, orig
     N, M = map(int, input().split())
     mat = [list(map(int, input().split())) for _ in range(N)]
+    vis = Mat(N, M)
+    orig = Mat(N, M)
 
     # ######## INPUT AREA END ############
     # ####################################
@@ -34,9 +35,11 @@ def main(f=None):
     step = 0
     while True:
         step += 1
-        mat = melt()
+        melt()
+        #parr(mat)
 
         num = numOfIsland()
+        #print(num)
         if num != 1:
             break
 
@@ -47,47 +50,51 @@ def main(f=None):
 
 
 def melt():
-    after = [mat[i][:] for i in range(N)]
+    global mat, orig
+    for i, j in For(N, M):
+        orig[i][j] = mat[i][j]
+
 
     for i, j in For(N, M):
-        val = mat[i][j]
+        val = orig[i][j]
         if val:
             cnt = 0
             for d in range(4):
                 ni, nj = i + di[d], j + dj[d]
                 if 0 <= ni < N and 0 <= nj < M:
-                    if mat[ni][nj] == 0:
+                    if orig[ni][nj] == 0:
                         cnt += 1
             val = max(0, val - cnt)
-            after[i][j] = val
-    return after
-
-
+            mat[i][j] = val
 
 def numOfIsland():
     global vis
-    vis = Mat(N, M, False)
 
     for i, j in For(N, M):
         if mat[i][j]:
             vis[i][j] = True
+        else:
+            vis[i][j] = False
+
 
     cnt = 0
+    stack = []
     for i, j in For(N, M):
         if vis[i][j]:
-            cnt += 1
             vis[i][j] = False
-            dfs(i, j)
+            cnt += 1
+            stack.append((i, j))
+            while stack:
+                x, y = stack.pop()
+                for d in range(4):
+                    ni, nj = x + di[d], y + dj[d]
+                    if 0 <= ni < N and 0 <= nj < M:
+                        if vis[ni][nj]:
+                            vis[ni][nj] = False
+                            stack.append((ni, nj))
+
     return cnt
 
-
-def dfs(i, j):
-    for d in range(4):
-        ni, nj = i + di[d], j + dj[d]
-        if 0 <= ni < N and 0 <= nj < M:
-            if vis[ni][nj]:
-                vis[ni][nj] = False
-                dfs(ni, nj)
 
 
 

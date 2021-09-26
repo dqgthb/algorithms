@@ -22,44 +22,32 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    N, D = map(int, input().split())
-    G = dd(list)
-    G[0].append((D, D))
-    G[D]
+    N = int(input())
+    lines = []
     for _ in range(N):
-        a, b, c = map(int, input().split())
-        G[a].append((b, c))
-        G[0].append((a, a))
-        if b < D:
-            G[b].append((D, D-b))
-
-    dist = {i:i for i in G.keys()}
-    dist[0] = 0
-
-    pq = []
-    for to_, distance in G[0]:
-        heappush(pq, (distance, to_))
-
-    while pq:
-        distance, node = heappop(pq)
-        if dist[node] < distance:
-            continue
-
-        for nbr, dFromNode2Nbr in G[node]:
-            if nbr > D: continue
-            newD = distance + dFromNode2Nbr
-            if newD < dist[nbr]:
-                dist[nbr] = newD
-                heappush(pq, (newD, nbr))
-
-    print(dist[D])
-
-
-
-
+        i, j = map(int, input().split())
+        lines.append((i, j))
 
     # ######## INPUT AREA END ############
     # ####################################
+
+    lines.sort()
+    left, right = lines[0]
+    sum_ = right - left
+    for line in lines:
+        l, r = line
+        if left <= l and r <= right:
+            continue
+        elif right <= l:
+            sum_ += r - l
+            right = l
+            continue
+        else:
+            sum_ += r - right
+            right = r
+    print(sum_)
+
+
 
 
 # #############################################################################

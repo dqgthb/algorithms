@@ -22,34 +22,28 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    N = int(input())
-    lines = []
+    N, D = map(int, input().split())
+    arr = [i for i in range(D+1)]
+    routes = []
     for _ in range(N):
-        l, r = map(int, input().split())
-        lines.append((l, r))
-    lines.sort()
+        a, b, c = map(int, input().split())
+        routes.append((a, b, c))
+    routes.sort()
+    for i in range(N):
+        a, b, c = routes[i]
+        if b <= D:
+            if arr[a] + c < arr[b]:
+                arr[b] = arr[a] + c
+            for i in range(b+1, D+1):
+                arr[i] = min(arr[i], arr[i-1] + 1)
+
+    print(arr[D])
+
+
+
 
     # ######## INPUT AREA END ############
     # ####################################
-
-    left, right = lines[0]
-    sum_ = right - left
-
-    for l, r in lines:
-        if r <= right:
-            continue
-        elif right < l:
-            left = l
-            right = r
-            sum_ += r - l
-        else:
-            sum_ += r - right
-            right = r
-    print(sum_)
-
-
-
-
 
 
 # #############################################################################

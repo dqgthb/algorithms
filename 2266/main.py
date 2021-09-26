@@ -22,17 +22,52 @@ def main(f=None):
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global dp
+    global DP
     N, K = map(int, input().split())
-    dp = Mat(N+1, K+1, 10**9)
+    DP = Mat(N+1, K+1)
+    for i in range(N+1):
+        DP[i][1] = (i, None)
+
 
     # ######## INPUT AREA END ############
     # ####################################
 
-    for n in range(N+1):
-        dp[n][1] = 1
 
-    parr(dp)
+    print(dp(N, K)[0])
+
+
+
+def dp(n, k):
+    if DP[n][k] is not None:
+        return DP[n][k]
+
+    if n <= 1:
+        DP[n][k] = (n, None)
+        return n, None
+
+    if k == 1:
+        DP[n][k] = (n, None)
+        return n, None
+
+    min_, _ = dp(n-1, k) # dropped at the bottom
+    min_ += 1
+    minI = 1
+    for i in range(2, n):
+        broken = 1 + dp(i-1, k-1)[0]
+        unbroken = 1 + dp(n-i, k)[0]
+        maxB = max(broken, unbroken)
+        if min_ > maxB:
+            min_ = maxB
+            minI = i
+
+    DP[n][k] = (min_, minI)
+    return (min_, minI)
+
+
+
+
+
+
 
 
 # #############################################################################
