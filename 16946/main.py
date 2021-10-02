@@ -34,17 +34,16 @@ def main(f=None):
     wallPositions = []
     for i in range(N):
         for j in range(M):
-            '''
             if mat[i][j] == 0:
                 cnt = 0
                 stack = deque([(i, j)])
                 mat[i][j] = groupNo
                 while stack:
-                    i, j = stack.popleft()
+                    ii, jj = stack.popleft()
                     cnt += 1
                     for x, y in zip(dx, dy):
-                        ni = i + x
-                        nj = j + y
+                        ni = ii + x
+                        nj = jj + y
                         if 0 <= ni < N and 0 <= nj < M:
                             if mat[ni][nj] == 0:
                                 mat[ni][nj] = groupNo
@@ -52,15 +51,10 @@ def main(f=None):
                 groupNo += 1
                 nums.append(cnt)
 
-            '''
             if mat[i][j] == 1:
                 wallPositions.append((i, j))
 
-    parr(mat)
-    print(wallPositions)
-
     cpy = Mat(N, M, 0)
-    print(wallPositions)
     for i, j in wallPositions:
         s = set()
         sum_ = 1
