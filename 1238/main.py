@@ -21,9 +21,12 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     N, M, X = map(int, input().split())
+    X -= 1
     mat = Mat(N, N, 10**9)
     for _ in range(M):
         s, e, c = map(int, input().split())
+        s -= 1
+        e -= 1
         mat[s][e] = c
 
     # ######## INPUT AREA END ############
@@ -33,7 +36,10 @@ def main(f=None):
             for j in range(N):
                 mat[i][j] = min(mat[i][j], mat[i][k] + mat[k][i])
 
+    idx = 0
     for i in range(N):
+        cost = mat[i][X] + mat[X][i]
+
 
 
 
