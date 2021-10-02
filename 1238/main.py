@@ -32,6 +32,7 @@ def main(f=None):
     # ######## INPUT AREA END ############
 
     for i in range(N):
+        mat[i][i] = 0
 
     for k in range(N):
         for i in range(N):
