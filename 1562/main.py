@@ -16,40 +16,50 @@ from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
 
 
+MOD = 10 ** 9
 def main(f=None):
     init(f)
     # sys.setrecursionlimit(10**9)
     # ####################################
     # ######## INPUT AREA BEGIN ##########
 
-    global N
+    global N, dp
     N = int(input())
 
     # ######## INPUT AREA END ############
     # ####################################
 
+    dp = nDim(10, N+1, 2 ** 11)
+    print(ansFor(N))
+
+
+def ansFor(n):
     sum_ = 0
-    for i in range(10):
-        a =  solve(i, N)
-        print()
-        sum_ += a
-    print(sum_)
+    for i in range(1, 10):
+        sum_ += solve(i, n, 1 << i)
+        sum_ %= MOD
+    return sum_
 
 
+def solve(digit, pos, setBit):
+    if dp[digit][pos][setBit] is not None:
+        return dp[digit][pos][setBit]
 
-
-def solve(startsWithN, digits):
-    if digits == 1:
-        return 1
+    if pos == 1:
+        return 1 if setBit == 0b1111111111 else 0
     else:
-        if startsWithN == 0:
-            return solve(1, digits-1)
-        elif startsWithN == 9:
-            return solve(8, digits-1)
+        ret = None
+        if digit == 0:
+            ret = solve(1, pos-1, setBit | 0b0000000010)
+        elif digit == 9:
+            ret =  solve(8, pos-1, setBit | 0b0100000000)
         else:
-            a = solve(startsWithN-1, digits-1)
-            b = solve(startsWithN+1, digits-1)
-            return a + b
+            a = solve(digit-1, pos-1, setBit | (1 << (digit-1)))
+            b = solve(digit+1, pos-1, setBit | (1 << (digit+1)))
+            ret = a + b
+            ret %= MOD
+        dp[digit][pos][setBit] = ret
+        return ret
 
 
 # #############################################################################
