@@ -20,7 +20,12 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
-    print("")
+    N, M, X = map(int, input().split())
+    mat = Mat(N, N)
+    for _ in range(M):
+        s, e, c = map(int, input().split())
+
+
 
     # ######## INPUT AREA END ############
 
