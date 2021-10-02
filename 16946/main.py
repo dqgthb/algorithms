@@ -34,6 +34,7 @@ def main(f=None):
     wallPositions = []
     for i in range(N):
         for j in range(M):
+            '''
             if mat[i][j] == 0:
                 cnt = 0
                 stack = deque([(i, j)])
@@ -51,7 +52,8 @@ def main(f=None):
                 groupNo += 1
                 nums.append(cnt)
 
-            elif mat[i][j] == 1:
+            '''
+            if mat[i][j] == 1:
                 wallPositions.append((i, j))
 
     parr(mat)
