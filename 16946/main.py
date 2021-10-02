@@ -31,13 +31,10 @@ def main(f=None):
 
     nums = []
     groupNo = 2
+    wallPositions = []
     for i in range(N):
         for j in range(M):
             if mat[i][j] == 0:
-                #dfs(i, j)
-
-                # start
-
                 cnt = 0
                 stack = deque([(i, j)])
                 mat[i][j] = groupNo
@@ -51,29 +48,25 @@ def main(f=None):
                             if mat[ni][nj] == 0:
                                 mat[ni][nj] = groupNo
                                 stack.append((ni, nj))
-
-                # end
-
                 groupNo += 1
                 nums.append(cnt)
-    parr(mat)
-    print(nums)
+
+            elif mat[i][j] == 1:
+                wallPositions.append((i, j))
 
     cpy = Mat(N, M, 0)
-    for i in range(N):
-        for j in range(M):
-            if mat[i][j] == 1:
-                s = set()
-                sum_ = 1
-                for x, y in zip(dx, dy):
-                    ni = i + x
-                    nj = j + y
-                    if 0 <= ni < N and 0 <= nj < M:
-                        grp = mat[ni][nj]
-                        if grp != 1 and not grp in s:
-                            s.add(grp)
-                            sum_ += nums[grp - 2]
-                cpy[i][j] = sum_ % 10
+    for i, j in wallPositions:
+        s = set()
+        sum_ = 1
+        for x, y in zip(dx, dy):
+            ni = i + x
+            nj = j + y
+            if 0 <= ni < N and 0 <= nj < M:
+                grp = mat[ni][nj]
+                if grp != 1 and not grp in s:
+                    s.add(grp)
+                    sum_ += nums[grp - 2]
+        cpy[i][j] = sum_ % 10
 
     for line in cpy:
         print(''.join(map(str, line)))
