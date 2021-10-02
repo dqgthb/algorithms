@@ -21,13 +21,17 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     N, M, X = map(int, input().split())
-    mat = Mat(N, N)
+    mat = Mat(N, N, 10**9)
     for _ in range(M):
         s, e, c = map(int, input().split())
-
-
+        mat[s][e] = c
 
     # ######## INPUT AREA END ############
+
+    for k in range(N):
+        for i in range(N):
+            for j in range(N):
+                mat[i]]
 
 
 # TEMPLATE ###############################
