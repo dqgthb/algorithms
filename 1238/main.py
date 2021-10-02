@@ -36,9 +36,14 @@ def main(f=None):
             for j in range(N):
                 mat[i][j] = min(mat[i][j], mat[i][k] + mat[k][i])
 
+    maxCost = 0
     idx = 0
     for i in range(N):
         cost = mat[i][X] + mat[X][i]
+        if maxCost < cost:
+            idx = i
+            maxCost = cost
+    print(idx+1)
 
 
 
