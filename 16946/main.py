@@ -31,7 +31,7 @@ def main(f=None):
 
     nums = []
     groupNo = 2
-    parr(mat)
+    wallPositions = []
     for i in range(N):
         for j in range(M):
             if mat[i][j] == 0:
@@ -53,6 +53,9 @@ def main(f=None):
 
             elif mat[i][j] == 1:
                 wallPositions.append((i, j))
+
+    parr(mat)
+    print(wallPositions)
 
     cpy = Mat(N, M, 0)
     print(wallPositions)
