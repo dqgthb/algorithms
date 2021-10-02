@@ -31,7 +31,7 @@ def main(f=None):
 
     nums = []
     groupNo = 2
-    wallPositions = []
+    parr(mat)
     for i in range(N):
         for j in range(M):
             if mat[i][j] == 0:
