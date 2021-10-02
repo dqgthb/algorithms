@@ -31,7 +31,12 @@ def main(f=None):
     for k in range(N):
         for i in range(N):
             for j in range(N):
-                mat[i]]
+                mat[i][j] = min(mat[i][j], mat[i][k] + mat[k][i])
+
+    for i in range(N):
+
+
+
 
 
 # TEMPLATE ###############################
