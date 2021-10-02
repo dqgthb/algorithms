@@ -32,9 +32,11 @@ def main(f=None):
     # ######## INPUT AREA END ############
 
     for i in range(N):
-        mat[i][i] = 0
+
     for k in range(N):
         for i in range(N):
+            if mat[i][k] == 10 ** 9:
+                continue
             for j in range(N):
                 mat[i][j] = min(mat[i][j], mat[i][k] + mat[k][j])
 
