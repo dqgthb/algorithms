@@ -55,6 +55,7 @@ def main(f=None):
                 wallPositions.append((i, j))
 
     cpy = Mat(N, M, 0)
+    print(wallPositions)
     for i, j in wallPositions:
         s = set()
         sum_ = 1
