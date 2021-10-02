@@ -34,7 +34,7 @@ def main(f=None):
     for k in range(N):
         for i in range(N):
             for j in range(N):
-                mat[i][j] = min(mat[i][j], mat[i][k] + mat[k][i])
+                mat[i][j] = min(mat[i][j], mat[i][k] + mat[k][j])
 
     maxCost = 0
     parr(mat)
