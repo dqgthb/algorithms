@@ -26,6 +26,10 @@ def main(f=None):
     # ######## INPUT AREA END ############
 
 def hash(s):
+    sum_ = 0
+    for i, e in enu(s):
+        sum_ += (ord(e) - ord('a') + 1) * 31 ** i
+
 
 
 # TEMPLATE ###############################
