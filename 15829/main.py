@@ -25,10 +25,14 @@ def main(f=None):
 
     # ######## INPUT AREA END ############
 
+    print(hash(s))
+
 def hash(s):
     sum_ = 0
     for i, e in enu(s):
         sum_ += (ord(e) - ord('a') + 1) * 31 ** i
+        sum_ %= 1234567891
+    return sum_
 
 
 
