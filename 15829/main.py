@@ -25,6 +25,8 @@ def main(f=None):
 
     # ######## INPUT AREA END ############
 
+def hash(s):
+
 
 # TEMPLATE ###############################
 
