@@ -144,6 +144,9 @@ int main(int argc, char const *argv[])
         math.push_back(v);
     }
 
+    for(auto&& e: name){
+        cout << e << '-';
+    }
 
 
 
