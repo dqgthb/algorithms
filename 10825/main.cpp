@@ -120,3 +120,15 @@ using namespace std;
 const ll maxn = 1e5;
 const ll inf = 1e9;
 
+
+int N;
+
+int main(int argc, char const *argv[])
+{
+    FAST
+    int n;
+    n
+
+    return 0;
+}
+
