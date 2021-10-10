@@ -122,14 +122,18 @@ const ll inf = 1e9;
 
 
 int N;
-V
+V<int> idx, kor, eng, math;
+V<string> name;
 
 
 int main(int argc, char const *argv[])
 {
     FAST
     int n;
-    n
+
+    loop(i, 0, n)
+
+
 
     return 0;
 }
