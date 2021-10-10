@@ -146,9 +146,8 @@ int main(int argc, char const *argv[])
     }
 
     for(auto&& e: name){
-        cout << e << ', ';
+        cout << e << ", ";
     }
-
 
 
     return 0;
