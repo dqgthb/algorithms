@@ -131,7 +131,13 @@ int main(int argc, char const *argv[])
     FAST
     int n;
 
-    loop(i, 0, n)
+    loop(i, 0, n){
+        int v;
+        string temp;
+        cin >> temp;
+        cin >> v;
+
+    }
 
 
 
