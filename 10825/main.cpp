@@ -120,8 +120,3 @@ using namespace std;
 const ll maxn = 1e5;
 const ll inf = 1e9;
 
-int main(int argc, char const *argv[])
-{
-    cout << "hello world" << endl;
-    return 0;
-}
