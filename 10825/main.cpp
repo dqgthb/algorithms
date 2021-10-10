@@ -135,9 +135,15 @@ int main(int argc, char const *argv[])
         int v;
         string temp;
         cin >> temp;
+        name.push_back(temp);
         cin >> v;
-
+        kor.push_back(v);
+        cin >> v;
+        eng.push_back(v);
+        cin >> v;
+        math.push_back(v);
     }
+
 
 
 
