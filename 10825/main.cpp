@@ -129,9 +129,10 @@ V<string> name;
 int main(int argc, char const *argv[])
 {
     FAST
-    int n;
 
-    loop(i, 0, n){
+    cin >> N;
+
+    loop(i, 0, N){
         int v;
         string temp;
         cin >> temp;
@@ -145,7 +146,7 @@ int main(int argc, char const *argv[])
     }
 
     for(auto&& e: name){
-        cout << e << '-';
+        cout << e << ', ';
     }
 
 
