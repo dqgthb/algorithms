@@ -63,8 +63,8 @@ def check(list_, topic = ""):
             querystring = {"problemIds":str(problem)}
             response = requests.request("GET", url, headers=headers, params=querystring)
             level = response.json()[0]["level"]
-            q, r = divmod(level, 5)
-            print(problem, level)
+            q, r = divmod(level-1, 5)
+            print(problem, tier[q], 5-r)
             cnt += 1
     print()
 
