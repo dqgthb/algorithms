@@ -50,15 +50,24 @@ def process(text):
 
 
 def check(list_, topic = ""):
+    url = "https://solved.ac/api/v3/problem/lookup"
+    headers = {"Content-Type": "application/json"}
+
     global cnt, totalChecks
     print(topic)
     for problem in list_:
         totalChecks += 1
         if problem not in solved:
             print(problem)
+            querystring = {"problemIds":"1000"}
+            response = requests.request("GET", url, headers=headers, params=querystring)
             cnt += 1
     print()
 
+
+
+
+print(response.text)
 
 if __name__ == "__main__":
     main()
