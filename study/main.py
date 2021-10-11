@@ -64,7 +64,7 @@ def check(list_, topic = ""):
             response = requests.request("GET", url, headers=headers, params=querystring)
             level = response.json()[0]["level"]
             q, r = divmod(level-1, 5)
-            print(problem, tier[q], 5-r, end='/')
+            print(problem, tier[q]+'-'+str(5-r), end=' / ')
             cnt += 1
     print()
 
