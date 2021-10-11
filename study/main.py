@@ -1,3 +1,5 @@
+import requests
+
 def main():
     global solved, cnt, totalChecks
     cnt = 0
