@@ -58,16 +58,16 @@ def check(list_, topic = ""):
     for problem in list_:
         totalChecks += 1
         if problem not in solved:
-            print(problem)
-            querystring = {"problemIds":"1000"}
+            querystring = {"problemIds":str(problem)}
             response = requests.request("GET", url, headers=headers, params=querystring)
+            level = response.json()[0]["level"]
+            print(problem, level)
             cnt += 1
     print()
 
 
 
 
-print(response.text)
 
 if __name__ == "__main__":
     main()
