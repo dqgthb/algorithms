@@ -49,6 +49,8 @@ def process(text):
     return [int(i) for i in text.split(", ")]
 
 
+tier = "BSGPDR"
+
 def check(list_, topic = ""):
     url = "https://solved.ac/api/v3/problem/lookup"
     headers = {"Content-Type": "application/json"}
@@ -61,6 +63,7 @@ def check(list_, topic = ""):
             querystring = {"problemIds":str(problem)}
             response = requests.request("GET", url, headers=headers, params=querystring)
             level = response.json()[0]["level"]
+            q, r = divmod(level, 5)
             print(problem, level)
             cnt += 1
     print()
