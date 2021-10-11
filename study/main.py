@@ -66,7 +66,7 @@ def check(list_, topic = ""):
             q, r = divmod(level-1, 5)
             print(problem, tier[q]+'-'+str(5-r), end=' / ')
             cnt += 1
-    print()
+    print('\n')
 
 
 if __name__ == "__main__":
