@@ -31,9 +31,9 @@ def main(f=None):
         A[i] = convert[A[i]]
     print(A)
 
-    T = [0] * (2**ceil(log2(N)))
-    print(T)
+    T = [0] * (2**(ceil(log2(N))+1))
     segInit(0, N-1, 1)
+    print(T)
 
     # ######## INPUT AREA END ############
 
