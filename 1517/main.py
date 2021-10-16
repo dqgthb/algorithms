@@ -31,6 +31,7 @@ def main(f=None):
         A[i] = convert[A[i]]
     print(A)
 
+    F = [0] * N
     T = [0] * (2**(ceil(log2(N))+1))
     #segInit(0, N-1, 1)
     print(T)
@@ -39,6 +40,7 @@ def main(f=None):
 
     for i in A:
         cnt += segQuery(0, N-1, i+1, N-1, 1)
+        F[i] += 1
         cnt
 
 
