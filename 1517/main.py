@@ -53,12 +53,14 @@ def segQuery(s, e, left, right, idx):
     if e < left or right < s:
         return 0
 
+    if s <= left and right <= e:
+        return T[idx]
+
     mid = (s + e) // 2
     return segQuery(s, mid, left, right, idx * 2) + segQuery(mid+1, e, left, right, idx * 2 + 1)
 
 
 def segUpdate(s, e, left, right, idx):
-    if
 
 
 
