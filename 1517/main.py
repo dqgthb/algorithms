@@ -54,6 +54,9 @@ def merge(s, e):
             l += 1
             idx += 1
         else:
+            res[idx] = A[r]
+            r += 1
+            idx += 1
 
 
 
