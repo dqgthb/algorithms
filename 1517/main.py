@@ -61,6 +61,18 @@ def segQuery(s, e, left, right, idx):
 
 
 def segUpdate(s, e, i, v, idx):
+    if i < s or e < i:
+        return 0
+
+    if s == e == i:
+        T[idx] = v
+        return v
+
+    mid = (s + e) // 2
+
+
+
+
 
 
 
