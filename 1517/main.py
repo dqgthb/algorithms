@@ -60,7 +60,8 @@ def segQuery(s, e, left, right, idx):
     return segQuery(s, mid, left, right, idx * 2) + segQuery(mid+1, e, left, right, idx * 2 + 1)
 
 
-def segUpdate(s, e, left, right, idx):
+def segUpdate(s, e, i, v, idx):
+
 
 
 
