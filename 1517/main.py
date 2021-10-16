@@ -30,8 +30,12 @@ def main(f=None):
 
 
 def mergeSort(s, e):
-
-
+    if s == e:
+        return
+    mid = (s + e) // 2
+    mergeSort(s, mid)
+    mergeSort(mid, e)
+    merge(s, e)
 
 # TEMPLATE ###############################
 
