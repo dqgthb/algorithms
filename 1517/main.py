@@ -35,6 +35,8 @@ def main(f=None):
     #segInit(0, N-1, 1)
     print(T)
 
+
+
     # ######## INPUT AREA END ############
 
 
@@ -62,13 +64,14 @@ def segQuery(s, e, left, right, idx):
 
 def segUpdate(s, e, i, v, idx):
     if i < s or e < i:
-        return 0
+        return T[idx]
 
     if s == e == i:
         T[idx] = v
         return v
 
     mid = (s + e) // 2
+    T[idx] = segUpdate(s, mid, i, v, idx * 2) + segUpdate(mid+1, e, i, v, idx * 2 + 1)
 
 
 
@@ -139,4 +142,4 @@ def parr(arr):
 
 
 if __name__ == "__main__":
-    main()
+    ma
