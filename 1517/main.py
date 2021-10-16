@@ -37,13 +37,13 @@ def main(f=None):
     # ######## INPUT AREA END ############
 
 
-def setInit(s, e, idx):
+def segInit(s, e, idx):
     if s == e:
         T[idx] = A[s]
         return T[idx]
 
     mid = (s + e)//2
-    T[idx] = init(s, mid, idx * 2) + init(mid+1, e, idx * 2 + 1)
+    T[idx] = segInit(s, mid, idx * 2) + segInit(mid+1, e, idx * 2 + 1)
     return T[idx]
 
 
