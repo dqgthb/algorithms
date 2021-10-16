@@ -20,7 +20,7 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
-    global N, A, T
+    global N, T
     N = int(input())
     A = [int(i) for i in input().split()]
     N = len(A)
