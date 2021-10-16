@@ -58,6 +58,7 @@ def segQuery(s, e, left, right, idx):
 
 
 def segUpdate(s, e, left, right, idx):
+    if
 
 
 
