@@ -37,7 +37,8 @@ def mergeSort(s, e):
     mid = (s + e) // 2
     mergeSort(s, mid)
     mergeSort(mid, e)
-    merge(s, e)
+    ans += merge(s, e)
+
 
 
 def merge(s, e):
@@ -51,7 +52,7 @@ def merge(s, e):
 
     while l <= mid or r <= e:
         if l <= mid and (r > e or myArr[i] <= myArr[j]):
-            ans += idx - l
+            ans += idx - s
             res[idx] = A[l]
             l += 1
             idx += 1
@@ -59,6 +60,7 @@ def merge(s, e):
             res[idx] = A[r]
             r += 1
             idx += 1
+    return ans
 
 
 
