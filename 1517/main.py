@@ -80,12 +80,6 @@ def segUpdate(s, e, i, v, idx):
     return T[idx]
 
 
-
-
-
-
-
-
 # TEMPLATE ###############################
 
 
