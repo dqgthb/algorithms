@@ -35,6 +35,12 @@ def main(f=None):
     #segInit(0, N-1, 1)
     print(T)
 
+    cnt = 0
+
+    for i in A:
+
+
+
 
 
     # ######## INPUT AREA END ############
@@ -142,4 +148,4 @@ def parr(arr):
 
 
 if __name__ == "__main__":
-    ma
+    main()
