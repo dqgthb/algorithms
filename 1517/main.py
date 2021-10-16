@@ -47,6 +47,7 @@ def main(f=None):
         cnt += numsLarger
         F[i] += 1
         segUpdate(0, N-1, i, F[i], 1)
+        print(T)
         print(F)
 
 
