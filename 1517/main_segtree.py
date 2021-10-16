@@ -8,7 +8,7 @@ import itertools
 #import collections
 #from collections import deque, Counter, defaultdict as dd
 #import math
-#from math import log, log2, ceil, floor, gcd, sqrt
+from math import log, log2, ceil, floor, gcd, sqrt
 #from heapq import heappush, heappop
 #import bisect
 #from bisect import bisect_left as bl, bisect_right as br
@@ -20,17 +20,64 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
+    global N, T
     N = int(input())
     A = [int(i) for i in input().split()]
     N = len(A)
-    mergeSort()
-
+    Asorted = list(sorted(A))
+    convert = {Asorted[i]:i for i in range(N)}
 
     # ######## INPUT AREA END ############
 
+    for i in range(N):
+        A[i] = convert[A[i]]
 
-def mergeSort(s, e):
+    F = [0] * N
+    T = [0] * (2**(ceil(log2(N))+1))
 
+    cnt = 0
+
+    for i in A:
+        numsLarger = segQuery(0, N-1, i+1, N-1, 1)
+        cnt += numsLarger
+        F[i] += 1
+        segUpdate(0, N-1, i, F[i], 1)
+    print(cnt)
+
+
+
+def segInit(s, e, idx, arr):
+    if s == e:
+        T[idx] = arr[s]
+        return T[idx]
+
+    mid = (s + e)//2
+    T[idx] = segInit(s, mid, idx * 2) + segInit(mid+1, e, idx * 2 + 1)
+    return T[idx]
+
+
+def segQuery(s, e, left, right, idx):
+    if e < left or right < s:
+        return 0
+
+    if left <= s and e <= right:
+        return T[idx]
+
+    mid = (s + e) // 2
+    return segQuery(s, mid, left, right, idx * 2) + segQuery(mid+1, e, left, right, idx * 2 + 1)
+
+
+def segUpdate(s, e, i, v, idx):
+    if i < s or e < i:
+        return T[idx]
+
+    if s == e == i:
+        T[idx] = v
+        return v
+
+    mid = (s + e) // 2
+    T[idx] = segUpdate(s, mid, i, v, idx * 2) + segUpdate(mid+1, e, i, v, idx * 2 + 1)
+    return T[idx]
 
 
 # TEMPLATE ###############################
