@@ -47,9 +47,11 @@ def merge(s, e):
     l = s
     r = mid + 1
     idx = s
+    ans = 0
 
     while l <= mid or r <= e:
         if l <= mid and (r > e or myArr[i] <= myArr[j]):
+            ans += idx - s
             res[idx] = A[l]
             l += 1
             idx += 1
