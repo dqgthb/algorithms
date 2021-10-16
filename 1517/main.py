@@ -47,7 +47,9 @@ def merge(s, e):
     l = s
     r = mid + 1
 
-    while l <= mid
+    while l <= mid or r <= e:
+
+
     for i in range(cnt):
 
 
