@@ -25,6 +25,7 @@ def main(f=None):
     Asorted = list(sorted(A))
     for i in range(N):
         A[i] = Asorted[i]
+    print(A)
 
 
     # ######## INPUT AREA END ############
