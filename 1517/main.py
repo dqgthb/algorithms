@@ -23,6 +23,7 @@ def main(f=None):
     global N, A
     N = int(input())
     A = [int(i) for i in input().split()]
+    res = [None] * N
     N = len(A)
     mergeSort()
 
