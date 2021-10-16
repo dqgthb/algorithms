@@ -32,25 +32,19 @@ def main(f=None):
     print(A)
 
     T = [0] * (2**ceil(log2(N)))
+    segInit(0, N-1, 1)
 
     # ######## INPUT AREA END ############
 
 
-def init(s, e, idx):
+def setInit(s, e, idx):
     if s == e:
         T[idx] = A[s]
         return T[idx]
 
-    T[idx] = init()
-
-
-
-
-
-
-
-
-
+    mid = (s + e)//2
+    T[idx] = init(s, mid, idx * 2) + init(mid+1, e, idx * 2 + 1)
+    return T[idx]
 
 
 # TEMPLATE ###############################
