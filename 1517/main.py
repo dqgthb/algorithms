@@ -50,7 +50,11 @@ def merge(s, e):
 
     while l <= mid or r <= e:
         if l <= mid and (r > e or myArr[i] <= myArr[j]):
-            res[idx]
+            res[idx] = A[l]
+            l += 1
+            idx += 1
+        else:
+
 
 
     for i in range(cnt):
