@@ -38,6 +38,7 @@ def main(f=None):
     cnt = 0
 
     for i in A:
+        cnt += segQuery(0, N-1, i, N-1,
 
 
 
