@@ -23,8 +23,10 @@ def main(f=None):
     N = int(input())
     A = [int(i) for i in input().split()]
     Asorted = list(sorted(A))
+    convert = {Asorted[i]:i for i in range(N)}
+
     for i in range(N):
-        A[i] = Asorted[i]
+        A[i] = convert[i]
     print(A)
 
 
