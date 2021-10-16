@@ -46,8 +46,11 @@ def merge(s, e):
 
     l = s
     r = mid + 1
+    idx = s
 
     while l <= mid or r <= e:
+        if l <= mid and (r > e or myArr[i] <= myArr[j]):
+            res[idx]
 
 
     for i in range(cnt):
