@@ -38,15 +38,22 @@ def main(f=None):
     # ######## INPUT AREA END ############
 
 
-def segInit(s, e, idx):
+def segInit(s, e, idx, arr):
     print(s, e, idx)
     if s == e:
-        T[idx] = A[s]
+        T[idx] = arr[s]
         return T[idx]
 
     mid = (s + e)//2
     T[idx] = segInit(s, mid, idx * 2) + segInit(mid+1, e, idx * 2 + 1)
     return T[idx]
+
+
+def segQuery(s, e, left, right, idx):
+
+
+def segUpdate(s, e, left, right, idx):
+
 
 
 # TEMPLATE ###############################
