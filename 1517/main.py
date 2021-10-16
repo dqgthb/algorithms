@@ -32,12 +32,14 @@ def main(f=None):
     print(A)
 
     T = [0] * (2**ceil(log2(N)))
+    print(T)
     segInit(0, N-1, 1)
 
     # ######## INPUT AREA END ############
 
 
 def segInit(s, e, idx):
+    print(s, e, idx)
     if s == e:
         T[idx] = A[s]
         return T[idx]
