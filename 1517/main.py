@@ -57,7 +57,7 @@ def merge(s, e):
 
     while l <= mid or r <= e:
         if l <= mid and (r > e or A[l] <= A[r]):
-            ans += idx - s
+            ans += r - mid - 1
             T[idx] = A[l]
             l += 1
             idx += 1
