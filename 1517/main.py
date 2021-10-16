@@ -45,7 +45,7 @@ def main(f=None):
         cnt += segQuery(0, N-1, i+1, N-1, 1)
         F[i] += 1
         segUpdate(0, N-1, i, F[i], 1)
-    print(cnt)
+        print(cnt)
 
 
 
