@@ -43,11 +43,11 @@ def main(f=None):
 
     for i in A:
         numsLarger = segQuery(0, N-1, i+1, N-1, 1)
+        print(numsLarger)
         cnt += numsLarger
         F[i] += 1
         segUpdate(0, N-1, i, F[i], 1)
         print(F)
-        print(numsLarger)
 
 
 
