@@ -43,9 +43,11 @@ def mergeSort(s, e):
 def merge(s, e):
     mid = (s + e) // 2
     cnt = e - s + 1
-    half = cnt // 2
-    l = 0
-    r = 0
+
+    l = s
+    r = mid
+
+    while
     for i in range(cnt):
 
 
