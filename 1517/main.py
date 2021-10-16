@@ -50,9 +50,13 @@ def segInit(s, e, idx, arr):
 
 
 def segQuery(s, e, left, right, idx):
+    if e < left or right < s:
+        return 0
+
 
 
 def segUpdate(s, e, left, right, idx):
+
 
 
 # TEMPLATE ###############################
