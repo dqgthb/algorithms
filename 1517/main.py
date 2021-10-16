@@ -8,7 +8,7 @@ import itertools
 #import collections
 #from collections import deque, Counter, defaultdict as dd
 #import math
-#from math import log, log2, ceil, floor, gcd, sqrt
+from math import log, log2, ceil, floor, gcd, sqrt
 #from heapq import heappush, heappop
 #import bisect
 #from bisect import bisect_left as bl, bisect_right as br
@@ -30,6 +30,7 @@ def main(f=None):
         A[i] = convert[A[i]]
     print(A)
 
+    t = [0] * (2**ceil(log2(N)))
 
 
     # ######## INPUT AREA END ############
