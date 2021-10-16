@@ -20,8 +20,16 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
+    N = int(input())
+    A = [int(i) for i in input().split()]
+    Asorted = list(sorted(A))
+    for i in range(N):
+        A[i] = Asorted[i]
+
 
     # ######## INPUT AREA END ############
+
+
 
 
 # TEMPLATE ###############################
