@@ -42,7 +42,15 @@ def mergeSort(s, e):
 
 def merge(s, e):
     mid = (s + e) // 2
-    T[]
+    cnt = e - s + 1
+    half = cnt // 2
+    l = 0
+    r = 0
+    for i in range(cnt):
+
+
+
+
 
 
 
