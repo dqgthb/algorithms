@@ -39,7 +39,7 @@ def main(f=None):
 
     for i in A:
         cnt += segQuery(0, N-1, i+1, N-1, 1)
-        segQuery()
+        cnt
 
 
 
