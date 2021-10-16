@@ -63,6 +63,7 @@ def segInit(s, e, idx, arr):
 
 
 def segQuery(s, e, left, right, idx):
+    print(s, e, left, right, idx)
     if e < left or right < s:
         return 0
 
