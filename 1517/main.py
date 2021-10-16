@@ -26,18 +26,14 @@ def main(f=None):
     N = len(A)
     Asorted = list(sorted(A))
     convert = {Asorted[i]:i for i in range(N)}
-    print(convert)
 
     # ######## INPUT AREA END ############
 
     for i in range(N):
         A[i] = convert[A[i]]
-    print(A)
 
     F = [0] * N
     T = [0] * (2**(ceil(log2(N))+1))
-    #segInit(0, N-1, 1)
-    print(T)
 
     cnt = 0
 
