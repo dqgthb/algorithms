@@ -23,9 +23,12 @@ def main(f=None):
     global N, A, T
     N = int(input())
     A = [int(i) for i in input().split()]
+    N = len(A)
     Asorted = list(sorted(A))
     convert = {Asorted[i]:i for i in range(N)}
     print(convert)
+
+    # ######## INPUT AREA END ############
 
     for i in range(N):
         A[i] = convert[A[i]]
@@ -41,13 +44,9 @@ def main(f=None):
     for i in A:
         cnt += segQuery(0, N-1, i+1, N-1, 1)
         F[i] += 1
-        cnt
+        segUpdate(0, N-1, i, F[i], 1)
+    print(cnt)
 
-
-
-
-
-    # ######## INPUT AREA END ############
 
 
 def segInit(s, e, idx, arr):
