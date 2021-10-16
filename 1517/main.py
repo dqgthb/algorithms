@@ -81,6 +81,7 @@ def segUpdate(s, e, i, v, idx):
 
     mid = (s + e) // 2
     T[idx] = segUpdate(s, mid, i, v, idx * 2) + segUpdate(mid+1, e, i, v, idx * 2 + 1)
+    return T[idx]
 
 
 
