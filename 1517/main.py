@@ -20,10 +20,10 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
-    global N, A
+    global N, A, T
     N = int(input())
     A = [int(i) for i in input().split()]
-    res = [None] * N
+    T = A[:]
     N = len(A)
     mergeSort()
 
@@ -42,6 +42,8 @@ def mergeSort(s, e):
 
 def merge(s, e):
     mid = (s + e) // 2
+    T[]
+
 
 
 # TEMPLATE ###############################
