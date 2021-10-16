@@ -45,9 +45,9 @@ def merge(s, e):
     cnt = e - s + 1
 
     l = s
-    r = mid
+    r = mid + 1
 
-    while
+    while l <= mid
     for i in range(cnt):
 
 
