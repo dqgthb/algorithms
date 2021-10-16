@@ -56,17 +56,17 @@ def merge(s, e):
     ans = 0
 
     while l <= mid or r <= e:
-        if l <= mid and (r > e or myArr[i] <= myArr[j]):
+        if l <= mid and (r > e or A[l] <= A[r]):
             ans += idx - s
-            res[idx] = A[l]
+            T[idx] = A[l]
             l += 1
             idx += 1
         else:
-            res[idx] = A[r]
+            T[idx] = A[r]
             r += 1
             idx += 1
     for i in range(s, e+1):
-        A[i] = res[i]
+        A[i] = T[i]
 
     return ans
 
