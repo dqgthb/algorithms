@@ -20,6 +20,7 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
+    global N, A, T
     N = int(input())
     A = [int(i) for i in input().split()]
     Asorted = list(sorted(A))
@@ -30,10 +31,18 @@ def main(f=None):
         A[i] = convert[A[i]]
     print(A)
 
-    t = [0] * (2**ceil(log2(N)))
-
+    T = [0] * (2**ceil(log2(N)))
 
     # ######## INPUT AREA END ############
+
+
+def init(s, e, idx):
+    if s == e: return
+
+
+
+
+
 
 
 
