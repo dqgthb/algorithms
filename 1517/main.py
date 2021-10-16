@@ -37,7 +37,13 @@ def main(f=None):
 
 
 def init(s, e, idx):
-    if s == e: return
+    if s == e:
+        T[idx] = A[s]
+        return T[idx]
+
+    T[idx] = init()
+
+
 
 
 
