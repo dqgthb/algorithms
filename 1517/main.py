@@ -21,7 +21,6 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
 
-
     # ######## INPUT AREA END ############
 
 
