@@ -26,7 +26,7 @@ def main(f=None):
     T = A[:]
     N = len(A)
     Ans = 0
-    mergeSort()
+    mergeSort(0, N-1)
 
     print(Ans)
 
@@ -66,15 +66,6 @@ def merge(s, e):
             r += 1
             idx += 1
     return ans
-
-
-
-    for i in range(cnt):
-
-
-
-
-
 
 
 # TEMPLATE ###############################
