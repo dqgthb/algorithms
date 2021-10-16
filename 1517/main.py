@@ -41,7 +41,7 @@ def mergeSort(s, e):
         return
     mid = (s + e) // 2
     mergeSort(s, mid)
-    mergeSort(mid, e)
+    mergeSort(mid+1, e)
     Ans += merge(s, e)
 
 
@@ -65,6 +65,9 @@ def merge(s, e):
             res[idx] = A[r]
             r += 1
             idx += 1
+    for i in range(s, e+1):
+        A[i] = res[i]
+
     return ans
 
 
