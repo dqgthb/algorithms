@@ -24,10 +24,12 @@ def main(f=None):
     A = [int(i) for i in input().split()]
     Asorted = list(sorted(A))
     convert = {Asorted[i]:i for i in range(N)}
+    print(convert)
 
     for i in range(N):
-        A[i] = convert[i]
+        A[i] = convert[A[i]]
     print(A)
+
 
 
     # ######## INPUT AREA END ############
