@@ -58,7 +58,7 @@ def divide(ai, aj, bi, bj):
     w = bj - aj + 1
 
     for i in range(1, h):
-        U = query(ai)
+        U = query(ai, aj, ai+i-1, aj+w-1)
 
 
 
