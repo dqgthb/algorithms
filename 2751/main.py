@@ -27,6 +27,7 @@ def main(f=None):
 
     # ######## INPUT AREA END ############
 
+    print(A)
     mergeSort(0, N-1)
     print(A)
 
@@ -35,7 +36,6 @@ def main(f=None):
 # TEMPLATE ###############################
 
 def mergeSort(s, e):
-    print(s, e)
 
     if s == e:
         return
@@ -79,7 +79,7 @@ def merge(s, e):
         while l <= mid:
             C[idx] = A[l]
             idx += 1
-            r += 1
+            l += 1
 
     for i in range(s, e+1):
         A[i] = C[i]
