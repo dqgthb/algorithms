@@ -38,6 +38,8 @@ def main(f=None):
     for i in range(1000, 10000):
         if sieve[i]:
             primes.append(i)
+    convert = {primes[i]:i for i in range(len(primes))}
+    G =
     preprocess()
 
     for _ in range(T):
@@ -47,7 +49,8 @@ def main(f=None):
     # ######## INPUT AREA END ############
 
 def preprocess():
-    for
+    global G
+
 
 
 
