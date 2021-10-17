@@ -65,13 +65,13 @@ def preprocess():
 
 
 def solve(a, b):
+    if a == b:
+        return 0
     goal = convert[b]
     dq = deque()
     vis = [False] * N
     dq.append((convert[a], 0))
     vis[convert[a]] = True
-
-    print(dq)
 
     while dq:
         v, cnt = dq.popleft()
