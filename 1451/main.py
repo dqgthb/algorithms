@@ -44,15 +44,16 @@ def main(f=None):
     max_ = 0
     for i in range(1, N):
         U = query(0, 0, i-1, M-1)
+        max_ = max(max_, U * divide(i, 0, N-1, M-1))
         D = query(i, 0, N-1, M-1)
-        max_ = max()
-
-
+        max_ = max(max_, D * divide(0, 0, i-1, M-1))
 
     # divide vertically
     for i in range(1, M):
         L = query(0, 0, N-1, i-1)
+        max_ = max(max_, divide(0, i, N-1, M-1))
         R = query(0, i, N-1, M-1)
+        max_ = max(max_, divide(0, i, N-1, M-1))
         print(L, R)
 
 
