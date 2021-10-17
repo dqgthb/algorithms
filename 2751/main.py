@@ -33,6 +33,9 @@ def main(f=None):
 
 def mergeSort(s, e):
 
+    if s == e:
+        return
+
     mid = (s + e) // 2
     mergeSort(s, mid)
     mergeSort(mid+1, e)
@@ -45,13 +48,18 @@ def merge(s, e):
 
     l = s
     r = mid+1
+    idx = s
+    state = 0
 
     while True:
-        pass
-
-
-
-
+        if A[l] <= A[r]:
+            C[idx] = A[l]
+            idx += 1
+            l += 1
+            if l > mid:
+                state = 1
+                break
+        else:
 
 
 enu = enumerate
