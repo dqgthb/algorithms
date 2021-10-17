@@ -66,10 +66,15 @@ def preprocess():
 
 def solve(a, b):
     dq = deque()
+    vis = [False] * N
     dq.append((convert[a], 0))
+    vis[convert[a]] = True
 
     while dq:
         v, cnt = dq.popleft()
+
+        for i in G[v]:
+            if vis[i]
 
 
 
