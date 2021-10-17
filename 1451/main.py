@@ -41,9 +41,11 @@ def main(f=None):
             CUM[i][j] = CUM[i-1][j] + CUM[i][j-1] - CUM[i-1][j-1] + MAT[i][j]
 
     # divide horizontally
+    parr(MAT)
     for i in range(1, N):
         U = query(0, 0, i-1, M-1)
         D = query(i, 0, N-1, M-1)
+        print(U, D)
 
     # divide vertically
     for i in range(1, M):
