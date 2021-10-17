@@ -45,7 +45,7 @@ def main(f=None):
 
     for _ in range(T):
         a, b = map(int, input().split())
-        solve(a, b)
+        print(solve(a, b))
 
     # ######## INPUT AREA END ############
 
@@ -69,12 +69,16 @@ def solve(a, b):
     vis = [False] * N
     dq.append((convert[a], 0))
     vis[convert[a]] = True
+    goal = convert[b]
 
     while dq:
         v, cnt = dq.popleft()
 
         for i in G[v]:
-            if vis[i]
+            if i == goal:
+                return cnt + 1
+            if not vis[i]:
+
 
 
 
