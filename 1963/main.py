@@ -3,10 +3,10 @@ import os
 import sys
 #import string
 #from functools import cmp_to_key, reduce, partial
-import itertools
 #from itertools import product
 #import collections
-from collections import deque, Counter, defaultdict as dd
+#from collections import deque, Counter, defaultdict as dd
+from collections import deque
 #import math
 #from math import log, log2, ceil, floor, gcd, sqrt
 #from heapq import heappush, heappop
@@ -82,8 +82,6 @@ def solve(a, b):
             if not vis[i]:
                 vis[i] = True
                 dq.append((i, cnt+1))
-
-
 
 
 # TEMPLATE ###############################
