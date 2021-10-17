@@ -29,9 +29,13 @@ def main(f=None):
         factor = 2
         while True:
             v = i * factor
-            if v > 10000:
+            if v >= 10000:
                 break
             sieve[v] = True
+            factor += 1
+
+    for i in range(1000, )
+    primes = []
 
 
     for _ in range(T):
@@ -41,6 +45,7 @@ def main(f=None):
     # ######## INPUT AREA END ############
 
 def preprocess():
+    pass
 
 
 
