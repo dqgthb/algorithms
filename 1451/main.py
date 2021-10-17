@@ -37,7 +37,7 @@ def main(f=None):
         CUM[i][0] = CUM[i-1][0] + MAT[i][0]
 
     for i in range(1, N):
-        for j in range(1, N):
+        for j in range(1, M):
             CUM[i][j] = CUM[i-1][j] + CUM[i][j-1] - CUM[i-1][j-1] + MAT[i][j]
 
     # divide horizontally
