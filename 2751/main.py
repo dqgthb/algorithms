@@ -39,6 +39,21 @@ def mergeSort(s, e):
 
     merge(s, e)
 
+
+def merge(s, e):
+    mid = (s + e) // 2
+
+    l = s
+    r = mid+1
+
+    while True:
+        pass
+
+
+
+
+
+
 enu = enumerate
 
 
