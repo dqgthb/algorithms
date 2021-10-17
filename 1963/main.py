@@ -31,12 +31,14 @@ def main(f=None):
             v = i * factor
             if v >= 10000:
                 break
-            sieve[v] = True
+            sieve[v] = False
             factor += 1
 
-    for i in range(1000, )
     primes = []
-
+    for i in range(1000, 10000):
+        if sieve[i]:
+            primes.append(i)
+    print(primes)
 
     for _ in range(T):
         a, b = map(int, input().split())
