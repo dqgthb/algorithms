@@ -20,11 +20,17 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
+    global T, sieve
     T = int(input())
     sieve = [True] * 10000
     sieve[0] = False
     sieve[1] = False
-    for i in rn
+    for i in range(2, 10000):
+        factor = 2
+        while True:
+            v = i * factor
+            sieve[v] = True
+
 
     for _ in range(T):
         a, b = map(int, input().split())
