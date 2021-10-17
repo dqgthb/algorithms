@@ -48,6 +48,7 @@ def main(f=None):
     # divide vertically
     for i in range(1, M):
         L = query(0, 0, N-1, i-1)
+        R = query(0, i, N-1, M-1)
 
 
 def query(ai, aj, bi, bj):
