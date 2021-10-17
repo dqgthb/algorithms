@@ -20,7 +20,7 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
-    global T, sieve
+    global T, sieve, primes, G
     T = int(input())
     sieve = [True] * 10000
     sieve[0] = False
@@ -38,7 +38,7 @@ def main(f=None):
     for i in range(1000, 10000):
         if sieve[i]:
             primes.append(i)
-    print(primes)
+    preprocess()
 
     for _ in range(T):
         a, b = map(int, input().split())
@@ -47,7 +47,7 @@ def main(f=None):
     # ######## INPUT AREA END ############
 
 def preprocess():
-    pass
+    for
 
 
 
