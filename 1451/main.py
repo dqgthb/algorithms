@@ -37,6 +37,11 @@ def main(f=None):
 
     for i in range(1, N):
         for j in range(1, N):
+            CUM[i][j] = CUM[i-1][j] + CUM[i][j-1] - CUM[i-1][j-1] + MAT[i][j]
+
+    parr(MAT)
+    parr(CUM)
+
 
 
 
