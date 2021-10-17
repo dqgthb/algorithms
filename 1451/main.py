@@ -57,6 +57,11 @@ def divide(ai, aj, bi, bj):
     h = bi - ai + 1
     w = bj - aj + 1
 
+    for i in range(1, h):
+        U = query(ai)
+
+
+
 
 def query(ai, aj, bi, bj):
     ret = CUM[bi][bj]
