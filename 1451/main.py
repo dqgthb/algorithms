@@ -48,6 +48,11 @@ def main(f=None):
 
 
 def query(ai, aj, bi, bj):
+    ret = CUM[bi][bj]
+    if ai == 0:
+        if aj == 0:
+            return ret
+        else:
 
 
 # TEMPLATE ###############################
