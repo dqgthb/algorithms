@@ -60,16 +60,12 @@ def preprocess():
             for num in range(10):
                 lst[digit] = num
                 val = int(''.join(map(str, lst)))
-                if val > 999 and sieve[val]:
+                if val > 999 and val != prime and sieve[val]:
                     G[i].append(convert[val])
-    print(G)
-
-
-
 
 
 def solve(a, b):
-    pass
+    dq = deque()
 
 
 # TEMPLATE ###############################
