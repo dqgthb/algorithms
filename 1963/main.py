@@ -52,9 +52,12 @@ def main(f=None):
 def preprocess():
     for i in range(N):
         prime = primes[i]
+        orig = [int(i) for i in str(prime)]
+
+
         for digit in range(4):
             for num in range(10):
-                prime
+                prime[0] =
 
 
 
