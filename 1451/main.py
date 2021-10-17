@@ -24,9 +24,12 @@ def main(f=None):
     N, M = map(int, input().split())
 
     MAT = [list(map(int, input().strip())) for _ in range(N)]
-
+    CUM = Mat(N, M)
 
     # ######## INPUT AREA END ############
+
+
+
 
 
 
