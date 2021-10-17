@@ -28,6 +28,14 @@ def main(f=None):
 
     # ######## INPUT AREA END ############
 
+    CUM[0][0] = MAT[0][0]
+    for i in range(1, M):
+        CUM[0][i] = CUM[0][i-1]
+
+    for i in range(1, N):
+        CUM[i][0] = CUM[i-1][0]
+
+
 
 # TEMPLATE ###############################
 
