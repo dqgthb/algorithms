@@ -20,8 +20,10 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
+    global N, A, C
     N = int(input())
     A = [int(input()) for _ in range(N)]
+    C = [0] * N
 
     # ######## INPUT AREA END ############
 
@@ -29,10 +31,13 @@ def main(f=None):
 
 # TEMPLATE ###############################
 
-def mergeSort(A, s, e):
-    if s == e:
-        return A[0]
+def mergeSort(s, e):
 
+    mid = (s + e) // 2
+    mergeSort(s, mid)
+    mergeSort(mid+1, e)
+
+    merge(s, e)
 
 enu = enumerate
 
