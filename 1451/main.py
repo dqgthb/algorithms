@@ -53,6 +53,9 @@ def main(f=None):
         print(L, R)
 
 
+def divide(ai, aj, bi, bj):
+    h = bi - ai + 1
+    w = bj - aj + 1
 
 
 def query(ai, aj, bi, bj):
