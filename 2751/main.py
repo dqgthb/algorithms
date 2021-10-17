@@ -67,8 +67,18 @@ def merge(s, e):
                 break
 
     if state:
-        while r < mid:
+        while r <= e:
+            C[idx] = A[r]
+            idx += 1
+            r += 1
+    else:
+        while l <= mid:
+            C[idx] = A[l]
+            idx += 1
+            r += 1
 
+    for i in range(s, e+1):
+        A[i] = C[i]
 
 
 
