@@ -41,6 +41,8 @@ def main(f=None):
             CUM[i][j] = CUM[i-1][j] + CUM[i][j-1] - CUM[i-1][j-1] + MAT[i][j]
 
     # divide horizontally
+    for i in range(1, N):
+
 
     # divide vertically
 
