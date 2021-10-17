@@ -21,11 +21,18 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     T = int(input())
+    sieve = [True] * 10000
+    sieve[0] = False
+    sieve[1] = False
+    for i in rn
+
     for _ in range(T):
         a, b = map(int, input().split())
         solve(a, b)
 
     # ######## INPUT AREA END ############
+
+def preprocess():
 
 
 
