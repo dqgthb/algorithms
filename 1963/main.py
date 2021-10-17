@@ -65,11 +65,13 @@ def preprocess():
 
 
 def solve(a, b):
+    goal = convert[b]
     dq = deque()
     vis = [False] * N
     dq.append((convert[a], 0))
     vis[convert[a]] = True
-    goal = convert[b]
+
+    print(dq)
 
     while dq:
         v, cnt = dq.popleft()
@@ -78,7 +80,8 @@ def solve(a, b):
             if i == goal:
                 return cnt + 1
             if not vis[i]:
-
+                vis[i] = True
+                dq.append(i)
 
 
 
