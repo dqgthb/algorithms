@@ -27,11 +27,15 @@ def main(f=None):
 
     # ######## INPUT AREA END ############
 
+    mergeSort(0, N-1)
+    print(A)
+
 
 
 # TEMPLATE ###############################
 
 def mergeSort(s, e):
+    print(s, e)
 
     if s == e:
         return
