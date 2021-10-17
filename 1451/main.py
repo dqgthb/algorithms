@@ -42,11 +42,12 @@ def main(f=None):
 
     # divide horizontally
     for i in range(1, N):
-
+        up = CUM[]
 
     # divide vertically
 
 
+def query(ai, aj, bi, bj):
 
 
 # TEMPLATE ###############################
