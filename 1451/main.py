@@ -41,8 +41,6 @@ def main(f=None):
             CUM[i][j] = CUM[i-1][j] + CUM[i][j-1] - CUM[i-1][j-1] + MAT[i][j]
 
     # divide horizontally
-    for i in range(1, N):
-        up = CUM[]
 
     # divide vertically
 
@@ -58,6 +56,7 @@ def query(ai, aj, bi, bj):
         if aj == 0:
             return ret - CUM[ai-1][bj]
         else:
+            return ret - CUM[ai-1][bj] - CUM[bi][aj-1] + CUM[ai-1][aj-1]
 
 
 
