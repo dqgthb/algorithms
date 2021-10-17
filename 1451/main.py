@@ -30,10 +30,13 @@ def main(f=None):
 
     CUM[0][0] = MAT[0][0]
     for i in range(1, M):
-        CUM[0][i] = CUM[0][i-1]
+        CUM[0][i] = CUM[0][i-1] + MAT[0][i]
 
     for i in range(1, N):
-        CUM[i][0] = CUM[i-1][0]
+        CUM[i][0] = CUM[i-1][0] + MAT[i][0]
+
+    for i in range(1, N):
+        for j in range(1, N):
 
 
 
