@@ -29,6 +29,8 @@ def main(f=None):
         factor = 2
         while True:
             v = i * factor
+            if v > 10000:
+                break
             sieve[v] = True
 
 
