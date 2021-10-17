@@ -81,7 +81,7 @@ def solve(a, b):
                 return cnt + 1
             if not vis[i]:
                 vis[i] = True
-                dq.append(i)
+                dq.append((i, cnt+1))
 
 
 
