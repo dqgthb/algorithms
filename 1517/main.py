@@ -1,9 +1,9 @@
 # CP template Version 1.006
-import os
+#import os
 import sys
 #import string
 #from functools import cmp_to_key, reduce, partial
-import itertools
+#import itertools
 #from itertools import product
 #import collections
 #from collections import deque, Counter, defaultdict as dd
@@ -15,8 +15,9 @@ import itertools
 DEBUG = False
 
 
+input = sys.stdin.readline  # by default
 def main(f=None):
-    init(f)
+    #init(f)
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
@@ -55,16 +56,42 @@ def merge(s, e):
     idx = s
     ans = 0
 
-    while l <= mid or r <= e:
-        if l <= mid and (r > e or A[l] <= A[r]):
+    state = 0
+    # state:
+    # l <= mid and r <= e: 0
+    # l > mid and r <= e: 1
+    # l <= mid and r > e: 2
+    # l > mid and r > e: 3
+
+    while True: # state == 0
+        if A[l] <= A[r]:
             ans += r - mid - 1
             T[idx] = A[l]
             l += 1
             idx += 1
+            if l > mid:
+                state = 1
+                break
         else:
             T[idx] = A[r]
             r += 1
             idx += 1
+            if r > e:
+                state = 2
+                break
+
+    if state == 1:
+        while r <= e:
+            T[idx] = A[r]
+            r += 1
+            idx += 1
+    else:
+        while l <= mid:
+            ans += r - mid - 1
+            T[idx] = A[l]
+            l += 1
+            idx += 1
+
     for i in range(s, e+1):
         A[i] = T[i]
 
