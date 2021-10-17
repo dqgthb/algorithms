@@ -49,7 +49,7 @@ def merge(s, e):
     l = s
     r = mid+1
     idx = s
-    state = 0
+    state = False
 
     while True:
         if A[l] <= A[r]:
@@ -57,9 +57,19 @@ def merge(s, e):
             idx += 1
             l += 1
             if l > mid:
-                state = 1
+                state = True
                 break
         else:
+            C[idx] = A[r]
+            idx += 1
+            r += 1
+            if r > mid:
+                break
+
+    if state:
+        while r < mid:
+
+
 
 
 enu = enumerate
