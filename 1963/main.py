@@ -59,7 +59,10 @@ def preprocess():
             lst[:] = orig
             for num in range(10):
                 lst[digit] = num
-                if
+                val = int(''.join(map(str, digit)))
+                if val > 999 and sieve[val]:
+                    G[i].append(convert(val))
+    print(G)
 
 
 
