@@ -41,9 +41,12 @@ def main(f=None):
             CUM[i][j] = CUM[i-1][j] + CUM[i][j-1] - CUM[i-1][j-1] + MAT[i][j]
 
     # divide horizontally
+    max_ = 0
     for i in range(1, N):
         U = query(0, 0, i-1, M-1)
         D = query(i, 0, N-1, M-1)
+        max_ = max()
+
 
 
     # divide vertically
@@ -57,15 +60,18 @@ def divide(ai, aj, bi, bj):
     h = bi - ai + 1
     w = bj - aj + 1
 
+    max_ = 0
+
     for i in range(1, h):
         U = query(ai, aj, ai+i-1, aj+w-1)
         D = query(ai+i, aj, ai+h-1, aj+w-1)
+        max_ = max(max_, U * D)
 
     for i in range(1, w):
         L = query(ai, aj, ai+h-1, aj+i-1)
         R = query(ai, aj+i, ai+h-1, aj+w-1)
-
-
+        max_ = max(max_, L * R)
+    return max_
 
 def query(ai, aj, bi, bj):
     ret = CUM[bi][bj]
