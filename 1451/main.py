@@ -28,6 +28,7 @@ def main(f=None):
 
     # ######## INPUT AREA END ############
 
+    # build CUM
     CUM[0][0] = MAT[0][0]
     for i in range(1, M):
         CUM[0][i] = CUM[0][i-1] + MAT[0][i]
@@ -39,8 +40,9 @@ def main(f=None):
         for j in range(1, N):
             CUM[i][j] = CUM[i-1][j] + CUM[i][j-1] - CUM[i-1][j-1] + MAT[i][j]
 
-    parr(MAT)
-    parr(CUM)
+    # divide horizontally
+
+    # divide vertically
 
 
 
