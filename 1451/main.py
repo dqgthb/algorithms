@@ -53,6 +53,13 @@ def query(ai, aj, bi, bj):
         if aj == 0:
             return ret
         else:
+            return ret - CUM[bi][aj-1]
+    else:
+        if aj == 0:
+            return ret - CUM[ai-1][bj]
+        else:
+
+
 
 
 # TEMPLATE ###############################
