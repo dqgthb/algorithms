@@ -27,9 +27,8 @@ def main(f=None):
 
     # ######## INPUT AREA END ############
 
-    print(A)
     mergeSort(0, N-1)
-    print(A)
+    print('\n'.join(map(str, A)))
 
 
 
@@ -67,7 +66,7 @@ def merge(s, e):
             C[idx] = A[r]
             idx += 1
             r += 1
-            if r > mid:
+            if r > e:
                 break
 
     if state:
