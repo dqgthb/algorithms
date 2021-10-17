@@ -6,7 +6,7 @@ import sys
 import itertools
 #from itertools import product
 #import collections
-#from collections import deque, Counter, defaultdict as dd
+from collections import deque, Counter, defaultdict as dd
 #import math
 #from math import log, log2, ceil, floor, gcd, sqrt
 #from heapq import heappush, heappop
@@ -66,6 +66,12 @@ def preprocess():
 
 def solve(a, b):
     dq = deque()
+    dq.append((convert[a], 0))
+
+    while dq:
+        v, cnt = dq.popleft()
+
+
 
 
 # TEMPLATE ###############################
