@@ -20,9 +20,9 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
     global p
-    p = []
-
-
+    N = int(input())
+    s =[]
+    p = [i for i in range(N)]
 
     # ######## INPUT AREA END ############
 
