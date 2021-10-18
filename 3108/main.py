@@ -19,10 +19,18 @@ def main(f=None):
     init(f)
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
+    global p
 
 
 
     # ######## INPUT AREA END ############
+
+
+def find(x):
+    if p[x] == x:
+        return x
+    else:
+
 
 
 def union
