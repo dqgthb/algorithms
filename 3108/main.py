@@ -41,7 +41,12 @@ def find(x):
 def union(x, y):
     px = find(x)
     py = find(y)
-    if px != py:
+    if px == py:
+        return
+
+    if px > py:
+        px, py = py, px
+
 
 
 # TEMPLATE ###############################
