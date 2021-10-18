@@ -38,6 +38,7 @@ def find(x):
         p[x] = find(p[x])
         return p[x]
 
+
 def union(x, y):
     px = find(x)
     py = find(y)
@@ -46,8 +47,7 @@ def union(x, y):
 
     if px > py:
         px, py = py, px
-
-
+    p[py] = px
 
 # TEMPLATE ###############################
 
