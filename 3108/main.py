@@ -22,6 +22,10 @@ def main(f=None):
     global p
     N = int(input())
     s =[]
+    for _ in range(N):
+        x1, y1, x2, y2 = map(int, input().split())
+        s.append((x1, y1, x2, y2))
+    s.sort()
     p = [i for i in range(N)]
 
     # ######## INPUT AREA END ############
@@ -34,9 +38,10 @@ def find(x):
         p[x] = find(p[x])
         return p[x]
 
-
-
-def union
+def union(x, y):
+    px = find(x)
+    py = find(y)
+    if px != py:
 
 
 # TEMPLATE ###############################
