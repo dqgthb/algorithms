@@ -20,6 +20,7 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
     global p
+    p = []
 
 
 
@@ -30,6 +31,8 @@ def find(x):
     if p[x] == x:
         return x
     else:
+        p[x] = find(p[x])
+        return p[x]
 
 
 
