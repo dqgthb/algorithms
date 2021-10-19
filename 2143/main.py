@@ -6,13 +6,12 @@ import sys
 import itertools
 #from itertools import product
 #import collections
-from collections import deque
-#from collections import Counter, defaultdict as dd
+#from collections import deque, Counter, defaultdict as dd
 #import math
 #from math import log, log2, ceil, floor, gcd, sqrt
 #from heapq import heappush, heappop
 #import bisect
-#from bisect import bisect_left as bl, bisect_right as br
+from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
 
 
@@ -21,33 +20,49 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
-    F, S, G, U, D = map(int, input().split())
-    S -= 1
-    G -= 1
+    T = int(input())
+    n = int(input())
+    A = [int(i) for i in input().split()]
+    m = int(input())
+    B = [int(i) for i in input().split()]
 
     # ######## INPUT AREA END ############
 
-    A = [-1] * F
-    A[S] = 0
-    dq = deque()
-    dq.append(S)
+    pA = []
+    for i in range(n):
+        sum_ = 0
+        for j in range(i, n):
+            sum_ += A[j]
+            pA.append(sum_)
 
-    while dq:
-        s = dq.popleft()
-        if s == G:
-            print(A[s])
-            return
+    pB = []
+    for i in range(m):
+        sum_ = 0
+        for j in range(i, m):
+            sum_ += B[j]
+            pB.append(sum_)
 
-        u = s + U
-        d = s - D
-        if u < F and A[u] == -1:
-            A[u] = A[s] + 1
-            dq.append(u)
-        if 0 <= d and A[d] == -1:
-            A[d] = A[s] + 1
-            dq.append(d)
-    print("use the stairs")
+    pA.sort()
+    pB.sort()
 
+    left = 0
+    right = m-1
+
+    cnt = 0
+    bSame = 0
+    while left < n and 0 <= right:
+        a = pA[left]
+        b = pB[right]
+        c = a + b
+
+        if c > T:
+            right -= 1
+        elif c < T:
+            left += 1
+        else:
+            right -= 1
+            left += 1
+    print(cnt)
 
 
 # TEMPLATE ###############################
