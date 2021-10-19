@@ -26,7 +26,6 @@ def main(f=None):
         x1, y1, x2, y2 = map(int, input().split())
         s.append((x1, y1, x2, y2))
     s.sort()
-    parr(s)
 
     # ######## INPUT AREA END ############
 
@@ -47,14 +46,12 @@ def main(f=None):
 
     exist = [False] * (N+1)
     cnt = 0
-    print(p)
     for i in p:
         if exist[i] == False:
             exist[i] = True
             cnt += 1
     print(cnt-1)
 
-    print(check(*s[3], *s[5]))
 
 
 def check(ax1, ay1, ax2, ay2, bx1, by1, bx2, by2):
@@ -67,10 +64,8 @@ def check(ax1, ay1, ax2, ay2, bx1, by1, bx2, by2):
         ay = (ay1, ay2)
         inCount = 0
         bIn = False
-        print(bx1, bx2, by1, by2)
         for i in range(2):
             for j in range(2):
-                print(ax[i], ay[j])
                 if (bx1 < ax[i] < bx2) and (by1 < ay[j] < by2):
                     inCount += 1
                 if (bx1 <= ax[i] <= bx2) and (by1 <= ay[j] <= by2):
