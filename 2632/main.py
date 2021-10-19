@@ -31,16 +31,15 @@ def main(f=None):
 
     pA = [0]
     pB = [0]
-    print(A)
     for i in range(m):
         sum_ = 0
-        for j in range(i, m):
+        for j in range(i, i + m):
             sum_ += A[j]
             pA.append(sum_)
 
     for i in range(n):
         sum_ = 0
-        for j in range(i, n):
+        for j in range(i, i + n):
             sum_ += B[j]
             pB.append(sum_)
 
@@ -49,13 +48,9 @@ def main(f=None):
 
 
     cnt = 0
-    print(pA)
-    print(pB)
     for i in pA:
         l = bl(pB, C-i)
         r = br(pB, C-i)
-        if r - l > 0:
-            print(i, C-i, l, r)
         cnt += r - l
     print(cnt)
 
