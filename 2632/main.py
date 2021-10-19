@@ -32,9 +32,12 @@ def main(f=None):
     # ######## INPUT AREA END ############
 
     A = [0, 1, 2, 4, 8]
-
     m = len(A)
+    B = [0, 1, 2, 4, 8]
     n = len(B)
+
+    A = A * 2
+    B = B * 2
 
     pA = [0, sum(A)]
     pB = [0, sum(B)]
