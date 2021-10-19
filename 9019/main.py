@@ -22,14 +22,10 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     T = int(input())
-    ans = []
+    dp = [None] * 1000
     for i in range(T):
         a, b = map(int, input().split())
-        ans.append(buildString(a, b, solve(a, b)))
-        if i % 1024 == 0:
-            print('\n'.join(ans))
-            ans = []
-    print('\n'.join(ans))
+        print(buildString(a, b, solve(a, b)))
 
 
     # ######## INPUT AREA END ############
@@ -42,6 +38,7 @@ def buildString(a, b, dp):
         prev, l = dp[cur]
         lst.append(l)
         cur = prev
+    del dp
     return ''.join(reversed(lst))
 
 
