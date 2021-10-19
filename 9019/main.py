@@ -24,13 +24,12 @@ def main(f=None):
     T = int(input())
     for _ in range(T):
         a, b = map(int, input().split())
-        solve(a, b, dp)
-        print(buildString(a, b))
+        print(buildString(a, b, solve(a, b)))
 
     # ######## INPUT AREA END ############
 
 
-def buildString(a, b):
+def buildString(a, b, dp):
     lst = []
     cur = b
     while cur != a:
