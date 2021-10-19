@@ -24,7 +24,7 @@ def main(f=None):
     T = int(input())
     for _ in range(T):
         a, b = map(int, input().split())
-        solve(a, b)
+        solve(a, b, dp)
         print(buildString(a, b))
 
     # ######## INPUT AREA END ############
@@ -41,17 +41,14 @@ def buildString(a, b):
 
 
 def solve(a, b):
-    global dp
     dp = [None] * 10000
 
     dq = deque()
     dq.append(a)
     dp[a] = ''
 
-    while dq:
+    while dq and dp[b] == None:
         c = dq.popleft()
-        if c == b:
-            return
 
         d = c * 2 % 10000
         if dp[d] == None:
@@ -74,6 +71,7 @@ def solve(a, b):
         if dp[rr] == None:
             dp[rr] = (c, "R")
             dq.append(r)
+    return dp
 
 
 
