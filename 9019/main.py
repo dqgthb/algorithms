@@ -40,7 +40,6 @@ def buildString(a, b):
     return ''.join(reversed(lst))
 
 
-
 def solve(a, b):
     global dp
     dp = [None] * 10000
