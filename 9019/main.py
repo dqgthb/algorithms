@@ -30,13 +30,6 @@ def main(f=None):
         ans.append(buildString(a, b, dp))
     print('\n'.join(ans))
 
-    for i in range(10000):
-        print(i)
-        for j in range(10000):
-            print(j)
-            solve(i, j, dp)
-            #print(buildString(i, j, dp))
-
 
     # ######## INPUT AREA END ############
 
