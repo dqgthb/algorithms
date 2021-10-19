@@ -32,9 +32,8 @@ def main(f=None):
 
     for i in range(10000):
         for j in range(10000):
-            print(a, b)
-            solve(a, b, dp)
-            print(buildString(a, b, dp))
+            solve(i, j, dp)
+            #print(buildString(i, j, dp))
 
 
     # ######## INPUT AREA END ############
@@ -56,7 +55,8 @@ def solve(a, b, dp):
 
     dq = deque()
     dq.append(a)
-    dp[a] = (-1, "")
+    dp[a] = ""
+    #dp[a] = (-1, "")
 
     while dq and dp[b] == None:
         c = dq.popleft()
