@@ -19,16 +19,68 @@ def main(f=None):
     init(f)
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
-    global p
+    global p, s, N
     N = int(input())
-    s =[]
+    s =[(0, 0, 0, 0)]
     for _ in range(N):
         x1, y1, x2, y2 = map(int, input().split())
         s.append((x1, y1, x2, y2))
     s.sort()
-    p = [i for i in range(N)]
 
     # ######## INPUT AREA END ############
+
+    p = [i for i in range(N+1)]
+    for i in range(N+1):
+        si = s[i]
+        for j in range(i+1, N+1):
+            sj = s[j]
+            if sj[0] > si[2]:
+                break
+            if find(i) == find(j):
+                continue
+            if check(*si, *sj):
+                union(i, j)
+
+    for i in range(N+1):
+        find(i)
+
+    exist = [False] * (N+1)
+    cnt = 0
+    print(p)
+    for i in p:
+        if exist[i] == False:
+            exist[i] = True
+            cnt += 1
+    print(cnt-1)
+
+
+
+
+def check(ax1, ay1, ax2, ay2, bx1, by1, bx2, by2):
+    ax = (ax1, ax2)
+    ay = (ay1, ay2)
+    bx = (bx1, bx2)
+    by = (by1, by2)
+
+
+    for k in range(2):
+        if k == 1:
+            ax, ay, bx, by = bx, by, ax, ay
+            ax1, ax2, ay1, ay2, bx1, bx2, by1, by2 =\
+                bx1, bx2, by1, by2, ax1, ax2, ay1, ay2
+        inCount = 0
+        bIn = False
+        for i in range(2):
+            for j in range(2):
+                if (bx1 < ax[i] < bx2) and (by1 < ay[j] < by2):
+                    inCount += 1
+                if (bx1 <= ax[i] <= bx2) and (by1 <= ay[j] <= by2):
+                    bIn = True
+        if inCount == 4:
+            return False
+        if bIn:
+            return True
+    return False
 
 
 def find(x):
@@ -45,9 +97,8 @@ def union(x, y):
     if px == py:
         return
 
-    if px > py:
-        px, py = py, px
-    p[py] = px
+    p[py] = p[px] = px if px < py else py
+
 
 # TEMPLATE ###############################
 
