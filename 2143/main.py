@@ -60,8 +60,8 @@ def main(f=None):
         elif c < T:
             left += 1
         else:
-            right -= 1
-            left += 1
+            bCount = 0
+
     print(cnt)
 
 
