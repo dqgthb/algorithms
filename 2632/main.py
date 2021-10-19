@@ -29,8 +29,23 @@ def main(f=None):
 
     pA = []
     pB = []
-    for i in range(A):
-        for j in range()
+    for i in range(1, m):
+        sum_ = 0
+        for j in range(i, m):
+            sum_ += A[j]
+            pA.append(sum_)
+
+    for i in range(1, n):
+        sum_ = 0
+        for j in range(i, n):
+            sum_ += B[j]
+            pB.append(sum_)
+
+    pA.sort()
+    pB.sort()
+
+
+    for i in pA:
 
 
 # TEMPLATE ###############################
