@@ -60,25 +60,28 @@ def solve(a, b):
             return
 
         d = c * 2 % 10000
-        addWithLetter(d, c, 'D')
+        if dp[d] == None:
+            dp[d] = (c, "D")
+            dq.append(d)
 
         s = (c - 1) % 10000
+        if dp[d] == None:
+            dp[d] = (c, "D")
+            dq.append(d)
         addWithLetter(s, c, 'S')
-
-        sc = str(c)
-        tmp = '0' * (4 - len(sc)) + sc
-        l = tmp[1:] + tmp[0]
-        l = int(l)
-        r = tmp[3] + tmp[:3]
-        r = int(r)
 
         q, r = divmod(c, 1000)
         ll = r * 10 + q
+        addWithLetter(ll, c, 'L')
+        if dp[d] == None:
+            dp[d] = (c, "D")
+            dq.append(d)
+
         q, r = divmod(c, 10)
         rr = r * 1000 + q
-
-        addWithLetter(ll, c, 'L')
-        addWithLetter(rr, c, 'R')
+        if dp[rr] == None:
+            dp[d] = (c, "D")
+            dq.append(d)
 
 
 
