@@ -65,11 +65,12 @@ def check(ax1, ay1, ax2, ay2, bx1, by1, bx2, by2):
                 bx1, bx2, by1, by2, ax1, ax2, ay1, ay2
         ax = (ax1, ax2)
         ay = (ay1, ay2)
-        print(ax, ay)
         inCount = 0
         bIn = False
+        print(bx1, bx2, by1, by2)
         for i in range(2):
             for j in range(2):
+                print(ax[i], ay[j])
                 if (bx1 < ax[i] < bx2) and (by1 < ay[j] < by2):
                     inCount += 1
                 if (bx1 <= ax[i] <= bx2) and (by1 <= ay[j] <= by2):
