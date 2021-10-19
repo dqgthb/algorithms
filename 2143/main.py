@@ -48,16 +48,13 @@ def main(f=None):
     lpb = len(pB)
 
     left = 0
-    right = m-1
+    right = lpb-1
 
     cnt = 0
-    print(pA)
-    print(pB)
     while left < lpa and 0 <= right:
         a = pA[left]
         b = pB[right]
         c = a + b
-        print(a, b, c)
 
         if c > T:
             right -= 1
@@ -71,11 +68,10 @@ def main(f=None):
                 bCount += 1
                 right -= 1
 
-            while left < m-1 and pA[left+1] == a:
+            while left < lpa-1 and pA[left+1] == a:
                 aCount += 1
                 left += 1
 
-            print(aCount, bCount)
             cnt += aCount * bCount
             left += 1
 
