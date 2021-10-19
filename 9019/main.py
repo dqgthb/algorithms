@@ -22,13 +22,13 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     T = int(input())
-    dp = [None] * 1000
+    dp = [None] * 10000
     ans = []
     for i in range(T):
         a, b = map(int, input().split())
         solve(a, b, dp)
         ans.append(buildString(a, b, dp))
-    print(''.join(ans))
+    print('\n'.join(ans))
 
 
     # ######## INPUT AREA END ############
