@@ -26,8 +26,9 @@ def main(f=None):
     for i in range(T):
         a, b = map(int, input().split())
         ans.append(buildString(a, b, solve(a, b)))
-        if i % 100 == 0:
-        print('\n'.join(ans))
+        if i % 1024 == 0:
+            print('\n'.join(ans))
+            ans = []
 
 
     # ######## INPUT AREA END ############
