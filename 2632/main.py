@@ -23,24 +23,26 @@ def main(f=None):
     C = int(input())
     m, n = map(int, input().split())
     A = [int(input()) for _ in range(m)]
+    sumA = sum(A)
     A = A * 2
     B = [int(input()) for _ in range(n)]
+    sumB = sum(B)
     B = B * 2
 
 
 
     # ######## INPUT AREA END ############
 
-    A = [0, 1, 2, 4, 8]
-    m = len(A)
-    B = [0, 1, 2, 4, 8]
-    n = len(B)
+    #A = [1, 2, 4, 8]
+    #m = len(A)
+    #B = [1, 2, 4, 8]
+    #n = len(B)
 
-    A = A * 2
-    B = B * 2
+    #A = A * 2
+    #B = B * 2
 
-    pA = [0, sum(A)]
-    pB = [0, sum(B)]
+    pA = [0, sumA]
+    pB = [0, sumB]
     for i in range(m):
         sum_ = 0
         for j in range(i, i + m-1):
