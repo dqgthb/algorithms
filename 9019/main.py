@@ -50,7 +50,7 @@ def solve(a, b, dp):
 
     dq = deque()
     dq.append(a)
-    dp[a] = (-1, )
+    dp[a] = (-1, "")
 
     while dq and dp[b] == None:
         c = dq.popleft()
@@ -75,7 +75,7 @@ def solve(a, b, dp):
         rr = r * 1000 + q
         if dp[rr] == None:
             dp[rr] = (c, "R")
-            dq.append(r)
+            dq.append(rr)
     return dp
 
 
