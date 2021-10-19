@@ -65,6 +65,7 @@ def check(ax1, ay1, ax2, ay2, bx1, by1, bx2, by2):
                 bx1, bx2, by1, by2, ax1, ax2, ay1, ay2
         ax = (ax1, ax2)
         ay = (ay1, ay2)
+        print(ax, ay)
         inCount = 0
         bIn = False
         for i in range(2):
