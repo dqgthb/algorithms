@@ -72,10 +72,13 @@ def solve(a, b):
         r = tmp[3] + tmp[:3]
         r = int(r)
 
-        q,r = divmod(c, 10)
-        q,r = divmod(c, 1000)
-        addWithLetter(l, c, 'L')
-        addWithLetter(r, c, 'R')
+        q, r = divmod(c, 1000)
+        ll = r * 10 + q
+        q, r = divmod(c, 10)
+        rr = r * 1000 + q
+
+        addWithLetter(ll, c, 'L')
+        addWithLetter(rr, c, 'R')
 
 
 
