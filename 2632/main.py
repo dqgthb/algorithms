@@ -20,9 +20,17 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
-    N = int(input())
+    C = int(input())
+    m, n = map(int, input().split())
+    A = [int(input()) for _ in range(m)]
+    B = [int(input()) for _ in range(n)]
 
     # ######## INPUT AREA END ############
+
+    pA = []
+    pB = []
+    for i in range(A):
+        for j in range()
 
 
 # TEMPLATE ###############################
