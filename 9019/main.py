@@ -23,9 +23,12 @@ def main(f=None):
 
     T = int(input())
     dp = [None] * 1000
+    ans = []
     for i in range(T):
         a, b = map(int, input().split())
-        print(buildString(a, b, solve(a, b)))
+        solve(a, b, dp)
+        ans.append(buildString(a, b, dp))
+    print(''.join(ans))
 
 
     # ######## INPUT AREA END ############
@@ -38,12 +41,12 @@ def buildString(a, b, dp):
         prev, l = dp[cur]
         lst.append(l)
         cur = prev
-    del dp
     return ''.join(reversed(lst))
 
 
-def solve(a, b):
-    dp = [None] * 10000
+def solve(a, b, dp):
+    for i in range(1000):
+        dp[i] = None
 
     dq = deque()
     dq.append(a)
