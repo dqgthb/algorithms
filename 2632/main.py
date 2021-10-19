@@ -43,8 +43,8 @@ def main(f=None):
             sum_ += B[j]
             pB.append(sum_)
 
-    #print(pA)
-    #print(pB)
+    print(pA)
+    print(pB)
     pA.sort()
     pB.sort()
 
