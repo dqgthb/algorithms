@@ -44,6 +44,8 @@ def main(f=None):
 
     pA.sort()
     pB.sort()
+    lpa = len(pA)
+    lpb = len(pB)
 
     left = 0
     right = m-1
@@ -51,7 +53,7 @@ def main(f=None):
     cnt = 0
     print(pA)
     print(pB)
-    while left < n and 0 <= right:
+    while left < lpa and 0 <= right:
         a = pA[left]
         b = pB[right]
         c = a + b
