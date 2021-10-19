@@ -23,7 +23,9 @@ def main(f=None):
     C = int(input())
     m, n = map(int, input().split())
     A = [int(input()) for _ in range(m)]
+    A = A * 2
     B = [int(input()) for _ in range(n)]
+    B = B * 2
 
     # ######## INPUT AREA END ############
 
