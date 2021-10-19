@@ -71,6 +71,9 @@ def solve(a, b):
         l = int(l)
         r = tmp[3] + tmp[:3]
         r = int(r)
+
+        q,r = divmod(c, 10)
+        q,r = divmod(c, 1000)
         addWithLetter(l, c, 'L')
         addWithLetter(r, c, 'R')
 
