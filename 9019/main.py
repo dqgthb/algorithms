@@ -22,9 +22,11 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     T = int(input())
+    ans = []
     for _ in range(T):
         a, b = map(int, input().split())
-        print(buildString(a, b, solve(a, b)))
+        ans.append(buildString(a, b, solve(a, b)))
+    print('\n'.join(ans))
 
     # ######## INPUT AREA END ############
 
