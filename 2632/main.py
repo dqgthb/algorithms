@@ -52,6 +52,8 @@ def main(f=None):
     for i in pA:
         l = bl(pB, C-i)
         r = br(pB, C-i)
+        if r - l > 0:
+            print(i, C-i, l, r)
         cnt += r - l
     print(cnt)
 
