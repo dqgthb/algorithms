@@ -27,16 +27,16 @@ def main(f=None):
 
     # ######## INPUT AREA END ############
 
-    pA = []
-    pB = []
+    pA = [0]
+    pB = [0]
     print(A)
-    for i in range(1, m):
+    for i in range(m):
         sum_ = 0
         for j in range(i, m):
             sum_ += A[j]
             pA.append(sum_)
 
-    for i in range(1, n):
+    for i in range(n):
         sum_ = 0
         for j in range(i, n):
             sum_ += B[j]
@@ -52,7 +52,6 @@ def main(f=None):
     for i in pA:
         l = bl(pB, C-i)
         r = br(pB, C-i)
-        print(l, r)
         cnt += r - l
     print(cnt)
 
