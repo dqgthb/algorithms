@@ -24,28 +24,41 @@ def main(f=None):
     T = int(input())
     for _ in range(T):
         a, b = map(int, input().split())
-        print(solve(a, b))
+        solve(a, b)
+        print(buildString(a, b))
 
     # ######## INPUT AREA END ############
 
 
+def buildString(a, b):
+    lst = []
+    cur = b
+    while cur != a:
+        prev, l = dp[cur]
+        lst.append(l)
+        cur = prev
+    return ''.join(lst)
+
+
+
 def solve(a, b):
-    count = [None] * 10000
+    global dp
+    dp = [None] * 10000
 
     dq = deque()
     dq.append(a)
-    count[a] = ''
+    dp[a] = ''
 
     def addWithLetter(num, prev, l):
-        if count[num] == None:
-            count[num] = count[prev] + l
+        if dp[num] == None:
+            dp[num] = (prev, l)
             dq.append(num)
 
 
     while dq:
         c = dq.popleft()
         if c == b:
-            return count[c]
+            return dp[c]
 
         d = c * 2 % 10000
         addWithLetter(d, c, 'D')
