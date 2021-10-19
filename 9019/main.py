@@ -37,7 +37,7 @@ def buildString(a, b):
         prev, l = dp[cur]
         lst.append(l)
         cur = prev
-    return ''.join(lst)
+    return ''.join(reversed(lst))
 
 
 
@@ -58,7 +58,7 @@ def solve(a, b):
     while dq:
         c = dq.popleft()
         if c == b:
-            return dp[c]
+            return
 
         d = c * 2 % 10000
         addWithLetter(d, c, 'D')
