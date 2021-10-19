@@ -23,10 +23,12 @@ def main(f=None):
 
     T = int(input())
     ans = []
-    for _ in range(T):
+    for i in range(T):
         a, b = map(int, input().split())
         ans.append(buildString(a, b, solve(a, b)))
-    print('\n'.join(ans))
+        if i % 100 == 0:
+        print('\n'.join(ans))
+
 
     # ######## INPUT AREA END ############
 
