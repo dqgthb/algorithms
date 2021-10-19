@@ -60,15 +60,20 @@ def main(f=None):
         elif c < T:
             left += 1
         else:
-            bCount = 0
-            aCount = 0
+            bCount = 1
+            aCount = 1
 
             while right > 0 and pB[right-1] == b:
                 bCount += 1
-                right += 1
+                right -= 1
 
             while left < m-1 and pA[left+1] == a:
                 aCount += 1
+                left += 1
+
+            cnt += aCount * bCount
+            left += 1
+
 
 
     print(cnt)
