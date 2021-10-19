@@ -61,6 +61,15 @@ def main(f=None):
             left += 1
         else:
             bCount = 0
+            aCount = 0
+
+            while right > 0 and pB[right-1] == b:
+                bCount += 1
+                right += 1
+
+            while left < m-1 and pA[left+1] == a:
+                aCount += 1
+
 
     print(cnt)
 
