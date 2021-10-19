@@ -79,6 +79,8 @@ def check(ax1, ay1, ax2, ay2, bx1, by1, bx2, by2):
             return False
         if bIn:
             return True
+        if ax1 <= bx1 and bx2 <= ax2 and by1 <= ay1 and ay2 <= by2:
+            return True
 
     return False
 
