@@ -50,7 +50,7 @@ def solve(a, b, dp):
 
     dq = deque()
     dq.append(a)
-    dp[a] = ''
+    dp[a] = (-1, )
 
     while dq and dp[b] == None:
         c = dq.popleft()
