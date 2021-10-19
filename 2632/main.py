@@ -33,16 +33,18 @@ def main(f=None):
     pB = [0]
     for i in range(m):
         sum_ = 0
-        for j in range(i, i + m):
+        for j in range(i, i + m-1):
             sum_ += A[j]
             pA.append(sum_)
 
     for i in range(n):
         sum_ = 0
-        for j in range(i, i + n):
+        for j in range(i, i + n - 1):
             sum_ += B[j]
             pB.append(sum_)
 
+    print(pA)
+    print(pB)
     pA.sort()
     pB.sort()
 
