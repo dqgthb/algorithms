@@ -49,10 +49,13 @@ def main(f=None):
     right = m-1
 
     cnt = 0
+    print(pA)
+    print(pB)
     while left < n and 0 <= right:
         a = pA[left]
         b = pB[right]
         c = a + b
+        print(a, b, c)
 
         if c > T:
             right -= 1
