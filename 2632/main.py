@@ -29,6 +29,7 @@ def main(f=None):
 
     pA = []
     pB = []
+    print(A)
     for i in range(1, m):
         sum_ = 0
         for j in range(i, m):
