@@ -57,17 +57,14 @@ def main(f=None):
 
 
 def check(ax1, ay1, ax2, ay2, bx1, by1, bx2, by2):
-    ax = (ax1, ax2)
-    ay = (ay1, ay2)
-    bx = (bx1, bx2)
-    by = (by1, by2)
 
 
     for k in range(2):
         if k == 1:
-            ax, ay, bx, by = bx, by, ax, ay
             ax1, ax2, ay1, ay2, bx1, bx2, by1, by2 =\
                 bx1, bx2, by1, by2, ax1, ax2, ay1, ay2
+        ax = (ax1, ax2)
+        ay = (ay1, ay2)
         inCount = 0
         bIn = False
         for i in range(2):
