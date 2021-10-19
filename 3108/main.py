@@ -26,6 +26,7 @@ def main(f=None):
         x1, y1, x2, y2 = map(int, input().split())
         s.append((x1, y1, x2, y2))
     s.sort()
+    parr(s)
 
     # ######## INPUT AREA END ############
 
