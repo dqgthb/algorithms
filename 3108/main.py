@@ -54,7 +54,7 @@ def main(f=None):
             cnt += 1
     print(cnt-1)
 
-    print(check(*s[2], *s[5]))
+    print(check(*s[3], *s[5]))
 
 
 def check(ax1, ay1, ax2, ay2, bx1, by1, bx2, by2):
