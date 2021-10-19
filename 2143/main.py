@@ -49,7 +49,6 @@ def main(f=None):
     right = m-1
 
     cnt = 0
-    bSame = 0
     while left < n and 0 <= right:
         a = pA[left]
         b = pB[right]
@@ -71,10 +70,9 @@ def main(f=None):
                 aCount += 1
                 left += 1
 
+            print(aCount, bCount)
             cnt += aCount * bCount
             left += 1
-
-
 
     print(cnt)
 
