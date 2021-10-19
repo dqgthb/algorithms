@@ -29,6 +29,7 @@ def main(f=None):
         if i % 1024 == 0:
             print('\n'.join(ans))
             ans = []
+    print('\n'.join(ans))
 
 
     # ######## INPUT AREA END ############
