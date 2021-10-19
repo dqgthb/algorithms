@@ -29,8 +29,8 @@ def main(f=None):
 
     # ######## INPUT AREA END ############
 
-    pA = [0]
-    pB = [0]
+    pA = [0, sum(A)]
+    pB = [0, sum(B)]
     for i in range(m):
         sum_ = 0
         for j in range(i, i + m-1):
@@ -43,8 +43,8 @@ def main(f=None):
             sum_ += B[j]
             pB.append(sum_)
 
-    print(pA)
-    print(pB)
+    #print(pA)
+    #print(pB)
     pA.sort()
     pB.sort()
 
@@ -53,8 +53,8 @@ def main(f=None):
     for i in pA:
         l = bl(pB, C-i)
         r = br(pB, C-i)
-        if r - l > 0:
-            print(i, C-i, l, r, r-l)
+        #if r - l > 0:
+        #    print(i, C-i, l, r, r-l)
         cnt += r - l
     print(cnt)
 
