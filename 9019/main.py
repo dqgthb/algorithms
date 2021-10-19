@@ -48,12 +48,6 @@ def solve(a, b):
     dq.append(a)
     dp[a] = ''
 
-    def addWithLetter(num, prev, l):
-        if dp[num] == None:
-            dp[num] = (prev, l)
-            dq.append(num)
-
-
     while dq:
         c = dq.popleft()
         if c == b:
@@ -65,23 +59,21 @@ def solve(a, b):
             dq.append(d)
 
         s = (c - 1) % 10000
-        if dp[d] == None:
-            dp[d] = (c, "D")
-            dq.append(d)
-        addWithLetter(s, c, 'S')
+        if dp[s] == None:
+            dp[s] = (c, "S")
+            dq.append(s)
 
         q, r = divmod(c, 1000)
         ll = r * 10 + q
-        addWithLetter(ll, c, 'L')
-        if dp[d] == None:
-            dp[d] = (c, "D")
-            dq.append(d)
+        if dp[ll] == None:
+            dp[ll] = (c, "L")
+            dq.append(ll)
 
         q, r = divmod(c, 10)
         rr = r * 1000 + q
         if dp[rr] == None:
-            dp[d] = (c, "D")
-            dq.append(d)
+            dp[rr] = (c, "R")
+            dq.append(r)
 
 
 
