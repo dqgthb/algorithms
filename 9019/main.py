@@ -6,7 +6,7 @@ import sys
 #import itertools
 #from itertools import product
 #import collections
-#from collections import deque
+from collections import deque
 #from collections import Counter, defaultdict as dd
 #import math
 #from math import log, log2, ceil, floor, gcd, sqrt
@@ -21,12 +21,53 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
-
+    T = int(input())
+    for _ in range(T):
+        a, b = map(int, input().split())
+        print(solve(a, b))
 
     # ######## INPUT AREA END ############
 
 
-# TEMPLATE ###############################
+def solve(a, b):
+    count = [None] * 10000
+
+    dq = deque()
+    dq.append(a)
+    count[a] = ''
+
+    def addWithLetter(num, prev, l):
+        if count[num] == None:
+            count[num] = count[prev] + l
+            dq.append(num)
+
+
+    while dq:
+        c = dq.popleft()
+        if c == b:
+            return count[c]
+
+        d = c * 2 % 10000
+        addWithLetter(d, c, 'D')
+
+        s = (c - 1) % 10000
+        addWithLetter(s, c, 'S')
+
+        sc = str(c)
+        tmp = '0' * (4 - len(sc)) + sc
+        l = tmp[1:] + tmp[0]
+        l = int(l)
+        r = tmp[3] + tmp[:3]
+        r = int(r)
+        addWithLetter(l, c, 'L')
+        addWithLetter(r, c, 'R')
+
+
+
+
+
+
+# #######
 
 
 enu = enumerate
