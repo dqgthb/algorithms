@@ -58,7 +58,6 @@ def main(f=None):
 
 def check(ax1, ay1, ax2, ay2, bx1, by1, bx2, by2):
 
-
     for k in range(2):
         if k == 1:
             ax1, ax2, ay1, ay2, bx1, bx2, by1, by2 =\
