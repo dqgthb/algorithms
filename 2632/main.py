@@ -11,7 +11,7 @@ import itertools
 #from math import log, log2, ceil, floor, gcd, sqrt
 #from heapq import heappush, heappop
 #import bisect
-#from bisect import bisect_left as bl, bisect_right as br
+from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
 
 
@@ -45,7 +45,12 @@ def main(f=None):
     pB.sort()
 
 
+    cnt = 0
     for i in pA:
+        l = bl(pB, C-i)
+        r = br(pB, C-i)
+        cnt += r - l
+    print(cnt)
 
 
 # TEMPLATE ###############################
