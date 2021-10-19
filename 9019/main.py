@@ -30,6 +30,8 @@ def main(f=None):
         ans.append(buildString(a, b, dp))
     print('\n'.join(ans))
 
+    for i in range(10000):
+
 
     # ######## INPUT AREA END ############
 
@@ -76,7 +78,6 @@ def solve(a, b, dp):
         if dp[rr] == None:
             dp[rr] = (c, "R")
             dq.append(rr)
-    return dp
 
 
 
