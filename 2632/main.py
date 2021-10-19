@@ -27,7 +27,14 @@ def main(f=None):
     B = [int(input()) for _ in range(n)]
     B = B * 2
 
+
+
     # ######## INPUT AREA END ############
+
+    A = [0, 1, 2, 4, 8]
+
+    m = len(A)
+    n = len(B)
 
     pA = [0, sum(A)]
     pB = [0, sum(B)]
