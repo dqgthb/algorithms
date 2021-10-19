@@ -51,7 +51,7 @@ def buildString(a, b, dp):
 
 
 def solve(a, b, dp):
-    for i in range(1000):
+    for i in range(10000):
         dp[i] = None
 
     dq = deque()
