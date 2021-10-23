@@ -35,6 +35,8 @@ def main(f=None):
     q, r = divmod(17000, k)
     print(q, r)
 
+
+
     # ######## INPUT AREA END ############
 
 
