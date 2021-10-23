@@ -1,99 +1,61 @@
 # CP template Version 1.006
 import os
 import sys
-import itertools
-import collections
-import string
-# not for python < 3.9
-# from functools import cmp_to_key, reduce, partial, cache
-from functools import cmp_to_key, reduce, partial
-from itertools import product
-from collections import deque, Counter, defaultdict as dd
-from math import log, log2, ceil, floor, gcd, sqrt
-import math
-from heapq import heappush, heappop
-from bisect import bisect_left as bl, bisect_right as br
+#import string
+#from functools import cmp_to_key, reduce, partial
+#import itertools
+#from itertools import product
+#import collections
+#from collections import deque
+#from collections import Counter, defaultdict as dd
+#import math
+#from math import log, log2, ceil, floor, gcd, sqrt
+#from heapq import heappush, heappop
+#import bisect
+#from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
 
-
-table = [1, 20, 300, 4000, 50000, 600000, 7000000, 800000000, 900000000]
-ztable = [int(str(i) + '8'*i + '9') for i in range(10)]
-print(ztable)
 
 def main(f=None):
     init(f)
     # sys.setrecursionlimit(10**9)
-    # ####################################
     # ######## INPUT AREA BEGIN ##########
 
+    inpt = input().strip()
+    N = int(inpt)
+    digits = [int(i) for i in inpt]
+    L = len(digits)
+
     # ######## INPUT AREA END ############
-    # ####################################
 
-    A = solve2(1349)
-    print(A)
-    B = solve2(8939)
-    print(B)
-    print(subList(B, A))
-
-
-def solve(n):
-    if len(n) <= 2:
-        return solve2(int(n))
-
-    if all(i == '9' for i in n):
-        return [table[len(n)-1] for _ in range(10)]
-
-    else:
-        base = solve( '9' * (len(n)-1))
-        return base
-
-
-def addList(x, y):
-    for i in range(10):
-        x[i] += y[i]
-    return x
-
-
-def subList(x, y):
-    for i in range(10):
-        x[i] -= y[i]
-    return x
-
-def solve2(n):
     freq = [0] * 10
-    for i in range(1, n+1):
-        s = str(i)
-        for l in s:
-            freq[int(l)] += 1
-    return freq
+
+    for i in range(L):
+        j = L - i
+        div = 10 ** (j - 1)
+        div2 = 10 ** j
+        q, r = divmod(N, div)
+        q2, r2 = divmod(N, div2)
+
+        for k in range(10):
+            freq[k] += q2 * div
+        for k in range(0, digits[i]):
+            freq[k] += 10 ** (j-1)
+        freq[digits[i]] += (r+1)
+
+        freq[0] -= div
+
+    print(' '.join(map(str, freq)))
 
 
+# TEMPLATE ###############################
 
-
-
-# #############################################################################
-# #############################################################################
-# ############################## TEMPLATE AREA ################################
-# #############################################################################
-# #############################################################################
 
 enu = enumerate
 
 
-def argmax(arr):
-    return max(enumerate(arr), key=lambda x: x[1])
-
-
-def argmin(arr):
-    return min(enumerate(arr), key=lambda x: x[1])
-
-
 def For(*args):
     return itertools.product(*map(range, args))
-
-
-def copy2d(mat):
-    return [row[:] for row in mat]
 
 
 def Mat(h, w, default=None):
@@ -133,7 +95,7 @@ def init(f=None):
             assert False, "Too many sys.argv: %d" % len(sys.argv)
 
 
-def dprint(*args):
+def pr(*args):
     if DEBUG:
         print(*args)
 
