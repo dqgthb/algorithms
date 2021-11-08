@@ -7,7 +7,7 @@ import sys
 #from itertools import product
 #import collections
 #from collections import deque
-#from collections import Counter, defaultdict as dd
+from collections import Counter, defaultdict as dd
 #import math
 #from math import log, log2, ceil, floor, gcd, sqrt
 #from heapq import heappush, heappop
@@ -21,24 +21,38 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
-    N = int(input())
-    DP = [0] * 31
+    global N, M, A, st, vis
+    N, M = map(int, input().split())
+    A = [int(i) for i in input().split()]
+    B = A[:]
+    A = list(set(A))
+    A.sort()
+    N = len(A)
 
-    if N % 2 == 1:
-        print(0)
-        return
+    C = Counter(B)
 
-    DP[2] = 3
+    st = []
+    vis = [0] * N
+    for i in range(N):
+        vis[i] = C[A[i]]
 
-    for i in range(4, 31, 2):
-        DP[i] = DP[i-2] * 3 + 2
-        for j in range(2, i-2, 2):
-            DP[i] += DP[j] * 2
-
-    print(DP)
-    print(DP[N])
+    dfs(0, 0)
 
     # ######## INPUT AREA END ############
+
+
+def dfs(idx, cnt):
+    if cnt == M:
+        print(' '.join(str(i) for i in st))
+        return
+
+    for i in range(N):
+        if vis[i] > 0:
+            vis[i] -= 1
+            st.append(A[i])
+            dfs(idx+1, cnt+1)
+            vis[i] += 1
+            st.pop()
 
 
 # TEMPLATE ###############################

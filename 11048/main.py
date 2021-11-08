@@ -21,24 +21,28 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
-    N = int(input())
-    DP = [0] * 31
-
-    if N % 2 == 1:
-        print(0)
-        return
-
-    DP[2] = 3
-
-    for i in range(4, 31, 2):
-        DP[i] = DP[i-2] * 3 + 2
-        for j in range(2, i-2, 2):
-            DP[i] += DP[j] * 2
-
-    print(DP)
-    print(DP[N])
+    N, M = map(int, input().split())
+    mat = [list(map(int, input().split())) for _ in range(N)]
 
     # ######## INPUT AREA END ############
+
+    D = Mat(N, M)
+    for i in range(N):
+        for j in range(M):
+            D[i][j] = mat[i][j]
+
+    for i in range(1, N):
+        D[i][0] = D[i-1][0] + mat[i][0]
+
+    for i in range(1, M):
+        D[0][i] = D[0][i-1] + mat[0][i]
+
+    for i in range(1, N):
+        for j in range(1, M):
+            D[i][j] = max(D[i-1][j], D[i][j-1]) + mat[i][j]
+
+    print(D[N-1][M-1])
+
 
 
 # TEMPLATE ###############################

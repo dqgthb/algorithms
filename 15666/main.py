@@ -21,24 +21,31 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
-    N = int(input())
-    DP = [0] * 31
+    global N, M, A, st
+    N, M = map(int, input().split())
+    A = [int(i) for i in input().split()]
+    A = [i for i in set(A)]
+    A.sort()
+    N = len(A)
+    st = []
 
-    if N % 2 == 1:
-        print(0)
-        return
-
-    DP[2] = 3
-
-    for i in range(4, 31, 2):
-        DP[i] = DP[i-2] * 3 + 2
-        for j in range(2, i-2, 2):
-            DP[i] += DP[j] * 2
-
-    print(DP)
-    print(DP[N])
+    dfs(0, 0)
 
     # ######## INPUT AREA END ############
+
+
+def dfs(n, cnt):
+    if cnt == M:
+        print(' '.join(map(str, st)))
+        return
+    if n == N:
+        return
+
+    st.append(A[n])
+    dfs(n, cnt+1)
+    st.pop()
+    dfs(n+1, cnt)
+
 
 
 # TEMPLATE ###############################

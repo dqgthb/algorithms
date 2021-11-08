@@ -15,30 +15,46 @@ import sys
 #from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
 
+class Node:
+    def __init__(self, n):
+        self.n = n
+        self.left = None
+        self.right = None
+
 
 def main(f=None):
     init(f)
-    # sys.setrecursionlimit(10**9)
+    sys.setrecursionlimit(20000)
     # ######## INPUT AREA BEGIN ##########
 
-    N = int(input())
-    DP = [0] * 31
+    root = None
+    for line in sys.stdin:
+        x = int(line)
+        root = insert(root, x)
+    printTree(root)
 
-    if N % 2 == 1:
-        print(0)
-        return
-
-    DP[2] = 3
-
-    for i in range(4, 31, 2):
-        DP[i] = DP[i-2] * 3 + 2
-        for j in range(2, i-2, 2):
-            DP[i] += DP[j] * 2
-
-    print(DP)
-    print(DP[N])
 
     # ######## INPUT AREA END ############
+
+
+def printTree(node):
+    if node is None:
+        return
+    printTree(node.left)
+    printTree(node.right)
+    print(node.n)
+
+
+def insert(node, val):
+    if node is None:
+        return Node(val)
+
+    cn = node.n
+    if val < cn:
+        node.left = insert(node.left, val)
+    else:
+        node.right = insert(node.right, val)
+    return node
 
 
 # TEMPLATE ###############################
@@ -48,7 +64,7 @@ enu = enumerate
 
 
 def For(*args):
-    return itertools.product(*map(range, args))
+    return product(*map(range, args))
 
 
 def Mat(h, w, default=None):

@@ -6,7 +6,7 @@ import sys
 #import itertools
 #from itertools import product
 #import collections
-#from collections import deque
+from collections import deque
 #from collections import Counter, defaultdict as dd
 #import math
 #from math import log, log2, ceil, floor, gcd, sqrt
@@ -21,24 +21,62 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
-    N = int(input())
-    DP = [0] * 31
-
-    if N % 2 == 1:
-        print(0)
-        return
-
-    DP[2] = 3
-
-    for i in range(4, 31, 2):
-        DP[i] = DP[i-2] * 3 + 2
-        for j in range(2, i-2, 2):
-            DP[i] += DP[j] * 2
-
-    print(DP)
-    print(DP[N])
+    global D, N, M, mat
+    D = ((-1, 0), (1, 0), (0, 1), (0, -1))
+    N, M = map(int, input().split())
+    mat = [list(map(int, input().split())) for _ in range(N)]
 
     # ######## INPUT AREA END ############
+
+
+    airDFS(0, 0)
+    time = 0
+    cheeseRemains = True
+    while cheeseRemains:
+        cheeseRemains = False
+        for i in range(N):
+            for j in range(M):
+                if mat[i][j] == 1:
+                    cheeseRemains = True
+                    cnt = 0
+                    for di, dj in D:
+                        ni, nj = i + di, j + dj
+                        if 0 <= ni < N and 0 <= nj < M:
+                            if mat[ni][nj] == 2:
+                                cnt += 1
+
+                    if cnt > 1:
+                        mat[i][j] = 3
+
+        if not cheeseRemains:
+            break
+
+        time += 1
+
+        for i in range(N):
+            for j in range(M):
+                if mat[i][j] == 3:
+                    airDFS(i, j)
+    print(time)
+
+
+
+def airDFS(i, j):
+    mat[i][j] = 2
+    dq = [(i, j)]
+    while dq:
+        i, j = dq.pop()
+
+        for di, dj in D:
+            ni, nj = i + di, j + dj
+            if 0 <= ni < N and 0 <= nj < M:
+                if mat[ni][nj] == 0:
+                    mat[ni][nj] = 2
+                    dq.append((ni, nj))
+
+
+
+
 
 
 # TEMPLATE ###############################

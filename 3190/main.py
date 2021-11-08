@@ -6,7 +6,7 @@ import sys
 #import itertools
 #from itertools import product
 #import collections
-#from collections import deque
+from collections import deque
 #from collections import Counter, defaultdict as dd
 #import math
 #from math import log, log2, ceil, floor, gcd, sqrt
@@ -22,21 +22,69 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     N = int(input())
-    DP = [0] * 31
+    mat = Mat(N, N, 0)
+    K = int(input())
+    for _ in range(K):
+        x, y = map(int, input().split())
+        x -= 1
+        y -= 1
+        mat[x][y] = 1
 
-    if N % 2 == 1:
-        print(0)
-        return
+    L = int(input())
+    turns = []
+    for _ in range(L):
+        sec, turn = input().split()
+        sec = int(sec)
+        if turn == 'L': turn = -1
+        else: turn = 1
+        turns.append((sec, turn))
+    turns.reverse()
 
-    DP[2] = 3
+    x, y = 0, 0
+    mat[x][y] = 2
+    snake = deque()
+    snake.append((x, y))
 
-    for i in range(4, 31, 2):
-        DP[i] = DP[i-2] * 3 + 2
-        for j in range(2, i-2, 2):
-            DP[i] += DP[j] * 2
+    d = ((-1, 0), (0, 1), (1, 0), (0, -1))
+    direction = 1
+    time = 0
 
-    print(DP)
-    print(DP[N])
+    while True:
+        parr(mat)
+        print()
+
+        time += 1
+        dx, dy = d[direction]
+        nx, ny = x + dx, y + dy
+
+        if nx < 0 or nx >= N or ny < 0 or ny >= N:
+            print(time)
+            return
+
+        if mat[nx][ny] == 2:
+            print(time)
+            return
+
+
+        if mat[nx][ny] == 1:
+            mat[nx][ny] = 2
+            x, y = nx, ny
+            snake.append((x, y))
+        else:
+            mat[nx][ny] = 2
+            x, y = nx, ny
+            snake.append((x, y))
+            tx, ty = snake.popleft()
+            mat[tx][ty] = 0
+
+
+        if turns:
+            sec, turn = turns[-1]
+            if sec == time:
+                direction = (direction + turn) % 4
+                turns.pop()
+
+
 
     # ######## INPUT AREA END ############
 

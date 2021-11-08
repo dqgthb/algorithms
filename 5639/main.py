@@ -18,27 +18,37 @@ DEBUG = False
 
 def main(f=None):
     init(f)
-    # sys.setrecursionlimit(10**9)
+    sys.setrecursionlimit(10000)
     # ######## INPUT AREA BEGIN ##########
 
-    N = int(input())
-    DP = [0] * 31
+    global A, N
+    A = []
+    for line in sys.stdin:
+        x = int(line)
+        A.append(x)
 
-    if N % 2 == 1:
-        print(0)
-        return
+    N = len(A)
 
-    DP[2] = 3
-
-    for i in range(4, 31, 2):
-        DP[i] = DP[i-2] * 3 + 2
-        for j in range(2, i-2, 2):
-            DP[i] += DP[j] * 2
-
-    print(DP)
-    print(DP[N])
+    postOrder(0, len(A)-1)
 
     # ######## INPUT AREA END ############
+
+def postOrder(s, e):
+    if s > e:
+        return
+    if s == e:
+        print(A[s])
+        return
+
+    c = A[s]
+    mid = s+1
+    for i in range(s+1, e+1):
+        if A[i] > c:
+            mid = i
+            break
+    postOrder(s+1, mid-1)
+    postOrder(mid, e)
+    print(c)
 
 
 # TEMPLATE ###############################

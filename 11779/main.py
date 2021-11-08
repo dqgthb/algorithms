@@ -10,7 +10,7 @@ import sys
 #from collections import Counter, defaultdict as dd
 #import math
 #from math import log, log2, ceil, floor, gcd, sqrt
-#from heapq import heappush, heappop
+from heapq import heappush, heappop
 #import bisect
 #from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
@@ -20,23 +20,53 @@ def main(f=None):
     init(f)
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
-
+    global N, M
     N = int(input())
-    DP = [0] * 31
+    M = int(input())
+    G = [[] for _ in range(N)]
 
-    if N % 2 == 1:
-        print(0)
-        return
+    for _ in range(M):
+        x, y, z = map(int, input().split())
+        x -= 1
+        y -= 1
+        G[x].append((y, z))
 
-    DP[2] = 3
+    s, t = map(int, input().split())
+    s -= 1
+    t -= 1
 
-    for i in range(4, 31, 2):
-        DP[i] = DP[i-2] * 3 + 2
-        for j in range(2, i-2, 2):
-            DP[i] += DP[j] * 2
+    D = [10**9] * N
+    P = [-1] * N
+    D[s] = 0
+    pq = [(0, s)]
 
-    print(DP)
-    print(DP[N])
+    while pq:
+        d, i = heappop(pq)
+        if D[i] < d:
+            continue
+
+        for j, dij in G[i]:
+            dsj = d + dij
+            if dsj < D[j]:
+                D[j] = dsj
+                P[j] = i
+                pq.append((dsj, j))
+
+    print(D[t])
+
+    path = []
+    curr = t
+    while curr != -1:
+        path.append(curr)
+        curr = P[curr]
+    print(len(path))
+    print(' '.join(str(i+1) for i in reversed(path)))
+
+
+
+
+
+
 
     # ######## INPUT AREA END ############
 

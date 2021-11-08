@@ -21,22 +21,17 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
-    N = int(input())
-    DP = [0] * 31
+    N, M = map(int, input().split())
+    pw = {}
+    for _ in range(N):
+        a, b = input().split()
+        pw[a] = b
 
-    if N % 2 == 1:
-        print(0)
-        return
+    for _ in range(M):
+        c = input().strip()
+        print(pw[c])
 
-    DP[2] = 3
 
-    for i in range(4, 31, 2):
-        DP[i] = DP[i-2] * 3 + 2
-        for j in range(2, i-2, 2):
-            DP[i] += DP[j] * 2
-
-    print(DP)
-    print(DP[N])
 
     # ######## INPUT AREA END ############
 

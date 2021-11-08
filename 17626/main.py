@@ -22,23 +22,29 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     N = int(input())
-    DP = [0] * 31
-
-    if N % 2 == 1:
-        print(0)
-        return
-
-    DP[2] = 3
-
-    for i in range(4, 31, 2):
-        DP[i] = DP[i-2] * 3 + 2
-        for j in range(2, i-2, 2):
-            DP[i] += DP[j] * 2
-
-    print(DP)
-    print(DP[N])
+    DP = [i for i in range(N+1)]
+    squares = []
 
     # ######## INPUT AREA END ############
+
+    i = 2
+    i2 = i*i
+    while i2 <= N:
+        DP[i2] = 1
+        squares.append(i2)
+        i += 1
+        i2 = i*i
+
+    for i in range(N+1):
+        for sqr in squares:
+            if sqr >= i:
+                break
+            d = 1 + DP[i - sqr]
+            if d < DP[i]:
+                DP[i] = d
+
+
+    print(DP[N])
 
 
 # TEMPLATE ###############################

@@ -7,7 +7,7 @@ import sys
 #from itertools import product
 #import collections
 #from collections import deque
-#from collections import Counter, defaultdict as dd
+from collections import Counter, defaultdict as dd
 #import math
 #from math import log, log2, ceil, floor, gcd, sqrt
 #from heapq import heappush, heappop
@@ -21,22 +21,21 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
-    N = int(input())
-    DP = [0] * 31
+    T = int(input())
+    for _ in range(T):
+        n = int(input())
+        category = dd(lambda:1)
+        for _ in range(n):
+            a, b = input().split()
+            category[b] += 1
 
-    if N % 2 == 1:
-        print(0)
-        return
+        case = 1
+        for k, v in category.items():
+            case *= v
+        print(case-1)
 
-    DP[2] = 3
 
-    for i in range(4, 31, 2):
-        DP[i] = DP[i-2] * 3 + 2
-        for j in range(2, i-2, 2):
-            DP[i] += DP[j] * 2
 
-    print(DP)
-    print(DP[N])
 
     # ######## INPUT AREA END ############
 

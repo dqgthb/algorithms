@@ -6,7 +6,7 @@ import sys
 #import itertools
 #from itertools import product
 #import collections
-#from collections import deque
+from collections import deque
 #from collections import Counter, defaultdict as dd
 #import math
 #from math import log, log2, ceil, floor, gcd, sqrt
@@ -21,24 +21,41 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
-    N = int(input())
-    DP = [0] * 31
-
-    if N % 2 == 1:
-        print(0)
-        return
-
-    DP[2] = 3
-
-    for i in range(4, 31, 2):
-        DP[i] = DP[i-2] * 3 + 2
-        for j in range(2, i-2, 2):
-            DP[i] += DP[j] * 2
-
-    print(DP)
-    print(DP[N])
+    N, K = map(int, input().split())
+    #V = [False] * 200000
 
     # ######## INPUT AREA END ############
+
+    dq = deque(((N, 0),))
+    minT = None
+    cnt = 0
+
+    vis = [False] * 100001
+
+
+    minT = None
+    while dq:
+        print(dq)
+        n, t = dq.popleft()
+        vis[n] = True
+
+        for i in (n+1, n-1, 2 * n):
+            if 0 <= i < 100001:
+                if i == K:
+                    if minT is None:
+                        minT = t+1
+                    elif t+1 != minT:
+                        continue
+                    cnt += 1
+
+                if minT is not None and t >= minT:
+                    break
+
+                if not vis[i]:
+                    dq.append((i, t+1))
+    print(minT)
+    print(cnt)
+
 
 
 # TEMPLATE ###############################

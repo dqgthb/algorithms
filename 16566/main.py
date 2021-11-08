@@ -12,8 +12,23 @@ import sys
 #from math import log, log2, ceil, floor, gcd, sqrt
 #from heapq import heappush, heappop
 #import bisect
-#from bisect import bisect_left as bl, bisect_right as br
+from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
+
+
+def F(x):
+    if x == P[x]:
+        return x
+    else:
+        P[x] = F(P[x])
+        return P[x]
+
+
+def U(x, y):
+    px = F(x)
+    py = F(y)
+    if px != py:
+        P[x] = P[y] = px if px > py else py
 
 
 def main(f=None):
@@ -21,22 +36,18 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
-    N = int(input())
-    DP = [0] * 31
+    global N, M, K, A, P
+    N, M, K = map(int, input().split())
+    A = [int(i) for i in input().split()]
+    P = [i for i in range(N)]
+    A.sort()
 
-    if N % 2 == 1:
-        print(0)
-        return
-
-    DP[2] = 3
-
-    for i in range(4, 31, 2):
-        DP[i] = DP[i-2] * 3 + 2
-        for j in range(2, i-2, 2):
-            DP[i] += DP[j] * 2
-
-    print(DP)
-    print(DP[N])
+    C = map(int, input().split())
+    for c in C:
+        idx = br(A, c)
+        px = F(idx)
+        print(A[px])
+        U(px, px+1)
 
     # ######## INPUT AREA END ############
 
