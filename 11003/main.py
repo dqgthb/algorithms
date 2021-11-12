@@ -31,7 +31,7 @@ def main(f=None):
     initTree(0, N-1, 1)
 
     for i in range(N-L+1):
-        print(query(0, N-1, i, i+L-1, 1))
+        print(query(0, N-1, i-L+1, i, 1))
 
 
 
@@ -48,7 +48,6 @@ def initTree(s, e, idx):
 
 
 def query(s, e, l, r, idx):
-    print(s, e, l, r, idx)
 
     if e < l or r < s:
         return 10 ** 9
