@@ -29,9 +29,15 @@ def main(f=None):
 
     S = []
 
-    for i in range(N):
+    max_ = 0
 
-        while S and S
+    for i in range(N):
+        a = A[i]
+        while S and S[-1] > A[i]:
+            last = S.pop()
+
+            max_ = max(max_, a - last + 1)
+
 
 
 
