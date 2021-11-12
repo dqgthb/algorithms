@@ -21,7 +21,7 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
-    global N, A, B, Ac, Bc, T
+    global N, A, B, Ac, Bc, T, C
     N = int(input())
     A = [int(i) for i in input().split()]
     B = [int(i) for i in input().split()]
@@ -32,6 +32,7 @@ def main(f=None):
     convert = {B[i]:i for i in range(N)}
     Ac = [convert[i] for i in A]
     Bc = [i for i in range(N)]
+    C = 0
 
     print(A)
     print(B)
@@ -40,9 +41,11 @@ def main(f=None):
     print(Bc)
 
     mergeSort(0, N-1)
+    print(Ac)
 
 
 def mergeSort(s, e):
+    global C
     if s == e:
         return
 
@@ -50,7 +53,9 @@ def mergeSort(s, e):
     mergeSort(s, mid)
     mergeSort(mid+1, e)
 
-    merge(s, e)
+    cnt = merge(s, e)
+    C += cnt
+
 
 
 def merge(s, e):
@@ -60,6 +65,7 @@ def merge(s, e):
     l = s
     r = mid + 1
     state = 1
+    cnt = 0
 
     while state == 1:
         if Ac[l] <= Ac[r]:
@@ -73,6 +79,7 @@ def merge(s, e):
             T[idx] = Ac[r]
             idx += 1
             r += 1
+            cnt += 1
             if r > e:
                 state = 3
 
@@ -81,6 +88,7 @@ def merge(s, e):
             T[idx] = Ac[r]
             idx += 1
             r += 1
+            cnt += 1
 
     else:
         while l <= mid:
@@ -90,6 +98,7 @@ def merge(s, e):
 
     for i in range(s, e+1):
         Ac[i] = T[i]
+    return cnt
 
 
 
