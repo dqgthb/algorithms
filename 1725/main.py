@@ -47,9 +47,7 @@ def main(f=None):
     print(max_)
 
 
-
 # TEMPLATE ###############################
-
 
 enu = enumerate
 
