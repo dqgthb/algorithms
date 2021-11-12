@@ -33,6 +33,7 @@ def main(f=None):
 
     for i in range(N):
         a = A[i]
+        print("i a", i, a)
         while S and A[S[-1]] > A[i]:
             last = S.pop()
             max_ = max(max_, A[last] * (i - last))
