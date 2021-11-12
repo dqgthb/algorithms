@@ -27,19 +27,22 @@ def main(f=None):
 
     # ######## INPUT AREA END ############
 
-    T = [None] * (lo)
+    T = [None] * (4 * N)
+    init(0, N-1, 1)
 
 
 def init(s, e, idx):
     if s == e:
         T[idx] = A[s]
 
-
     mid = ( s + e ) // 2
     x = init(s, mid, idx * 2)
-    y = init(mid+1, e, dix * 2 + 1)
+    y = init(mid+1, e, idx * 2 + 1)
+    T[idx] = min(x, y)
+    return T[idx]
 
 
+def query(s, e, l, r, idx):
 
 
 
