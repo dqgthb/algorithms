@@ -35,8 +35,7 @@ def main(f=None):
     for i in range(N):
         ans.append(query(0, N-1, i-L+1, i, 1))
 
-    print(' '.join(map(str, ans))
-
+    print(' '.join(map(str, ans)))
 
 
 def initTree(s, e, idx):
