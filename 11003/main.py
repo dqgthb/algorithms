@@ -27,12 +27,12 @@ def main(f=None):
 
     # ######## INPUT AREA END ############
 
-    minV, minI =  10**9, -1
+    minV, minI =  (A[0], 0)
     for i in range(N):
-        heappush(pq, (A[i], i))
 
-        while minI < i-L+1:
+        while minI < i-L:
             minV, minI = heappop(pq)
+        heappush(pq, (A[i], i))
 
         print(minV)
 
