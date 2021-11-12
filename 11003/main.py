@@ -31,7 +31,7 @@ def main(f=None):
     print(minV)
 
     for i in range(1, N):
-        if minI <= i - L:
+        if minI < i - L + 1:
             minV, minI = heappop(pq)
 
         a = A[i]
