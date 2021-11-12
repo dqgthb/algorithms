@@ -40,8 +40,9 @@ def main(f=None):
             dq.popleft()
 
 
-        ans.append(dq[0])
+        ans.append(A[dq[0]])
 
+    print(' '.join(map(str, ans)))
 
 
 
