@@ -31,8 +31,12 @@ def main(f=None):
     print(minV)
 
     for i in range(1, N):
-        while minI < i - L + 1:
+        while pq and minI < i - L + 1:
             minV, minI = heappop(pq)
+        if minI < i - L + 1:
+            minV, minI = a, i
+            print(minV)
+            continue
 
         a = A[i]
         if a < minV:
