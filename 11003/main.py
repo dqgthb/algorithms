@@ -36,9 +36,9 @@ def main(f=None):
 
 
 def initTree(s, e, idx):
-    print(s, e, idx)
     if s == e:
         T[idx] = A[s]
+        return T[idx]
 
     mid = ( s + e ) // 2
     x = initTree(s, mid, idx * 2)
@@ -48,6 +48,7 @@ def initTree(s, e, idx):
 
 
 def query(s, e, l, r, idx):
+    print(s, e, l, r, idx)
 
     if e < l or r < s:
         return 10 ** 9
