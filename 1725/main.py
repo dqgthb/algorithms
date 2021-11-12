@@ -38,6 +38,12 @@ def main(f=None):
             max_ = max(max_, A[last] * (i - last))
 
         S.append(i)
+
+
+    while S:
+        last = S.pop()
+        max_ = max(max_, A[last] * (N - last))
+
     print(max_)
 
 
