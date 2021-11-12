@@ -6,7 +6,7 @@ import sys
 #import itertools
 #from itertools import product
 #import collections
-#from collections import deque
+from collections import deque
 #from collections import Counter, defaultdict as dd
 #import math
 #from math import log, log2, ceil, floor, gcd, sqrt
@@ -28,16 +28,14 @@ def main(f=None):
 
     minV, minI = A[0], 0
     print(minV)
-    dq = []
+    dq = deque()
 
     for i in range(1, N):
         a = A[i]
 
         while dq and A[dq[-1]] < a:
                 dq.pop()
-
         dq.append(i)
-        print(dq)
 
         while dq and minI < i - L + 1:
             j = dq.popleft()
