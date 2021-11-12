@@ -10,7 +10,7 @@ import sys
 #from collections import Counter, defaultdict as dd
 #import math
 #from math import log, log2, ceil, floor, gcd, sqrt
-#from heapq import heappush, heappop
+from heapq import heappush, heappop
 #import bisect
 #from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
@@ -20,36 +20,57 @@ def main(f=None):
     init(f)
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
+    global N, E, G, u, v, S, T
+    N, E = map(int, input().split())
 
-    N, K = map(int, input().split())
-    C = [int(input()) for _ in range(N)]
-    C = list(set(C))
-    C.sort()
+    G = [[] for _ in range(N)]
+    for _ in range(E):
+        a, b, c = map(int, input().split())
+        a -= 1
+        b -= 1
+        G[a].append((b, c))
+        G[b].append((a, c))
+    u, v = map(int, input().split())
+    u -= 1
+    v -= 1
 
     # ######## INPUT AREA END ############
 
-    D = [10 ** 9 for _ in range(K+1)]
+    s = 0
+    t = N-1
+    ds = dijkstra(s)
+    du = dijkstra(u)
+    dv = dijkstra(v)
 
-    for i in C:
-        if i <= K:
-            D[i] = 1
-        else:
-            break
+    c1 = ds[u] + du[v] + dv[t]
+    c2 = ds[v] + dv[u] + du[t]
 
-    for i in range(C[0]+1, K+1):
-        for j in C:
-            if i > j:
-                D[i] = min(D[i-j] + 1, D[i])
-            else:
-                break
-
-    if D[K] != 10 ** 9:
-        print(D[K])
-    else:
+    ans = min(c1, c2)
+    if ans >= 10 ** 9:
         print(-1)
+    else:
+        print(ans)
 
 
 
+
+def dijkstra(s):
+    dist = [10**9] * N
+    dist[s] = 0
+    pq = [(0, s)]
+
+    while pq:
+        dsx, x = heappop(pq)
+        if dsx > dist[x]:
+            continue
+
+        for y, dxy in G[x]:
+            dsy = dsx + dxy
+
+            if dsy < dist[y]:
+                dist[y] = dsy
+                heappush(pq, (dsy, y))
+    return dist
 
 
 

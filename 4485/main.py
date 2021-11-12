@@ -21,39 +21,44 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
-    N, K = map(int, input().split())
-    C = [int(input()) for _ in range(N)]
-    C = list(set(C))
-    C.sort()
+    global N, mat, D
+    while True:
+
+        N = int(input())
+        if N == 0:
+            return
+        mat = [list(map(int, input().split())) for _ in range(N)]
+        D = Mat(N, N)
+
+        D[0][0] = mat[0][0]
+
+        print(dp(0, 0))
+        print(dp(0, 1))
+
+        print(dp(N-1, N-1))
 
     # ######## INPUT AREA END ############
 
-    D = [10 ** 9 for _ in range(K+1)]
-
-    for i in C:
-        if i <= K:
-            D[i] = 1
-        else:
-            break
-
-    for i in range(C[0]+1, K+1):
-        for j in C:
-            if i > j:
-                D[i] = min(D[i-j] + 1, D[i])
-            else:
-                break
-
-    if D[K] != 10 ** 9:
-        print(D[K])
-    else:
-        print(-1)
 
 
+dir = ((-1, 0), (1, 0), (0, 1), (0, -1))
+def dp(x, y):
 
+    if D[x][y] is not None:
+        return D[x][y]
 
-
-
-
+    mx, my = -1, -1
+    min_ = 10**9
+    for dx, dy in dir:
+        nx, ny = x + dx, y + dy
+        if 0 <= nx < N and 0 <= ny < N:
+            d = dp(nx, ny)
+            if min_ > d:
+                min_ = d
+                mx = nx
+                ny = ny
+    D[x][y] = min_ + mat[x][y]
+    return D[x][y]
 
 # TEMPLATE ###############################
 
