@@ -27,16 +27,16 @@ def main(f=None):
 
     # ######## INPUT AREA END ############
 
-    for i in range(0, N):
-        heappush(pq, (A[i], i))
+    minV, minI = A[0], 0
+    print(minV)
 
-        while True:
+    for i in range(1, N):
+        if minI < N - L:
             minV, minI = heappop(pq)
-            if minI > i - L:
-                break
 
-        print(minV)
-        heappush(pq, (minV, minI))
+        a = A[i]
+        if a < minV:
+            minV, minI = a, i
 
 
 # TEMPLATE ###############################
