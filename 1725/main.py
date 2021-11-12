@@ -21,7 +21,7 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
-
+    N = int(input())
 
     # ######## INPUT AREA END ############
 
