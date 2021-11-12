@@ -22,8 +22,22 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     N = int(input())
+    A = [int(input()) for _ in range(N)]
 
     # ######## INPUT AREA END ############
+
+
+    S = []
+
+    for i in range(N):
+
+        while S and S
+
+
+
+
+
+
 
 
 # TEMPLATE ###############################
