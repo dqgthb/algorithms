@@ -28,6 +28,8 @@ def main(f=None):
     # ######## INPUT AREA END ############
 
 
+def init(s, e, idx):,
+
 
 
 
