@@ -33,19 +33,15 @@ def main(f=None):
 
     for i in range(N):
         a = A[i]
-        while S and S[-1] > A[i]:
+        while S and A[S[-1]] > A[i]:
             last = S.pop()
             max_ = max(max_, A[last] * (i - last))
 
         S.append(i)
-        print(S)
 
-    print(S)
-    print(max_)
     while S:
         last = S.pop()
         max_ = max(max_, A[last] * (N - last))
-        print(last, max_)
 
     print(max_)
 
