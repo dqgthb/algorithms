@@ -42,6 +42,7 @@ def main(f=None):
 
     mergeSort(0, N-1)
     print(Ac)
+    print(C)
 
 
 def mergeSort(s, e):
@@ -54,6 +55,7 @@ def mergeSort(s, e):
     mergeSort(mid+1, e)
 
     cnt = merge(s, e)
+    print(s, e, cnt)
     C += cnt
 
 
