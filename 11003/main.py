@@ -28,13 +28,14 @@ def main(f=None):
     # ######## INPUT AREA END ############
 
     T = [None] * (4 * N)
-    init(0, N-1, 1)
+    initTree(0, N-1, 1)
 
     for i in range(N-L+1):
+        print(query(0, N-1, i, i+L-1, 1))
 
 
 
-def init(s, e, idx):
+def initTree(s, e, idx):
     if s == e:
         T[idx] = A[s]
 
