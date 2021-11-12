@@ -34,18 +34,18 @@ def main(f=None):
     for i in range(N):
         a = A[i]
         print("i a", i, a)
-        while S and A[S[-1]] > A[i]:
+        while len(S) > 1 and A[S[-1]] > A[i]:
             last = S.pop()
-            max_ = max(max_, A[last] * (i - last))
+            max_ = max(max_, A[last] * (i - S[-1] + 1))
             print(S)
             print(last, max_)
 
         S.append(i)
 
     print(S)
-    while S:
+    while len(S) > 1:
         last = S.pop()
-        max_ = max(max_, A[last] * (N - last))
+        max_ = max(max_, A[last] * (N - S[-1] + 1))
         print(S)
         print(last, max_)
     print(S)
