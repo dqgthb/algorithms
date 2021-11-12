@@ -79,10 +79,17 @@ def merge(s, e):
     if state == 2:
         while r <= e:
             T[idx] = Ac[r]
+            idx += 1
             r += 1
 
     else:
+        while l <= mid:
+            T[idx] = Ac[l]
+            idx += 1
+            l += 1
 
+    for i in range(s, e+1):
+        Ac[i] = T[i]
 
 
 
