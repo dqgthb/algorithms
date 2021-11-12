@@ -54,6 +54,14 @@ def mergeSort(s, e):
 
 
 def merge(s, e):
+    mid = (s + e) // 2
+
+    l = s
+    r = mid + 1
+
+    while True:
+
+
 
 
 
