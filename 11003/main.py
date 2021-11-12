@@ -35,19 +35,8 @@ def main(f=None):
             if minI > i - L:
                 break
 
-
-
-
-
-
-
-
-
         print(minV)
-
-
-
-
+        heappush(pq, (minV, minI))
 
 
 # TEMPLATE ###############################
