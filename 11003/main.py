@@ -26,11 +26,10 @@ def main(f=None):
 
     # ######## INPUT AREA END ############
 
-    minV, minI = A[0], 0
-    print(minV)
     dq = deque()
+    ans = []
 
-    for i in range(1, N):
+    for i in range(0, N):
         a = A[i]
 
         while dq and A[dq[-1]] >= a:
@@ -40,7 +39,10 @@ def main(f=None):
         while dq[0] < i - L + 1:
             dq.popleft()
 
-        print(A[dq[0]])
+
+        ans.append(dq[0])
+
+
 
 
 
