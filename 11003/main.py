@@ -35,7 +35,6 @@ def main(f=None):
 
         while dq and A[dq[-1]] >= a:
                 dq.pop()
-        print(dq)
         dq.append(i)
 
         while dq and minI < i - L + 1:
