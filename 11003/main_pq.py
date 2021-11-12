@@ -10,7 +10,7 @@ import sys
 #from collections import Counter, defaultdict as dd
 #import math
 #from math import log, log2, ceil, floor, gcd, sqrt
-#from heapq import heappush, heappop
+from heapq import heappush, heappop
 #import bisect
 #from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
@@ -23,11 +23,29 @@ def main(f=None):
 
     N, L = map(int, input().split())
     A = [int(i) for i in input().split()]
+    pq = []
 
     # ######## INPUT AREA END ############
 
     minV, minI = A[0], 0
     print(minV)
+
+    for i in range(1, N):
+        a = A[i]
+        while pq and minI < i - L + 1:
+            minV, minI = heappop(pq)
+        if minI < i - L + 1:
+            minV, minI = a, i
+            print(minV)
+            continue
+
+        if a < minV:
+            minV, minI = a, i
+        else:
+            heappush(pq, (a, i))
+
+        print(minV)
+
 
 # TEMPLATE ###############################
 
