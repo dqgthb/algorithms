@@ -56,11 +56,11 @@ def mergeSort(s, e):
 
     cnt = merge(s, e)
     print(s, e, cnt)
-    C += cnt
 
 
 
 def merge(s, e):
+    global C
     mid = (s + e) // 2
 
     idx = s
