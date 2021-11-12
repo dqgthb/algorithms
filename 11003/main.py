@@ -27,10 +27,18 @@ def main(f=None):
 
     # ######## INPUT AREA END ############
 
+    T = [None] * (lo)
+
 
 def init(s, e, idx):
     if s == e:
         T[idx] = A[s]
+
+
+    mid = ( s + e ) // 2
+    x = init(s, mid, idx * 2)
+    y = init(mid+1, e, dix * 2 + 1)
+
 
 
 
