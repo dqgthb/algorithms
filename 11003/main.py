@@ -39,6 +39,11 @@ def main(f=None):
             dq.append(i)
 
         while dq:
+            if minI < i - L + 1:
+                i = dq.popleft()
+                minV, minI = A[i], i
+        print(minV)
+
 
 
 
