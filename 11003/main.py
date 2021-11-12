@@ -50,8 +50,10 @@ def query(s, e, l, r, idx):
     if l <= s and e <= r:
         return T[idx]
 
-
-
+    mid = (s + e) // 2
+    x = query(s, mid, l, r, idx * 2)
+    y = query(mid+1, e, l, r, idx * 2 + 1)
+    return min(x, y)
 
 
 
