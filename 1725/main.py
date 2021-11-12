@@ -35,14 +35,10 @@ def main(f=None):
         a = A[i]
         while S and S[-1] > A[i]:
             last = S.pop()
+            max_ = max(max_, A[last] * (i - last))
 
-            max_ = max(max_, a - last + 1)
-
-
-
-
-
-
+        S.append(i)
+    print(max_)
 
 
 
