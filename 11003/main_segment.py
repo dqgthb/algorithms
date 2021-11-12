@@ -21,9 +21,48 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
+    global N, L, A, T
     N, L = map(int, input().split())
+    A = [int(i) for i in input().split()]
 
     # ######## INPUT AREA END ############
+
+    T = [None] * (4 * N)
+    initTree(0, N-1, 1)
+
+    ans = []
+
+    for i in range(N):
+        ans.append(query(0, N-1, i-L+1, i, 1))
+
+    print(' '.join(map(str, ans)))
+
+
+def initTree(s, e, idx):
+    if s == e:
+        T[idx] = A[s]
+        return T[idx]
+
+    mid = ( s + e ) // 2
+    x = initTree(s, mid, idx * 2)
+    y = initTree(mid+1, e, idx * 2 + 1)
+    T[idx] = min(x, y)
+    return T[idx]
+
+
+def query(s, e, l, r, idx):
+
+    if e < l or r < s:
+        return 10 ** 9
+
+    if l <= s and e <= r:
+        return T[idx]
+
+    mid = (s + e) // 2
+    x = query(s, mid, l, r, idx * 2)
+    y = query(mid+1, e, l, r, idx * 2 + 1)
+    return min(x, y)
+
 
 
 # TEMPLATE ###############################
