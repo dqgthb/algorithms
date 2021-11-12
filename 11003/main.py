@@ -30,8 +30,12 @@ def main(f=None):
     T = [None] * (4 * N)
     initTree(0, N-1, 1)
 
-    for i in range(N-L+1):
-        print(query(0, N-1, i-L+1, i, 1))
+    ans = []
+
+    for i in range(N):
+        ans.append(query(0, N-1, i-L+1, i, 1))
+
+    print(' '.join(map(str, ans))
 
 
 
