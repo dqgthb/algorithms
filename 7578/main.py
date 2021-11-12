@@ -81,7 +81,6 @@ def merge(s, e):
             T[idx] = Ac[r]
             idx += 1
             r += 1
-            cnt += 1
             if r > e:
                 state = 3
 
@@ -90,7 +89,6 @@ def merge(s, e):
             T[idx] = Ac[r]
             idx += 1
             r += 1
-            cnt += 1
 
     else:
         while l <= mid:
