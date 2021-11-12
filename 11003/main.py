@@ -10,7 +10,7 @@ import sys
 #from collections import Counter, defaultdict as dd
 #import math
 #from math import log, log2, ceil, floor, gcd, sqrt
-#from heapq import heappush, heappop
+from heapq import heappush, heappop
 #import bisect
 #from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
@@ -22,8 +22,15 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     N, L = map(int, input().split())
+    A = [int(i) for i in input().split()]
+    pq = []
 
     # ######## INPUT AREA END ############
+
+    for i in range(N):
+        heappush(pq, (A[i], i))
+
+
 
 
 # TEMPLATE ###############################
