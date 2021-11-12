@@ -56,10 +56,15 @@ def mergeSort(s, e):
 def merge(s, e):
     mid = (s + e) // 2
 
+    idx = s
     l = s
     r = mid + 1
+    state = 1
 
-    while True:
+    while state == 1:
+        if Ac[l] <= Ac[r]:
+
+
 
 
 
