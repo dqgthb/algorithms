@@ -30,6 +30,9 @@ def main(f=None):
     T = [None] * (4 * N)
     init(0, N-1, 1)
 
+    for i in range(N-L+1):
+
+
 
 def init(s, e, idx):
     if s == e:
