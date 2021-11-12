@@ -28,7 +28,10 @@ def main(f=None):
     # ######## INPUT AREA END ############
 
 
-def init(s, e, idx):,
+def init(s, e, idx):
+    if s == e:
+        T[idx] = A[s]
+
 
 
 
