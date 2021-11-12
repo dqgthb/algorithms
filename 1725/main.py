@@ -27,7 +27,7 @@ def main(f=None):
     # ######## INPUT AREA END ############
 
 
-    S = []
+    S = [0]
 
     max_ = 0
 
@@ -36,7 +36,7 @@ def main(f=None):
         print("i a", i, a)
         while len(S) > 1 and A[S[-1]] > A[i]:
             last = S.pop()
-            max_ = max(max_, A[last] * (i - S[-1] + 1))
+            max_ = max(max_, A[last] * (i - S[-1] - 1))
             print(S)
             print(last, max_)
 
@@ -45,7 +45,7 @@ def main(f=None):
     print(S)
     while len(S) > 1:
         last = S.pop()
-        max_ = max(max_, A[last] * (N - S[-1] + 1))
+        max_ = max(max_, A[last] * (N - S[-1] - 1))
         print(S)
         print(last, max_)
     print(S)
