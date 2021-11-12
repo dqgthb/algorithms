@@ -44,6 +44,13 @@ def init(s, e, idx):
 
 def query(s, e, l, r, idx):
 
+    if e < l or r < s:
+        return 10 ** 9
+
+    if l <= s and e <= r:
+        return T[idx]
+
+
 
 
 
