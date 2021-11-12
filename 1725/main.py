@@ -27,7 +27,7 @@ def main(f=None):
     # ######## INPUT AREA END ############
 
 
-    S = [0]
+    S = []
 
     max_ = 0
 
