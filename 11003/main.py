@@ -27,7 +27,13 @@ def main(f=None):
 
     # ######## INPUT AREA END ############
 
-    for i in range(0, N):
+    minV, minI = A[0], 0
+    print(minV)
+
+    for i in range(1, N):
+        heappush(pq, (A[i], i))
+
+
 
 
         print(minV)
