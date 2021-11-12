@@ -28,6 +28,11 @@ def main(f=None):
 
     minV, minI = A[0], 0
     print(minV)
+    dq = []
+
+    for i in range(1, N):
+
+
 
 # TEMPLATE ###############################
 
