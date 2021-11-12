@@ -31,6 +31,13 @@ def main(f=None):
     dq = []
 
     for i in range(1, N):
+        a = A[i]
+
+        while dq and minI < i - L + 1:
+            minV, minI = A[i], i
+
+
+
 
 
 
