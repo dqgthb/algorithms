@@ -31,7 +31,11 @@ def main(f=None):
     for i in range(N):
         heappush(pq, (A[i], i))
 
-        while minI > N-L:
+        while minI <= N-L:
+            minV, minI = heappop(pq)
+
+        print(minV)
+
 
 
 
