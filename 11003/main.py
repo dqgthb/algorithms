@@ -33,16 +33,15 @@ def main(f=None):
     for i in range(1, N):
         a = A[i]
 
-        while dq:
-            if A[dq[-1]] < a:
+        while dq and A[dq[-1]] < a:
                 dq.pop()
 
         dq.append(i)
+        print(dq)
 
-        while dq:
-            if minI < i - L + 1:
-                j = dq.popleft()
-                minV, minI = A[j], j
+        while dq and minI < i - L + 1:
+            j = dq.popleft()
+            minV, minI = A[j], j
         print(minV)
 
 
