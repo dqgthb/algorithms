@@ -34,14 +34,7 @@ def main(f=None):
     Bc = [i for i in range(N)]
     C = 0
 
-    print(A)
-    print(B)
-
-    print(Ac)
-    print(Bc)
-
     mergeSort(0, N-1)
-    print(Ac)
     print(C)
 
 
@@ -54,8 +47,7 @@ def mergeSort(s, e):
     mergeSort(s, mid)
     mergeSort(mid+1, e)
 
-    cnt = merge(s, e)
-    print(s, e, cnt)
+    merge(s, e)
 
 
 
@@ -99,7 +91,7 @@ def merge(s, e):
 
     for i in range(s, e+1):
         Ac[i] = T[i]
-    return cnt
+    C += cnt
 
 
 
