@@ -29,12 +29,9 @@ def main():
             departT = datetime.strptime(depart, "%H%M")
             arriveT = datetime.strptime(arrive, "%H%M")
             timeDelta = arriveT - departT
-            print(departT, arriveT)
-            print(timeDelta)
             minutes = timeDelta.seconds // 60
             #if timeDelta.days < 0:
                 #minutes += 24 * 60 # done automatically
-            print(minutes)
             G[convert[from_]].append((convert[to_], timeDelta.seconds // 60))
 
 
