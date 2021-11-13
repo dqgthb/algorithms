@@ -19,9 +19,9 @@ def main():
     with open("Hawaiian-flights.txt") as f:
         for line in f:
             from_, to_, departure, arrival = line.split()
+            departure = datetime.strptime(departure, "%H%M")
+            arrival = datetime.strptime(arrival, "%H%M")
             print(departure, arrival)
-            departure = datetime(departure, "%H%M")
-            arrival = datetime(arrival, "%H%M")
             G[convert[from_]].append((convert[to_], departure, arrival))
 
 
