@@ -29,6 +29,7 @@ def main():
             departT = datetime.strptime(depart, "%H%M")
             arriveT = datetime.strptime(arrive, "%H%M")
             timeDelta = arriveT - departT
+            print(departT, arriveT)
             print(timeDelta)
             minutes = timeDelta.seconds // 60
             if minutes < 0:
