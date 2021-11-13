@@ -29,6 +29,11 @@ def main():
             departT = datetime.strptime(depart, "%H%M")
             arriveT = datetime.strptime(arrive, "%H%M")
             timeDelta = arriveT - departT
+            print(timeDelta)
+            minutes = timeDelta.seconds // 60
+            if minutes < 0:
+                print(minutes)
+                minutes += 2400
             G[convert[from_]].append((convert[to_], timeDelta.seconds // 60))
 
 
