@@ -20,10 +20,17 @@ def main():
             from_, to_, departure, arrival = line.split()
             G[convert[from_]].append((convert[to_], departure, arrival))
 
-    (G)
+
+    S = convert("LNY")
+    T = convert("LIH")
+
+
+    parr(G)
 
 
 def parr(A):
+    for i in A:
+        print(i)
 
 if __name__ == "__main__":
     main()
