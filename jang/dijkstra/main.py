@@ -32,9 +32,10 @@ def main():
             print(departT, arriveT)
             print(timeDelta)
             minutes = timeDelta.seconds // 60
-            if minutes < 0:
+            if timeDelta.days < 0:
                 print(minutes)
                 minutes += 2400
+            print(minutes)
             G[convert[from_]].append((convert[to_], timeDelta.seconds // 60))
 
 
