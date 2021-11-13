@@ -34,12 +34,12 @@ def main():
 
     S = convert["LNY"]
     T = convert["LIH"]
-    startTime = "1347"
+    # startTime = "1347"
 
     pq = []
     D = [10**9 for _ in range(N)]
     P = [None for _ in range(N)]
-
+    D[S] = 0
     heappush(pq, (0, S))
 
     while pq:
