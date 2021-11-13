@@ -48,8 +48,8 @@ def main():
         if dsx > D[x]:
             continue
 
-        for y, departXY, arriveXY in G[x]:
-            dxy = arriveXY - departXY
+        for y, dxy in G[x]:
+            print(dxy)
             dsy = dsx + dxy
             if dsy < D[y]:
                 D[y] = dsy
