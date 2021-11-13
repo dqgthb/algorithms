@@ -30,10 +30,10 @@ def main():
                 arrive -= 2400
             arrive = str(arrive)
 
-            departD = timedelta(minutes = 60 * int(depart[0:2]) + int(depart[2:]))
-            arriveD = timedelta(minutes = 60 * int(arrive[0:2]) + int(arrive[2:]))
-            print(depart, departD, arrive, arriveD)
-            timeDelta = arriveD - departD
+            departT = datetime.strptime(depart, "%H%M")
+            arriveT = datetime.strptime(arrive, "%H%M")
+
+
             print(timeDelta)
             G[convert[from_]].append((convert[to_], timeDelta))
 
