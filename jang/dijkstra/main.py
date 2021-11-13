@@ -21,8 +21,8 @@ def main():
             G[convert[from_]].append((convert[to_], departure, arrival))
 
 
-    S = convert("LNY")
-    T = convert("LIH")
+    S = convert["LNY"]
+    T = convert["LIH"]
     startTime = "1347"
 
     pq = []
@@ -35,12 +35,14 @@ def main():
             continue
 
         for y, departXY, arriveXY in G[x]:
-            dxy = 0
+            dxy = 1
             dsy = dsx + dxy
             if dsy < D[y]:
                 D[y] = dsy
 
                 heappush(pq, (dsy, y))
+
+    print(D)
 
 
 
