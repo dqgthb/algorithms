@@ -19,9 +19,17 @@ def main():
     with open("Hawaiian-flights.txt") as f:
         for line in f:
             from_, to_, depart, arrive = line.split()
-            if int(depart) >= 2400:
+
+            depart = int(depart)
+            if depart >= 2400:
                 depart -= 2400
-                depart = str(depart)
+            depart = str(depart)
+
+            arrive = int(arrive)
+            if arrive >= 2400:
+                arrive -= 2400
+            arrive = str(arrive)
+
             departD = timedelta(minutes = 60 * int(depart[0:2]) + int(depart[2:]))
             arriveD = timedelta(minutes = 60 * int(arrive[0:2]) + int(arrive[2:]))
             print(depart, departD)
