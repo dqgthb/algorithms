@@ -31,6 +31,7 @@ def main():
 
     pq = []
     D = [10**9 for _ in range(N)]
+
     heappush(pq, (0, S))
 
     while pq:
