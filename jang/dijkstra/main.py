@@ -32,7 +32,7 @@ def main():
 
             departD = timedelta(minutes = 60 * int(depart[0:2]) + int(depart[2:]))
             arriveD = timedelta(minutes = 60 * int(arrive[0:2]) + int(arrive[2:]))
-            print(depart, departD)
+            print(depart, departD, arrive, arriveD)
             timeDelta = arriveD - departD
             print(timeDelta)
             G[convert[from_]].append((convert[to_], timeDelta))
