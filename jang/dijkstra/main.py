@@ -32,9 +32,8 @@ def main():
             print(departT, arriveT)
             print(timeDelta)
             minutes = timeDelta.seconds // 60
-            if timeDelta.days < 0:
-                print(minutes)
-                minutes += 60 * 24
+            #if timeDelta.days < 0:
+                #minutes += 24 * 60 # done automatically
             print(minutes)
             G[convert[from_]].append((convert[to_], timeDelta.seconds // 60))
 
@@ -63,7 +62,6 @@ def main():
 
     print(D)
     print(P)
-
 
 def parr(A):
     for i in A:
