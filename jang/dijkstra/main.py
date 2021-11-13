@@ -1,4 +1,4 @@
-
+from heapq import heappush, heappop
 
 def main():
 
@@ -26,6 +26,8 @@ def main():
     startTime = "1347"
 
     pq = []
+    heappush(pq, (S, startTime))
+
     while pq:
 
 
