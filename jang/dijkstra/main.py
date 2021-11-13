@@ -1,4 +1,5 @@
 from heapq import heappush, heappop
+from datetime import datetime
 
 def main():
 
@@ -18,6 +19,9 @@ def main():
     with open("Hawaiian-flights.txt") as f:
         for line in f:
             from_, to_, departure, arrival = line.split()
+            departure = datetime(departure, "%H%M")
+            departure = datetime(departure, "%H%M")
+
             G[convert[from_]].append((convert[to_], departure, arrival))
 
 
