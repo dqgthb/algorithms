@@ -12,11 +12,13 @@ def main():
 
     N = len(airports)
     convert = {airports[i]:i for i in range(N)}
+    #print(connectingTime[convert["LNY"]])
 
+    G = [[] for _ in range(N)]
     with open("Hawaiian-flights.txt") as f:
         for line in f:
-            #print(line.strip())
-            pass
+            from_, to_, departure, arrival = line.split()
+
     G = []
 
 
