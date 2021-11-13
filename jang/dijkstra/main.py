@@ -23,9 +23,12 @@ def main():
 
     S = convert("LNY")
     T = convert("LIH")
+    startTime = "1347"
+
+    pq = []
+    while pq:
 
 
-    parr(G)
 
 
 def parr(A):
