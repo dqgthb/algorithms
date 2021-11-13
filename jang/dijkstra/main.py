@@ -21,8 +21,8 @@ def main():
             from_, to_, depart, arrive = line.split()
             depart = timedelta(minutes = 60 * int(depart[0:2]) + int(depart[2:]))
             arrive = timedelta(minutes = 60 * int(arrive[0:2]) + int(arrive[2:]))
-            print(depart, arrive)
-
+            timeDelta = arrive - depart
+            print(timeDelta)
             G[convert[from_]].append((convert[to_], timeDelta))
 
 
