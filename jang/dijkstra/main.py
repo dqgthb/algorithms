@@ -30,7 +30,7 @@ def main():
             arriveT = datetime.strptime(arrive, "%H%M")
             timeDelta = arriveT - departT
             print(depart, arrive, departT, arriveT)
-            print(timeDelta)
+            print(timeDelta.seconds / 60)
             G[convert[from_]].append((convert[to_], timeDelta))
 
 
