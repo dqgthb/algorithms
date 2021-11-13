@@ -35,7 +35,11 @@ def main():
             continue
 
         for y, departXY, arriveXY in G[x]:
-            return
+            dxy = 0
+            if dsx + dxy < D[y]:
+                D[y] = dsx + dxy
+
+
 
 
 
