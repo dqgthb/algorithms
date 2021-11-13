@@ -20,18 +20,16 @@ def main():
         for line in f:
             from_, to_, depart, arrive = line.split()
 
-            depart = int(depart)
-            if depart >= 2400:
-                depart -= 2400
-            depart = "00" + str(depart)[2:]
+            if int(depart) >= 2400:
+                depart = "00" + str(depart)[2:]
 
-            arrive = int(arrive)
-            if arrive >= 2400:
+            if int(arrive) >= 2400:
                 arrive = "00" + str(arrive)[2:]
 
             departT = datetime.strptime(depart, "%H%M")
             arriveT = datetime.strptime(arrive, "%H%M")
             timeDelta = arriveT - departT
+            print(depart, arrive, departT, arriveT)
             print(timeDelta)
             G[convert[from_]].append((convert[to_], timeDelta))
 
