@@ -1,5 +1,5 @@
 from heapq import heappush, heappop
-from datetime import datetime, timedetla
+from datetime import datetime, timedelta
 
 def main():
 
@@ -19,7 +19,9 @@ def main():
     with open("Hawaiian-flights.txt") as f:
         for line in f:
             from_, to_, depart, arrive = line.split()
-            depart = timedelta(minutes)
+            depart = timedelta(minutes = 60 * int(depart[0:2]) + int(depart[2:]))
+            arrive = timedelta(minutes = 60 * int(arrive[0:2]) + int(arrive[2:]))
+            print(depart, arrive)
 
             G[convert[from_]].append((convert[to_], timeDelta))
 
