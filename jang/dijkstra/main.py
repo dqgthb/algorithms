@@ -19,9 +19,10 @@ def main():
     with open("Hawaiian-flights.txt") as f:
         for line in f:
             from_, to_, depart, arrive = line.split()
-            depart = timedelta(minutes = 60 * int(depart[0:2]) + int(depart[2:]))
-            arrive = timedelta(minutes = 60 * int(arrive[0:2]) + int(arrive[2:]))
-            timeDelta = arrive - depart
+            departD = timedelta(minutes = 60 * int(depart[0:2]) + int(depart[2:]))
+            arriveD = timedelta(minutes = 60 * int(arrive[0:2]) + int(arrive[2:]))
+            print(depart, departD)
+            timeDelta = arriveD - departD
             print(timeDelta)
             G[convert[from_]].append((convert[to_], timeDelta))
 
