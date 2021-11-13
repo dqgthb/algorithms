@@ -29,9 +29,7 @@ def main():
             departT = datetime.strptime(depart, "%H%M")
             arriveT = datetime.strptime(arrive, "%H%M")
             timeDelta = arriveT - departT
-            print(depart, arrive, departT, arriveT)
-            print(timeDelta.seconds / 60)
-            G[convert[from_]].append((convert[to_], timeDelta))
+            G[convert[from_]].append((convert[to_], timeDelta.seconds // 60))
 
 
     S = convert["LNY"]
@@ -49,7 +47,6 @@ def main():
             continue
 
         for y, dxy in G[x]:
-            print(dxy)
             dsy = dsx + dxy
             if dsy < D[y]:
                 D[y] = dsy
@@ -57,13 +54,6 @@ def main():
                 heappush(pq, (dsy, y))
 
     print(D)
-
-
-
-
-
-
-
 
 
 def parr(A):
