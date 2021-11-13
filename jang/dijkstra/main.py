@@ -36,8 +36,12 @@ def main():
 
         for y, departXY, arriveXY in G[x]:
             dxy = 0
-            if dsx + dxy < D[y]:
-                D[y] = dsx + dxy
+            dsy = dsx + dxy
+            if dsy < D[y]:
+                D[y] = dsy
+
+                heappush(pq, (dsy, y))
+
 
 
 
