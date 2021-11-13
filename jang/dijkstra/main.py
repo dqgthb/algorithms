@@ -18,9 +18,12 @@ def main():
     with open("Hawaiian-flights.txt") as f:
         for line in f:
             from_, to_, departure, arrival = line.split()
+            G[convert[from_]].append((convert[to_], departure, arrival))
 
-    G = []
+    (G)
 
+
+def parr(A):
 
 if __name__ == "__main__":
     main()
