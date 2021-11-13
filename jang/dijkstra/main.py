@@ -38,6 +38,7 @@ def main():
 
     pq = []
     D = [10**9 for _ in range(N)]
+    P = [None for _ in range(N)]
 
     heappush(pq, (0, S))
 
@@ -50,10 +51,11 @@ def main():
             dsy = dsx + dxy
             if dsy < D[y]:
                 D[y] = dsy
-
+                P[y] = x
                 heappush(pq, (dsy, y))
 
     print(D)
+    print(P)
 
 
 def parr(A):
