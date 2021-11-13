@@ -30,7 +30,12 @@ def main():
     heappush(pq, (0, S))
 
     while pq:
-        dsx, x =
+        dsx, x = heappop(pq)
+        if dsx > D[x]:
+            continue
+
+        for y, xyDeparture, arrival in G[x]:
+
 
 
 
