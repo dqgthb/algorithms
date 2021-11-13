@@ -19,9 +19,9 @@ def main():
     with open("Hawaiian-flights.txt") as f:
         for line in f:
             from_, to_, departure, arrival = line.split()
+            print(departure, arrival)
             departure = datetime(departure, "%H%M")
-            departure = datetime(departure, "%H%M")
-
+            arrival = datetime(arrival, "%H%M")
             G[convert[from_]].append((convert[to_], departure, arrival))
 
 
@@ -39,7 +39,7 @@ def main():
             continue
 
         for y, departXY, arriveXY in G[x]:
-            dxy = 1
+            dxy = arriveXY - departXY
             dsy = dsx + dxy
             if dsy < D[y]:
                 D[y] = dsy
