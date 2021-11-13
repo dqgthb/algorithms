@@ -26,9 +26,12 @@ def main():
     startTime = "1347"
 
     pq = []
-    heappush(pq, (S, startTime))
+    D = [10**9 for _ in range(N)]
+    heappush(pq, (0, S))
 
     while pq:
+        dsx, x =
+
 
 
 
