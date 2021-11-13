@@ -23,17 +23,15 @@ def main():
             depart = int(depart)
             if depart >= 2400:
                 depart -= 2400
-            depart = str(depart)
+            depart = "00" + str(depart)[2:]
 
             arrive = int(arrive)
             if arrive >= 2400:
-                arrive -= 2400
-            arrive = str(arrive)
+                arrive = "00" + str(arrive)[2:]
 
             departT = datetime.strptime(depart, "%H%M")
             arriveT = datetime.strptime(arrive, "%H%M")
-
-
+            timeDelta = arriveT - departT
             print(timeDelta)
             G[convert[from_]].append((convert[to_], timeDelta))
 
