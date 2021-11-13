@@ -34,7 +34,8 @@ def main():
         if dsx > D[x]:
             continue
 
-        for y, xyDeparture, arrival in G[x]:
+        for y, departXY, arriveXY in G[x]:
+            return
 
 
 
