@@ -34,7 +34,7 @@ def main():
             minutes = timeDelta.seconds // 60
             if timeDelta.days < 0:
                 print(minutes)
-                minutes = 2400 - minutes
+                minutes += 60 * 24
             print(minutes)
             G[convert[from_]].append((convert[to_], timeDelta.seconds // 60))
 
