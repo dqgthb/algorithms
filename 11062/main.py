@@ -29,6 +29,12 @@ def main(f=None):
     # ######## INPUT AREA END ############
 
 
+def solve(s, e):
+
+
+
+
+
 # TEMPLATE ###############################
 
 
