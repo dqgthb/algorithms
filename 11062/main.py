@@ -20,7 +20,7 @@ def main(f=None):
     init(f)
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
-    global T, N, A
+    global T, N, A, D
 
     T = int(input())
     for _ in range(T):
@@ -35,12 +35,16 @@ def main(f=None):
 
 
 def solve(s, e, flag):
+    if D[s][e][flag]:
+        return D[s][e][flag]
+
     if flag:
         if s == e:
             return A[s]
         c1 = A[s] + solve(s+1, e, not flag)
         c2 = A[e] + solve(s, e-1, not flag)
         #print(c1, c2, flag, "select", max(c1, c2))
+        D[s][e][flag] = max(c1, c2)
         return max(c1, c2)
 
     else:
@@ -49,6 +53,7 @@ def solve(s, e, flag):
         c1 = solve(s+1, e, not flag)
         c2 = solve(s, e-1, not flag)
         #print(c1, c2, flag)
+        D[s][e][flag] = min(c1, c2)
         return min(c1, c2)
 
 
