@@ -27,6 +27,8 @@ def main(f=None):
         N = int(input())
         A = [int(i) for i in input().split()]
 
+        print(solve(0, N-1, True))
+
 
     # ######## INPUT AREA END ############
 
@@ -36,7 +38,10 @@ def solve(s, e, flag):
         return A[s]
 
     if flag:
-        return max(A[s] + solve(s+1, e, flag))
+        return max(A[s] + solve(s+1, e, not flag), A[e] + solve(s, e-1, not flag))
+
+    else:
+        return min(solve(s+1, e, not flag), solve(s, e-1, not flag))
 
 
 
