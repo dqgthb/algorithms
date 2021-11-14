@@ -28,6 +28,7 @@ def main(f=None):
         A = [int(i) for i in input().split()]
 
         print(solve(0, N-1, True))
+        return
 
 
     # ######## INPUT AREA END ############
@@ -43,7 +44,9 @@ def solve(s, e, flag):
         return ret
 
     else:
-        return min(solve(s+1, e, not flag), solve(s, e-1, not flag))
+        ret = min(solve(s+1, e, not flag), solve(s, e-1, not flag))
+        print(ret)
+        return ret
 
 
 # TEMPLATE ###############################
