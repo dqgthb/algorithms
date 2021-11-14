@@ -38,14 +38,12 @@ def solve(s, e, flag):
         return A[s]
 
     if flag:
-        return max(A[s] + solve(s+1, e, not flag), A[e] + solve(s, e-1, not flag))
+        ret = max(A[s] + solve(s+1, e, not flag), A[e] + solve(s, e-1, not flag))
+        print(ret)
+        return ret
 
     else:
         return min(solve(s+1, e, not flag), solve(s, e-1, not flag))
-
-
-
-
 
 
 # TEMPLATE ###############################
