@@ -46,11 +46,10 @@ def solve(s, e, flag):
         return max(c1, c2)
 
     else:
-        ret = min(solve(s+1, e, not flag), solve(s, e-1, not flag))
         c1 = solve(s+1, e, not flag)
         c2 = solve(s, e-1, not flag)
         print(c1, c2, flag)
-        return ret
+        return min(c1, c2)
 
 
 # TEMPLATE ###############################
