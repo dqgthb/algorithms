@@ -37,18 +37,19 @@ def main(f=None):
 def solve(s, e, flag):
     print(s, e, flag)
     if s == e:
-        print("last", A[s])
         return A[s]
 
     if flag:
         c1 = A[s] + solve(s+1, e, not flag)
-        ret = max(A[s] + solve(s+1, e, not flag), A[e] + solve(s, e-1, not flag))
-        print("a", ret)
-        return ret
+        c2 = A[e] + solve(s, e-1, not flag)
+        print(c1, c2, flag)
+        return max(c1, c2)
 
     else:
         ret = min(solve(s+1, e, not flag), solve(s, e-1, not flag))
-        print("b", ret)
+        c1 = solve(s+1, e, not flag)
+        c2 = solve(s, e-1, not flag)
+        print(c1, c2, flag)
         return ret
 
 
