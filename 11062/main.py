@@ -20,6 +20,8 @@ def main(f=None):
     init(f)
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
+    global T, N, A
+
     T = int(input())
     for _ in range(T):
         N = int(input())
@@ -29,7 +31,13 @@ def main(f=None):
     # ######## INPUT AREA END ############
 
 
-def solve(s, e):
+def solve(s, e, flag):
+    if s == e:
+        return A[s]
+
+    if flag:
+        return max(A[s] + solve(s+1, e, flag))
+
 
 
 
