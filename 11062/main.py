@@ -35,14 +35,13 @@ def main(f=None):
 
 
 def solve(s, e, flag):
-    print(s, e, flag)
     if s == e:
         return A[s]
 
     if flag:
         c1 = A[s] + solve(s+1, e, not flag)
         c2 = A[e] + solve(s, e-1, not flag)
-        print(c1, c2, flag)
+        print(c1, c2, flag, "select", max(c1, c2))
         return max(c1, c2)
 
     else:
