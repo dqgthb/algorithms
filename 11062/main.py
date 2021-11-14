@@ -36,6 +36,7 @@ def main(f=None):
 
 def solve(s, e, flag):
     if s == e:
+        print("last", A[s])
         return A[s]
 
     if flag:
