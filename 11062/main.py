@@ -26,9 +26,9 @@ def main(f=None):
     for _ in range(T):
         N = int(input())
         A = [int(i) for i in input().split()]
-
+        D = nDim(N, N, 2)
         print(solve(0, N-1, True))
-        return
+
 
 
     # ######## INPUT AREA END ############
@@ -40,7 +40,7 @@ def solve(s, e, flag):
             return A[s]
         c1 = A[s] + solve(s+1, e, not flag)
         c2 = A[e] + solve(s, e-1, not flag)
-        print(c1, c2, flag, "select", max(c1, c2))
+        #print(c1, c2, flag, "select", max(c1, c2))
         return max(c1, c2)
 
     else:
@@ -48,7 +48,7 @@ def solve(s, e, flag):
             return 0
         c1 = solve(s+1, e, not flag)
         c2 = solve(s, e-1, not flag)
-        print(c1, c2, flag)
+        #print(c1, c2, flag)
         return min(c1, c2)
 
 
