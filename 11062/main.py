@@ -26,7 +26,7 @@ def main(f=None):
     for _ in range(T):
         N = int(input())
         A = [int(i) for i in input().split()]
-        D = nDim(N, N, 2)
+        D = nDim(N, N, 2, default=None)
         print(solve(0, N-1, True))
 
 
