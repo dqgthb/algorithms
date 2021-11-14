@@ -35,7 +35,7 @@ def main(f=None):
 
 
 def solve(s, e, flag):
-    if D[s][e][flag]:
+    if D[s][e][flag] is not None:
         return D[s][e][flag]
 
     if flag:
