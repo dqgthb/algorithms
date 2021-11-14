@@ -35,15 +35,23 @@ def main(f=None):
     s -= 1
     t -= 1
 
+    V = [False] * N
     D = [10**9] * N
     P = [-1] * N
     D[s] = 0
     pq = [(0, s)]
+    cnt = 0
 
     while pq:
         d, i = heappop(pq)
-        if D[i] < d:
+        if d > D[i]:
             continue
+
+        if not V[i]:
+            V[i] = True
+            cnt += 1
+            if cnt == N:
+                break
 
         for j, dij in G[i]:
             dsj = d + dij

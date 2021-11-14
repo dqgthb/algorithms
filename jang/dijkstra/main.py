@@ -60,6 +60,15 @@ def main():
     print(D)
     print(P)
 
+    itinerary = []
+    curr = T
+    while curr != None:
+        itinerary.append(curr)
+        curr = P[curr]
+    itinerary.reverse()
+    print(itinerary)
+
+
 def parr(A):
     for i in A:
         print(i)
