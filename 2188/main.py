@@ -20,6 +20,7 @@ def main(f=None):
     init(f)
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
+    global N, M, G
     N, M = map(int, input().split())
 
     G = [None for _ in range(N)]
@@ -35,9 +36,13 @@ def main(f=None):
     B = [None] * M
     match = 0
     for i in range(N):
-        if A[i] is None and dfs(i):
+        if A[i] is None:
             V = [False] * N
-            match += 1
+            if dfs(i):
+                match += 1
+
+    print(match)
+
 
 
 def dfs(a):
@@ -45,6 +50,10 @@ def dfs(a):
 
     for b in G[a]:
         if B[b] is None or not V[B[b]] and dfs(B[b]):
+            A[a] = b
+            B[b] = a
+            return True
+    return False
 
 
 
