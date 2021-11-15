@@ -22,12 +22,13 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
     N, M = map(int, input().split())
 
-    G = [[] for _ in range(N)]
-    for _ in range(N):
-
-
+    G = [None for _ in range(N)]
+    for i in range(N):
+        _, *arr = map(int, input().split())
+        G[i] = arr
 
     # ######## INPUT AREA END ############
+
 
 
 # TEMPLATE ###############################
