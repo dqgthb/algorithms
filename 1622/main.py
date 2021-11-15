@@ -24,29 +24,24 @@ def main(f=None):
     Flip = True
     base = ord('a')
     for line in sys.stdin:
+        line = line.strip()
         if Flip:
             Flip = not Flip
 
-            A = line.strip()
             freqA = [0] * 26
-            for c in A:
+            for c in line:
                 freqA[ord(c) - base] += 1
 
         else:
             Flip = not Flip
 
-            B = line.strip()
             freqB = [0] * 26
-            for c in B:
+            for c in line:
                 freqB[ord(c) - base] += 1
 
             res = ""
-
             for i in range(26):
-                ac = freqA[i]
-                bc = freqB[i]
-
-                res += chr(i + base) * min(ac, bc)
+                res += chr(i + base) * min(freqA[i], freqB[i])
 
             print(res)
 
