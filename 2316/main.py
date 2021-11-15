@@ -62,22 +62,13 @@ def main(f=None):
         dq = deque()
         dq.append(0)
 
-        while dq:
-            x = dq.popleft()
-
-            for y in G[x]:
-                if C[x][y] > F[x][y]:
-                    P[y] = x
-                    if y == E:
-                        break
-                    dq.append(y)
-
 
 # TEMPLATE ###############################
 
 
 def bfs():
 
+    dq = deque()
     dq.append(S)
 
     while dq:
@@ -85,7 +76,11 @@ def bfs():
 
         for y in G[x]:
             if C[x][y] > F[x][y]:
-
+                P[y] = x
+                if y == E:
+                    return True
+                dq.append(y)
+    return False
 
 
 enu = enumerate
