@@ -21,18 +21,21 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
+    global N, M, K, G, NN, S, E, D, C, F
     N, M, K = map(int, input().split())
 
-
     G = [[] for _ in range(N + M + 3)]
+    NN = N + M + 3
 
     S = N + M
     E = S + 1
     D = E + 1
-    C =
+    C = Mat(NN, NN, 0)
+    F = Mat(NN, NN, 0)
 
     for i in range(N):
         G[S].append(i)
+        G[i].append(S)
 
     for i in range(N):
         _, *arr = map(int, input().split())
