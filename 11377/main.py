@@ -21,16 +21,26 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
-    global N, M, K, A, B, V
+    global N, M, K, A, B, V, G
     N, M, K = map(int, input().split())
+
+    G = [[] for _ in range(2 * N)]
+
+    for i in range(N):
+        G[i]
+
 
     A = [None] * (2 * N)
     B = [None] * M
 
+
     match = 0
     for i in range(0, 2 * N, 2):
         if A[i] is None:
-            V
+            V = [None] * (2 * N)
+            if dfs(i):
+                match += 1
+    print(match)
 
 
 def dfs(a):
