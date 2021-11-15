@@ -58,15 +58,25 @@ def main(f=None):
 
     while True:
 
-        # bfs
-        if bfs:
+        if bfs():
             flow = 10 ** 9
 
             curr = E
             while curr != S:
                 prev = P[curr]
-                flow = min(flow, F[prev][curr])
+                flow = min(flow, C[prev][curr] - F[prev][curr])
                 curr = prev
+
+            curr = E
+            while curr != S:
+                prev = P[curr]
+                F[prev][curr] += flow
+                F[curr][prev] -= flow
+                curr =prev
+        else:
+            break
+
+
 
 # TEMPLATE ###############################
 
@@ -146,5 +156,4 @@ def parr(arr):
         print(i)
 
 
-if __name__ == "__main__":
-    main()
+if __name__ == "__m
