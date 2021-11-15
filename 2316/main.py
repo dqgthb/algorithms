@@ -67,10 +67,16 @@ def main(f=None):
 
             for y in G[x]:
                 if C[x][y] > F[x][y]:
-
+                    P[y] = x
+                    if y == E:
+                        break
+                    dq.append(y)
 
 
 # TEMPLATE ###############################
+
+
+def bfs():
 
 
 enu = enumerate
