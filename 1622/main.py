@@ -25,9 +25,12 @@ def main(f=None):
     for line in sys.stdin:
         if Flip:
             A = line.strip()
+            freqA = [0] * 26
+            for c in A:
             Flip = not Flip
         else:
             B = line.strip()
+            freqB = [0] * 26
             Flip = not Flip
 
 
