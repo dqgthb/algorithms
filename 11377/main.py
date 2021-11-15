@@ -26,14 +26,18 @@ def main(f=None):
     A = [None] * (2 * N)
     B = [None] * M
 
-    for i in
+    for i in range(0, 2 * N, 2):
 
 
 def dfs(a):
     V[a] = True
 
     for b in G[a]:
-        if V[b] is None or B[b]
+        if V[b] is None or not V[B[b]] and dfs(B[b]):
+            A[a] = b
+            B[b] = a
+            return True
+    return False
 
 
 
