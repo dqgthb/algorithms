@@ -21,8 +21,9 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
-    Flip = True
     base = ord('a')
+
+    Flip = True
 
     for line in sys.stdin:
         line = line.strip()
