@@ -59,8 +59,13 @@ def main(f=None):
     while True:
 
         # bfs
-        dq = deque()
-        dq.append(0)
+        if bfs:
+            flow = 10 ** 9
+
+            curr = E
+            while curr != None:
+                prev = P[curr]
+                flow = min(flow, F[prev][curr])
 
 
 # TEMPLATE ###############################
