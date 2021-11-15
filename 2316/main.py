@@ -74,8 +74,11 @@ def main(f=None):
                 F[prev][curr] += flow
                 F[curr][prev] -= flow
                 curr =prev
+
+            totalFlow += flow
         else:
             break
+    print(totalFlow)
 
 
 
