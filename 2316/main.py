@@ -6,7 +6,7 @@ import sys
 #import itertools
 #from itertools import product
 #import collections
-#from collections import deque
+from collections import deque
 #from collections import Counter, defaultdict as dd
 #import math
 #from math import log, log2, ceil, floor, gcd, sqrt
@@ -47,10 +47,18 @@ def main(f=None):
         C[aOut][bIn] = 1
         C[bOut][aIn] = 1
 
+        G[aOut].append(bIn)
+        G[bOut].append(aIn)
 
-        G[aOut].apepn
 
+    while True:
 
+        # bfs
+        dq = deque()
+        dq.append()
+
+        while dq:
+            pass
 
 
 
