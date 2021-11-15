@@ -30,12 +30,25 @@ def main(f=None):
     # ######## INPUT AREA END ############
 
 
+    global V
     A = [None] * N
     B = [None] * M
     match = 0
     for i in range(N):
         if A[i] is None and dfs(i):
+            V = [False] * N
             match += 1
+
+
+def dfs(a):
+    V[a] = True
+
+    for b in G[a]:
+        if V[B[b]]
+
+
+
+
 
 
 
