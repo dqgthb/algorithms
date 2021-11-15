@@ -21,7 +21,7 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
-    global N, P, C, F, G
+    global N, P, C, F, G, S, E
     N, P = map(int, input().split())
 
     C = Mat(2*N, 2*N)
@@ -77,6 +77,15 @@ def main(f=None):
 
 
 def bfs():
+
+    dq.append(S)
+
+    while dq:
+        x = dq.popleft()
+
+        for y in G[x]:
+            if C[x][y] > F[x][y]:
+
 
 
 enu = enumerate
