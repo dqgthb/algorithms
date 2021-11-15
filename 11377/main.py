@@ -72,8 +72,15 @@ def main(f=None):
 
             flow = 10 ** 9
 
+            curr = E
+            while curr != S:
+                prev = P[curr]
+                flow = min(flow, C[prev][curr] - F[prev][curr])
+                curr = prev
 
-
+            curr = E
+            while curr != S:
+                prev = P[curr]
 
 
 
