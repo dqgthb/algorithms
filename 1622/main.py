@@ -46,7 +46,7 @@ def main(f=None):
                 ac = freqA[i]
                 bc = freqB[i]
 
-                res += chr(i) * min(ac, bc)
+                res += chr(i + base) * min(ac, bc)
 
             print(res)
 
