@@ -30,7 +30,7 @@ def main(f=None):
     # ######## INPUT AREA END ############
 
 
-    global V
+    global V, A, B
     A = [None] * N
     B = [None] * M
     match = 0
@@ -44,7 +44,7 @@ def dfs(a):
     V[a] = True
 
     for b in G[a]:
-        if V[B[b]]
+        if B[b] is None or not V[B[b]] and dfs(B[b]):
 
 
 
