@@ -23,20 +23,19 @@ def main(f=None):
 
     base = ord('a')
 
-    Flip = True
-
+    flip = True
     for line in sys.stdin:
         line = line.strip()
         freq = [0] * 26
         for c in line:
             freq[ord(c) - base] += 1
 
-        if Flip:
-            Flip = not Flip
+        if flip:
+            flip = not flip
             A = freq
 
         else:
-            Flip = not Flip
+            flip = not flip
             B = freq
 
             res = ""
