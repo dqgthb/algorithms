@@ -24,10 +24,17 @@ def main(f=None):
     N, M, K = map(int, input().split())
 
 
-    S = 0
+    G = [[] for _ in range(N + M + 3)]
+    for i in range(N):
+        _, *arr = map(int, input().split())
+
+        G[i].
 
 
-    for i in range(1, N+1):
+
+
+
+
 
 
 
