@@ -28,7 +28,10 @@ def main(f=None):
     for i in range(N):
         _, *arr = map(int, input().split())
 
-        G[i].
+        for j in arr:
+            G[i].append(j + N - 1)
+
+
 
 
 
