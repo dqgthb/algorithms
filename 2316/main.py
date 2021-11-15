@@ -24,8 +24,8 @@ def main(f=None):
     global N, P, C, F, G, S, E
     N, P = map(int, input().split())
 
-    C = Mat(2*N, 2*N)
-    F = Mat(2*N, 2*N)
+    C = Mat(2*N, 2*N, 0)
+    F = Mat(2*N, 2*N, 0)
 
     G = [[] for _ in range(2*N)]
 
@@ -55,9 +55,11 @@ def main(f=None):
     S = 0
     E = 1
 
+    totalFlow = 0
     while True:
 
-        if bfs():
+        P = bfs()
+        if P is not None:
             flow = 10 ** 9
 
             curr = E
