@@ -36,9 +36,9 @@ def main(f=None):
             Flip = not Flip
 
             B = line.strip()
+            freqB = [0] * 26
             for c in B:
                 freqB[ord(c) - base] += 1
-            freqB = [0] * 26
 
             res = ""
 
@@ -47,7 +47,9 @@ def main(f=None):
                 bc = freqB[i]
 
                 res += chr(i) * min(ac, bc)
+
             print(res)
+
 
 
 
