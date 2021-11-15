@@ -28,6 +28,7 @@ def main(f=None):
     F = Mat(2*N, 2*N)
 
     G = [[] for _ in range(2*N)]
+    P = [None] * (2 * N)
 
     for i in range(N):
         C[i*2][i*2+1] = 1
@@ -50,6 +51,8 @@ def main(f=None):
         G[aOut].append(bIn)
         G[bOut].append(aIn)
 
+    # ######## INPUT AREA END ############
+
 
     while True:
 
@@ -58,11 +61,8 @@ def main(f=None):
         dq.append()
 
         while dq:
-            pass
+            x =
 
-
-
-    # ######## INPUT AREA END ############
 
 
 # TEMPLATE ###############################
