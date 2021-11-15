@@ -53,15 +53,20 @@ def main(f=None):
 
     # ######## INPUT AREA END ############
 
+    S = 0
+    E = 1
 
     while True:
 
         # bfs
         dq = deque()
-        dq.append()
+        dq.append(0)
 
         while dq:
-            x =
+            x = dq.popleft()
+
+            for y in G[x]:
+                if C[x][y] > F[x][y]:
 
 
 
