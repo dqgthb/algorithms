@@ -23,7 +23,11 @@ def main(f=None):
 
     N, M, K = map(int, input().split())
 
-    for _ in range(N):
+
+    S = 0
+
+
+    for i in range(1, N+1):
 
 
 
