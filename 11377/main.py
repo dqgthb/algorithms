@@ -26,6 +26,17 @@ def main(f=None):
     A = [None] * (2 * N)
     B = [None] * M
 
+    for i in
+
+
+def dfs(a):
+    V[a] = True
+
+    for b in G[a]:
+        if V[b] is None or B[b]
+
+
+
     # ######## INPUT AREA END ############
 
 
