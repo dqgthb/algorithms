@@ -28,7 +28,6 @@ def main(f=None):
     F = Mat(2*N, 2*N)
 
     G = [[] for _ in range(2*N)]
-    P = [None] * (2 * N)
 
     for i in range(N):
         C[i*2][i*2+1] = 1
@@ -78,10 +77,13 @@ def main(f=None):
 
 
 
+
+
 # TEMPLATE ###############################
 
 
 def bfs():
+    P = [None] * (N*2)
 
     dq = deque()
     dq.append(S)
@@ -93,9 +95,9 @@ def bfs():
             if C[x][y] > F[x][y]:
                 P[y] = x
                 if y == E:
-                    return True
+                    return P
                 dq.append(y)
-    return False
+    return None
 
 
 enu = enumerate
@@ -156,4 +158,5 @@ def parr(arr):
         print(i)
 
 
-if __name__ == "__m
+if __name__ == "__main__":
+    main()
