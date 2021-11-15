@@ -55,7 +55,7 @@ def main(f=None):
         for j in arr:
             m = j + N - 1
             G[i].append(m)
-            G(m).append(i)
+            G[m].append(i)
             C[i][m] = 1
 
     for i in range(N, N + M):
