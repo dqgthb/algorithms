@@ -27,12 +27,12 @@ def main(f=None):
     G = [[] for _ in range(2 * N)]
 
     for i in range(N):
-        G[i]
-
+        _, *arr = [int(i)-1 for i in input().split()]
+        G[i] = arr
+        G[i+1] = arr
 
     A = [None] * (2 * N)
     B = [None] * M
-
 
     match = 0
     for i in range(0, 2 * N, 2):
