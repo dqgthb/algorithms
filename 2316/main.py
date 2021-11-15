@@ -75,7 +75,6 @@ def main(f=None):
                 F[curr][prev] -= flow
                 curr =prev
 
-            print(flow, totalFlow)
             totalFlow += flow
         else:
             break
@@ -93,7 +92,6 @@ def bfs():
     P[S] = S
 
     while dq:
-        print(dq)
         x = dq.popleft()
 
         for y in G[x]:
