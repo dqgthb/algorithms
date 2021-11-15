@@ -21,6 +21,14 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
+    N, P = map(int, input().split())
+
+    G = [[] for _ in range(2*N)]
+    for _ in range(P):
+        a, b = map(int, input().split())
+        a -= 1
+        b -= 1
+
 
 
     # ######## INPUT AREA END ############
