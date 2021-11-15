@@ -28,8 +28,8 @@ def main(f=None):
 
     for i in range(N):
         _, *arr = [int(i)-1 for i in input().split()]
-        G[i] = arr
-        G[i+1] = arr
+        G[i * 2] = arr
+        G[i * 2 + 1] = arr
 
     A = [None] * (2 * N)
     B = [None] * M
@@ -40,13 +40,16 @@ def main(f=None):
             V = [None] * (2 * N)
             if dfs(i):
                 match += 1
-    print(match)
 
+    doubleWork = 0
     for i in range(1, 2 * N, 2):
         if A[i] is None:
             V = [None] * (2 * N)
             if dfs(i):
                 match += 1
+                doubleWork += 1
+                if doubleWork == K:
+                    break
     print(match)
 
 
