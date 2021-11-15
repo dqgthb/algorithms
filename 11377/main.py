@@ -38,18 +38,24 @@ def main(f=None):
     G[D].append(S)
     C[S][D] = K
 
-    # connect S and N
+    # connect S and N, D and N
     for i in range(N):
         G[S].append(i)
         G[i].append(S)
         C[S][i] = 1
 
+        G[D].append(i)
+        G[i].append(D)
+        C[D][i] = 1
 
+    # connect N and M
     for i in range(N):
         _, *arr = map(int, input().split())
 
         for j in arr:
             G[i].append(j + N - 1)
+
+    for i in range(N, N + M):
 
 
 
