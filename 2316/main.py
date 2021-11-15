@@ -31,6 +31,7 @@ def main(f=None):
 
     for i in range(N):
         C[i*2][i*2+1] = 1
+        G[i*2].append(i*2+1)
 
 
     for _ in range(P):
@@ -45,6 +46,12 @@ def main(f=None):
 
         C[aOut][bIn] = 1
         C[bOut][aIn] = 1
+
+
+        G[aOut].apepn
+
+
+
 
 
     # ######## INPUT AREA END ############
