@@ -42,12 +42,19 @@ def main(f=None):
                 match += 1
     print(match)
 
+    for i in range(1, 2 * N, 2):
+        if A[i] is None:
+            V = [None] * (2 * N)
+            if dfs(i):
+                match += 1
+    print(match)
+
 
 def dfs(a):
     V[a] = True
 
     for b in G[a]:
-        if V[b] is None or not V[B[b]] and dfs(B[b]):
+        if B[b] is None  or not V[B[b]] and dfs(B[b]):
             A[a] = b
             B[b] = a
             return True
