@@ -22,16 +22,28 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     Flip = True
+    base = ord('a')
     for line in sys.stdin:
         if Flip:
+            Flip = not Flip
+
             A = line.strip()
             freqA = [0] * 26
             for c in A:
-            Flip = not Flip
+                freqA[ord(c) - base] += 1
+
         else:
-            B = line.strip()
-            freqB = [0] * 26
             Flip = not Flip
+
+            B = line.strip()
+            for c in B:
+                freqB[ord(c) - base] += 1
+            freqB = [0] * 26
+
+            res = []
+
+
+
 
 
 
