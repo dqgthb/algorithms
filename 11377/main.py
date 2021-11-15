@@ -74,6 +74,13 @@ def bfs():
     dq.append(S)
 
     while dq:
+        x = dq.popleft()
+
+        for y in G[x]:
+            if P[y] is None:
+                if C[x][y] > F[x][y]:
+                    P[]
+
 
 
 
