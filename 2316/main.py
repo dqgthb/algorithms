@@ -96,6 +96,7 @@ def bfs():
         x = dq.popleft()
 
         for y in G[x]:
+            print(y)
             if C[x][y] > F[x][y]:
                 P[y] = x
                 if y == E:
