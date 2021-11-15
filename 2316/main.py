@@ -21,9 +21,11 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
+    global N, P, C, F, G
     N, P = map(int, input().split())
 
     C = Mat(2*N, 2*N)
+    F = Mat(2*N, 2*N)
 
     G = [[] for _ in range(2*N)]
 
@@ -41,11 +43,8 @@ def main(f=None):
         bIn = b * 2
         bOut = b * 2 + 1
 
-        C[aIn][aOut]
-
-
-
-
+        C[aOut][bIn] = 1
+        C[bOut][aIn] = 1
 
 
     # ######## INPUT AREA END ############
