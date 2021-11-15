@@ -25,6 +25,15 @@ def main(f=None):
 
 
     G = [[] for _ in range(N + M + 3)]
+
+    S = N + M
+    E = S + 1
+    D = E + 1
+    C =
+
+    for i in range(N):
+        G[S].append(i)
+
     for i in range(N):
         _, *arr = map(int, input().split())
 
