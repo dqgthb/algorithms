@@ -29,6 +29,14 @@ def main(f=None):
         a -= 1
         b -= 1
 
+        aIn = a * 2
+        aOut = a * 2 + 1
+        bIn = b * 2
+        bOut = b * 2 + 1
+
+
+
+
 
 
     # ######## INPUT AREA END ############
