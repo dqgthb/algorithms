@@ -33,9 +33,17 @@ def main(f=None):
     C = Mat(NN, NN, 0)
     F = Mat(NN, NN, 0)
 
+    # connect S and D
+    G[S].append(D)
+    G[D].append(S)
+    C[S][D] = K
+
+    # connect S and N
     for i in range(N):
         G[S].append(i)
         G[i].append(S)
+        C[S][i] = 1
+
 
     for i in range(N):
         _, *arr = map(int, input().split())
