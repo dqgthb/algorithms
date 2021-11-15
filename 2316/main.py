@@ -23,7 +23,14 @@ def main(f=None):
 
     N, P = map(int, input().split())
 
+    C = Mat(2*N, 2*N)
+
     G = [[] for _ in range(2*N)]
+
+    for i in range(N):
+        C[i*2][i*2+1] = 1
+
+
     for _ in range(P):
         a, b = map(int, input().split())
         a -= 1
@@ -33,6 +40,8 @@ def main(f=None):
         aOut = a * 2 + 1
         bIn = b * 2
         bOut = b * 2 + 1
+
+        C[aIn][aOut]
 
 
 
