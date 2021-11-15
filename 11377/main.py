@@ -64,6 +64,7 @@ def main(f=None):
         C[i][E] = 1
 
 
+    totalFlow = 0
     while True:
 
         P = bfs()
@@ -81,7 +82,14 @@ def main(f=None):
             curr = E
             while curr != S:
                 prev = P[curr]
+                F[prev][curr] += 1
+                F[curr][prev] -= 1
+                curr = prev
 
+            totalFlow += flow
+        else:
+            break
+    print(totalFlow)
 
 
 def bfs():
