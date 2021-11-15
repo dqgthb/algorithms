@@ -53,9 +53,15 @@ def main(f=None):
         _, *arr = map(int, input().split())
 
         for j in arr:
-            G[i].append(j + N - 1)
+            m = j + N - 1
+            G[i].append(m)
+            G(m).append(i)
+            C[i][m] = 1
 
     for i in range(N, N + M):
+        G[i].append(E)
+        G[E].append(i)
+        C[i][E] = 1
 
 
 
