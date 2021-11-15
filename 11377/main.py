@@ -6,7 +6,7 @@ import sys
 #import itertools
 #from itertools import product
 #import collections
-#from collections import deque
+from collections import deque
 #from collections import Counter, defaultdict as dd
 #import math
 #from math import log, log2, ceil, floor, gcd, sqrt
@@ -64,6 +64,16 @@ def main(f=None):
         C[i][E] = 1
 
 
+
+
+def bfs():
+    P = [None] * NN
+    P[S] = S
+    dq = deque()
+
+    dq.append(S)
+
+    while dq:
 
 
 
