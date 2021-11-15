@@ -52,8 +52,8 @@ def main(f=None):
 
     # ######## INPUT AREA END ############
 
-    S = 0
-    E = 1
+    S = 0 * 2 + 1
+    E = 1 * 2
 
     totalFlow = 0
     while True:
@@ -75,6 +75,7 @@ def main(f=None):
                 F[curr][prev] -= flow
                 curr =prev
 
+            print(flow, totalFlow)
             totalFlow += flow
         else:
             break
@@ -91,6 +92,7 @@ def bfs():
     dq.append(S)
 
     while dq:
+        print(dq)
         x = dq.popleft()
 
         for y in G[x]:
