@@ -21,8 +21,15 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
+    Flip = True
     for line in sys.stdin:
-        line = line.strip()
+        if Flip:
+            A = line.strip()
+            Flip = not Flip
+        else:
+            B = line.strip()
+            Flip = not Flip
+
 
 
 
