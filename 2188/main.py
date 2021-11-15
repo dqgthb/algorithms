@@ -25,11 +25,10 @@ def main(f=None):
 
     G = [None for _ in range(N)]
     for i in range(N):
-        _, *arr = map(int, input().split())
+        _, *arr = map(lambda x: int(x) - 1, input().split())
         G[i] = arr
 
     # ######## INPUT AREA END ############
-
 
     global V, A, B
     A = [None] * N
