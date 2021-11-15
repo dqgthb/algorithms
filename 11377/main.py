@@ -64,6 +64,17 @@ def main(f=None):
         C[i][E] = 1
 
 
+    while True:
+
+        P = bfs()
+
+        if P is not None:
+
+            flow = 10 ** 9
+
+
+
+
 
 
 def bfs():
@@ -79,7 +90,11 @@ def bfs():
         for y in G[x]:
             if P[y] is None:
                 if C[x][y] > F[x][y]:
-                    P[]
+                    P[y] = x
+                    if y == E:
+                        return P
+                    dq.append(y)
+    return None
 
 
 
