@@ -43,6 +43,7 @@ def main(f=None):
             else:
                 print(product(0, N-1, 1, b, c))
 
+    # ######## INPUT AREA END ############
 
 def segInit(s, e, i):
     if s == e:
@@ -78,9 +79,6 @@ def product(s, e, i, l, r):
 
     m = (s + e) // 2
     return product(s, m, i*2, l, r) * product(m+1, e, i*2+1, l, r)
-
-
-    # ######## INPUT AREA END ############
 
 
 # TEMPLATE ###############################
