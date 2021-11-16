@@ -81,10 +81,6 @@ def product(s, e, i, l, r):
 
 
 
-
-
-
-
     # ######## INPUT AREA END ############
 
 
