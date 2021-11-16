@@ -28,6 +28,12 @@ def main(f=None):
         except:
             return
         A = [int(i) for i in input().split()]
+        for i in range(N):
+            a = A[i]
+            if a > 0:
+                A[i] = 1
+            elif a < 0:
+                A[i] = -1
 
         T = [None] * (4 * N)
         segInit(0, N-1, 1)
