@@ -43,7 +43,7 @@ def segInit(s, e, i):
     if s == e:
         T[i] = A[s]
         return T[i]
-
+````````
     m = (s + e) // 2
     T[i] = segInit(s, m, i*2) * segInit(m+1, e, i*2+1)
     return T[i]
