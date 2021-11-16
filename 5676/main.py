@@ -25,6 +25,7 @@ def main(f=None):
     while True:
         try:
             N, K = map(int, input().split())
+            print("testcase")
             A = [int(i) for i in input().split()]
 
             T = [None] * (4 * N)
@@ -40,6 +41,7 @@ def main(f=None):
                 else:
                     print(product(0, N-1, 1, b, c))
         except EOFError:
+            return
 
 
 def segInit(s, e, i):
