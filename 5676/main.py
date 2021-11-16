@@ -34,7 +34,7 @@ def main(f=None):
         c = int(c)
 
         if a == 'C':
-            change(b, c)
+            change(0, N-1, 1, b, c)
         else:
             product(b, c)
 
@@ -45,10 +45,13 @@ def segInit(s, e, i):
         return T[i]
 
     m = (s + e) // 2
+    T[i] = segInit(s, m, i*2) * segInit(m+1, e, i*2+1)
+    return T[i]
 
 
+def change(s, e, i, idx, val):
 
-def change()
+    if s < e:
 
 
 
