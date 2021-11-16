@@ -27,7 +27,6 @@ def main(f=None):
             N, K = map(int, input().split())
         except:
             return
-        print("testcase")
         A = [int(i) for i in input().split()]
 
         T = [None] * (4 * N)
@@ -42,13 +41,17 @@ def main(f=None):
 
             if a == 'C':
                 b -= 1
-                print("changed:", change(0, N-1, 1, b, c))
             else:
                 b -= 1
                 c -= 1
                 res = product(0, N-1, 1, b, c)
                 if res > 0:
                     ans.append("+")
+                elif res == 0:
+                    ans.append("0")
+                else:
+                    ans.append("-")
+        print("".join(ans))
 
     # ######## INPUT AREA END ############
 
