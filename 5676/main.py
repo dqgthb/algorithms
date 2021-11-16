@@ -25,23 +25,23 @@ def main(f=None):
     while True:
         try:
             N, K = map(int, ipt.split())
-            print("testcase")
-            A = [int(i) for i in input().split()]
-
-            T = [None] * (4 * N)
-            segInit(0, N-1, 1)
-
-            for _ in range(K):
-                a, b, c = input().split()
-                b = int(b)
-                c = int(c)
-
-                if a == 'C':
-                    change(0, N-1, 1, b, c)
-                else:
-                    print(product(0, N-1, 1, b, c))
-        except E:
+        except:
             return
+        print("testcase")
+        A = [int(i) for i in input().split()]
+
+        T = [None] * (4 * N)
+        segInit(0, N-1, 1)
+
+        for _ in range(K):
+            a, b, c = input().split()
+            b = int(b)
+            c = int(c)
+
+            if a == 'C':
+                change(0, N-1, 1, b, c)
+            else:
+                print(product(0, N-1, 1, b, c))
 
 
 def segInit(s, e, i):
