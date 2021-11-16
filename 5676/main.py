@@ -51,7 +51,16 @@ def segInit(s, e, i):
 
 def change(s, e, i, idx, val):
 
-    if s < e:
+    if idx < s or e < idx:
+        return T[i]
+
+    if s == e:
+        T[i] = val
+        return T[i]
+
+    m = (s + e) // 2
+
+
 
 
 
