@@ -45,6 +45,7 @@ def main(f=None):
 
     # ######## INPUT AREA END ############
 
+
 def segInit(s, e, i):
     if s == e:
         T[i] = A[s]
