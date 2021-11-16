@@ -24,7 +24,7 @@ def main(f=None):
     global N, K, A, T
     while True:
         try:
-            N, K = map(int, ipt.split())
+            N, K = map(int, input().split())
         except:
             return
         print("testcase")
