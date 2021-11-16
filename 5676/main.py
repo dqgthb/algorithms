@@ -21,7 +21,8 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
-
+    N, K = map(int, input().split())
+    A = [int(i) for i in input().split()]
 
 
 
