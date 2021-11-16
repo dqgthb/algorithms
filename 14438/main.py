@@ -50,7 +50,16 @@ def segInit(s, e, i):
     return T[i]
 
 
-def update(s, e, i, i, v):
+def update(s, e, i, idx, v):
+    if idx < s or idx > e:
+        return T[i]
+
+    if s == e:
+        T[i] = v
+        return T[i]
+
+    m = (s + e) // 2
+
 
     # ######## INPUT AREA END ############
 
