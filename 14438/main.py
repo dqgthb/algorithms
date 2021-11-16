@@ -21,9 +21,11 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
+    global N, A, M, T
     N = int(input())
     A = [int(i) for i in input().split()]
     M = int(input())
+    T = [None] * 4 * N
 
     segInit(0, N-1, 1)
     for _ in range(M):
@@ -42,6 +44,13 @@ def segInit(s, e, i):
     if s == e:
         T[i] = A[s]
         return T[i]
+
+    m = (s + e) // 2
+    T[i] = min(segInit(s, m, i*2), segInit(m+1, e, i*2+1))
+    return T[i]
+
+
+def update(s, e, i, i, v):
 
     # ######## INPUT AREA END ############
 
