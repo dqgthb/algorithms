@@ -22,21 +22,24 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     global N, K, A, T
-    N, K = map(int, input().split())
-    A = [int(i) for i in input().split()]
+    while True:
+        try:
+            N, K = map(int, input().split())
+            A = [int(i) for i in input().split()]
 
-    T = [None] * (4 * N)
-    segInit(0, N-1, 1)
+            T = [None] * (4 * N)
+            segInit(0, N-1, 1)
 
-    for _ in range(K):
-        a, b, c = input().split()
-        b = int(b)
-        c = int(c)
+            for _ in range(K):
+                a, b, c = input().split()
+                b = int(b)
+                c = int(c)
 
-        if a == 'C':
-            change(0, N-1, 1, b, c)
-        else:
-            print(product(0, N-1, 1, b, c))
+                if a == 'C':
+                    change(0, N-1, 1, b, c)
+                else:
+                    print(product(0, N-1, 1, b, c))
+        except EOFError:
 
 
 def segInit(s, e, i):
