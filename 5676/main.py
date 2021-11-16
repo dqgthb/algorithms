@@ -21,10 +21,12 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
+    global N, K, A, T
     N, K = map(int, input().split())
     A = [int(i) for i in input().split()]
 
-    segInit()
+    T = [None] * (4 * N)
+    segInit(0, N-1, 1)
 
     for _ in range(K):
         a, b, c = input().split()
@@ -35,6 +37,15 @@ def main(f=None):
             change(b, c)
         else:
             product(b, c)
+
+
+def segInit(s, e, i):
+    if s == e:
+        T[i] = A[s]
+        return T[i]
+
+    m = (s + e) // 2
+
 
 
 def change()
