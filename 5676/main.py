@@ -24,9 +24,7 @@ def main(f=None):
     global N, K, A, T
     while True:
         try:
-            ipt = input()
-            print("input is:", ipt)
-            N, K = map(int, ipt.split())
+            N, K = map(int, input().split())
             print("testcase")
             A = [int(i) for i in input().split()]
 
@@ -42,7 +40,7 @@ def main(f=None):
                     change(0, N-1, 1, b, c)
                 else:
                     print(product(0, N-1, 1, b, c))
-        except EOFError:
+        except:
             return
 
 
