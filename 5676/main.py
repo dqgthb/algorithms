@@ -59,6 +59,14 @@ def change(s, e, i, idx, val):
         return T[i]
 
     m = (s + e) // 2
+    T[i] = change(s, m, i*2, idx, val) + change(m+1, e, i*2+1, idx, val)
+    return T[i]
+
+
+def product(s, e, l, r):
+
+    if r < s or e < l:
+        return 1
 
 
 
