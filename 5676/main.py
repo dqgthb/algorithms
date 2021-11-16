@@ -41,6 +41,7 @@ def main(f=None):
 
             if a == 'C':
                 b -= 1
+                change(0, N-1, 1, b, c)
             else:
                 b -= 1
                 c -= 1
