@@ -24,6 +24,8 @@ def main(f=None):
     N = int(input())
     A = [int(i) for i in input().split()]
     M = int(input())
+
+    segInit(0, N-1, 1)
     for _ in range(M):
         a, b, c = map(int, input().split())
         b -= 1
@@ -32,8 +34,14 @@ def main(f=None):
             update(0, N-1, 1, b, c)
         else:
             c -= 1
+            ans = query(0, N-1, 1, b, c)
+            print(ans)
 
 
+def segInit(s, e, i):
+    if s == e:
+        T[i] = A[s]
+        return T[i]
 
     # ######## INPUT AREA END ############
 
