@@ -36,7 +36,7 @@ def main(f=None):
         if a == 'C':
             change(0, N-1, 1, b, c)
         else:
-            product(b, c)
+            print(product(b, c))
 
 
 def segInit(s, e, i):
@@ -63,11 +63,16 @@ def change(s, e, i, idx, val):
     return T[i]
 
 
-def product(s, e, l, r):
+def product(s, e, i, l, r):
 
     if r < s or e < l:
         return 1
 
+    if l <= s and e <= r:
+        return T[i]
+
+    m = (s + e) // 2
+    return product(s, m, i*2, l, r) * product(m+1, e, i*2+1, l, r)
 
 
 
