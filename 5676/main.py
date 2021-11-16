@@ -27,7 +27,8 @@ def main(f=None):
             N, K = map(int, input().split())
             print("testcase")
             A = input().split()
-            A = [int(i) for i in input()]
+            A = [int(i) for i in A]
+            print(A)
 
             T = [None] * (4 * N)
             segInit(0, N-1, 1)
