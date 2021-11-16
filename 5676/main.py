@@ -35,11 +35,11 @@ def main(f=None):
 
         for _ in range(K):
             a, b, c = input().split()
-            b = int(b)
+            b = int(b)-1
             c = int(c)
 
             if a == 'C':
-                change(0, N-1, 1, b, c)
+                print("changed:", change(0, N-1, 1, b, c))
             else:
                 print(product(0, N-1, 1, b, c))
 
