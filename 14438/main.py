@@ -59,6 +59,13 @@ def update(s, e, i, idx, v):
         return T[i]
 
     m = (s + e) // 2
+    T[i] = min(update(s, m, i*2, idx, v), update(m+1, e, i*2+1, idx, v))
+    return T[i]
+
+
+def query(s, e, i, l, r):
+    if r < s or e < l:
+        return 10 ** 9
 
 
     # ######## INPUT AREA END ############
