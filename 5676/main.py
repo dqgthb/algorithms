@@ -36,7 +36,7 @@ def main(f=None):
         if a == 'C':
             change(0, N-1, 1, b, c)
         else:
-            print(product(b, c))
+            print(product(0, N-1, 1, b, c))
 
 
 def segInit(s, e, i):
