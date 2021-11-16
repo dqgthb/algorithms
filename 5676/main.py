@@ -24,11 +24,11 @@ def main(f=None):
     global N, K, A, T
     while True:
         try:
-            N, K = map(int, input().split())
+            ipt = input()
+            print("input is:", ipt)
+            N, K = map(int, ipt.split())
             print("testcase")
-            A = input().split()
-            A = [int(i) for i in A]
-            print(A)
+            A = [int(i) for i in input().split()]
 
             T = [None] * (4 * N)
             segInit(0, N-1, 1)
