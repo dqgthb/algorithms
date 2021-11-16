@@ -33,15 +33,20 @@ def main(f=None):
         T = [None] * (4 * N)
         segInit(0, N-1, 1)
 
+        ans = []
+
         for _ in range(K):
             a, b, c = input().split()
-            b = int(b)-1
+            b = int(b)
             c = int(c)
 
             if a == 'C':
+                b -= 1
                 print("changed:", change(0, N-1, 1, b, c))
             else:
-                print(product(0, N-1, 1, b, c))
+                b -= 1
+                c -= 1
+                (product(0, N-1, 1, b, c))
 
     # ######## INPUT AREA END ############
 
