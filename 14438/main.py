@@ -26,6 +26,13 @@ def main(f=None):
     M = int(input())
     for _ in range(M):
         a, b, c = map(int, input().split())
+        b -= 1
+
+        if a == 1:
+            update(0, N-1, 1, b, c)
+        else:
+            c -= 1
+
 
 
     # ######## INPUT AREA END ############
