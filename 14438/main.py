@@ -71,8 +71,7 @@ def query(s, e, i, l, r):
         return T[i]
 
     m = (s + e) // 2
-    T[i] = min(query(s, m, i*2, l, r), query(m+1, e, i*2+1, l, r))
-    return T[i]
+    return min(query(s, m, i*2, l, r), query(m+1, e, i*2+1, l, r))
 
 
 
