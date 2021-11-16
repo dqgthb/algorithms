@@ -46,7 +46,9 @@ def main(f=None):
             else:
                 b -= 1
                 c -= 1
-                (product(0, N-1, 1, b, c))
+                res = product(0, N-1, 1, b, c)
+                if res > 0:
+                    ans.append("+")
 
     # ######## INPUT AREA END ############
 
