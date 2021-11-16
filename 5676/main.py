@@ -24,7 +24,7 @@ def main(f=None):
     global N, K, A, T
     while True:
         try:
-            N, K = map(int, input().split())
+            N, K = map(int, ipt.split())
             print("testcase")
             A = [int(i) for i in input().split()]
 
@@ -40,7 +40,7 @@ def main(f=None):
                     change(0, N-1, 1, b, c)
                 else:
                     print(product(0, N-1, 1, b, c))
-        except:
+        except E:
             return
 
 
@@ -64,7 +64,7 @@ def change(s, e, i, idx, val):
         return T[i]
 
     m = (s + e) // 2
-    T[i] = change(s, m, i*2, idx, val) + change(m+1, e, i*2+1, idx, val)
+    T[i] = change(s, m, i*2, idx, val) * change(m+1, e, i*2+1, idx, val)
     return T[i]
 
 
