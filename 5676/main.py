@@ -47,6 +47,10 @@ def main(f=None):
 
             if a == 'C':
                 b -= 1
+                if c > 0:
+                    c = 1
+                elif c < 0:
+                    c = -1
                 change(0, N-1, 1, b, c)
             else:
                 b -= 1
