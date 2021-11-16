@@ -24,7 +24,20 @@ def main(f=None):
     N, K = map(int, input().split())
     A = [int(i) for i in input().split()]
 
+    segInit()
+
     for _ in range(K):
+        a, b, c = input().split()
+        b = int(b)
+        c = int(c)
+
+        if a == 'C':
+            change(b, c)
+        else:
+            product(b, c)
+
+
+def change()
 
 
 
