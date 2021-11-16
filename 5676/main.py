@@ -80,7 +80,6 @@ def product(s, e, i, l, r):
     return product(s, m, i*2, l, r) * product(m+1, e, i*2+1, l, r)
 
 
-
     # ######## INPUT AREA END ############
 
 
