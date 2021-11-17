@@ -23,7 +23,7 @@ def main(f=None):
 
     global N, Q, T
     N, Q = map(int, input().split())
-    T = [0] * N
+    T = [0] * N * 4
 
     for _ in range(Q):
         print(T)
