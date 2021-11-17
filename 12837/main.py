@@ -42,8 +42,8 @@ def update(s, e, i, idx, val):
         return T[i]
 
     if s == e:
-        T[i] = val
-        return val
+        T[i] += val
+        return T[i]
 
     m = (s + e) // 2
     T[i] =  update(s, m, i*2, idx, val) + update(m+1, e, i*2+1, idx, val)
