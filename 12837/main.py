@@ -23,16 +23,14 @@ def main(f=None):
 
     global N, Q, T
     N, Q = map(int, input().split())
-    A = [0] * N
     T = [0] * N * 4
 
     for _ in range(Q):
         a, b, c = map(int, input().split())
-        b -= 1
         if a == 1:
             update(0, N-1, 1, b, c)
         else:
-            ans = query(0, N-1, 1, b, c-1)
+            ans = query(0, N-1, 1, b, c)
             print(ans)
 
 
