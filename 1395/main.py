@@ -27,6 +27,12 @@ def main(f=None):
     L = [None] * (2 ** (ceil(log2(N)) + 1) - 1)
 
     for _ in range(M):
+        a, b, c = map(int, input().split())
+        if a == 0:
+            i = b-1
+            j = c-1
+            update_range(i, j)
+        else:
 
     # ######## INPUT AREA END ############
 
