@@ -9,7 +9,7 @@ import sys
 #from collections import deque
 #from collections import Counter, defaultdict as dd
 #import math
-#from math import log, log2, ceil, floor, gcd, sqrt
+from math import log, log2, ceil, floor, gcd, sqrt
 #from heapq import heappush, heappop
 #import bisect
 #from bisect import bisect_left as bl, bisect_right as br
@@ -21,7 +21,10 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
+    N, M = map(int, input().split())
+    T = 2 ** (ceil(log2(N)) + 1) - 1
 
+    for _ in range(M):
 
     # ######## INPUT AREA END ############
 
