@@ -22,6 +22,16 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     N = int(input())
+    A = [int(i) for i in input().split()]
+    M = int(input())
+    T = [None] * A
+
+    for _ in range(M):
+        a, b, c = map(int, input().split())
+        if a == 1:
+            update(b, c)
+        elif a == 2:
+            ans = query()
 
 
     # ######## INPUT AREA END ############
