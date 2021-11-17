@@ -26,13 +26,16 @@ def main(f=None):
     T = [0] * N
 
     for _ in range(Q):
+        print(T)
         a, b, c = map(int, input().split())
         b -= 1
         if a == 1:
+            print('update')
             update(0, N-1, 1, b, c)
         else:
             ans = query(0, N-1, 1, b, c-1)
             print(ans)
+
 
 
     # ######## INPUT AREA END ############
