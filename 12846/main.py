@@ -30,10 +30,13 @@ def main(f=None):
 
     S = [0]
 
+    max_ = 0
     for i in range(1, N+1):
         while S and A[S[-1]] >= A[i]:
-            h = A[S[-1]]
-            w =
+            idx = S.pop()
+            h = S[idx]
+            w = i - S[-1] + 1
+            max_ = max(max_, h * w)
 
 
 # TEMPLATE ###############################
