@@ -34,13 +34,17 @@ def main(f=None):
     for _ in range(M):
         a, b, c = map(int, input().split())
         if a == 1:
+            if c % 2 == 0 and A[b] % 2 == 0:
+                continue
             if c % 2 == 1 and A[b] % 2 == 0:
                 A[b] = 1
                 update(b, 1)
                 continue
-            if c % 2 == 1 and A[b] % 2 == 1:
+            if c % 2 == 0 and A[b] % 2 == 1:
                 A[b] = 0
                 update(b, -1)
+                continue
+            if c % 2 == 1 and A[b] % 2 == 1:
                 continue
 
         elif a == 2:
