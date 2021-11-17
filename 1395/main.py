@@ -51,7 +51,6 @@ def update_lazy(s, e, i):
 
     L[i] = 0
 
-
 def update_range(s, e, i, l, r, diff):
     update_lazy(s, e, i)
 
