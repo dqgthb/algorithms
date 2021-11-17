@@ -38,6 +38,10 @@ def main(f=None):
     # ######## INPUT AREA END ############
 
 
+def update_lazy(s, e, i, l, r):
+    if e < l or s > r:
+        return
+
 def update_range(s, e, i, l, r):
 
 
