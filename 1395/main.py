@@ -63,7 +63,12 @@ def update_range(s, e, i, l, r, diff):
         return
 
     m = (s + e) // 2
+    update_range(s, m, 2*i, l, r, diff)
+    update_range(m+1, e, 2*i+1, l, r, diff)
+    T[i] = T[i*2] + T[i*2+1]
 
+
+def
 
 
 # TEMPLATE ###############################
