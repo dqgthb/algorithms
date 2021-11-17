@@ -23,9 +23,9 @@ def main(f=None):
 
     global N, A, M, T
     N = int(input())
-    A = [int(i) for i in input().split()]
+    A = [0] + [int(i) for i in input().split()]
     M = int(input())
-    T = [None] * A
+    T = [0] * (N+1)
 
     for i in range(1, N+1):
         update(i, A[i-1])
@@ -33,7 +33,7 @@ def main(f=None):
     for _ in range(M):
         a, b, c = map(int, input().split())
         if a == 1:
-            diff = c - A[b-1]
+            diff = c - A[b]
             A[b-1] = c
             update(b, diff)
         elif a == 2:
@@ -55,6 +55,7 @@ def query(i):
     while i > 0:
         sum_ += T[i]
         i -= (i & -i)
+    return sum_
 
 
     # ######## INPUT AREA END ############
