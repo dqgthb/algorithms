@@ -29,10 +29,10 @@ def main(f=None):
     print(A)
     # ######## INPUT AREA END ############
 
-    S = [0]
+    S = []
 
     max_ = 0
-    for i in range(1, N+1):
+    for i in range(N+2):
         print(S)
         while S and A[S[-1]] >= A[i]:
             idx = S.pop()
@@ -41,6 +41,7 @@ def main(f=None):
             print(i, idx, h, w, h*w)
             max_ = max(max_, h * w)
         S.append(i)
+    print(S)
     print(max_)
 
 
