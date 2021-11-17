@@ -40,7 +40,7 @@ def main(f=None):
 
         for i in range(N):
             print(query(0, N-1, 1, i, i), end=' ')
-            print()
+        print()
 
 
     # ######## INPUT AREA END ############
