@@ -49,10 +49,10 @@ def main(f=None):
 
         elif a == 2:
             ans = query(c) - query(b-1)
-            print(ans)
+            print(c - b + 1 - ans)
         else:
             ans = query(c) - query(b-1)
-            print(c - b + 1 - ans)
+            print(ans)
 
 
 def update(i, v):
