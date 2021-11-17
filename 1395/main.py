@@ -68,7 +68,18 @@ def update_range(s, e, i, l, r, diff):
     T[i] = T[i*2] + T[i*2+1]
 
 
-def
+def query(s, e, i, l, r):
+    update_lazy(s, e, i)
+
+    if s > r or e < l:
+        return
+
+    if l <= s and e <= r:
+        return T[i]
+
+    m = (s + e) // 2
+    return query(s, m, i, l, r)
+
 
 
 # TEMPLATE ###############################
