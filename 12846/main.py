@@ -26,19 +26,16 @@ def main(f=None):
     A = map(int, input().split())
     A = [0, *A, 0]
 
-    print(A)
     # ######## INPUT AREA END ############
 
     S = [0]
 
     max_ = 0
     for i in range(1, N+2):
-        print(S)
         while S and A[S[-1]] > A[i]:
             idx = S.pop()
             h = A[idx]
             w = i - S[-1] - 1
-            print(i, idx, h, w, h*w)
             max_ = max(max_, h * w)
         S.append(i)
     print(max_)
