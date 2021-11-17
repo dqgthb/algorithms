@@ -21,9 +21,45 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
+    global N, Q, T
+    N, Q = map(int, input().split())
+    T = [0] * N * 4
+
+    for _ in range(Q):
+        a, b, c = map(int, input().split())
+        b -= 1
+        if a == 1:
+            update(0, N-1, 1, b, c)
+        else:
+            ans = query(0, N-1, 1, b, c-1)
+            print(ans)
 
 
     # ######## INPUT AREA END ############
+
+
+def update(s, e, i, idx, val):
+    if idx < s or idx > e:
+        return T[i]
+
+    if s == e:
+        T[i] += val
+        return T[i]
+
+    m = (s + e) // 2
+    T[i] =  update(s, m, i*2, idx, val) + update(m+1, e, i*2+1, idx, val)
+    return T[i]
+
+
+def query(s, e, i, l, r):
+    if r < s or l > e:
+        return 0
+
+    if l <= s and e <= r:
+        return T[i]
+
+    m = (s + e) // 2
+    return query(s, m, i*2, l, r) + query(m+1, e, i*2+1, l, r)
 
 
 # TEMPLATE ###############################
