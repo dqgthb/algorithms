@@ -21,7 +21,7 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
-    global N, M, T
+    global N, M, T, L
     N, M = map(int, input().split())
     T = [None] * (2 ** (ceil(log2(N)) + 1) - 1)
     L = [None] * (2 ** (ceil(log2(N)) + 1) - 1)
@@ -38,9 +38,13 @@ def main(f=None):
     # ######## INPUT AREA END ############
 
 
-def update_lazy(s, e, i, l, r):
-    if e < l or s > r:
-        return
+def update_lazy(s, e, i):
+    if L[i] != 0:
+        T[i] += (e-s+1) * L[i]
+
+    if s != e:
+        L[i*2] += L[i]
+        L[i*2+1] += L[i]
 
     if s != e:
 
