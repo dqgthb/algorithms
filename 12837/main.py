@@ -37,7 +37,6 @@ def main(f=None):
             print(ans)
 
 
-
     # ######## INPUT AREA END ############
 
 
