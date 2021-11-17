@@ -34,8 +34,9 @@ def main(f=None):
     for _ in range(M):
         a, b, c = map(int, input().split())
         if a == 1:
-            diff = ?
-            update(b, diff)
+            if c % 2 == 0 and A[b] % 2 == 0:
+                continue
+
         elif a == 2:
             ans = query(c) - query(b-1)
             print(ans)
