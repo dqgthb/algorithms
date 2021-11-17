@@ -46,10 +46,9 @@ def update_lazy(s, e, i):
         T[i] = (e-s+1) - T[i]
 
     if s != e:
-        L[i*2] += L[i]
-        L[i*2+1] += L[i]
-
-    L[i] = 0
+        L[i*2] = not L[i*2]
+        L[i*2+1] = not L[i*2+1]
+    L[i] = False
 
 def update_range(s, e, i, l, r, diff):
     update_lazy(s, e, i)
@@ -60,7 +59,7 @@ def update_range(s, e, i, l, r, diff):
     if l <= s and e <= r:
         T[i] += (e - s + 1) * diff
         if (s != e):
-            L[i*2] = True
+            L[i*2] = not L[i*2]
             L[i*2+1] = True
         return
 
