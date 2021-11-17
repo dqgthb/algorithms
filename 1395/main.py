@@ -49,11 +49,16 @@ def update_lazy(s, e, i):
     L[i] = 0
 
 
-def update_range(s, e, i, l, r):
+def update_range(s, e, i, l, r, diff):
     update_lazy(s, e, i)
 
     if s > r or e < l:
         return
+
+    if l <= s and e <= r:
+
+
+
 
 
 
