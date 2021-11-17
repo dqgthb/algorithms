@@ -26,12 +26,22 @@ def main(f=None):
     M = int(input())
     T = [None] * A
 
+    for i in range(1, N+1):
+        update(i, A[i-1])
+
     for _ in range(M):
         a, b, c = map(int, input().split())
         if a == 1:
             update(b, c)
         elif a == 2:
-            ans = query()
+            ans = query(c) - query(b-1)
+            print(ans)
+        else:
+            ans = query(c) - query(b-1)
+            print(c - b + 1 - ans)
+
+
+def update(i, v):
 
 
     # ######## INPUT AREA END ############
