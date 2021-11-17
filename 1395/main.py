@@ -23,8 +23,10 @@ def main(f=None):
 
     global N, M, T, L
     N, M = map(int, input().split())
+    h = ceil(log2(N))
     T = [0] * (2 ** (ceil(log2(N)) + 1) - 1)
     L = [0] * (2 ** (ceil(log2(N)) + 1) - 1)
+    L = [0] * ((1 << (h)) - 1)
 
     for _ in range(M):
         a, b, c = map(int, input().split())
