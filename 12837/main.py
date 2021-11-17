@@ -33,7 +33,8 @@ def main(f=None):
             ans = query(0, N-1, 1, b, c)
             print(ans)
 
-    print('hellowolrd I shouldarstarstarstarstartavlue object print sprints the values to a strema, or sys.stdiout ')
+    for _ in range(N):
+
 
 
     # ######## INPUT AREA END ############
