@@ -34,7 +34,8 @@ def main(f=None):
         a, b, c = map(int, input().split())
         if a == 1:
             diff = c - A[b-1]
-            update(b, c)
+            A[b-1] = c
+            update(b, diff)
         elif a == 2:
             ans = query(c) - query(b-1)
             print(ans)
@@ -46,6 +47,14 @@ def main(f=None):
 def update(i, v):
     while i < N+1:
         T[i] += v
+        i += (i & -i)
+
+
+def query(i):
+    sum_ = 0
+    while i > 0:
+        sum_ += T[i]
+        i -= (i & -i)
 
 
     # ######## INPUT AREA END ############
