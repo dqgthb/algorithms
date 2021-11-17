@@ -28,13 +28,18 @@ def main(f=None):
 
     for _ in range(M):
         a, b, c = map(int, input().split())
+        b -= 1
+        c -= 1
         if a == 0:
-            i = b-1
-            j = c-1
-            update_range(i, j)
+            update_range(0, N-1, 1, i, j)
         else:
+            query(0, N-1, 1, i, j)
 
     # ######## INPUT AREA END ############
+
+
+def update_range(s, e, i, l, r):
+
 
 
 # TEMPLATE ###############################
