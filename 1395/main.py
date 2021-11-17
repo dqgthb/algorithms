@@ -21,8 +21,10 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
+    global N, M, T
     N, M = map(int, input().split())
-    T = 2 ** (ceil(log2(N)) + 1) - 1
+    T = [None] * (2 ** (ceil(log2(N)) + 1) - 1)
+    L = [None] * (2 ** (ceil(log2(N)) + 1) - 1)
 
     for _ in range(M):
 
