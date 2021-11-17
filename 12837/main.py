@@ -42,10 +42,12 @@ def main(f=None):
 
 
 def update(s, e, i, idx, val):
+    print(s, e, i, idx, val)
     if i < s or i > e:
         return T[idx]
 
     if s == e:
+        print("updated")
         T[idx] = val
         return val
 
