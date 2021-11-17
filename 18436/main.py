@@ -48,6 +48,7 @@ def main(f=None):
 def update(i, v):
     while i < N+1:
         T[i] += v
+        T[i] %= 2
         i += (i & -i)
 
 
