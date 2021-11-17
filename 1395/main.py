@@ -27,7 +27,6 @@ def main(f=None):
     size = (1 << (h + 1))
     T = [0] * size
     L = [0] * size
-    print(size)
 
     for _ in range(M):
         a, b, c = map(int, input().split())
@@ -36,13 +35,13 @@ def main(f=None):
         if a == 0:
             update_range(0, N-1, 1, b, c, 1)
         else:
-            query(0, N-1, 1, b, c)
+            ans = query(0, N-1, 1, b, c)
+            print(ans)
 
     # ######## INPUT AREA END ############
 
 
 def update_lazy(s, e, i):
-    print(s, e, i)
     if L[i] != 0:
         T[i] += (e-s+1) * L[i]
 
