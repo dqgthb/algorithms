@@ -33,10 +33,6 @@ def main(f=None):
             ans = query(0, N-1, 1, b, c)
             print(ans)
 
-    for i in range(1, N+1):
-        print(query(0, N-1, 1, i, i))
-
-
 
     # ######## INPUT AREA END ############
 
