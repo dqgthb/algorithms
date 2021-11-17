@@ -34,7 +34,7 @@ def main(f=None):
     max_ = 0
     for i in range(1, N+1):
         print(S)
-        while S and A[S[-1]] >= A[i]:
+        while S and A[S[-1]] > A[i]:
             idx = S.pop()
             h = A[idx]
             w = i - S[-1]
