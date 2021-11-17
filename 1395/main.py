@@ -23,7 +23,7 @@ def main(f=None):
 
     global N, M, T, L
     N, M = map(int, input().split())
-    T = [None] * (2 ** (ceil(log2(N)) + 1) - 1)
+    T = [0] * (2 ** (ceil(log2(N)) + 1) - 1)
     L = [0] * (2 ** (ceil(log2(N)) + 1) - 1)
 
     for _ in range(M):
@@ -56,10 +56,10 @@ def update_range(s, e, i, l, r, diff):
         return
 
     if l <= s and e <= r:
-        T[i] += (end-start+1) * diff
-        if (start != e):
-            lazy[node*2] += diff
-            lazy[node*2+1] += diff
+        T[i] += (e - s + 1) * diff
+        if (s != e):
+            L[i*2] += diff
+            L[i*2+1] += diff
         return
 
     m = (s + e) // 2
