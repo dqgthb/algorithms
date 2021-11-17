@@ -34,8 +34,7 @@ def main(f=None):
     for _ in range(M):
         a, b, c = map(int, input().split())
         if a == 1:
-            diff = (c - A[b]) % 2
-            A[b] = c % 2
+            diff = ?
             update(b, diff)
         elif a == 2:
             ans = query(c) - query(b-1)
@@ -48,7 +47,6 @@ def main(f=None):
 def update(i, v):
     while i < N+1:
         T[i] += v
-        T[i] %= 2
         i += (i & -i)
 
 
