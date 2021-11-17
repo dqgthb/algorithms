@@ -42,7 +42,12 @@ def update(s, e, i, idx, val):
         return T[idx]
 
     if s == e:
+        T[idx] = val
+        return val
 
+    m = (s + e) // 2
+    T[idx] =  update(s, m, i*2, idx, val) + update(m+1, e, i*2+1, idx, val)
+    return T[idx]
 
 
 # TEMPLATE ###############################
