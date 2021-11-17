@@ -26,11 +26,9 @@ def main(f=None):
     T = [0] * N * 4
 
     for _ in range(Q):
-        print(T)
         a, b, c = map(int, input().split())
         b -= 1
         if a == 1:
-            print('update')
             update(0, N-1, 1, b, c)
         else:
             ans = query(0, N-1, 1, b, c-1)
@@ -41,12 +39,10 @@ def main(f=None):
 
 
 def update(s, e, i, idx, val):
-    print(s, e, i, idx, val)
     if idx < s or idx > e:
         return T[i]
 
     if s == e:
-        print("updated")
         T[i] = val
         return val
 
