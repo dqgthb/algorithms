@@ -28,13 +28,13 @@ def main(f=None):
     T = [0] * (N+1)
 
     for i in range(1, N+1):
-        update(i, A[i-1])
+        update(i, A[i])
 
     for _ in range(M):
         a, b, c = map(int, input().split())
         if a == 1:
             diff = c - A[b]
-            A[b-1] = c
+            A[b] = c
             update(b, diff)
         elif a == 2:
             ans = query(c) - query(b-1)
