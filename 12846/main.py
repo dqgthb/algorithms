@@ -25,11 +25,12 @@ def main(f=None):
     N = int(input())
     A = map(int, input().split())
     A = [0, *A]
-    print(A)
 
     # ######## INPUT AREA END ############
 
     S = [0]
+
+    for i in range(1, N+1):
 
 
 # TEMPLATE ###############################
