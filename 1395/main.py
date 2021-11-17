@@ -31,9 +31,9 @@ def main(f=None):
         b -= 1
         c -= 1
         if a == 0:
-            update_range(0, N-1, 1, i, j)
+            update_range(0, N-1, 1, b, c, 1)
         else:
-            query(0, N-1, 1, i, j)
+            query(0, N-1, 1, b, c)
 
     # ######## INPUT AREA END ############
 
@@ -78,7 +78,7 @@ def query(s, e, i, l, r):
         return T[i]
 
     m = (s + e) // 2
-    return query(s, m, i, l, r)
+    return query(s, m, i, l, r) + query(m+1, e, i, l, r)
 
 
 
