@@ -28,7 +28,12 @@ def main(f=None):
         a, b, c = map(int, input().split())
         b -= 1
         if a == 1:
-            update()
+            update(b, c)
+        else:
+            ans = query(c-1) - query(b-1)
+            print(ans)
+
+
 
 
 def query(i):
@@ -43,6 +48,7 @@ def update(i, val):
     while i < (N+1):
         T[i] += val
         i += i & -i
+
 
     # ######## INPUT AREA END ############
 
