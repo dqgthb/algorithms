@@ -57,10 +57,10 @@ def update_range(s, e, i, l, r, diff):
         return
 
     if l <= s and e <= r:
-        T[i] += (e - s + 1) * diff
+        T[i] += (e - s + 1) - T[i]
         if (s != e):
             L[i*2] = not L[i*2]
-            L[i*2+1] = True
+            L[i*2+1] = not L[i*2+1]
         return
 
     m = (s + e) // 2
