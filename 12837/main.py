@@ -42,17 +42,17 @@ def main(f=None):
 
 def update(s, e, i, idx, val):
     print(s, e, i, idx, val)
-    if i < s or i > e:
-        return T[idx]
+    if idx < s or idx > e:
+        return T[i]
 
     if s == e:
         print("updated")
-        T[idx] = val
+        T[i] = val
         return val
 
     m = (s + e) // 2
-    T[idx] =  update(s, m, i*2, idx, val) + update(m+1, e, i*2+1, idx, val)
-    return T[idx]
+    T[i] =  update(s, m, i*2, idx, val) + update(m+1, e, i*2+1, idx, val)
+    return T[i]
 
 
 def query(s, e, i, l, r):
