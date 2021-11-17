@@ -20,6 +20,8 @@ def main(f=None):
     init(f)
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
+    1 << 1
+    2 ** 1
 
     global N, M, T, L
     N, M = map(int, input().split())
@@ -39,6 +41,7 @@ def main(f=None):
 
 
 def update_lazy(s, e, i):
+    print(s, e, i)
     if L[i] != 0:
         T[i] += (e-s+1) * L[i]
 
