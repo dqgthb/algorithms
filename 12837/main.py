@@ -21,6 +21,20 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
+    global N, Q, T
+    N, Q = map(int, input().split())
+    T = [0] * (N+1)
+    for _ in range(Q):
+        a, b, c = map(int, input().split())
+        b -= 1
+        if a == 1:
+            update()
+
+
+def query()
+
+
+
 
 
     # ######## INPUT AREA END ############
