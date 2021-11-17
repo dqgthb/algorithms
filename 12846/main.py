@@ -23,11 +23,13 @@ def main(f=None):
 
     global N, A, S
     N = int(input())
-    A = [int(i) for i in input().split()]
+    A = map(int, input().split())
+    A = [0, *A]
+    print(A)
 
     # ######## INPUT AREA END ############
 
-    S = []
+    S = [0]
 
 
 # TEMPLATE ###############################
