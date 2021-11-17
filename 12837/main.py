@@ -40,7 +40,7 @@ def rangeQuery(i, j):
 def query(i):
     sum_ = 0
     while i > 0:
-        sum_ = T[i]
+        sum_ += T[i]
         i -= (i & -i)
     return sum_
 
