@@ -32,15 +32,17 @@ def main(f=None):
         a, b, c = map(int, input().split())
         b -= 1
         c -= 1
-        if a == 0:
-            update_range(0, N-1, 1, b, c, 1)
-        else:
-            ans = query(0, N-1, 1, b, c)
-            print(ans)
 
         for i in range(N):
             print(query(0, N-1, 1, i, i), end=' ')
         print()
+
+        if a == 0:
+            update_range(0, N-1, 1, b, c)
+        else:
+            ans = query(0, N-1, 1, b, c)
+            print(ans)
+
 
 
     # ######## INPUT AREA END ############
@@ -55,7 +57,7 @@ def update_lazy(s, e, i):
         L[i*2+1] = not L[i*2+1]
     L[i] = False
 
-def update_range(s, e, i, l, r, diff):
+def update_range(s, e, i, l, r):
     update_lazy(s, e, i)
 
     if s > r or e < l:
@@ -69,8 +71,8 @@ def update_range(s, e, i, l, r, diff):
         return
 
     m = (s + e) // 2
-    update_range(s, m, 2*i, l, r, diff)
-    update_range(m+1, e, 2*i+1, l, r, diff)
+    update_range(s, m, 2*i, l, r)
+    update_range(m+1, e, 2*i+1, l, r)
     T[i] = T[i*2] + T[i*2+1]
 
 
