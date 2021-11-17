@@ -56,9 +56,13 @@ def update_range(s, e, i, l, r, diff):
         return
 
     if l <= s and e <= r:
+        T[i] += (end-start+1) * diff
+        if (start != e):
+            lazy[node*2] += diff
+            lazy[node*2+1] += diff
+        return
 
-
-
+    m = (s + e) // 2
 
 
 
