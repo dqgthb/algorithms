@@ -34,21 +34,21 @@ def main(f=None):
 
 
 def rangeQuery(i, j):
-    return query(j) - query(i)
+    return query(j) - query(i-1)
 
 
 def query(i):
     sum_ = 0
     while i > 0:
         sum_ = T[i]
-        i -= i & -i
+        i -= (i & -i)
     return sum_
 
 
 def update(i, val):
     while i < (N+1):
         T[i] += val
-        i += i & -i
+        i += (i & -i)
 
 
     # ######## INPUT AREA END ############
