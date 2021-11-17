@@ -24,9 +24,9 @@ def main(f=None):
     global N, M, T, L
     N, M = map(int, input().split())
     h = ceil(log2(N))
-    size = (1 << (h + 1)) - 1
-    T = [0] * (2 ** (ceil(log2(N)) + 1) - 1)
-    L = [0] * (2 ** (ceil(log2(N)) + 1) - 1)
+    size = (1 << (h + 1))
+    T = [0] * size
+    L = [0] * size
     print(size)
 
     for _ in range(M):
@@ -76,14 +76,13 @@ def query(s, e, i, l, r):
     update_lazy(s, e, i)
 
     if s > r or e < l:
-        return
+        return 0
 
     if l <= s and e <= r:
         return T[i]
 
     m = (s + e) // 2
     return query(s, m, i, l, r) + query(m+1, e, i, l, r)
-
 
 
 # TEMPLATE ###############################
