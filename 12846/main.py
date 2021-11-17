@@ -35,9 +35,9 @@ def main(f=None):
         while S and A[S[-1]] >= A[i]:
             idx = S.pop()
             h = A[idx]
-            w = i - S[-1]
+            w = idx - S[-1] + 1
             print(S)
-            print(idx, h, w, h*w)
+            print(i, idx, h, w, h*w)
             max_ = max(max_, h * w)
         S.append(i)
     print(max_)
