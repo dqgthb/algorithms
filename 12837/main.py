@@ -31,8 +31,13 @@ def main(f=None):
             update()
 
 
-def query()
+def query(i):
 
+    sum_ = 0
+    while i > 0:
+        sum_ = T[i]
+        i -= i & -i
+    return i
 
 
 
