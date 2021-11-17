@@ -26,7 +26,7 @@ def main(f=None):
     h = ceil(log2(N))
     size = (1 << (h + 1))
     T = [0] * size
-    L = [0] * size
+    L = [False] * size
 
     for _ in range(M):
         a, b, c = map(int, input().split())
@@ -42,8 +42,8 @@ def main(f=None):
 
 
 def update_lazy(s, e, i):
-    if L[i] != 0:
-        T[i] += (e-s+1) * L[i]
+    if L[i]:
+        T[i] = (e-s+1) - T[i]
 
     if s != e:
         L[i*2] += L[i]
@@ -60,8 +60,8 @@ def update_range(s, e, i, l, r, diff):
     if l <= s and e <= r:
         T[i] += (e - s + 1) * diff
         if (s != e):
-            L[i*2] += diff
-            L[i*2+1] += diff
+            L[i*2] = True
+            L[i*2+1] = True
         return
 
     m = (s + e) // 2
