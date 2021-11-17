@@ -21,6 +21,12 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
+    N, Q = map(int, input().split())
+    for _ in range(Q):
+        a, b, c = map(int, input().split())
+        b -= 1
+        if a == 1:
+            update(0, N-1, 1, b, c)
 
 
     # ######## INPUT AREA END ############
