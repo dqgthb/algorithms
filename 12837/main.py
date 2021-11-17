@@ -27,10 +27,11 @@ def main(f=None):
 
     for _ in range(Q):
         a, b, c = map(int, input().split())
+        b -= 1
         if a == 1:
             update(0, N-1, 1, b, c)
         else:
-            ans = query(0, N-1, 1, b, c)
+            ans = query(0, N-1, 1, b, c-1)
             print(ans)
 
 
