@@ -31,6 +31,9 @@ def main(f=None):
     S = [0]
 
     for i in range(1, N+1):
+        while S and A[S[-1]] >= A[i]:
+            h = A[S[-1]]
+            w =
 
 
 # TEMPLATE ###############################
