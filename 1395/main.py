@@ -20,8 +20,6 @@ def main(f=None):
     init(f)
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
-    1 << 1
-    2 ** 1
 
     global N, M, T, L
     N, M = map(int, input().split())
