@@ -26,11 +26,15 @@ def main(f=None):
     T = [0] * (N+1)
     for _ in range(Q):
         a, b, c = map(int, input().split())
+        b -= 1
         if a == 1:
             update(b, c)
         else:
+            c -= 1
             ans = query(c) - query(b-1)
             print(ans)
+
+    print(query(0))
 
 
 def rangeQuery(i, j):
