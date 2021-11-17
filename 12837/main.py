@@ -32,15 +32,17 @@ def main(f=None):
 
 
 def query(i):
-
     sum_ = 0
     while i > 0:
         sum_ = T[i]
         i -= i & -i
-    return i
+    return sum_
 
 
-
+def update(i, val):
+    while i < (N+1):
+        T[i] += val
+        i += i & -i
 
     # ######## INPUT AREA END ############
 
