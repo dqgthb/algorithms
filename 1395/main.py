@@ -24,7 +24,7 @@ def main(f=None):
     global N, M, T, L
     N, M = map(int, input().split())
     T = [None] * (2 ** (ceil(log2(N)) + 1) - 1)
-    L = [None] * (2 ** (ceil(log2(N)) + 1) - 1)
+    L = [0] * (2 ** (ceil(log2(N)) + 1) - 1)
 
     for _ in range(M):
         a, b, c = map(int, input().split())
