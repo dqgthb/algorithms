@@ -22,7 +22,7 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     N, Q = map(int, input().split())
-    segInit(0, N-1, 1)
+    T = [0] * N
 
     for _ in range(Q):
         a, b, c = map(int, input().split())
@@ -37,8 +37,12 @@ def main(f=None):
     # ######## INPUT AREA END ############
 
 
-def segInit(s, e, i):
+def update(s, e, i, idx, val):
+    if i < s or i > e:
+        return T[idx]
+
     if s == e:
+
 
 
 # TEMPLATE ###############################
