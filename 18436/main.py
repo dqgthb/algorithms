@@ -38,8 +38,11 @@ def main(f=None):
                 continue
             if c % 2 == 1 and A[b] % 2 == 0:
                 update(b, 1)
+                continue
             if c % 2 == 0 and A[b] % 2 == 1:
-            if c
+                continue
+            if c % 2 == 1 and A[b] % 2 == 1:
+                update(b, -1)
 
         elif a == 2:
             ans = query(c) - query(b-1)
