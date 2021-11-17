@@ -50,6 +50,14 @@ def update(s, e, i, idx, val):
     return T[idx]
 
 
+def query(s, e, i, l, r):
+    if r < s or l > e:
+        return 0
+
+    if l <= s and e <= r:
+        return T[idx]
+
+
 # TEMPLATE ###############################
 
 
