@@ -24,6 +24,7 @@ def main(f=None):
     global N, A, M, T
     N = int(input())
     A = [0] + [int(i) for i in input().split()]
+    A = [1 if i % 2 == 1 else 0 for i in A]
     M = int(input())
     T = [0] * (N+1)
 
