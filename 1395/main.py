@@ -28,14 +28,17 @@ def main(f=None):
     T = [0] * size
     L = [False] * size
 
+
     for _ in range(M):
         a, b, c = map(int, input().split())
         b -= 1
         c -= 1
 
-        for i in range(N):
-            print(query(0, N-1, 1, i, i), end=' ')
-        print()
+        #for i in range(N):
+        #    ans = query(0, N-1, 1, i, i)
+        #    print(ans, end= ' ')
+        #print()
+
 
         if a == 0:
             update_range(0, N-1, 1, b, c)
@@ -52,9 +55,9 @@ def update_lazy(s, e, i):
     if L[i]:
         T[i] = (e-s+1) - T[i]
 
-    if s != e:
-        L[i*2] = not L[i*2]
-        L[i*2+1] = not L[i*2+1]
+        if s != e:
+            L[i*2] = not L[i*2]
+            L[i*2+1] = not L[i*2+1]
     L[i] = False
 
 def update_range(s, e, i, l, r):
@@ -64,7 +67,7 @@ def update_range(s, e, i, l, r):
         return
 
     if l <= s and e <= r:
-        T[i] += (e - s + 1) - T[i]
+        T[i] = (e-s+1) - T[i]
         if (s != e):
             L[i*2] = not L[i*2]
             L[i*2+1] = not L[i*2+1]
@@ -86,7 +89,7 @@ def query(s, e, i, l, r):
         return T[i]
 
     m = (s + e) // 2
-    return query(s, m, i, l, r) + query(m+1, e, i, l, r)
+    return query(s, m, i*2, l, r) + query(m+1, e, 2*i+1, l, r)
 
 
 # TEMPLATE ###############################
