@@ -24,9 +24,8 @@ def main(f=None):
     from datetime import date
     today = date.today()
     print(today)
-    x = 5
     print(today.strftime(""))
-    map()
+    import collections
 
     # ######## INPUT AREA END ############
 
