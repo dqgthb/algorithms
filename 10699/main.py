@@ -26,6 +26,11 @@ def main(f=None):
     print(today)
     print(today.strftime("%Y-%m-%d"))
 
+    import datetime
+
+    d1 = datetime.datetime.strptime("2021-11-21", "%Y-%m-%d")
+    print(d1)
+
 
 
 
