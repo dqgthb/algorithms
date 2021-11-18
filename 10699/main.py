@@ -36,9 +36,6 @@ def main(f=None):
     print(type(d2))
 
 
-
-
-
     # ######## INPUT AREA END ############
 
 
