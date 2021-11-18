@@ -36,10 +36,17 @@ def main(f=None):
     for i in range(N):
         xa = A[i]
         xidx = A2I[xa]
+        xb = B[xidx]
+        xc = C[xidx]
 
         # for those who have higher A score than i
         for j in range(i+1, N):
-            jidx = A2I[A[]]
+            ya = A[j]
+            yidx = A2I[ya]
+            yb = B[yidx]
+            yc = C[yidx]
+
+
 
 
 
