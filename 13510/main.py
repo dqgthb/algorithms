@@ -23,10 +23,15 @@ def main(f=None):
 
     N = int(input())
 
-    A2i = [None] * (N+1)
+    A2I = [None] * (N+1)
     A = [int(i) for i in input().split()]
+    for i in range(N):
+        A2I[A[i]] = i
+
     B = [int(i) for i in input().split()]
     C = [int(i) for i in input().split()]
+
+    print(A2I)
 
     gwang = 0
     for i in range(N):
