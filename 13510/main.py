@@ -58,17 +58,6 @@ def main(f=None):
     print(gwang)
 
 
-
-
-
-
-
-
-
-
-
-
-
     # ######## INPUT AREA END ############
 
 
