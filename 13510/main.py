@@ -39,12 +39,22 @@ def main(f=None):
         xb = B[xidx]
         xc = C[xidx]
 
+        amazing = True
         # for those who have higher A score than i
         for j in range(i+1, N):
             ya = A[j]
             yidx = A2I[ya]
             yb = B[yidx]
             yc = C[yidx]
+
+            if xb < yb and xc < yc:
+                amazing = False
+                break
+
+        if amazing:
+            gwang += 1
+
+    print(gwang)
 
 
 
