@@ -34,8 +34,14 @@ def main(f=None):
 
     gwang = 0
     for i in range(N):
-        xa, xb, xc = A[i], B[i], C[i]
-        idx = A2I[xa]
+        xa = A[i]
+        xidx = A2I[xa]
+
+        # for those who have higher A score than i
+        for j in range(i+1, N):
+            jidx = A2I[A[]]
+
+
 
 
 
