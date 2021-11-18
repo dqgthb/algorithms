@@ -27,6 +27,7 @@ def main(f=None):
     print(today.strftime(""))
     import collections
 
+
     # ######## INPUT AREA END ############
 
 
