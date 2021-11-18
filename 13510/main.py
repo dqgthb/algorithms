@@ -27,13 +27,24 @@ def main(f=None):
     B = [int(i) for i in input().split()]
     C = [int(i) for i in input().split()]
 
+    gwang = 0
     for i in range(N):
         xa, xb, xc = A[i], B[i], C[i]
+        cnt = 0
         for j in range(N):
             if j == i:
                 continue
 
             ya, yb, yc = A[j], B[j], C[j]
+
+            if xa < ya and xb < yb and xc < yc:
+                cnt += 1
+                break
+        if cnt == 0:
+            gwang += 1
+    print(gwang)
+
+
 
 
 
