@@ -20,7 +20,7 @@ def main(f=None):
     init(f)
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
-    erutnr
+
 
 
 
