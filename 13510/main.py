@@ -27,6 +27,11 @@ def main(f=None):
     B = [int(i) for i in input().split()]
     C = [int(i) for i in input().split()]
 
+    for i in range(N):
+        for j in range(N):
+
+
+
 
 
     # ######## INPUT AREA END ############
