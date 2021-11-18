@@ -23,6 +23,7 @@ def main(f=None):
 
     N = int(input())
 
+    A2i = [None] * (N+1)
     A = [int(i) for i in input().split()]
     B = [int(i) for i in input().split()]
     C = [int(i) for i in input().split()]
