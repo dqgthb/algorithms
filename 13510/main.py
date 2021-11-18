@@ -31,6 +31,7 @@ def main(f=None):
     for i in range(N):
         xa, xb, xc = A[i], B[i], C[i]
         cnt = 0
+
         for j in range(N):
             if j == i:
                 continue
