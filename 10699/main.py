@@ -25,11 +25,16 @@ def main(f=None):
     today = date.today()
     print(today)
     print(today.strftime("%Y-%m-%d"))
+    print(type(today))
 
     import datetime
 
     d1 = datetime.datetime.strptime("2021-11-21", "%Y-%m-%d")
-    print(d1)
+    d2 = d1.date()
+    print(d2)
+    print(type(d1))
+    print(type(d2))
+
 
 
 
