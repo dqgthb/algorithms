@@ -28,6 +28,7 @@ def main(f=None):
     for i in range(N):
         A2I[A[i]] = i
 
+
     B = [int(i) for i in input().split()]
     C = [int(i) for i in input().split()]
 
