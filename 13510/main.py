@@ -54,6 +54,7 @@ def main(f=None):
         if amazing:
             gwang += 1
 
+
     print(gwang)
 
 
