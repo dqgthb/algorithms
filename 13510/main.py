@@ -28,7 +28,13 @@ def main(f=None):
     C = [int(i) for i in input().split()]
 
     for i in range(N):
+        xa, xb, xc = A[i], B[i], C[i]
         for j in range(N):
+            if j == i:
+                continue
+
+            ya, yb, yc = A[j], B[j], C[j]
+
 
 
 
