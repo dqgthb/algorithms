@@ -24,8 +24,9 @@ def main(f=None):
     from datetime import date
     today = date.today()
     print(today)
-    print(today.strftime(""))
-    import collections
+    print(today.strftime("%Y-%m-%d"))
+
+
 
 
     # ######## INPUT AREA END ############
