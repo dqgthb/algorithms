@@ -56,14 +56,12 @@ def update(i, j, k, v):
 
 
 def solve(i, j, cnt) -> None:
-    print("solve", i, j)
     global min_
 
     allZero = True
     while True:
         print(i, j)
         if A[i][j] == 1:
-            print("A",i, j, "isone")
             allZero = False
             break
         j += 1
@@ -81,7 +79,7 @@ def solve(i, j, cnt) -> None:
                 if canPaste(i, j, k):
                     papers[k-1] -= 1
                     update(i, j, k, 0)
-                    print(cnt, "paste", i, j, k)
+                    print("solve", i, j, k, cnt+1)
                     solve(i, j, cnt+1)
                     update(i, j, k, 1)
                     papers[k-1] += 1
