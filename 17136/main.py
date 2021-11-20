@@ -56,9 +56,17 @@ def solve(i, j, cnt) -> None:
     allZero = True
 
     while True:
-        if A[i][j] == 1:
+        while True:
+            if A[i][j] == 1:
+                break
+            j += 1
+            if j == N:
+                j = 0
+                break
+        i += 1
+        if i ==N:
             break
-        j+= 1
+
 
 
     while True:
