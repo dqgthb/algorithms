@@ -74,7 +74,6 @@ def solve(i, j, cnt) -> None:
                 break
 
     if allZero:
-        print("cnt is", cnt)
         min_ = min(min_, cnt)
     else:
         for k in range(5, 0, -1):
