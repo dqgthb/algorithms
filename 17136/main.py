@@ -73,6 +73,8 @@ def solve(i, j, cnt) -> None:
     if allZero:
         min_ = min(min_, cnt)
     else:
+        if cnt >= min_:
+            return
         for k in range(5, 0, -1):
             if papers[k-1] > 0:
                 if canPaste(i, j, k):
