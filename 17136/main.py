@@ -24,14 +24,17 @@ def main(f=None):
     global N, A, min_, papers
     N = 10
     A = [list(map(int, input().split())) for _ in range(N)]
-    papers = [5, 5, 5, 5, 5]
+    papers = [5] * 5
 
     # ######## INPUT AREA END ############
 
     min_ = 10**9
     solve(0, 0, 0)
 
-    print(min_)
+    if min_ == 10**9:
+        print(-1)
+    else:
+        print(min_)
 
 
 
