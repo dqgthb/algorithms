@@ -76,6 +76,8 @@ def solve(i, j, cnt) -> None:
     else:
         for k in range(5, 0, -1):
             if papers[k-1] > 0:
+                if i == 4 and j == 4 and k == 2:
+                    parr(A)
                 if canPaste(i, j, k):
                     papers[k-1] -= 1
                     update(i, j, k, 0)
