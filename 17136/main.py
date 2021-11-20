@@ -62,6 +62,7 @@ def solve(i, j, cnt) -> None:
         if A[i][j] == 1:
             print("A",i, j, "isone")
             allZero = False
+            break
         j += 1
         if j == N:
             j = 0
@@ -71,7 +72,7 @@ def solve(i, j, cnt) -> None:
 
     if allZero:
         print("cnt is", cnt)
-        min_ = min(min_, cnt+1)
+        min_ = min(min_, cnt)
     else:
         for k in range(5, 0, -1):
             if papers[k-1] > 0:
