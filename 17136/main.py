@@ -56,8 +56,6 @@ def update(i, j, k, v):
 
 
 def solve(i, j, cnt) -> None:
-    parr(A)
-    print()
     global min_
 
     allZero = True
@@ -78,6 +76,8 @@ def solve(i, j, cnt) -> None:
     else:
         for k in range(5, 0, -1):
             if papers[k-1] > 0:
+                if i==3 and j == 4 and k == 2:
+                    print(canPaste(i, j, k))
                 if canPaste(i, j, k):
                     papers[k-1] -= 1
                     update(i, j, k, 0)
