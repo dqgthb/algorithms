@@ -58,6 +58,7 @@ def solve(i, j, cnt) -> None:
     allZero = True
     while True:
         while True:
+            print(i, j)
             if A[i][j] == 1:
                 allZero = False
                 break
@@ -71,33 +72,17 @@ def solve(i, j, cnt) -> None:
 
     if allZero:
         min_ = min(min_, cnt+1)
-
-    while True:
-        if A[i][j] == 1:
-            allZero = False
-            emptyPaper = True
-            for k in range(5, 0, -1):
-                if papers[k-1] > 0:
-                    emptyPaper = False
-                    if canPaste(i, j, k):
-                        papers[k-1] -= 1
-                        update(i, j, k, 0)
-                        print(cnt, "paste", i, j, k)
-                        solve(i, j, cnt+1)
-                        update(i, j, k, 1)
-                        papers[k-1] += 1
-            return
-        j += 1
-        if j == N:
-            j = 0
-            i += 1
-            if i == N:
-                if allZero:
-                    print("min is", cnt)
-                    min_ = min(min_, cnt)
-                    parr(A)
-                return
-
+    else:
+        for k in range(5, 0, -1):
+            if papers[k-1] > 0:
+                emptyPaper = False
+                if canPaste(i, j, k):
+                    papers[k-1] -= 1
+                    update(i, j, k, 0)
+                    print(cnt, "paste", i, j, k)
+                    solve(i, j, cnt+1)
+                    update(i, j, k, 1)
+                    papers[k-1] += 1
 
 
 
