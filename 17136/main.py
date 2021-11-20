@@ -28,7 +28,6 @@ def main(f=None):
 
     # ######## INPUT AREA END ############
 
-
     min_ = 10**9
     solve(0, 0, 0)
 
@@ -51,24 +50,19 @@ def update(i, j, k, v):
         for j in range(j, j + k):
             A[i][j] = v
 
+
 def solve(i, j, cnt) -> None:
     print("solve", i, j)
     global min_
 
     allZero = True
     while True:
-        while True:
-            print(i, j)
-            if A[i][j] == 1:
-                allZero = False
-                break
-            j += 1
-            if j == N:
-                j = 0
-                break
-        i += 1
-        if i == N:
-            break
+        print(i, j)
+        if A[i][j] == 1:
+            print("A",i, j, "isone")
+            allZero = False
+        j += 1
+        if j == N:
 
     if allZero:
         min_ = min(min_, cnt+1)
