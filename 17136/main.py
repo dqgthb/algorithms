@@ -42,17 +42,17 @@ def canPaste(i, j, k):
     if i + k > N or j + k > N:
         return False
 
-    for i in range(i, i+k):
-        for j in range(j, j+k):
-            if A[i][j] == 0:
+    for x in range(i, i+k):
+        for y in range(j, j+k):
+            if A[x][y] == 0:
                 return False
     return True
 
 
 def update(i, j, k, v):
-    for i in range(i, i + k):
-        for j in range(j, j + k):
-            A[i][j] = v
+    for x in range(i, i + k):
+        for y in range(j, j + k):
+            A[x][y] = v
 
 
 def solve(i, j, cnt) -> None:
