@@ -54,6 +54,13 @@ def update(i, j, k, v):
 def solve(i, j, cnt) -> None:
     global min_
     allZero = True
+
+    while True:
+        if A[i][j] == 1:
+            break
+        j+= 1
+
+
     while True:
         if A[i][j] == 1:
             allZero = False
