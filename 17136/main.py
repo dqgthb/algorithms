@@ -34,6 +34,7 @@ def main(f=None):
     print(min_)
 
 
+
 def canPaste(i, j, k):
     if i + k > N or j + k > N:
         return False
@@ -63,6 +64,10 @@ def solve(i, j, cnt) -> None:
             allZero = False
         j += 1
         if j == N:
+            j = 0
+            i += 1
+            if i == N:
+                break
 
     if allZero:
         min_ = min(min_, cnt+1)
