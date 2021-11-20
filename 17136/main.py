@@ -55,19 +55,22 @@ def solve(i, j, cnt) -> None:
     global min_
     allZero = True
 
+    allZero = True
     while True:
         while True:
             if A[i][j] == 1:
+                allZero = False
                 break
             j += 1
             if j == N:
                 j = 0
                 break
         i += 1
-        if i ==N:
+        if i == N:
             break
 
-
+    if allZero:
+        min_ = min(min_, cnt+1)
 
     while True:
         if A[i][j] == 1:
