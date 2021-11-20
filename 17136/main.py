@@ -60,7 +60,6 @@ def solve(i, j, cnt) -> None:
 
     allZero = True
     while True:
-        print(i, j)
         if A[i][j] == 1:
             allZero = False
             break
@@ -76,12 +75,9 @@ def solve(i, j, cnt) -> None:
     else:
         for k in range(5, 0, -1):
             if papers[k-1] > 0:
-                if i==3 and j == 4 and k == 2:
-                    print(canPaste(i, j, k))
                 if canPaste(i, j, k):
                     papers[k-1] -= 1
                     update(i, j, k, 0)
-                    print("solve", i, j, k, cnt+1)
                     solve(i, j, cnt+1)
                     update(i, j, k, 1)
                     papers[k-1] += 1
