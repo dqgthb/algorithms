@@ -68,8 +68,7 @@ def solve(i, j, cnt) -> None:
                         solve(i, j, cnt+1)
                         update(i, j, k, 1)
                         papers[k-1] += 1
-            if emptyPaper:
-                return
+            return
         j += 1
         if j == N:
             j = 0
