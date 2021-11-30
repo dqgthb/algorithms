@@ -25,14 +25,13 @@ def main(f=None):
     F = int(input())
 
     q, r = divmod(N, F)
-    ans = N + r
-    print(ans)
+    ans = N + F - r
 
     twoDigits = N % 100
-    print(ans)
     newDigits = ans % 100
     if newDigits < twoDigits:
         ans -= F
+    print(str(ans)[-2:])
 
 
     # ######## INPUT AREA END ############
