@@ -25,9 +25,10 @@ def main(f=None):
     F = int(input())
 
     q, r = divmod(N, F)
+    ans = N + r
+    print(ans)
 
     twoDigits = N % 100
-    ans = N + r
     print(ans)
     newDigits = ans % 100
     if newDigits < twoDigits:
