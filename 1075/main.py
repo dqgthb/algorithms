@@ -26,13 +26,10 @@ def main(f=None):
 
     q, r = divmod(N, F)
     ans = N + F - r
-
-    twoDigits = N % 100
-    newDigits = ans % 100
-    if newDigits < twoDigits:
-        ans -= F
+    minLimit = N - (N % 100)
+    q1, r1 = divmod(ans - minLimit, F)
+    ans -= q1 * F
     print(str(ans)[-2:])
-
 
     # ######## INPUT AREA END ############
 
