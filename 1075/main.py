@@ -28,8 +28,10 @@ def main(f=None):
 
     twoDigits = N % 100
     ans = N + r
+    print(ans)
     newDigits = ans % 100
-
+    if newDigits < twoDigits:
+        ans -= F
 
 
     # ######## INPUT AREA END ############
