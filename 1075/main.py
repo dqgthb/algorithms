@@ -26,7 +26,11 @@ def main(f=None):
 
     q, r = divmod(N, F)
 
+    twoDigits = N % 100
     ans = N + r
+    newDigits = ans % 100
+
+
 
     # ######## INPUT AREA END ############
 
