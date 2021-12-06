@@ -40,8 +40,6 @@ def main(f=None):
             arr[N-M] = 1
             print("".join(map(str, arr)))
 
-
-
     # ######## INPUT AREA END ############
 
 
