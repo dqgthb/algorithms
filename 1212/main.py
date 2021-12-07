@@ -21,6 +21,19 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
+    N = input().strip()
+
+    arr = []
+
+    for c in N:
+        c = int(c)
+        a = []
+        while c > 0:
+            c, r = divmod(c, 2)
+            a.append(r)
+        arr.append(''.join(map(str, reversed(a))))
+
+    print(''.join(arr))
 
 
     # ######## INPUT AREA END ############
