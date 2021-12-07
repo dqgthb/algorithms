@@ -32,8 +32,8 @@ def main(f=None):
         while c > 0:
             c, r = divmod(c, 2)
             a.append(r)
-        if d < 2:
-        ''.join(map(str, reversed(a)))
+        if d < 3:
+            ''.join(map(str, reversed(a)))
 
     print(''.join(arr))
 
