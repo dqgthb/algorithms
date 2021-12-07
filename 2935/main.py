@@ -21,11 +21,11 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
-    N = input()
-    N = len(N)-2
+    N = input().strip()
+    N = len(N)-1
     O = input().strip()
-    M = input()
-    M = len(M)-2
+    M = input().strip()
+    M = len(M)-1
 
     if O == "*":
         print("1"+"0"*(N+M))
