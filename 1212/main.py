@@ -27,11 +27,12 @@ def main(f=None):
 
     for c in N:
         c = int(c)
+        d = c
         a = []
         while c > 0:
             c, r = divmod(c, 2)
             a.append(r)
-        arr.append(''.join(map(str, reversed(a))))
+        ''.join(map(str, reversed(a)))
 
     print(''.join(arr))
 
