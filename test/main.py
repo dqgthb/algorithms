@@ -23,8 +23,7 @@ def main(f=None):
 
     N = 5
     M = 6
-    for i in range(N):
-        for j in range(M):
+    for i in itertools.product(N, M):
             print(i, j)
             i = 999
             j = 999
@@ -95,6 +94,4 @@ def parr(arr):
     for i in arr:
         print(i)
 
-
-if __name__ == "__main__":
-    main()
+
