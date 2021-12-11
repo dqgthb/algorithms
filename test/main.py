@@ -21,9 +21,15 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
-    N = 5
-    M = 6
-    import itertools
+x = 0.1
+N = 1
+cnt = 0
+
+while N <= 2:
+    print(N, cnt)
+    cnt += 1
+    N += x
+
 
 
 
