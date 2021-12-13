@@ -27,7 +27,9 @@ def main(f=None):
     B = list(set(A))
     B.sort()
 
-
+    compress = {B[i]:i for i in range(len(B))}
+    C = [compress[a] for a in A]
+    print(C)
 
 
     # ######## INPUT AREA END ############
