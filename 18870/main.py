@@ -29,7 +29,7 @@ def main(f=None):
 
     compress = {B[i]:i for i in range(len(B))}
     C = [compress[a] for a in A]
-    print(C)
+    print(' '.join(map(str, C)))
 
 
     # ######## INPUT AREA END ############
