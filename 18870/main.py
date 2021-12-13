@@ -21,6 +21,13 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
+    N = int(input())
+
+    A = [int(i) for i in input().split()]
+    B = list(set(A))
+    B.sort()
+
+
 
 
     # ######## INPUT AREA END ############
