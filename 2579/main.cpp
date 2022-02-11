@@ -66,8 +66,27 @@ const ll INF = 1e9;
 const ll MAXINIT = -2e9 + 9;
 const ll MININIT = 2e9 + 9;
 
+int N, num;
+std::array<int, 300> A;
+std::array<int, 300> DP;
+
 void solve(){
-    cout << "hello world!\n";
+    cin >> N;
+
+    for (int i = 0; i < N; ++i){
+        cin >> num;
+        A[i] = num;
+    }
+
+    DP[0] = A[0];
+    DP[1] = DP[0] + A[1];
+    DP[2] = A[2] + max(A[1], A[0]);
+
+    for (int i = 0; i < N; ++i){
+        DP[i] = A[i] + max(A[i-1] + DP[i-3], DP[i-2]);
+    }
+
+    cout << DP[N-1] << '\n';
 }
 
 int main(int argc, const char **argv){

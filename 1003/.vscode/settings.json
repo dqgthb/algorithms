@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.tmp": "python",
+        "utility": "cpp"
+    }
+}

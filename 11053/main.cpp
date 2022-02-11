@@ -66,8 +66,17 @@ const ll INF = 1e9;
 const ll MAXINIT = -2e9 + 9;
 const ll MININIT = 2e9 + 9;
 
+int N, num;
+array<int, 1000> A;
+array<int, 1000> DP;
+
 void solve(){
-    cout << "hello world!\n";
+    cin >> N;
+    for (int i = 0; i < N; ++i){
+        cin >> num;
+        A[i] = num;
+    }
+
 }
 
 int main(int argc, const char **argv){

@@ -66,8 +66,26 @@ const ll INF = 1e9;
 const ll MAXINIT = -2e9 + 9;
 const ll MININIT = 2e9 + 9;
 
+
+int N, num;
+array<int, 41> A;
+
 void solve(){
-    cout << "hello world!\n";
+    A[0] = 1;
+    A[1] = 1;
+    for (int i = 2; i < A.size(); ++i){
+        A[i] = A[i-1] + A[i-2];
+    }
+
+    cin >> N;
+    loop(i, 0, N){
+        cin >> num;
+        if (num < 2){
+            cout << 1-num << ' ' << num << '\n';
+        } else {
+            cout << A[num-2] << ' ' << A[num-1] << '\n';
+        }
+    }
 }
 
 int main(int argc, const char **argv){
