@@ -1,4 +1,6 @@
-import os, sys, shutil
+import os
+import sys
+import shutil
 
 
 def main():
@@ -10,6 +12,7 @@ def main():
                 newName = newName + "New"
                 print(newName + " created instead.")
             shutil.move(obj, "./baekjoon/" + newName)
+
 
 if __name__ == "__main__":
     main()
