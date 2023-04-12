@@ -3,15 +3,22 @@
 from sys import stdin, argv
 from os import path
 
-# from collections import deque
-# from heapq import heappush, heappop
-# from math import log, log2, ceil, floor, gcd, sqrt
-# from bisect import bisect_left as bl, bisect_right as br
-
 
 def main() -> None:
     # sys.setrecursionlimit(10**9)
-    pass
+    N = int(input())
+
+    arr = [int(i) for i in input().split()]
+
+    arr.sort()
+
+    sum_ = 0
+
+    for i in arr:
+        if i > sum_ + 1:
+            break
+        sum_ += i
+    print(sum_ + 1)
 
 
 if __name__ == "__main__":

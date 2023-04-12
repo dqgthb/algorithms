@@ -1,6 +1,7 @@
 from heapq import heappush, heappop
 from datetime import datetime, timedelta
 
+
 def main():
 
     airports = []
@@ -12,8 +13,8 @@ def main():
             connectingTime.append(time)
 
     N = len(airports)
-    convert = {airports[i]:i for i in range(N)}
-    #print(connectingTime[convert["LNY"]])
+    convert = {airports[i]: i for i in range(N)}
+    # print(connectingTime[convert["LNY"]])
 
     G = [[] for _ in range(N)]
     with open("Hawaiian-flights.txt") as f:
@@ -30,10 +31,9 @@ def main():
             arriveT = datetime.strptime(arrive, "%H%M")
             timeDelta = arriveT - departT
             minutes = timeDelta.seconds // 60
-            #if timeDelta.days < 0:
-                #minutes += 24 * 60 # done automatically
+            # if timeDelta.days < 0:
+            # minutes += 24 * 60 # done automatically
             G[convert[from_]].append((convert[to_], timeDelta.seconds // 60))
-
 
     S = convert["LNY"]
     T = convert["LIH"]
@@ -72,6 +72,7 @@ def main():
 def parr(A):
     for i in A:
         print(i)
+
 
 if __name__ == "__main__":
     main()

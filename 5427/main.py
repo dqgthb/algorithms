@@ -15,6 +15,8 @@ from collections import deque
 #from bisect import bisect_left as bl, bisect_right as br
 DEBUG = False
 
+D = ((-1, 0), (1, 0), (0, -1), (0, 1))
+
 
 def main(f=None):
     init(f)
@@ -22,63 +24,77 @@ def main(f=None):
     # ######## INPUT AREA BEGIN ##########
 
     T = int(input())
-    dp = [None] * 10000
-    ans = []
-    for i in range(T):
-        a, b = map(int, input().split())
-        solve(a, b, dp)
-        ans.append(buildString(a, b, dp))
-    print('\n'.join(ans))
+    for _ in range(T):
+        solve()
+
+
+def solve():
+    C, R = map(int, input().split())
+    M = [list(input().strip()) for _ in range(R)]
 
     # ######## INPUT AREA END ############
 
+    vis = [[False for _ in range(C)] for _ in range(R)]
 
-def buildString(a, b, dp):
-    lst = []
-    cur = b
-    while cur != a:
-        prev, l = dp[cur]
-        lst.append(l)
-        cur = prev
-    return ''.join(reversed(lst))
+    ji, jj = -1, -1
+    F = []
 
+    for i in range(R):
+        for j in range(C):
+            if M[i][j] == '@':
+                M[i][j] = 0
+                ji = i
+                jj = j
 
-def solve(a, b, dp):
-    for i in range(10000):
-        dp[i] = None
-
-    dq = deque()
-    dq.append(a)
-    dp[a] = ""
-    #dp[a] = (-1, "")
-
-    while dq and dp[b] == None:
-        c = dq.popleft()
-
-        d = c * 2 % 10000
-        if dp[d] == None:
-            dp[d] = (c, "D")
-            dq.append(d)
-
-        s = (c - 1) % 10000
-        if dp[s] == None:
-            dp[s] = (c, "S")
-            dq.append(s)
-
-        q, r = divmod(c, 1000)
-        ll = r * 10 + q
-        if dp[ll] == None:
-            dp[ll] = (c, "L")
-            dq.append(ll)
-
-        q, r = divmod(c, 10)
-        rr = r * 1000 + q
-        if dp[rr] == None:
-            dp[rr] = (c, "R")
-            dq.append(rr)
+            if M[i][j] == '*':
+                M[i][j] = 0
+                F.append((i, j))
 
 
-# #######
+    if F:
+        dq = deque(F)
+        while dq:
+            x, y = dq.popleft()
+
+            for dx, dy in D:
+                nx, ny = x + dx, y + dy
+                if 0 <= nx < R and 0 <= ny < C:
+                    if M[nx][ny] == '.':
+                        M[nx][ny] = M[x][y] + 1
+                        dq.append((nx, ny))
+
+    dq = deque([(ji, jj, 0)])
+    vis[ji][jj] = True
+    minTime = 10 ** 9
+
+    while dq:
+        x, y, time = dq.popleft()
+
+        for dx, dy in D:
+            nx, ny = x + dx, y + dy
+
+            if nx < 0 or nx >= R or ny < 0 or ny >= C:
+                minTime = min(minTime, time + 1)
+                break
+            else:
+                m = M[nx][ny]
+                if m != '#':
+                    if m == '.' or time+1 < m:
+                        if vis[nx][ny] == False:
+                            vis[nx][ny] = True
+                            dq.append((nx, ny, time+1))
+
+    if minTime != 10 ** 9:
+        print(minTime)
+    else:
+        print("IMPOSSIBLE")
+
+
+
+
+# TEMPLATE ###############################
+
+
 enu = enumerate
 
 

@@ -8,10 +8,39 @@ from os import path
 # from math import log, log2, ceil, floor, gcd, sqrt
 # from bisect import bisect_left as bl, bisect_right as br
 
+ansSet = set()
+
+
+def solve(arr, m):
+
+    combinations = []
+
+    dfs(arr, 0, 0, combinations)
+
+
+def dfs(arr, num, idx, comb):
+    if num == M:
+        ansSet.add(tuple(comb))
+        return
+
+    for i in range(idx, len(arr)):
+        comb.append(arr[i])
+        dfs(arr, num + 1, i + 1, comb)
+        comb.pop()
+
 
 def main() -> None:
     # sys.setrecursionlimit(10**9)
-    pass
+
+    global N, M
+    N, M = map(int, input().split())
+    arr = list(map(int, input().split()))
+    arr.sort()
+
+    solve(arr, M)
+
+    for e in ansSet:
+        print(*e)
 
 
 if __name__ == "__main__":

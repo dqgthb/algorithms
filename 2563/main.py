@@ -11,7 +11,24 @@ from os import path
 
 def main() -> None:
     # sys.setrecursionlimit(10**9)
-    pass
+
+    N = int(input())
+
+    grid = [[False for _ in range(100)] for _ in range(100)]
+
+    for _ in range(N):
+        a, b = map(int, input().split())
+
+        for i in range(10):
+            for j in range(10):
+                grid[a+i][b+j] = True
+
+    cnt = 0
+    for i in range(100):
+        for j in range(100):
+            if grid[i][j]:
+                cnt += 1
+    print(cnt)
 
 
 if __name__ == "__main__":

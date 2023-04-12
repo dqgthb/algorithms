@@ -9,9 +9,33 @@ from os import path
 # from bisect import bisect_left as bl, bisect_right as br
 
 
+def solve(arr, m):
+
+    combinations = []
+
+    dfs(arr, 0, 0, combinations)
+
+
+def dfs(arr, num, idx, comb):
+    if num == M:
+        print(*comb)
+        return
+
+    for i in range(idx, len(arr)):
+        comb.append(arr[i])
+        dfs(arr, num + 1, i + 1, comb)
+        comb.pop()
+
+
 def main() -> None:
     # sys.setrecursionlimit(10**9)
-    pass
+
+    global N, M
+    N, M = map(int, input().split())
+    arr = list(map(int, input().split()))
+    arr.sort()
+
+    solve(arr, M)
 
 
 if __name__ == "__main__":
@@ -21,5 +45,4 @@ if __name__ == "__main__":
         input = open(argv[1]).readline
     elif path.isfile("i"):
         input = open("i").readline
-
     main()

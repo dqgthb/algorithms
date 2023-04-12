@@ -3,15 +3,19 @@
 from sys import stdin, argv
 from os import path
 
-# from collections import deque
-# from heapq import heappush, heappop
-# from math import log, log2, ceil, floor, gcd, sqrt
-# from bisect import bisect_left as bl, bisect_right as br
-
 
 def main() -> None:
     # sys.setrecursionlimit(10**9)
-    pass
+    T = int(input())
+
+    q1, r = divmod(T, 300)
+    q2, r = divmod(r, 60)
+    q3, r = divmod(r, 10)
+
+    if r != 0:
+        print(-1)
+    else:
+        print(q1, q2, q3)
 
 
 if __name__ == "__main__":

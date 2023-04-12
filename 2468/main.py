@@ -6,7 +6,7 @@ import sys
 #import itertools
 #from itertools import product
 #import collections
-from collections import deque
+#from collections import deque
 #from collections import Counter, defaultdict as dd
 #import math
 #from math import log, log2, ceil, floor, gcd, sqrt
@@ -21,64 +21,17 @@ def main(f=None):
     # sys.setrecursionlimit(10**9)
     # ######## INPUT AREA BEGIN ##########
 
-    T = int(input())
-    dp = [None] * 10000
-    ans = []
-    for i in range(T):
-        a, b = map(int, input().split())
-        solve(a, b, dp)
-        ans.append(buildString(a, b, dp))
-    print('\n'.join(ans))
+    N = int(input())
+    A = [list(map(int, input().split())) for _ in range(N)]
 
     # ######## INPUT AREA END ############
 
 
-def buildString(a, b, dp):
-    lst = []
-    cur = b
-    while cur != a:
-        prev, l = dp[cur]
-        lst.append(l)
-        cur = prev
-    return ''.join(reversed(lst))
 
 
-def solve(a, b, dp):
-    for i in range(10000):
-        dp[i] = None
-
-    dq = deque()
-    dq.append(a)
-    dp[a] = ""
-    #dp[a] = (-1, "")
-
-    while dq and dp[b] == None:
-        c = dq.popleft()
-
-        d = c * 2 % 10000
-        if dp[d] == None:
-            dp[d] = (c, "D")
-            dq.append(d)
-
-        s = (c - 1) % 10000
-        if dp[s] == None:
-            dp[s] = (c, "S")
-            dq.append(s)
-
-        q, r = divmod(c, 1000)
-        ll = r * 10 + q
-        if dp[ll] == None:
-            dp[ll] = (c, "L")
-            dq.append(ll)
-
-        q, r = divmod(c, 10)
-        rr = r * 1000 + q
-        if dp[rr] == None:
-            dp[rr] = (c, "R")
-            dq.append(rr)
+# TEMPLATE ###############################
 
 
-# #######
 enu = enumerate
 
 

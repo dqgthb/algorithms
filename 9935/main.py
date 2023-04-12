@@ -13,6 +13,28 @@ def main() -> None:
     # sys.setrecursionlimit(10**9)
     pass
 
+    global S, E, N
+    S = input().strip()
+    E = input().strip()
+    N = len(E)
+
+    stack = []
+
+    for i, e in enumerate(S):
+        stack.append(e)
+
+        while True:
+            if len(stack) >= N:
+                if ''.join(stack[-N:]) == E:
+                    for _ in range(N):
+                        stack.pop()
+                    continue
+            break
+    if stack:
+        print(''.join(stack))
+    else:
+        print("FRULA")
+
 
 if __name__ == "__main__":
     global input

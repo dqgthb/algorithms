@@ -13,6 +13,30 @@ def main() -> None:
     # sys.setrecursionlimit(10**9)
     pass
 
+    global N, M
+
+    N, M = map(int, input().split())
+    global ARR
+    ARR = [int(i) for i in input().split()]
+    ARR = list(set(ARR))
+    ARR.sort()
+    N = len(ARR)
+
+    cand = []
+    dfs(0, 0, cand)
+
+
+def dfs(num, idx, cand):
+
+    if num == M:
+        print(*cand)
+        return
+
+    for i in range(N):
+        cand.append(ARR[i])
+        dfs(num + 1, 0, cand)
+        cand.pop()
+
 
 if __name__ == "__main__":
     global input

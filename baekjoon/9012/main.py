@@ -1,17 +1,20 @@
+import sys
 DEBUG = False
 DEBUG = True
-import sys
 if DEBUG:
     sys.stdin = open("i", "r")
+
+
 def print_(*args):
     if DEBUG:
         print(*args)
+
 
 def solve(line):
     arr = list(line.strip())
 
     count = 0
-    for i,e in enumerate(arr):
+    for i, e in enumerate(arr):
         if e == '(':
             count += 1
         elif e == ')':
