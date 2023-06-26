@@ -1,75 +1,69 @@
-# Python Competitive Programming Template (updated 2022-08-05)
+# Python Competitive Programming Template (updated 2023-04-07)
 # Created by dqgthb
-
-# from collections import deque
-# from heapq import heappush, heappop
-
-# from functools import cmp_to_key, reduce, partial
-# from collections import Counter, defaultdict as dd
-# from math import log, log2, ceil, floor, gcd, sqrt
-# from bisect import bisect_left as bl, bisect_right as br
-
-
-from typing import Callable, List, Union
-input: Callable[[], str]
+from sys import stdin, argv
+from os import path
 
 
 def main() -> None:
-    init()
     # sys.setrecursionlimit(10**9)
-    # ######## INPUT AREA BEGIN ##########
 
     N = int(input())
     M = int(input())
-    S = input().strip()
+    S = input().strip() + "$"
 
-    # ######## INPUT AREA END ############
+    streak = []
 
-    total = 0
-    prev = S[0]
-    IOIcnt = 0
+    cnt = 0
+    STATE = 0
+    for c in S:
 
-    i = 2
-    while i < M:
-        word = S[i-3:i]
-        if word == "IOI":
-            IOIcnt += 1
+        if STATE == 0:
+            if c == "I":
+                cnt = 0
+                STATE = 1
+            else:
+                STATE = 0
 
-            if IOIcnt >= N:
-                total += 1
-            i += 2
-        else:
-            IOIcnt = 0
-            i += 1
-    print(total)
+        elif STATE == 1:
+            if c == "I":
+                cnt = 0
+                STATE = 1
+            else:
+                STATE = 2
 
-    # TEMPLATE ###############################
+        elif STATE == 2:
+            if c == "I":
+                cnt += 1
+                STATE = 3
+            elif c == "O":
+                streak.append(cnt)
+                STATE = 0
+            elif c == "$":
+                streak.append(cnt)
 
+        elif STATE == 3:
+            if c == "I":
+                streak.append(cnt)
+                cnt = 0
+                STATE = 1
+            elif c == "O":
+                STATE = 2
+            elif c == "$":
+                streak.append(cnt)
 
-def parr(arr: List[List[Union[str, int]]]) -> None:
-    print('\n'.join(str(i) for i in arr))
-
-
-def Mat(h: int, w: int, default: None | str | int = None) -> \
-        List[List[None | str | int]]:
-    return [[default for _ in range(w)] for _ in range(h)]
-
-
-def init() -> None:
-    global input
-    from sys import stdin, argv
-    input = stdin.readline  # by default
-
-    if len(argv) == 1:
-        from os import path
-        if path.isfile("i"):
-            stdin = open("i")
-            input = stdin.readline
-
-    elif len(argv) == 2:
-        stdin = open(argv[1])
-        input = stdin.readline
+    sum_ = 0
+    for s in streak:
+        if s >= N:
+            sum_ += s - N + 1
+    print(sum_)
 
 
 if __name__ == "__main__":
+    global input
+    input = stdin.readline
+    if len(argv) == 2:
+        input = open(argv[1]).readline
+    elif path.isfile("i"):
+        input = open("i").readline
+
     main()
